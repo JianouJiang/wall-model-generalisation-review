@@ -29,6 +29,51 @@ def words(s):
     s=re.sub(r'\\[A-Za-z]+(?:\{[^{}]*\})?', ' macro ',s)
     return len(re.findall(r"\S+",s))
 
+def check_figure2(comparisons, plotted, support_by_id):
+    panels = comparisons['figure_panels']
+    keys = [key for panel in panels for key in panel['studies']]
+    rows = {row['reference_key']: row for row in comparisons['rows']}
+    assert len(panels) == 4 and all(len(p['studies']) == 2 for p in panels)
+    assert len(keys) == len(set(keys)) == 8 and set(keys) == rows.keys()
+    assert plotted['figure_panels'] == panels
+    for row in rows.values():
+        assert all(support_by_id[key]['figure_2_source_location'] == row['figure_source_location']
+                   for key in row['support'])
+
+    def example(key):
+        return rows[key]['figure_example']
+
+    channel = example('BaeKoumoutsakos2022')
+    assert channel['friction_reynolds_number'] == 50000
+    assert channel['training_height_wall_units'] == [150, 1200]
+    assert [(m['dy_over_delta'], m['height_wall_units']) for m in channel['measurements']] == [(.01, 1000), (.05, 5000)]
+    pairs = example('Mukha2024preprint')['measurements']
+    assert [(p['mesh'], p['coupled'], p['offline_mean']) for p in pairs] == [
+        ('M1', .71, .06), ('M2', .76, .20), ('M3', -.54, -1.07)]
+    sweep = example('Hayat2024preprint')
+    assert sweep['sweep_degrees'] == [0, 35]
+    assert [m['signs'] for m in sweep['measurements']] == [[1, -1], [1, -1], [-1, -1]]
+    closures = example('LozanoDuranBae2023')['measurements']
+    assert [(m['outer_closure'], m['stress_error']) for m in closures] == [
+        ('Exact for the mean', 'Internal'), ('Dynamic Smagorinsky', 'Total'), ('Vreman', 'Total')]
+    outer, wall = example('Zhou2024preprint'), example('Agrawal2024')
+    assert outer['length_reynolds_number'] == wall['length_reynolds_number'] == 2000000
+    assert [(m['coefficient'], m['reversal']) for m in outer['measurements']] == [(.025, True), (.070, False)]
+    assert [(m['model'], m['reversal']) for m in wall['measurements']] == [('Equilibrium', False), ('Sensor-based', True)]
+
+    step = example('Dupuy2023graph')
+    scale = step['digitisation']
+    for trace in step['crossings']:
+        (x1, y1), (x2, y2) = trace['bracketing_centres_px']
+        y0 = scale['zero_stress_y_px']
+        assert y2 < y0 < y1
+        crossing = x1 + (y0-y1)*(x2-x1)/(y2-y1)
+        distance = 14*(crossing-scale['x_at_zero_px'])/(scale['x_at_fourteen_px']-scale['x_at_zero_px'])
+        assert round(distance, 1) == trace['x_over_hs_approx']
+    assert [m['x_over_hs_approx'] for m in step['crossings']] == [4.7, 5.2, 6.0]
+    diffuser = example('Jones2015')['measurements']
+    assert [(m['cells_y'], m['recirculation']) for m in diffuser] == [(30, False), (50, True)]
+
 def main_check():
     support=json.loads((ROOT/'data/revision/claim_support.json').read_text())
     cited={k.strip() for x in arguments(alltext,'cite') for k in x.split(',')}
@@ -59,6 +104,7 @@ def main_check():
     by_id={r['claim_id']:r for r in support}
     assert len(comparisons['rows'])==len({r['reference_key'] for r in comparisons['rows']})==8
     assert plotted_map['rows']==comparisons['rows']
+    check_figure2(comparisons, plotted_map, by_id)
     for row in comparisons['rows']:
         assert row['reference_key'] in cited
         assert row['source_location'] and row['selected_comparison']
@@ -111,7 +157,9 @@ def main_check():
     assert 'Output written on main.pdf' in log,'LaTeX did not finish writing the PDF'
     assert not re.search(r'^!|Fatal error occurred|Emergency stop',log,re.M),'LaTeX error'
     assert not re.search(r'undefined references|Citation .* undefined|Overfull \\[hv]box',log)
-    assert 'not tabulated for this example' in compact,'outdated comparison-map figure in PDF'
+    assert all(title in compact for title in ('Plane channel', 'Flat-plate boundary layers',
+               'Gaussian speed bump', 'Step and diffuser', 'Signed error in mean wall stress',
+               'Prescribed mean stress, baseline mesh', 'Recirculation on the inclined diffuser wall')), 'outdated Figure 2 in PDF'
     assert 'Internal and total error' in compact,'outdated accuracy figure in PDF'
     assert 'Agreement in each case' in compact,'outdated checklist figure in PDF'
     figure_layouts={name:json.loads((ROOT/f'results/figures/{name}_layout.json').read_text())['passed']

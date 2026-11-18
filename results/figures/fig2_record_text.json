@@ -1,114 +1,34 @@
 {
  "figure": "fig2_record",
  "width_mm": 160,
- "texts": 25,
+ "texts": 80,
  "rows": [
   {
-   "text": "Model choice",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 55.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Input / sampling",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 55.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Grid / implementation",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 55.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Outer closure",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 55.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Flow / regime",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 55.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Wall stress",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 55.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Mean velocity",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 55.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Pressure",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 55.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Separation",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 55.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Term budget",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 55.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Hayat & Park (2024*)",
-   "size_pt": 8.0,
-   "weight": "normal",
+   "text": "a",
+   "size_pt": 10.0,
+   "weight": "bold",
    "rotation": 0.0,
-   "colour": "#000000",
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Plane channel",
+   "size_pt": 9.2,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Sampling height (wall units, log scale)",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
    "where": "axes 0",
    "role": "text",
    "math": false
@@ -118,93 +38,53 @@
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#000000",
+   "colour": "#52514e",
    "where": "axes 0",
    "role": "text",
    "math": false
   },
   {
-   "text": "Lozano-Durán & Bae (2023)",
+   "text": "Training 150–1,200",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#000000",
+   "colour": "#205991",
    "where": "axes 0",
    "role": "text",
    "math": false
   },
   {
-   "text": "Mukha & Schlatter (2024*)",
+   "text": "Refined 1,000",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#000000",
+   "colour": "#0b0b0b",
    "where": "axes 0",
    "role": "text",
    "math": false
   },
   {
-   "text": "Zhou & Bae (2024*)",
+   "text": "Coarse 5,000",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#000000",
+   "colour": "#0b0b0b",
    "where": "axes 0",
    "role": "text",
    "math": false
   },
   {
-   "text": "Agrawal et al. (2024)",
+   "text": "Signed error in mean wall stress (%)",
    "size_pt": 8.0,
-   "weight": "normal",
+   "weight": "bold",
    "rotation": 0.0,
-   "colour": "#000000",
+   "colour": "#0b0b0b",
    "where": "axes 0",
    "role": "text",
    "math": false
   },
   {
-   "text": "Dupuy et al. (2023)",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Jones & Utyuzhnikov (2016†)",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "changed in the selected comparison",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "reported quantity",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "* preprint; † accepted manuscript. Blank: not tabulated for this example.",
+   "text": "Mukha & Schlatter (2024)*",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -214,22 +94,82 @@
    "math": false
   },
   {
-   "text": "a",
-   "size_pt": 10.0,
-   "weight": "bold",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "What changes",
+   "text": "M1",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
-   "where": "figure",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "M2",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "M3",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "−1",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "+1",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Coupled",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Offline, mean velocity",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
    "role": "text",
    "math": false
   },
@@ -238,18 +178,628 @@
    "size_pt": 10.0,
    "weight": "bold",
    "rotation": 0.0,
-   "colour": "#000000",
-   "where": "figure",
+   "colour": "#0b0b0b",
+   "where": "axes 1",
    "role": "text",
    "math": false
   },
   {
-   "text": "What is examined",
+   "text": "Flat-plate boundary layers",
+   "size_pt": 9.2,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Sign of chordwise skin friction in the bubble",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Hayat & Park (2024)*",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0° sweep",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "35° sweep",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Equilibrium",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
-   "where": "figure",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "+",
+   "size_pt": 9.3,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "−",
+   "size_pt": 9.3,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Non-equilibrium, integral",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "+",
+   "size_pt": 9.3,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "−",
+   "size_pt": 9.3,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Non-equilibrium, PDE",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "−",
+   "size_pt": 9.3,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "−",
+   "size_pt": 9.3,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Wall-stress error at zero pressure gradient",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Lozano-Durán & Bae (2023)",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Outer closure",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Stress error",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Exact for the mean",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Internal",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Dynamic Smagorinsky",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Total",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Vreman",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Total",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "c",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Gaussian speed bump",
+   "size_pt": 9.2,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Prescribed mean stress, baseline mesh",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Zhou & Bae (2024)*",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Vreman  c = 0.025",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Reversal",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Vreman  c = 0.070",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "No reversal",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Predicted skin friction, medium mesh",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Agrawal et al. (2024)",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Equilibrium wall law",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "No reversal",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Sensor-based wall law",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Reversal",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "d",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Step and diffuser",
+   "size_pt": 9.2,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Step reattachment distance, $x_r/h_s$",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": true
+  },
+  {
+   "text": "Dupuy et al. (2023)",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Log law",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "≈4.7",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Graph, N = 4",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "≈5.2",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Reference",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "≈6.0",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "4",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "5",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "6",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Recirculation on the inclined diffuser wall",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Jones & Utyuzhnikov (2016)†",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Treatment",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Cells in y",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Recirculation",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Log law",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "30",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Absent",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Interface",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "50",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Present",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "axes 3",
    "role": "text",
    "math": false
   }

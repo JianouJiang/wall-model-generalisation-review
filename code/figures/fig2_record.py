@@ -1,54 +1,206 @@
 #!/usr/bin/env python3
-"""Selected comparison designs across the review; no population counts."""
+"""Eight source-level comparisons, paired by flow in a 160 mm vector figure."""
 import json
-import os
+import math
 import sys
-sys.path.insert(0, os.path.dirname(__file__))
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from matplotlib.patches import Rectangle
-from style import *
+from style import DATA, RES, W, MM, FS, G2, INK, MUTE, plt, save
+
+ACCENT = '#205991'
+WASH = '#e7eef4'
+WALL = '#4f565a'
+PANEL_W = 75.8
+FIG_H = 128.0
+
+
+def label(ax, x, y, text, **kwargs):
+    return ax.text(x, y, text, va='center', ha=kwargs.pop('ha', 'left'),
+                   fontsize=kwargs.pop('fontsize', FS), color=kwargs.pop('color', INK), **kwargs)
+
+
+def line(ax, x, y, **kwargs):
+    ax.plot(x, y, color=kwargs.pop('color', G2), lw=kwargs.pop('lw', 0.65),
+            solid_capstyle='round', **kwargs)
+
+
+def arrow(ax, start, end, y, color):
+    ax.annotate('', xy=(end, y), xytext=(start, y),
+                arrowprops=dict(arrowstyle='-|>', shrinkA=0, shrinkB=0,
+                                mutation_scale=6.2, lw=0.8, color=color))
+
+
+def panel(ax, title, letter):
+    label(ax, 0.5, 3.5, letter, fontsize=10, fontweight='bold')
+    label(ax, 5.2, 3.5, title, fontsize=9.2, fontweight='bold')
+    # Only the walls and free-stream direction are sketched; there is no inferred flow field.
+    start, end = 55.8, 75.1
+    if letter == 'a':
+        for y in (1.5, 6.8):
+            line(ax, [start, end], [y, y], color=WALL, lw=1.05)
+    elif letter == 'b':
+        line(ax, [start, end], [6.8, 6.8], color=WALL, lw=1.05)
+    elif letter == 'c':
+        xs = [start + (end-start)*i/60 for i in range(61)]
+        ys = [7.3 - 3.4*math.exp(-((x-66.9)/3.1)**2) for x in xs]
+        line(ax, xs, ys, color=WALL, lw=1.05)
+    else:
+        line(ax, [start, 59.5, 59.5, 64], [4.5, 4.5, 7, 7], color=WALL, lw=1.05)
+        line(ax, [66.5, 69, 73, end], [4.5, 4.5, 7, 7], color=WALL, lw=1.05)
+    if letter in 'abc':
+        arrow(ax, start+1, start+7.2, 4.2 if letter == 'a' else 2.9, WALL)
+    line(ax, [0.5, end], [9.1, 9.1], color='#8d969a', lw=0.6)
+
+
+def study(ax, y, title, row):
+    name = row['label'].replace('*)', ')*').replace('†)', ')†')
+    label(ax, 0.8, y, title, fontweight='bold')
+    label(ax, 0.8, y+4.8, name, color=MUTE)
+
+
+def channel(ax, first, second):
+    study(ax, 13.4, 'Sampling height (wall units, log scale)', first)
+    record = first['figure_example']
+
+    def height_x(wall_units):
+        return 2 + 70 * math.log(wall_units / 125) / math.log(6300 / 125)
+
+    lo, hi = record['training_height_wall_units']
+    xlo, xhi = height_x(lo), height_x(hi)
+    band_y = 31.2
+    ax.add_patch(Rectangle((xlo, band_y-2.3), xhi-xlo, 4.6, fc=WASH, ec='none'))
+    label(ax, (xlo+xhi)/2, band_y, f'Training {lo:,}–{hi:,}', ha='center', color=ACCENT)
+    largest = max(m['height_wall_units'] for m in record['measurements'])
+    line(ax, [xlo, height_x(largest)], [27.1, 27.1], color='#899398')
+    for measurement in record['measurements']:
+        value = measurement['height_wall_units']
+        x = height_x(value)
+        label(ax, x, 23.4, f"{measurement['grid']} {value:,}", ha='center')
+        line(ax, [x, x], [26.2, 28.0], color=INK, lw=1.25)
+    for x in (xlo, xhi):
+        line(ax, [x, x], [27.1, band_y-2.3], color=ACCENT, lw=0.65)
+
+    study(ax, 41.5, 'Signed error in mean wall stress (%)', second)
+    # Same signed, linear percentage axis for all three meshes.
+    def error_x(value):
+        return 40.5 + value*24
+
+    for i, pair in enumerate(second['figure_example']['measurements']):
+        y = 51.4 + 4.4*i
+        a, b = error_x(pair['coupled']), error_x(pair['offline_mean'])
+        label(ax, 1.6, y, pair['mesh'])
+        line(ax, [a, b], [y, y], color='#7e8a93', lw=1.25)
+        ax.plot(a, y, 'o', ms=4.5, mfc='white', mec=INK, mew=1, zorder=4)
+        ax.plot(b, y, 'D', ms=3.8, mfc=ACCENT, mec=ACCENT, zorder=4)
+    line(ax, [error_x(0)]*2, [49.5, 61.6], color='#858785', lw=0.6, ls=(0, (1.5, 2)))
+    line(ax, [error_x(-1.2), error_x(1)], [62.3]*2, color='#989c9f')
+    for value, tick in ((-1, '−1'), (0, '0'), (1, '+1')):
+        x = error_x(value)
+        line(ax, [x, x], [62.3, 63.2], color=WALL)
+        label(ax, x, 65.5, tick, ha='center', color=MUTE)
+    ax.plot(2.4, 69, 'o', ms=4.5, mfc='white', mec=INK, mew=1)
+    label(ax, 5.1, 69, 'Coupled')
+    ax.plot(24.8, 69, 'D', ms=3.8, color=ACCENT)
+    label(ax, 27.7, 69, 'Offline, mean velocity')
+
+
+def flat_plate(ax, first, second):
+    study(ax, 13.4, 'Sign of chordwise skin friction in the bubble', first)
+    record = first['figure_example']
+    cols = [46, 65]
+    for x, angle in zip(cols, record['sweep_degrees']):
+        label(ax, x, 23.4, f'{angle}° sweep', ha='center', color=MUTE)
+    for i, entry in enumerate(record['measurements']):
+        y = 27.3 + 4.25*i
+        label(ax, 2.0, y, entry['model'])
+        for x, sign in zip(cols, entry['signs']):
+            label(ax, x, y, '−' if sign < 0 else '+', ha='center', fontsize=9.3,
+                  fontweight='bold', color=ACCENT if sign < 0 else INK)
+
+    study(ax, 41.5, 'Wall-stress error at zero pressure gradient', second)
+    label(ax, 2.0, 53.0, 'Outer closure', fontweight='bold')
+    label(ax, 54.0, 53.0, 'Stress error', fontweight='bold')
+    line(ax, [2, 74.5], [55.6]*2)
+    for i, experiment in enumerate(second['figure_example']['measurements']):
+        y = 59.0 + i*4.8
+        label(ax, 2, y, experiment['outer_closure'])
+        label(ax, 54, y, experiment['stress_error'], color=ACCENT)
+
+
+def state(ax, x, y, reversed_flow):
+    color = ACCENT if reversed_flow else INK
+    left, right = x, x+5
+    arrow(ax, right if reversed_flow else left, left if reversed_flow else right, y, color)
+    label(ax, right+2, y, 'Reversal' if reversed_flow else 'No reversal', color=color)
+
+
+def speed_bump(ax, first, second):
+    for row, top in ((first, 13.4), (second, 43.0)):
+        example = row['figure_example']
+        prescribed = 'wall_condition' in example
+        condition = (f"Prescribed mean stress, {example['grid'].lower()} mesh" if prescribed
+                     else f"Predicted skin friction, {example['grid'].lower()} mesh")
+        study(ax, top, condition, row)
+        for i, entry in enumerate(example['measurements']):
+            y = top+11.5 + i*5.2
+            name = (f"{example['closure']}  c = {entry['coefficient']:.3f}" if prescribed
+                    else entry['model'] + ' wall law')
+            label(ax, 2, y, name)
+            state(ax, 47, y, entry['reversal'])
+
+
+def expansions(ax, first, second):
+    study(ax, 13.4, r'Step reattachment distance, $x_r/h_s$', first)
+    example = first['figure_example']
+    def location_x(value):
+        return 26 + 19*(value-4)
+
+    for i, result in enumerate(example['crossings']):
+        y = 23.4 + i*4.6
+        val = result['x_over_hs_approx']
+        x = location_x(val)
+        label(ax, 2, y, result['treatment'])
+        ref = result['treatment'] == 'Reference'
+        color = INK if ref else ACCENT
+        ax.plot(x, y, 's' if ref else 'o', ms=4.2, mfc='white' if ref else color,
+                mec=color, mew=0.9, zorder=3)
+        label(ax, x+2.0, y, f'≈{val:.1f}', color=color)
+    line(ax, [location_x(4), location_x(6.4)], [35.6]*2, color='#989c9f')
+    for value in (4, 5, 6):
+        x = location_x(value)
+        line(ax, [x, x], [35.6, 36.5], color=WALL)
+        label(ax, x, 38.7, str(value), ha='center', color=MUTE)
+
+    study(ax, 43.0, 'Recirculation on the inclined diffuser wall', second)
+    for x, heading in ((2, 'Treatment'), (28.0, 'Cells in y'), (49.5, 'Recirculation')):
+        label(ax, x, 53.2, heading, fontweight='bold')
+    line(ax, [2, 74.5], [55.6]*2)
+    for i, entry in enumerate(second['figure_example']['measurements']):
+        y = 59 + i*5
+        label(ax, 2, y, entry['model'])
+        label(ax, 33.4, y, str(entry['cells_y']), ha='center')
+        label(ax, 49.5, y, 'Present' if entry['recirculation'] else 'Absent',
+              color=ACCENT if entry['recirculation'] else INK)
 
 
 def main():
-    d = json.load(open(os.path.join(DATA, 'revision/comparison_map.json')))
-    support = {r['claim_id']: r for r in json.load(open(os.path.join(DATA, 'revision/claim_support.json')))}
-    H = 102.0
-    fig = plt.figure(figsize=(W * MM, H * MM))
-    ax = fig.add_axes([0, 0, 1, 1])
-    ax.set(xlim=(0, W), ylim=(H, 0))
-    ax.axis('off')
-    letter(fig, 0.012, 1-5/H, 'a', 'What changes')
-    letter(fig, 0.656, 1-5/H, 'b', 'What is examined')
-    # Retain the original figure family's aligned, banded matrix.
-    cx = [58, 67, 76, 85, 94]
-    qx = [108, 117, 126, 135, 144]
-    for xs, names in [(cx, d['change_columns']), (qx, d['quantity_columns'])]:
-        for x, lab in zip(xs, names):
-            ax.text(x-1.1, 30, lab, rotation=55, rotation_mode='anchor',
-                    ha='left', va='bottom', fontsize=FS)
-    plotted = []
-    for i, row in enumerate(d['rows']):
-        assert all(s in support and support[s]['reference_key'] == row['reference_key'] for s in row['support'])
-        y = 35 + i * 6.7
-        if i % 2 == 0:
-            ax.add_patch(Rectangle((1.4, y-3.1), 153.6, 6.2, fc=BAND, ec='none', zorder=0))
-        ax.text(51.6, y, row['label'], ha='right', va='center', fontsize=FS)
-        for x, field in zip(cx, d['change_columns']):
-            if field in row['changes']:
-                ax.plot(x, y, 'o', ms=4.8, mfc=INK, mec=INK, zorder=3)
-        for x, field in zip(qx, d['quantity_columns']):
-            if field in row['quantities']:
-                ax.plot(x, y, 's', ms=4.5, mfc=BLUE, mec=BLUE, zorder=3)
-        plotted.append(row)
-    ax.plot([101, 101], [32, 85.1], color=G2, lw=.6)
-    ax.plot(3.1, 89.8, 'o', ms=4.8, mfc=INK, mec=INK)
-    ax.text(5.9, 89.8, 'changed in the selected comparison', va='center', fontsize=FS)
-    ax.plot(76.5, 89.8, 's', ms=4.5, mfc=BLUE, mec=BLUE)
-    ax.text(79.5, 89.8, 'reported quantity', va='center', fontsize=FS)
-    ax.text(1.4, 96.6, '* preprint; † accepted manuscript. Blank: not tabulated for this example.',
-            va='center', fontsize=FS, color=MUTE)
-    with open(os.path.join(RES, 'fig2_values.json'), 'w') as f:
-        json.dump(dict(purpose=d['purpose'], blank_meaning=d['blank_meaning'], rows=plotted), f, indent=2, ensure_ascii=False)
+    data = json.loads((Path(DATA)/'revision/comparison_map.json').read_text())
+    rows = {row['reference_key']: row for row in data['rows']}
+    fig = plt.figure(figsize=(W*MM, FIG_H*MM))
+    # Panels share vertical space in their row and keep the type at its native print size.
+    panels = [(1.5, .487, .510, 73, channel), (82.5, .487, .510, 73, flat_plate),
+              (1.5, .005, .464, 67, speed_bump), (82.5, .005, .464, 67, expansions)]
+    for i, (group, (x, bottom, height, units, draw)) in enumerate(zip(data['figure_panels'], panels)):
+        ax = fig.add_axes([x/W, bottom, PANEL_W/W, height])
+        ax.set(xlim=(0, PANEL_W), ylim=(units, 0))
+        ax.axis('off')
+        panel(ax, group['title'], 'abcd'[i])
+        draw(ax, *(rows[key] for key in group['studies']))
     save(fig, 'fig2_record')
+    plotted = {key: data[key] for key in ('purpose', 'blank_meaning', 'figure_panels', 'rows')}
+    (Path(RES)/'fig2_values.json').write_text(json.dumps(plotted, indent=2, ensure_ascii=False)+'\n')
 
 
 if __name__ == '__main__':

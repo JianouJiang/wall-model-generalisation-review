@@ -33,7 +33,39 @@
         "Mean velocity",
         "Separation",
         "Term budget"
-      ]
+      ],
+      "figure_example": {
+        "sweep_degrees": [
+          0,
+          35
+        ],
+        "measure": "Sign of mean chordwise skin friction in the separated region",
+        "measurements": [
+          {
+            "model": "Equilibrium",
+            "signs": [
+              1,
+              -1
+            ]
+          },
+          {
+            "model": "Non-equilibrium, integral",
+            "signs": [
+              1,
+              -1
+            ]
+          },
+          {
+            "model": "Non-equilibrium, PDE",
+            "signs": [
+              -1,
+              -1
+            ]
+          }
+        ],
+        "note": "In the thin unswept bubble, the equilibrium calculation predicts reversed near-wall LES velocity even though its wall law returns positive skin friction. Integral and PDE denote the two non-equilibrium models."
+      },
+      "figure_source_location": "arXiv:2403.05476v1, Sec. IV, Figs. 11(a), 12 and 13(a) and accompanying text."
     },
     {
       "reference_key": "BaeKoumoutsakos2022",
@@ -52,7 +84,28 @@
       "quantities": [
         "Wall stress",
         "Mean velocity"
-      ]
+      ],
+      "figure_example": {
+        "friction_reynolds_number": 50000,
+        "training_height_wall_units": [
+          150,
+          1200
+        ],
+        "measurements": [
+          {
+            "grid": "Refined",
+            "dy_over_delta": 0.01,
+            "height_wall_units": 1000
+          },
+          {
+            "grid": "Coarse",
+            "dy_over_delta": 0.05,
+            "height_wall_units": 5000
+          }
+        ],
+        "note": "Training bounds are open. The two runs share the friction Reynolds number and differ in wall-normal grid spacing and sampling height."
+      },
+      "figure_source_location": "Published article, Results (p. 4), Figs. 3–5 and Methods Table 1 (p. 7)."
     },
     {
       "reference_key": "LozanoDuranBae2023",
@@ -68,7 +121,30 @@
       ],
       "quantities": [
         "Wall stress"
-      ]
+      ],
+      "figure_example": {
+        "models": [
+          "equilibrium",
+          "building-block"
+        ],
+        "pressure_gradient": "zero",
+        "measurements": [
+          {
+            "outer_closure": "Exact for the mean",
+            "stress_error": "Internal"
+          },
+          {
+            "outer_closure": "Dynamic Smagorinsky",
+            "stress_error": "Total"
+          },
+          {
+            "outer_closure": "Vreman",
+            "stress_error": "Total"
+          }
+        ],
+        "note": "Each outer closure is paired with both wall models. The exact-for-mean closure supplies the intended mean input in a coupled calculation. Different closures define different error experiments."
+      },
+      "figure_source_location": "Published article, Secs. 4.1 and 4.3, Fig. 9(c,d) and accompanying text."
     },
     {
       "reference_key": "Mukha2024preprint",
@@ -84,7 +160,29 @@
       "quantities": [
         "Wall stress",
         "Mean velocity"
-      ]
+      ],
+      "figure_example": {
+        "measure": "Signed relative mean wall-stress error (%)",
+        "measurements": [
+          {
+            "mesh": "M1",
+            "coupled": 0.71,
+            "offline_mean": 0.06
+          },
+          {
+            "mesh": "M2",
+            "coupled": 0.76,
+            "offline_mean": 0.2
+          },
+          {
+            "mesh": "M3",
+            "coupled": -0.54,
+            "offline_mean": -1.07
+          }
+        ],
+        "note": "The first error uses the mean of the modelled stress during the simulation. The second applies the same law offline to the time-mean sampled velocity from that simulation."
+      },
+      "figure_source_location": "arXiv:2404.05378v1, subsection on time-averaging of wall-model input, Table III, first and second numerical columns."
     },
     {
       "reference_key": "Zhou2024preprint",
@@ -99,7 +197,25 @@
       ],
       "quantities": [
         "Separation"
-      ]
+      ],
+      "figure_example": {
+        "quantity": "Mean streamwise velocity at the first off-wall cell",
+        "wall_condition": "Prescribed DNS mean wall stress",
+        "grid": "Baseline",
+        "closure": "Vreman",
+        "measurements": [
+          {
+            "coefficient": 0.025,
+            "reversal": true
+          },
+          {
+            "coefficient": 0.07,
+            "reversal": false
+          }
+        ],
+        "length_reynolds_number": 2000000
+      },
+      "figure_source_location": "arXiv:2309.13555v2, Sec. 2.2.1 (Re_L) and Sec. 3.1, Group 1 baseline mesh, Figs. 4(d,e) and 7 and accompanying text."
     },
     {
       "reference_key": "Agrawal2024",
@@ -119,7 +235,23 @@
         "Mean velocity",
         "Pressure",
         "Separation"
-      ]
+      ],
+      "figure_example": {
+        "quantity": "Predicted mean skin friction",
+        "length_reynolds_number": 2000000,
+        "grid": "Medium",
+        "measurements": [
+          {
+            "model": "Equilibrium",
+            "reversal": false
+          },
+          {
+            "model": "Sensor-based",
+            "reversal": true
+          }
+        ]
+      },
+      "figure_source_location": "Published article, Phys. Rev. Fluids 9, 124603, Sec. V.A, Fig. 6(a,b) and accompanying text, medium grid at Re_L = 2 × 10^6."
     },
     {
       "reference_key": "Dupuy2023graph",
@@ -135,7 +267,74 @@
       "quantities": [
         "Wall stress",
         "Separation"
-      ]
+      ],
+      "figure_example": {
+        "geometry": "Backward-facing step",
+        "measure": "Streamwise reattachment distance divided by step height",
+        "crossings": [
+          {
+            "treatment": "Log law",
+            "source_trace": "Law-of-the-wall model, solid grey",
+            "bracketing_centres_px": [
+              [
+                286,
+                188
+              ],
+              [
+                292,
+                183
+              ]
+            ],
+            "x_over_hs_approx": 4.7
+          },
+          {
+            "treatment": "Graph, N = 4",
+            "source_trace": "GNN model N=4, dashed magenta",
+            "bracketing_centres_px": [
+              [
+                311,
+                190
+              ],
+              [
+                318,
+                181
+              ]
+            ],
+            "x_over_hs_approx": 5.2
+          },
+          {
+            "treatment": "Reference",
+            "source_trace": "Wall-resolved reference, solid black",
+            "bracketing_centres_px": [
+              [
+                349,
+                189
+              ],
+              [
+                353,
+                183
+              ]
+            ],
+            "x_over_hs_approx": 6.0
+          }
+        ],
+        "digitisation": {
+          "doi": "10.1017/dce.2023.2",
+          "source_pdf_sha256": "426f0b1e9c14c87aea9b28d1635efceb4eb743a133f64b1c0df86f435e2c7410",
+          "figure": "16",
+          "native_image_size_px": [
+            740,
+            437
+          ],
+          "origin": "top left, pixel centres at integer indices",
+          "x_at_zero_px": 73.0,
+          "x_at_fourteen_px": 721.5,
+          "zero_stress_y_px": 185.3,
+          "method": "Read two trace centreline points straddling the downstream zero of streamwise wall stress. Interpolate x at zero stress, map the horizontal frame to [0,14] step heights and round to the nearest 0.1. These are approximate figure read-offs. The black reference curve is distinct from the dash-dot Le et al. comparison."
+        },
+        "note": "N is the number of graph message-passing steps. The reference is the wall-resolved simulation. The three traces are a selected comparison. The study reports upstream reattachment for all its LES runs."
+      },
+      "figure_source_location": "Published article, Sec. 4.2.3, Fig. 16 on p. e7-22, downstream zero crossings of the mean streamwise wall shear. Table 5 reports separate integrated errors."
     },
     {
       "reference_key": "Jones2015",
@@ -153,6 +352,54 @@
         "Wall stress",
         "Pressure",
         "Separation"
+      ],
+      "figure_example": {
+        "geometry": "Asymmetric diffuser",
+        "quantity": "Recirculation on the inclined wall",
+        "measurements": [
+          {
+            "model": "Log law",
+            "cells_y": 30,
+            "recirculation": false
+          },
+          {
+            "model": "Interface",
+            "cells_y": 50,
+            "recirculation": true
+          }
+        ],
+        "note": "Mesh size and treatment vary together. The interface offset is 5% of local diffuser height, and the recirculation region has an incorrect extent."
+      },
+      "figure_source_location": "Accepted manuscript of the 2016 article, Sec. 6 (mesh and offset), Sec. 7.1 and Fig. 5(b) (inclined-wall skin friction)."
+    }
+  ],
+  "figure_panels": [
+    {
+      "title": "Plane channel",
+      "studies": [
+        "BaeKoumoutsakos2022",
+        "Mukha2024preprint"
+      ]
+    },
+    {
+      "title": "Flat-plate boundary layers",
+      "studies": [
+        "Hayat2024preprint",
+        "LozanoDuranBae2023"
+      ]
+    },
+    {
+      "title": "Gaussian speed bump",
+      "studies": [
+        "Zhou2024preprint",
+        "Agrawal2024"
+      ]
+    },
+    {
+      "title": "Step and diffuser",
+      "studies": [
+        "Dupuy2023graph",
+        "Jones2015"
       ]
     }
   ]

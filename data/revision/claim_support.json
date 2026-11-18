@@ -47,7 +47,8 @@
     "source_location": "Section IV, Figs. 11–12 and 16",
     "claim": "Thin reversed layer, matching-height sign limitation and cancellation of errors in the swept case. This is explicitly cited as a preprint, not as journal-equivalent.",
     "source_text_sha256": "36fd5df4e9847d3018b4647d0d59d69f6619c4baae8df0ec3f5489f52cf0ac8a",
-    "verification": "supporting passages checked in this revision"
+    "verification": "supporting passages checked in this revision",
+    "figure_2_source_location": "arXiv:2403.05476v1, Sec. IV, Figs. 11(a), 12 and 13(a) and accompanying text."
   },
   {
     "claim_id": "S06",
@@ -57,7 +58,8 @@
     "source_location": "Results: velocity-based/log-law models, matching-height range and refinement, boundary-layer test; Figs. 3–5",
     "claim": "Matching-height training range and boundary-layer application.",
     "source_text_sha256": "ce5a60a4a519dd15c705af73b973f528093d4ae80246c4b3d76da396b88e0e6c",
-    "verification": "supporting passages checked in this revision"
+    "verification": "supporting passages checked in this revision",
+    "figure_2_source_location": "Published article, Results (p. 4), Figs. 3–5 and Methods Table 1 (p. 7)."
   },
   {
     "claim_id": "S07",
@@ -67,7 +69,8 @@
     "source_location": "Sections 4.1 and 4.3, Fig. 9",
     "claim": "Internal wall-stress errors below 0.5% and about 2%; practical-closure total errors 5–15%. These are different experiments.",
     "source_text_sha256": "687bce0f487e5f3ec4bc369bd5c42064649dad6e7c099cf7e0f1b287b3a1000e",
-    "verification": "supporting passages checked in this revision"
+    "verification": "supporting passages checked in this revision",
+    "figure_2_source_location": "Published article, Secs. 4.1 and 4.3, Fig. 9(c,d) and accompanying text."
   },
   {
     "claim_id": "S08",
@@ -87,7 +90,8 @@
     "source_location": "Time-averaging of the wall model input subsection, Table III; Conclusion and weak boundary imposition discussion",
     "claim": "Reported traction/gradient distinction, no systematic averaging gain, and mismatch counterexample in this specific manuscript.",
     "source_text_sha256": "aaa275e4ae8b9693d23b841685892f1842aa309a1b75b8ace752c4f98843bc91",
-    "verification": "supporting passages checked in this revision"
+    "verification": "supporting passages checked in this revision",
+    "figure_2_source_location": "arXiv:2404.05378v1, subsection on time-averaging of wall-model input, Table III, first and second numerical columns."
   },
   {
     "claim_id": "S10",
@@ -97,7 +101,8 @@
     "source_location": "Section 3, Fig. 4 and boundary-condition discussion",
     "claim": "Reference mean traction does not remove the outer-closure sensitivity of separation.",
     "source_text_sha256": "7158f5ee3277fb6fe369fb2993c18d7f7b56a38ca024f1e28200882520ad84e6",
-    "verification": "supporting passages checked in this revision"
+    "verification": "supporting passages checked in this revision",
+    "figure_2_source_location": "arXiv:2309.13555v2, Sec. 2.2.1 (Re_L) and Sec. 3.1, Group 1 baseline mesh, Figs. 4(d,e) and 7 and accompanying text."
   },
   {
     "claim_id": "S11",
@@ -107,7 +112,8 @@
     "source_location": "Section 4.2.3, Table 5, Figs. 15–16 (PDF page 22 for table)",
     "claim": "Both integrated squared errors improve relative to baseline for N=4. Table visually checked; reattachment error is a different measure.",
     "source_text_sha256": "59c45bb2536e1ca6593d33c45bc1e6882f58b2a91ba9f664c4b3473513be6a4b",
-    "verification": "supporting passages checked in this revision"
+    "verification": "supporting passages checked in this revision",
+    "figure_2_source_location": "Published article, Sec. 4.2.3, Fig. 16 on p. e7-22, downstream zero crossings of the mean streamwise wall shear. Table 5 reports separate integrated errors."
   },
   {
     "claim_id": "S12",
@@ -117,7 +123,8 @@
     "source_location": "Sections 6 and 7.1",
     "claim": "Near-wall grids differ between interface boundary condition and logarithmic baseline. Do not call pressure/recirculation results a controlled quantity-only contrast.",
     "source_text_sha256": "4e6371e62ad188b4ca90e7172cb20aa3239ed7be1f4928a11e7a5b8ab1ca17be",
-    "verification": "supporting passages checked in this revision"
+    "verification": "supporting passages checked in this revision",
+    "figure_2_source_location": "Accepted manuscript of the 2016 article, Sec. 6 (mesh and offset), Sec. 7.1 and Fig. 5(b) (inclined-wall skin friction)."
   },
   {
     "claim_id": "S13",
@@ -147,7 +154,8 @@
     "source_url": "https://www.researchgate.net/publication/387287722_Nonequilibrium_wall_model_for_large_eddy_simulations_of_complex_flows_exhibiting_turbulent_smooth_body_separation",
     "source_location": "Sections III–VI, especially V.A Figs. 6–9",
     "claim": "Coupled speed-bump and transonic validation; downstream coarse/medium-grid velocity and shear-stress benefit with residual error. A case Mach value is not invented.",
-    "verification": "published full-text sections checked; distinct from earlier preprint and accepted text"
+    "verification": "published full-text sections checked; distinct from earlier preprint and accepted text",
+    "figure_2_source_location": "Published article, Phys. Rev. Fluids 9, 124603, Sec. V.A, Fig. 6(a,b) and accompanying text, medium grid at Re_L = 2 × 10^6."
   },
   {
     "claim_id": "S16",
