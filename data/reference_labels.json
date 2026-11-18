@@ -1,0 +1,304 @@
+{
+  "entries": {
+    "BruntonKutz2024": {
+      "surname": "Brunton",
+      "year": "2024",
+      "n": 1
+    },
+    "PiomelliBalaras2002": {
+      "surname": "Piomelli",
+      "year": "2002",
+      "n": 2
+    },
+    "Piomelli2008": {
+      "surname": "Piomelli",
+      "year": "2008",
+      "n": 3
+    },
+    "Larsson2016": {
+      "surname": "Larsson",
+      "year": "2016",
+      "n": 4
+    },
+    "BosePark2018": {
+      "surname": "Bose",
+      "year": "2018",
+      "n": 5
+    },
+    "Duraisamy2019": {
+      "surname": "Duraisamy",
+      "year": "2019",
+      "n": 6
+    },
+    "Brunton2020": {
+      "surname": "Brunton",
+      "year": "2020",
+      "n": 7
+    },
+    "VinuesaBrunton2022": {
+      "surname": "Vinuesa",
+      "year": "2022",
+      "n": 8
+    },
+    "Duraisamy2021": {
+      "surname": "Duraisamy",
+      "year": "2021",
+      "n": 9
+    },
+    "HuYang2026": {
+      "surname": "Hu",
+      "year": "2026",
+      "n": 10
+    },
+    "Vadrot2023": {
+      "surname": "Vadrot",
+      "year": "2023",
+      "n": 11
+    },
+    "Spalart2015": {
+      "surname": "Spalart",
+      "year": "2015",
+      "n": 12
+    },
+    "Spalart2023": {
+      "surname": "Spalart",
+      "year": "2023",
+      "n": 13
+    },
+    "HeinzFagbade2025": {
+      "surname": "Heinz",
+      "year": "2025",
+      "n": 14
+    },
+    "HayatPark2025": {
+      "surname": "Hayat",
+      "year": "2025",
+      "n": 15
+    },
+    "Quadrio2016": {
+      "surname": "Quadrio",
+      "year": "2016",
+      "n": 16
+    },
+    "Dupuy2023graph": {
+      "surname": "Dupuy",
+      "year": "2023",
+      "n": 17
+    },
+    "BaeKoumoutsakos2022": {
+      "surname": "Bae",
+      "year": "2022",
+      "n": 18
+    },
+    "Bae2018": {
+      "surname": "Bae",
+      "year": "2019",
+      "n": 19
+    },
+    "LozanoDuranBae2023": {
+      "surname": "Lozano-Durán",
+      "year": "2023",
+      "n": 20
+    },
+    "LozanoDuran2019": {
+      "surname": "Lozano-Durán",
+      "year": "2020",
+      "n": 21
+    },
+    "Jones2015": {
+      "surname": "Jones",
+      "year": "2016",
+      "n": 22
+    },
+    "Defraeye2010": {
+      "surname": "Defraeye",
+      "year": "2010",
+      "n": 23
+    },
+    "Zhou2021hills": {
+      "surname": "Zhou",
+      "year": "2021",
+      "n": 24
+    },
+    "Fogliatto2024": {
+      "surname": "Fogliatto",
+      "year": "2024",
+      "n": 25
+    },
+    "Rezaeiravesh2019": {
+      "surname": "Rezaeiravesh",
+      "year": "2019",
+      "n": 26
+    },
+    "Mukha2025": {
+      "surname": "Mukha",
+      "year": "2025",
+      "n": 27
+    },
+    "Spinelli2023": {
+      "surname": "Spinelli",
+      "year": "2024",
+      "n": 28
+    },
+    "Ponsin2026": {
+      "surname": "Ponsin",
+      "year": "2026",
+      "n": 29
+    },
+    "Hausmann2025a": {
+      "surname": "Hausmann",
+      "year": "2025",
+      "n": 30
+    },
+    "Sandham2017": {
+      "surname": "Sandham",
+      "year": "2017",
+      "n": 31
+    },
+    "Chen2023": {
+      "surname": "Chen",
+      "year": "2023",
+      "n": 32
+    },
+    "ZhouBae2024": {
+      "surname": "Zhou",
+      "year": "2024",
+      "n": 33
+    },
+    "Arranz2024": {
+      "surname": "Arranz",
+      "year": "2024",
+      "n": 34
+    },
+    "Kiris2023": {
+      "surname": "Kiris",
+      "year": "2023",
+      "n": 35
+    },
+    "Rethlefsen2021": {
+      "surname": "Rethlefsen",
+      "year": "2021",
+      "n": 36
+    },
+    "Campbell2020": {
+      "surname": "Campbell",
+      "year": "2020",
+      "n": 37
+    },
+    "Priem2022": {
+      "surname": "Priem",
+      "year": "2022",
+      "n": 38
+    },
+    "Sampson2006": {
+      "surname": "Sampson",
+      "year": "2006",
+      "n": 39
+    },
+    "Wongpakaran2013": {
+      "surname": "Wongpakaran",
+      "year": "2013",
+      "n": 40
+    },
+    "Hansen2023": {
+      "surname": "Hansen",
+      "year": "2023",
+      "n": 41
+    },
+    "DiZhou2024": {
+      "surname": "Zhou",
+      "year": "2024",
+      "n": 42
+    },
+    "Hu2023": {
+      "surname": "Hu",
+      "year": "2023",
+      "n": 43
+    },
+    "Vadrot2023a": {
+      "surname": "Vadrot",
+      "year": "2023",
+      "n": 44
+    },
+    "Xiao2024": {
+      "surname": "Xue",
+      "year": "2024",
+      "n": 45
+    },
+    "Fowler2023": {
+      "surname": "Fowler",
+      "year": "2023",
+      "n": 46
+    },
+    "Krank2016": {
+      "surname": "Krank",
+      "year": "2016",
+      "n": 47
+    },
+    "Davidson2025": {
+      "surname": "Davidson",
+      "year": "2025",
+      "n": 48
+    },
+    "Wang2025": {
+      "surname": "Wang",
+      "year": "2026",
+      "n": 49
+    },
+    "Mukha2019": {
+      "surname": "Mukha",
+      "year": "2019",
+      "n": 50
+    },
+    "Zhou2026": {
+      "surname": "Zhou",
+      "year": "2026",
+      "n": 51
+    },
+    "OberkampfTrucano2002": {
+      "surname": "Oberkampf",
+      "year": "2002",
+      "n": 52
+    },
+    "Duprat2009": {
+      "surname": "Duprat",
+      "year": "2009",
+      "n": 53
+    },
+    "Grecu2025": {
+      "surname": "Grecu",
+      "year": "2025",
+      "n": 54
+    },
+    "Krank2017": {
+      "surname": "Krank",
+      "year": "2018",
+      "n": 55
+    },
+    "Krank2018a": {
+      "surname": "Krank",
+      "year": "2019",
+      "n": 56
+    },
+    "Krank2018": {
+      "surname": "Krank",
+      "year": "2019",
+      "n": 57
+    },
+    "Pradhan2023": {
+      "surname": "Pradhan",
+      "year": "2023",
+      "n": 58
+    },
+    "Salomone2025": {
+      "surname": "Salomone",
+      "year": "2025",
+      "n": 59
+    },
+    "Defraeye2012": {
+      "surname": "Defraeye",
+      "year": "2013",
+      "n": 60
+    }
+  }
+}

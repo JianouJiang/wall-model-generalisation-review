@@ -1,0 +1,268 @@
+{
+  "cohort": "Existing 82 claims only; entirely scope-excluded studies are not reintroduced.",
+  "baseline": {
+    "pooled": {
+      "claims": 82,
+      "categories": {
+        "1a": 1,
+        "1b": 0,
+        "2": 18,
+        "3": 35,
+        "4": 0,
+        "5": 6,
+        "6": 15,
+        "7": 0
+      },
+      "undetermined": 7,
+      "exposed_claims": {
+        "confirmed": 32,
+        "possible": 36
+      },
+      "claims_in_scope": {
+        "confirmed": 81,
+        "possible": 82
+      },
+      "category_1": {
+        "confirmed": 2,
+        "possible": 4
+      },
+      "flag_F": {
+        "confirmed": 20,
+        "possible": 24
+      },
+      "flag_A": {
+        "confirmed": 55,
+        "possible": 57
+      },
+      "fewer_than_half_exposed": true
+    },
+    "new": {
+      "claims": 57,
+      "categories": {
+        "1a": 1,
+        "1b": 0,
+        "2": 9,
+        "3": 27,
+        "4": 0,
+        "5": 5,
+        "6": 8,
+        "7": 0
+      },
+      "undetermined": 7,
+      "exposed_claims": {
+        "confirmed": 19,
+        "possible": 23
+      },
+      "claims_in_scope": {
+        "confirmed": 56,
+        "possible": 57
+      },
+      "category_1": {
+        "confirmed": 2,
+        "possible": 4
+      },
+      "flag_F": {
+        "confirmed": 11,
+        "possible": 15
+      },
+      "flag_A": {
+        "confirmed": 38,
+        "possible": 40
+      },
+      "fewer_than_half_exposed": true
+    },
+    "pilot": {
+      "claims": 25,
+      "categories": {
+        "1a": 0,
+        "1b": 0,
+        "2": 9,
+        "3": 8,
+        "4": 0,
+        "5": 1,
+        "6": 7,
+        "7": 0
+      },
+      "undetermined": 0,
+      "exposed_claims": {
+        "confirmed": 13,
+        "possible": 13
+      },
+      "claims_in_scope": {
+        "confirmed": 25,
+        "possible": 25
+      },
+      "category_1": {
+        "confirmed": 0,
+        "possible": 0
+      },
+      "flag_F": {
+        "confirmed": 9,
+        "possible": 9
+      },
+      "flag_A": {
+        "confirmed": 17,
+        "possible": 17
+      },
+      "fewer_than_half_exposed": false
+    }
+  },
+  "include_unknown": {
+    "pooled": {
+      "claims": 82,
+      "categories": {
+        "1a": 3,
+        "1b": 0,
+        "2": 19,
+        "3": 35,
+        "4": 0,
+        "5": 6,
+        "6": 13,
+        "7": 0
+      },
+      "undetermined": 6,
+      "exposed_claims": {
+        "confirmed": 35,
+        "possible": 38
+      },
+      "claims_in_scope": {
+        "confirmed": 82,
+        "possible": 82
+      },
+      "category_1": {
+        "confirmed": 4,
+        "possible": 5
+      },
+      "flag_F": {
+        "confirmed": 23,
+        "possible": 26
+      },
+      "flag_A": {
+        "confirmed": 56,
+        "possible": 58
+      },
+      "fewer_than_half_exposed": true
+    },
+    "new": {
+      "claims": 57,
+      "categories": {
+        "1a": 2,
+        "1b": 0,
+        "2": 10,
+        "3": 27,
+        "4": 0,
+        "5": 5,
+        "6": 7,
+        "7": 0
+      },
+      "undetermined": 6,
+      "exposed_claims": {
+        "confirmed": 21,
+        "possible": 24
+      },
+      "claims_in_scope": {
+        "confirmed": 57,
+        "possible": 57
+      },
+      "category_1": {
+        "confirmed": 3,
+        "possible": 4
+      },
+      "flag_F": {
+        "confirmed": 13,
+        "possible": 16
+      },
+      "flag_A": {
+        "confirmed": 39,
+        "possible": 41
+      },
+      "fewer_than_half_exposed": true
+    },
+    "pilot": {
+      "claims": 25,
+      "categories": {
+        "1a": 1,
+        "1b": 0,
+        "2": 9,
+        "3": 8,
+        "4": 0,
+        "5": 1,
+        "6": 6,
+        "7": 0
+      },
+      "undetermined": 0,
+      "exposed_claims": {
+        "confirmed": 14,
+        "possible": 14
+      },
+      "claims_in_scope": {
+        "confirmed": 25,
+        "possible": 25
+      },
+      "category_1": {
+        "confirmed": 1,
+        "possible": 1
+      },
+      "flag_F": {
+        "confirmed": 10,
+        "possible": 10
+      },
+      "flag_A": {
+        "confirmed": 17,
+        "possible": 17
+      },
+      "fewer_than_half_exposed": false
+    }
+  },
+  "coded_test_rows": 460,
+  "unknown_scope_rows": 31,
+  "unknown_scope_coupled_rows": 31,
+  "claims_with_literal_unknown_scope_rows": [
+    "N019",
+    "N357",
+    "N358",
+    "N418",
+    "N446",
+    "N497",
+    "N626",
+    "N680",
+    "P04",
+    "P19",
+    "P36"
+  ],
+  "category_changes": [
+    {
+      "study_id": "N291",
+      "baseline": "undetermined",
+      "include_unknown": "1a"
+    },
+    {
+      "study_id": "N418",
+      "baseline": "6",
+      "include_unknown": "2"
+    },
+    {
+      "study_id": "P04",
+      "baseline": "6",
+      "include_unknown": "1a"
+    }
+  ],
+  "affected_mixed_claims": [
+    "N357",
+    "N358",
+    "N418",
+    "N626",
+    "P19"
+  ],
+  "quantity_contrast": {
+    "baseline": {
+      "quantity_only": 9,
+      "mixed_claims": 18
+    },
+    "include_unknown": {
+      "quantity_only": null,
+      "mixed_claims": 19
+    },
+    "status": "Needs a fresh pair-level assessment across all affected mixed claims, not just the newly mixed claim."
+  }
+}

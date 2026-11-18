@@ -1,0 +1,397 @@
+{
+ "figure": "fig1_loop",
+ "width_mm": 160,
+ "texts": 39,
+ "rows": [
+  {
+   "text": "wall",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "$h$",
+   "size_pt": 9.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 0",
+   "role": "text",
+   "math": true
+  },
+  {
+   "text": "0",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "O",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#ffffff",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "outer solution\n(LES or RANS)",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "wall model",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "approximates",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "$\\tau_w=\\tau(h)-h\\,\\mathrm{d}p/\\mathrm{d}x$\n$-\\rho\\int_0^h \\mathrm{D}u/\\mathrm{D}t\\;\\mathrm{d}y$",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 0",
+   "role": "text",
+   "math": true
+  },
+  {
+   "text": "inputs",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "wall stress $\\tau_w$",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 0",
+   "role": "text",
+   "math": true
+  },
+  {
+   "text": "1",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#ffffff",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "states it can return",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "2",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#ffffff",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "3",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#ffffff",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "information\nin the inputs",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "4",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#ffffff",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "coupling: where inputs\nare read, how $\\tau_w$ is applied",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 0",
+   "role": "text",
+   "math": true
+  },
+  {
+   "text": "4",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#ffffff",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "$h$",
+   "size_pt": 9.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 1",
+   "role": "text",
+   "math": true
+  },
+  {
+   "text": "0",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "$u(h)>0$",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 1",
+   "role": "text",
+   "math": true
+  },
+  {
+   "text": "reversed\nlayer",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "flow: $\\tau_w<0$",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 1",
+   "role": "text",
+   "math": true
+  },
+  {
+   "text": "law: $\\tau_w>0$",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 1",
+   "role": "text",
+   "math": true
+  },
+  {
+   "text": "Exact-input test",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "reference\ndata",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "wall\nmodel",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "$\\tau_w$",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "text",
+   "math": true
+  },
+  {
+   "text": "other flows: causes 1, 3,\npart of 2, and the input\nsampling of 4",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Coupled test",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "solver",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "wall\nmodel",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "other flows: causes 1–4,\nmixed with O",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "a",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "The coupled loop",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "b",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Reversed layer",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "c",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "What each test sees",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  }
+ ]
+}

@@ -1,0 +1,205 @@
+{
+ "script": "code/figures/fig3_contrast.py",
+ "totals": [
+  [
+   "quantity examined",
+   9
+  ],
+  [
+   "location",
+   2
+  ],
+  [
+   "flow parameter",
+   2
+  ],
+  [
+   "type of flow",
+   0
+  ],
+  [
+   "numerical set-up",
+   0
+  ],
+  [
+   "two or more factors only",
+   7
+  ]
+ ],
+ "matrix": {
+  "P31": {
+   "set": "pilot",
+   "confirmed_category_2": true,
+   "observable": "confirmed",
+   "location": "confirmed",
+   "flow parameter": "confirmed",
+   "quantities_favourable": [
+    "wall stress"
+   ],
+   "quantities_adverse": [
+    "mean velocity",
+    "pressure"
+   ]
+  },
+  "N358": {
+   "set": "new",
+   "confirmed_category_2": true,
+   "observable": "confirmed, both sides matched",
+   "quantities_favourable": [
+    "wall stress"
+   ],
+   "quantities_adverse": [
+    "pressure"
+   ]
+  },
+  "N551": {
+   "set": "new",
+   "confirmed_category_2": true,
+   "both_sides_matched_possibly": [
+    "observable"
+   ],
+   "observable": "confirmed",
+   "quantities_favourable": [
+    "other"
+   ],
+   "quantities_adverse": [
+    "pressure"
+   ]
+  },
+  "N626": {
+   "set": "new",
+   "confirmed_category_2": true,
+   "observable": "confirmed, both sides matched",
+   "quantities_drawn_finer": {
+    "coarse": [
+     "τ",
+     "τ"
+    ],
+    "drawn": [
+     "$|\\tau|$",
+     "$\\tau_x$"
+    ],
+    "favourable": "magnitude of the wall stress (Sec. 4.2.3, Fig. 15 of the source)",
+    "adverse": "streamwise component of the wall stress, with the reattachment point (Sec. 4.2.3, Fig. 16)",
+    "pair": "N626-04"
+   },
+   "quantities_favourable": [
+    "wall stress"
+   ],
+   "quantities_adverse": [
+    "wall stress"
+   ]
+  },
+  "N655": {
+   "set": "new",
+   "confirmed_category_2": true,
+   "observable": "confirmed",
+   "quantities_favourable": [
+    "mean velocity"
+   ],
+   "quantities_adverse": [
+    "wall stress"
+   ]
+  },
+  "P01": {
+   "set": "pilot",
+   "confirmed_category_2": true,
+   "observable": "confirmed, both sides matched",
+   "quantities_favourable": [
+    "wall stress"
+   ],
+   "quantities_adverse": [
+    "mean velocity"
+   ]
+  },
+  "P20": {
+   "set": "pilot",
+   "confirmed_category_2": true,
+   "observable": "confirmed, both sides matched",
+   "quantities_favourable": [
+    "mean velocity"
+   ],
+   "quantities_adverse": [
+    "fluctuations"
+   ]
+  },
+  "P23": {
+   "set": "pilot",
+   "confirmed_category_2": true,
+   "observable": "confirmed, both sides matched",
+   "quantities_favourable": [
+    "pressure"
+   ],
+   "quantities_adverse": [
+    "wall stress"
+   ]
+  },
+  "P24": {
+   "set": "pilot",
+   "confirmed_category_2": true,
+   "observable": "confirmed",
+   "quantities_favourable": [
+    "mean velocity"
+   ],
+   "quantities_adverse": [
+    "fluctuations"
+   ]
+  },
+  "P14": {
+   "set": "pilot",
+   "confirmed_category_2": true,
+   "location": "confirmed"
+  },
+  "P19": {
+   "set": "pilot",
+   "confirmed_category_2": true,
+   "flow parameter": "confirmed, both sides matched"
+  },
+  "N339": {
+   "set": "new",
+   "confirmed_category_2": true,
+   "two or more only": "confirmed"
+  },
+  "N357": {
+   "set": "new",
+   "confirmed_category_2": true,
+   "two or more only": "confirmed"
+  },
+  "N364": {
+   "set": "new",
+   "confirmed_category_2": true,
+   "two or more only": "confirmed"
+  },
+  "N611": {
+   "set": "new",
+   "confirmed_category_2": true,
+   "two or more only": "confirmed"
+  },
+  "N674": {
+   "set": "new",
+   "confirmed_category_2": true,
+   "two or more only": "confirmed"
+  },
+  "P26": {
+   "set": "pilot",
+   "confirmed_category_2": true,
+   "two or more only": "confirmed"
+  },
+  "P29": {
+   "set": "pilot",
+   "confirmed_category_2": true,
+   "two or more only": "confirmed"
+  },
+  "N195": {
+   "set": "new",
+   "confirmed_category_2": false,
+   "observable": "possible",
+   "two or more only": "possible"
+  },
+  "N239": {
+   "set": "new",
+   "confirmed_category_2": false,
+   "two or more only": "confirmed"
+  }
+ }
+}

@@ -1,0 +1,2326 @@
+{
+  "baseline": {
+    "N011": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N019": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N025": {
+      "category": "5",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N037": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N076": {
+      "category": "undetermined",
+      "category_alternatives": [
+        "3",
+        "5"
+      ],
+      "F": "no",
+      "A": "undetermined",
+      "rows_in_scope": 5,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ],
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N164": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N174": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N181": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N195": {
+      "category": "undetermined",
+      "category_alternatives": [
+        "2",
+        "3"
+      ],
+      "F": "undetermined",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          false
+        ],
+        [
+          "2",
+          "yes",
+          true
+        ],
+        [
+          "3",
+          "unknown",
+          false
+        ],
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N218": {
+      "category": "undetermined",
+      "category_alternatives": [
+        "3",
+        "4"
+      ],
+      "F": "no",
+      "A": "undetermined",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ],
+        [
+          "4",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "N239": {
+      "category": "undetermined",
+      "category_alternatives": [
+        "2",
+        "3"
+      ],
+      "F": "undetermined",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          false
+        ],
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N240": {
+      "category": "1a",
+      "F": "yes",
+      "A": "no",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "1a",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "N251": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N253": {
+      "category": "5",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N262": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N273": {
+      "category": "5",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N291": {
+      "category": "undetermined",
+      "category_alternatives": [
+        "1a",
+        "1b",
+        "4",
+        "out of scope: scope unknown"
+      ],
+      "F": "undetermined",
+      "A": "no",
+      "rows_in_scope": "undetermined",
+      "rows_in_scope_alternatives": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "design_states": [
+        [
+          "1a",
+          "yes",
+          false
+        ],
+        [
+          "1b",
+          "yes",
+          false
+        ],
+        [
+          "4",
+          "yes",
+          false
+        ],
+        [
+          "out of scope",
+          "none",
+          false
+        ]
+      ]
+    },
+    "N300": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N327": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 8,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N332": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N339": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N357": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N358": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N364": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "N391": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N392": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N395": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N418": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 1,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N437": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N445": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N446": {
+      "category": "undetermined",
+      "category_alternatives": [
+        "1a",
+        "1b"
+      ],
+      "F": "yes",
+      "A": "no",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "1a",
+          "yes",
+          false
+        ],
+        [
+          "1b",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "N456": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N457": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 8,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N459": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N464": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N476": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 1,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N497": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N498": {
+      "category": "5",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N500": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N502": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N530": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N540": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N551": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 8,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N556": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N582": {
+      "category": "5",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N592": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N596": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 5,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N611": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 8,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "N623": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N626": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": "undetermined",
+      "rows_in_scope_alternatives": [
+        8,
+        9
+      ],
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N647": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N655": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N657": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N674": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 9,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N680": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N709": {
+      "category": "undetermined",
+      "category_alternatives": [
+        "1b",
+        "4",
+        "5",
+        "6"
+      ],
+      "F": "undetermined",
+      "A": "no",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "1b",
+          "yes",
+          false
+        ],
+        [
+          "4",
+          "yes",
+          false
+        ],
+        [
+          "5",
+          "unknown",
+          false
+        ],
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P01": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P03": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "P04": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 8,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P06": {
+      "category": "5",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "P07": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P11": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P12": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P13": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P14": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 5,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P15": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 5,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "P17": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "P18": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "P19": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P20": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P21": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P22": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 5,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P23": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P24": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P25": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 9,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P26": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "P29": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P30": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P31": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 8,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P33": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P34": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 1,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "P36": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    }
+  },
+  "include_unknown": {
+    "N011": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N019": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 9,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N025": {
+      "category": "5",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N037": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N076": {
+      "category": "undetermined",
+      "category_alternatives": [
+        "3",
+        "5"
+      ],
+      "F": "no",
+      "A": "undetermined",
+      "rows_in_scope": 5,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ],
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N164": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N174": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N181": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N195": {
+      "category": "undetermined",
+      "category_alternatives": [
+        "2",
+        "3"
+      ],
+      "F": "undetermined",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          false
+        ],
+        [
+          "2",
+          "yes",
+          true
+        ],
+        [
+          "3",
+          "unknown",
+          false
+        ],
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N218": {
+      "category": "undetermined",
+      "category_alternatives": [
+        "3",
+        "4"
+      ],
+      "F": "no",
+      "A": "undetermined",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ],
+        [
+          "4",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "N239": {
+      "category": "undetermined",
+      "category_alternatives": [
+        "2",
+        "3"
+      ],
+      "F": "undetermined",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          false
+        ],
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N240": {
+      "category": "1a",
+      "F": "yes",
+      "A": "no",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "1a",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "N251": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N253": {
+      "category": "5",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N262": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N273": {
+      "category": "5",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N291": {
+      "category": "1a",
+      "F": "yes",
+      "A": "no",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "1a",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "N300": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N327": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 8,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N332": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N339": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N357": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N358": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N364": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "N391": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N392": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N395": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N418": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          false
+        ],
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N437": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N445": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N446": {
+      "category": "undetermined",
+      "category_alternatives": [
+        "1a",
+        "1b"
+      ],
+      "F": "yes",
+      "A": "no",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "1a",
+          "yes",
+          false
+        ],
+        [
+          "1b",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "N456": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N457": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 8,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N459": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N464": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N476": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 1,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N497": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 8,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N498": {
+      "category": "5",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N500": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N502": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N530": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N540": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N551": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 8,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N556": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N582": {
+      "category": "5",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N592": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N596": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 5,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "N611": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 8,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "N623": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N626": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 10,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N647": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N655": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N657": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N674": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 9,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "N680": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 5,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "N709": {
+      "category": "undetermined",
+      "category_alternatives": [
+        "1b",
+        "4",
+        "5",
+        "6"
+      ],
+      "F": "undetermined",
+      "A": "no",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "1b",
+          "yes",
+          false
+        ],
+        [
+          "4",
+          "yes",
+          false
+        ],
+        [
+          "5",
+          "unknown",
+          false
+        ],
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P01": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P03": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "P04": {
+      "category": "1a",
+      "F": "yes",
+      "A": "no",
+      "rows_in_scope": 10,
+      "design_states": [
+        [
+          "1a",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "P06": {
+      "category": "5",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "5",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "P07": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P11": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 3,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P12": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P13": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P14": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 5,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P15": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 5,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "P17": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "P18": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "P19": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 10,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P20": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P21": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 6,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P22": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 5,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P23": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P24": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P25": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 9,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P26": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 2,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          false
+        ]
+      ]
+    },
+    "P29": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 7,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P30": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P31": {
+      "category": "2",
+      "F": "yes",
+      "A": "yes",
+      "rows_in_scope": 8,
+      "design_states": [
+        [
+          "2",
+          "yes",
+          true
+        ]
+      ]
+    },
+    "P33": {
+      "category": "6",
+      "F": "no",
+      "A": "no",
+      "rows_in_scope": 4,
+      "design_states": [
+        [
+          "6",
+          "no",
+          false
+        ]
+      ]
+    },
+    "P34": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 1,
+      "design_states": [
+        [
+          "3",
+          "unknown",
+          false
+        ]
+      ]
+    },
+    "P36": {
+      "category": "3",
+      "F": "no",
+      "A": "yes",
+      "rows_in_scope": 11,
+      "design_states": [
+        [
+          "3",
+          "yes",
+          true
+        ]
+      ]
+    }
+  }
+}

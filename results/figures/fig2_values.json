@@ -1,0 +1,109 @@
+{
+ "script": "code/figures/fig2_record.py",
+ "source": "data/claim_categories.json",
+ "bin_rule": "an uncertain claim is drawn in a bin only when every category it may take lies in that bin; otherwise `open` (drawn white, `uncertain`)",
+ "bars": {
+  "All claims | pooled": {
+   "held": 2,
+   "mixed": 18,
+   "adverse": 35,
+   "unknown": 6,
+   "not exposed": 15,
+   "open": 6,
+   "total": 82
+  },
+  "All claims | new": {
+   "held": 2,
+   "mixed": 9,
+   "adverse": 27,
+   "unknown": 5,
+   "not exposed": 8,
+   "open": 6,
+   "total": 57
+  },
+  "Wall-stress models for LES | pooled": {
+   "held": 1,
+   "mixed": 6,
+   "adverse": 22,
+   "unknown": 3,
+   "not exposed": 7,
+   "open": 3,
+   "total": 42
+  },
+  "Wall-stress models for LES | new": {
+   "held": 1,
+   "mixed": 5,
+   "adverse": 17,
+   "unknown": 3,
+   "not exposed": 4,
+   "open": 3,
+   "total": 33
+  },
+  "RANS wall functions | pooled": {
+   "held": 0,
+   "mixed": 4,
+   "adverse": 9,
+   "unknown": 2,
+   "not exposed": 3,
+   "open": 2,
+   "total": 20
+  },
+  "RANS wall functions | new": {
+   "held": 0,
+   "mixed": 2,
+   "adverse": 8,
+   "unknown": 1,
+   "not exposed": 1,
+   "open": 2,
+   "total": 14
+  },
+  "Learned wall models | pooled": {
+   "held": 0,
+   "mixed": 8,
+   "adverse": 3,
+   "unknown": 1,
+   "not exposed": 5,
+   "open": 1,
+   "total": 18
+  },
+  "Learned wall models | new": {
+   "held": 0,
+   "mixed": 2,
+   "adverse": 2,
+   "unknown": 1,
+   "not exposed": 3,
+   "open": 1,
+   "total": 9
+  }
+ },
+ "uncertain_claims_drawn_in_a_bin": {
+  "All claims | pooled": [
+   {
+    "study_id": "N446",
+    "between": [
+     "1a",
+     "1b"
+    ],
+    "drawn_as": "held"
+   }
+  ],
+  "All claims | new": [
+   {
+    "study_id": "N446",
+    "between": [
+     "1a",
+     "1b"
+    ],
+    "drawn_as": "held"
+   }
+  ]
+ },
+ "legend": [
+  "held where it could fail",
+  "held, but also adverse",
+  "adverse, without holding",
+  "unclear if a test could fail",
+  "no test that could fail",
+  "uncertain"
+ ]
+}

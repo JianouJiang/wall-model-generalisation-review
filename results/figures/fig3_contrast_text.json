@@ -1,0 +1,997 @@
+{
+ "figure": "fig3_contrast",
+ "width_mm": 160,
+ "texts": 99,
+ "rows": [
+  {
+   "text": "9",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "quantity examined",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "2",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "location",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "2",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "flow parameter",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "type of flow",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "numerical set-up",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "7",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "two or more factors only",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "one factor alone separates the results",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "the same, both against a matched baseline",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "possible, not certain",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "every pair differs in two or more factors",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "τ",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#2a78d6",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "|",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#8c8b86",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "U",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#e34948",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "quantity: favourable | adverse",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "S, R, L: wall-stress, RANS, learned",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "*: pilot study;  grey name: uncertain",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 1",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Zhou 2024* [42]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "L",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "τ",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#2a78d6",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "|",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#8c8b86",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "U, p",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#e34948",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Jones 2016 [22]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "R",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "τ",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#2a78d6",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "|",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#8c8b86",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "p",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#e34948",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Hu 2023 [43]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "S",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "o",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#2a78d6",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "|",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#8c8b86",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "p",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#e34948",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Dupuy 2023 [17]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "L",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "$|\\tau|$",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#2a78d6",
+   "where": "axes 2",
+   "role": "text",
+   "math": true
+  },
+  {
+   "text": "|",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#8c8b86",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "$\\tau_x$",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#e34948",
+   "where": "axes 2",
+   "role": "text",
+   "math": true
+  },
+  {
+   "text": "Lozano-Durán 2020 [21]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "S",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "U",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#2a78d6",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "|",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#8c8b86",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "τ",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#e34948",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Fogliatto 2024* [25]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "R",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "τ",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#2a78d6",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "|",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#8c8b86",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "U",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#e34948",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Vadrot 2023* [44]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "L",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "U",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#2a78d6",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "|",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#8c8b86",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "u′",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#e34948",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Arranz 2024* [34]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "L",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "p",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#2a78d6",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "|",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#8c8b86",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "τ",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#e34948",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Xue 2024* [45]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "L",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "U",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#2a78d6",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "|",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#8c8b86",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "u′",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#e34948",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Hausmann 2025* [30]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "S",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Lozano-Durán 2023* [20]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "L",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Ponsin 2026 [29]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "R",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Fowler 2023 [46]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "S",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Rezaeiravesh 2019 [26]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "S",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Krank 2016 [47]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "S",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Davidson 2025 [48]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "L",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Bae 2022* [18]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "L",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Wang 2026* [49]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "R",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Mukha 2019 [50]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#8c8b86",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "S",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Zhou 2026 [51]",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#8c8b86",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "L",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "quantity examined",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 50.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "location",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 50.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "flow parameter",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 50.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "type of flow",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 50.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "numerical set-up",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 50.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "two or more",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 50.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "quantities",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 50.0,
+   "colour": "#0b0b0b",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "a",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "18 claims held where they could fail\nand also met an adverse coupled result.\nTheir two results differ only in:",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "b",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  }
+ ]
+}

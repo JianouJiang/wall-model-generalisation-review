@@ -1,0 +1,443 @@
+{
+  "new": {
+    "categories": {
+      "claims": 57,
+      "categories": {
+        "1a": 1,
+        "1b": 0,
+        "2": 9,
+        "3": 27,
+        "4": 0,
+        "5": 5,
+        "6": 8,
+        "7": 0
+      },
+      "category_undetermined": [
+        {
+          "study_id": "N076",
+          "between": [
+            "3",
+            "5"
+          ],
+          "undecided_fields_read": [
+            "T17_result_flag"
+          ]
+        },
+        {
+          "study_id": "N195",
+          "between": [
+            "2",
+            "3"
+          ],
+          "undecided_fields_read": [
+            "T15_outcome_basis",
+            "T17_result_flag",
+            "T3_in_family",
+            "T7_cause_exercised"
+          ]
+        },
+        {
+          "study_id": "N218",
+          "between": [
+            "3",
+            "4"
+          ],
+          "undecided_fields_read": [
+            "T17_result_flag"
+          ]
+        },
+        {
+          "study_id": "N239",
+          "between": [
+            "2",
+            "3"
+          ],
+          "undecided_fields_read": [
+            "T7_cause_exercised"
+          ]
+        },
+        {
+          "study_id": "N291",
+          "between": [
+            "1a",
+            "1b",
+            "4",
+            "out of scope: scope unknown"
+          ],
+          "undecided_fields_read": [
+            "T0_in_review_scope",
+            "T17_result_flag"
+          ]
+        },
+        {
+          "study_id": "N446",
+          "between": [
+            "1a",
+            "1b"
+          ],
+          "undecided_fields_read": [
+            "T3_in_family"
+          ]
+        },
+        {
+          "study_id": "N709",
+          "between": [
+            "1b",
+            "4",
+            "5",
+            "6"
+          ],
+          "undecided_fields_read": [
+            "T3_in_family",
+            "T7_cause_exercised"
+          ]
+        }
+      ],
+      "by_class": {
+        "RANS wall function": {
+          "studies": 14,
+          "study_ids": [
+            "N019",
+            "N218",
+            "N251",
+            "N291",
+            "N339",
+            "N358",
+            "N445",
+            "N457",
+            "N459",
+            "N476",
+            "N498",
+            "N596",
+            "N657",
+            "P34"
+          ],
+          "categories": {
+            "1a": 0,
+            "1b": 0,
+            "2": 2,
+            "3": 8,
+            "4": 0,
+            "5": 1,
+            "6": 1,
+            "7": 0,
+            "undetermined": 2
+          }
+        },
+        "inner-outer": {
+          "studies": 1,
+          "study_ids": [
+            "N446"
+          ]
+        },
+        "wall-stress model for LES": {
+          "studies": 33,
+          "study_ids": [
+            "N025",
+            "N037",
+            "N076",
+            "N164",
+            "N174",
+            "N181",
+            "N195",
+            "N240",
+            "N253",
+            "N262",
+            "N273",
+            "N300",
+            "N327",
+            "N357",
+            "N364",
+            "N391",
+            "N392",
+            "N395",
+            "N418",
+            "N437",
+            "N456",
+            "N464",
+            "N500",
+            "N502",
+            "N530",
+            "N540",
+            "N551",
+            "N556",
+            "N611",
+            "N647",
+            "N655",
+            "N680",
+            "N709"
+          ],
+          "categories": {
+            "1a": 1,
+            "1b": 0,
+            "2": 5,
+            "3": 17,
+            "4": 0,
+            "5": 3,
+            "6": 4,
+            "7": 0,
+            "undetermined": 3
+          }
+        },
+        "learned": {
+          "studies": 9,
+          "study_ids": [
+            "N011",
+            "N239",
+            "N332",
+            "N497",
+            "N582",
+            "N592",
+            "N623",
+            "N626",
+            "N674"
+          ],
+          "categories": {
+            "1a": 0,
+            "1b": 0,
+            "2": 2,
+            "3": 2,
+            "4": 0,
+            "5": 1,
+            "6": 3,
+            "7": 0,
+            "undetermined": 1
+          }
+        }
+      }
+    }
+  },
+  "pooled": {
+    "categories": {
+      "claims": 82,
+      "categories": {
+        "1a": 1,
+        "1b": 0,
+        "2": 18,
+        "3": 35,
+        "4": 0,
+        "5": 6,
+        "6": 15,
+        "7": 0
+      },
+      "category_undetermined": [
+        {
+          "study_id": "N076",
+          "between": [
+            "3",
+            "5"
+          ],
+          "undecided_fields_read": [
+            "T17_result_flag"
+          ]
+        },
+        {
+          "study_id": "N195",
+          "between": [
+            "2",
+            "3"
+          ],
+          "undecided_fields_read": [
+            "T15_outcome_basis",
+            "T17_result_flag",
+            "T3_in_family",
+            "T7_cause_exercised"
+          ]
+        },
+        {
+          "study_id": "N218",
+          "between": [
+            "3",
+            "4"
+          ],
+          "undecided_fields_read": [
+            "T17_result_flag"
+          ]
+        },
+        {
+          "study_id": "N239",
+          "between": [
+            "2",
+            "3"
+          ],
+          "undecided_fields_read": [
+            "T7_cause_exercised"
+          ]
+        },
+        {
+          "study_id": "N291",
+          "between": [
+            "1a",
+            "1b",
+            "4",
+            "out of scope: scope unknown"
+          ],
+          "undecided_fields_read": [
+            "T0_in_review_scope",
+            "T17_result_flag"
+          ]
+        },
+        {
+          "study_id": "N446",
+          "between": [
+            "1a",
+            "1b"
+          ],
+          "undecided_fields_read": [
+            "T3_in_family"
+          ]
+        },
+        {
+          "study_id": "N709",
+          "between": [
+            "1b",
+            "4",
+            "5",
+            "6"
+          ],
+          "undecided_fields_read": [
+            "T3_in_family",
+            "T7_cause_exercised"
+          ]
+        }
+      ],
+      "by_class": {
+        "RANS wall function": {
+          "studies": 20,
+          "study_ids": [
+            "N019",
+            "N218",
+            "N251",
+            "N291",
+            "N339",
+            "N358",
+            "N445",
+            "N457",
+            "N459",
+            "N476",
+            "N498",
+            "N596",
+            "N657",
+            "P01",
+            "P03",
+            "P04",
+            "P06",
+            "P29",
+            "P33",
+            "P34"
+          ],
+          "categories": {
+            "1a": 0,
+            "1b": 0,
+            "2": 4,
+            "3": 9,
+            "4": 0,
+            "5": 2,
+            "6": 3,
+            "7": 0,
+            "undetermined": 2
+          }
+        },
+        "inner-outer": {
+          "studies": 2,
+          "study_ids": [
+            "N446",
+            "P07"
+          ]
+        },
+        "wall-stress model for LES": {
+          "studies": 42,
+          "study_ids": [
+            "N025",
+            "N037",
+            "N076",
+            "N164",
+            "N174",
+            "N181",
+            "N195",
+            "N240",
+            "N253",
+            "N262",
+            "N273",
+            "N300",
+            "N327",
+            "N357",
+            "N364",
+            "N391",
+            "N392",
+            "N395",
+            "N418",
+            "N437",
+            "N456",
+            "N464",
+            "N500",
+            "N502",
+            "N530",
+            "N540",
+            "N551",
+            "N556",
+            "N611",
+            "N647",
+            "N655",
+            "N680",
+            "N709",
+            "P11",
+            "P12",
+            "P13",
+            "P14",
+            "P15",
+            "P17",
+            "P18",
+            "P30",
+            "P36"
+          ],
+          "categories": {
+            "1a": 1,
+            "1b": 0,
+            "2": 6,
+            "3": 22,
+            "4": 0,
+            "5": 3,
+            "6": 7,
+            "7": 0,
+            "undetermined": 3
+          }
+        },
+        "learned": {
+          "studies": 18,
+          "study_ids": [
+            "N011",
+            "N239",
+            "N332",
+            "N497",
+            "N582",
+            "N592",
+            "N623",
+            "N626",
+            "N674",
+            "P19",
+            "P20",
+            "P21",
+            "P22",
+            "P23",
+            "P24",
+            "P25",
+            "P26",
+            "P31"
+          ],
+          "categories": {
+            "1a": 0,
+            "1b": 0,
+            "2": 8,
+            "3": 3,
+            "4": 0,
+            "5": 1,
+            "6": 5,
+            "7": 0,
+            "undetermined": 1
+          }
+        }
+      }
+    }
+  }
+}

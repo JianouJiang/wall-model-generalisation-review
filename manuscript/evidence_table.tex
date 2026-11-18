@@ -1,0 +1,80 @@
+\begin{table*}[tp]
+\caption{Evidence for each cause. A bracket after a finding gives the kind of evidence: a derivation, reference data,
+a demonstration on exact inputs, a coupled comparison, or an assessment or remark by a review or the developers; a
+coupled comparison may be marked as having a matched baseline, the reference only, one factor changed alone or the
+cause not changed alone. A
+reported finding is not thereby a cause that Section~\ref{sec:framework} would count as supported. Last column: of the
+\nClaims{} coded claims, those whose change targets the cause (a claim may target several), those of them that held in
+a test that could have failed, and those that met an adverse coupled result; a range runs from the count that is
+certain to the count that is possible.}\label{tab:evidence}
+\footnotesize
+\vspace{-4pt}%
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{0.095\textwidth}p{0.38\textwidth}p{0.32\textwidth}>{\raggedright\arraybackslash}p{0.12\textwidth}@{}}
+\toprule
+Cause & Reported, and by what kind of evidence & Where sources disagree & Coded claims \\
+\midrule
+States returned &
+An equilibrium law returns a stress along the velocity at $h$, so forward flow there gives positive friction
+(derivation)~\cite{Larsson2016,HayatPark2025}. In a thin separation bubble under forward flow at $h$, only the model
+that solves the layer returned negative friction; with $h$ inside a thicker bubble all three models did (coupled, cause
+not alone)~\cite{HayatPark2025}. A network trained on periodic hills over-predicts the stress on law-of-the-wall
+inputs (exact inputs)~\cite{Vadrot2023}. &
+Laminar regions: a turbulent stress unless a sensor is added~\cite{Larsson2016}; from a learned model with a laminar
+state, a wall-model error below 1\,\% with the subgrid stress exact for the mean, and much less accuracy with
+practical closures~\cite{LozanoDuranBae2023}. &
+target \nTgtCone{}; held \nHeldCone{}; adverse \nAdvCone{} \\
+Retained balance &
+Dropping convection and pressure gradient leaves a constant-stress layer, and the bound that permits it fails near
+separation (derivation)~\cite{BosePark2018}. Near an unswept separation bubble the inner-layer reference budget is dominated
+by the dropped terms (reference data); in the swept case, models without them still return a chordwise skin friction
+close to the reference because two errors offset (coupled, cause not alone)~\cite{HayatPark2025}. &
+Whether the dropped terms cancel in the logarithmic layer: nearly~\cite{Larsson2016}; strongly out of
+balance in a flow with a separation bubble~\cite{HayatPark2025}. Keeping the pressure gradient alone: friction three times too large on the
+accelerating front of a cylinder~\cite{Larsson2016}; more accurate flow fields elsewhere~\cite{BosePark2018}. Gain from non-equilibrium
+models: unproven in 2016~\cite{Larsson2016}; shown on a hump, absent on two aerofoils~\cite{BosePark2018}. &
+target \nTgtCtwo{}; held \nHeldCtwo{}; adverse \nAdvCtwo{} \\
+Information &
+Local inputs carry no guarantee of separating flows that need different stresses (developers'
+assessment)~\cite{LozanoDuranBae2023}; boundary layers with one pressure-gradient parameter and different histories
+differ in the outer layer (exact inputs)~\cite{HayatPark2025}. The velocity at $h$ tacitly holds part of the
+non-equilibrium information, such as the local pressure gradient (review assessment)~\cite{Larsson2016,HayatPark2025}. A hill-trained network needs the flow rate, which had
+to be constructed for a law-of-the-wall test (exact inputs)~\cite{Vadrot2023}; multi-point stencils can leave the fluid at
+concave corners~\cite{Dupuy2023graph}. &
+Wider input stencils: a substantial gain in mean wall stress behind a step from a second message-passing step of a
+graph network (coupled)~\cite{Dupuy2023graph}; no important benefit from seven points over two (developers' remark,
+without data)~\cite{LozanoDuranBae2023}. &
+target \nTgtCthree{}; held \nHeldCthree{}; adverse \nAdvCthree{} \\
+Coupling &
+The sign of the log-layer mismatch depends on the code (review assessment)~\cite{Larsson2016}, and the first-cell
+error does not fall with the order of the scheme (derivation)~\cite{BosePark2018}. Reading the inputs at a height
+fixed in physical units and refining the grid beneath it removed the mismatch, with two numerical methods (coupled,
+grid changed alone)~\cite{Larsson2016}. Under a weakly imposed stress the wall gradient is wrong even with a nearly
+exact model stress (coupled)~\cite{Mukha2025}. Resolved near-wall blocks in a coarse outer solution: source terms
+from the blocks removed an exit-profile error of about 19\,\% left by the same blocks uncoupled (coupled, matched
+baseline)~\cite{Chen2023}; with a block-averaged, interpolated wall stress on a very coarse outer grid, the mean
+velocity undershot the reference by 5\,\% at the interface in a channel at a friction Reynolds number of 4200
+(coupled, reference only)~\cite{Sandham2017}. &
+Mechanism of the mismatch: an under-resolved first cell~\cite{Larsson2016}; a suggested unphysical correlation of the stress
+with the first-cell velocity, which does not explain some reported velocity deficits~\cite{BosePark2018}.
+Time-averaged inputs: reported to help~\cite{Rezaeiravesh2019}; no systematic gain for an algebraic wall law in
+coupled runs~\cite{Mukha2025}. Training inside the solver: see the first row. &
+target \nTgtCfour{}; held \nHeldCfour{}; adverse \nAdvCfour{} \\
+Outside the model &
+With the reference mean stress imposed on a bump, separation appears or not with the subgrid closure (coupled,
+closure changed alone)~\cite{ZhouBae2024}. In one periodic-hill study at low Reynolds number, differences among wall
+models may owe more to the outer numerics (review assessment)~\cite{BosePark2018}. In a high-lift workshop the outboard slat and main-element
+loading needed at least 250 million cells, while a coarser high-order run gave reasonably accurate integrated loads at maximum lift with
+sub-optimal accuracy outboard~\cite{Kiris2023}. Only discrepancies beyond the reference uncertainty are meaningful~\cite{Larsson2016}. &
+Separation on a bump: comparisons of wall-modelled with direct simulation ``have not been
+favorable''~\cite{Spalart2023}; with the reference mean stress imposed, one closure constant gave a bubble similar
+to the direct simulation~\cite{ZhouBae2024}. Subgrid closure: decisive on the bump~\cite{ZhouBae2024}; little effect
+in a wall-modelled channel at one Reynolds number~\cite{Vadrot2023}. &
+target \nTgtCout{}; held \nHeldCout{}; adverse \nAdvCout{} \\
+\midrule
+All tests & \multicolumn{3}{p{0.86\textwidth}}{Of \nCoupled{} coupled tests, \nMatched{} have a matched baseline,
+\nUnum{} state the reference uncertainty as a number and \nUres{} resolve their outcome against it. Of \nClaims{}
+claims, \nSingle{} target one cause, \nSeveral{} several and \nTgtNone{} state none; \nIsoStated{} change one cause
+with all else stated fixed, and for \nIsoOpen{} that is unknown.} \\
+\botrule
+\end{tabular*}
+\end{table*}

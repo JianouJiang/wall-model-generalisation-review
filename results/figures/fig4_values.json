@@ -1,0 +1,461 @@
+{
+ "script": "code/figures/fig4_checklist.py",
+ "sources": [
+  "data/later_tests.json",
+  "data/checklist_cases.json"
+ ],
+ "a": {
+  "same treatment | earlier: no match": {
+   "adverse": 5,
+   "favourable": 3,
+   "none": 5,
+   "undetermined": 3,
+   "total": 16
+  },
+  "same treatment | earlier: favourable": {
+   "adverse": 2,
+   "favourable": 4,
+   "none": 0,
+   "undetermined": 2,
+   "total": 8
+  },
+  "same treatment | earlier: adverse or unclear": {
+   "adverse": 4,
+   "favourable": 0,
+   "none": 0,
+   "undetermined": 0,
+   "total": 4
+  },
+  "modified successor | earlier: no match": {
+   "adverse": 9,
+   "favourable": 7,
+   "none": 5,
+   "undetermined": 2,
+   "total": 23
+  },
+  "modified successor | earlier: favourable": {
+   "adverse": 5,
+   "favourable": 2,
+   "none": 1,
+   "undetermined": 1,
+   "total": 9
+  },
+  "modified successor | earlier: adverse or unclear": {
+   "adverse": 2,
+   "favourable": 6,
+   "none": 5,
+   "undetermined": 1,
+   "total": 14
+  }
+ },
+ "b": {
+  "K01": {
+   "later": "N025",
+   "group": "H",
+   "kind": "modified successor",
+   "step5_A": "unknown",
+   "step5_B": "unknown",
+   "same_cause": true,
+   "same_observable_class": false,
+   "same_factor": false,
+   "ran_A": "in part",
+   "result_A": "favourable",
+   "ran_B": "in part",
+   "result_B": "mixed",
+   "adverse_on_named_A": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_A": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_on_named_B": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_B": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "holds_a_result_left_open": false
+  },
+  "K02": {
+   "later": "N239",
+   "group": "H",
+   "kind": "modified successor",
+   "step5_A": "unknown",
+   "step5_B": "unknown",
+   "same_cause": false,
+   "same_observable_class": true,
+   "same_factor": true,
+   "ran_A": "in part",
+   "result_A": "favourable",
+   "ran_B": "in part",
+   "result_B": "favourable",
+   "adverse_on_named_A": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_A": {
+    "confirmed": 1,
+    "possible": 1
+   },
+   "adverse_on_named_B": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_B": {
+    "confirmed": 1,
+    "possible": 1
+   },
+   "holds_a_result_left_open": false
+  },
+  "K03": {
+   "later": "N253",
+   "group": "H",
+   "kind": "modified successor",
+   "step5_A": "unknown",
+   "step5_B": "unknown",
+   "same_cause": true,
+   "same_observable_class": false,
+   "same_factor": false,
+   "ran_A": "in part",
+   "result_A": "favourable",
+   "ran_B": "in part",
+   "result_B": "favourable",
+   "adverse_on_named_A": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_A": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_on_named_B": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_B": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "holds_a_result_left_open": false
+  },
+  "K04": {
+   "later": "N339",
+   "group": "H",
+   "kind": "modified successor",
+   "step5_A": "unknown",
+   "step5_B": "unknown",
+   "same_cause": true,
+   "same_observable_class": true,
+   "same_factor": true,
+   "ran_A": "in part",
+   "result_A": "favourable",
+   "ran_B": "in part",
+   "result_B": "favourable",
+   "adverse_on_named_A": {
+    "confirmed": 2,
+    "possible": 2
+   },
+   "adverse_rows_A": {
+    "confirmed": 5,
+    "possible": 5
+   },
+   "adverse_on_named_B": {
+    "confirmed": 2,
+    "possible": 2
+   },
+   "adverse_rows_B": {
+    "confirmed": 5,
+    "possible": 5
+   },
+   "holds_a_result_left_open": false
+  },
+  "K05": {
+   "later": "N357",
+   "group": "H",
+   "kind": "modified successor",
+   "step5_A": "unknown",
+   "step5_B": "unknown",
+   "same_cause": true,
+   "same_observable_class": true,
+   "same_factor": false,
+   "ran_A": "in part",
+   "result_A": "favourable",
+   "ran_B": "in part",
+   "result_B": "mixed",
+   "adverse_on_named_A": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_A": {
+    "confirmed": 2,
+    "possible": 2
+   },
+   "adverse_on_named_B": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_B": {
+    "confirmed": 2,
+    "possible": 2
+   },
+   "holds_a_result_left_open": false
+  },
+  "K06": {
+   "later": "N437",
+   "group": "H",
+   "kind": "modified successor",
+   "step5_A": "unknown",
+   "step5_B": "unknown",
+   "same_cause": true,
+   "same_observable_class": true,
+   "same_factor": false,
+   "ran_A": "in part",
+   "result_A": "favourable",
+   "ran_B": "in part",
+   "result_B": "favourable",
+   "adverse_on_named_A": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_A": {
+    "confirmed": 1,
+    "possible": 1
+   },
+   "adverse_on_named_B": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_B": {
+    "confirmed": 1,
+    "possible": 1
+   },
+   "holds_a_result_left_open": false
+  },
+  "K07": {
+   "later": "N445",
+   "group": "H",
+   "kind": "same treatment",
+   "step5_A": "unknown",
+   "step5_B": "unknown",
+   "same_cause": true,
+   "same_observable_class": true,
+   "same_factor": true,
+   "ran_A": "in part",
+   "result_A": "adverse",
+   "ran_B": "in part",
+   "result_B": "adverse",
+   "adverse_on_named_A": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_A": {
+    "confirmed": 1,
+    "possible": 1
+   },
+   "adverse_on_named_B": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_B": {
+    "confirmed": 1,
+    "possible": 1
+   },
+   "holds_a_result_left_open": false
+  },
+  "K08": {
+   "later": "N551",
+   "group": "H",
+   "kind": "same treatment",
+   "step5_A": "unknown",
+   "step5_B": "unknown",
+   "same_cause": false,
+   "same_observable_class": true,
+   "same_factor": true,
+   "ran_A": "in part",
+   "result_A": "adverse",
+   "ran_B": "in part",
+   "result_B": "adverse",
+   "adverse_on_named_A": {
+    "confirmed": 0,
+    "possible": 1
+   },
+   "adverse_rows_A": {
+    "confirmed": 1,
+    "possible": 3
+   },
+   "adverse_on_named_B": {
+    "confirmed": 0,
+    "possible": 1
+   },
+   "adverse_rows_B": {
+    "confirmed": 1,
+    "possible": 3
+   },
+   "holds_a_result_left_open": true
+  },
+  "K09": {
+   "later": "N657",
+   "group": "H",
+   "kind": "same treatment",
+   "step5_A": "unknown",
+   "step5_B": "unknown",
+   "same_cause": false,
+   "same_observable_class": false,
+   "same_factor": true,
+   "ran_A": "in part",
+   "result_A": "adverse",
+   "ran_B": "in part",
+   "result_B": "adverse",
+   "adverse_on_named_A": {
+    "confirmed": 2,
+    "possible": 2
+   },
+   "adverse_rows_A": {
+    "confirmed": 4,
+    "possible": 4
+   },
+   "adverse_on_named_B": {
+    "confirmed": 2,
+    "possible": 2
+   },
+   "adverse_rows_B": {
+    "confirmed": 4,
+    "possible": 4
+   },
+   "holds_a_result_left_open": false
+  },
+  "K10": {
+   "later": "N364",
+   "group": "P",
+   "kind": "same treatment",
+   "step5_A": "unknown",
+   "step5_B": "unknown",
+   "same_cause": true,
+   "same_observable_class": true,
+   "same_factor": false,
+   "ran_A": "in part",
+   "result_A": "favourable",
+   "ran_B": "in part",
+   "result_B": "favourable",
+   "adverse_on_named_A": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_A": {
+    "confirmed": 1,
+    "possible": 1
+   },
+   "adverse_on_named_B": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_B": {
+    "confirmed": 1,
+    "possible": 1
+   },
+   "holds_a_result_left_open": false
+  },
+  "K11": {
+   "later": "N457",
+   "group": "P",
+   "kind": "modified successor",
+   "step5_A": "unknown",
+   "step5_B": "unknown",
+   "same_cause": true,
+   "same_observable_class": true,
+   "same_factor": true,
+   "ran_A": "in part",
+   "result_A": "adverse",
+   "ran_B": "in part",
+   "result_B": "mixed",
+   "adverse_on_named_A": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_A": {
+    "confirmed": 4,
+    "possible": 4
+   },
+   "adverse_on_named_B": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_B": {
+    "confirmed": 4,
+    "possible": 4
+   },
+   "holds_a_result_left_open": false
+  },
+  "K12": {
+   "later": "N502",
+   "group": "P",
+   "kind": "modified successor",
+   "step5_A": "unknown",
+   "step5_B": "unknown",
+   "same_cause": false,
+   "same_observable_class": true,
+   "same_factor": false,
+   "ran_A": "in part",
+   "result_A": "mixed",
+   "ran_B": "in part",
+   "result_B": "favourable",
+   "adverse_on_named_A": {
+    "confirmed": 1,
+    "possible": 1
+   },
+   "adverse_rows_A": {
+    "confirmed": 3,
+    "possible": 4
+   },
+   "adverse_on_named_B": {
+    "confirmed": 1,
+    "possible": 1
+   },
+   "adverse_rows_B": {
+    "confirmed": 3,
+    "possible": 4
+   },
+   "holds_a_result_left_open": true
+  },
+  "K13": {
+   "later": "N556",
+   "group": "P",
+   "kind": "same treatment",
+   "step5_A": "unknown",
+   "step5_B": "unknown",
+   "same_cause": false,
+   "same_observable_class": true,
+   "same_factor": true,
+   "ran_A": "in part",
+   "result_A": "mixed",
+   "ran_B": "in part",
+   "result_B": "favourable",
+   "adverse_on_named_A": {
+    "confirmed": 1,
+    "possible": 1
+   },
+   "adverse_rows_A": {
+    "confirmed": 4,
+    "possible": 5
+   },
+   "adverse_on_named_B": {
+    "confirmed": 0,
+    "possible": 0
+   },
+   "adverse_rows_B": {
+    "confirmed": 4,
+    "possible": 5
+   },
+   "holds_a_result_left_open": true
+  }
+ },
+ "b_legend": [
+  "in part | adverse",
+  "in part | favourable",
+  "in part | mixed"
+ ]
+}

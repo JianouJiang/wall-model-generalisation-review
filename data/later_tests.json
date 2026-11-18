@@ -1,0 +1,74 @@
+{
+  "totals": {
+    "later_study_is_new_same_treatment": {
+      "crosstab": {
+        "unknown": {
+          "adverse": 5,
+          "favourable": 3,
+          "none": 5,
+          "undetermined": 3
+        },
+        "favourable": {
+          "adverse": 2,
+          "favourable": 4,
+          "none": 0,
+          "undetermined": 2
+        },
+        "adverse or both": {
+          "adverse": 1,
+          "favourable": 0,
+          "none": 0,
+          "undetermined": 0
+        },
+        "matched, no resolved result": {
+          "adverse": 2,
+          "favourable": 0,
+          "none": 0,
+          "undetermined": 0
+        },
+        "undetermined": {
+          "adverse": 1,
+          "favourable": 0,
+          "none": 0,
+          "undetermined": 0
+        }
+      },
+      "later_studies": 5
+    },
+    "later_study_is_new_modified_successor": {
+      "crosstab": {
+        "unknown": {
+          "adverse": 9,
+          "favourable": 7,
+          "none": 5,
+          "undetermined": 2
+        },
+        "favourable": {
+          "adverse": 5,
+          "favourable": 2,
+          "none": 1,
+          "undetermined": 1
+        },
+        "adverse or both": {
+          "adverse": 2,
+          "favourable": 2,
+          "none": 2,
+          "undetermined": 1
+        },
+        "matched, no resolved result": {
+          "adverse": 0,
+          "favourable": 4,
+          "none": 2,
+          "undetermined": 0
+        },
+        "undetermined": {
+          "adverse": 0,
+          "favourable": 0,
+          "none": 1,
+          "undetermined": 0
+        }
+      },
+      "later_studies": 8
+    }
+  }
+}

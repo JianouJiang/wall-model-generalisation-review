@@ -1,0 +1,5 @@
+# Build settings for the master manuscript (sn-jnl class kept in ./class/).
+ensure_path('TEXINPUTS', './class//');
+ensure_path('BSTINPUTS', './class//');
+$pdf_mode = 1;
+$bibtex_use = 2;

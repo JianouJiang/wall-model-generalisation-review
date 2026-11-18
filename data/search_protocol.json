@@ -1,0 +1,86 @@
+{
+  "date_window": {
+    "from": "2000-01-01",
+    "to": "2026-11-16"
+  },
+  "engine": {
+    "name": "OpenAlex",
+    "endpoint": "https://api.openalex.org/works",
+    "field": "title_and_abstract.search"
+  },
+  "queries": [
+    {
+      "id": "Q1",
+      "class": "RANS",
+      "label": "RANS wall functions and near-wall treatments",
+      "query": "(\"wall function\" OR \"wall functions\" OR \"wall-function\" OR \"near-wall treatment\" OR \"near wall treatment\" OR \"wall treatment\" OR \"wall treatments\") AND (RANS OR URANS OR \"Reynolds-averaged\" OR \"Reynolds averaged\" OR \"k-epsilon\" OR \"k-omega\" OR \"Spalart-Allmaras\" OR \"turbulence model\" OR \"turbulence models\" OR \"turbulence modelling\" OR \"turbulence modeling\" OR \"eddy viscosity\" OR \"eddy-viscosity\") AND (turbulence OR turbulent)"
+    },
+    {
+      "id": "Q2",
+      "class": "WMLES",
+      "label": "wall-stress models and wall boundary conditions for large-eddy simulation",
+      "query": "(\"wall model\" OR \"wall models\" OR \"wall-modeled\" OR \"wall-modelled\" OR \"wall modeled\" OR \"wall modelled\" OR \"wall modeling\" OR \"wall modelling\" OR \"wall-layer model\" OR \"wall-layer models\" OR \"wall layer model\" OR \"wall layer models\" OR \"wall-stress model\" OR \"wall stress model\" OR \"wall-stress models\" OR \"wall-shear-stress model\" OR \"wall shear stress model\" OR WMLES OR \"near-wall model\" OR \"near-wall modeling\" OR \"near-wall modelling\" OR \"off-wall boundary condition\" OR \"virtual wall\" OR \"wall boundary condition\" OR \"wall boundary conditions\" OR \"approximate boundary condition\" OR \"approximate boundary conditions\" OR \"wall function\" OR \"wall functions\") AND (\"large-eddy simulation\" OR \"large eddy simulation\" OR \"large-eddy simulations\" OR \"large eddy simulations\" OR LES)"
+    },
+    {
+      "id": "Q3",
+      "class": "inner-outer",
+      "label": "inner-outer models of the near-wall state or wall stress",
+      "query": "(\"inner-outer\" OR \"inner/outer\" OR \"amplitude modulation\" OR \"large-scale footprint\" OR \"large-scale footprints\" OR \"outer large-scale\" OR \"outer large scales\" OR \"superposition and modulation\" OR \"spectral stochastic estimation\" OR \"linear stochastic estimation\" OR \"predictive model\" OR \"predictive inner\") AND (\"wall shear stress\" OR \"wall-shear stress\" OR \"wall-shear-stress\" OR \"skin friction\" OR \"near-wall\" OR \"near wall\" OR \"inner layer\" OR \"inner-layer\" OR \"wall-bounded\") AND (\"wall model\" OR \"wall models\" OR \"wall-modeled\" OR \"wall-modelled\" OR \"wall modeling\" OR \"wall modelling\" OR \"predictive model\" OR \"predictive inner\" OR \"inner-outer model\" OR \"inner-outer interaction model\" OR \"large-eddy simulation\" OR \"large eddy simulation\" OR LES OR \"boundary condition\") AND (turbulence OR turbulent)"
+    },
+    {
+      "id": "Q4",
+      "class": "learned",
+      "label": "learned wall models and learned wall-stress estimators",
+      "query": "((\"wall model\" OR \"wall models\" OR \"wall-modeled\" OR \"wall-modelled\" OR \"wall modeled\" OR \"wall modelled\" OR \"wall modeling\" OR \"wall modelling\" OR \"wall-layer model\" OR \"wall-layer models\" OR \"wall layer model\" OR \"wall layer models\" OR \"wall-stress model\" OR \"wall stress model\" OR \"wall-stress models\" OR \"wall-shear-stress model\" OR \"wall shear stress model\" OR WMLES OR \"near-wall model\" OR \"near-wall modeling\" OR \"near-wall modelling\" OR \"off-wall boundary condition\" OR \"virtual wall\" OR \"wall boundary condition\" OR \"wall boundary conditions\" OR \"approximate boundary condition\" OR \"approximate boundary conditions\" OR \"wall function\" OR \"wall functions\") OR (\"wall function\" OR \"wall functions\" OR \"wall-function\" OR \"near-wall treatment\" OR \"near wall treatment\" OR \"wall treatment\" OR \"wall treatments\") OR (\"wall shear stress\" OR \"wall-shear stress\" OR \"wall-shear-stress\" OR \"skin friction\" OR \"skin-friction\" OR \"wall stress\")) AND (\"machine learning\" OR \"machine-learning\" OR \"machine-learned\" OR \"data-driven\" OR \"neural network\" OR \"neural networks\" OR \"deep learning\" OR \"reinforcement learning\" OR \"symbolic regression\" OR \"gene expression programming\" OR \"Gaussian process\" OR \"random forest\" OR \"gradient boosted\" OR \"gradient boosting\" OR \"physics-informed\") AND (turbulence OR turbulent)"
+    }
+  ],
+  "filters_after_retrieval": [
+    {
+      "id": "F1",
+      "rule": "OpenAlex type is 'article'",
+      "reason": "journal articles only (scope (a)); conference papers, preprints, reviews, book chapters, dissertations and other types are counted and removed"
+    },
+    {
+      "id": "F2",
+      "rule": "primary location source type is 'journal' (records with no source are kept for the title and abstract screen and flagged)",
+      "reason": "removes articles hosted by repositories or conferences that OpenAlex types as article"
+    },
+    {
+      "id": "F3",
+      "rule": "publication year 2000-2026",
+      "reason": "scope window (the query filter already applies it; the check guards against date edge cases)"
+    },
+    {
+      "id": "F4",
+      "rule": "language 'en' or missing",
+      "reason": "English-language journals"
+    }
+  ],
+  "deduplication": "Across strands: identical OpenAlex id, then identical DOI, then identical normalised title (lower case, letters and digits only) with the same publication year. The kept record lists every strand that retrieved it.",
+  "screening": {
+    "unit": "one deduplicated record (title and abstract)",
+    "decisions": [
+      "include",
+      "exclude",
+      "unclear"
+    ],
+    "include_if_all": {
+      "T1": "Topic: the record concerns a wall treatment, i.e. a model that supplies the wall stress or the near-wall state to a RANS or large-eddy simulation (including lattice-Boltzmann LES) of a turbulent flow from a model of an unresolved inner layer: RANS wall functions and near-wall treatments; wall-stress models and approximate or off-wall wall boundary conditions for LES (equilibrium laws, thin-boundary-layer, ODE, integral, relaxation, slip and virtual-wall models); hybrid RANS-LES only where the record presents it as the wall treatment of an LES; inner-outer models that predict the near-wall state or wall stress from outer large scales; learned wall models; or a field generator or estimator whose output is the wall stress or the input of a wall treatment.",
+      "T2": "Study type: (claim study) it proposes or changes a named wall treatment and compares it with a baseline treatment or with reference data (DNS, wall-resolved LES, experiment, an established correlation) in at least one test flow; or (independent-test study) it tests one or more named published wall treatments against a baseline or reference data in at least one flow.",
+      "T3": "Flow scope: at least one test flow is incompressible or low-Mach (stated as incompressible, low-speed, low-Mach or subsonic below about Mach 0.3) over a smooth wall."
+    },
+    "exclusion_reasons_first_applicable": {
+      "X1": "not a wall treatment in the sense of T1 (for example a subgrid-scale or RANS closure away from the wall, a low-Reynolds-number RANS model resolved to the wall, hybrid RANS-LES not presented as the wall treatment, flow control, physics of wall turbulence with no model supplying the wall stress or near-wall state)",
+      "X2": "the wall treatment is used only as a tool: no comparison or assessment of the treatment itself is reported (an application study)",
+      "X3": "no test flow, or no comparison with a baseline or reference (theory, algorithm or software only)",
+      "X4": "every test flow lies outside the flow scope: rough walls; heat or mass transfer as the claimed improvement or the only observable; compressible flow beyond low Mach (transonic, supersonic, hypersonic, shock interactions); transition; multiphase or free-surface flow; non-Newtonian, reacting or magnetohydrodynamic flow; atmospheric flow over roughness or terrain",
+      "X5": "not a primary study: a review, survey, perspective, editorial, erratum or book"
+    },
+    "unclear": "the title and abstract do not allow T1, T2 or T3 to be decided (for example no abstract and an ambiguous title); unclear records go forward to the full-text check",
+    "coded_with_each_include": {
+      "class": "RANS, WMLES, inner-outer or learned (learned if any learned component supplies the wall stress or near-wall state; otherwise inner-outer if outer large-scale information is used; otherwise RANS or WMLES by the solver)",
+      "study_type": "claim, independent test or unclear"
+    }
+  },
+  "scope_amendment": "At full text, exclude a row on a stated excluded condition; use unknown when an excluded condition is raised but not settled; otherwise include. The unknown-included sensitivity in this export is restricted to the retained 82 claims."
+}

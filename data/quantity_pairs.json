@@ -1,0 +1,277 @@
+{
+  "claims": [
+    {
+      "study_id": "N358",
+      "bib_key": "Jones2015",
+      "set": "new",
+      "pairs": [
+        {
+          "pair_id": "N358-01",
+          "favourable_class": "wall-stress distribution or separation and reattachment points",
+          "adverse_class": "surface pressure",
+          "favourable_group": "wall stress",
+          "adverse_group": "pressure",
+          "favourable_where": "Sec. 7.1",
+          "adverse_where": "Sec. 7.1",
+          "both_against_a_matched_baseline": true
+        }
+      ],
+      "favourable_groups": [
+        "wall stress"
+      ],
+      "adverse_groups": [
+        "pressure"
+      ],
+      "letters_favourable": [
+        "τ"
+      ],
+      "letters_adverse": [
+        "p"
+      ]
+    },
+    {
+      "study_id": "N551",
+      "bib_key": "Hu2023",
+      "set": "new",
+      "pairs": [
+        {
+          "pair_id": "N551-08",
+          "favourable_class": "other",
+          "adverse_class": "surface pressure",
+          "favourable_group": "other",
+          "adverse_group": "pressure",
+          "favourable_where": "Fig. 3 caption",
+          "adverse_where": "Sec. 3.2",
+          "both_against_a_matched_baseline": false
+        }
+      ],
+      "favourable_groups": [
+        "other"
+      ],
+      "adverse_groups": [
+        "pressure"
+      ],
+      "letters_favourable": [
+        "o"
+      ],
+      "letters_adverse": [
+        "p"
+      ]
+    },
+    {
+      "study_id": "N626",
+      "bib_key": "Dupuy2023graph",
+      "set": "new",
+      "pairs": [
+        {
+          "pair_id": "N626-04",
+          "favourable_class": "wall-stress distribution or separation and reattachment points",
+          "adverse_class": "wall-stress distribution or separation and reattachment points",
+          "favourable_group": "wall stress",
+          "adverse_group": "wall stress",
+          "favourable_where": "Sec. 4.2.3, Fig. 15, Table 5",
+          "adverse_where": "Sec. 4.2.3, Fig. 16",
+          "both_against_a_matched_baseline": true
+        }
+      ],
+      "favourable_groups": [
+        "wall stress"
+      ],
+      "adverse_groups": [
+        "wall stress"
+      ],
+      "letters_favourable": [
+        "τ"
+      ],
+      "letters_adverse": [
+        "τ"
+      ]
+    },
+    {
+      "study_id": "N655",
+      "bib_key": "LozanoDuran2019",
+      "set": "new",
+      "pairs": [
+        {
+          "pair_id": "N655-01",
+          "favourable_class": "mean-velocity profile or log-layer mismatch",
+          "adverse_class": "mean wall stress or skin-friction coefficient",
+          "favourable_group": "mean velocity",
+          "adverse_group": "wall stress",
+          "favourable_where": "Sec. 4.3",
+          "adverse_where": "Sec. 4.3",
+          "both_against_a_matched_baseline": false
+        }
+      ],
+      "favourable_groups": [
+        "mean velocity"
+      ],
+      "adverse_groups": [
+        "wall stress"
+      ],
+      "letters_favourable": [
+        "U"
+      ],
+      "letters_adverse": [
+        "τ"
+      ]
+    },
+    {
+      "study_id": "P01",
+      "bib_key": "Fogliatto2024",
+      "set": "pilot",
+      "pairs": [
+        {
+          "pair_id": "P01-01",
+          "favourable_class": "mean wall stress or skin-friction coefficient",
+          "adverse_class": "mean-velocity profile or log-layer mismatch",
+          "favourable_group": "wall stress",
+          "adverse_group": "mean velocity",
+          "favourable_where": "Sec. 4.3",
+          "adverse_where": "Sec. 4.3",
+          "both_against_a_matched_baseline": true
+        }
+      ],
+      "favourable_groups": [
+        "wall stress"
+      ],
+      "adverse_groups": [
+        "mean velocity"
+      ],
+      "letters_favourable": [
+        "τ"
+      ],
+      "letters_adverse": [
+        "U"
+      ]
+    },
+    {
+      "study_id": "P20",
+      "bib_key": "Vadrot2023a",
+      "set": "pilot",
+      "pairs": [
+        {
+          "pair_id": "P20-01",
+          "favourable_class": "mean-velocity profile or log-layer mismatch",
+          "adverse_class": "velocity fluctuations or Reynolds stresses",
+          "favourable_group": "mean velocity",
+          "adverse_group": "fluctuations",
+          "favourable_where": "Sec. III.A, Fig. 6 (also Fig. 9)",
+          "adverse_where": "Sec. III.A, Fig. 7 (also Figs. 4-5, 13-15)",
+          "both_against_a_matched_baseline": true
+        }
+      ],
+      "favourable_groups": [
+        "mean velocity"
+      ],
+      "adverse_groups": [
+        "fluctuations"
+      ],
+      "letters_favourable": [
+        "U"
+      ],
+      "letters_adverse": [
+        "u′"
+      ]
+    },
+    {
+      "study_id": "P23",
+      "bib_key": "Arranz2024",
+      "set": "pilot",
+      "pairs": [
+        {
+          "pair_id": "P23-07",
+          "favourable_class": "surface pressure",
+          "adverse_class": "wall-stress distribution or separation and reattachment points",
+          "favourable_group": "pressure",
+          "adverse_group": "wall stress",
+          "favourable_where": "Results, Separated flow over a bump",
+          "adverse_where": "Results, 'Separated flow over a bump', Fig. 6(E)",
+          "both_against_a_matched_baseline": true
+        }
+      ],
+      "favourable_groups": [
+        "pressure"
+      ],
+      "adverse_groups": [
+        "wall stress"
+      ],
+      "letters_favourable": [
+        "p"
+      ],
+      "letters_adverse": [
+        "τ"
+      ]
+    },
+    {
+      "study_id": "P24",
+      "bib_key": "Xiao2024",
+      "set": "pilot",
+      "pairs": [
+        {
+          "pair_id": "P24-01",
+          "favourable_class": "mean-velocity profile or log-layer mismatch",
+          "adverse_class": "velocity fluctuations or Reynolds stresses",
+          "favourable_group": "mean velocity",
+          "adverse_group": "fluctuations",
+          "favourable_where": "Sec. II.C",
+          "adverse_where": "Sec. II.C",
+          "both_against_a_matched_baseline": false
+        }
+      ],
+      "favourable_groups": [
+        "mean velocity"
+      ],
+      "adverse_groups": [
+        "fluctuations"
+      ],
+      "letters_favourable": [
+        "U"
+      ],
+      "letters_adverse": [
+        "u′"
+      ]
+    },
+    {
+      "study_id": "P31",
+      "bib_key": "DiZhou2024",
+      "set": "pilot",
+      "pairs": [
+        {
+          "pair_id": "P31-02",
+          "favourable_class": "wall-stress distribution or separation and reattachment points",
+          "adverse_class": "mean-velocity profile or log-layer mismatch",
+          "favourable_group": "wall stress",
+          "adverse_group": "mean velocity",
+          "favourable_where": "Sec. III.B.2",
+          "adverse_where": "Sec. III.B.2",
+          "both_against_a_matched_baseline": false
+        },
+        {
+          "pair_id": "P31-09",
+          "favourable_class": "wall-stress distribution or separation and reattachment points",
+          "adverse_class": "surface pressure",
+          "favourable_group": "wall stress",
+          "adverse_group": "pressure",
+          "favourable_where": "Sec. IV.B",
+          "adverse_where": "Sec. IV.B",
+          "both_against_a_matched_baseline": false
+        }
+      ],
+      "favourable_groups": [
+        "wall stress"
+      ],
+      "adverse_groups": [
+        "mean velocity",
+        "pressure"
+      ],
+      "letters_favourable": [
+        "τ"
+      ],
+      "letters_adverse": [
+        "U",
+        "p"
+      ]
+    }
+  ]
+}

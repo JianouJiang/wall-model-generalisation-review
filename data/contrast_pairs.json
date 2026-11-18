@@ -1,0 +1,3637 @@
+[
+  {
+    "pair_id": "N195-01",
+    "study_id": "N195",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "numerics+observable"
+    ],
+    "D_confirmed": "numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "improvement shown",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "inside | outside",
+    "numerics_what_differs": [
+      "grid",
+      "matching height",
+      "other",
+      "scheme"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N195-02",
+    "study_id": "N195",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "regression | agreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "numbers without u | words only",
+    "A_in_family": "inside | outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N195-03",
+    "study_id": "N195",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "numerics+observable"
+    ],
+    "D_confirmed": "numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "regression | agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "numbers without u | words only",
+    "A_basis": "words only",
+    "A_in_family": "inside | outside",
+    "numerics_what_differs": [
+      "grid",
+      "matching height",
+      "other",
+      "scheme"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N239-01",
+    "study_id": "N239",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter+numerics+observable"
+    ],
+    "D_confirmed": "flow parameter+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "numbers without u",
+    "A_basis": "numbers without u",
+    "A_in_family": "unknown",
+    "numerics_what_differs": [
+      "grid"
+    ],
+    "parameter": [
+      "Re_L: 1.2e7 (first row) vs 1.2e6 (second row)",
+      "Reynolds number Re_L: 1.2e7 (row 5) vs 1.2e6 (row 6)"
+    ]
+  },
+  {
+    "pair_id": "N339-01",
+    "study_id": "N339",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "adjudicated",
+      "alternatives": [
+        "same"
+      ],
+      "readings": [
+        "differs",
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter+observable"
+    ],
+    "D_confirmed": "flow parameter+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "preserved accuracy | none",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "numbers without u",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid"
+    ],
+    "parameter": [
+      "angle of attack: 0 deg (first row) vs 10 deg (second row)",
+      "angle of attack: 0 deg (pair 1/2) vs 10 deg (pair 3)"
+    ]
+  },
+  {
+    "pair_id": "N339-02",
+    "study_id": "N339",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "same quantity",
+      "source": "agreed",
+      "alternatives": [
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics"
+    ],
+    "D_confirmed": "flow configuration+numerics",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "preserved accuracy | none",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "matching height"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N339-03",
+    "study_id": "N339",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "preserved accuracy | none",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "matching height"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N339-04",
+    "study_id": "N339",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "preserved accuracy | none",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "matching height"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N339-05",
+    "study_id": "N339",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "preserved accuracy | none",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "matching height"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N339-06",
+    "study_id": "N339",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "adjudicated",
+      "alternatives": [
+        "same"
+      ],
+      "readings": [
+        "differs",
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter+observable"
+    ],
+    "D_confirmed": "flow parameter+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "improvement shown",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "numbers without u",
+    "A_basis": "numbers without u",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid"
+    ],
+    "parameter": [
+      "angle of attack: 0 deg (first row) vs 10 deg (second row)",
+      "angle of attack: 0 deg (pair 1/2) vs 10 deg (pair 3)"
+    ]
+  },
+  {
+    "pair_id": "N339-07",
+    "study_id": "N339",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "improvement shown",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "matching height"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N339-08",
+    "study_id": "N339",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity",
+      "source": "agreed",
+      "alternatives": [
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics"
+    ],
+    "D_confirmed": "flow configuration+numerics",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "improvement shown",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "matching height"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N339-09",
+    "study_id": "N339",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity",
+      "source": "agreed",
+      "alternatives": [
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics"
+    ],
+    "D_confirmed": "flow configuration+numerics",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "improvement shown",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "matching height"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N339-10",
+    "study_id": "N339",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "improvement shown",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "matching height"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N357-01",
+    "study_id": "N357",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter+observable"
+    ],
+    "D_confirmed": "flow parameter+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": true,
+    "F_flag": "preserved accuracy | none",
+    "A_flag": "regression",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "forcing frequency omega_f+: Fig. 5 shows LES only at 0.04; periodic Reynolds stresses at 0.001, 0.006, 0.01, 0.02, 0.04",
+      "forcing frequency omega_f+: 0.001-1.0 series (pair 1) vs members 0.001-0.04 (pair 2)"
+    ]
+  },
+  {
+    "pair_id": "N357-02",
+    "study_id": "N357",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "preserved accuracy | none",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "unknown | outside",
+    "numerics_what_differs": [
+      "grid",
+      "matching height"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N357-03",
+    "study_id": "N357",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "regression",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "matching height"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N357-04",
+    "study_id": "N357",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "adjudicated",
+      "alternatives": [
+        "same"
+      ],
+      "readings": [
+        "same",
+        "not stated"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+observable"
+    ],
+    "D_confirmed": "flow configuration+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "improvement shown",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "unknown | outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N358-01",
+    "study_id": "N358",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N364-01",
+    "study_id": "N364",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter+numerics+observable"
+    ],
+    "D_confirmed": "flow parameter+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "regression",
+    "F_basis": "numbers without u",
+    "A_basis": "numbers without u",
+    "A_in_family": "inside",
+    "numerics_what_differs": [
+      "closure",
+      "grid",
+      "matching height",
+      "scheme"
+    ],
+    "parameter": [
+      "Re_tau: 2000, 5200, 8000, 20000, 100000 (pair 4, Sec. 5.7) vs 5200 (pair 2); pair 2 corresponds to the 5200 member",
+      "Re_tau 2000-100000 vs 5200"
+    ]
+  },
+  {
+    "pair_id": "N364-02",
+    "study_id": "N364",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity",
+      "source": "agreed",
+      "alternatives": [
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter+numerics"
+    ],
+    "D_confirmed": "flow parameter+numerics",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "regression",
+    "F_basis": "numbers without u",
+    "A_basis": "numbers without u",
+    "A_in_family": "inside",
+    "numerics_what_differs": [
+      "closure",
+      "grid",
+      "matching height",
+      "scheme"
+    ],
+    "parameter": [
+      "Re_tau: 2000-100000 (A:T5, Sec. 5.7) vs 5200 (pair 2); pair 2 corresponds to the 5200 member",
+      "Re_tau 2000-100000 vs 5200"
+    ]
+  },
+  {
+    "pair_id": "N364-03",
+    "study_id": "N364",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter+numerics+observable"
+    ],
+    "D_confirmed": "flow parameter+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "regression",
+    "F_basis": "numbers without u",
+    "A_basis": "numbers without u",
+    "A_in_family": "inside",
+    "numerics_what_differs": [
+      "closure",
+      "grid",
+      "matching height",
+      "scheme"
+    ],
+    "parameter": [
+      "Re_tau: 2000, 5200, 8000 with TKE reference (2000-100000 simulated) (A:T6) vs 5200 (pair 2); pair 2 corresponds to the 5200 member",
+      "Re_tau 2000-100000 vs 5200"
+    ]
+  },
+  {
+    "pair_id": "N551-01",
+    "study_id": "N551",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "adjudicated",
+      "alternatives": [
+        "differs"
+      ],
+      "readings": [
+        "differs",
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "numerics+observable"
+    ],
+    "D_confirmed": "numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown | none",
+    "A_flag": "none | regression",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N551-02",
+    "study_id": "N551",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown | none",
+    "A_flag": "improvement shown | improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N551-03",
+    "study_id": "N551",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "improvement shown | none",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N551-04",
+    "study_id": "N551",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "adjudicated",
+      "alternatives": [
+        "differs"
+      ],
+      "readings": [
+        "differs",
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "numerics+observable"
+    ],
+    "D_confirmed": "numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown | improvement not shown",
+    "A_flag": "none | regression",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N551-05",
+    "study_id": "N551",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "improvement shown | improvement not shown",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N551-06",
+    "study_id": "N551",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "adjudicated",
+      "alternatives": [
+        "differs"
+      ],
+      "readings": [
+        "differs",
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "numerics+observable"
+    ],
+    "D_confirmed": "numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "none | regression",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N551-07",
+    "study_id": "N551",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "improvement shown | improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N551-08",
+    "study_id": "N551",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N611-01",
+    "study_id": "N611",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "regression",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "unknown",
+    "numerics_what_differs": [
+      "grid",
+      "matching height",
+      "treatment variant"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N611-02",
+    "study_id": "N611",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "regression",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "unknown",
+    "numerics_what_differs": [
+      "grid",
+      "matching height",
+      "treatment variant"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N611-03",
+    "study_id": "N611",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "regression",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "unknown",
+    "numerics_what_differs": [
+      "grid",
+      "matching height",
+      "treatment variant"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N611-04",
+    "study_id": "N611",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity",
+      "source": "agreed",
+      "alternatives": [
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics"
+    ],
+    "D_confirmed": "flow configuration+numerics",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "regression",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "unknown",
+    "numerics_what_differs": [
+      "grid",
+      "matching height",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N611-05",
+    "study_id": "N611",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "regression",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "unknown",
+    "numerics_what_differs": [
+      "grid",
+      "matching height",
+      "treatment variant"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N611-06",
+    "study_id": "N611",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "regression",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "unknown",
+    "numerics_what_differs": [
+      "grid",
+      "matching height",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N626-01",
+    "study_id": "N626",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "inside",
+    "numerics_what_differs": [
+      "closure",
+      "grid",
+      "matching height",
+      "other",
+      "scheme"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N626-02",
+    "study_id": "N626",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "closure",
+      "grid",
+      "matching height",
+      "other",
+      "scheme"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N626-03",
+    "study_id": "N626",
+    "set": "new",
+    "roles_confirmed": false,
+    "X1": {
+      "value": "same quantity",
+      "source": "agreed",
+      "alternatives": [
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics"
+    ],
+    "D_confirmed": "flow configuration+numerics",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "regression",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "unknown",
+    "numerics_what_differs": [
+      "grid",
+      "matching height",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N626-04",
+    "study_id": "N626",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N626-05",
+    "study_id": "N626",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "inside",
+    "numerics_what_differs": [
+      "closure",
+      "grid",
+      "matching height",
+      "other",
+      "scheme"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N655-01",
+    "study_id": "N655",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "numbers without u",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N674-01",
+    "study_id": "N674",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity",
+      "source": "agreed",
+      "alternatives": [
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics"
+    ],
+    "D_confirmed": "flow configuration+numerics",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "preserved accuracy",
+    "A_flag": "improvement not shown",
+    "F_basis": "numbers without u",
+    "A_basis": "resolved against stated u",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "matching height",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N674-02",
+    "study_id": "N674",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity",
+      "source": "agreed",
+      "alternatives": [
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics"
+    ],
+    "D_confirmed": "flow configuration+numerics",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "preserved accuracy",
+    "A_flag": "improvement not shown",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N674-03",
+    "study_id": "N674",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "preserved accuracy",
+    "A_flag": "improvement not shown",
+    "F_basis": "numbers without u",
+    "A_basis": "numbers without u",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N674-04",
+    "study_id": "N674",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "preserved accuracy",
+    "A_flag": "improvement not shown",
+    "F_basis": "numbers without u",
+    "A_basis": "numbers without u",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "N674-05",
+    "study_id": "N674",
+    "set": "new",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "preserved accuracy",
+    "A_flag": "improvement not shown",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P01-01",
+    "study_id": "P01",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P01-02",
+    "study_id": "P01",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other",
+      "treatment variant"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P14-01",
+    "study_id": "P14",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity, other location",
+      "source": "adjudicated",
+      "alternatives": [
+        "same quantity, other location"
+      ],
+      "readings": [
+        "same quantity, other location",
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+location+numerics"
+    ],
+    "D_confirmed": "flow configuration+location+numerics",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "inside",
+    "numerics_what_differs": [
+      "closure",
+      "grid",
+      "other",
+      "scheme"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P14-02",
+    "study_id": "P14",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity, other location",
+      "source": "adjudicated",
+      "alternatives": [
+        "same quantity, other location"
+      ],
+      "readings": [
+        "same quantity, other location",
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "location"
+    ],
+    "D_confirmed": "location",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P19-01",
+    "study_id": "P19",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter+observable"
+    ],
+    "D_confirmed": "flow parameter+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "Re_P x 10^-3: favourable 1.02 to 1.49 (B:T9) vs adverse -1.40 to -0.76 (pair 3); Re_U = 14000 in both",
+      "Re_P x 1e-3: 1.02 to 1.49 (favourable) versus -1.40 to -0.76 (adverse to separation and beyond); Re_U = 14000"
+    ]
+  },
+  {
+    "pair_id": "P19-02",
+    "study_id": "P19",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "regression",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "closure",
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P19-03",
+    "study_id": "P19",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity",
+      "source": "agreed",
+      "alternatives": [
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter"
+    ],
+    "D_confirmed": "flow parameter",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "regression",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "Re_P x 10^-3: favourable 1.02 to 1.49 (B:T9) vs adverse -1.40 to -0.76 (B:T4 result belongs to its APG/Separation members only); Re_U = 14000",
+      "Re_P x 1e-3: 1.02 to 1.49 (favourable) versus -1.40 to -0.76 (adverse to separation and beyond); Re_U = 14000"
+    ]
+  },
+  {
+    "pair_id": "P20-01",
+    "study_id": "P20",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P20-02",
+    "study_id": "P20",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "adjudicated",
+      "alternatives": [
+        "same"
+      ],
+      "readings": [
+        "same",
+        "not stated"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter+observable"
+    ],
+    "D_confirmed": "flow parameter+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "numbers without u",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "Re_tau: Table III at 180, 10^3, 10^5, 10^10; u_rms at all 11 values from 180 to 10^10",
+      "friction Reynolds number: 4 values (180, 1e3, 1e5, 1e10) in pair 3 vs 11 values (180 to 1e10) in pair 1"
+    ]
+  },
+  {
+    "pair_id": "P23-01",
+    "study_id": "P23",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P23-02",
+    "study_id": "P23",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity, other location",
+      "source": "adjudicated",
+      "alternatives": [
+        "same quantity, other location"
+      ],
+      "readings": [
+        "same quantity, other location",
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+location+numerics"
+    ],
+    "D_confirmed": "flow configuration+location+numerics",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P23-03",
+    "study_id": "P23",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P23-04",
+    "study_id": "P23",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P23-05",
+    "study_id": "P23",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P23-06",
+    "study_id": "P23",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P23-07",
+    "study_id": "P23",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P23-08",
+    "study_id": "P23",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": true,
+    "doubly_matched_possible": true,
+    "F_flag": "improvement shown",
+    "A_flag": "improvement not shown",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P24-01",
+    "study_id": "P24",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P24-02",
+    "study_id": "P24",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter+numerics+observable"
+    ],
+    "D_confirmed": "flow parameter+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "matching height"
+    ],
+    "parameter": [
+      "friction Reynolds number: Re_tau 1.0e5 and 1.0e6 vs 1000, 2000 and 5200",
+      "friction Reynolds number: 1e5 and 1e6 (first row) vs 1000, 2000 and 5200 (second row)"
+    ]
+  },
+  {
+    "pair_id": "P26-01",
+    "study_id": "P26",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "adjudicated",
+      "alternatives": [
+        "same configuration, other parameter"
+      ],
+      "readings": [
+        "same configuration, other parameter",
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter+observable"
+    ],
+    "D_confirmed": "flow parameter+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "Re_tau / (h_m)+: wall-stress disagreement at Re_tau 2x10^4 and 5x10^4 on the standard grid ((h_m)+ 2000, 5000); VWM profiles in Fig. 4a exclude the two largest Re_tau (10^5, 10^6)",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P29-01",
+    "study_id": "P29",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity",
+      "source": "agreed",
+      "alternatives": [
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter+numerics"
+    ],
+    "D_confirmed": "flow parameter+numerics",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "other"
+    ],
+    "parameter": [
+      "curvature ratio 100 vs 10 (central angle 43 vs 210 deg); Re 60000 vs 148400",
+      "curvature ratio 100 vs 10 (central angle 43 vs 210 deg; Re 60000 vs 148400)"
+    ]
+  },
+  {
+    "pair_id": "P29-02",
+    "study_id": "P29",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter+numerics+observable"
+    ],
+    "D_confirmed": "flow parameter+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "other"
+    ],
+    "parameter": [
+      "curvature ratio 100 vs 10 (central angle 43 vs 210 deg); Re 60000 vs 148400",
+      "curvature ratio 100 vs 10 (central angle 43 vs 210 deg; Re 60000 vs 148400)"
+    ]
+  },
+  {
+    "pair_id": "P31-01",
+    "study_id": "P31",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity",
+      "source": "agreed",
+      "alternatives": [
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "same configuration, other parameter",
+      "source": "agreed",
+      "alternatives": [
+        "same configuration, other parameter"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "flow parameter"
+    ],
+    "D_confirmed": "flow parameter",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "inside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "Reynolds number Re_H: 19000 and 37000 (pair 2) versus 10595 (pair 1)",
+      "Re_H 19000 and 37000 (pair 2) versus 10595 (pair 1)"
+    ]
+  },
+  {
+    "pair_id": "P31-02",
+    "study_id": "P31",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P31-03",
+    "study_id": "P31",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity",
+      "source": "adjudicated",
+      "alternatives": [
+        "same quantity"
+      ],
+      "readings": [
+        "same quantity, other location",
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics"
+    ],
+    "D_confirmed": "flow configuration+numerics",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P31-04",
+    "study_id": "P31",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P31-05",
+    "study_id": "P31",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P31-06",
+    "study_id": "P31",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity",
+      "source": "adjudicated",
+      "alternatives": [
+        "same quantity"
+      ],
+      "readings": [
+        "same quantity, other location",
+        "same quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics"
+    ],
+    "D_confirmed": "flow configuration+numerics",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "inside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P31-07",
+    "study_id": "P31",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P31-08",
+    "study_id": "P31",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "same quantity, other location",
+      "source": "agreed",
+      "alternatives": [
+        "same quantity, other location"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "location"
+    ],
+    "D_confirmed": "location",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P31-09",
+    "study_id": "P31",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "same case",
+      "source": "agreed",
+      "alternatives": [
+        "same case"
+      ]
+    },
+    "X3": {
+      "value": "same",
+      "source": "agreed",
+      "alternatives": [
+        "same"
+      ]
+    },
+    "D_alternatives": [
+      "observable"
+    ],
+    "D_confirmed": "observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [],
+    "parameter": [
+      "",
+      ""
+    ]
+  },
+  {
+    "pair_id": "P31-10",
+    "study_id": "P31",
+    "set": "pilot",
+    "roles_confirmed": true,
+    "X1": {
+      "value": "different quantity",
+      "source": "agreed",
+      "alternatives": [
+        "different quantity"
+      ]
+    },
+    "X2": {
+      "value": "other configuration",
+      "source": "agreed",
+      "alternatives": [
+        "other configuration"
+      ]
+    },
+    "X3": {
+      "value": "differs",
+      "source": "agreed",
+      "alternatives": [
+        "differs"
+      ]
+    },
+    "D_alternatives": [
+      "flow configuration+numerics+observable"
+    ],
+    "D_confirmed": "flow configuration+numerics+observable",
+    "doubly_matched_confirmed": false,
+    "doubly_matched_possible": false,
+    "F_flag": "agreement with reference (no matched comparison)",
+    "A_flag": "disagreement with reference (no matched comparison)",
+    "F_basis": "words only",
+    "A_basis": "words only",
+    "A_in_family": "outside",
+    "numerics_what_differs": [
+      "grid",
+      "other"
+    ],
+    "parameter": [
+      "",
+      ""
+    ]
+  }
+]

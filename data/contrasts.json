@@ -1,0 +1,1193 @@
+{
+  "claims_table": [
+    {
+      "study_id": "N195",
+      "set": "new",
+      "category_alternatives": [
+        "2",
+        "3"
+      ],
+      "category_2_confirmed": false,
+      "pairs": 3,
+      "observable": {
+        "confirmed": false,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": true,
+        "pairs_confirmed": []
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": false,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": true
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": false,
+        "possible": true
+      }
+    },
+    {
+      "study_id": "N239",
+      "set": "new",
+      "category_alternatives": [
+        "2",
+        "3"
+      ],
+      "category_2_confirmed": false,
+      "pairs": 1,
+      "observable": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": true,
+        "possible": true
+      }
+    },
+    {
+      "study_id": "N339",
+      "set": "new",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 10,
+      "observable": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": true,
+        "possible": true
+      }
+    },
+    {
+      "study_id": "N357",
+      "set": "new",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 4,
+      "observable": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": true,
+        "possible": true
+      }
+    },
+    {
+      "study_id": "N358",
+      "set": "new",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 1,
+      "observable": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": true,
+        "doubly_matched_possible": true,
+        "pairs_confirmed": [
+          "N358-01"
+        ]
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": true,
+        "doubly_matched_possible": true
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": false,
+        "possible": false
+      }
+    },
+    {
+      "study_id": "N364",
+      "set": "new",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 3,
+      "observable": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": true,
+        "possible": true
+      }
+    },
+    {
+      "study_id": "N551",
+      "set": "new",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 8,
+      "observable": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": true,
+        "pairs_confirmed": [
+          "N551-08"
+        ]
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": true
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": false,
+        "possible": false
+      }
+    },
+    {
+      "study_id": "N611",
+      "set": "new",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 6,
+      "observable": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": true,
+        "possible": true
+      }
+    },
+    {
+      "study_id": "N626",
+      "set": "new",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 5,
+      "observable": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": true,
+        "doubly_matched_possible": true,
+        "pairs_confirmed": [
+          "N626-04"
+        ]
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": true,
+        "doubly_matched_possible": true
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": false,
+        "possible": false
+      }
+    },
+    {
+      "study_id": "N655",
+      "set": "new",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 1,
+      "observable": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": [
+          "N655-01"
+        ]
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": false,
+        "possible": false
+      }
+    },
+    {
+      "study_id": "N674",
+      "set": "new",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 5,
+      "observable": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": true,
+        "possible": true
+      }
+    },
+    {
+      "study_id": "P01",
+      "set": "pilot",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 2,
+      "observable": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": true,
+        "doubly_matched_possible": true,
+        "pairs_confirmed": [
+          "P01-01"
+        ]
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": true,
+        "doubly_matched_possible": true
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": false,
+        "possible": false
+      }
+    },
+    {
+      "study_id": "P14",
+      "set": "pilot",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 2,
+      "observable": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "location": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": [
+          "P14-02"
+        ]
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": false,
+        "possible": false
+      }
+    },
+    {
+      "study_id": "P19",
+      "set": "pilot",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 3,
+      "observable": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": true,
+        "doubly_matched_possible": true,
+        "pairs_confirmed": [
+          "P19-03"
+        ]
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": true,
+        "doubly_matched_possible": true
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": false,
+        "possible": false
+      }
+    },
+    {
+      "study_id": "P20",
+      "set": "pilot",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 2,
+      "observable": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": true,
+        "doubly_matched_possible": true,
+        "pairs_confirmed": [
+          "P20-01"
+        ]
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": true,
+        "doubly_matched_possible": true
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": false,
+        "possible": false
+      }
+    },
+    {
+      "study_id": "P23",
+      "set": "pilot",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 8,
+      "observable": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": true,
+        "doubly_matched_possible": true,
+        "pairs_confirmed": [
+          "P23-07"
+        ]
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": true,
+        "doubly_matched_possible": true
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": false,
+        "possible": false
+      }
+    },
+    {
+      "study_id": "P24",
+      "set": "pilot",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 2,
+      "observable": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": [
+          "P24-01"
+        ]
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": false,
+        "possible": false
+      }
+    },
+    {
+      "study_id": "P26",
+      "set": "pilot",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 1,
+      "observable": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": true,
+        "possible": true
+      }
+    },
+    {
+      "study_id": "P29",
+      "set": "pilot",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 2,
+      "observable": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "location": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow parameter": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": true,
+        "possible": true
+      }
+    },
+    {
+      "study_id": "P31",
+      "set": "pilot",
+      "category_alternatives": [
+        "2"
+      ],
+      "category_2_confirmed": true,
+      "pairs": 10,
+      "observable": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": [
+          "P31-02",
+          "P31-09"
+        ]
+      },
+      "location": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": [
+          "P31-08"
+        ]
+      },
+      "flow parameter": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": [
+          "P31-01"
+        ]
+      },
+      "flow configuration": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "numerics": {
+        "confirmed": false,
+        "possible": false,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false,
+        "pairs_confirmed": []
+      },
+      "any_single_factor": {
+        "confirmed": true,
+        "possible": true,
+        "doubly_matched_confirmed": false,
+        "doubly_matched_possible": false
+      },
+      "same_test": {
+        "confirmed": false,
+        "possible": false
+      },
+      "confounded_only": {
+        "confirmed": false,
+        "possible": false
+      }
+    }
+  ]
+}

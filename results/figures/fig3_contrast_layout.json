@@ -1,0 +1,12 @@
+{
+ "texts": 99,
+ "tolerance_pt": 1.0,
+ "clipped": [],
+ "crossings": [],
+ "text_overlaps": [],
+ "figure": "fig3_contrast",
+ "declared_exceptions": [],
+ "exceptions_matching_nothing": [],
+ "violations": 0,
+ "passed": true
+}

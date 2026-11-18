@@ -1,0 +1,565 @@
+{
+  "cases": [
+    {
+      "case": "K01",
+      "later": "N025",
+      "earlier": [
+        "N611"
+      ],
+      "kind": "modified successor",
+      "group": "H",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": false,
+        "same_factor": false
+      },
+      "uncertain_adverse_rows": false,
+      "records": {
+        "A": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 0,
+            "possible": 0
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        },
+        "B": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "mixed",
+          "adverse_rows_n": {
+            "confirmed": 0,
+            "possible": 0
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "K02",
+      "later": "N239",
+      "earlier": [
+        "P25"
+      ],
+      "kind": "modified successor",
+      "group": "H",
+      "agreement": {
+        "same_cause": false,
+        "same_observable_class": true,
+        "same_factor": true
+      },
+      "uncertain_adverse_rows": false,
+      "records": {
+        "A": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 1,
+            "possible": 1
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        },
+        "B": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 1,
+            "possible": 1
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "K03",
+      "later": "N253",
+      "earlier": [
+        "N327"
+      ],
+      "kind": "modified successor",
+      "group": "H",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": false,
+        "same_factor": false
+      },
+      "uncertain_adverse_rows": false,
+      "records": {
+        "A": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 0,
+            "possible": 0
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        },
+        "B": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 0,
+            "possible": 0
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "K04",
+      "later": "N339",
+      "earlier": [
+        "P06"
+      ],
+      "kind": "modified successor",
+      "group": "H",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": true,
+        "same_factor": true
+      },
+      "uncertain_adverse_rows": false,
+      "records": {
+        "A": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 5,
+            "possible": 5
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 2,
+            "possible": 2
+          }
+        },
+        "B": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 5,
+            "possible": 5
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 2,
+            "possible": 2
+          }
+        }
+      }
+    },
+    {
+      "case": "K05",
+      "later": "N357",
+      "earlier": [
+        "N464"
+      ],
+      "kind": "modified successor",
+      "group": "H",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": true,
+        "same_factor": false
+      },
+      "uncertain_adverse_rows": false,
+      "records": {
+        "A": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 2,
+            "possible": 2
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        },
+        "B": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "mixed",
+          "adverse_rows_n": {
+            "confirmed": 2,
+            "possible": 2
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "K06",
+      "later": "N437",
+      "earlier": [
+        "N464",
+        "N357"
+      ],
+      "kind": "modified successor",
+      "group": "H",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": true,
+        "same_factor": false
+      },
+      "uncertain_adverse_rows": false,
+      "records": {
+        "A": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 1,
+            "possible": 1
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        },
+        "B": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 1,
+            "possible": 1
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "K07",
+      "later": "N445",
+      "earlier": [
+        "P13"
+      ],
+      "kind": "same treatment",
+      "group": "H",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": true,
+        "same_factor": true
+      },
+      "uncertain_adverse_rows": false,
+      "records": {
+        "A": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "adverse",
+          "adverse_rows_n": {
+            "confirmed": 1,
+            "possible": 1
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        },
+        "B": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "adverse",
+          "adverse_rows_n": {
+            "confirmed": 1,
+            "possible": 1
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "K08",
+      "later": "N551",
+      "earlier": [
+        "N655"
+      ],
+      "kind": "same treatment",
+      "group": "H",
+      "agreement": {
+        "same_cause": false,
+        "same_observable_class": true,
+        "same_factor": true
+      },
+      "uncertain_adverse_rows": true,
+      "records": {
+        "A": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "adverse",
+          "adverse_rows_n": {
+            "confirmed": 1,
+            "possible": 3
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 1
+          }
+        },
+        "B": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "adverse",
+          "adverse_rows_n": {
+            "confirmed": 1,
+            "possible": 3
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 1
+          }
+        }
+      }
+    },
+    {
+      "case": "K09",
+      "later": "N657",
+      "earlier": [
+        "N459"
+      ],
+      "kind": "same treatment",
+      "group": "H",
+      "agreement": {
+        "same_cause": false,
+        "same_observable_class": false,
+        "same_factor": true
+      },
+      "uncertain_adverse_rows": false,
+      "records": {
+        "A": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "adverse",
+          "adverse_rows_n": {
+            "confirmed": 4,
+            "possible": 4
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 2,
+            "possible": 2
+          }
+        },
+        "B": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "adverse",
+          "adverse_rows_n": {
+            "confirmed": 4,
+            "possible": 4
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 2,
+            "possible": 2
+          }
+        }
+      }
+    },
+    {
+      "case": "K10",
+      "later": "N364",
+      "earlier": [
+        "N195"
+      ],
+      "kind": "same treatment",
+      "group": "P",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": true,
+        "same_factor": false
+      },
+      "uncertain_adverse_rows": false,
+      "records": {
+        "A": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 1,
+            "possible": 1
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        },
+        "B": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 1,
+            "possible": 1
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "K11",
+      "later": "N457",
+      "earlier": [
+        "N611"
+      ],
+      "kind": "modified successor",
+      "group": "P",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": true,
+        "same_factor": true
+      },
+      "uncertain_adverse_rows": false,
+      "records": {
+        "A": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "adverse",
+          "adverse_rows_n": {
+            "confirmed": 4,
+            "possible": 4
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        },
+        "B": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "mixed",
+          "adverse_rows_n": {
+            "confirmed": 4,
+            "possible": 4
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "K12",
+      "later": "N502",
+      "earlier": [
+        "N611",
+        "N457"
+      ],
+      "kind": "modified successor",
+      "group": "P",
+      "agreement": {
+        "same_cause": false,
+        "same_observable_class": true,
+        "same_factor": false
+      },
+      "uncertain_adverse_rows": true,
+      "records": {
+        "A": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "mixed",
+          "adverse_rows_n": {
+            "confirmed": 3,
+            "possible": 4
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 1,
+            "possible": 1
+          }
+        },
+        "B": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 3,
+            "possible": 4
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 1,
+            "possible": 1
+          }
+        }
+      }
+    },
+    {
+      "case": "K13",
+      "later": "N556",
+      "earlier": [
+        "N364"
+      ],
+      "kind": "same treatment",
+      "group": "P",
+      "agreement": {
+        "same_cause": false,
+        "same_observable_class": true,
+        "same_factor": true
+      },
+      "uncertain_adverse_rows": true,
+      "records": {
+        "A": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "mixed",
+          "adverse_rows_n": {
+            "confirmed": 4,
+            "possible": 5
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 1,
+            "possible": 1
+          }
+        },
+        "B": {
+          "step5_from_the_item_record": "unknown",
+          "ran_it": "in part",
+          "result": "favourable",
+          "adverse_rows_n": {
+            "confirmed": 4,
+            "possible": 5
+          },
+          "adverse_on_proposed_cause_and_quantity": {
+            "confirmed": 0,
+            "possible": 0
+          }
+        }
+      }
+    }
+  ]
+}
