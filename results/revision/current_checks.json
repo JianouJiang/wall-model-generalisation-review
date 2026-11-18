@@ -1,9 +1,9 @@
 {
   "status": "PASS",
   "edition": "critical review; aggregate claims withdrawn",
-  "pdf_pages": 11,
-  "pdf_sha256": "4a7aa95884d598c558628bcb4b197c44a68894725b75cab274ff5eb412afcb1a",
-  "citations_with_support_record": 28,
+  "pdf_pages": 12,
+  "pdf_sha256": "e7e2c1e1c3d84a32b6ca595a014f88d26b58fa99d72f00976eae54d7a63aa007",
+  "citations_with_support_record": 35,
   "caption_word_counts": [
     118,
     49,

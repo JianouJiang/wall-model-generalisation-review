@@ -1,6 +1,6 @@
 # Wall-model generalisation review
 
-Research materials for **Why wall models fail to generalise, and how to judge the evidence before use**. Authorship is to be decided.
+Research materials for **When can a wall-model test support a new prediction?** Authorship is to be decided.
 
 **The current manuscript is a corrected critical review for expert feedback.** The earlier numerical claims about the prevalence of transfer, the seven outcome categories and the “9 of 18” quantity-only contrast have been withdrawn. The corrected paper makes no field-wide estimate of validation, success or failure. It distinguishes coupled validation, transfer beyond calibration, relative benefit and absolute accuracy, using source-checked examples.
 

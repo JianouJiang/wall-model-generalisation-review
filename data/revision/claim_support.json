@@ -1,27 +1,29 @@
 [
   {
     "claim_id": "S01",
-    "manuscript_location": "Framework, Eq. 1",
+    "manuscript_location": "Introduction and physical framework, Eq. (1)",
     "reference_key": "BosePark2018",
-    "source_version": "published",
-    "source_location": "Section 2.1, Eq. 4 and equilibrium discussion",
-    "claim": "Thin-layer momentum equation, averaging, pressure assumption and equilibrium reduction. The integral equation is derived in this review with explicit assumptions.",
+    "source_version": "Author manuscript in PubMed Central of the 2018 journal review",
+    "source_location": "Section 2.1, Eq. (4) and Eqs. (7)–(8) and their discussion of pressure gradient and matching height.",
+    "claim": "The equilibrium approximation neglects variation of total shear across the modelled layer. The size of neglected terms depends on loading and matching height. Equation (1) here is the wall-to-height integral of the stated thin-layer equation.",
     "source_text_sha256": "e5a03dfe65d7dd5f3f9d5be1f46630e0abacd374f377f14bcc71a3a4d9f48f58",
-    "verification": "supporting passages checked in this revision"
+    "verification": "supporting passages checked in this revision",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6800697/"
   },
   {
     "claim_id": "S02",
     "manuscript_location": "Introduction; coupling",
     "reference_key": "Larsson2016",
     "source_version": "published",
-    "source_location": "Sections 3.1–3.2",
-    "claim": "Stress alignment, code dependence and fixed-matching-height refinement.",
+    "source_location": "Sections 3.1–3.2, especially Eq. (7) and Fig. 9 on fixed physical matching height; Secs. 4.2–4.3 on grid sensitivity, numerics and reference uncertainty.",
+    "claim": "Stress alignment, code dependence and refinement at fixed physical matching height. Applying the last control to the graph inputs and step reattachment is the proposed comparison in this paper.",
     "source_text_sha256": "eb18392ecaf07830c10169f5956c66c4742b02ad391397cbf0126637266bdff2",
-    "verification": "supporting passages checked in this revision"
+    "verification": "supporting passages checked in this revision",
+    "source_url": "https://doi.org/10.1299/mer.15-00418"
   },
   {
     "claim_id": "S03",
-    "manuscript_location": "Introduction",
+    "manuscript_location": "Calibration, validation and transfer",
     "reference_key": "Duraisamy2021",
     "source_version": "identified author manuscript",
     "source_location": "Discussion of model-consistent training",
@@ -31,11 +33,11 @@
   },
   {
     "claim_id": "S04",
-    "manuscript_location": "Forcing constraints",
+    "manuscript_location": "Abstract, channel limit below Eq. (1) and Table 1",
     "reference_key": "Quadrio2016",
     "source_version": "arXiv:1509.04877v1",
     "source_location": "Section 2, forcing strategies",
-    "claim": "Pressure-gradient and constant-flow-rate forcing differ. The control-volume constraints are derived in this review under explicit conservation and stationarity assumptions.",
+    "claim": "With pressure forcing alone, plane/time averaging, stationarity, full development and centreline symmetry give a linear total shear and set the lower-wall mean. The fractional variation across the modelled layer is h/delta. This specialization follows from the mean momentum balance shown in the paper. With prescribed bulk flow the driving gradient adjusts.",
     "source_text_sha256": "586a5ff1c9eabb2009a7bbe6603578a2052447e5e99323d11964d032b65fd6a3",
     "verification": "supporting passages checked in this revision"
   },
@@ -123,14 +125,23 @@
   },
   {
     "claim_id": "S11",
-    "manuscript_location": "Abstract, stress-error and reattachment comparisons, Figs. 2d and 3a, and worked checklist example",
+    "manuscript_location": "Abstract, Introduction, Figs. 2d and 3a, and worked step comparison in Sections 3–4",
     "reference_key": "Dupuy2023graph",
     "source_version": "version of record",
-    "source_location": "Section 4.2.3, Table 5, Figs. 15–16 (PDF page 22 for table)",
+    "source_location": "Section 3.2, Eqs. (10)–(11) and Fig. 4 (velocities, edge lengths and receptive field); Sec. 4.2.3 pp. e7-19–22 (direction from first off-wall tangential velocity), Table 5 and Figs. 15–16.",
     "claim": "Published Table 5 gives smaller errors than the log law in both integrated quantities for N=4. Separately, the downstream crossings in Fig. 16 give approximate reattachment distances of 4.7, 5.2 and 6.0 step heights for the log law, four-step graph model and wall-resolved reference. The graph model is closer to the reference and both are early.",
     "source_text_sha256": "59c45bb2536e1ca6593d33c45bc1e6882f58b2a91ba9f664c4b3473513be6a4b",
     "verification": "supporting passages checked in this revision",
-    "figure_2_source_location": "Published article, Sec. 4.2.3, Fig. 16 on p. e7-22, downstream zero crossings of the mean streamwise wall shear. Table 5 reports separate integrated errors."
+    "figure_2_source_location": "Published article, Sec. 4.2.3, Fig. 16 on p. e7-22, downstream zero crossings of the mean streamwise wall shear. Table 5 reports separate integrated errors.",
+    "source_url": "https://doi.org/10.1017/dce.2023.2",
+    "illustrative_decision": {
+      "quantity": "Downstream zero of mean streamwise wall shear, distance from step in step heights",
+      "absolute_tolerance_step_heights": 0.5,
+      "tolerance_origin": "Illustration chosen for this paper",
+      "crossing_uncertainty_interval_in_source": null,
+      "positions_source": "comparison_map.json, Dupuy2023graph, figure_example.crossings",
+      "interpretation": "Both nominal crossing errors exceed the illustrative tolerance. The residual has no unique attribution. The fixed-height and common-graph refinement is a proposed sensitivity test."
+    }
   },
   {
     "claim_id": "S12",
@@ -155,13 +166,14 @@
   },
   {
     "claim_id": "S14",
-    "manuscript_location": "Validation definition",
+    "manuscript_location": "Introduction and From a published result to a planned use",
     "reference_key": "OberkampfTrucano2002",
     "source_version": "public technical report of cited review",
-    "source_location": "Abstract and validation discussion",
-    "claim": "Validation assesses agreement with physical reference data and quantifies errors/uncertainties.",
+    "source_location": "Sandia report SAND2002-0529, Secs. 2.3–2.4 and 4.1.1, Fig. 7 and pp. 56–58 (printed pages).",
+    "claim": "Verification addresses numerical accuracy. Validation compares computational results with physical measurements. Prediction at different conditions requires an inference from those comparisons.",
     "source_text_sha256": "dbe2ecf7a2dfc179f28d89e340c6581c4dbe854d317acfb49760f87c9b9cdde2",
-    "verification": "supporting passages checked in this revision"
+    "verification": "supporting passages checked in this revision",
+    "source_url": "https://www.osti.gov/servlets/purl/793406"
   },
   {
     "claim_id": "S15",
@@ -195,10 +207,11 @@
     "claim_id": "S17",
     "manuscript_location": "Introduction, review context",
     "reference_key": "PiomelliBalaras2002",
-    "source_version": "bibliographic record of review",
-    "source_location": "Title and review remit",
-    "claim": "This is an existing review of wall-layer models for LES; no specific empirical finding is attributed to it here.",
-    "verification": "bibliographic identity previously resolved against publisher/Crossref; no claim of a new full-text reread"
+    "source_version": "Published review abstract deposited by Annual Reviews",
+    "source_location": "Abstract, discussion of available methodologies and their ranges of applicability.",
+    "claim": "Piomelli and Balaras review wall-layer methods, their ranges of applicability and open issues for engineering applications.",
+    "verification": "Scope checked in the publisher-deposited abstract at Crossref.",
+    "source_url": "https://doi.org/10.1146/annurev.fluid.34.082901.144919"
   },
   {
     "claim_id": "S18",
@@ -316,5 +329,69 @@
     "source_url": "https://doi.org/10.1017/jfm.2023.585",
     "source_location": "Published abstract, pulsating and linearly accelerating channel examples.",
     "claim": "The multi-time-scale wall model distinguishes slow and rapid stress responses and is tested in pulsating and accelerating channels. Phase and amplitude are suggested application-specific comparisons."
+  },
+  {
+    "claim_id": "S31",
+    "manuscript_location": "Introduction and From a published result to a planned use",
+    "reference_key": "ASMEVV20",
+    "source_version": "ASME V&V 20–2009 (R2021), official public scope",
+    "source_url": "https://www.asme.org/codes-standards/find-codes-standards/standard-for-verification-and-validation-in-computational-fluid-dynamics-and-heat-transfer/2009",
+    "source_location": "Product description, paragraphs on objective, scope and interpolation/extrapolation.",
+    "claim": "Accuracy pertains to a specified variable and validation point under experimental conditions, with uncertainties in the solution and data. Extension beyond those points involves problem-specific engineering judgement."
+  },
+  {
+    "claim_id": "S32",
+    "manuscript_location": "Introduction and Calibration, validation and transfer",
+    "reference_key": "HuYang2026",
+    "source_version": "Published review abstract deposited at Crossref",
+    "source_url": "https://doi.org/10.1063/5.0339930",
+    "source_location": "Abstract, offline pointwise training objective, solver-coupled statistical behaviour and proposed testing protocols.",
+    "claim": "Hu and Yang identify the mismatch between offline fitting and coupled closure performance and propose tests of statistical behaviour."
+  },
+  {
+    "claim_id": "S33",
+    "manuscript_location": "From a published result to a planned use",
+    "reference_key": "Eca2022",
+    "source_version": "Journal version, published abstract (2022)",
+    "source_url": "https://doi.org/10.1115/1.4053854",
+    "source_location": "Journal abstract, first five sentences on the interpretation of the V&V 20 accuracy estimate and requirements.",
+    "claim": "The ASME validation procedure estimates model error in a specified quantity at the validation point. Meeting an application tolerance is a separate decision."
+  },
+  {
+    "claim_id": "S34",
+    "manuscript_location": "Calibration, validation and transfer",
+    "reference_key": "Cato2026",
+    "source_version": "Published journal abstract, volume 117 (2026)",
+    "source_url": "https://doi.org/10.1016/j.ijheatfluidflow.2025.110157",
+    "source_location": "Published abstract, training in LES of periodic hills and the two cost functions.",
+    "claim": "Candidate algebraic wall models run within LES. The two separate training objectives use the mean skin-friction distribution or selected mean velocity profiles."
+  },
+  {
+    "claim_id": "S35",
+    "manuscript_location": "Calibration, validation and transfer",
+    "reference_key": "Zhang2026",
+    "source_version": "Published journal abstract and highlights (2026)",
+    "source_url": "https://doi.org/10.1016/j.jcp.2026.114835",
+    "source_location": "Abstract, periodic-hill training and tests on other hill shapes, Gaussian bumps, wall-mounted humps and smooth ramps.",
+    "claim": "A model trained within differentiable WMLES on a periodic-hill flow is exercised in other geometries. The cited passage identifies cases and training environment."
+  },
+  {
+    "claim_id": "S36",
+    "manuscript_location": "Sampling, feedback and the outer flow",
+    "reference_key": "Garmann2024",
+    "source_version": "KAUST accepted manuscript of AIAA Paper 2024-3697; published abstract also describes the comparison",
+    "source_url": "https://doi.org/10.2514/6.2024-3697",
+    "edition_url": "https://hdl.handle.net/10754/700363",
+    "source_location": "Accepted manuscript, Sec. IV.A, printed pp. 7–9, text accompanying Figs. 4–5 (smooth ramp).",
+    "claim": "Groups compared upstream mean profiles and downstream reattachment against DNS. Some used their own meshes and some reattachment trends with refinement were non-monotone."
+  },
+  {
+    "claim_id": "S37",
+    "manuscript_location": "Introduction",
+    "reference_key": "WMLESValidation",
+    "source_version": "Community resource, public Validation page, accessed 18 November 2026",
+    "source_url": "https://wmles.umd.edu/validation/",
+    "source_location": "Validation, paragraphs on the complete WMLES method, decoupling the grid and wall model, and the choice of channel quantities.",
+    "claim": "The guide already recommends choosing the measured quantity with other solver errors in mind, keeping the wall model fixed during grid refinement where possible, and testing sensitivity to other inputs."
   }
 ]
