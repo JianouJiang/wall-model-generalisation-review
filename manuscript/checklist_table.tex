@@ -1,17 +1,17 @@
 \begin{table*}[t]
-\caption{Checklist for a named model and a planned flow, quantity, tolerance and numerical set-up. A missing fact gives \emph{unknown}, not evidence of failure or success. The checklist is a proposal for structuring judgement; its predictive value has not been established.}\label{tab:checklist}
+\caption{Five questions for deciding whether a published test supports an intended prediction. An unreported condition leaves the corresponding judgement open. A further comparison can address the uncertainty identified in any row.}\label{tab:checklist}
 \footnotesize
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.11\textwidth}p{0.31\textwidth}p{0.51\textwidth}@{}}
 \toprule
 Step & Question & Evidence to record and consequence \\
 \midrule
-1. Quantity & What is to be predicted, and does the set-up constrain it? & Specify quantity, position, averaging, error measure and tolerance. Derive the relevant conservation constraint. Use a free quantity to assess constitutive accuracy; keep constrained quantities as balance checks. \\
-2. Model & Which limitations could matter here? & Record output restrictions, retained terms, available inputs, calibration and tuning, and coupling. Identify relevant flow features and uncertainty. These are candidate explanations, not diagnosed causes. \\
-3. Test design & What does the published test actually test? & Distinguish exact-input evaluation from coupled validation. Within coupled tests, distinguish calibration cases from documented transfer cases; unknown calibration remains unknown. Both in-range and out-of-range failures are informative. \\
-4. Comparison & What improved, and is the result accurate enough? & Record the matched baseline and reference separately. Compare the same flow, grid, closure, height and spatial support. Keep relative benefit, absolute error, tolerance and uncertainty as separate assessments. No matched baseline means benefit is unassessed; it does not invalidate a reference comparison. \\
-5. Planned use & How far can the evidence be extended? & List differences in model version, flow, parameters, quantity and numerics. A direct match supports the stated result within its uncertainty. An extension needs a physical argument and relevant sensitivity evidence at the required tolerance. Otherwise withhold assurance and propose a comparison; do not infer failure. \\
+1. Quantity & What must the calculation predict? & Specify the quantity, location, averaging interval, error measure and tolerance. Use the conservation balance to determine whether the forcing fixes the quantity. An unconstrained output is needed to test the constitutive response. \\
+2. Model & Which assumptions could affect that quantity? & Record the admissible stresses, retained momentum terms, inputs, calibration and coupling to the outer flow. Identify a flow condition under which a suspected limitation could be observed. \\
+3. Test design & Where did the model inputs come from? & Distinguish prescribed reference inputs from inputs supplied by a running solver. Identify which flows informed tuning, which were held out, and where the test falls relative to calibration. Record gaps in the calibration history. \\
+4. Comparison & How much did the model improve, and how close was it to the reference? & Compare model and baseline on matched conditions. Report the error in the intended quantity against the reference, the required tolerance and the uncertainty. Reference data support an accuracy estimate within their uncertainty. A baseline is also needed to measure relative benefit. \\
+5. Planned use & What changes between the test and the application? & Identify differences in model version, flow, forcing, grid, closure, matching height and quantity. Support an extension with a physical argument and sensitivity evidence at the required accuracy. Otherwise identify the comparison still needed. \\
 \midrule
-Next test & \multicolumn{2}{p{0.85\textwidth}}{Name the uncertainty the test addresses. Specify model and baseline, flow, forcing, grid, closure, matching height, quantities, reference and uncertainty estimates. Score the intended quantity alongside other affected outputs. Use an ablation or controlled change to test a candidate mechanism, recording what still changes with it. State what the test can establish and what remains unresolved. If no reference is available, sensitivity or cross-model agreement alone cannot establish absolute accuracy.} \\
+Next test & \multicolumn{2}{p{0.85\textwidth}}{Specify the intended quantity and one change that could distinguish competing explanations. Hold other conditions fixed where possible and report anything that changes with them. Identify a reference and estimate uncertainty. Without a reference, a difference between models measures sensitivity and leaves absolute accuracy open.} \\
 \botrule
 \end{tabular*}
 \end{table*}

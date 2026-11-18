@@ -1,21 +1,21 @@
 {
-  "edition": "Figure 4 revision, paired retrospective checklist choices and typography aligned to Figure 1",
+  "edition": "Critical review with revised abstract, evidence selection, worked examples and expanded bibliography",
   "checks": {
     "status": "PASS",
     "edition": "critical review; aggregate claims withdrawn",
-    "pdf_pages": 10,
-    "pdf_sha256": "f93813503fbecdb7b96c33f07a64fbcd61970135ba8ac0d65d5224ef6e22ce1e",
-    "citations_with_support_record": 15,
+    "pdf_pages": 11,
+    "pdf_sha256": "4fd4ffdaa3926c84f8887f331550aa8f2fd4f56e670beeffe9003e0afd31c9f3",
+    "citations_with_support_record": 28,
     "caption_word_counts": [
-      123,
-      47,
+      118,
+      49,
       142,
       121,
-      103,
-      46,
-      41
+      114,
+      28,
+      31
     ],
-    "abstract_words": 149,
+    "abstract_words": 146,
     "figures": 4,
     "tables": 3,
     "eligibility_records_checked": 33,
@@ -94,11 +94,27 @@
     "regular_panel_heading_size_pt": 8,
     "accent_srgb": "#2a78d6",
     "figure_pages": [
-      2,
-      4,
-      7,
-      8
+      3,
+      5,
+      8,
+      9
     ],
-    "isolated_manuscript_pages_with_identical_rendering": 10
+    "isolated_manuscript_pages_with_identical_rendering": 11
+  },
+  "manuscript_consistency": {
+    "bibliography_entries_with_resolving_pdf_links": 28,
+    "journal_references_checked_against_publication_metadata": 25,
+    "versioned_preprints_with_journal_counterparts_identified": [
+      "Hayat2024preprint",
+      "Mukha2024preprint",
+      "Zhou2024preprint"
+    ],
+    "step_reattachment_x_over_step_height_approx": {
+      "log_law": 4.7,
+      "four_step_graph_model": 5.2,
+      "wall_resolved_reference": 6.0
+    },
+    "step_source": "Dupuy et al., Fig. 16 for reattachment and Table 5 for integrated stress errors",
+    "retrospective_cases_used_in_formulating_earlier_checklist_step_5": 4
   }
 }

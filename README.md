@@ -18,12 +18,13 @@ The original [17:29 circulation PDF](manuscript/circulation_snapshot_2026-11-18.
 
 ## Reproduce
 
-Use Python 3.10 and install requirements.txt in a virtual environment. Run:
+Use Python 3.10 with the packages in `requirements.txt` and install the [journal template](manuscript/class/README.md). From the repository root, render the figures, compile the paper and check the build in this order.
 
     python3 -I code/reproduce.py
+    (cd manuscript && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex)
     python3 -I code/check_current.py
 
-The first command renders the current four figures. The second checks the manuscript, source-support coverage, numerical inputs, captions and compiled PDF. The PDF checks use LaTeX and the Poppler tools pdftotext, pdftohtml and pdfinfo. Build with latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex from manuscript/, using the template described in manuscript/class/README.md.
+The last command checks the numerical inputs, source records, captions, compiled bibliography and PDF using the LaTeX build files and the Poppler tools `pdftotext`, `pdftohtml` and `pdfinfo`.
 
 For historical diagnostics only, use code/reproduce.py --historical. These calculations do not supply the current paper's conclusions.
 

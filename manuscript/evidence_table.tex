@@ -1,15 +1,15 @@
 \begin{table*}[t]
-\caption{Examples that discriminate parts of a wall-modelled calculation. A reported mechanism is distinguished from what the comparison directly establishes. The source version is identified in the text and bibliography; the accompanying support register gives locations. These examples are not a frequency sample or an exhaustive taxonomy.}\label{tab:evidence}
+\caption{Diagnosing a discrepancy in a wall-modelled calculation. Each row pairs a physical question with a comparison and gives a further measurement or control that would narrow the interpretation.}\label{tab:evidence}
 \footnotesize
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{0.15\textwidth}>{\raggedright\arraybackslash}p{0.37\textwidth}>{\raggedright\arraybackslash}p{0.41\textwidth}@{}}
 \toprule
 Question & Evidence and inference & Qualification or useful next test \\
 \midrule
-States returned & A stress constrained to align with forward velocity at $h$ cannot represent negative shear below it. The thin-bubble comparison illustrates this limit~\cite{Hayat2024preprint}. & The analytic restriction is decisive for that state; a coupled comparison of different model formulations also changes retained physics. Test sign and direction separately from stress magnitude. \\
-Retained balance & A term decomposition reveals cancellation between erroneous contributions despite reasonable final friction~\cite{Hayat2024preprint}. & A correct total does not verify its components. Compare signed budgets and, where possible, a controlled term ablation; allow for the breakdown of the thin-layer approximation. \\
-Input information & The building-block study separates internal error using exact-for-mean outer modelling from total error with practical closures~\cite{LozanoDuranBae2023}. & Those calculations intentionally change the input-generating system. Prescribed inputs can diagnose the map but cannot establish coupled accuracy. \\
-Coupling & Fixed-$h$ refinement tests input resolution~\cite{Larsson2016}; a spectral-element manuscript distinguishes imposed traction from the wall gradient~\cite{Mukha2024preprint}. & State the discretisation and traction implementation. Refinement can also alter a model's input stencil; it need not isolate one mechanism. \\
-Outside the model & A bump calculation retains reference mean stress and varies the outer closure, with different separation predictions~\cite{Zhou2024preprint}. & Correct mean traction does not make instantaneous traction, numerics or the outer flow exact. The result identifies sensitivity in that configuration. \\
+Admissible stress & A stress constrained to align with forward velocity at $h$ cannot represent negative shear below it. The thin-bubble comparison illustrates this limit~\cite{Hayat2024preprint}. & The alignment constraint determines the sign. Changing formulation in a coupled run can also change the retained physics. Test sign and direction separately from stress magnitude. \\
+Retained balance & A skin-friction budget shows how errors in individual terms can cancel in the total~\cite{Hayat2024preprint}. & Compare the signed contributions. To test one term, vary its treatment while documenting any change in the other terms. \\
+Input information & The building-block study compares stress errors with a closure constrained to reproduce the reference mean velocity and with practical closures~\cite{LozanoDuranBae2023}. & Changing the outer closure also changes the velocity supplied to the wall model. Prescribing the same inputs to both wall laws tests their response directly. \\
+Coupling & Grid refinement at fixed $h$ tests resolution at the sampling point~\cite{Larsson2016}. A spectral-element study distinguishes imposed traction from the wall gradient~\cite{Mukha2024preprint}. & State the discretisation and traction implementation. Refinement can alter the model's input stencil as well as the outer solution. \\
+Outside the model & A bump calculation prescribes the reference mean stress and varies the outer closure, with different separation predictions~\cite{Zhou2024preprint}. & This measures the sensitivity of separation to the outer closure on that grid. Check the stress fluctuations separately. \\
 \botrule
 \end{tabular*}
 \end{table*}

@@ -27,7 +27,15 @@ Every empirical comparison retained in the current manuscript has an entry in th
 
 The thin-layer equation was checked from the stated differential balance, including signs, stress convention, constant density, pressure assumption and omitted body force. Channel/pipe constraints now require stationarity, appropriate symmetry/averaging and discrete conservation. The figure of a reversed layer is explicitly schematic.
 
-Dupuy's published Table 5 was also visually checked. The N=4 ratios are 0.067/0.806 and 0.308/0.686. Both are below one. No reattachment-location improvement is inferred from those integrals.
+## Reconciliation of the abstract, figures and text
+
+Dupuy et al. report two distinct measurements for the backward-facing step. Their Table 5 gives squared stress errors integrated along the wall. At four message-passing steps the model-to-baseline ratios are 0.067/0.806 for stress magnitude and 0.308/0.686 for the streamwise component. Both are below one. Their Fig. 16 gives the local streamwise shear. Its downstream zero crossing lies at approximately 4.7 step heights for the log law, 5.2 for the four-step graph model and 6.0 for the wall-resolved reference. The abstract and Fig. 2d use the crossings. Fig. 3a uses the integrals. The half-step tolerance in Section 4 is a worked example chosen for this review. The published figure gives no uncertainty interval for the crossings.
+
+For the boundary-layer comparison in Fig. 3b, Lozano-Durán and Bae describe total errors of 5–15% with practical outer closures. Their Fig. 9 also shows a local equilibrium-model error of about 19% with the dynamic Smagorinsky closure at a streamwise Reynolds number of one million. The text and caption distinguish the authors' summary from the local reading. The swept-bubble example uses Renard and Deck's decomposition of the mean streamwise kinetic-energy budget. Equation (1) in this review integrates the thin-layer momentum equation.
+
+The bibliography now cites 28 works. Additional studies supply evidence on grid requirements, wall and slip conditions, near-wall sampling, input filtering, reference uncertainty and time-dependent forcing. The detailed Hayat and Park and Mukha and Schlatter readings are attributed to version 1 of their respective preprints. The Zhou and Bae bump comparison uses version 2 and was also checked against the published article. All three entries identify the journal publication alongside the edition used.
+
+The abstract identifies the proposed procedure and its five-step checklist. The 13 retrospective cases used an earlier version. The two sets of proposed tests agreed on cause in eight cases, quantity class in ten and factor to vary in seven. All three choices agreed in three cases. Four of the cases helped formulate the earlier checklist's final step. Evaluating whether the procedure improves decisions in new applications requires a prospective comparison.
 
 ## Withdrawn aggregate claims
 

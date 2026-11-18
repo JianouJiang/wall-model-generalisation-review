@@ -134,14 +134,16 @@ def main_check():
     assert cited<=set(bibkeys)
     caps=[words(x) for s in parts for x in arguments(s,'caption')]
     assert len(caps)==7 and max(caps)<150,caps
-    assert words(arguments(main,'abstract')[0])<=150
+    abstract=arguments(main,'abstract')[0]
+    assert words(abstract)<=150 and not arguments(abstract,'cite')
     assert main.count('\\includegraphics')==4
     assert alltext.count('\\begin{table*}')==3
     assert '\\input{numbers}' not in main
     assert not re.search(r'\\n(?:Claims|Obs|Mixed|Exposed|Held|Adv)\b',alltext)
-    assert 'aggregate transfer and quantity-only estimates are withdrawn' in main
-    assert 'does not establish predictive' not in main or 'retrospective' in main
-    assert 'does not' in main and 'no estimate of the prevalence' in main
+    assert re.search(r'withdrew estimates of how often tests supported transfer beyond calibration'
+                     r' and how often conclusions changed with the measured quantity alone',alltext)
+    assert 'no estimate of the prevalence' in main
+    assert 'retrospective' in abstract and 'prospective' in abstract
 
     dup=json.loads((ROOT/'data/revision/dupuy_table5.json').read_text())
     # Values independently transcribed from the visually checked published Table 5.
@@ -154,6 +156,13 @@ def main_check():
     assert len(comparisons['rows'])==len({r['reference_key'] for r in comparisons['rows']})==8
     assert plotted_map['rows']==comparisons['rows']
     check_figure2(comparisons, plotted_map, by_id)
+    step=next(r['figure_example'] for r in comparisons['rows'] if r['reference_key']=='Dupuy2023graph')
+    positions={t['treatment']:t['x_over_hs_approx'] for t in step['crossings']}
+    ordered=[positions[k] for k in ('Log law','Graph, N = 4','Reference')]
+    step_sentence=next(s for s in re.split(r'(?<=\.)\s+',abstract) if 'step heights' in s)
+    assert [float(x) for x in re.findall(r'\b\d+\.\d+\b',step_sentence)]==ordered
+    shortfalls=[round(ordered[-1]-v,1) for v in ordered[:2]]
+    assert f'shortfall from about {shortfalls[0]} to {shortfalls[1]} step heights' in main.replace('$','')
     for row in comparisons['rows']:
         assert row['reference_key'] in cited
         assert row['source_location'] and row['selected_comparison']
@@ -190,6 +199,7 @@ def main_check():
     agreement=[sum(c['agreement'][k] for c in cases) for k in keys]
     agreement.append(sum(all(c['agreement'][k] for k in keys) for c in cases))
     assert len(cases)==13 and agreement==[8,10,7,3]
+    assert sum(c['group']=='P' for c in cases)==4
     plotted_cases=json.loads((ROOT/'results/figures/fig4_values.json').read_text())
     assert list(plotted_cases['agreement'].values())==agreement
     assert plotted_cases['case_order']==[dict(number=i+1,case=c['case'],agreement=c['agreement']) for i,c in enumerate(cases)]
@@ -208,6 +218,8 @@ def main_check():
     assert not any(M.glob('supplement*.pdf')) and not any(M.glob('appendix*.pdf'))
     text=subprocess.check_output(['pdftotext',str(pdf),'-'],text=True)
     assert '??' not in text,'unresolved PDF reference'
+    compiled_keys=re.findall(r'\\bibitem\{([^}]+)\}',(M/'main.bbl').read_text())
+    assert len(compiled_keys)==len(cited) and set(compiled_keys)==cited,'compiled bibliography differs from citations'
     compact=re.sub(r'\s+',' ',text)
     # The only permitted use is the genuine title of the cited Bae paper.
     cleaned=re.sub(r'multi-?\s*agent reinforcement learning','reinforcement learning',compact,flags=re.I)

@@ -48,7 +48,12 @@
     "claim": "Thin reversed layer, matching-height sign limitation and cancellation of errors in the swept case. This is explicitly cited as a preprint, not as journal-equivalent.",
     "source_text_sha256": "36fd5df4e9847d3018b4647d0d59d69f6619c4baae8df0ec3f5489f52cf0ac8a",
     "verification": "supporting passages checked in this revision",
-    "figure_2_source_location": "arXiv:2403.05476v1, Sec. IV, Figs. 11(a), 12 and 13(a) and accompanying text."
+    "figure_2_source_location": "arXiv:2403.05476v1, Sec. IV, Figs. 11(a), 12 and 13(a) and accompanying text.",
+    "journal_crosscheck": {
+      "doi": "10.1103/gfr7-6l2m",
+      "source_location": "Publisher abstract, pressure-gradient separation with and without sweep and the Renard–Deck analysis.",
+      "extent": "Confirms the flow configurations, the three-model comparison and the energy-budget interpretation. The plotted individual signs are attributed to arXiv v1."
+    }
   },
   {
     "claim_id": "S06",
@@ -91,7 +96,12 @@
     "claim": "Reported traction/gradient distinction, no systematic averaging gain, and mismatch counterexample in this specific manuscript.",
     "source_text_sha256": "aaa275e4ae8b9693d23b841685892f1842aa309a1b75b8ace752c4f98843bc91",
     "verification": "supporting passages checked in this revision",
-    "figure_2_source_location": "arXiv:2404.05378v1, subsection on time-averaging of wall-model input, Table III, first and second numerical columns."
+    "figure_2_source_location": "arXiv:2404.05378v1, subsection on time-averaging of wall-model input, Table III, first and second numerical columns.",
+    "journal_crosscheck": {
+      "doi": "10.1063/5.0283984",
+      "source_location": "Published abstract, negligible effect of time averaging; the journal author list also includes Matteo Parsani.",
+      "extent": "The numerical entries plotted in Figure 2 are transcribed from Table III of the two-author arXiv v1. Equivalence of every numerical entry is not asserted."
+    }
   },
   {
     "claim_id": "S10",
@@ -102,15 +112,22 @@
     "claim": "Reference mean traction does not remove the outer-closure sensitivity of separation.",
     "source_text_sha256": "7158f5ee3277fb6fe369fb2993c18d7f7b56a38ca024f1e28200882520ad84e6",
     "verification": "supporting passages checked in this revision",
-    "figure_2_source_location": "arXiv:2309.13555v2, Sec. 2.2.1 (Re_L) and Sec. 3.1, Group 1 baseline mesh, Figs. 4(d,e) and 7 and accompanying text."
+    "figure_2_source_location": "arXiv:2309.13555v2, Sec. 2.2.1 (Re_L) and Sec. 3.1, Group 1 baseline mesh, Figs. 4(d,e) and 7 and accompanying text.",
+    "journal_crosscheck": {
+      "doi": "10.1016/j.jcp.2024.112948",
+      "url": "https://www.its.caltech.edu/~jbae/publications/Zhou_Bae_2024_JCP.pdf",
+      "source_location": "Published Sections 2.2 and 3.1, Table 2 and Figs. 4(d,e) and 7.",
+      "pdf_sha256": "f86e09bb6fd3be385dc3f54522048f9677b2013d60737cdcb83de7cb847c039d",
+      "extent": "The published comparison also gives reversal with Vreman c=0.025 and no reversal with c=0.07 on the baseline grid with prescribed reference mean wall stress."
+    }
   },
   {
     "claim_id": "S11",
-    "manuscript_location": "Relative improvement; Fig. 3; selected comparison in Fig. 2",
+    "manuscript_location": "Abstract, stress-error and reattachment comparisons, Figs. 2d and 3a, and worked checklist example",
     "reference_key": "Dupuy2023graph",
     "source_version": "version of record",
     "source_location": "Section 4.2.3, Table 5, Figs. 15–16 (PDF page 22 for table)",
-    "claim": "Both integrated squared errors improve relative to baseline for N=4. Table visually checked; reattachment error is a different measure.",
+    "claim": "Published Table 5 gives smaller errors than the log law in both integrated quantities for N=4. Separately, the downstream crossings in Fig. 16 give approximate reattachment distances of 4.7, 5.2 and 6.0 step heights for the log law, four-step graph model and wall-resolved reference. The graph model is closer to the reference and both are early.",
     "source_text_sha256": "59c45bb2536e1ca6593d33c45bc1e6882f58b2a91ba9f664c4b3473513be6a4b",
     "verification": "supporting passages checked in this revision",
     "figure_2_source_location": "Published article, Sec. 4.2.3, Fig. 16 on p. e7-22, downstream zero crossings of the mean streamwise wall shear. Table 5 reports separate integrated errors."
@@ -162,8 +179,8 @@
     "manuscript_location": "Checklist exercise; Fig. 4",
     "reference_key": null,
     "source_version": "archived retrospective labels",
-    "source_location": "data/checklist_cases.json",
-    "claim": "13 cases; proposal agreement counts 8, 10, 7, 3. All applications withhold assurance. Descriptive only; no predictive accuracy inferred.",
+    "source_location": "data/checklist_cases.json and data/revision/checklist_choices.json",
+    "claim": "Two retrospective passes on 13 cases matched on 8 causes, 10 quantity classes, 7 factors and all three in 3 cases. In both passes step 5 was unknown for all 13. Four cases helped formulate step 5. These are agreement counts.",
     "verification": "counts recomputed from individual case labels; independence limitations explicitly stated"
   },
   {
@@ -174,5 +191,122 @@
     "source_location": "Title and review remit",
     "claim": "This is an existing review of wall-layer models for LES; no specific empirical finding is attributed to it here.",
     "verification": "bibliographic identity previously resolved against publisher/Crossref; no claim of a new full-text reread"
+  },
+  {
+    "claim_id": "S18",
+    "manuscript_location": "Introduction",
+    "reference_key": "ChoiMoin2012",
+    "source_version": "published article",
+    "source_url": "https://doi.org/10.1063/1.3676783",
+    "source_location": "Published abstract, scaling estimates for a spatially developing high-Reynolds-number flat plate.",
+    "claim": "Estimated grid-point requirements scale as Re_L for wall-modelled LES and Re_L^(13/7) for wall-resolved LES under the authors’ assumptions."
+  },
+  {
+    "claim_id": "S19",
+    "manuscript_location": "Introduction",
+    "reference_key": "CabotMoin2000",
+    "source_version": "published article",
+    "source_url": "https://doi.org/10.1023/a:1009958917113",
+    "source_location": "Published paper, pp. 269–270, abstract and introduction.",
+    "claim": "In calculations using approximate wall boundary conditions, the authors distinguish the accuracy in the core of the flow from that close to the wall."
+  },
+  {
+    "claim_id": "S20",
+    "manuscript_location": "Introduction",
+    "reference_key": "Vadrot2023",
+    "source_version": "published article",
+    "source_url": "https://doi.org/10.1103/physrevfluids.8.064603",
+    "source_location": "Published abstract, half-channel comparisons and Reynolds-number range.",
+    "claim": "Three learned wall models were implemented in a common code and compared with an equilibrium model in half-channel flow. Extrapolation within that geometry is distinct from a change of flow geometry."
+  },
+  {
+    "claim_id": "S21",
+    "manuscript_location": "Physical framework",
+    "reference_key": "Spalding1961",
+    "source_version": "published article",
+    "source_url": "https://doi.org/10.1115/1.3641728",
+    "source_location": "Published paper, p. 455, formulation of the single velocity–distance relation in wall units.",
+    "claim": "The single smooth-wall law relates mean velocity and wall distance in wall units. Applying a mean relation to an instantaneous LES sample is a further assumption."
+  },
+  {
+    "claim_id": "S22",
+    "manuscript_location": "Physical framework",
+    "reference_key": "ParkMoin2014",
+    "source_version": "published article",
+    "source_url": "https://doi.org/10.1063/1.4861069",
+    "source_location": "Published abstract, formulation of the near-wall equations.",
+    "claim": "The non-equilibrium wall model solves unsteady three-dimensional RANS equations and includes an eddy-viscosity model."
+  },
+  {
+    "claim_id": "S23",
+    "manuscript_location": "Physical framework",
+    "reference_key": "Bae2018",
+    "source_version": "published article",
+    "source_url": "https://doi.org/10.1017/jfm.2018.838",
+    "source_location": "Published abstract and introduction, Robin boundary condition with transpiration and dynamic slip coefficients.",
+    "claim": "The slip condition relates velocity to its normal derivative, permits wall-normal transpiration and has dynamically determined slip coefficients."
+  },
+  {
+    "claim_id": "S24",
+    "manuscript_location": "Stress direction and the near-wall momentum balance",
+    "reference_key": "RenardDeck2016",
+    "source_version": "published article",
+    "source_url": "https://doi.org/10.1017/jfm.2016.12",
+    "source_location": "Published abstract, mean streamwise kinetic-energy budget, and pp. 339–340.",
+    "claim": "The original friction decomposition follows a mean streamwise kinetic-energy budget for a smooth flat plate at zero pressure gradient. Distinguish it from integrating the thin-layer momentum equation."
+  },
+  {
+    "claim_id": "S25",
+    "manuscript_location": "Stress direction and the near-wall momentum balance",
+    "reference_key": "Park2017",
+    "source_version": "published article",
+    "source_url": "https://doi.org/10.2514/1.j055745",
+    "source_location": "Published abstract and the NASA hump comparison, pp. 3709–3721.",
+    "claim": "The compared models yield similar predictions in the upstream attached region. The non-equilibrium model performs better in the separation bubble and recovery on this hump."
+  },
+  {
+    "claim_id": "S26",
+    "manuscript_location": "Sampling, feedback and the outer flow",
+    "reference_key": "KawaiLarsson2012",
+    "source_version": "published article",
+    "source_url": "https://doi.org/10.1063/1.3678331",
+    "source_location": "Published abstract, discussion of numerical and subgrid modelling errors at the first few off-wall points.",
+    "claim": "The authors link contamination of the sampled velocity near the wall to numerical and subgrid modelling errors and log-layer mismatch."
+  },
+  {
+    "claim_id": "S27",
+    "manuscript_location": "Sampling, feedback and the outer flow",
+    "reference_key": "YangParkMoin2017",
+    "source_version": "published article",
+    "source_url": "https://doi.org/10.1103/physrevfluids.2.104601",
+    "source_location": "Published abstract and the comparison of local temporal and wall-parallel filtering.",
+    "claim": "Both filtering strategies removed log-layer mismatch in the reported configurations. Accurate wall-stress fluctuations did not follow from the improved mean."
+  },
+  {
+    "claim_id": "S28",
+    "manuscript_location": "Sampling, feedback and the outer flow",
+    "reference_key": "Rezaeiravesh2019",
+    "source_version": "published article",
+    "source_url": "https://doi.org/10.1016/j.compfluid.2019.03.025",
+    "source_location": "Published abstract and introduction, quantities varied in the turbulent channel campaigns.",
+    "claim": "Channel simulations vary convection scheme, subgrid modelling, grid spacing and anisotropy, and wall-model sampling height. The findings are conditional on the tested solver."
+  },
+  {
+    "claim_id": "S29",
+    "manuscript_location": "From a published result to a planned use",
+    "reference_key": "Oliver2014",
+    "source_version": "published article",
+    "source_url": "https://doi.org/10.1063/1.4866813",
+    "source_location": "Published abstract, distinction between finite sampling and discretisation uncertainty and accounting for correlation.",
+    "claim": "DNS statistics are subject to finite-sample and spatial-discretisation errors. Sample correlation must be accounted for when estimating uncertainty in a mean."
+  },
+  {
+    "claim_id": "S30",
+    "manuscript_location": "From a published result to a planned use",
+    "reference_key": "Fowler2023",
+    "source_version": "published article",
+    "source_url": "https://doi.org/10.1017/jfm.2023.585",
+    "source_location": "Published abstract, pulsating and linearly accelerating channel examples.",
+    "claim": "The multi-time-scale wall model distinguishes slow and rapid stress responses and is tested in pulsating and accelerating channels. Phase and amplitude are suggested application-specific comparisons."
   }
 ]
