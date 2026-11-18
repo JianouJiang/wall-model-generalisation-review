@@ -4,29 +4,9 @@
  "texts": 80,
  "rows": [
   {
-   "text": "a",
-   "size_pt": 10.0,
-   "weight": "bold",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Plane channel",
-   "size_pt": 9.2,
-   "weight": "bold",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
    "text": "Sampling height (wall units, log scale)",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 0",
@@ -48,7 +28,7 @@
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "axes 0",
    "role": "text",
    "math": false
@@ -76,7 +56,7 @@
   {
    "text": "Signed error in mean wall stress (%)",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 0",
@@ -174,29 +154,9 @@
    "math": false
   },
   {
-   "text": "b",
-   "size_pt": 10.0,
-   "weight": "bold",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 1",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Flat-plate boundary layers",
-   "size_pt": 9.2,
-   "weight": "bold",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 1",
-   "role": "text",
-   "math": false
-  },
-  {
    "text": "Sign of chordwise skin friction in the bubble",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 1",
@@ -245,8 +205,8 @@
   },
   {
    "text": "+",
-   "size_pt": 9.3,
-   "weight": "bold",
+   "size_pt": 8.0,
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 1",
@@ -255,10 +215,10 @@
   },
   {
    "text": "−",
-   "size_pt": 9.3,
-   "weight": "bold",
+   "size_pt": 8.0,
+   "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "axes 1",
    "role": "text",
    "math": false
@@ -275,8 +235,8 @@
   },
   {
    "text": "+",
-   "size_pt": 9.3,
-   "weight": "bold",
+   "size_pt": 8.0,
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 1",
@@ -285,10 +245,10 @@
   },
   {
    "text": "−",
-   "size_pt": 9.3,
-   "weight": "bold",
+   "size_pt": 8.0,
+   "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "axes 1",
    "role": "text",
    "math": false
@@ -305,20 +265,20 @@
   },
   {
    "text": "−",
-   "size_pt": 9.3,
-   "weight": "bold",
+   "size_pt": 8.0,
+   "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "axes 1",
    "role": "text",
    "math": false
   },
   {
    "text": "−",
-   "size_pt": 9.3,
-   "weight": "bold",
+   "size_pt": 8.0,
+   "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "axes 1",
    "role": "text",
    "math": false
@@ -326,7 +286,7 @@
   {
    "text": "Wall-stress error at zero pressure gradient",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 1",
@@ -346,7 +306,7 @@
   {
    "text": "Outer closure",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 1",
@@ -356,7 +316,7 @@
   {
    "text": "Stress error",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 1",
@@ -378,7 +338,7 @@
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "axes 1",
    "role": "text",
    "math": false
@@ -398,7 +358,7 @@
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "axes 1",
    "role": "text",
    "math": false
@@ -418,35 +378,15 @@
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "axes 1",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "c",
-   "size_pt": 10.0,
-   "weight": "bold",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Gaussian speed bump",
-   "size_pt": 9.2,
-   "weight": "bold",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 2",
    "role": "text",
    "math": false
   },
   {
    "text": "Prescribed mean stress, baseline mesh",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 2",
@@ -478,7 +418,7 @@
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "axes 2",
    "role": "text",
    "math": false
@@ -506,7 +446,7 @@
   {
    "text": "Predicted skin friction, medium mesh",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 2",
@@ -558,35 +498,15 @@
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "d",
-   "size_pt": 10.0,
-   "weight": "bold",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 3",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Step and diffuser",
-   "size_pt": 9.2,
-   "weight": "bold",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 3",
    "role": "text",
    "math": false
   },
   {
    "text": "Step reattachment distance, $x_r/h_s$",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 3",
@@ -618,7 +538,7 @@
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "axes 3",
    "role": "text",
    "math": false
@@ -638,7 +558,7 @@
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "axes 3",
    "role": "text",
    "math": false
@@ -696,7 +616,7 @@
   {
    "text": "Recirculation on the inclined diffuser wall",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 3",
@@ -716,7 +636,7 @@
   {
    "text": "Treatment",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 3",
@@ -726,7 +646,7 @@
   {
    "text": "Cells in y",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 3",
@@ -736,7 +656,7 @@
   {
    "text": "Recirculation",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "axes 3",
@@ -798,8 +718,88 @@
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "axes 3",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "a",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Plane channel",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "b",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Flat-plate boundary layers",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "c",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Gaussian speed bump",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "d",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Step and diffuser",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
    "role": "text",
    "math": false
   }

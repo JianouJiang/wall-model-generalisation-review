@@ -5,7 +5,9 @@ import json
 import math
 import re
 import subprocess
+from itertools import product
 from pathlib import Path
+from xml.etree import ElementTree
 
 ROOT=Path(__file__).resolve().parents[1]
 M=ROOT/'manuscript'
@@ -73,6 +75,53 @@ def check_figure2(comparisons, plotted, support_by_id):
     assert [m['x_over_hs_approx'] for m in step['crossings']] == [4.7, 5.2, 6.0]
     diffuser = example('Jones2015')['measurements']
     assert [(m['cells_y'], m['recirculation']) for m in diffuser] == [(30, False), (50, True)]
+
+def check_panel_style(comparisons):
+    titles = {
+        'fig1_loop': ['The coupled loop', 'Reversed layer', 'What each test sees'],
+        'fig2_record': [panel['title'] for panel in comparisons['figure_panels']],
+        'fig3_contrast': ['Backward-facing step with a graph wall model',
+                          'Wall stress in a zero-pressure-gradient boundary layer'],
+        'fig4_checklist': ['Agreement by choice', 'Cases by combination of matches'],
+    }
+    reference_offset = None
+    for name, headings in titles.items():
+        xml = subprocess.check_output(['pdftohtml', '-xml', '-i', '-fontfullname', '-noroundcoord',
+                                       '-zoom', '1', '-stdout', str(ROOT/'figures'/f'{name}.pdf')])
+        page = ElementTree.fromstring(xml).find('page')
+        fonts = {f.get('id'): (f.get('family').split('+')[-1], float(f.get('size')), f.get('color'))
+                 for f in page.findall('fontspec')}
+        spans = {(''.join(t.itertext()).strip(), fonts[t.get('font')]): t for t in page.findall('text')}
+        for panel, title in zip('abcd', headings):
+            letter = spans[(panel, ('DejaVuSans-Bold', 10, '#000000'))]
+            heading = spans[(title, ('DejaVuSans', 8, '#0b0b0b'))]
+            offset = tuple(float(heading.get(k)) - float(letter.get(k)) for k in ('left', 'top'))
+            if reference_offset is None:
+                reference_offset = offset
+            assert all(abs(a-b) < .03 for a, b in zip(offset, reference_offset)), (name, panel, offset)
+    return sum(map(len, titles.values()))
+
+def check_checklist_patterns(cases, keys, plotted):
+    assert plotted['choice_order'] == ['Cause', 'Quantity class', 'Factor to vary']
+    patterns = plotted['display_patterns']
+    assert len(patterns) == 8
+    assert {tuple(p['choices']) for p in patterns} == set(product((False, True), repeat=3))
+    for pattern in patterns:
+        ids = [c['case'] for c in cases if [c['agreement'][key] for key in keys] == pattern['choices']]
+        assert pattern['case_ids'] == ids and pattern['count'] == len(ids)
+    counts_by_degree = [sum(p['count'] for p in patterns if sum(p['choices']) == m) for m in range(4)]
+    assert counts_by_degree == [0, 4, 6, 3]
+    paired = json.loads((ROOT/'data/revision/checklist_choices.json').read_text())['cases']
+    archived = {c['case']: c['agreement'] for c in cases}
+    assert len(archived) == len(paired) == 13 and {r['case'] for r in paired} == set(archived)
+    for row in paired:
+        for field, key in zip(('cause', 'observable_class', 'factor_varied_alone'), keys):
+            a, b = row['A'][field], row['B'][field]
+            assert isinstance(a, str) and a.strip() and isinstance(b, str) and b.strip()
+            assert (a == b) == archived[row['case']][key], (row['case'], field)
+    other_matches = [r['case'] for r in paired if r['A']['observable_class'] == r['B']['observable_class'] == 'other']
+    assert other_matches == ['K08']
+    return counts_by_degree
 
 def main_check():
     support=json.loads((ROOT/'data/revision/claim_support.json').read_text())
@@ -144,6 +193,7 @@ def main_check():
     plotted_cases=json.loads((ROOT/'results/figures/fig4_values.json').read_text())
     assert list(plotted_cases['agreement'].values())==agreement
     assert plotted_cases['case_order']==[dict(number=i+1,case=c['case'],agreement=c['agreement']) for i,c in enumerate(cases)]
+    counts_by_degree=check_checklist_patterns(cases,keys,plotted_cases)
     assert all(c['records'][p]['step5_from_the_item_record']=='unknown' for c in cases for p in ['A','B'])
     exclusions=json.loads((ROOT/'data/revision/eligibility_audit.json').read_text())
     manifest=json.loads((ROOT/'data/revision/historical_source_manifest.json').read_text())
@@ -175,7 +225,9 @@ def main_check():
                'Prescribed mean stress, baseline mesh', 'Recirculation on the inclined diffuser wall')), 'outdated Figure 2 in PDF'
     assert all(s in compact for s in ('Backward-facing step with a graph wall model', 'Streamwise component',
                'Internal error', 'Total error', 'Two comparisons of coupled wall-stress predictions')), 'outdated Figure 3 in PDF'
-    assert 'Agreement in each case' in compact,'outdated checklist figure in PDF'
+    assert all(t in compact for t in ('Agreement by choice', 'Cases by combination of matches', 'Case IDs')), 'outdated Figure 4 in PDF'
+    assert all(c['case'] in compact for c in cases), 'missing Figure 4 case identifier'
+    heading_count=check_panel_style(comparisons)
     figure_layouts={name:json.loads((ROOT/f'results/figures/{name}_layout.json').read_text())['passed']
                     for name in ('fig1_loop','fig2_record','fig3_contrast','fig4_checklist')}
     assert all(figure_layouts.values())
@@ -186,6 +238,8 @@ def main_check():
             'figures':4,'tables':3,'eligibility_records_checked':33,
             'dupuy_N4_normalised_errors':[.067/.806,.308/.686],
             'retrospective_agreement':agreement,
+            'checklist_cases_by_number_of_matching_choices':dict(enumerate(counts_by_degree)),
+            'panel_headings_matching_figure_1':heading_count,
             'comparison_map_sources':len(comparisons['rows']),
             'figure_layouts':figure_layouts,
             'circulation_text_scan':'PASS',

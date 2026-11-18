@@ -2,11 +2,13 @@
 
 ## Current corrected edition
 
-Read data/revision/STATUS.json first. The current paper uses comparison_map.json for the selected multi-study comparisons, dupuy_table5.json for published numerical values, claim_support.json for retained claims, eligibility_audit.json for the 33 eligibility checks, and historical_source_manifest.json for exact archived copy identities. The separate source/scope correction is retained in agrawal_validation.json. Only the agreement labels in checklist_cases.json enter the current retrospective illustration.
+Read data/revision/STATUS.json first. The current paper uses comparison_map.json for the selected multi-study comparisons, dupuy_table5.json for published numerical values, claim_support.json for retained claims, eligibility_audit.json for the 33 eligibility checks, and historical_source_manifest.json for exact archived copy identities. The separate source/scope correction is retained in agrawal_validation.json.
 
 In comparison_map.json, `figure_panels` lists the pairs of studies by flow. Each study records the drawn values and observations in `figure_example` and the exact version and passage in `figure_source_location`. The step example also includes the source PDF digest, pixel coordinates, calibration and rounding rule for the three reattachment distances. The `changes` and `quantities` fields describe the broader selected comparison at `source_location`; an unlisted feature is an unrecorded item. The source identifiers link each example to claim_support.json.
 
-In outer_input_error.json, `internal_error` and `total_error` record the authors' prose summaries, including the bound below 0.5%, the approximate 2%, and their 5–15% description of practical closures. In `station_readings`, each of the six series gives local percentage errors at four named streamwise Reynolds numbers. These readings come from the published curves and are rounded to two significant figures. The calibration, page positions, stroke identifiers and source PDF digest support re-extraction. Figure 4's case numbers map in order to the case identifiers in results/figures/fig4_values.json; no later-outcome classifications enter its counts.
+In outer_input_error.json, `internal_error` and `total_error` record the authors' prose summaries, including the bound below 0.5%, the approximate 2%, and their 5–15% description of practical closures. In `station_readings`, each of the six series gives local percentage errors at four named streamwise Reynolds numbers. These readings come from the published curves and are rounded to two significant figures. The calibration, page positions, stroke identifiers and source PDF digest support re-extraction.
+
+In data/revision/checklist_choices.json, each case has the three recorded labels for the first-priority proposed test in passes A and B. Exact equality defines a match in that field. The quantity class includes a residual category, “other”, used by both passes in K08. The public case register supplies the archived agreement flags and assurance decisions. In results/figures/fig4_values.json, `display_patterns` lists the eight columns of Figure 4 from left to right with their choice flags, case counts and original case identifiers.
 
 The other files described below are historical research records. The original outcome flags conflated some relative and absolute comparisons, and the historical cohort has unresolved eligibility inconsistencies. Their counts are withdrawn from the current manuscript. data/revision/test_codings.json and results/revision/design_audit.json record an intermediate 84-study diagnosis, not a repaired census. source_versions.json describes that earlier diagnostic; historical_source_manifest.json covers all 115 archived sources.
 
@@ -24,8 +26,8 @@ These files are a research export of the 18 November 2026 circulation baseline. 
 | `data/claim_categories.json` | Counts by cohort and treatment class for baseline Figure 2. |
 | `data/contrasts.json`, `data/contrast_pairs.json` | Claim-level and pair-level contrast summaries for baseline Figure 3. |
 | `data/quantity_pairs.json` | Quantity names and cited sections for the baseline quantity contrasts. |
-| `data/later_tests.json` | Baseline cross-tabulations of later tests, used in Figure 4a. |
-| `data/checklist_cases.json` | Results for 13 checklist cases, used in Figure 4b. `A` and `B` label coding passes; they do not identify people. `H` and `P` distinguish cases not used and used to formulate step 5. |
+| `data/later_tests.json` | Later-test cross-tabulations used in Figure 4a of the original circulation snapshot. |
+| `data/checklist_cases.json` | The 13 case records used in Figure 4b of the original circulation snapshot. The current Figure 4 uses the agreement flags and assurance decisions. `A` and `B` label coding passes. `H` and `P` distinguish cases not used and used to formulate step 5. |
 | `data/reference_labels.json` | Names, years and reference numbers as printed in the baseline manuscript. |
 | `manuscript/numbers.tex` | Snapshot of manuscript number macros. Apart from the scope calculation, their upstream derivations are outside this export. |
 

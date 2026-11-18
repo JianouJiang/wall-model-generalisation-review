@@ -228,15 +228,15 @@
    "size_pt": 10.0,
    "weight": "bold",
    "rotation": 0.0,
-   "colour": "#0b0b0b",
+   "colour": "#000000",
    "where": "figure",
    "role": "text",
    "math": false
   },
   {
    "text": "Backward-facing step with a graph wall model",
-   "size_pt": 9.2,
-   "weight": "bold",
+   "size_pt": 8.0,
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "figure",
@@ -256,7 +256,7 @@
   {
    "text": "Depth",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "figure",
@@ -296,9 +296,9 @@
   {
    "text": "4",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "figure",
    "role": "text",
    "math": false
@@ -316,7 +316,7 @@
   {
    "text": "Wall-stress magnitude",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "figure",
@@ -356,9 +356,9 @@
   {
    "text": "0.083",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "figure",
    "role": "text",
    "math": false
@@ -376,7 +376,7 @@
   {
    "text": "Streamwise component",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "figure",
@@ -416,9 +416,9 @@
   {
    "text": "0.449",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
-   "colour": "#205991",
+   "colour": "#0b0b0b",
    "where": "figure",
    "role": "text",
    "math": false
@@ -448,15 +448,15 @@
    "size_pt": 10.0,
    "weight": "bold",
    "rotation": 0.0,
-   "colour": "#0b0b0b",
+   "colour": "#000000",
    "where": "figure",
    "role": "text",
    "math": false
   },
   {
    "text": "Wall stress in a zero-pressure-gradient boundary layer",
-   "size_pt": 9.2,
-   "weight": "bold",
+   "size_pt": 8.0,
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "figure",
@@ -506,7 +506,7 @@
   {
    "text": "Internal error",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "figure",
@@ -516,7 +516,7 @@
   {
    "text": "Total error",
    "size_pt": 8.0,
-   "weight": "bold",
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "figure",

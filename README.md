@@ -23,7 +23,7 @@ Use Python 3.10 and install requirements.txt in a virtual environment. Run:
     python3 -I code/reproduce.py
     python3 -I code/check_current.py
 
-The first command renders the current four figures. The second checks the manuscript, source-support coverage, numerical inputs, captions and compiled PDF. LaTeX, pdftotext and pdfinfo are required for PDF checks. Build with latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex from manuscript/, using the template described in manuscript/class/README.md.
+The first command renders the current four figures. The second checks the manuscript, source-support coverage, numerical inputs, captions and compiled PDF. The PDF checks use LaTeX and the Poppler tools pdftotext, pdftohtml and pdfinfo. Build with latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex from manuscript/, using the template described in manuscript/class/README.md.
 
 For historical diagnostics only, use code/reproduce.py --historical. These calculations do not supply the current paper's conclusions.
 

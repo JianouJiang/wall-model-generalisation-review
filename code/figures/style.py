@@ -24,13 +24,18 @@ W = 160.0
 FS = 8.0
 FS_LETTER = 10.0
 (BLUE, RED) = ('#2a78d6', '#e34948')
-(G1, G2, G3, INK, MUTE, BAND) = ('#8c8b86', '#c9c8c2', '#ffffff', '#0b0b0b', '#52514e', '#f2f1ee')
+(G1, G2, G3, INK, MUTE, BAND) = ('#8c8b86', '#c9c8c2', '#ffffff', '#0b0b0b', '#52514e', '#f0efec')
 plt.rcParams.update({'font.family': 'DejaVu Sans', 'font.size': FS, 'axes.linewidth': 0.6, 'pdf.fonttype': 42, 'mathtext.fontset': 'dejavusans', 'xtick.labelsize': FS, 'ytick.labelsize': FS, 'axes.labelsize': FS, 'xtick.major.width': 0.6, 'xtick.major.size': 2.5, 'ytick.major.size': 0, 'hatch.linewidth': 0.4, 'svg.hashsalt': 'wmr', 'pdf.compression': 6})
 
 def letter(fig, x, y, s, title=None):
     fig.text(x, y, s, fontsize=FS_LETTER, fontweight='bold', va='baseline')
     if title:
-        fig.text(x + 0.022, y, title, fontsize=FS, va='baseline', color=INK)
+        fig.text(x + 0.022, y, title, fontsize=FS, fontweight='normal', va='baseline', color=INK)
+
+def panel_heading(fig, panel, title, *, left=0, top=0):
+    """Use Figure 1's physical insets from each panel's upper-left corner (mm)."""
+    width, height = fig.get_size_inches() / MM
+    letter(fig, (left + 1.28) / width, 1 - (top + 3.96) / height, panel, title)
 
 def check_sizes(fig, name):
     import matplotlib.text as mtext

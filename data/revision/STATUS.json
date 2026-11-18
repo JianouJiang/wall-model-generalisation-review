@@ -8,7 +8,8 @@
     "claim_support.json",
     "eligibility_audit.json",
     "historical_source_manifest.json",
-    "../checklist_cases.json (agreement labels only)"
+    "checklist_choices.json",
+    "../checklist_cases.json (agreement flags and assurance decisions)"
   ],
   "historical_diagnostics": [
     "test_codings.json",

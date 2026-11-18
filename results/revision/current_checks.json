@@ -2,14 +2,14 @@
   "status": "PASS",
   "edition": "critical review; aggregate claims withdrawn",
   "pdf_pages": 10,
-  "pdf_sha256": "d0cc4c00eb0802ff88b6fcebb05936e11fd9941c3c7b1cf59cf5b152f7025844",
+  "pdf_sha256": "f93813503fbecdb7b96c33f07a64fbcd61970135ba8ac0d65d5224ef6e22ce1e",
   "citations_with_support_record": 15,
   "caption_word_counts": [
     123,
     47,
     142,
     121,
-    98,
+    103,
     46,
     41
   ],
@@ -27,6 +27,13 @@
     7,
     3
   ],
+  "checklist_cases_by_number_of_matching_choices": {
+    "0": 0,
+    "1": 4,
+    "2": 6,
+    "3": 3
+  },
+  "panel_headings_matching_figure_1": 11,
   "comparison_map_sources": 8,
   "figure_layouts": {
     "fig1_loop": true,

@@ -1,6 +1,6 @@
 # Figures in the current review
 
-The four figures follow the paper's argument: physical mechanisms, comparison design, interpretation of accuracy, and use of the checklist. They use a common 160 mm width, at least 8 pt main labels, 10 pt panel letters, a restrained blue/red/grey palette and vector output. Text, marks and curves are checked for overlap at the printed size.
+Figure 1 sets the style for all four figures. At the common 160 mm width, each panel starts with a 10 pt bold DejaVu Sans letter and an 8 pt regular heading on the same baseline. Blue (#2a78d6) accents selected marks. Near-black text, warm grey rules and pale grey shading retain their roles throughout. The exported PDFs are checked for font, spacing and overlap.
 
 Figure 1 retains the physical loop, reversed-layer illustration and distinction between prescribed-input and coupled tests. Its profiles are explicitly schematic.
 
@@ -12,6 +12,6 @@ Figure 3 pairs the five graph depths from Dupuy et al., Table 5, on aligned scal
 
 The boundary-layer plots share one logarithmic error scale and the four streamwise stations specified in the source's Fig. 9(a). Each plot compares both wall laws under one outer closure. The symbols are approximate local readings from Fig. 9(c,d) and the straight segments join the selected positions. Shading on the two practical-closure plots identifies the authors' 5–15% summary in §4.3. At a streamwise Reynolds number of one million the dynamic Smagorinsky and equilibrium combination gives about 19%. The source prose and the station readings have separate entries in the figure data. [Lozano-Durán and Bae (2023)](https://doi.org/10.1017/jfm.2023.331)
 
-Figure 4 restores the individual 13-case agreement pattern alongside the totals. Case order is recorded in results/figures/fig4_values.json. This describes an earlier checklist exercise and does not estimate predictive accuracy.
+Figure 4 uses the matrix and aligned counts of an UpSet plot. The horizontal bars show how often two retrospective passes matched on each of three recorded choices. Each column gives an exact combination, including those with zero cases. The vertical bar counts its cases and the identifiers below locate the underlying records. Columns are grouped by the number of matching choices and ordered within each group by case count. Filled and open symbols remain distinguishable in greyscale. [Lex et al. (2014)](https://doi.org/10.1109/TVCG.2014.2346248) · [Conway et al. (2017), Fig. 1](https://doi.org/10.1093/bioinformatics/btx364)
 
 The detailed Agrawal correction remains in the research audit. It is one comparison in the review's broader synthesis, not the subject of a dedicated figure.

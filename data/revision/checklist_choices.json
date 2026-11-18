@@ -1,0 +1,174 @@
+{
+  "source": "Priority-one proposed test in each of two archived retrospective checklist passes. Labels are transcribed verbatim. A match is exact equality in a recorded field.",
+  "cases": [
+    {
+      "case": "K01",
+      "A": {
+        "cause": "C4",
+        "observable_class": "wall-stress distribution or separation and reattachment points",
+        "factor_varied_alone": "numerics"
+      },
+      "B": {
+        "cause": "C4",
+        "observable_class": "mean-velocity profile or log-layer mismatch",
+        "factor_varied_alone": "flow parameter"
+      }
+    },
+    {
+      "case": "K02",
+      "A": {
+        "cause": "C1",
+        "observable_class": "mean-velocity profile or log-layer mismatch",
+        "factor_varied_alone": "configuration"
+      },
+      "B": {
+        "cause": "C4",
+        "observable_class": "mean-velocity profile or log-layer mismatch",
+        "factor_varied_alone": "configuration"
+      }
+    },
+    {
+      "case": "K03",
+      "A": {
+        "cause": "C4",
+        "observable_class": "mean-velocity profile or log-layer mismatch",
+        "factor_varied_alone": "numerics"
+      },
+      "B": {
+        "cause": "C4",
+        "observable_class": "velocity fluctuations or Reynolds stresses",
+        "factor_varied_alone": "observable"
+      }
+    },
+    {
+      "case": "K04",
+      "A": {
+        "cause": "C2",
+        "observable_class": "wall-stress distribution or separation and reattachment points",
+        "factor_varied_alone": "configuration"
+      },
+      "B": {
+        "cause": "C2",
+        "observable_class": "wall-stress distribution or separation and reattachment points",
+        "factor_varied_alone": "configuration"
+      }
+    },
+    {
+      "case": "K05",
+      "A": {
+        "cause": "C2",
+        "observable_class": "mean-velocity profile or log-layer mismatch",
+        "factor_varied_alone": "forcing"
+      },
+      "B": {
+        "cause": "C2",
+        "observable_class": "mean-velocity profile or log-layer mismatch",
+        "factor_varied_alone": "configuration"
+      }
+    },
+    {
+      "case": "K06",
+      "A": {
+        "cause": "C4",
+        "observable_class": "mean-velocity profile or log-layer mismatch",
+        "factor_varied_alone": "observable"
+      },
+      "B": {
+        "cause": "C4",
+        "observable_class": "mean-velocity profile or log-layer mismatch",
+        "factor_varied_alone": "model version"
+      }
+    },
+    {
+      "case": "K07",
+      "A": {
+        "cause": "C2",
+        "observable_class": "wall-stress distribution or separation and reattachment points",
+        "factor_varied_alone": "configuration"
+      },
+      "B": {
+        "cause": "C2",
+        "observable_class": "wall-stress distribution or separation and reattachment points",
+        "factor_varied_alone": "configuration"
+      }
+    },
+    {
+      "case": "K08",
+      "A": {
+        "cause": "C1",
+        "observable_class": "other",
+        "factor_varied_alone": "configuration"
+      },
+      "B": {
+        "cause": "C2",
+        "observable_class": "other",
+        "factor_varied_alone": "configuration"
+      }
+    },
+    {
+      "case": "K09",
+      "A": {
+        "cause": "C1",
+        "observable_class": "total drag or force",
+        "factor_varied_alone": "configuration"
+      },
+      "B": {
+        "cause": "C2",
+        "observable_class": "wall-stress distribution or separation and reattachment points",
+        "factor_varied_alone": "configuration"
+      }
+    },
+    {
+      "case": "K10",
+      "A": {
+        "cause": "C4",
+        "observable_class": "mean wall stress or skin-friction coefficient",
+        "factor_varied_alone": "flow parameter"
+      },
+      "B": {
+        "cause": "C4",
+        "observable_class": "mean wall stress or skin-friction coefficient",
+        "factor_varied_alone": "numerics"
+      }
+    },
+    {
+      "case": "K11",
+      "A": {
+        "cause": "C4",
+        "observable_class": "wall-stress distribution or separation and reattachment points",
+        "factor_varied_alone": "numerics"
+      },
+      "B": {
+        "cause": "C4",
+        "observable_class": "wall-stress distribution or separation and reattachment points",
+        "factor_varied_alone": "numerics"
+      }
+    },
+    {
+      "case": "K12",
+      "A": {
+        "cause": "C2",
+        "observable_class": "wall-stress distribution or separation and reattachment points",
+        "factor_varied_alone": "flow parameter"
+      },
+      "B": {
+        "cause": "O",
+        "observable_class": "wall-stress distribution or separation and reattachment points",
+        "factor_varied_alone": "forcing"
+      }
+    },
+    {
+      "case": "K13",
+      "A": {
+        "cause": "C3",
+        "observable_class": "mean wall stress or skin-friction coefficient",
+        "factor_varied_alone": "configuration"
+      },
+      "B": {
+        "cause": "C2",
+        "observable_class": "mean wall stress or skin-friction coefficient",
+        "factor_varied_alone": "configuration"
+      }
+    }
+  ]
+}

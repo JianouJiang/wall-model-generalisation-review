@@ -175,5 +175,103 @@
       "count": 3
     }
   ],
+  "choice_order": [
+    "Cause",
+    "Quantity class",
+    "Factor to vary"
+  ],
+  "display_patterns": [
+    {
+      "choices": [
+        true,
+        true,
+        true
+      ],
+      "count": 3,
+      "case_ids": [
+        "K04",
+        "K07",
+        "K11"
+      ]
+    },
+    {
+      "choices": [
+        true,
+        true,
+        false
+      ],
+      "count": 3,
+      "case_ids": [
+        "K05",
+        "K06",
+        "K10"
+      ]
+    },
+    {
+      "choices": [
+        false,
+        true,
+        true
+      ],
+      "count": 3,
+      "case_ids": [
+        "K02",
+        "K08",
+        "K13"
+      ]
+    },
+    {
+      "choices": [
+        true,
+        false,
+        true
+      ],
+      "count": 0,
+      "case_ids": []
+    },
+    {
+      "choices": [
+        true,
+        false,
+        false
+      ],
+      "count": 2,
+      "case_ids": [
+        "K01",
+        "K03"
+      ]
+    },
+    {
+      "choices": [
+        false,
+        true,
+        false
+      ],
+      "count": 1,
+      "case_ids": [
+        "K12"
+      ]
+    },
+    {
+      "choices": [
+        false,
+        false,
+        true
+      ],
+      "count": 1,
+      "case_ids": [
+        "K09"
+      ]
+    },
+    {
+      "choices": [
+        false,
+        false,
+        false
+      ],
+      "count": 0,
+      "case_ids": []
+    }
+  ],
   "assurance": "withheld in all 13 cases"
 }
