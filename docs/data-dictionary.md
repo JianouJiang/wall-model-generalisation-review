@@ -1,5 +1,13 @@
 # Data dictionary
 
+## Current corrected edition
+
+Read data/revision/STATUS.json first. The current paper uses agrawal_validation.json for the source/scope example, dupuy_table5.json for published numerical values, claim_support.json for retained claims, eligibility_audit.json for the 33 eligibility checks, and historical_source_manifest.json for exact archived copy identities. Only the agreement labels in checklist_cases.json enter the current retrospective illustration.
+
+The other files described below are historical research records. The original outcome flags conflated some relative and absolute comparisons, and the historical cohort has unresolved eligibility inconsistencies. Their counts are withdrawn from the current manuscript. data/revision/test_codings.json and results/revision/design_audit.json record an intermediate 84-study diagnosis, not a repaired census. source_versions.json describes that earlier diagnostic; historical_source_manifest.json covers all 115 archived sources.
+
+## Historical export
+
 These files are a research export of the 18 November 2026 circulation baseline. They preserve scientific values and uncertainty alternatives, with public file names and source locations. No full-text articles are embedded.
 
 | File | Contents |

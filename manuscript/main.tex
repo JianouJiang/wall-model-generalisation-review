@@ -1,443 +1,157 @@
 \documentclass[pdflatex,sn-nature,iicol]{sn-jnl}
-
 \usepackage{graphicx}
 \usepackage{amsmath,amssymb}
 \usepackage{booktabs}
 \usepackage{array}
-\input{numbers}
-
+\usepackage{float}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
 \begin{document}
-
 \title[Why wall models fail to generalise]{Why wall models fail to generalise, and how to judge the evidence before use}
-
 \author{\fnm{Authors:} \sur{to be decided}}
-
-\abstract{Turbulent-flow simulations often replace the near-wall layer with a model that, like learned sub-models
-across computational science, is calibrated on some flows and used in others. Reviews explain why accuracy on
-reference data need not survive coupling; however, users must still judge whether a published improvement holds in
-their flow, quantity and solver. Here we locate four possible causes of failed transfer within the model: the states
-it can return, the balance it keeps, the information it receives and its coupling. Of \nClaims{} claimed
-improvements, fewer than half demonstrably have a coupled test that could have exposed a failure. In \nObs{} of \nM{}
-claims reported to hold there yet meeting an adverse coupled result, a favourable and an adverse result differ only
-in the quantity examined. A published improvement is evidence for the quantity and set-up tested and need not hold
-elsewhere; a five-step checklist states what remains untested.}
-
-\keywords{wall model, turbulence, large-eddy simulation, generalisation, machine learning}
-
+\abstract{Turbulent-flow simulations often replace the near-wall layer with a model calibrated under a limited set of conditions. Using that model elsewhere requires distinguishing a limitation of the model from an error in its inputs or numerical coupling. Here we organise evidence around four questions: which states the model can return, which balance it retains, what information it receives and how it is coupled. Source-checked examples show why coupled validation, transfer beyond calibration, improvement over a baseline and accuracy against a reference must be assessed separately. A model can improve several quantities while retaining substantial error, and a review's scope exclusion does not imply missing validation. A five-step checklist connects a planned use to relevant evidence and a proposed comparison. Its retrospective applications illustrate use but do not establish predictive accuracy. The review makes no estimate of the prevalence of successful or unsuccessful transfer across the field.}
+\keywords{wall model, turbulence, large-eddy simulation, generalisation, validation}
 \maketitle
 
-\noindent\textbf{Provisional public draft (18 November 2026).} The figures and counts below retain the circulation baseline. Agrawal et al. (2024) includes coupled LES validations; a scope filter excluded those rows from these counts. Its coded preprint also differs from the accepted manuscript. Including unknown-scope rows within the existing cohort changes three claim categories and raises the exposure count from 32--36 to 35--38 of 82. Entirely scope-excluded studies and the quantity-only comparison require reassessment. See the repository scope-audit note before quoting or circulating these findings.
-
-
 \section{Introduction}\label{sec:intro}
+At engineering Reynolds numbers, resolving the near-wall turbulent motions can dominate the cost of a simulation. A wall model supplies a stress or near-wall state in place of that unresolved region. The resulting prediction depends on the model, the outer solution and their exchange of information. Consequently, accuracy on reference inputs need not survive implementation in a different solver, grid or flow~\cite{Larsson2016,BosePark2018}. This difficulty concerns both conventional wall treatments and learned closures~\cite{Duraisamy2021}.
 
-At engineering Reynolds numbers, resolving the thin layer next to a wall is often unaffordable, so a
-wall model supplies the wall stress to a large-eddy simulation (LES) or Reynolds-averaged (RANS) solver. It is calibrated on some flows, then coupled into a solver and moved to
-others, as learned closures across computational science are~\cite{BruntonKutz2024}. When does such a sub-model
-keep working after the move?
+Existing reviews explain modelling assumptions, coupling errors and application ranges~\cite{PiomelliBalaras2002,Larsson2016,BosePark2018}. The practical question considered here is narrower: what does a particular comparison support for a proposed use? Answering it requires more than labelling a model as successful or unsuccessful. The comparison must identify the model version, calibration information, flow, observable, reference and numerical setting.
 
-Reviews by Piomelli and Balaras, Piomelli, Larsson et al. and Bose and Park survey wall-layer
-models~\cite{PiomelliBalaras2002,Piomelli2008,Larsson2016,BosePark2018}; the first highlights their ranges of
-applicability, Larsson et al. that a difference between models counts only beyond the reference uncertainty,
-and Bose and Park that agreement is expected where assumptions hold. Reviews of machine learning in fluid mechanics by Duraisamy et al., Brunton et al. and Vinuesa and Brunton
-survey learned closures~\cite{Duraisamy2019,Brunton2020,VinuesaBrunton2022}; Duraisamy notes that training on
-reference fields does not guarantee consistency in the coupled simulation~\cite{Duraisamy2021}, and Hu and Yang trace
-this mismatch between offline training and coupled use across learned closures and propose test
-protocols~\cite{HuYang2026}. Vadrot et al. test three learned
-wall models coupled in channel flow, against the equilibrium law~\cite{Vadrot2023}. Spalart argues from the equations against
-modelling fallacies~\cite{Spalart2015} and asks that a change leave an established baseline
-intact~\cite{Spalart2023}. Heinz and Fagbade propose metrics for evaluating partially and fully resolving
-simulation methods~\cite{HeinzFagbade2025}. This review applies those conditions to single
-published claims and counts the outcome. Of \nClaims{} claimed improvements in lawfully retrievable journal articles, fewer than half demonstrably had a
-coupled test that could have exposed a failure to transfer; at least \nM{} held in such a test and also met an adverse coupled
-result, and in \nObs{} of the \nM{} a favourable and an adverse result differ only in the quantity examined. A published improvement is thus evidence for the quantity and set-up tested; a
-five-step checklist states what it leaves untested.
+This review offers a framework for that assessment, illustrated by identified source versions rather than a census of model performance. Four questions locate potential limitations within the model and its interface with the solver. A five-step checklist then distinguishes evidence already available from a comparison that remains useful. The questions are organising devices, not mutually exclusive physical mechanisms or a validated prediction rule. They apply most directly to smooth-wall, incompressible or low-Mach wall-stress models, with qualifications for RANS wall functions and other near-wall treatments.
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{../figures/fig1_loop.pdf}
-\caption{Where a wall model can fail to transfer. \textbf{a}, The wall model reads the outer solution at the matching
-height $h$ and returns a wall stress that the solver applies. The curved arrow is the flow's response, the
-box the balance of Eq.~\eqref{eq:balance} that a wall model approximates; the dashed profile below $h$ is not
-resolved. Numbers mark the four causes: the states the model can return (1), the balance it retains (2), the
-information in its inputs (3) and its coupling (4); O marks the outer
-solution and, in c, the sources outside the model. \textbf{b}, A reversed layer thinner than $h$ beneath forward flow at $h$: the wall
-stress is negative, but a law taking its sign from $u(h)$ returns a positive one. \textbf{c}, What each test can
-expose outside the calibration flows (Table~\ref{tab:tests}a).}\label{fig:loop}
+\caption{Where limitations enter a wall-modelled calculation. \textbf{a}, The model reads the outer solution at matching height $h$ and supplies the wall stress. The curved arrow represents the flow response; the box gives the thin-layer balance of Eq.~\eqref{eq:balance}. The dashed inner profile is modelled. Numbers identify output states (1), retained balance (2), input information (3) and coupling (4); O denotes contributions outside the wall model. \textbf{b}, A schematic reversed layer below forward flow at $h$. Its negative wall stress cannot be represented by a law constrained to align stress with that velocity. The profiles are illustrative, not simulation data. \textbf{c}, Exact-input evaluation tests the map; a coupled calculation also tests feedback. Neither design by itself identifies a unique cause.}\label{fig:loop}
 \end{figure*}
 
-\section{Where a wall model can fail to transfer, and which tests can show it}\label{sec:framework}
-
-A wall model maps the outer solution at a matching height $h$ to the wall shear stress $\tau_w$ that the solver
-applies in place of the unresolved inner layer~\cite{Larsson2016,BosePark2018}. Integrating the thin-layer equations,
-for averaged velocity and a pressure independent of the wall-normal coordinate $y$~\cite{BosePark2018}, from the wall
-to $h$ (Fig.~\ref{fig:loop}a) gives
+\section{A physical framework for assessing evidence}\label{sec:framework}
+For a locally flat wall and constant density, the incompressible thin-boundary-layer approximation gives a useful starting point~\cite{BosePark2018}. Write its wall-parallel momentum equation as
+$\rho\,\mathrm{D}u/\mathrm{D}t=-\partial p/\partial x+\partial\tau/\partial y$.
+Here $u$ is the suitably averaged wall-parallel velocity and $\tau$ includes viscous and modelled turbulent shear stress. With pressure independent of the wall-normal coordinate $y$, integration gives
 \begin{equation}
-  \tau_w=\tau(h)-h\,\frac{\mathrm{d}p}{\mathrm{d}x}-\rho\int_0^h\frac{\mathrm{D}u}{\mathrm{D}t}\,\mathrm{d}y ,
-  \label{eq:balance}
+\tau_w=\tau(h)-h\,\frac{\partial p}{\partial x}
+-\rho\int_0^h\frac{\mathrm{D}u}{\mathrm{D}t}\,\mathrm{d}y .
+\label{eq:balance}
 \end{equation}
-where $\tau_w=\tau(0)$ is the stress the fluid exerts on the wall in the streamwise direction $x$, positive under
-forward flow, $\tau(h)$ the total shear stress at $h$, $p$ the pressure, $\rho$ the density and
-$\mathrm{D}u/\mathrm{D}t$ the streamwise material acceleration~\cite{BosePark2018}. An equilibrium law keeps only
-$\tau_w=\tau(h)$, a constant-stress layer through which it returns $\tau_w$ from the velocity at
-$h$~\cite{BosePark2018}. Near separation the thin-layer assumption is likely to break down~\cite{HayatPark2025}, and as
-$u_\tau=(|\tau_w|/\rho)^{1/2}$ tends to zero neither presumed velocity profiles nor the bound on the pressure term,
-which needs a bounded Clauser parameter, can be relied on~\cite{BosePark2018}.
+The stress $\tau_w=\tau(0)$ is the fluid's tangential stress on the wall, positive for forward shear. No additional tangential body force is included here; such a force would contribute its own integrated term. The equation is an identity of the stated thin-layer approximation, not the complete momentum balance for arbitrary curvature, strong three-dimensionality or separation.
+
+An equilibrium stress model neglects the net contribution of acceleration and pressure gradient, giving $\tau_w=\tau(h)$. Its accuracy therefore depends on the size of their signed sum as well as the assumed inner profile. Small individual terms are sufficient but not necessary; cancellation can also give an accurate stress. Conversely, agreement in the final stress does not show that each term is correct. Friction-velocity scaling becomes singular as $\tau_w$ approaches zero, and the usual pressure-gradient bounds do not justify the equilibrium approximation at separation~\cite{BosePark2018}.
+
+The first question concerns \emph{states the model can return}. If the output stress must align with the sampled velocity, the model cannot represent a stress opposing that velocity or rotated relative to it. The second concerns the \emph{retained balance}: which contributions are omitted, approximated or mutually cancelling? The third concerns \emph{input information}: can physically different states requiring different stresses be distinguished by the available measurements and their history? The fourth concerns \emph{coupling}: how are inputs sampled and filtered, and how is the returned stress imposed? These questions overlap. Changing the sampling height can change both information and numerical error; adding a pressure-gradient input can change both information and the effective balance.
+
+An exact-input test evaluates the map using reference data. It can reveal an output restriction or sensitivity to the input choice, but does not reproduce feedback with the solver. A coupled test includes that feedback, together with errors in the outer discretisation, closure and boundary conditions. A test inside calibration can reveal a failure or implementation defect. A test outside a documented calibration domain supplies a different kind of evidence about transfer. Neither should be discarded because it answers the other question imperfectly.
 
 \begin{table*}[t]
-\caption{What a published test can show. (a) The causes each evaluation mode can expose. (b) Quantities that the
-forcing fixes for every conservatively imposed wall model in the statistically stationary state, from the mean
-streamwise momentum balance~\cite{Quadrio2016}; once the statistics converge, agreement on a fixed quantity cannot
-fail.}\label{tab:tests}
+\caption{Forcing and validation quantities. The constraints follow from mass or mean streamwise momentum conservation in statistically stationary, fully developed configurations. Wall-stress statements require the applied traction to enter the discrete momentum balance consistently. Constraints on an integral do not fix its distribution, fluctuations or finite-time sampling error.}\label{tab:tests}
 \footnotesize
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.21\textwidth}p{0.13\textwidth}p{0.13\textwidth}p{0.13\textwidth}p{0.13\textwidth}p{0.13\textwidth}@{}}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.28\textwidth}p{0.30\textwidth}p{0.35\textwidth}@{}}
 \toprule
-(a) Mode & States returned & Retained balance & Information & Coupling & Outside the model \\
+Set-up & Constrained integral & Examples of unconstrained outputs \\
 \midrule
-Exact inputs, calibration flows & partly & partly & no & input sampling only & no \\
-Exact inputs, other flows & yes & partly & yes & input sampling only & no \\
-Coupled, calibration flows & partly & partly & no & yes & yes, entangled \\
-Coupled, other flows & yes & yes & yes & yes & yes, entangled \\
-\botrule
-\end{tabular*}
-
-\vspace{4pt}
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.30\textwidth}p{0.30\textwidth}p{0.34\textwidth}@{}}
-\toprule
-(b) Set-up & Fixed & Free \\
-\midrule
-Channel or pipe, constant pressure gradient & mean wall stress or friction velocity & bulk velocity, velocity profile, fluctuations \\
-Channel or pipe, constant flow rate & bulk velocity & mean wall stress or skin friction, velocity profile \\
-Periodic hill, constant flow rate & bulk velocity & total drag and its split, wall-stress distribution, separation \\
-Periodic hill, constant driving force & total streamwise drag & its split into friction and pressure, bulk velocity \\
-Spatially developing flow & nothing & every quantity \\
+Plane channel or straight pipe, prescribed pressure gradient & Surface-averaged mean wall stress balances the imposed pressure force & Bulk velocity, profile shape and fluctuations \\
+Channel or pipe, prescribed bulk flow rate & Bulk velocity & Required pressure gradient, mean wall stress and profile shape \\
+Periodic hill, prescribed flow rate & Bulk flow rate & Required driving force, friction/pressure drag split and separation \\
+Periodic hill, prescribed driving force & Total mean streamwise wall force & Its friction/pressure split, bulk velocity and local stress \\
+Spatially developing flow & Constraints depend on inlet, outlet and far-field conditions & Determine each quantity from the particular control-volume balance \\
 \botrule
 \end{tabular*}
 \end{table*}
 
-Equation~\eqref{eq:balance} and the loop of Fig.~\ref{fig:loop}a locate four possible causes of a failure to
-transfer. The first is the states the model can return: an equilibrium law, which takes the flow below $h$ as
-unidirectional, returns a stress parallel to the velocity at $h$, so it cannot return one that opposes that velocity,
-as a thin unswept bubble below $h$ requires, or one at an angle to it, as a swept bubble requires~\cite{HayatPark2025};
-a network
-trained on periodic hills over-predicts the stress on law-of-the-wall inputs increasingly with Reynolds
-number~\cite{Vadrot2023}. The second is the retained balance: convection and pressure gradient can nearly cancel above
-the viscous layer, even in separated flow~\cite{Larsson2016}, which a budget near a separation bubble disputes
-(Section~\ref{sec:balance}), and errors in different terms can offset~\cite{HayatPark2025}, so only the signed sum of
-the omitted terms, set against the error, implicates it. The third is information: whether the inputs, as the solver
-supplies them, separate flows that share the state at $h$ but need different wall stresses. The fourth is coupling: the
-first cells cannot resolve the stress-carrying eddies, so even an exact model fed from them shifts the logarithmic
-profile, which refining the grid beneath a fixed $h$ removes~\cite{Larsson2016,BosePark2018}, though another
-explanation of the shift has been proposed (Table~\ref{tab:evidence}). Outside the model lie the outer resolution,
-scheme and closure, which also act near the wall, the inflow, domain and set-up, and the reference data.
+For example, in a statistically symmetric plane channel of half-height $\delta$, constant pressure gradient and no additional forcing give
+$\langle\tau_w\rangle=-\delta\,\mathrm{d}p/\mathrm{d}x$.
+The forcing strategy matters to the statistical quantities being compared~\cite{Quadrio2016}. Agreement on that mean stress checks balance and implementation; it does not independently validate the constitutive wall response. The velocity profile remains informative. With prescribed flow rate, the pressure gradient and wall stress instead become predictions (Table~\ref{tab:tests}). A discrepancy from the balance can also be scientifically useful: conservation, averaging or stress implementation may be deficient.
 
-What a test reveals depends on its design and forcing (Table~\ref{tab:tests}). An exact-input (a priori) test
-evaluates the map on reference inputs: it shows what the map returns and whether its inputs are ambiguous or sensitive
-to sampling, not the feedback with the solver, so a priori accuracy does not guarantee coupled
-accuracy~\cite{Duraisamy2021,Vadrot2023,HuYang2026}. At constant pressure gradient the mean momentum balance of a
-stationary channel fixes $\langle\tau_w\rangle=-\delta\,\mathrm{d}p/\mathrm{d}x$ for half-height $\delta$ under any
-conservatively imposed wall model~\cite{Quadrio2016}, so agreement on it cannot fail.
+\section{What specific comparisons establish}\label{sec:evidence}
+\subsection{Representational limits and retained balance}
+The author manuscript of Hayat and Park~\cite{Hayat2024preprint} gives a clear representational example. In its unswept separation case, the equilibrium model predicts reverse velocity in the outer calculation but positive skin friction where the matching point lies above a thin reversed layer. Its inner profile cannot change sign. A model solving the non-equilibrium partial differential equations can represent that sign change and predicts negative skin friction. In the thicker swept bubble, the matching point samples reversed flow and simpler models also predict negative chordwise friction. These are comparisons in particular flows, not a universal ranking of model complexity.
 
-Two questions are put to each test. Could it have exposed a failure to transfer? Only if it was coupled, outside the
-calibration flows, on a quantity its set-up leaves free, in a flow that exercises the targeted cause; an exact-input
-test shows a limit of the map (Table~\ref{tab:evidence}), not the coupled outcome. What did it show against a matched
-baseline, the same flow, solver, grid and quantity without the change? A favourable result is an improvement on that
-baseline, accuracy preserved with it or, without one, agreement with the reference; an adverse result is a regression,
-no improvement over a failing baseline in a flow that exercises the targeted cause or, without a matched baseline,
-disagreement with the reference. A claim holds
-where a test that could have exposed a failure is favourable. A difference is resolved only beyond a stated reference
-uncertainty~\cite{Larsson2016}. A favourable result is evidence of transfer only if the test could have failed; an
-adverse coupled result counts wherever it occurs, since a change must not degrade an established
-baseline~\cite{Vadrot2023,Spalart2023}.
+The same manuscript's stress decomposition attributes apparently good chordwise friction from simpler models partly to cancellation between erroneous contributions. This qualifies the inference that matching a final observable verifies a retained balance. Larsson et al.~\cite{Larsson2016} discuss near-cancellation of convection and pressure-gradient terms and the inconsistency of selectively retaining terms when their balance matters. Bose and Park~\cite{BosePark2018} describe applications in which fuller non-equilibrium formulations improve separation and recovery, alongside cases without a clear gain. These observations need not conflict: the omitted sum, matching height and flow history differ.
 
-A cause is supported only by an observation that discriminates it or by a comparison in which nothing
-else changed.
+For learned models, the admissible output and its scaling deserve equally explicit checks. Bae and Koumoutsakos~\cite{BaeKoumoutsakos2022} compare velocity-based and log-law-based formulations. Their published results relate large errors of the velocity-based formulation to matching locations outside its trained range; the log-law formulation performs better over the tested range and transfers to a spatially developing boundary layer. This supports checking the input representation and training range, not treating a change in Reynolds number alone as a complete measure of extrapolation.
 
+\subsection{Information, coupling and the outer solution}
+The building-block model of Lozano-Dur\'an and Bae~\cite{LozanoDuranBae2023} explicitly separates internal wall-model error from error introduced by outer LES inputs. In their published zero-pressure-gradient boundary-layer comparison, the wall-stress error with an exact-for-mean subgrid closure is below $0.5\,\%$ for the building-block model and about $2\,\%$ for the equilibrium model after the inflow adjustment. With practical closures, both have total wall-stress errors between $5\,\%$ and $15\,\%$. These are different numerical experiments. Combining them as opposite outcomes at an otherwise identical setting would erase the very distinction the experiment was designed to test.
 
-\section{What the published record shows for each cause}\label{sec:evidence}
+In the same paper's juncture flow, the building-block model improves the velocity prediction relative to the equilibrium model while substantial error remains in the separated corner. The authors note only one grid point across the separation bubble and attribute a major limitation to external subgrid-model errors. Relative improvement and inadequate absolute accuracy can therefore coexist; neither statement cancels the other.
 
-\subsection{States the model can return}\label{sec:states}
-An equilibrium law cannot return a stress that opposes the velocity at $h$ (Fig.~\ref{fig:loop}b) or lies at an angle
-to it. For reversal the limit binds where the reversed layer is thinner than the matching height: in a thin separation
-bubble the model that solves the thin-layer equations alone returned negative skin friction, and in a thicker, swept
-bubble that contained the matching height the equilibrium and integral models returned it too~\cite{HayatPark2025}. A
-learned model that takes the stress to be aligned with the velocity at the first point above the wall underestimated
-the reattachment location behind a step, which its authors attribute to that assumption~\cite{Dupuy2023graph}. Learned maps can add a limit of range. The velocity-input variant of a
-reinforcement-learning model gave large errors in a channel once the matching height in wall units left its
-training range, where its log-law variant stayed accurate~\cite{BaeKoumoutsakos2022}. Of the coded claims, \nTgtCone{} target the states the model returns, with mixed results
-(Table~\ref{tab:evidence}). A
-slip-wall model improved on the no-slip condition in every case and, in channel flow where the assumptions of the
-equilibrium law hold, lost accuracy with Reynolds number where that law did not~\cite{Bae2018}; in
-adverse-pressure-gradient Poiseuille--Couette flows up to separation the equilibrium law had a smaller total error
-than the building-block model, through cancelling errors~\cite{LozanoDuranBae2023}.
+Coupling must also be evaluated in its actual numerical context. Larsson et al.~\cite{Larsson2016} explain why sampling at an under-resolved first point can contaminate a wall model and discuss grid refinement while holding the physical matching height fixed. The required grid resolution depends on the numerical method. The spectral-element author manuscript of Mukha and Schlatter~\cite{Mukha2024preprint} reports no systematic benefit from time-averaging the input of its algebraic model and describes differences between weakly imposed traction and the velocity gradient at the wall. Its absence of a log-layer mismatch despite dominant modelled near-wall stress limits a universal explanation based on stress partition alone.
 
-\subsection{Retained balance}\label{sec:balance}
-Whether the terms an equilibrium law drops matter is disputed at the source. One argument holds that they nearly
-cancel in the logarithmic layer, so a model should keep both or neither~\cite{Larsson2016}; a reference budget near
-a separation bubble shows them strongly out of balance there~\cite{HayatPark2025}. Coupled results cannot settle the
-dispute on skin friction alone, because in the swept case of that study the equilibrium and integral models miss
-the spatial-growth term and still land near the reference through offsetting errors~\cite{HayatPark2025}. The assessment has moved with the data: no
-conclusive gain from non-equilibrium models in 2016~\cite{Larsson2016}, a gain in the separated and recovering flow
-over a hump by 2018, and none on two aerofoils~\cite{BosePark2018}. Of the \nTgtCtwo{} coded claims that target the
-retained balance, \nAloneCtwo{} change it alone. After a sudden spanwise pressure gradient in a channel, non-equilibrium models cut the error in the
-spanwise wall stress from 10\,\% to about 2\,\% at a nondimensional time near one, and none captured the initial
-drop of the streamwise stress~\cite{LozanoDuran2019}. In a diffuser, pressure-sensitised
-boundary conditions gave the recirculation that the logarithmic law missed, at the wrong size~\cite{Jones2015}, and on
-a cyclist model they made no significant difference~\cite{Defraeye2010}.
-
-\subsection{Information}\label{sec:information}
-Inputs at one height trained worse on periodic
-hills than inputs at two or more~\cite{Zhou2021hills}, and upstream history changes a boundary layer at a fixed
-pressure-gradient parameter~\cite{HayatPark2025}. In a coupled
-simulation of a step, a graph network gained in mean wall stress from a second message-passing step, and the peak
-stress stayed under-predicted, a shortfall its authors could not assign to the wall model
-alone~\cite{Dupuy2023graph}. Of the \nTgtCthree{} coded claims that target information, \nAdvCthree{} met an adverse coupled result. In coarse-mesh Reynolds-averaged simulations, wall functions with geometry-dependent inputs improved the
-channel velocity over standard wall functions and brought no significant improvement to the recirculation behind a
-step~\cite{Fogliatto2024}. A model assembled from canonical flows improved the velocity in a wing-body juncture; in
-the separated corner it also improved on the equilibrium law and stayed, in its authors' words, ``far from
-satisfactory'', where, with one grid point across the separation bubble, they find the errors of the subgrid closure
-dominant~\cite{LozanoDuranBae2023}.
-
-\subsection{Coupling}\label{sec:coupling}
-The fixed-height remedy for the log-layer
-mismatch is supported by a comparison in which only the grid changed, repeated with a second numerical
-method~\cite{Larsson2016}, yet the mechanism remains disputed (Table~\ref{tab:evidence}), and time-averaging the
-inputs, reported to help~\cite{Rezaeiravesh2019}, gave no systematic gain for an algebraic wall law in coupled
-spectral-element runs~\cite{Mukha2025}. The numerical scheme matters separately: in a lattice-Boltzmann solver a
-spurious oscillation of the Reynolds stress on coarse grids was traced to the collision
-scheme~\cite{Spinelli2023}, and the wall model, grid, scheme and subgrid closure act
-together~\cite{Rezaeiravesh2019}. Training inside the solver is one learned answer to coupling. The model so
-trained recovered the skin friction of a boundary layer absent from its training~\cite{BaeKoumoutsakos2022}, and in
-another solver showed a mismatch of opposite sign at low and high Reynolds number~\cite{Vadrot2023}. Among the coded
-claims, a slip velocity imposed in a lattice-Boltzmann solver with a Reynolds-averaged closure improved the friction
-on an aerofoil over an earlier slip-velocity bounce-back scheme, with errors near the leading edge that grew under grid
-refinement~\cite{Ponsin2026}, and a volume-filtered formulation reproduced the mean slip velocity over periodic hills
-with its largest streamwise velocity deviations near reattachment~\cite{Hausmann2025a}. One counter-example warns against a
-simple rule: a spectral-element solver showed no mismatch although the modelled stress dominated next to the
-wall~\cite{Mukha2025}. The two inner--outer methods coded here replace the map by resolved near-wall blocks and make the exchange with the
-outer solution explicit; their authors name that exchange, the resolution and number of blocks, the near-wall
-subgrid closure and the outer solution among the sources of error. In a channel, blocks returning a block-averaged, linearly interpolated wall stress gave, on a
-deliberately very coarse baseline grid at a friction Reynolds number of 4200, a mean velocity that reasonably matched
-the reference, with a 5\,\% undershoot at the interface, and at 20\,000 overshot the logarithmic law by 6\,\% near the interface, where the authors call the interpolation
-inaccurate~\cite{Sandham2017}. In a tripped boundary layer, source terms from embedded blocks corrected the coarse
-near-wall solution; without them the mean velocity of the coarse solution erred by about 19\,\% at the exit,
-where the coupled solution agreed with the reference~\cite{Chen2023}.
-
-\subsection{Errors outside the wall model}\label{sec:outside}
-Some errors charged to a wall model may arise elsewhere. With the reference mean stress imposed, separation on a bump
-depended on the subgrid closure~\cite{ZhouBae2024}, which qualifies the unfavourable comparisons reported for that
-flow~\cite{Spalart2023}. A learned model and the equilibrium law both missed a corner separation that two grid points
-spanned~\cite{Arranz2024}. The closure is not always decisive: it changed little in wall-modelled channel flow at
-one Reynolds number~\cite{Vadrot2023}, and with one numerical scheme its influence shrank once a wall model was
-active~\cite{Rezaeiravesh2019}. The reference has its own uncertainty, and for one
-shock-induced separation the equilibrium results lay within it, as the non-equilibrium results
-did~\cite{Larsson2016}. Of the \nClaims{} coded claims, \nCandOut{} leave the outer solution a candidate for their errors, with no
-observation that discriminates it.
+Finally, a wall model should not inherit every error of the coupled calculation. Zhou and Bae's identified author manuscript~\cite{Zhou2024preprint} imposes a reference mean wall stress on a bump and still finds strong dependence of the separation on the subgrid closure. That intervention reduces uncertainty in the supplied mean stress without making the outer solution exact. It motivates controlled changes in outer modelling before assigning a discrepancy solely to the wall treatment. Table~\ref{tab:evidence} connects these examples to useful tests and their limits.
 
 \input{evidence_table}
 
-\section{Which claimed improvements were tested for transfer, and with what result}\label{sec:record}
+\subsection{Validation exists independently of a review's scope}\label{sec:scope}
+Agrawal et al.~\cite{Agrawal2024} provides a caution about evidence handling as well as modelling. The published paper includes coupled LES of a speed bump and a transonic bump. Its speed-bump comparisons include pressure, skin friction, velocity and Reynolds shear stress. On the coarse and medium grids, downstream velocity and shear-stress predictions improve relative to the equilibrium model while discrepancies from quasi-DNS remain; the fine-grid comparisons are closer. Residual error is not evidence of zero improvement.
 
-The record was assembled as Box~1 describes, with reporting after PRISMA-S~\cite{Rethlefsen2021}. Each study enters
-with one claimed improvement, of a wall-stress model for LES, a RANS wall function, a learned wall model or an
-inner--outer method: the first treatment that its title and introduction say it proposes or, for a study that tests
-published treatments, the first they name. Each was coded from its full text with the two questions of
-Section~\ref{sec:framework} and placed in one of seven categories by what its tests could and did show. Results
-are counted by direction~\cite{Campbell2020}, each with its basis: a difference beyond a stated uncertainty, numbers
-without one, or words only. A coded value that the source leaves uncertain gives a range, from the certain to the
-possible count; ranges of different categories do not add, since one uncertain value can move a claim between them.
-Tests outside the scope, such as heat or mass transfer, laminar--turbulent transition or variable-property, compressible, rough-wall or free-surface flow, and tests whose regime the source does not settle enter no count.
-
-\begin{figure}[t]
-\fbox{\parbox{0.96\columnwidth}{\small
-\textbf{Box 1 \textbar{} How the evidence was assembled.}
-\input{methods_box}
-}}
-\end{figure}
+The coded preprint and the published paper do not contain identical comparisons. Moreover, a low-Mach review cannot treat a compressible solver formulation as proof that every simulated flow lies outside scope. A case-specific Mach number or equivalent regime statement is needed when the regime is otherwise ambiguous. Transonic cases can be identified as outside the present physical focus while remaining valid evidence that the paper includes coupled validation. Figure~\ref{fig:record} separates these decisions. No absence-of-validation claim follows from a scope filter, and uncertainty about the speed-bump regime is left explicit.
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{../figures/fig2_record.pdf}
-\caption{The coded record: all \nClaims{} claimed improvements, and the three largest classes of wall model, by what
-their tests could and did show. Blue, held in a test that could have exposed a failure; blue over red,
-held in such a test and also met an adverse coupled result; red, met an adverse coupled result without holding; dark grey,
-unclear whether any test could have exposed a failure; light grey, no test could have; white, the category depends on
-a value that the sources leave uncertain. In a thick bar, a segment without a number holds one claim; thin bars carry no numbers. No claim falls for certain in the
-two remaining categories, exposed with neither result and no reported test. Thin bars exclude the \nPilot{}
-pilot studies used to write the coding rules; the claims outside the three classes are inner--outer
-methods.}\label{fig:record}
+\caption{Source version, review scope and validation are separate decisions, illustrated by Agrawal et al.~\cite{Agrawal2024}. The published speed-bump comparisons include velocity and Reynolds shear stress as well as surface quantities. A compressible solver does not specify the Mach regime of each case. Transonic validation remains validation even when excluded from a low-Mach review. Neither scope classification establishes whether the case was independent of calibration. The diagram reports evidence categories, not counts of independent simulations.}\label{fig:record}
 \end{figure*}
 
-Of the \nClaims{} claimed improvements, \nExposed{} were tested at least once in a way that could have exposed a
-failure to transfer; the sources leave this unclear for \nExpUnknown{} and rule it out for \nNotExposed{}. Of all
-\nClaims{} (Fig.~\ref{fig:record}), \nCatOne{} held in such a test with no adverse coupled result in any test;
-\nMixed{} held in such a test and also met an adverse coupled result; \nCatThree{} met an adverse coupled result without
-holding, \nCatThreeExp{} of them in such a test. Of the rest, \nCatFour{} were exposed with neither result,
-for \nCatFive{} the sources leave unclear whether any test could have exposed a failure, \nCatSix{} were tested only in
-ways that could not have, and \nCatSeven{} have no reported test. Of the \nAdv{} claims with an adverse coupled result, at
-least \nAdvReg{} rest on a regression, \nAdvNot{} on an improvement not shown and \nAdvDis{} on a disagreement with
-the reference, the kind being uncertain for up to \nAdvUndet{}. \nAdvResolved{} of the adverse claims and \nFavResolved{}
-of the claims that held are resolved against a stated uncertainty; of the latter, \nFavNum{} rest at best on numbers
-without one and \nFavWords{} on words alone, the basis of the others being uncertain. Two claims held with no adverse coupled result whatever the uncertain values: a wall model augmented with a
-proper-orthogonal-decomposition mode~\cite{Hansen2023} and a two-scale solution for a tripped boundary
-layer~\cite{Chen2023}.
+\subsection{Relative improvement is distinct from absolute accuracy}\label{sec:comparison}
+A quantitative example comes from Dupuy et al.~\cite{Dupuy2023graph}. In the published backward-facing-step calculation, Table~5 reports spatial integrals of squared error for wall-stress magnitude and its streamwise component. With four message-passing steps, the respective values are $0.067$ and $0.308$, compared with $0.806$ and $0.686$ for the law-of-the-wall baseline. Both measures improve. Figure~\ref{fig:contrast} normalises each measure by its own baseline; this preserves the comparison without treating the two errors as interchangeable.
+
+The paper also reports an underestimated reattachment location. An integrated squared error is not a reattachment-location error: it weights the full spatial distribution and can decrease while a zero crossing remains misplaced. This is a useful limitation of the validation claim, but does not demonstrate a reversal in relative benefit between stress magnitude and the streamwise component. Nor does the table alone establish whether reattachment improves relative to its baseline.
+
+More generally, a quantity-only contrast requires the same model and baseline, flow parameters, grid, closure, matching height, spatial and temporal support, and reference, with the comparison criterion specified for each quantity. A change from relative improvement to residual absolute error is a change of question. The accepted manuscript of Jones and Utyuzhnikov~\cite{Jones2015}, for example, compares pressure-sensitive boundary conditions and a logarithmic treatment using different near-wall meshes; its recirculation and pressure results should not be labelled a controlled contrast that changes only the observable. A grid study can support an assessment without retrospectively making two distinct grids identical.
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{../figures/fig3_contrast.pdf}
-\caption{What separates a favourable from an adverse result. \textbf{a}, For the \nM{} claims that held where they
-could fail and also met an adverse coupled result, the number whose two results differ in one factor only (a claim
-can count under several). \textbf{b}, The same claims one by one; grey names may also belong. Filled dot, that factor alone separates the two
-results; ring, the same, both against a matched baseline; open dot or square and grey ring, possible, not certain; grey square, every pair
-differs in two or more factors. Quantities, favourable | adverse: $\tau$, wall stress or separation; $|\tau|$,
-$\tau_x$, wall-stress magnitude and streamwise component, the second with the reattachment point; $U$, mean velocity;
-$u'$, fluctuations; $p$, surface pressure; o, other. S, R, L: wall-stress model for LES, RANS wall function, learned
-model; asterisk, pilot study.}\label{fig:contrast}
-\nocite{DiZhou2024,Hu2023,Vadrot2023a,Xiao2024,Fowler2023,Krank2016,Davidson2025,Wang2025,Mukha2019,Zhou2026}
+\caption{Both integrated stress errors improve in the published backward-facing-step comparison of Dupuy et al.~\cite{Dupuy2023graph}. Values from Table~5 are divided by the corresponding law-of-the-wall baseline: $0.806$ for magnitude and $0.686$ for streamwise component. A value below one indicates a lower spatial integral of squared error. At four message-passing steps the ratios are approximately $0.083$ and $0.449$. These are integrated error measures, not pointwise errors or error bars. The reported residual reattachment error is a separate assessment. Lines connect tabulated values without implying a continuous model parameter.}\label{fig:contrast}
 \end{figure*}
 
-Of the \nM{} claims that held and also met an adverse coupled result whatever the uncertain values, \nAny{} hold a favourable and an adverse
-result that differ in one factor only: the quantity examined in \nObs{}, the location in \nLoc{} and a flow parameter in
-\nPar{} (a claim can count under several; Fig.~\ref{fig:contrast}). The numerical set-up alone separates the two
-results in \nNum{} claims and the type of flow alone in \nCfg{}; in \nConf{} every pair differs in two or more factors.
-For the \nMNew{} such claims coded after the pilot, \nAnyNew{} differ in one factor only, all \nObsNew{} in the
-quantity, and \nConfNew{} in two or more factors in every pair. This contrast was added after the counts
-were known and missed, by one claim, its own condition of a majority among the claims coded after the pilot; it is a
-description. In \nObsTau{} of the \nObs{} claims separated by the quantity alone, the wall stress or the separation is
-one of the two quantities, with the favourable result in \nObsTauFav{} claims and the adverse one in \nObsTauAdv{} (in
-one claim both). Both results rest on a matched baseline in \nObsDouble{} of the \nObs{}
-quantity-only claims; elsewhere both are comparisons with the reference alone. The factors were read from the sources
-in two independent passes, which gave the same set for \nDagree{} of \nPairs{} pairs of tests (Gwet's AC1 \nDac{}); a
-third pass settled the others.
+\begin{figure*}[!t]
+\fbox{\parbox{0.96\textwidth}{\small
+\textbf{Box 1 \textbar{} Evidence selection and correction.}
+\input{methods_box}
+}}
+\end{figure*}
 
-
-\section{What a published result establishes for a planned use}\label{sec:procedure}
-
-Validation compares computed with measured results, with quantified error and uncertainty estimates for
-both~\cite{OberkampfTrucano2002}; Table~\ref{tab:checklist} applies that comparison to the published tests of a claim
-for a planned use, in five steps built on the two questions of Section~\ref{sec:framework}. Where step 5 answers
-unknown, the last row gives the proposed test.
+\section{From a published result to a planned use}\label{sec:procedure}
+Validation concerns agreement with reference observations and the associated uncertainties~\cite{OberkampfTrucano2002}. For a planned use, one must also decide which changes from the tested conditions matter. Table~\ref{tab:checklist} makes that reasoning explicit. It distinguishes a missing match from a demonstrated failure, and permits a justified extension of evidence when a changed setting has been shown to be irrelevant at the required tolerance. Exact identity of every grid parameter is not a practical generalisation criterion.
 
 \input{checklist_table}
 
-Consider a network trained on periodic hills~\cite{Zhou2021hills}, to be run in a channel at constant flow rate
-for the mean wall stress. The set-up leaves that stress free (step 1); the flow leaves the training range
-and changes the solver and the sampling of the inputs (step 2). The record holds exact-input evaluations, which do not close the
-loop, and one coupled channel test at constant pressure gradient, where the mean wall stress is fixed,
-reported as poor without a matched comparison~\cite{Vadrot2023} (steps 3 and 4). Step 5 answers unknown.
+Consider the separated-step result in Fig.~\ref{fig:contrast}. If the planned quantity is reattachment location, a gain in integrated stress error is insufficient. The next comparison should score both the stress distribution and the zero crossing against a common reference, using the model and an established baseline on matched numerical settings. Finite-time variability and reference uncertainty should be estimated separately from a grid-sensitivity study. If refinement also changes a graph model's input neighbourhood, the resulting difference combines numerical and information changes; that dependence must be recorded. The proposed comparison may establish useful accuracy without isolating a unique physical cause.
 
-The checklist was applied to the \nKc{} studies, coded after the pilot, that two independent passes judged to test the
-same treatment as an earlier coded study, or a modified successor of it; \nKcP{} were used to write step 5 and are shown
-apart (Fig.~\ref{fig:checklist}b). In each of two independent passes the table as then worded was applied to the
-earlier paper or papers and a summary of the later runs' coded flow, forcing and classes of quantity, but not the later
-paper, and a first test to run was proposed; a further pass compared both records with the later paper. Step 5
-withheld assurance in all \nKc{} cases, in both passes, because an item of the nearest earlier test always differed
-from the planned run; an abstention in every case cannot show whether step 5 discriminates. The tests
-proposed in the two passes shared the cause, the class of quantity and the factor to vary in \nKsameAll{} cases. The
-later papers hold \nKadvRows{} adverse coupled results, the range covering uncertain results; \nKonBothA{} lie on the
-cause and class of quantity proposed in pass 1 and \nKonBothB{} on those of pass 2. Because no proposed test was run in
-full, the cases cannot show whether such a comparison would have been informative. They are consistent with the
-abstention of step 5; neither the bearing of its unmatched items on those results nor the value of the last row as a
-predictor is established.
+For transfer, the calibration domain must be documented broadly enough to include coefficient tuning, threshold selection, architecture selection and repeated use of demonstration flows. A flow with a different geometric label is not automatically independent of that process. Raje and Duraisamy's published dynamic-slip study~\cite{Raje2025}, for example, states that its limiter coefficient was selected through numerical experimentation across Reynolds numbers and flow configurations. Its coupled validation remains useful; a transfer claim must additionally identify which cases were withheld from that selection.
 
-Applied to \nSpecCases{} cases as an illustration, the last row returns several comparisons in each. For the network
-above it returns at least \nSpecCompOne{}, each against the equilibrium law on the same grid and matching height and scoring the
-mean wall stress and the velocity profile; none separates the trained range, the inputs and the
-coupling. For a graph-network model whose published results reverse between the wall-stress magnitude and the
-reattachment point behind a step~\cite{Dupuy2023graph}, it returns \nSpecCompTwo{}; neither identifies a cause, and the
-grid study it asks for would alter inputs defined on the mesh. For a wall function scaled with the pressure
-gradient~\cite{Duprat2009}, with a pulsating diffuser as the planned use, the tests proposed in the two passes share
-all three labels and still differ: a steady run against the model without its pressure-gradient term differs from its
-baseline in a retained term alone and, with the closure also held fixed, could identify the steady part of that cause,
-while the pulsating run against a standard wall function shows only an affected quantity. A later paper ran the
-pulsating flow against a standard treatment on a finer grid; both under-predicted the measured wall
-stress~\cite{Grecu2025}. The record supplies the reference uncertainty the row asks for in \nSpecWithU{} of the
-\nSpecComparisons{} comparisons.
+The checklist itself needs evaluation. An archived retrospective exercise contains 13 applications in two passes. Those passes proposed the same cause in 8 cases, quantity class in 10, factor to vary in 7, and all three in 3 (Fig.~\ref{fig:checklist}). These counts describe the recorded labels, not accuracy against physical truth. The earlier form of the checklist withheld assurance in all cases. Such universal abstention cannot establish discrimination between successful and unsuccessful uses.
 
-A match on the type of flow and class of quantity alone finds a favourable earlier result for \nFavAns{} later coupled
-tests, where step 5 abstains (Fig.~\ref{fig:checklist}a). Of these, \nSTfalse{} of \nSTfav{} proved adverse where the
-later study ran the same treatment~\cite{Mukha2025,Rezaeiravesh2019} and \nMSfalse{} of \nMSfav{} where it ran a
-modified successor~\cite{Krank2017,Krank2018a}.
+The exercise was not a prospective blind validation: case selection and development used known outcomes, some applications mentioned later work, and several cases share predecessors. Furthermore, the checklist has since been revised. No predictive success rate or later-outcome hit rate is inferred from these records. A useful future evaluation would specify planned uses, tolerances and proposed comparisons before their results are known, include cases where conditional assurance is possible, and compare decisions with a simpler existing practice.
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{../figures/fig4_checklist.pdf}
-\caption{The checklist against what later papers did. \textbf{a}, Later coupled tests, matched to the earlier paper
-only by type of flow and class of quantity (rows, what the earlier paper showed for that match; colours, the later
-result; white, uncertain, not always possibly adverse; a segment without a number holds one test).
-\textbf{b}, Table~\ref{tab:checklist} as then worded, applied in two independent passes to the earlier work of \nKc{}
-cases; columns, the cases' later papers. Dots, whether the passes proposed the same cause, class of quantity and
-factor to vary; boxes, the further pass's judgement of the part of the proposed test that the later paper ran
-(mixed, some of each); numbers, the adverse coupled results coded for the later paper and how many lie on
-both the proposed cause and class of quantity. Brackets separate the cases used to write step 5.}\label{fig:checklist}
-\nocite{Krank2018,Pradhan2023,Salomone2025,Defraeye2012}
+\caption{Descriptive agreement in 13 archived retrospective applications of an earlier checklist. The two passes selected the same cause in 8 cases, quantity class in 10 and factor to vary in 7; all three labels agreed in 3. Assurance was withheld in every case. Shared sources, knowledge of outcomes and subsequent checklist changes prevent interpreting these counts as independent trials or prospective predictive validation. The labels and counts are supplied for reproducibility; later favourable/adverse outcome classifications are not used here.}\label{fig:checklist}
 \end{figure*}
 
+\section{Implications and limits}\label{sec:outlook}
+A useful report of a wall-model comparison should preserve several distinctions. Identify the exact source and model version. State whether inputs are prescribed or obtained from the running solver. Document calibration and tuning, the forcing constraints, the observable and its spatial support. Report relative performance against a matched baseline separately from absolute error against a reference and from the tolerance needed in practice. An unreported uncertainty is unknown, not zero; without it, a numerical difference need not be a resolved improvement.
 
-\section{Findings and research agenda}\label{sec:agenda}
+For diagnosis, the next experiment should target an actual ambiguity. An output constraint can sometimes be tested analytically. A term budget can reveal cancellation that a final stress hides. Prescribing reference inputs can separate map error from input error, while imposing reference traction can test the outer calculation. Coupled ablations assess sensitivity within the chosen configuration; nonlinear interactions and changed numerical behaviour limit any claim that a single universal cause has been isolated.
 
-(1) Of \nClaims{} claimed improvements, \nHeld{} held in a coupled test that could have exposed a failure to
-transfer and \nAdv{} met an adverse coupled result (Fig.~\ref{fig:record}, white segments included). (2) A favourable and an adverse result
-of one claim can differ only in the quantity examined, with the wall stress on either side
-(Fig.~\ref{fig:contrast}). (3) Of the coded
-claims, \nIsoStated{} change one cause alone with all else stated fixed and \nIsoOpen{} leave that unknown; the
-causes rest mostly on derivations, assessments, exact-input demonstrations and coupled comparisons that change more
-than the cause (Table~\ref{tab:evidence}). (4) Matched only by type of flow and class of quantity, a favourable earlier
-result was followed by an adverse later test in \nSTfalse{} of \nSTfav{} tests of the same treatment and \nMSfalse{}
-of \nMSfav{} of a modified successor; in the \nKc{} cases of Section~\ref{sec:procedure} step 5 withheld assurance every time
-(Fig.~\ref{fig:checklist}a,b). (5) Of \nCoupled{} coupled tests, \nMatched{} have a matched baseline
-and \nUres{} resolve their outcome against a stated reference uncertainty (Table~\ref{tab:evidence}).
+This review's examples establish possibilities and distinctions, not their prevalence. The earlier corpus was assembled from a single database and accessible English-language sources. Its eligibility and outcome coding contained inconsistencies, including the treatment of scope-uncertain validation and the conflation of relative and absolute error. The earlier aggregate transfer and quantity-only estimates are withdrawn. The archived data remain useful for tracing those corrections but are not used to estimate how often wall models succeed, fail or lack validation.
 
-Score quantities together: report the wall stress, the mean velocity
-and the separation a change affects against one baseline (finding 2). Compare one change at a time: no pair of tests of Section~\ref{sec:record} differs in the numerical
-set-up or the type of flow alone, and of the \nKc{} later papers \nKdiffVersion{} differ from the nearest earlier test
-in the model version, as step 5 compares it, \nKdiffGrid{} in the grid and \nKdiffClosure{} in the closure; an unchanged model in a second code
-on the same flow and quantity could show how far a result depends on the code (findings 2 and 4). Isolate one cause:
-change the output form, a retained term, an input or the coupling alone, with all else stated fixed, in a flow that
-exercises it, such as a reversed layer thinner than the matching height (finding 3). State what a test could show:
-its mode, calibration flows, forcing, quantity and targeted cause decide whether it can expose a failure to
-transfer, its matched baseline and a numerical reference uncertainty what it shows (findings 1 and 5). Keep the baseline in
-view: at least \nAdvReg{} adverse claims are regressions against a matched baseline, so a new treatment needs the
-established one on the same grid where it should work (finding 1). Test the
-checklist prospectively: have independent groups propose the comparison for one planned use from stated criteria,
-and run it (finding 4).
-
-\section{Outlook}\label{sec:outlook}
-
-The four causes need not be specific to walls: a subgrid closure, a turbulence closure or a learned component that
-replaces unresolved physics inside a solver may likewise return a limited set of states, retain part of a balance,
-see part of the information and be coupled through a grid, a hypothesis those fields can test with the same two
-questions.
-
-The evidence has a stated scope. The record holds \nClaims{} studies from one database search of journal articles in English;
-its restriction to copies that could be retrieved lawfully favours recent work (Box~1). It records published
-outcomes, which authors select. Each study was coded in two independent passes with adjudication from the source; tests coded
-in one pass only are kept, and the uncertain values are carried as ranges. In \nKrecallA{} of the \nKc{} cases of Section~\ref{sec:procedure},
-pass 1 listed later work that it had not been given, and several cases share an earlier paper. The cases illustrating the last row of Table~\ref{tab:checklist} were chosen, and the row written, with their outcomes known; afterwards one
-sentence of the row was reworded to the rule the passes were given, the row was extended to wall functions and to
-flows without reference data, and step 2 to stress misalignment.
-
-Within that scope, a published improvement is evidence for the quantity and set-up tested. Before
-a wall model is moved, the checklist says what is missing and proposes comparisons that could come next in the
-user's own setting.
+The framework is therefore a proposal for organising evidence, supported by the specified cases. Its added decision value over existing reviews remains a question for prospective evaluation. For present use, it helps make a modest but consequential statement precisely: what was tested, what that comparison supports, and what evidence is still needed for the intended prediction.
 
 \backmatter
-
 \bmhead{Data availability}
-The public research package contains study metadata, claim and test codings, uncertainty alternatives, result tables, and a scope-sensitivity audit. Its data dictionary describes these exported records and their limits. Published full texts remain available from their original sources.
-
+The accompanying research repository provides the source-version and claim-support records, correction history, values plotted in Fig.~\ref{fig:contrast} and retrospective labels used in Fig.~\ref{fig:checklist}. Historical coding and intermediate sensitivity calculations are explicitly marked as superseded for aggregate inference. Source papers are accessed from their original repositories or publishers.
 \bmhead{Code availability}
-The public scripts reproduce the four figures and the claim-category and exposure sensitivity analysis from the exported records. Other manuscript numbers and retrospective results are supplied as snapshots; their upstream derivations are outside this package.
-
+The accompanying scripts reproduce all four figures and check the numerical values used in this version. Separate historical scripts reproduce archived coding calculations; reproducing those calculations does not validate their scientific interpretation.
 \bmhead{Funding}
 This work received no specific funding.
-
 \bmhead{Author contributions}
 To be decided when the author list is final.
-
 \bmhead{Competing interests}
 The authors declare no competing interests.
-
 \bibliography{references}
-
 \end{document}

@@ -120,14 +120,14 @@ def panel_c(fig):
     box(ax, 3.7, 5.4, 0.75, 1.0, '$\\tau_w$')
     arrow(ax, (1.82, 5.9), (2.07, 5.9))
     arrow(ax, (3.42, 5.9), (3.67, 5.9))
-    ax.text(0.05, 4.45, 'other flows: causes 1, 3,\npart of 2, and the input\nsampling of 4', fontsize=FS, color=MUTE, va='center', linespacing=1.05)
+    ax.text(0.05, 4.45, 'map response to\nprescribed inputs;\nno solver feedback', fontsize=FS, color=MUTE, va='center', linespacing=1.05)
     ax.plot([0.05, 4.45], [3.55, 3.55], color=GRID, lw=0.6)
     ax.text(0.05, 3.05, 'Coupled test', fontsize=FS, va='center', fontweight='bold')
     box(ax, 0.05, 1.5, 1.45, 1.1, 'solver')
     box(ax, 3.0, 1.5, 1.45, 1.1, 'wall\nmodel', ec=ACC)
     arrow(ax, (1.55, 2.35), (2.97, 2.35), color=ACC)
     arrow(ax, (2.97, 1.75), (1.55, 1.75), color=ACC)
-    ax.text(0.05, 0.8, 'other flows: causes 1–4,\nmixed with O', fontsize=FS, color=MUTE, va='center', linespacing=1.05)
+    ax.text(0.05, 0.8, 'map and feedback;\nerrors mixed with O', fontsize=FS, color=MUTE, va='center', linespacing=1.05)
     letter(fig, 0.785, 0.94, 'c', 'What each test sees')
 
 def main():

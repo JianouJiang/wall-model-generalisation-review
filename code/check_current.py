@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+"""Check the current critical review without validating superseded census claims."""
+import hashlib
+import json
+import re
+import subprocess
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[1]
+M=ROOT/'manuscript'
+main=(M/'main.tex').read_text()
+parts=[main]+[(M/f).read_text() for f in ('evidence_table.tex','checklist_table.tex','methods_box.tex')]
+alltext='\n'.join(parts)
+
+def arguments(text,command):
+    """Extract balanced mandatory arguments, including nested LaTeX commands."""
+    values=[]
+    for m in re.finditer(re.escape('\\'+command)+'\\{',text):
+        i=m.end();start=i;level=1
+        while level:
+            if text[i]=='{' and text[i-1]!='\\':level+=1
+            if text[i]=='}' and text[i-1]!='\\':level-=1
+            i+=1
+        values.append(text[start:i-1])
+    return values
+
+def words(s):
+    s=re.sub(r'\\[A-Za-z]+(?:\{[^{}]*\})?', ' macro ',s)
+    return len(re.findall(r"\S+",s))
+
+def main_check():
+    support=json.loads((ROOT/'data/revision/claim_support.json').read_text())
+    cited={k.strip() for x in arguments(alltext,'cite') for k in x.split(',')}
+    covered={r['reference_key'] for r in support}
+    assert cited<=covered,('unsupported citations',sorted(cited-covered))
+    bib=(M/'references.bib').read_text()
+    bibkeys=re.findall(r'@\w+\{([^,]+),',bib)
+    assert len(bibkeys)==len(set(bibkeys)),'duplicate bibliography keys'
+    assert cited<=set(bibkeys)
+    caps=[words(x) for s in parts for x in arguments(s,'caption')]
+    assert len(caps)==7 and max(caps)<150,caps
+    assert main.count('\\includegraphics')==4
+    assert alltext.count('\\begin{table*}')==3
+    assert '\\input{numbers}' not in main
+    assert not re.search(r'\\n(?:Claims|Obs|Mixed|Exposed|Held|Adv)\b',alltext)
+    assert 'aggregate transfer and quantity-only estimates are withdrawn' in main
+    assert 'does not establish predictive' not in main or 'retrospective' in main
+    assert 'does not' in main and 'no estimate of the prevalence' in main
+
+    dup=json.loads((ROOT/'data/revision/dupuy_table5.json').read_text())
+    # Values independently transcribed from the visually checked published Table 5.
+    assert dup['baseline_magnitude']==0.806 and dup['baseline_streamwise_component']==0.686
+    assert dup['magnitude']==[.687,.217,.120,.067,.066]
+    assert dup['streamwise_component']==[.585,.311,.302,.308,.367]
+    cases=json.loads((ROOT/'data/checklist_cases.json').read_text())['cases']
+    keys=['same_cause','same_observable_class','same_factor']
+    agreement=[sum(c['agreement'][k] for c in cases) for k in keys]
+    agreement.append(sum(all(c['agreement'][k] for k in keys) for c in cases))
+    assert len(cases)==13 and agreement==[8,10,7,3]
+    assert all(c['records'][p]['step5_from_the_item_record']=='unknown' for c in cases for p in ['A','B'])
+    exclusions=json.loads((ROOT/'data/revision/eligibility_audit.json').read_text())
+    manifest=json.loads((ROOT/'data/revision/historical_source_manifest.json').read_text())
+    assert len(exclusions)==len({x['study_id'] for x in exclusions})==33
+    assert len(manifest)==115 and sum(x['historical_cohort'] for x in manifest)==82
+    assert {x['study_id'] for x in exclusions}=={x['study_id'] for x in manifest if not x['historical_cohort']}
+
+    pdf=M/'main.pdf'
+    info=subprocess.check_output(['pdfinfo',str(pdf)],text=True)
+    pages=int(re.search(r'^Pages:\s+(\d+)',info,re.M).group(1))
+    assert 0<pages<=15,pages
+    assert not any(M.glob('supplement*.pdf')) and not any(M.glob('appendix*.pdf'))
+    text=subprocess.check_output(['pdftotext',str(pdf),'-'],text=True)
+    assert '??' not in text,'unresolved PDF reference'
+    compact=re.sub(r'\s+',' ',text)
+    # The only permitted use is the genuine title of the cited Bae paper.
+    cleaned=re.sub(r'multi-?\s*agent reinforcement learning','reinforcement learning',compact,flags=re.I)
+    banned=r'\b(?:AI|LLM|GPT|Claude|Codex|Anthropic|OpenAI|agents?|reader|recalled|card)\b|certainly holding|Jianou|Jiang|jianou\.jiang'
+    hits=re.findall(banned,cleaned,re.I)
+    assert not hits,hits
+    assert 'Authors: to be decided' in compact
+    assert 'no competing interests' in compact and 'no specific funding' in compact
+    log=(M/'main.log').read_text(errors='replace')
+    assert not re.search(r'undefined references|Citation .* undefined|Overfull \\[hv]box',log)
+    report={'status':'PASS','edition':'critical review; aggregate claims withdrawn',
+            'pdf_pages':pages,'pdf_sha256':hashlib.sha256(pdf.read_bytes()).hexdigest(),
+            'citations_with_support_record':len(cited),'caption_word_counts':caps,
+            'abstract_words':words(arguments(main,'abstract')[0]),
+            'figures':4,'tables':3,'eligibility_records_checked':33,
+            'dupuy_N4_normalised_errors':[.067/.806,.308/.686],
+            'retrospective_agreement':agreement,
+            'circulation_text_scan':'PASS',
+            'scientific_limit':'Pass checks consistency and specified support. It does not certify an exhaustive corpus or predictive checklist validity.'}
+    (ROOT/'results/revision/current_checks.json').write_text(json.dumps(report,indent=2)+'\n')
+    print(json.dumps(report,indent=2))
+
+if __name__=='__main__':main_check()

@@ -1,0 +1,59 @@
+[
+  {
+    "study_id": "N418",
+    "old_test_ids": [
+      "N418-T01",
+      "N418-T02",
+      "N418-T03",
+      "N418-T04",
+      "N418-T05",
+      "N418-T06",
+      "N418-T07",
+      "N418-T08",
+      "N418-T09"
+    ],
+    "new_test_ids": [
+      "N418-R01",
+      "N418-R02",
+      "N418-R03",
+      "N418-R04",
+      "N418-R05",
+      "N418-R06",
+      "N418-R07",
+      "N418-R08",
+      "N418-T04",
+      "N418-T05",
+      "N418-T06",
+      "N418-T08"
+    ],
+    "reason": "Use published comparisons, separate Reynolds sweep from grid sweep, merge overlapping pressure aggregates, retain relative benefit and absolute error separately. Calibration interpretation remains an explicit alternative. No Mach value is invented.",
+    "source": "https://doi.org/10.1103/PhysRevFluids.9.124603",
+    "source_location": "Secs. III–VI; Figs. 2–15"
+  },
+  {
+    "study_id": "N626",
+    "test_id": "N626-T05",
+    "before": {
+      "result_flag": "improvement not shown",
+      "relative_comparison": null,
+      "absolute_reference_assessment": null
+    },
+    "after": {
+      "result_flag": "none",
+      "relative_comparison": "reattachment comparison not resolved by the cited integrated-stress table",
+      "absolute_reference_assessment": "all LES underestimate the reattachment location; Table 5 shows both integrated stress errors smaller for N=4 than the law-of-wall baseline"
+    },
+    "reason": "Residual reattachment error cannot be equated with failure to improve the integrated stress component. Withdraw the quantity-only reversal claim.",
+    "source": "10.1017/dce.2023.2, Sec. 4.2.3, Figs. 15–16 and Table 5"
+  },
+  {
+    "study_id": "P16",
+    "reason": "Reintroduce the entire scope-uncertain study in the expanded sensitivity. Carry the two complete coding records as alternatives. P16 published Sec. 5 confirms calibration includes the demonstration flows; N444 published Ma=0.3 and transition context retain a scope ambiguity.",
+    "source": "10.1017/jfm.2025.10171, Secs. 5–6"
+  },
+  {
+    "study_id": "N444",
+    "reason": "Reintroduce the entire scope-uncertain study in the expanded sensitivity. Carry the two complete coding records as alternatives. P16 published Sec. 5 confirms calibration includes the demonstration flows; N444 published Ma=0.3 and transition context retain a scope ambiguity.",
+    "source": "10.1038/s41598-020-69671-y, Computational setup and Results"
+  }
+]

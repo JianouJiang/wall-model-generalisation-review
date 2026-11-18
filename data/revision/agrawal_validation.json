@@ -1,0 +1,29 @@
+{
+  "source": "10.1103/PhysRevFluids.9.124603",
+  "version": "Version of record, published 20 December 2024",
+  "speed_bump": {
+    "coupled_LES": true,
+    "locations": "Sec. V.A, Figs. 6–9; Sec. V.C, Fig. 11",
+    "quantities": [
+      "surface pressure",
+      "skin friction",
+      "mean velocity",
+      "Reynolds shear stress"
+    ],
+    "low_mach_review_scope": "case-specific regime unresolved in the sections examined",
+    "relative_improvement": "reported for coarse/medium downstream velocity and shear stress; residual errors remain",
+    "calibration_independence": "requires a separate assessment"
+  },
+  "transonic_bump": {
+    "coupled_LES": true,
+    "locations": "Sec. VI, Figs. 13–15",
+    "quantities": [
+      "surface pressure",
+      "mean velocity",
+      "separation and reattachment"
+    ],
+    "low_mach_review_scope": "outside scope",
+    "calibration_independence": "requires a separate assessment"
+  },
+  "interpretation": "Scope exclusion does not imply no validation. These are evidence categories, not counts of independent simulations."
+}

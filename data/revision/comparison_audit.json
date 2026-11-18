@@ -1,0 +1,54 @@
+{
+  "former_quantity_only_aggregate": {
+    "value": "9 of 18",
+    "status": "withdrawn from the current manuscript",
+    "reason": "The aggregate joined outcome signs with heterogeneous references, criteria and aggregated comparison units. The published-source audit invalidates using it as a count of reversals attributable only to the quantity. It has not been replaced by an invented revised numerator.",
+    "historical_pair_count": 79,
+    "treatment_of_historical_pairs": "All remain archived research records, not certified current contrasts."
+  },
+  "affected_mixed_studies": [
+    {
+      "study_id": "N357",
+      "doi": "10.1017/jfm.2023.585",
+      "source_location": "Sections 3 and 4, Table 2, Figures 5, 7–10 and 19–20",
+      "decision": "Frequency-dependent pulsating results and acceleration-rate-dependent transient results must remain distinct. The fastest ramps have transition-like behaviour; slower ramps do not. Adding the aggregate unknown-scope row does not establish a new quantity-only pair.",
+      "current_use": "methodological example only; no revised pair numerator claimed"
+    },
+    {
+      "study_id": "N358",
+      "doi": "10.1016/j.apm.2015.05.011",
+      "source_location": "Sections 6 and 7.1, Figures 5 and 6",
+      "decision": "The heated-jet velocity row has no directional outcome. Diffuser friction and pressure comparisons include different near-wall meshes for IBC and log-law treatments. Capturing recirculation and missing outlet pressure curvature are different comparison targets.",
+      "current_use": "withdraw the assertion that the cited contrast alone establishes a controlled quantity-only reversal"
+    },
+    {
+      "study_id": "N418",
+      "doi": "10.1103/PhysRevFluids.9.124603",
+      "source_location": "Published Section V.A, Figures 6–9; Section V.C, Figure 11",
+      "decision": "Published velocity and shear-stress comparisons report relative improvement. Residual discrepancies are recorded separately. The grid sweep and Reynolds sweep are separate units; duplicate pressure rows are merged.",
+      "current_use": "source-version and comparison-criterion example; no quantity-only reversal"
+    },
+    {
+      "study_id": "N626",
+      "doi": "10.1017/dce.2023.2",
+      "source_location": "Sections 4.2.3–4.2.4, Table 5, Figures 15–21",
+      "decision": "At N=4 both integrated stress errors improve. Remaining reattachment error is a different assessment. The cascade separately contains genuine location-dependent relative benefits and regressions, with trip-related scope ambiguity.",
+      "current_use": "Table 5 values reproduced in Figure 3; integrated quantities and reattachment distinguished"
+    },
+    {
+      "study_id": "P19",
+      "doi": "10.1017/jfm.2023.331",
+      "source_version": "arXiv:2211.07879v3",
+      "source_location": "Sections 4.1–4.8, especially 4.3, 4.5 and 4.8",
+      "decision": "Internal wall-model error with the exact-for-mean closure and total error with practical closures are different comparison conditions. Laminar, ZPG, pipe and juncture runs remain identifiable. A source-version-bound reading cannot certify a new published-article quantity-only count.",
+      "current_use": "qualitative distinction between internal and total error, with version stated in the data record"
+    }
+  ],
+  "comparison_requirements": [
+    "same model version and baseline",
+    "same flow, parameter, grid, solver, outer closure and matching height",
+    "same spatial and temporal support, or an explicitly justified aggregation",
+    "same error criterion and reference definition",
+    "separate relative improvement from absolute accuracy and uncertainty resolution"
+  ]
+}

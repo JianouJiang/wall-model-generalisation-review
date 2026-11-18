@@ -1,50 +1,10 @@
 {
  "figure": "fig4_checklist",
  "width_mm": 160,
- "texts": 105,
+ "texts": 17,
  "rows": [
   {
-   "text": "5",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#ffffff",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "3",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#ffffff",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "5",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "3",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "earlier: no match",
+   "text": "Same cause",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -54,37 +14,7 @@
    "math": false
   },
   {
-   "text": "2",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#ffffff",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "4",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#ffffff",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "2",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "earlier: favourable",
+   "text": "8",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -94,43 +24,13 @@
    "math": false
   },
   {
-   "text": "4",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#ffffff",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "earlier: adverse or unclear",
+   "text": "Same quantity class",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
    "colour": "#000000",
    "where": "axes 0",
    "role": "text",
-   "math": false
-  },
-  {
-   "text": "same treatment (5 studies)",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "title",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "tick label",
    "math": false
   },
   {
@@ -140,26 +40,16 @@
    "rotation": 0.0,
    "colour": "#000000",
    "where": "axes 0",
-   "role": "tick label",
+   "role": "text",
    "math": false
   },
   {
-   "text": "20",
+   "text": "Same factor to vary",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
    "colour": "#000000",
    "where": "axes 0",
-   "role": "tick label",
-   "math": false
-  },
-  {
-   "text": "9",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#ffffff",
-   "where": "axes 1",
    "role": "text",
    "math": false
   },
@@ -168,89 +58,39 @@
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#ffffff",
-   "where": "axes 1",
+   "colour": "#000000",
+   "where": "axes 0",
    "role": "text",
    "math": false
   },
   {
-   "text": "5",
+   "text": "All three agree",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 1",
+   "colour": "#000000",
+   "where": "axes 0",
    "role": "text",
    "math": false
   },
   {
-   "text": "2",
+   "text": "3",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 1",
+   "colour": "#000000",
+   "where": "axes 0",
    "role": "text",
    "math": false
   },
   {
-   "text": "5",
+   "text": "cases",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#ffffff",
-   "where": "axes 1",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "2",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#ffffff",
-   "where": "axes 1",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "2",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#ffffff",
-   "where": "axes 1",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "6",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#ffffff",
-   "where": "axes 1",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "5",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 1",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "modified successor (8 studies)",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 1",
-   "role": "title",
+   "colour": "#000000",
+   "where": "axes 0",
+   "role": "axis label",
    "math": false
   },
   {
@@ -259,7 +99,17 @@
    "weight": "normal",
    "rotation": 0.0,
    "colour": "#000000",
-   "where": "axes 1",
+   "where": "axes 0",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "5",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 0",
    "role": "tick label",
    "math": false
   },
@@ -269,633 +119,23 @@
    "weight": "normal",
    "rotation": 0.0,
    "colour": "#000000",
-   "where": "axes 1",
+   "where": "axes 0",
    "role": "tick label",
    "math": false
   },
   {
-   "text": "20",
+   "text": "13",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
    "colour": "#000000",
-   "where": "axes 1",
+   "where": "axes 0",
    "role": "tick label",
    "math": false
   },
   {
-   "text": "step 5 (pass 1, 2)",
+   "text": "Agreement between two retrospective applications of the checklist",
    "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "passes agree: cause",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "passes agree: quantity",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "passes agree: factor",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "pass 1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "pass 2",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "later adverse results",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "pass 1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "pass 2",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "proposed test run",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "of these, on the\nproposed cause\nand quantity",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Krank 2019 [57]",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 50.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "–",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#8c8b86",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Zhou 2026 [51]",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 50.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Pradhan 2023 [58]",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 50.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "–",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#8c8b86",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Ponsin 2026 [29]",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 50.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "5",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "2",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "2",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Fowler 2023 [46]",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 50.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "2",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Salomone 2025 [59]",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 50.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Grecu 2025 [54]",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 50.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Hu 2023 [43]",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 50.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "1–3",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0–1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0–1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Defraeye 2013 [60]",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 50.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "4",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "2",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "2",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Rezaeiravesh 2019 [26]",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 50.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Krank 2018 [55]",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 50.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "4",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Krank 2019 [56]",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 50.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "3–4",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Mukha 2025 [27]",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 50.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "4–5",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "not used to write step 5",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "used to write step 5",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "a",
-   "size_pt": 10.0,
    "weight": "bold",
    "rotation": 0.0,
    "colour": "#000000",
@@ -904,68 +144,8 @@
    "math": false
   },
   {
-   "text": "Later coupled tests, matched to the earlier paper by type of flow and class of quantity",
+   "text": "13 cases",
    "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "later result:",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "adverse",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "favourable",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "neither",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "uncertain",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "b",
-   "size_pt": 10.0,
    "weight": "bold",
    "rotation": 0.0,
    "colour": "#000000",
@@ -974,17 +154,7 @@
    "math": false
   },
   {
-   "text": "The checklist applied to the earlier work, then compared with 13 later papers",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "step 5: unknown",
+   "text": "Assurance withheld\nin every case.",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -994,61 +164,11 @@
    "math": false
   },
   {
-   "text": "passes agree",
+   "text": "A description of use;\npredictive value\nremains unestablished.",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
    "colour": "#000000",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "passes differ",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "run in part: favourable",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "run in part: adverse",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "run in part: mixed",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "a–b: range, where a result is uncertain;  –: no later adverse result",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
    "where": "figure",
    "role": "text",
    "math": false

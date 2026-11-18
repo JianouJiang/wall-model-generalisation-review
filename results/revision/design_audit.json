@@ -1,0 +1,3952 @@
+{
+  "status": "Historical diagnostic only: intermediate 84-study recalculation. Wider eligibility inconsistencies prevent a repaired population denominator. No aggregate from this file is a current manuscript finding.",
+  "unit": "One selected treatment per study; comparison rows are not independent simulations.",
+  "uncertainty": "Ranges cover alternative codings. Literal unknown design information remains unknown, not a hidden favourable or adverse result. These are not confidence intervals.",
+  "source_version_limit": "Census describes the exact archived source copies. Only the specifically recoded sources have been checked against the published version; the count is not an estimate for all current journal articles.",
+  "studies_with_any_coupled_validation_regardless_of_scope": 79,
+  "scenarios": {
+    "historical_82_strict": {
+      "groups": {
+        "pooled": {
+          "candidate_studies": 82,
+          "eligible": {
+            "confirmed": 81,
+            "possible": 82
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 74,
+            "possible": 75
+          },
+          "documented_transfer_design": {
+            "confirmed": 32,
+            "possible": 36
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 27,
+            "possible": 30
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 19,
+            "possible": 20
+          }
+        },
+        "new": {
+          "candidate_studies": 57,
+          "eligible": {
+            "confirmed": 56,
+            "possible": 57
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 50,
+            "possible": 51
+          },
+          "documented_transfer_design": {
+            "confirmed": 19,
+            "possible": 23
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 22,
+            "possible": 25
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 12,
+            "possible": 13
+          }
+        },
+        "pilot": {
+          "candidate_studies": 25,
+          "eligible": {
+            "confirmed": 25,
+            "possible": 25
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 24,
+            "possible": 24
+          },
+          "documented_transfer_design": {
+            "confirmed": 13,
+            "possible": 13
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 5,
+            "possible": 5
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 7,
+            "possible": 7
+          }
+        }
+      },
+      "study_states": {
+        "N011": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N019": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N025": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N037": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N076": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N164": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N174": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N181": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N195": [
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N218": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N239": [
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N240": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N251": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N253": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N262": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N273": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N291": [
+          [
+            false,
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N300": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N327": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N332": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N339": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N357": [
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N358": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N364": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N391": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N392": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N395": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N418": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N437": [
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N445": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N446": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N456": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N457": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N459": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N464": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N476": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N497": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N498": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N500": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N502": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N530": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N540": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N551": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N556": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N582": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N592": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N596": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N611": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N623": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N626": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N647": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N655": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N657": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N674": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N680": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N709": [
+          [
+            true,
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P01": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P03": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P04": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P06": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P07": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P11": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P12": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P13": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P14": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P15": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P17": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P18": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P19": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P20": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P21": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P22": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "P23": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P24": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P25": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P26": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P29": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P30": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P31": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P33": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P34": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P36": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ]
+      }
+    },
+    "historical_82_unknown_included": {
+      "groups": {
+        "pooled": {
+          "candidate_studies": 82,
+          "eligible": {
+            "confirmed": 82,
+            "possible": 82
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 77,
+            "possible": 77
+          },
+          "documented_transfer_design": {
+            "confirmed": 35,
+            "possible": 38
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 28,
+            "possible": 31
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 16,
+            "possible": 17
+          }
+        },
+        "new": {
+          "candidate_studies": 57,
+          "eligible": {
+            "confirmed": 57,
+            "possible": 57
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 53,
+            "possible": 53
+          },
+          "documented_transfer_design": {
+            "confirmed": 21,
+            "possible": 24
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 23,
+            "possible": 26
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 10,
+            "possible": 11
+          }
+        },
+        "pilot": {
+          "candidate_studies": 25,
+          "eligible": {
+            "confirmed": 25,
+            "possible": 25
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 24,
+            "possible": 24
+          },
+          "documented_transfer_design": {
+            "confirmed": 14,
+            "possible": 14
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 5,
+            "possible": 5
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 6,
+            "possible": 6
+          }
+        }
+      },
+      "study_states": {
+        "N011": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N019": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N025": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N037": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N076": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N164": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N174": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N181": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N195": [
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N218": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N239": [
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N240": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N251": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N253": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N262": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N273": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N291": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N300": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N327": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N332": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N339": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N357": [
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N358": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N364": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N391": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N392": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N395": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N418": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N437": [
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N445": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N446": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N456": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N457": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N459": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N464": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N476": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N497": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N498": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N500": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N502": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N530": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N540": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N551": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N556": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N582": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N592": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N596": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N611": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N623": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N626": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N647": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N655": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N657": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N674": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N680": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N709": [
+          [
+            true,
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P01": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P03": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P04": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P06": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P07": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P11": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P12": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P13": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P14": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P15": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P17": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P18": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P19": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P20": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P21": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P22": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "P23": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P24": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P25": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P26": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P29": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P30": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P31": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P33": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P34": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P36": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ]
+      }
+    },
+    "historical_84_unknown_included": {
+      "groups": {
+        "pooled": {
+          "candidate_studies": 84,
+          "eligible": {
+            "confirmed": 84,
+            "possible": 84
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 79,
+            "possible": 79
+          },
+          "documented_transfer_design": {
+            "confirmed": 35,
+            "possible": 39
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 28,
+            "possible": 32
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 17,
+            "possible": 18
+          }
+        },
+        "new": {
+          "candidate_studies": 58,
+          "eligible": {
+            "confirmed": 58,
+            "possible": 58
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 54,
+            "possible": 54
+          },
+          "documented_transfer_design": {
+            "confirmed": 21,
+            "possible": 25
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 23,
+            "possible": 27
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 10,
+            "possible": 11
+          }
+        },
+        "pilot": {
+          "candidate_studies": 26,
+          "eligible": {
+            "confirmed": 26,
+            "possible": 26
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 25,
+            "possible": 25
+          },
+          "documented_transfer_design": {
+            "confirmed": 14,
+            "possible": 14
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 5,
+            "possible": 5
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 7,
+            "possible": 7
+          }
+        }
+      },
+      "study_states": {
+        "N011": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N019": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N025": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N037": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N076": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N164": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N174": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N181": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N195": [
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N218": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N239": [
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N240": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N251": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N253": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N262": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N273": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N291": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N300": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N327": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N332": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N339": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N357": [
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N358": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N364": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N391": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N392": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N395": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N418": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N437": [
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N445": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N446": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N456": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N457": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N459": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N464": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N476": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N497": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N498": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N500": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N502": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N530": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N540": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N551": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N556": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N582": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N592": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N596": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N611": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N623": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N626": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N647": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N655": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N657": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N674": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N680": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N709": [
+          [
+            true,
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P01": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P03": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P04": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P06": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P07": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P11": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P12": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P13": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P14": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P15": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P17": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P18": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P19": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P20": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P21": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P22": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "P23": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P24": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P25": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P26": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P29": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P30": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P31": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P33": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P34": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P36": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P16": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N444": [
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ]
+      }
+    },
+    "revised_84_strict": {
+      "groups": {
+        "pooled": {
+          "candidate_studies": 84,
+          "eligible": {
+            "confirmed": 81,
+            "possible": 82
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 74,
+            "possible": 75
+          },
+          "documented_transfer_design": {
+            "confirmed": 32,
+            "possible": 36
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 27,
+            "possible": 30
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 19,
+            "possible": 20
+          }
+        },
+        "new": {
+          "candidate_studies": 58,
+          "eligible": {
+            "confirmed": 56,
+            "possible": 57
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 50,
+            "possible": 51
+          },
+          "documented_transfer_design": {
+            "confirmed": 19,
+            "possible": 23
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 22,
+            "possible": 25
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 12,
+            "possible": 13
+          }
+        },
+        "pilot": {
+          "candidate_studies": 26,
+          "eligible": {
+            "confirmed": 25,
+            "possible": 25
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 24,
+            "possible": 24
+          },
+          "documented_transfer_design": {
+            "confirmed": 13,
+            "possible": 13
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 5,
+            "possible": 5
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 7,
+            "possible": 7
+          }
+        }
+      },
+      "study_states": {
+        "N011": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N019": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N025": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N037": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N076": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N164": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N174": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N181": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N195": [
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N218": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N239": [
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N240": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N251": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N253": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N262": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N273": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N291": [
+          [
+            false,
+            false,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N300": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N327": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N332": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N339": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N357": [
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N358": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N364": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N391": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N392": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N395": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N418": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N437": [
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N445": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N446": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N456": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N457": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N459": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N464": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N476": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N497": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N498": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N500": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N502": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N530": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N540": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N551": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N556": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N582": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N592": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N596": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N611": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N623": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N626": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N647": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N655": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N657": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N674": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N680": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N709": [
+          [
+            true,
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P01": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P03": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P04": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P06": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P07": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P11": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P12": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P13": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P14": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P15": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P17": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P18": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P19": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P20": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P21": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P22": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "P23": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P24": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P25": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P26": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P29": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P30": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P31": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P33": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P34": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P36": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P16": [
+          [
+            false,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N444": [
+          [
+            false,
+            false,
+            false,
+            false
+          ]
+        ]
+      }
+    },
+    "revised_84_unknown_included": {
+      "groups": {
+        "pooled": {
+          "candidate_studies": 84,
+          "eligible": {
+            "confirmed": 84,
+            "possible": 84
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 79,
+            "possible": 79
+          },
+          "documented_transfer_design": {
+            "confirmed": 34,
+            "possible": 39
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 28,
+            "possible": 32
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 17,
+            "possible": 19
+          }
+        },
+        "new": {
+          "candidate_studies": 58,
+          "eligible": {
+            "confirmed": 58,
+            "possible": 58
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 54,
+            "possible": 54
+          },
+          "documented_transfer_design": {
+            "confirmed": 20,
+            "possible": 25
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 23,
+            "possible": 27
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 10,
+            "possible": 12
+          }
+        },
+        "pilot": {
+          "candidate_studies": 26,
+          "eligible": {
+            "confirmed": 26,
+            "possible": 26
+          },
+          "coupled_validation_in_scope": {
+            "confirmed": 25,
+            "possible": 25
+          },
+          "documented_transfer_design": {
+            "confirmed": 14,
+            "possible": 14
+          },
+          "design_uncertain_without_documented_transfer": {
+            "confirmed": 5,
+            "possible": 5
+          },
+          "no_documented_transfer_design_in_coded_rows": {
+            "confirmed": 7,
+            "possible": 7
+          }
+        }
+      },
+      "study_states": {
+        "N011": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N019": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N025": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N037": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N076": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N164": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N174": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N181": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N195": [
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N218": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N239": [
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N240": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N251": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N253": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N262": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N273": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N291": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N300": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N327": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N332": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N339": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N357": [
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N358": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N364": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N391": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N392": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N395": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N418": [
+          [
+            true,
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N437": [
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N445": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N446": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N456": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N457": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N459": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N464": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N476": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N497": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N498": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N500": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N502": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N530": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N540": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N551": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N556": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N582": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N592": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N596": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "N611": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N623": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N626": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "N647": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "N655": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N657": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N674": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "N680": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N709": [
+          [
+            true,
+            true,
+            false,
+            false
+          ],
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            false
+          ],
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P01": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P03": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P04": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P06": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P07": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P11": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P12": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P13": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P14": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P15": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P17": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P18": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P19": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P20": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P21": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P22": [
+          [
+            true,
+            false,
+            false,
+            false
+          ]
+        ],
+        "P23": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P24": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P25": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P26": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P29": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P30": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P31": [
+          [
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "P33": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "P34": [
+          [
+            true,
+            true,
+            false,
+            true
+          ]
+        ],
+        "P36": [
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ],
+        "P16": [
+          [
+            true,
+            true,
+            false,
+            false
+          ]
+        ],
+        "N444": [
+          [
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            true,
+            true,
+            true,
+            false
+          ]
+        ]
+      }
+    }
+  }
+}

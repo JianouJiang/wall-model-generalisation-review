@@ -1,7 +1,11 @@
 # Working on this research
 
-Read README.md, docs/agrawal-scope-audit.md and docs/research-status.md before analysing or changing the findings. The manuscript is provisional. Do not treat the unknown-scope sensitivity as a final scope decision or the 9-of-18 baseline contrast as verified under revised scope.
+Read README.md, docs/scientific-corrections.md and docs/research-status.md first.
 
-Use the public semantic fields and bibliographic source locations. Distinguish a coded test row from a distinct simulation, source uncertainty from coding disagreement, and exposure to a transfer test from the presence of any coupled validation. Cite the source version and section for each proposed correction.
+The current edition is a critical, case-based review. Earlier aggregate transfer, outcome-category, quantity-only and later-outcome estimates were withdrawn after source-version, eligibility and comparison defects were found. Historical calculations are preserved for traceability. Do not promote them, or the intermediate 84-study sensitivity, to current findings merely because they reproduce.
 
-Preserve the original circulation snapshot. Keep code, data and text consistent, run code/reproduce.py in the documented environment after relevant changes, and record remaining scientific limits. The owner decides when correspondence or journal submission proceeds; the presence of this public repository does not establish readiness to circulate.
+Use data/revision/claim_support.json for current claims. Identify the exact source version and passage before changing a factual statement. Do not assume a preprint is equivalent to a journal article. A scope exclusion is not absence of validation. In-calibration tests can fail. Relative benefit, absolute error and uncertainty are separate assessments. Literal unknowns are not negative results.
+
+The checklist is unvalidated as a prediction rule. Its retrospective agreement counts are descriptive; the cases are not independent prospective trials.
+
+Preserve the original circulation snapshot. Keep code, data, figures, text and correspondence consistent. Run code/reproduce.py and code/check_current.py after relevant changes. Read data/revision/STATUS.json before using historical records. The owner controls correspondence and journal submission; repository availability does not authorise either.

@@ -1,66 +1,11 @@
 {
- "texts": 39,
+ "texts": 15,
  "tolerance_pt": 1.0,
  "clipped": [],
- "crossings": [
-  {
-   "text": "18",
-   "gid": "count of a two-colour segment",
-   "other": "patch edge: Rectangle extent px [199, 174, 291, 183]",
-   "allowed": "the count of a segment `held, but also adverse` sits on its own white box inside that segment, across the line between its blue and red halves"
-  },
-  {
-   "text": "18",
-   "gid": "count of a two-colour segment",
-   "other": "patch edge: Rectangle extent px [199, 166, 291, 174]",
-   "allowed": "the count of a segment `held, but also adverse` sits on its own white box inside that segment, across the line between its blue and red halves"
-  },
-  {
-   "text": "6",
-   "gid": "count of a two-colour segment",
-   "other": "patch edge: Rectangle extent px [194, 138, 225, 147]",
-   "allowed": "the count of a segment `held, but also adverse` sits on its own white box inside that segment, across the line between its blue and red halves"
-  },
-  {
-   "text": "6",
-   "gid": "count of a two-colour segment",
-   "other": "patch edge: Rectangle extent px [194, 130, 225, 138]",
-   "allowed": "the count of a segment `held, but also adverse` sits on its own white box inside that segment, across the line between its blue and red halves"
-  },
-  {
-   "text": "4",
-   "gid": "count of a two-colour segment",
-   "other": "patch edge: Rectangle extent px [189, 103, 209, 111]",
-   "allowed": "the count of a segment `held, but also adverse` sits on its own white box inside that segment, across the line between its blue and red halves"
-  },
-  {
-   "text": "4",
-   "gid": "count of a two-colour segment",
-   "other": "patch edge: Rectangle extent px [189, 94, 209, 103]",
-   "allowed": "the count of a segment `held, but also adverse` sits on its own white box inside that segment, across the line between its blue and red halves"
-  },
-  {
-   "text": "8",
-   "gid": "count of a two-colour segment",
-   "other": "patch edge: Rectangle extent px [189, 67, 230, 75]",
-   "allowed": "the count of a segment `held, but also adverse` sits on its own white box inside that segment, across the line between its blue and red halves"
-  },
-  {
-   "text": "8",
-   "gid": "count of a two-colour segment",
-   "other": "patch edge: Rectangle extent px [189, 58, 230, 67]",
-   "allowed": "the count of a segment `held, but also adverse` sits on its own white box inside that segment, across the line between its blue and red halves"
-  }
- ],
+ "crossings": [],
  "text_overlaps": [],
  "figure": "fig2_record",
- "declared_exceptions": [
-  {
-   "text": "count of a two-colour segment",
-   "other": "Rectangle",
-   "reason": "the count of a segment `held, but also adverse` sits on its own white box inside that segment, across the line between its blue and red halves"
-  }
- ],
+ "declared_exceptions": [],
  "exceptions_matching_nothing": [],
  "violations": 0,
  "passed": true

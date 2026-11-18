@@ -1,0 +1,34 @@
+{
+  "independent_virtual_environment": true,
+  "script_exit": 0,
+  "figure_comparisons": {
+    "fig1_loop": {
+      "pdf_sha256_matches": false,
+      "text_inventory_matches": true,
+      "layout_passed": true
+    },
+    "fig2_record": {
+      "pdf_sha256_matches": false,
+      "text_inventory_matches": true,
+      "layout_passed": true,
+      "plotted_values_match": true
+    },
+    "fig3_contrast": {
+      "pdf_sha256_matches": false,
+      "text_inventory_matches": true,
+      "layout_passed": true,
+      "plotted_values_match": true
+    },
+    "fig4_checklist": {
+      "pdf_sha256_matches": false,
+      "text_inventory_matches": true,
+      "layout_passed": true,
+      "plotted_values_match": true
+    }
+  },
+  "scope_results_identical": true,
+  "pdf_hash_note": "Original system environment reproduces the archived PDFs byte for byte. The isolated wheel environment reproduces values and text inventories and passes layout checks, but does not give identical PDF bytes.",
+  "public_manuscript_pages": 15,
+  "reference_labels_match_manuscript": true,
+  "edition": "Historical 17:29 export; not the current manuscript"
+}

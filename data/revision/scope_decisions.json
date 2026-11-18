@@ -1,0 +1,133 @@
+[
+  {
+    "study_id": "N019",
+    "test_ids": [
+      "N019-T01",
+      "N019-T02",
+      "N019-T04",
+      "N019-T09",
+      "N019-T10"
+    ],
+    "source_location": "Secs. 2–3",
+    "decision": "carry scope uncertainty explicitly",
+    "reason": "Heated channel and pipe cases; hydrodynamic outputs and thermal scope need separate treatment. Retain uncertain scope in the two explicit scenarios."
+  },
+  {
+    "study_id": "N291",
+    "test_ids": [
+      "N291-T01",
+      "N291-T02",
+      "N291-T03"
+    ],
+    "source_location": "Eqs. 8–9; numerical setup",
+    "decision": "carry scope uncertainty explicitly",
+    "reason": "Double-body ship explicitly omits a free surface. The symbol kappa is labelled surface roughness while used in the standard log law; retain the existing scope alternatives without interpreting this as proof of a rough-wall test."
+  },
+  {
+    "study_id": "N357",
+    "test_ids": [
+      "N357-T03"
+    ],
+    "source_location": "Sec. 4, Table 2 and Figs. 19–20",
+    "decision": "carry scope uncertainty explicitly",
+    "reason": "The aggregate acceleration series includes transition-like and quasi-steady regimes. Retain its uncertain scope rather than classify every member alike. Other included accelerating-channel rows remain separate evidence."
+  },
+  {
+    "study_id": "N358",
+    "test_ids": [
+      "N358-T02"
+    ],
+    "source_location": "Sec. 6",
+    "decision": "carry scope uncertainty explicitly",
+    "reason": "The jet impinges on a heated plate. This velocity row carries no favourable/adverse outcome and its calibration family is unknown; its inclusion cannot create a quantity-only pair."
+  },
+  {
+    "study_id": "N418",
+    "test_ids": [
+      "N418-T01",
+      "N418-T02",
+      "N418-T03",
+      "N418-T07",
+      "N418-T09"
+    ],
+    "source_location": "Published Secs. II.B, V–VI",
+    "decision": "carry scope uncertainty explicitly",
+    "reason": "Coupled validation is explicit. Speed-bump Mach regime remains unquantified in these sections; transonic cases remain excluded from low-Mach counts. Published source replaces the preprint comparisons."
+  },
+  {
+    "study_id": "N446",
+    "test_ids": [
+      "N446-T01"
+    ],
+    "source_location": "Secs. 2–3",
+    "decision": "carry scope uncertainty explicitly",
+    "reason": "An incompressible tripped boundary layer has both transition and fully turbulent regions. Retain uncertainty for the aggregate row; do not treat the whole paper as unvalidated."
+  },
+  {
+    "study_id": "N497",
+    "test_ids": [
+      "N497-T02",
+      "N497-T03"
+    ],
+    "source_location": "Secs. 3 and 5",
+    "decision": "carry scope uncertainty explicitly",
+    "reason": "Low Mach is explicit for training channel and periodic-hill calculations; the Re_tau=2000 coupled channel is a different case. Retain the case-specific scope uncertainty."
+  },
+  {
+    "study_id": "N626",
+    "test_ids": [
+      "N626-T04",
+      "N626-T09"
+    ],
+    "source_location": "Sec. 4.2.4",
+    "decision": "carry scope uncertainty explicitly",
+    "reason": "The cascade is explicitly low-Mach; trip steps and transition, rather than solver compressibility, explain remaining scope ambiguity. Turbulent corner-separation results are present."
+  },
+  {
+    "study_id": "N680",
+    "test_ids": [
+      "N680-T03",
+      "N680-T05"
+    ],
+    "source_location": "Secs. 1 and 5.1 of arXiv v4",
+    "decision": "carry scope uncertainty explicitly",
+    "reason": "Coupled channel validation is explicit. An incompressible wall-model formulation and incompressible reference do not supply a solver Mach value; retain scope uncertainty without denying validation."
+  },
+  {
+    "study_id": "P04",
+    "test_ids": [
+      "P04-T03",
+      "P04-T04"
+    ],
+    "source_location": "Secs. 2–3",
+    "decision": "carry scope uncertainty explicitly",
+    "reason": "Flat plate is explicitly Mach 0.2; the other coded geometries require their own regime evidence. Keep their uncertainty separate from the confirmed flat-plate evidence."
+  },
+  {
+    "study_id": "P19",
+    "test_ids": [
+      "P19-T01",
+      "P19-T02",
+      "P19-T06",
+      "P19-T07"
+    ],
+    "source_location": "Secs. 3.1, 4.2–4.8",
+    "decision": "carry scope uncertainty explicitly",
+    "reason": "Compressible solver does not establish a compressible flow. Laminar, turbulent, pipe and juncture comparisons remain identifiable; preserve scope alternatives and never interpret excluded rows as missing validation."
+  },
+  {
+    "study_id": "P36",
+    "test_ids": [
+      "P36-T01",
+      "P36-T02",
+      "P36-T03",
+      "P36-T04",
+      "P36-T05",
+      "P36-T08",
+      "P36-T09"
+    ],
+    "source_location": "Secs. 3, 5 and 7",
+    "decision": "carry scope uncertainty explicitly",
+    "reason": "The equations are incompressible; transitional aerofoil bubbles, rather than compressibility, are the scope question. Keep the uncertain rows in the inclusive scenario."
+  }
+]

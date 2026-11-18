@@ -1,0 +1,27 @@
+{
+  "current_edition": "Critical review, source-checked cases; no population estimates",
+  "current_inputs": [
+    "agrawal_validation.json",
+    "dupuy_table5.json",
+    "claim_support.json",
+    "eligibility_audit.json",
+    "historical_source_manifest.json",
+    "../checklist_cases.json (agreement labels only)"
+  ],
+  "historical_diagnostics": [
+    "test_codings.json",
+    "change_log.json",
+    "scope_decisions.json",
+    "source_versions.json",
+    "comparison_audit.json",
+    "../../results/revision/design_audit.json"
+  ],
+  "withdrawn_claims": [
+    "population prevalence of transfer or validation deficit",
+    "seven outcome-category totals",
+    "9-of-18 quantity-only contrast",
+    "causal-grade aggregates",
+    "retrospective predictive success rates"
+  ],
+  "reason": "Version, eligibility, comparison-unit and relative/absolute error defects prevent treating the archived coding as a settled field analysis."
+}

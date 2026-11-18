@@ -1,21 +1,21 @@
-# Reproducibility boundaries
+# Reproduction and verification
 
-The public package can recompute claim categories, favourable/adverse flags and exposure bounds for the existing 82-claim cohort under two scope rules. It can redraw all four baseline figures and rebuild the public manuscript from its exported number macros, tables and bibliography.
+Use Python 3.10 and requirements.txt in a virtual environment. The recorded rendering environment uses matplotlib 3.5.1 and numpy 1.21.5. Font libraries can change PDF bytes; numerical and layout checks are the primary reproducibility checks.
 
-The public package does not reconstruct the initial screening, source coding, attribution grading, pair adjudication or retrospective checklist assessment from primary publications. Those result snapshots are provided for inspection. The fixed-cohort sensitivity is not the complete originally specified sensitivity across all screened studies; see the scope audit.
+## Current edition
 
-## Environment
+Run code/reproduce.py to render the four figures. Figure 1 is a labelled physical schematic. Figure 2 uses data/revision/agrawal_validation.json. Figure 3 uses the published numerical values in data/revision/dupuy_table5.json. Figure 4 recomputes descriptive agreement from data/checklist_cases.json.
 
-The archived figure environment is Python 3.10, NumPy 1.21.5 and Matplotlib 3.5.1, with DejaVu Sans. Install the pinned requirements in a virtual environment. Other Matplotlib versions can change geometry and the behaviour of the layout checks, even if the counts are identical. `-I` prevents unrelated user-site packages from changing the environment.
+Run code/check_current.py after building manuscript/main.pdf. It checks current citations against the support record, caption limits, numerical inputs, historical-withdrawal wording, PDF page budget and prohibited circulation text. Figure rendering separately checks font sizes and layout.
 
-## Checks
+Build the manuscript with latexmk from manuscript/. The template dependency is described in manuscript/class/README.md. No supplementary PDF is part of the current circulation manuscript; the original circulation snapshot is an archive, not an appendix.
 
-`code/analyse_scope.py` evaluates the stored alternatives and compares all 82 claim results in both variants with the reference snapshot, including exposure states. It also checks baseline categories and favourable/adverse flags against `data/claims.csv`.
+## Historical diagnostics
 
-The figure scripts assert the category sums and contrast counts they plot. They enforce a minimum base text size of 8 pt at 160 mm printed width, check layout intersections and clipping, and write a text inventory and layout report in `results/figures/`. Mathematical subscripts follow the caption's smaller script size.
+code/reproduce.py --historical also runs analyse_scope.py and analyse_revision.py. The former reproduces the original 82-treatment coding under two scope choices. The latter records the intermediate 84-treatment diagnosis and source corrections. Wider eligibility defects mean neither supplies a current population estimate.
 
-During preparation, all four reproduced figure PDFs were byte-identical to the archived originals. Their plotted values were also compared with the original result files. This verifies the public port, not the scientific interpretation of the underlying papers.
+Historical data and results retain their original values for traceability. Their successful reproduction is a software consistency check, not independent verification of every source coding. Do not quote the superseded outcome or quantity-only counts as current findings.
 
-A second run in a fresh virtual environment with the pinned wheels reproduced the analysis, all plotted values and all figure text inventories, and passed every layout check. Its PDF bytes differ from those of the system environment: the FreeType versions are 2.6.1 and 2.11.1 respectively, with identical DejaVu Sans font-file hashes. The verification record distinguishes semantic reproduction from byte identity. All 60 reference labels match the rebuilt 15-page public manuscript.
+## Export boundary
 
-`SHA256SUMS` records the released files. Verify it from the repository root with `sha256sum -c SHA256SUMS`. Generated files can vary across environments, especially the compiled manuscript's PDF metadata. The historical circulation PDF is preserved unchanged.
+The repository contains research data, derivations and figure code. It does not redistribute the source-paper library. Obtain papers from the listed original sources. No unpublished contact list or correspondence is needed to reproduce the paper's current numerical illustrations.

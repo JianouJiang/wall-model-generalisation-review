@@ -1,0 +1,170 @@
+[
+  {
+    "claim_id": "S01",
+    "manuscript_location": "Framework, Eq. 1",
+    "reference_key": "BosePark2018",
+    "source_version": "published",
+    "source_location": "Section 2.1, Eq. 4 and equilibrium discussion",
+    "claim": "Thin-layer momentum equation, averaging, pressure assumption and equilibrium reduction. The integral equation is derived in this review with explicit assumptions.",
+    "source_text_sha256": "e5a03dfe65d7dd5f3f9d5be1f46630e0abacd374f377f14bcc71a3a4d9f48f58",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S02",
+    "manuscript_location": "Introduction; coupling",
+    "reference_key": "Larsson2016",
+    "source_version": "published",
+    "source_location": "Sections 3.1–3.2",
+    "claim": "Stress alignment, code dependence and fixed-matching-height refinement.",
+    "source_text_sha256": "eb18392ecaf07830c10169f5956c66c4742b02ad391397cbf0126637266bdff2",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S03",
+    "manuscript_location": "Introduction",
+    "reference_key": "Duraisamy2021",
+    "source_version": "identified author manuscript",
+    "source_location": "Discussion of model-consistent training",
+    "claim": "Training/reference data and coupled model consistency are distinct.",
+    "source_text_sha256": "93bda67e381b293494d7a9a8a90563e65d977c637234974a3df8befe0634dbc0",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S04",
+    "manuscript_location": "Forcing constraints",
+    "reference_key": "Quadrio2016",
+    "source_version": "arXiv:1509.04877v1",
+    "source_location": "Section 2, forcing strategies",
+    "claim": "Pressure-gradient and constant-flow-rate forcing differ. The control-volume constraints are derived in this review under explicit conservation and stationarity assumptions.",
+    "source_text_sha256": "586a5ff1c9eabb2009a7bbe6603578a2052447e5e99323d11964d032b65fd6a3",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S05",
+    "manuscript_location": "States and balance; Table 2",
+    "reference_key": "Hayat2024preprint",
+    "source_version": "arXiv:2403.05476v1",
+    "source_location": "Section IV, Figs. 11–12 and 16",
+    "claim": "Thin reversed layer, matching-height sign limitation and cancellation of errors in the swept case. This is explicitly cited as a preprint, not as journal-equivalent.",
+    "source_text_sha256": "36fd5df4e9847d3018b4647d0d59d69f6619c4baae8df0ec3f5489f52cf0ac8a",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S06",
+    "manuscript_location": "Learned representation",
+    "reference_key": "BaeKoumoutsakos2022",
+    "source_version": "version of record",
+    "source_location": "Results: velocity-based/log-law models and boundary-layer test; Figs. 4–5",
+    "claim": "Matching-height training range and boundary-layer application.",
+    "source_text_sha256": "ce5a60a4a519dd15c705af73b973f528093d4ae80246c4b3d76da396b88e0e6c",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S07",
+    "manuscript_location": "Internal and total error; Table 2",
+    "reference_key": "LozanoDuranBae2023",
+    "source_version": "version of record",
+    "source_location": "Sections 4.1 and 4.3, Fig. 9",
+    "claim": "Internal wall-stress errors below 0.5% and about 2%; practical-closure total errors 5–15%. These are different experiments.",
+    "source_text_sha256": "687bce0f487e5f3ec4bc369bd5c42064649dad6e7c099cf7e0f1b287b3a1000e",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S08",
+    "manuscript_location": "Juncture example",
+    "reference_key": "LozanoDuranBae2023",
+    "source_version": "version of record",
+    "source_location": "Section 4.8",
+    "claim": "Relative velocity improvement, substantial residual error and the reported single grid point across the bubble.",
+    "source_text_sha256": "687bce0f487e5f3ec4bc369bd5c42064649dad6e7c099cf7e0f1b287b3a1000e",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S09",
+    "manuscript_location": "Coupling; Table 2",
+    "reference_key": "Mukha2024preprint",
+    "source_version": "arXiv:2404.05378v1",
+    "source_location": "Conclusion, weak boundary imposition and input averaging",
+    "claim": "Reported traction/gradient distinction, no systematic averaging gain, and mismatch counterexample in this specific manuscript.",
+    "source_text_sha256": "aaa275e4ae8b9693d23b841685892f1842aa309a1b75b8ace752c4f98843bc91",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S10",
+    "manuscript_location": "Outer error; Table 2",
+    "reference_key": "Zhou2024preprint",
+    "source_version": "arXiv:2309.13555v2",
+    "source_location": "Section 3, Fig. 4 and boundary-condition discussion",
+    "claim": "Reference mean traction does not remove the outer-closure sensitivity of separation.",
+    "source_text_sha256": "7158f5ee3277fb6fe369fb2993c18d7f7b56a38ca024f1e28200882520ad84e6",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S11",
+    "manuscript_location": "Relative improvement; Fig. 3",
+    "reference_key": "Dupuy2023graph",
+    "source_version": "version of record",
+    "source_location": "Section 4.2.3, Table 5, Figs. 15–16 (PDF page 22 for table)",
+    "claim": "Both integrated squared errors improve relative to baseline for N=4. Table visually checked; reattachment error is a different measure.",
+    "source_text_sha256": "59c45bb2536e1ca6593d33c45bc1e6882f58b2a91ba9f664c4b3473513be6a4b",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S12",
+    "manuscript_location": "Comparison matching",
+    "reference_key": "Jones2015",
+    "source_version": "identified author manuscript",
+    "source_location": "Sections 6 and 7.1",
+    "claim": "Near-wall grids differ between interface boundary condition and logarithmic baseline. Do not call pressure/recirculation results a controlled quantity-only contrast.",
+    "source_text_sha256": "4e6371e62ad188b4ca90e7172cb20aa3239ed7be1f4928a11e7a5b8ab1ca17be",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S13",
+    "manuscript_location": "Checklist; calibration",
+    "reference_key": "Raje2025",
+    "source_version": "version of record",
+    "source_location": "Section 5, limiter paragraph; Section 6",
+    "claim": "Limiter selected by numerical experimentation across Reynolds numbers and configurations; coupled channel/hill validation present.",
+    "source_text_sha256": "b281f0a74f703fdfc3368b11cd629be64f96bf92bdcb8c077a3c4a566ff4c36e",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S14",
+    "manuscript_location": "Validation definition",
+    "reference_key": "OberkampfTrucano2002",
+    "source_version": "public technical report of cited review",
+    "source_location": "Abstract and validation discussion",
+    "claim": "Validation assesses agreement with physical reference data and quantifies errors/uncertainties.",
+    "source_text_sha256": "dbe2ecf7a2dfc179f28d89e340c6581c4dbe854d317acfb49760f87c9b9cdde2",
+    "verification": "supporting passages checked in this revision"
+  },
+  {
+    "claim_id": "S15",
+    "manuscript_location": "Scope example; Fig. 2",
+    "reference_key": "Agrawal2024",
+    "source_version": "version of record, 20 December 2024, author-posted full text",
+    "source_url": "https://www.researchgate.net/publication/387287722_Nonequilibrium_wall_model_for_large_eddy_simulations_of_complex_flows_exhibiting_turbulent_smooth_body_separation",
+    "source_location": "Sections III–VI, especially V.A Figs. 6–9",
+    "claim": "Coupled speed-bump and transonic validation; downstream coarse/medium-grid velocity and shear-stress benefit with residual error. A case Mach value is not invented.",
+    "verification": "published full-text sections checked; distinct from earlier preprint and accepted text"
+  },
+  {
+    "claim_id": "S16",
+    "manuscript_location": "Checklist exercise; Fig. 4",
+    "reference_key": null,
+    "source_version": "archived retrospective labels",
+    "source_location": "data/checklist_cases.json",
+    "claim": "13 cases; proposal agreement counts 8, 10, 7, 3. All applications withhold assurance. Descriptive only; no predictive accuracy inferred.",
+    "verification": "counts recomputed from individual case labels; independence limitations explicitly stated"
+  },
+  {
+    "claim_id": "S17",
+    "manuscript_location": "Introduction, review context",
+    "reference_key": "PiomelliBalaras2002",
+    "source_version": "bibliographic record of review",
+    "source_location": "Title and review remit",
+    "claim": "This is an existing review of wall-layer models for LES; no specific empirical finding is attributed to it here.",
+    "verification": "bibliographic identity previously resolved against publisher/Crossref; no claim of a new full-text reread"
+  }
+]

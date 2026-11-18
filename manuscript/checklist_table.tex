@@ -1,47 +1,17 @@
 \begin{table*}[t]
-\caption{Checklist for a planned use of a wall model: a named model, flow, quantity, tolerance and set-up. Step 1
-needs only the plan of the run, step 2 also the model's published description; steps 3 and 4 are answered from
-published tests, step 5 from a published test or the user's own. A missing fact gives
-``unknown'', never a favourable answer. The last row was rewritten after the test of
-Section~\ref{sec:procedure}; stress misalignment (step 2) and the wall-function case (last row) were added
-afterwards.}\label{tab:checklist}
+\caption{Checklist for a named model and a planned flow, quantity, tolerance and numerical set-up. A missing fact gives \emph{unknown}, not evidence of failure or success. The checklist is a proposal for structuring judgement; its predictive value has not been established.}\label{tab:checklist}
 \footnotesize
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.09\textwidth}p{0.265\textwidth}p{0.245\textwidth}p{0.315\textwidth}@{}}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.11\textwidth}p{0.31\textwidth}p{0.51\textwidth}@{}}
 \toprule
-Step & Question & Answered from & Answers, and what follows \\
+Step & Question & Evidence to record and consequence \\
 \midrule
-1. Set-up & Does my set-up leave my quantity free? & The planned forcing and boundary conditions, with the mean
-momentum balance (Table~\ref{tab:tests}b). & Free: continue. Fixed: agreement cannot fail, so change the quantity or
-the forcing. Not derivable: unknown. \\
-2. Causes & Which causes does my flow exercise for this model? & The model's output form, retained terms, inputs and
-calibration flows; my flow's features (stress reversal or misalignment, pressure gradient and convection below the matching height,
-geometry or history outside the calibration flows); my solver, grid and matching height. & For each cause: exercised,
-not exercised, or unknown where the form or the calibration flows are not published. \\
-3. Exposure & Which published tests could have failed on those causes and my quantity? & Each test's mode, flow,
-calibration flows, set-up and quantity. & Yes only if coupled, outside the calibration flows, on a free quantity,
-in a flow that exercises the cause. Whether the test has a matched baseline does not matter here. \\
-4. Outcome & What did each coupled test show? & The comparison with a matched baseline (same flow, solver, grid and
-quantity without the change) and the reference uncertainty. & Improvement, preserved accuracy, regression, no
-resolved difference, or no matched comparison. Adverse results count in every coupled test and stand beside
-favourable ones. Exact-input results describe the map only. \\
-5. Planned use & Is there a coupled result for this version of the model in my flow and parameter range, on my
-quantity at my location, with my error measure and tolerance, under my forcing and numerical set-up (solver,
-scheme, grid, closure, matching height)? & A published test that matches the planned use in every item, or my
-own. & Yes: that result is the answer, with every adverse result beside it. No, or one item differs: unknown, and
-the proposed test of the last row. A favourable result from another code, grid or version is a reason to run that test, not a
-substitute for it. \\
+1. Quantity & What is to be predicted, and does the set-up constrain it? & Specify quantity, position, averaging, error measure and tolerance. Derive the relevant conservation constraint. Use a free quantity to assess constitutive accuracy; keep constrained quantities as balance checks. \\
+2. Model & Which limitations could matter here? & Record output restrictions, retained terms, available inputs, calibration and tuning, and coupling. Identify relevant flow features and uncertainty. These are candidate explanations, not diagnosed causes. \\
+3. Test design & What does the published test actually test? & Distinguish exact-input evaluation from coupled validation. Within coupled tests, distinguish calibration cases from documented transfer cases; unknown calibration remains unknown. Both in-range and out-of-range failures are informative. \\
+4. Comparison & What improved, and is the result accurate enough? & Record the matched baseline and reference separately. Compare the same flow, grid, closure, height and spatial support. Keep relative benefit, absolute error, tolerance and uncertainty as separate assessments. No matched baseline means benefit is unassessed; it does not invalidate a reference comparison. \\
+5. Planned use & How far can the evidence be extended? & List differences in model version, flow, parameters, quantity and numerics. A direct match supports the stated result within its uncertainty. An extension needs a physical argument and relevant sensitivity evidence at the required tolerance. Otherwise withhold assurance and propose a comparison; do not infer failure. \\
 \midrule
-Proposed test & \multicolumn{3}{p{0.86\textwidth}}{Specified from steps 1 to 4, in four parts. Comparison: a coupled run
-of the planned use, or a named step towards it, beside an established treatment on the same flow, solver, grid,
-closure and matching height, with the reference uncertainty stated where reference data exist and, for wall-modelled
-LES, the grid refined beneath a matching height fixed in physical units or, for a wall function, the first-cell height
-varied within the model's stated range. Quantities scored together against that baseline: the planned quantity, the other
-quantities the forcing leaves free (Table~\ref{tab:tests}b) and every quantity on which the model's published results
-reverse. What it can show: which quantity or setting is affected; and a cause only if the run and its baseline differ in
-one thing, that thing is the output form, a retained term, an input or the coupling, the flow exercises that cause
-and all else is fixed. A change of quantity or of the type of flow alone identifies none. What stays open: the causes that step 2 marks exercised or unknown and
-that the comparison does not separate, and the outer solution. Several comparisons can qualify; all are listed, and
-their order is the user's choice.} \\
+Next test & \multicolumn{2}{p{0.85\textwidth}}{Name the uncertainty the test addresses. Specify model and baseline, flow, forcing, grid, closure, matching height, quantities, reference and uncertainty estimates. Score the intended quantity alongside other affected outputs. Use an ablation or controlled change to test a candidate mechanism, recording what still changes with it. State what the test can establish and what remains unresolved. If no reference is available, sensitivity or cross-model agreement alone cannot establish absolute accuracy.} \\
 \botrule
 \end{tabular*}
 \end{table*}

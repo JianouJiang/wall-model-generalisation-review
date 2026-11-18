@@ -1,0 +1,13 @@
+{
+  "doi": "10.1017/dce.2023.2",
+  "source_version": "published article",
+  "source_location": "Section 4.2.3, Table 5, Figures 15 and 16",
+  "quantity": "integrated squared disagreement with the reference wall stress",
+  "baseline": "law-of-the-wall model",
+  "baseline_magnitude": 0.806,
+  "baseline_streamwise_component": 0.686,
+  "message_passing_steps": [1, 2, 3, 4, 5],
+  "magnitude": [0.687, 0.217, 0.120, 0.067, 0.066],
+  "streamwise_component": [0.585, 0.311, 0.302, 0.308, 0.367],
+  "interpretation": "Both integrated errors improve over the baseline at N=4. The source separately reports underestimated reattachment in all LES. A remaining absolute error is not evidence that the relative improvement reverses between these two integrated quantities. No digitisation is used."
+}

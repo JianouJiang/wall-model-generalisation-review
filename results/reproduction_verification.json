@@ -1,33 +1,72 @@
 {
-  "independent_virtual_environment": true,
-  "script_exit": 0,
-  "figure_comparisons": {
+  "edition": "current corrected critical review",
+  "checks": {
+    "status": "PASS",
+    "edition": "critical review; aggregate claims withdrawn",
+    "pdf_pages": 9,
+    "pdf_sha256": "b5bef8e738c269b601286a98f21eb7909ca671e27a289a23fff3538acb467db6",
+    "citations_with_support_record": 15,
+    "caption_word_counts": [
+      123,
+      47,
+      75,
+      87,
+      79,
+      46,
+      41
+    ],
+    "abstract_words": 146,
+    "figures": 4,
+    "tables": 3,
+    "eligibility_records_checked": 33,
+    "dupuy_N4_normalised_errors": [
+      0.08312655086848635,
+      0.44897959183673464
+    ],
+    "retrospective_agreement": [
+      8,
+      10,
+      7,
+      3
+    ],
+    "circulation_text_scan": "PASS",
+    "scientific_limit": "Pass checks consistency and specified support. It does not certify an exhaustive corpus or predictive checklist validity."
+  },
+  "figures": {
     "fig1_loop": {
-      "pdf_sha256_matches": false,
-      "text_inventory_matches": true,
+      "sha256": "1dee9fdaa302c930a291997781ed8ee064b3d032c9898558c64f3d4c18f58eee",
       "layout_passed": true
     },
     "fig2_record": {
-      "pdf_sha256_matches": false,
-      "text_inventory_matches": true,
-      "layout_passed": true,
-      "plotted_values_match": true
+      "sha256": "87e52ff48dc00c6fe3b42db5b34f29e5751a7d257564c921b6ff89a253557087",
+      "layout_passed": true
     },
     "fig3_contrast": {
-      "pdf_sha256_matches": false,
-      "text_inventory_matches": true,
-      "layout_passed": true,
-      "plotted_values_match": true
+      "sha256": "52ce2d0f43a9c9a604f01656af932a514172fd92a51002c1fa724d871ef7a81b",
+      "layout_passed": true
     },
     "fig4_checklist": {
-      "pdf_sha256_matches": false,
-      "text_inventory_matches": true,
-      "layout_passed": true,
-      "plotted_values_match": true
+      "sha256": "112995f9f117bd491c2a80f3e21923d87ef7b89a53fa520db2a08277e9af92ff",
+      "layout_passed": true
     }
   },
-  "scope_results_identical": true,
-  "pdf_hash_note": "Original system environment reproduces the archived PDFs byte for byte. The isolated wheel environment reproduces values and text inventories and passes layout checks, but does not give identical PDF bytes.",
-  "public_manuscript_pages": 15,
-  "reference_labels_match_manuscript": true
+  "isolated_copy_figure_reproduction": {
+    "fig1_loop.pdf": {
+      "byte_identical": true,
+      "sha256": "1dee9fdaa302c930a291997781ed8ee064b3d032c9898558c64f3d4c18f58eee"
+    },
+    "fig2_record.pdf": {
+      "byte_identical": true,
+      "sha256": "87e52ff48dc00c6fe3b42db5b34f29e5751a7d257564c921b6ff89a253557087"
+    },
+    "fig3_contrast.pdf": {
+      "byte_identical": true,
+      "sha256": "52ce2d0f43a9c9a604f01656af932a514172fd92a51002c1fa724d871ef7a81b"
+    },
+    "fig4_checklist.pdf": {
+      "byte_identical": true,
+      "sha256": "112995f9f117bd491c2a80f3e21923d87ef7b89a53fa520db2a08277e9af92ff"
+    }
+  },
+  "isolated_copy_script_exit": 0
 }
