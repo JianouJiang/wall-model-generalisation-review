@@ -140,9 +140,12 @@ def main_check():
     assert alltext.count('\\begin{table*}')==3
     assert '\\input{numbers}' not in main
     assert not re.search(r'\\n(?:Claims|Obs|Mixed|Exposed|Held|Adv)\b',alltext)
-    assert re.search(r'withdrew estimates of how often tests supported transfer beyond calibration'
-                     r' and how often conclusions changed with the measured quantity alone',alltext)
-    assert 'no estimate of the prevalence' in main
+    # The superseded counts belong to the correction record. The paper reports selected cases.
+    status = json.loads((ROOT/'data/revision/STATUS.json').read_text())
+    assert 'population prevalence of transfer or validation deficit' in status['withdrawn_claims']
+    assert '9-of-18 quantity-only contrast' in status['withdrawn_claims']
+    assert not re.search(r'we withdrew estimates|archived literature counts|'
+                         r'82 study treatments|eligibility decisions for the other 33', alltext, re.I)
     assert 'retrospective' in abstract and 'prospective' in abstract
 
     dup=json.loads((ROOT/'data/revision/dupuy_table5.json').read_text())

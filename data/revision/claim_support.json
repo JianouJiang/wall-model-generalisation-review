@@ -181,7 +181,15 @@
     "source_version": "archived retrospective labels",
     "source_location": "data/checklist_cases.json and data/revision/checklist_choices.json",
     "claim": "Two retrospective passes on 13 cases matched on 8 causes, 10 quantity classes, 7 factors and all three in 3 cases. In both passes step 5 was unknown for all 13. Four cases helped formulate step 5. These are agreement counts.",
-    "verification": "counts recomputed from individual case labels; independence limitations explicitly stated"
+    "verification": "counts recomputed from individual case labels; independence limitations explicitly stated",
+    "worked_case": {
+      "case": "K01",
+      "flow": "periodic hill",
+      "both_assessments": "solver coupling",
+      "first_proposed_test": "vary grid resolution and examine wall friction and reattachment",
+      "second_proposed_test": "vary Reynolds number and compare mean velocity profiles",
+      "source_location": "paired first-priority test proposals for K01; the categories are given in checklist_choices.json"
+    }
   },
   {
     "claim_id": "S17",
