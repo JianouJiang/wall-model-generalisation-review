@@ -2,18 +2,18 @@
   "status": "PASS",
   "edition": "critical review; aggregate claims withdrawn",
   "pdf_pages": 9,
-  "pdf_sha256": "b5bef8e738c269b601286a98f21eb7909ca671e27a289a23fff3538acb467db6",
+  "pdf_sha256": "cb79b028de77ef719f32718f517830a31dca5319d5b9254ced4303762c6a8892",
   "citations_with_support_record": 15,
   "caption_word_counts": [
     123,
     47,
-    75,
-    87,
-    79,
+    116,
+    126,
+    98,
     46,
     41
   ],
-  "abstract_words": 146,
+  "abstract_words": 149,
   "figures": 4,
   "tables": 3,
   "eligibility_records_checked": 33,
@@ -27,6 +27,13 @@
     7,
     3
   ],
+  "comparison_map_sources": 8,
+  "figure_layouts": {
+    "fig1_loop": true,
+    "fig2_record": true,
+    "fig3_contrast": true,
+    "fig4_checklist": true
+  },
   "circulation_text_scan": "PASS",
   "scientific_limit": "Pass checks consistency and specified support. It does not certify an exhaustive corpus or predictive checklist validity."
 }

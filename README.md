@@ -11,6 +11,7 @@ Research materials for **Why wall models fail to generalise, and how to judge th
 - [Claim-support register](data/revision/claim_support.json)
 - [Eligibility audit of all 33 records outside the historical cohort](data/revision/eligibility_audit.json)
 - [Reproduction instructions](docs/reproducibility.md)
+- [Figure design and data](docs/figure-design.md)
 - [Data dictionary](docs/data-dictionary.md)
 
 The original [17:29 circulation PDF](manuscript/circulation_snapshot_2026-11-18.pdf), historical 82-treatment coding and intermediate sensitivity calculations remain as **superseded research records**. They are not the current paper and must not be used to restore the withdrawn conclusions. Reproducing a stored calculation does not validate its source interpretation or denominator.

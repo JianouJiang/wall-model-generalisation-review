@@ -1,8 +1,10 @@
 {
   "current_edition": "Critical review, source-checked cases; no population estimates",
   "current_inputs": [
+    "comparison_map.json",
     "agrawal_validation.json",
     "dupuy_table5.json",
+    "outer_input_error.json",
     "claim_support.json",
     "eligibility_audit.json",
     "historical_source_manifest.json",

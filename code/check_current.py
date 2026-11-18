@@ -2,6 +2,7 @@
 """Check the current critical review without validating superseded census claims."""
 import hashlib
 import json
+import math
 import re
 import subprocess
 from pathlib import Path
@@ -39,6 +40,7 @@ def main_check():
     assert cited<=set(bibkeys)
     caps=[words(x) for s in parts for x in arguments(s,'caption')]
     assert len(caps)==7 and max(caps)<150,caps
+    assert words(arguments(main,'abstract')[0])<=150
     assert main.count('\\includegraphics')==4
     assert alltext.count('\\begin{table*}')==3
     assert '\\input{numbers}' not in main
@@ -52,11 +54,37 @@ def main_check():
     assert dup['baseline_magnitude']==0.806 and dup['baseline_streamwise_component']==0.686
     assert dup['magnitude']==[.687,.217,.120,.067,.066]
     assert dup['streamwise_component']==[.585,.311,.302,.308,.367]
+    comparisons=json.loads((ROOT/'data/revision/comparison_map.json').read_text())
+    plotted_map=json.loads((ROOT/'results/figures/fig2_values.json').read_text())
+    by_id={r['claim_id']:r for r in support}
+    assert len(comparisons['rows'])==len({r['reference_key'] for r in comparisons['rows']})==8
+    assert plotted_map['rows']==comparisons['rows']
+    for row in comparisons['rows']:
+        assert row['reference_key'] in cited
+        assert row['source_location'] and row['selected_comparison']
+        assert row['support'] and all(by_id[k]['reference_key']==row['reference_key'] for k in row['support'])
+        assert set(row['changes'])<=set(comparisons['change_columns'])
+        assert set(row['quantities'])<=set(comparisons['quantity_columns'])
+    plotted_errors=json.loads((ROOT/'results/figures/fig3_values.json').read_text())
+    for source_key,baseline_key,plotted_key in [('magnitude','baseline_magnitude','magnitude_ratio'),
+                                              ('streamwise_component','baseline_streamwise_component','streamwise_ratio')]:
+        assert len(dup[source_key])==len(plotted_errors[plotted_key])==5
+        assert all(math.isclose(a/dup[baseline_key],b,rel_tol=1e-12)
+                   for a,b in zip(dup[source_key],plotted_errors[plotted_key]))
+    outer=json.loads((ROOT/'data/revision/outer_input_error.json').read_text())
+    assert plotted_errors['outer_input_comparison']==outer
+    assert outer['internal_error']['BFWM']==dict(relation='less than',value=.5)
+    assert outer['internal_error']['EQWM']==dict(relation='approximately',value=2.)
+    assert outer['total_error']['reported_range_percent']==[5.,15.]
+    assert 'not confidence intervals' in main
     cases=json.loads((ROOT/'data/checklist_cases.json').read_text())['cases']
     keys=['same_cause','same_observable_class','same_factor']
     agreement=[sum(c['agreement'][k] for c in cases) for k in keys]
     agreement.append(sum(all(c['agreement'][k] for k in keys) for c in cases))
     assert len(cases)==13 and agreement==[8,10,7,3]
+    plotted_cases=json.loads((ROOT/'results/figures/fig4_values.json').read_text())
+    assert list(plotted_cases['agreement'].values())==agreement
+    assert plotted_cases['case_order']==[dict(number=i+1,case=c['case'],agreement=c['agreement']) for i,c in enumerate(cases)]
     assert all(c['records'][p]['step5_from_the_item_record']=='unknown' for c in cases for p in ['A','B'])
     exclusions=json.loads((ROOT/'data/revision/eligibility_audit.json').read_text())
     manifest=json.loads((ROOT/'data/revision/historical_source_manifest.json').read_text())
@@ -80,7 +108,15 @@ def main_check():
     assert 'Authors: to be decided' in compact
     assert 'no competing interests' in compact and 'no specific funding' in compact
     log=(M/'main.log').read_text(errors='replace')
+    assert 'Output written on main.pdf' in log,'LaTeX did not finish writing the PDF'
+    assert not re.search(r'^!|Fatal error occurred|Emergency stop',log,re.M),'LaTeX error'
     assert not re.search(r'undefined references|Citation .* undefined|Overfull \\[hv]box',log)
+    assert 'not tabulated for this example' in compact,'outdated comparison-map figure in PDF'
+    assert 'Internal and total error' in compact,'outdated accuracy figure in PDF'
+    assert 'Agreement in each case' in compact,'outdated checklist figure in PDF'
+    figure_layouts={name:json.loads((ROOT/f'results/figures/{name}_layout.json').read_text())['passed']
+                    for name in ('fig1_loop','fig2_record','fig3_contrast','fig4_checklist')}
+    assert all(figure_layouts.values())
     report={'status':'PASS','edition':'critical review; aggregate claims withdrawn',
             'pdf_pages':pages,'pdf_sha256':hashlib.sha256(pdf.read_bytes()).hexdigest(),
             'citations_with_support_record':len(cited),'caption_word_counts':caps,
@@ -88,6 +124,8 @@ def main_check():
             'figures':4,'tables':3,'eligibility_records_checked':33,
             'dupuy_N4_normalised_errors':[.067/.806,.308/.686],
             'retrospective_agreement':agreement,
+            'comparison_map_sources':len(comparisons['rows']),
+            'figure_layouts':figure_layouts,
             'circulation_text_scan':'PASS',
             'scientific_limit':'Pass checks consistency and specified support. It does not certify an exhaustive corpus or predictive checklist validity.'}
     (ROOT/'results/revision/current_checks.json').write_text(json.dumps(report,indent=2)+'\n')

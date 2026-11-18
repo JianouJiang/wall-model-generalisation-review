@@ -41,7 +41,7 @@
   },
   {
     "claim_id": "S05",
-    "manuscript_location": "States and balance; Table 2",
+    "manuscript_location": "States and balance; Table 2; selected comparison in Fig. 2",
     "reference_key": "Hayat2024preprint",
     "source_version": "arXiv:2403.05476v1",
     "source_location": "Section IV, Figs. 11–12 and 16",
@@ -51,17 +51,17 @@
   },
   {
     "claim_id": "S06",
-    "manuscript_location": "Learned representation",
+    "manuscript_location": "Learned representation; selected comparison in Fig. 2",
     "reference_key": "BaeKoumoutsakos2022",
     "source_version": "version of record",
-    "source_location": "Results: velocity-based/log-law models and boundary-layer test; Figs. 4–5",
+    "source_location": "Results: velocity-based/log-law models, matching-height range and refinement, boundary-layer test; Figs. 3–5",
     "claim": "Matching-height training range and boundary-layer application.",
     "source_text_sha256": "ce5a60a4a519dd15c705af73b973f528093d4ae80246c4b3d76da396b88e0e6c",
     "verification": "supporting passages checked in this revision"
   },
   {
     "claim_id": "S07",
-    "manuscript_location": "Internal and total error; Table 2",
+    "manuscript_location": "Internal and total error; Table 2; selected comparison in Fig. 2; Fig. 3b",
     "reference_key": "LozanoDuranBae2023",
     "source_version": "version of record",
     "source_location": "Sections 4.1 and 4.3, Fig. 9",
@@ -81,17 +81,17 @@
   },
   {
     "claim_id": "S09",
-    "manuscript_location": "Coupling; Table 2",
+    "manuscript_location": "Coupling; Table 2; selected comparison in Fig. 2",
     "reference_key": "Mukha2024preprint",
     "source_version": "arXiv:2404.05378v1",
-    "source_location": "Conclusion, weak boundary imposition and input averaging",
+    "source_location": "Time-averaging of the wall model input subsection, Table III; Conclusion and weak boundary imposition discussion",
     "claim": "Reported traction/gradient distinction, no systematic averaging gain, and mismatch counterexample in this specific manuscript.",
     "source_text_sha256": "aaa275e4ae8b9693d23b841685892f1842aa309a1b75b8ace752c4f98843bc91",
     "verification": "supporting passages checked in this revision"
   },
   {
     "claim_id": "S10",
-    "manuscript_location": "Outer error; Table 2",
+    "manuscript_location": "Outer error; Table 2; selected comparison in Fig. 2",
     "reference_key": "Zhou2024preprint",
     "source_version": "arXiv:2309.13555v2",
     "source_location": "Section 3, Fig. 4 and boundary-condition discussion",
@@ -101,7 +101,7 @@
   },
   {
     "claim_id": "S11",
-    "manuscript_location": "Relative improvement; Fig. 3",
+    "manuscript_location": "Relative improvement; Fig. 3; selected comparison in Fig. 2",
     "reference_key": "Dupuy2023graph",
     "source_version": "version of record",
     "source_location": "Section 4.2.3, Table 5, Figs. 15–16 (PDF page 22 for table)",
@@ -111,7 +111,7 @@
   },
   {
     "claim_id": "S12",
-    "manuscript_location": "Comparison matching",
+    "manuscript_location": "Comparison matching; selected comparison in Fig. 2",
     "reference_key": "Jones2015",
     "source_version": "identified author manuscript",
     "source_location": "Sections 6 and 7.1",
@@ -141,7 +141,7 @@
   },
   {
     "claim_id": "S15",
-    "manuscript_location": "Scope example; Fig. 2",
+    "manuscript_location": "Calibration and scope example; selected comparison in Fig. 2",
     "reference_key": "Agrawal2024",
     "source_version": "version of record, 20 December 2024, author-posted full text",
     "source_url": "https://www.researchgate.net/publication/387287722_Nonequilibrium_wall_model_for_large_eddy_simulations_of_complex_flows_exhibiting_turbulent_smooth_body_separation",

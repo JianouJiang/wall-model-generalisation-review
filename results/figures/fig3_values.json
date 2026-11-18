@@ -21,5 +21,39 @@
     0.4402332361516034,
     0.44897959183673464,
     0.5349854227405247
-  ]
+  ],
+  "outer_input_comparison": {
+    "doi": "10.1017/jfm.2023.331",
+    "source_version": "published article",
+    "source_location": "Section 4.3, paragraph accompanying Fig. 9(c,d), page 963 A35-18; Section 4.1 defines internal/total error",
+    "case": "zero-pressure-gradient turbulent boundary layer, after the inflow adjustment",
+    "quantity": "reported wall-stress error, percent",
+    "internal_error": {
+      "outer_closure": "exact for the mean (ESGS)",
+      "BFWM": {
+        "relation": "less than",
+        "value": 0.5
+      },
+      "EQWM": {
+        "relation": "approximately",
+        "value": 2.0
+      }
+    },
+    "total_error": {
+      "outer_closures": [
+        "dynamic Smagorinsky",
+        "Vreman"
+      ],
+      "models": [
+        "BFWM",
+        "EQWM"
+      ],
+      "reported_range_percent": [
+        5.0,
+        15.0
+      ]
+    },
+    "source_statement": "The averaged wall stress error is below 0.5% for BFWM and about 2% for EQWM once the effect of the inlet condition is forgotten. Both exhibit comparable total wall-stress errors between 5% and 15% with practical closures.",
+    "interpretation": "Bounds, approximations and the reported range are preserved as such. No pointwise values are digitised. The range is not a confidence interval or an uncertainty estimate. Internal and total errors come from different outer-closure experiments."
+  }
 }

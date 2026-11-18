@@ -1,8 +1,38 @@
 {
  "figure": "fig3_contrast",
  "width_mm": 160,
- "texts": 18,
+ "texts": 33,
  "rows": [
+  {
+   "text": "law-of-the-wall baseline",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.083",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#2a78d6",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.449",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#e34948",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
   {
    "text": "message-passing steps",
    "size_pt": 8.0,
@@ -74,7 +104,7 @@
    "math": false
   },
   {
-   "text": "0.00",
+   "text": "0",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -114,7 +144,7 @@
    "math": false
   },
   {
-   "text": "1.00",
+   "text": "1",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -124,28 +154,128 @@
    "math": false
   },
   {
-   "text": "Stress magnitude",
+   "text": "magnitude",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
    "colour": "#000000",
-   "where": "axes 0",
-   "role": "legend",
+   "where": "axes 1",
+   "role": "text",
    "math": false
   },
   {
-   "text": "Streamwise component",
+   "text": "streamwise",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
    "colour": "#000000",
-   "where": "axes 0",
-   "role": "legend",
+   "where": "axes 1",
+   "role": "text",
    "math": false
   },
   {
-   "text": "At four steps",
+   "text": "Exact-for-mean outer closure",
    "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "BFWM: <0.5%",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "EQWM: ≈2%",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Practical outer closures",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "both models: 5–15%",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "wall-stress error (%)",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "axis label",
+   "math": false
+  },
+  {
+   "text": "0",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "5",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "10",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "15",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "a",
+   "size_pt": 10.0,
    "weight": "bold",
    "rotation": 0.0,
    "colour": "#000000",
@@ -154,31 +284,51 @@
    "math": false
   },
   {
-   "text": "Both errors are lower\nthan the baseline.",
+   "text": "Improvement over a baseline",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#000000",
+   "colour": "#0b0b0b",
    "where": "figure",
    "role": "text",
    "math": false
   },
   {
-   "text": "Reattachment remains\nunderestimated.",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Relative improvement can coexist with remaining reference error",
-   "size_pt": 8.0,
+   "text": "b",
+   "size_pt": 10.0,
    "weight": "bold",
    "rotation": 0.0,
    "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Internal and total error",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Dupuy et al. (2023), Table 5",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Lozano-Durán & Bae (2023), §4.3",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
    "where": "figure",
    "role": "text",
    "math": false

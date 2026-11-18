@@ -1,29 +1,145 @@
 {
-  "source": "10.1103/PhysRevFluids.9.124603",
-  "version": "Version of record, published 20 December 2024",
-  "speed_bump": {
-    "coupled_LES": true,
-    "locations": "Sec. V.A, Figs. 6\u20139; Sec. V.C, Fig. 11",
-    "quantities": [
-      "surface pressure",
-      "skin friction",
-      "mean velocity",
-      "Reynolds shear stress"
-    ],
-    "low_mach_review_scope": "case-specific regime unresolved in the sections examined",
-    "relative_improvement": "reported for coarse/medium downstream velocity and shear stress; residual errors remain",
-    "calibration_independence": "requires a separate assessment"
-  },
-  "transonic_bump": {
-    "coupled_LES": true,
-    "locations": "Sec. VI, Figs. 13\u201315",
-    "quantities": [
-      "surface pressure",
-      "mean velocity",
-      "separation and reattachment"
-    ],
-    "low_mach_review_scope": "outside scope",
-    "calibration_independence": "requires a separate assessment"
-  },
-  "interpretation": "Scope exclusion does not imply no validation. These are evidence categories, not counts of independent simulations."
+  "purpose": "A selective map of comparison designs discussed in the review, not a census, causal attribution or performance ranking.",
+  "blank_meaning": "Not represented in this selected comparison; not evidence that the paper lacks the test or quantity.",
+  "rows": [
+    {
+      "reference_key": "Hayat2024preprint",
+      "label": "Hayat & Park (2024*)",
+      "support": [
+        "S05"
+      ],
+      "source_location": "arXiv:2403.05476v1, Section IV, Figs. 11–12 and 16",
+      "selected_comparison": "Equilibrium and non-equilibrium formulations in unswept/swept separation; signed stress decomposition.",
+      "changes": [
+        "Model choice",
+        "Flow / regime"
+      ],
+      "quantities": [
+        "Wall stress",
+        "Mean velocity",
+        "Separation",
+        "Term budget"
+      ]
+    },
+    {
+      "reference_key": "BaeKoumoutsakos2022",
+      "label": "Bae & Koumoutsakos (2022)",
+      "support": [
+        "S06"
+      ],
+      "source_location": "Published article, Results and Figs. 3–5",
+      "selected_comparison": "Velocity/log-law representations, matching-height range and refinement, channel and developing boundary layer. Refinement also changes the sampling location.",
+      "changes": [
+        "Model choice",
+        "Input / sampling",
+        "Grid / implementation",
+        "Flow / regime"
+      ],
+      "quantities": [
+        "Wall stress",
+        "Mean velocity"
+      ]
+    },
+    {
+      "reference_key": "LozanoDuranBae2023",
+      "label": "Lozano-Durán & Bae (2023)",
+      "support": [
+        "S07"
+      ],
+      "source_location": "Published article, Sections 4.1 and 4.3, Fig. 9",
+      "selected_comparison": "Building-block/equilibrium wall models with exact-for-mean and practical outer closures in the boundary layer. These are different numerical experiments.",
+      "changes": [
+        "Model choice",
+        "Outer closure"
+      ],
+      "quantities": [
+        "Wall stress"
+      ]
+    },
+    {
+      "reference_key": "Mukha2024preprint",
+      "label": "Mukha & Schlatter (2024*)",
+      "support": [
+        "S09"
+      ],
+      "source_location": "arXiv:2404.05378v1, input-averaging comparison and Conclusion",
+      "selected_comparison": "Time-averaged versus instantaneous input to the algebraic model; imposed traction is distinguished from the wall velocity gradient.",
+      "changes": [
+        "Input / sampling"
+      ],
+      "quantities": [
+        "Wall stress",
+        "Mean velocity"
+      ]
+    },
+    {
+      "reference_key": "Zhou2024preprint",
+      "label": "Zhou & Bae (2024*)",
+      "support": [
+        "S10"
+      ],
+      "source_location": "arXiv:2309.13555v2, Section 3, Fig. 4",
+      "selected_comparison": "Outer-closure sensitivity of separation with reference mean wall traction imposed. Supplied traction is not coded as a predicted wall-stress quantity.",
+      "changes": [
+        "Outer closure"
+      ],
+      "quantities": [
+        "Separation"
+      ]
+    },
+    {
+      "reference_key": "Agrawal2024",
+      "label": "Agrawal et al. (2024)",
+      "support": [
+        "S15"
+      ],
+      "source_location": "Published article, Sections V–VI, Figs. 6–9, 11 and 13–15",
+      "selected_comparison": "Equilibrium/non-equilibrium models, grids and speed-bump/transonic regimes; velocity and Reynolds shear-stress comparisons are distinct.",
+      "changes": [
+        "Model choice",
+        "Grid / implementation",
+        "Flow / regime"
+      ],
+      "quantities": [
+        "Wall stress",
+        "Mean velocity",
+        "Pressure",
+        "Separation"
+      ]
+    },
+    {
+      "reference_key": "Dupuy2023graph",
+      "label": "Dupuy et al. (2023)",
+      "support": [
+        "S11"
+      ],
+      "source_location": "Published article, Section 4.2.3, Table 5 and Figs. 15–16",
+      "selected_comparison": "Graph-model message-passing depth and law-of-the-wall baseline; integrated stress errors and reattachment are separate quantities. Depth changes information propagated in the model, not an isolated physical input intervention.",
+      "changes": [
+        "Model choice"
+      ],
+      "quantities": [
+        "Wall stress",
+        "Separation"
+      ]
+    },
+    {
+      "reference_key": "Jones2015",
+      "label": "Jones & Utyuzhnikov (2016†)",
+      "support": [
+        "S12"
+      ],
+      "source_location": "Accepted manuscript, Sections 6 and 7.1",
+      "selected_comparison": "Interface boundary conditions and logarithmic treatment use different near-wall meshes; friction, pressure and recirculation comparisons.",
+      "changes": [
+        "Model choice",
+        "Grid / implementation"
+      ],
+      "quantities": [
+        "Wall stress",
+        "Pressure",
+        "Separation"
+      ]
+    }
+  ]
 }

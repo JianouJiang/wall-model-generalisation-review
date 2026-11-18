@@ -1,9 +1,179 @@
 {
   "cases": 13,
   "agreement": {
-    "Same cause": 8,
-    "Same quantity class": 10,
-    "Same factor to vary": 7,
-    "All three agree": 3
-  }
+    "Cause": 8,
+    "Quantity class": 10,
+    "Factor to vary": 7,
+    "All three": 3
+  },
+  "case_order": [
+    {
+      "number": 1,
+      "case": "K01",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": false,
+        "same_factor": false
+      }
+    },
+    {
+      "number": 2,
+      "case": "K02",
+      "agreement": {
+        "same_cause": false,
+        "same_observable_class": true,
+        "same_factor": true
+      }
+    },
+    {
+      "number": 3,
+      "case": "K03",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": false,
+        "same_factor": false
+      }
+    },
+    {
+      "number": 4,
+      "case": "K04",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": true,
+        "same_factor": true
+      }
+    },
+    {
+      "number": 5,
+      "case": "K05",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": true,
+        "same_factor": false
+      }
+    },
+    {
+      "number": 6,
+      "case": "K06",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": true,
+        "same_factor": false
+      }
+    },
+    {
+      "number": 7,
+      "case": "K07",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": true,
+        "same_factor": true
+      }
+    },
+    {
+      "number": 8,
+      "case": "K08",
+      "agreement": {
+        "same_cause": false,
+        "same_observable_class": true,
+        "same_factor": true
+      }
+    },
+    {
+      "number": 9,
+      "case": "K09",
+      "agreement": {
+        "same_cause": false,
+        "same_observable_class": false,
+        "same_factor": true
+      }
+    },
+    {
+      "number": 10,
+      "case": "K10",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": true,
+        "same_factor": false
+      }
+    },
+    {
+      "number": 11,
+      "case": "K11",
+      "agreement": {
+        "same_cause": true,
+        "same_observable_class": true,
+        "same_factor": true
+      }
+    },
+    {
+      "number": 12,
+      "case": "K12",
+      "agreement": {
+        "same_cause": false,
+        "same_observable_class": true,
+        "same_factor": false
+      }
+    },
+    {
+      "number": 13,
+      "case": "K13",
+      "agreement": {
+        "same_cause": false,
+        "same_observable_class": true,
+        "same_factor": true
+      }
+    }
+  ],
+  "agreement_patterns": [
+    {
+      "choices": [
+        false,
+        false,
+        true
+      ],
+      "count": 1
+    },
+    {
+      "choices": [
+        false,
+        true,
+        false
+      ],
+      "count": 1
+    },
+    {
+      "choices": [
+        false,
+        true,
+        true
+      ],
+      "count": 3
+    },
+    {
+      "choices": [
+        true,
+        false,
+        false
+      ],
+      "count": 2
+    },
+    {
+      "choices": [
+        true,
+        true,
+        false
+      ],
+      "count": 3
+    },
+    {
+      "choices": [
+        true,
+        true,
+        true
+      ],
+      "count": 3
+    }
+  ],
+  "assurance": "withheld in all 13 cases"
 }

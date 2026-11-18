@@ -2,7 +2,11 @@
 
 ## Current corrected edition
 
-Read data/revision/STATUS.json first. The current paper uses agrawal_validation.json for the source/scope example, dupuy_table5.json for published numerical values, claim_support.json for retained claims, eligibility_audit.json for the 33 eligibility checks, and historical_source_manifest.json for exact archived copy identities. Only the agreement labels in checklist_cases.json enter the current retrospective illustration.
+Read data/revision/STATUS.json first. The current paper uses comparison_map.json for the selected multi-study comparisons, dupuy_table5.json for published numerical values, claim_support.json for retained claims, eligibility_audit.json for the 33 eligibility checks, and historical_source_manifest.json for exact archived copy identities. The separate source/scope correction is retained in agrawal_validation.json. Only the agreement labels in checklist_cases.json enter the current retrospective illustration.
+
+In comparison_map.json, each row specifies the selected comparison, exact source location, support-register identifiers, changed choices and examined quantities. This is a selective illustration of the review's cases. An unmarked feature is not encoded for that example; it is not a negative finding about the paper. The columns are not mutually exclusive interventions and their totals have no population interpretation.
+
+Figure 3's second part uses outer_input_error.json. The relations "less than" and "approximately" must be preserved, as must the distinction between the reported 5–15% range and an uncertainty interval. No pointwise source values are digitised. Figure 4's case numbers map in order to the case identifiers in results/figures/fig4_values.json; no later-outcome classifications enter its counts.
 
 The other files described below are historical research records. The original outcome flags conflated some relative and absolute comparisons, and the historical cohort has unresolved eligibility inconsistencies. Their counts are withdrawn from the current manuscript. data/revision/test_codings.json and results/revision/design_audit.json record an intermediate 84-study diagnosis, not a repaired census. source_versions.json describes that earlier diagnostic; historical_source_manifest.json covers all 115 archived sources.
 
