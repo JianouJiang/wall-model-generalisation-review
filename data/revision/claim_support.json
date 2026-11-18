@@ -66,8 +66,8 @@
     "manuscript_location": "Internal and total error; Table 2; selected comparison in Fig. 2; Fig. 3b",
     "reference_key": "LozanoDuranBae2023",
     "source_version": "version of record",
-    "source_location": "Sections 4.1 and 4.3, Fig. 9",
-    "claim": "Internal wall-stress errors below 0.5% and about 2%; practical-closure total errors 5–15%. These are different experiments.",
+    "source_location": "Sections 4.1 and 4.3, Fig. 9(a,c,d), pp. 963 A35-18–19",
+    "claim": "Section 4.3 describes post-inlet internal errors below 0.5% (building-block) and about 2% (equilibrium) and summarises practical-closure total errors as 5–15%. Figure 9(d) gives about 19% locally for the equilibrium wall law with dynamic Smagorinsky closure at Re_x = 10^6. Internal and total errors come from different coupled experiments.",
     "source_text_sha256": "687bce0f487e5f3ec4bc369bd5c42064649dad6e7c099cf7e0f1b287b3a1000e",
     "verification": "supporting passages checked in this revision",
     "figure_2_source_location": "Published article, Secs. 4.1 and 4.3, Fig. 9(c,d) and accompanying text."

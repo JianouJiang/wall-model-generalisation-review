@@ -25,8 +25,8 @@
   "outer_input_comparison": {
     "doi": "10.1017/jfm.2023.331",
     "source_version": "published article",
-    "source_location": "Section 4.3, paragraph accompanying Fig. 9(c,d), page 963 A35-18; Section 4.1 defines internal/total error",
-    "case": "zero-pressure-gradient turbulent boundary layer, after the inflow adjustment",
+    "source_location": "Section 4.1 defines internal and total errors. Section 4.3 summarises the results on p. 963 A35-18. Figure 9(a,c,d) on p. 963 A35-19 gives the stations and error curves.",
+    "case": "Zero-pressure-gradient turbulent boundary layer. The source discusses the internal errors after the inlet adjustment.",
     "quantity": "reported wall-stress error, percent",
     "internal_error": {
       "outer_closure": "exact for the mean (ESGS)",
@@ -54,6 +54,173 @@
       ]
     },
     "source_statement": "The averaged wall stress error is below 0.5% for BFWM and about 2% for EQWM once the effect of the inlet condition is forgotten. Both exhibit comparable total wall-stress errors between 5% and 15% with practical closures.",
-    "interpretation": "Bounds, approximations and the reported range are preserved as such. No pointwise values are digitised. The range is not a confidence interval or an uncertainty estimate. Internal and total errors come from different outer-closure experiments."
+    "interpretation": "The internal-error bound and approximate value and the 5–15% total-error description are the authors’ prose summaries. Individual positions on the plotted curves can lie outside these descriptions. The total-error range is not a confidence interval. Internal and total errors are evaluated in separate coupled calculations.",
+    "station_readings": {
+      "source_pdf_sha256": "44fb93471124818e265bf4d6d3aeef1a9bf957e9bd314195155ba14044127ccf",
+      "source_pdf_page": 19,
+      "re_x": [
+        600000,
+        800000,
+        1000000,
+        1200000
+      ],
+      "selection": "All wall-model and outer-closure combinations in Figure 9(c,d), at the four streamwise locations used for the mean-velocity profiles in Figure 9(a).",
+      "method": "Read each curve at the labelled streamwise Reynolds number on its original panel. Use the 1% and 10% ticks to convert the vertical coordinate from the published logarithmic scale. Report two significant figures.",
+      "coordinate_system": "PDF points from the top left of the unrotated page. Stroke indices are zero-based in PyMuPDF Page.get_drawings().",
+      "calibration": {
+        "c": {
+          "station_x_pt": [
+            234.716,
+            250.406,
+            266.097,
+            281.789
+          ],
+          "y_at_1_percent_pt": 201.947,
+          "y_at_10_percent_pt": 184.315,
+          "station_tick_strokes": [
+            648,
+            649,
+            650,
+            651
+          ],
+          "one_percent_tick_stroke": 663,
+          "ten_percent_tick_stroke": 664
+        },
+        "d": {
+          "station_x_pt": [
+            352.91,
+            368.6,
+            384.292,
+            399.983
+          ],
+          "y_at_1_percent_pt": 201.947,
+          "y_at_10_percent_pt": 184.315,
+          "station_tick_strokes": [
+            823,
+            824,
+            825,
+            826
+          ],
+          "one_percent_tick_stroke": 838,
+          "ten_percent_tick_stroke": 839
+        }
+      },
+      "series": [
+        {
+          "source_panel": "c",
+          "outer_closure": "Exact for the mean",
+          "wall_model": "EQWM",
+          "source_symbol": "circles",
+          "source_stroke_index": 733,
+          "y_pt": [
+            196.853,
+            197.408,
+            197.048,
+            197.107
+          ],
+          "error_percent_approx": [
+            1.9,
+            1.8,
+            1.9,
+            1.9
+          ]
+        },
+        {
+          "source_panel": "c",
+          "outer_closure": "Exact for the mean",
+          "wall_model": "BFWM",
+          "source_symbol": "diamonds",
+          "source_stroke_index": 776,
+          "y_pt": [
+            202.834,
+            210.977,
+            212.484,
+            210.029
+          ],
+          "error_percent_approx": [
+            0.89,
+            0.31,
+            0.25,
+            0.35
+          ]
+        },
+        {
+          "source_panel": "d",
+          "outer_closure": "Dynamic Smagorinsky",
+          "wall_model": "EQWM",
+          "source_symbol": "dashed line with squares",
+          "source_stroke_index": 909,
+          "y_pt": [
+            181.238,
+            179.074,
+            179.289,
+            179.122
+          ],
+          "error_percent_approx": [
+            15.0,
+            20.0,
+            19.0,
+            20.0
+          ]
+        },
+        {
+          "source_panel": "d",
+          "outer_closure": "Dynamic Smagorinsky",
+          "wall_model": "BFWM",
+          "source_symbol": "solid line with squares",
+          "source_stroke_index": 931,
+          "y_pt": [
+            184.79,
+            181.9,
+            181.824,
+            182.662
+          ],
+          "error_percent_approx": [
+            9.4,
+            14.0,
+            14.0,
+            12.0
+          ]
+        },
+        {
+          "source_panel": "d",
+          "outer_closure": "Vreman",
+          "wall_model": "EQWM",
+          "source_symbol": "dashed line with crosses",
+          "source_stroke_index": 955,
+          "y_pt": [
+            200.03,
+            184.566,
+            185.167,
+            183.805
+          ],
+          "error_percent_approx": [
+            1.3,
+            9.7,
+            8.9,
+            11.0
+          ]
+        },
+        {
+          "source_panel": "d",
+          "outer_closure": "Vreman",
+          "wall_model": "BFWM",
+          "source_symbol": "solid line with crosses",
+          "source_stroke_index": 1019,
+          "y_pt": [
+            197.707,
+            187.647,
+            186.416,
+            185.885
+          ],
+          "error_percent_approx": [
+            1.7,
+            6.5,
+            7.6,
+            8.1
+          ]
+        }
+      ]
+    }
   }
 }

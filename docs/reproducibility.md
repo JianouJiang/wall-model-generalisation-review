@@ -4,11 +4,13 @@ Use Python 3.10 and requirements.txt in a virtual environment. The recorded rend
 
 ## Current edition
 
-Run code/reproduce.py to render the four figures. Figure 1 is a labelled physical schematic. Figure 2 reads the paired studies, numerical values, categorical observations and source locators in data/revision/comparison_map.json. The manuscript check repeats the interpolation of the three approximate step reattachment positions from the recorded source-figure coordinates. Figure 3 uses the published numerical values in data/revision/dupuy_table5.json and the explicitly bounded/approximate source summaries in data/revision/outer_input_error.json. The latter's reported range is not a confidence interval; internal and total errors come from different outer-closure experiments. Figure 4 shows the individual agreement labels and recomputes the totals from data/checklist_cases.json. The separate Agrawal correction record remains in data/revision/agrawal_validation.json.
+Run code/reproduce.py to render the four figures. Figure 1 is a labelled physical schematic. Figure 2 reads the paired studies, numerical values, categorical observations and source locators in data/revision/comparison_map.json. The manuscript check repeats the interpolation of the three approximate step reattachment positions from the recorded source-figure coordinates. Figure 3 normalises the two integrals in data/revision/dupuy_table5.json against their respective baselines and plots 24 local readings in data/revision/outer_input_error.json. The shading denotes the authors' prose summary for practical closures. Figure 4 shows the individual agreement labels and recomputes the totals from data/checklist_cases.json. The separate Agrawal correction record remains in data/revision/agrawal_validation.json.
 
 Run code/check_current.py after building manuscript/main.pdf. It checks current citations against the support record, caption limits, numerical inputs, historical-withdrawal wording, PDF page budget and prohibited circulation text. Figure rendering separately checks font sizes and layout.
 
 Build the manuscript with latexmk from manuscript/. The template dependency is described in manuscript/class/README.md. No supplementary PDF is part of the current circulation manuscript; the original circulation snapshot is an archive, not an appendix.
+
+To re-read the boundary-layer values directly, run `python3 code/verify_fig3_source.py /path/to/published.pdf` with PyMuPDF installed. The verifier finds the intersections of the published error traces with the four station coordinates and converts the logarithmic ordinates into percentages. The data file includes the digest of the PDF used. [Source article, Fig. 9](https://doi.org/10.1017/jfm.2023.331)
 
 ## Historical diagnostics
 

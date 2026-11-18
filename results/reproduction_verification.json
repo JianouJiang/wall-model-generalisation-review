@@ -1,16 +1,16 @@
 {
-  "edition": "Figure 2 revision, eight wall-model comparisons across four flow geometries",
+  "edition": "Figure 3 revision, integrated stress errors and stationwise outer-closure comparisons",
   "checks": {
     "status": "PASS",
     "edition": "critical review; aggregate claims withdrawn",
     "pdf_pages": 10,
-    "pdf_sha256": "82fc9b0bb21c738f4e60e6d9b403340cceba9a023c7a6cb237572c7fc94cdf89",
+    "pdf_sha256": "d0cc4c00eb0802ff88b6fcebb05936e11fd9941c3c7b1cf59cf5b152f7025844",
     "citations_with_support_record": 15,
     "caption_word_counts": [
       123,
       47,
       142,
-      126,
+      121,
       98,
       46,
       41
@@ -53,7 +53,7 @@
       "layout_passed": true
     },
     "fig3_contrast": {
-      "sha256": "125908343ad5590b00656f36906df31c82b21917b17e4d83f88bdba59a8da202",
+      "sha256": "f0b2f5788fcdb0be01604257c8bdae5ae743a51d78a848ea5f0fc9e068eefcae",
       "isolated_copy_byte_identical": true,
       "vector_only": true,
       "layout_passed": true
@@ -65,5 +65,11 @@
       "layout_passed": true
     }
   },
-  "isolated_copy_script_exit": 0
+  "isolated_copy_script_exit": 0,
+  "figure3_source_verification": {
+    "source": "10.1017/jfm.2023.331, Fig. 9(c,d)",
+    "local_error_values": 24,
+    "significant_figures": 2,
+    "pymupdf_and_poppler_readings_agree": true
+  }
 }

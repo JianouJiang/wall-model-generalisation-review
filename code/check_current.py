@@ -122,7 +122,20 @@ def main_check():
     assert outer['internal_error']['BFWM']==dict(relation='less than',value=.5)
     assert outer['internal_error']['EQWM']==dict(relation='approximately',value=2.)
     assert outer['total_error']['reported_range_percent']==[5.,15.]
-    assert 'not confidence intervals' in main
+    station_data = outer['station_readings']
+    assert station_data['re_x'] == [600000, 800000, 1000000, 1200000]
+    station_series = {(s['outer_closure'], s['wall_model']): s for s in station_data['series']}
+    closures = ['Exact for the mean', 'Dynamic Smagorinsky', 'Vreman']
+    assert len(station_data['series']) == 6
+    assert set(station_series) == {(c, m) for c in closures for m in ('EQWM', 'BFWM')}
+    for (closure, _), series in station_series.items():
+        assert series['source_panel'] == ('c' if closure == 'Exact for the mean' else 'd')
+        cal = station_data['calibration'][series['source_panel']]
+        y1, y10 = cal['y_at_1_percent_pt'], cal['y_at_10_percent_pt']
+        assert len(series['y_pt']) == len(series['error_percent_approx']) == len(cal['station_x_pt']) == 4
+        percent = [10**((y1-y)/(y1-y10)) for y in series['y_pt']]
+        assert [float(f'{v:.2g}') for v in percent] == series['error_percent_approx']
+    assert station_series['Dynamic Smagorinsky', 'EQWM']['error_percent_approx'][2] == 19
     cases=json.loads((ROOT/'data/checklist_cases.json').read_text())['cases']
     keys=['same_cause','same_observable_class','same_factor']
     agreement=[sum(c['agreement'][k] for c in cases) for k in keys]
@@ -160,7 +173,8 @@ def main_check():
     assert all(title in compact for title in ('Plane channel', 'Flat-plate boundary layers',
                'Gaussian speed bump', 'Step and diffuser', 'Signed error in mean wall stress',
                'Prescribed mean stress, baseline mesh', 'Recirculation on the inclined diffuser wall')), 'outdated Figure 2 in PDF'
-    assert 'Internal and total error' in compact,'outdated accuracy figure in PDF'
+    assert all(s in compact for s in ('Backward-facing step with a graph wall model', 'Streamwise component',
+               'Internal error', 'Total error', 'Two comparisons of coupled wall-stress predictions')), 'outdated Figure 3 in PDF'
     assert 'Agreement in each case' in compact,'outdated checklist figure in PDF'
     figure_layouts={name:json.loads((ROOT/f'results/figures/{name}_layout.json').read_text())['passed']
                     for name in ('fig1_loop','fig2_record','fig3_contrast','fig4_checklist')}

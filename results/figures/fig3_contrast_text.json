@@ -1,109 +1,9 @@
 {
  "figure": "fig3_contrast",
  "width_mm": 160,
- "texts": 33,
+ "texts": 57,
  "rows": [
   {
-   "text": "law-of-the-wall baseline",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0.083",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#2a78d6",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0.449",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#e34948",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "message-passing steps",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "axis label",
-   "math": false
-  },
-  {
-   "text": "squared-error integral / baseline",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 90.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "axis label",
-   "math": false
-  },
-  {
-   "text": "1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "tick label",
-   "math": false
-  },
-  {
-   "text": "2",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "tick label",
-   "math": false
-  },
-  {
-   "text": "3",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "tick label",
-   "math": false
-  },
-  {
-   "text": "4",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "tick label",
-   "math": false
-  },
-  {
-   "text": "5",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "tick label",
-   "math": false
-  },
-  {
    "text": "0",
    "size_pt": 8.0,
    "weight": "normal",
@@ -114,27 +14,7 @@
    "math": false
   },
   {
-   "text": "0.25",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "tick label",
-   "math": false
-  },
-  {
-   "text": "0.50",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 0",
-   "role": "tick label",
-   "math": false
-  },
-  {
-   "text": "0.75",
+   "text": "0.5",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -154,87 +34,37 @@
    "math": false
   },
   {
-   "text": "magnitude",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 1",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "streamwise",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 1",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Exact-for-mean outer closure",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "BFWM: <0.5%",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "EQWM: ≈2%",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Practical outer closures",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "both models: 5–15%",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "wall-stress error (%)",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "axes 2",
-   "role": "axis label",
-   "math": false
-  },
-  {
    "text": "0",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 1",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "0.5",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 1",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "1",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 1",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "6",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -244,7 +74,7 @@
    "math": false
   },
   {
-   "text": "5",
+   "text": "8",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -264,7 +94,7 @@
    "math": false
   },
   {
-   "text": "15",
+   "text": "12",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -274,19 +104,129 @@
    "math": false
   },
   {
-   "text": "a",
-   "size_pt": 10.0,
-   "weight": "bold",
+   "text": "0.2",
+   "size_pt": 8.0,
+   "weight": "normal",
    "rotation": 0.0,
    "colour": "#000000",
-   "where": "figure",
-   "role": "text",
+   "where": "axes 2",
+   "role": "tick label",
    "math": false
   },
   {
-   "text": "Improvement over a baseline",
+   "text": "1",
    "size_pt": 8.0,
    "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "5",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "20",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 2",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "6",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 3",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "8",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 3",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "10",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 3",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "12",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 3",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "6",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 4",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "8",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 4",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "10",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 4",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "12",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "axes 4",
+   "role": "tick label",
+   "math": false
+  },
+  {
+   "text": "a",
+   "size_pt": 10.0,
+   "weight": "bold",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "figure",
@@ -294,19 +234,9 @@
    "math": false
   },
   {
-   "text": "b",
-   "size_pt": 10.0,
+   "text": "Backward-facing step with a graph wall model",
+   "size_pt": 9.2,
    "weight": "bold",
-   "rotation": 0.0,
-   "colour": "#000000",
-   "where": "figure",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Internal and total error",
-   "size_pt": 8.0,
-   "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
    "where": "figure",
@@ -324,7 +254,77 @@
    "math": false
   },
   {
-   "text": "Lozano-Durán & Bae (2023), §4.3",
+   "text": "Depth",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "1",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "2",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "3",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "4",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "5",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Wall-stress magnitude",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.852",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -332,6 +332,246 @@
    "where": "figure",
    "role": "text",
    "math": false
+  },
+  {
+   "text": "0.269",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.149",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.083",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.082",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Streamwise component",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.853",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.453",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.440",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.449",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#205991",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.535",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Integrated squared wall-stress error / law-of-the-wall baseline",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "b",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Wall stress in a zero-pressure-gradient boundary layer",
+   "size_pt": 9.2,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Lozano-Durán & Bae (2023), Fig. 9",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Equilibrium wall law",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Building-block wall law",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Authors’ 5–15% summary",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Internal error",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Total error",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Exact for the mean",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Dynamic Smagorinsky",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Vreman",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Error (%, log scale)",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 90.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Streamwise Reynolds number, $Re_x/10^5$",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": true
   }
  ]
 }
