@@ -1,0 +1,238 @@
+{
+  "selection": "Worked applications of eligibility_rules.json. The set deliberately includes mixed observables, an estimator, two solver-level comparisons, an explicit wall-model contrast and a near-wall flow study without a wall treatment. It is a design sample, not an estimate for the retrieved literature.",
+  "records": [
+    {
+      "study_id": "P05",
+      "doi": "10.31590/ejosat.1005846",
+      "edition": "Published article, special issue 28, pp. 469–475 (2021)",
+      "source_url": "https://dergipark.org.tr/en/download/article-file/2014051",
+      "regime_and_forcing": "Steady, incompressible turbulent air flow about the Ahmed body with no-slip body and ground, prescribed 40 m/s inlet and pressure outlet.",
+      "calibration_and_dependence": "The same Aider–Beaudoin drag measurement selected the turbulence-closure and wall-function combination later used for the flap calculations. Three test meshes and the subsequent flap configurations do not provide independent validation of the selected combination.",
+      "tests": [
+        {
+          "id": "P05-drag",
+          "source_location": "§2.2, printed p. 471. Table 1 on p. 472 changes the flap geometry with the selected formulation.",
+          "comparison": "Pairs of turbulence closure and wall function on the 4.7-million-element mesh compared with experimental drag. The authors report 8.8% error for realizable k-epsilon with the Menter–Lechner treatment. Separate paired values at a common outer closure are not supplied here.",
+          "observables": [
+            {
+              "quantity": "Body drag coefficient",
+              "groups": [
+                "rans_comparison",
+                "system_benchmark"
+              ]
+            }
+          ],
+          "limit": "Admit the drag benchmark even though the work principally studies flaps. Joint choices and selection on drag leave separate wall-function benefit and independent transfer unresolved."
+        }
+      ],
+      "source_pdf_sha256": "d6a92999c0c6d5ff5a245614600344d73fb0721c4b41dce41fc0be447a4708e5"
+    },
+    {
+      "study_id": "N080",
+      "doi": "10.1108/HFF-09-2025-0715",
+      "edition": "arXiv:2509.25065v1. The journal abstract in the Crossref record for Int. J. Numer. Methods Heat Fluid Flow 36, 2539–2567 (2026) confirms forecasting future wall shear from turbulent channel DNS. Equivalence of the final figure is unverified.",
+      "source_url": "https://arxiv.org/abs/2509.25065v1",
+      "regime_and_forcing": "Periodic smooth no-slip channel DNS at friction Reynolds number about 180, constant streamwise mass flux.",
+      "calibration_and_dependence": "Input selection and CNN training/comparison use the same channel database and forecast target. Snapshots and input combinations share the parent DNS. An independent flow or deployment test is not established by this comparison.",
+      "tests": [
+        {
+          "id": "N080-forecast",
+          "source_location": "§4 opening (p. 9) and §4.2, Fig. 10 (p. 13) of v1.",
+          "comparison": "CNN forecasts using one or both prescribed streamwise-velocity planes compared with the DNS field at a later time. Fig. 10 reports an RMSE for each input choice.",
+          "observables": [
+            {
+              "quantity": "Future streamwise wall-shear field",
+              "groups": [
+                "prescribed_input"
+              ]
+            }
+          ],
+          "limit": "Retain fixed-input evidence about a forecast. There is no returned traction in this test and its lag differs from that of an instantaneous boundary condition."
+        }
+      ],
+      "source_pdf_sha256": "87920c595b1bbbd373a9a64fcd9b5c722960ad8d9df3eb0b870512c9a454d8d2"
+    },
+    {
+      "study_id": "N054",
+      "doi": "10.1016/j.ijheatfluidflow.2026.110596",
+      "edition": "Version of record, Int. J. Heat Fluid Flow 122, 110596, via White Rose Research Online",
+      "source_url": "https://eprints.whiterose.ac.uk/id/eprint/245405/",
+      "regime_and_forcing": "Low-speed heated air in a baffled passage. FC and MC have the same turbulent inflow, geometry and thermal boundary conditions, with gravity zero in FC and active in MC (§2.1). The reference DNS uses a low-Mach formulation (§2.2). Properties vary with temperature even in FC. Natural convection is a separate sealed-cavity case.",
+      "calibration_and_dependence": "The team comparisons share the corresponding three-dimensional DNS and geometry. Two-dimensional RANS closures, wall treatments, meshes and implementations differ. Prior tuning exposure for the individual treatments on this geometry is unreported.",
+      "tests": [
+        {
+          "id": "N054-forced",
+          "source_location": "§2.1 and Fig. 1 for forcing, §2.3 and Table 2 for setups, §3.2.1, Figs. 7(a–d) and 9(a,b) for forced-flow observables.",
+          "comparison": "RANS formulations with and without wall functions against DNS. On the hot wall most reproduce the lower shear peak. The SST and standard k-epsilon calculations using the two-scale wall function underpredict the separation peak. Wall heat flux is plotted separately for these runs.",
+          "observables": [
+            {
+              "quantity": "Local vertical wall shear in the forced case",
+              "groups": [
+                "rans_comparison",
+                "system_benchmark"
+              ]
+            },
+            {
+              "quantity": "Hot- and cold-wall heat flux in the forced case",
+              "groups": [
+                "thermal"
+              ]
+            }
+          ],
+          "limit": "The heat-flux comparison supplies no additional shear test. The forced shear comparison remains admissible despite the thermal application. The result concerns the tested RANS configurations."
+        },
+        {
+          "id": "N054-mixed",
+          "source_location": "§2.1 and §3.2.1, Figs. 8 and 9(c,d).",
+          "comparison": "RANS against the corresponding mixed-convection DNS with gravity active. The same geometry with changed momentum forcing is a different test.",
+          "observables": [
+            {
+              "quantity": "Local vertical shear with buoyancy",
+              "groups": [
+                "rans_comparison",
+                "system_benchmark"
+              ],
+              "regime_subset": "mixed convection only"
+            },
+            {
+              "quantity": "Wall heat flux with buoyancy",
+              "groups": [
+                "thermal"
+              ],
+              "regime_subset": "mixed convection only"
+            }
+          ],
+          "limit": "Keep the buoyant case distinct when estimating anything about forced convection. Neither thermal trace adds a hydrodynamic observable."
+        }
+      ],
+      "source_pdf_sha256": "408f22247613e306d5cfc6221c3e8e63643585658732c296ba6ef4244cf04f84"
+    },
+    {
+      "study_id": "N280",
+      "doi": "10.1016/j.compfluid.2021.104885",
+      "edition": "Version of record, Comput. Fluids 221, 104885, Chalmers copy. Also checked arXiv:2009.00295v1 §§3–4.",
+      "source_url": "https://research.chalmers.se/publication/522898/file/522898_Fulltext.pdf",
+      "regime_and_forcing": "Smooth incompressible plane channel. A time-dependent source maintains bulk velocity; the target bulk Reynolds number based on half-height is 125,000. The resulting friction is free to vary.",
+      "calibration_and_dependence": "Same Spalding law and DNS reference across grids. Spalding parameters are fixed for the series. Novel physical-regime transfer is not the comparison. The shared channel case and target DNS link all sixteen runs.",
+      "tests": [
+        {
+          "id": "N280-channel-grid",
+          "source_location": "§3, §4.1.1 and §4.1.3, Table 4, Figs. 5–6 (printed pp. 6–7).",
+          "comparison": "Cell type and density varied with the second off-wall cell supplying velocity to the same wall law. The physical sampling height moved on refinement. Relative friction Reynolds number errors for the hexahedral series at d/delta = 1/15, 1/20, 1/25, 1/30 are +0.24, −0.49, −1.14, −1.66 percent. The triangular-prism series changes from −3.24 to −3.12 to −4.31 to −4.70 percent.",
+          "observables": [
+            {
+              "quantity": "Friction Reynolds number against channel DNS",
+              "groups": [
+                "coupled_wmles",
+                "system_benchmark"
+              ]
+            },
+            {
+              "quantity": "Mean streamwise velocity profile against the same DNS",
+              "groups": [
+                "coupled_wmles",
+                "system_benchmark"
+              ]
+            }
+          ],
+          "limit": "One grid study with several runs and observables. It tests the complete WMLES response to the grid and associated sampling change. It cannot isolate wall-law error at fixed inputs."
+        }
+      ],
+      "source_pdf_sha256": "7dd074d5c95f47d812aa0d4c4b7fcea5c87effeb6f2df7a614984d0fe857982c"
+    },
+    {
+      "study_id": "N626",
+      "doi": "10.1017/dce.2023.2",
+      "edition": "Version of record, Data-Centric Engineering 4, e7",
+      "source_url": "https://doi.org/10.1017/dce.2023.2",
+      "regime_and_forcing": "Smooth backward-facing step, expansion ratio 1.2 and step Reynolds number 5100. The coupled runs impose the reference inlet mean profile with fluctuations, a pressure outlet and spanwise periodicity. The authors describe the flows as incompressible even though the solver uses compressible equations.",
+      "calibration_and_dependence": "§4.1 and Table 3 separate training simulations from the BFS. Multiple message-passing depths are compared on the step. Withholding the flow from weight fitting does not demonstrate an untouched estimate for a depth subsequently selected using step results. Mean crossings and integral errors reuse the same runs and reference.",
+      "tests": [
+        {
+          "id": "N626-direction",
+          "source_location": "§4.2.3, p. e7-20, accompanying Figs. 14–16.",
+          "comparison": "The implemented boundary condition takes direction from the first off-wall tangential velocity and predicts the magnitude. The restriction follows from the stated mapping.",
+          "observables": [
+            {
+              "quantity": "Admissible instantaneous stress direction",
+              "groups": [
+                "constitutive_constraint"
+              ]
+            }
+          ],
+          "limit": "A formulation-level restriction. Fig. 16 supplies a mean, not a measured paired instantaneous violation."
+        },
+        {
+          "id": "N626-prescribed",
+          "source_location": "§4.1, Fig. 7(a) and accompanying discussion (published pp. e7-13–15).",
+          "comparison": "With prescribed BFS inputs, Fig. 7(a) compares mean stress magnitude predicted by the graph model and the algebraic law of Reichardt with the numerical reference.",
+          "observables": [
+            {
+              "quantity": "Mean wall-stress magnitude downstream of the step with prescribed inputs",
+              "groups": [
+                "prescribed_input"
+              ]
+            }
+          ],
+          "limit": "This comparison does not propagate the model output back into the solver."
+        },
+        {
+          "id": "N626-coupled",
+          "source_location": "§4.2.3, Figs. 13–16 and Table 5, especially p. e7-22.",
+          "comparison": "Use the same step solver, grid and inlet, replacing the log law downstream with a four-step graph law. Compare with the same solid black wall-resolved benchmark. The change in stress direction is constrained by the sampling rule and the velocity itself responds to coupling.",
+          "observables": [
+            {
+              "quantity": "Downstream zero of mean streamwise shear",
+              "groups": [
+                "coupled_wmles",
+                "system_benchmark",
+                "controlled_wall_change"
+              ]
+            },
+            {
+              "quantity": "Integrated squared error in mean stress magnitude",
+              "groups": [
+                "coupled_wmles",
+                "system_benchmark",
+                "controlled_wall_change"
+              ]
+            },
+            {
+              "quantity": "Integrated squared error in mean streamwise stress",
+              "groups": [
+                "coupled_wmles",
+                "system_benchmark",
+                "controlled_wall_change"
+              ]
+            }
+          ],
+          "limit": "A reduction in both integrals and a remaining nominal crossing offset are compatible. The crossing uncertainty is unreported. The three quantities do not form three independent transfer cases."
+        }
+      ],
+      "source_pdf_sha256": "426f0b1e9c14c87aea9b28d1635efceb4eb743a133f64b1c0df86f435e2c7410"
+    },
+    {
+      "study_id": "P10",
+      "doi": "10.1016/j.compfluid.2007.10.018",
+      "edition": "Revised author manuscript deposited at Hokkaido University, linked to Comput. Fluids 38, 37–48 (2009)",
+      "source_url": "https://hdl.handle.net/2115/49858",
+      "regime_and_forcing": "Streamwise pressure-driven half-channel with a no-slip solid boundary and a free-slip upper surface.",
+      "calibration_and_dependence": "Grid sequences share one flow setup. Wall-law calibration is inapplicable to this design.",
+      "tests": [
+        {
+          "id": "P10-resolved",
+          "source_location": "§2, author-manuscript pp. 5–6 (repository PDF pp. 6–7) and §3.",
+          "comparison": "Grid-resolution study of near-wall streaks and outer motions. The authors place at least five grid points across the viscous sublayer and explicitly state that artificial wall conditions based on scaling laws were not adopted.",
+          "observables": [
+            {
+              "quantity": "Resolved turbulence structure as grid spacing changes",
+              "groups": []
+            }
+          ],
+          "limit": "A genuine topic exclusion for comparisons of wall treatments, even though the work is about wall turbulence and compares numerical results."
+        }
+      ],
+      "source_pdf_sha256": "cfb7c34c8ff7de271773c7077a25e884f09a9cdd2a8ec10fbbb565dabdd619c6"
+    }
+  ]
+}

@@ -81,7 +81,8 @@
         ],
         "note": "In the thin unswept bubble, the equilibrium calculation predicts reversed near-wall LES velocity even though its wall law returns positive skin friction. Integral and PDE denote the two non-equilibrium models."
       },
-      "figure_source_location": "arXiv:2403.05476v1, Sec. IV, Figs. 11(a), 12 and 13(a) and accompanying text."
+      "figure_source_location": "arXiv:2403.05476v1, Sec. IV, Figs. 11(a), 12 and 13(a) and accompanying text.",
+      "journal_doi": "10.1103/gfr7-6l2m"
     },
     {
       "reference_key": "BaeKoumoutsakos2022",
@@ -121,7 +122,8 @@
         ],
         "note": "Training bounds are open. The two runs share the friction Reynolds number and differ in wall-normal grid spacing and sampling height."
       },
-      "figure_source_location": "Published article, Results (p. 4), Figs. 3–5 and Methods Table 1 (p. 7)."
+      "figure_source_location": "Published article, Results (p. 4), Figs. 3–5 and Methods Table 1 (p. 7).",
+      "journal_doi": "10.1038/s41467-022-28957-7"
     },
     {
       "reference_key": "LozanoDuranBae2023",
@@ -160,7 +162,8 @@
         ],
         "note": "Each outer closure is paired with both wall models. The exact-for-mean closure supplies the intended mean input in a coupled calculation. Different closures define different error experiments."
       },
-      "figure_source_location": "Published article, Secs. 4.1 and 4.3, Fig. 9(c,d) and accompanying text."
+      "figure_source_location": "Published article, Secs. 4.1 and 4.3, Fig. 9(c,d) and accompanying text.",
+      "journal_doi": "10.1017/jfm.2023.331"
     },
     {
       "reference_key": "Mukha2024preprint",
@@ -198,7 +201,8 @@
         ],
         "note": "The first error uses the mean of the modelled stress during the simulation. The second applies the same law offline to the time-mean sampled velocity from that simulation."
       },
-      "figure_source_location": "arXiv:2404.05378v1, subsection on time-averaging of wall-model input, Table III, first and second numerical columns."
+      "figure_source_location": "arXiv:2404.05378v1, subsection on time-averaging of wall-model input, Table III, first and second numerical columns.",
+      "journal_doi": "10.1063/5.0283984"
     },
     {
       "reference_key": "Zhou2024preprint",
@@ -231,7 +235,8 @@
         ],
         "length_reynolds_number": 2000000
       },
-      "figure_source_location": "arXiv:2309.13555v2, Sec. 2.2.1 (Re_L) and Sec. 3.1, Group 1 baseline mesh, Figs. 4(d,e) and 7 and accompanying text."
+      "figure_source_location": "arXiv:2309.13555v2, Sec. 2.2.1 (Re_L) and Sec. 3.1, Group 1 baseline mesh, Figs. 4(d,e) and 7 and accompanying text.",
+      "journal_doi": "10.1016/j.jcp.2024.112948"
     },
     {
       "reference_key": "Agrawal2024",
@@ -267,7 +272,8 @@
           }
         ]
       },
-      "figure_source_location": "Published article, Phys. Rev. Fluids 9, 124603, Sec. V.A, Fig. 6(a,b) and accompanying text, medium grid at Re_L = 2 × 10^6."
+      "figure_source_location": "Published article, Phys. Rev. Fluids 9, 124603, Sec. V.A, Fig. 6(a,b) and accompanying text, medium grid at Re_L = 2 × 10^6.",
+      "journal_doi": "10.1103/PhysRevFluids.9.124603"
     },
     {
       "reference_key": "Dupuy2023graph",
@@ -331,7 +337,8 @@
                 183
               ]
             ],
-            "x_over_hs_approx": 6.0
+            "x_over_hs_approx": 6.0,
+            "display_label": "Wall-resolved"
           }
         ],
         "digitisation": {
@@ -350,15 +357,16 @@
         },
         "note": "N is the number of graph message-passing steps. The reference is the wall-resolved simulation. The three traces are a selected comparison. The study reports upstream reattachment for all its LES runs."
       },
-      "figure_source_location": "Published article, Sec. 4.2.3, Fig. 16 on p. e7-22, downstream zero crossings of the mean streamwise wall shear. Table 5 reports separate integrated errors."
+      "figure_source_location": "Published article, Sec. 4.2.3, Fig. 16 on p. e7-22, downstream zero crossings of the mean streamwise wall shear. Table 5 reports separate integrated errors.",
+      "journal_doi": "10.1017/dce.2023.2"
     },
     {
       "reference_key": "Jones2015",
-      "label": "Jones & Utyuzhnikov (2016†)",
+      "label": "Jones & Utyuzhnikov (2016)",
       "support": [
         "S12"
       ],
-      "source_location": "Accepted manuscript, Sections 6 and 7.1",
+      "source_location": "Published article, §§7–7.2, Figs. 5–7",
       "selected_comparison": "Interface boundary conditions and logarithmic treatment use different near-wall meshes; friction, pressure and recirculation comparisons.",
       "changes": [
         "Model choice",
@@ -386,7 +394,8 @@
         ],
         "note": "Mesh size and treatment vary together. The interface offset is 5% of local diffuser height, and the recirculation region has an incorrect extent."
       },
-      "figure_source_location": "Accepted manuscript of the 2016 article, Sec. 6 (mesh and offset), Sec. 7.1 and Fig. 5(b) (inclined-wall skin friction)."
+      "figure_source_location": "Version of record, §§7–7.1, pp. 337–341, Fig. 5(b) (recirculation), Fig. 6 (pressure). §7 gives 30/50 transverse cells and a 5% interface offset. §7.2 and Fig. 7(b) change the condition on turbulent kinetic energy.",
+      "journal_doi": "10.1016/j.apm.2015.05.011"
     }
   ]
 }

@@ -10,7 +10,7 @@ The scientific review found defects beyond the initial Agrawal case. The correct
 | Coded preprint differed from accepted/published comparison | Use the published Agrawal comparison; distinguish other identified preprints and accepted manuscripts from journal versions |
 | Residual absolute error was interpreted as failure to improve | Separate relative benefit, absolute error, required tolerance and uncertainty |
 | Dupuy was used as a quantity-only favourable/adverse reversal | Withdraw that interpretation; published Table 5 shows both integrated stress errors improve |
-| Jones comparisons used different near-wall meshes | Do not describe them as changing only the observable |
+| Jones and Utyuzhnikov compared complete diffuser calculations on different transverse meshes | The interface calculation recovered recirculation and improved total pressure drop. Their separate Robin/Dirichlet experiment tests how the boundary condition on turbulent kinetic energy affects the separation bubble. |
 | Building-block results mixed internal and total error experiments | Report the practical-closure change explicitly |
 | Scope sensitivity omitted wholly uncertain and disputed studies | Preserve the intermediate calculations as diagnostics; do not use them as a repaired denominator |
 | Eligibility rules treated estimators, coupled-system tests and thermal/hydrodynamic evidence inconsistently | Audit all 33 records outside the historical 82; withdraw population estimates |
@@ -23,7 +23,7 @@ The scientific review found defects beyond the initial Agrawal case. The correct
 
 The audit reviewed all 33 records outside the original 82-treatment set at the eligibility-passage level. The [eligibility record](../data/revision/eligibility_audit.json) states each decision and its basis. This is not a complete new coding of those papers. It exposed further boundaries requiring consistent definitions, including wall-stress estimators, mixed heat/hydrodynamic assessments and numerical-method studies.
 
-Every empirical comparison retained in the current manuscript has an entry in the [support register](../data/revision/claim_support.json). Published sources were checked for Agrawal, Dupuy, Lozano-Durán/Bae, Bae/Koumoutsakos and Raje/Duraisamy. Detailed Hayat/Park, Mukha/Schlatter and Zhou/Bae examples cite the actual arXiv versions used. Jones/Utyuzhnikov is identified as an accepted manuscript. Background review identities and mathematical derivations have different evidential roles, recorded explicitly.
+Every empirical comparison retained in the current manuscript has an entry in the [support register](../data/revision/claim_support.json). Published sources were checked for Agrawal, Dupuy, Lozano-Durán/Bae, Bae/Koumoutsakos and Raje/Duraisamy. Detailed Hayat/Park, Mukha/Schlatter and Zhou/Bae examples cite the actual arXiv versions used. The Jones–Utyuzhnikov mesh, pressure and recirculation comparisons were checked in the version of record. Section 7.2 isolates the boundary condition on turbulent kinetic energy within the interface method. Background review identities and mathematical derivations have different evidential roles, recorded explicitly.
 
 The thin-layer equation was checked from the stated differential balance, including signs, stress convention, constant density, pressure assumption and omitted body force. Channel/pipe constraints now require stationarity, appropriate symmetry/averaging and discrete conservation. The figure of a reversed layer is explicitly schematic.
 
@@ -41,7 +41,7 @@ The abstract identifies the proposed procedure and its five-step checklist. The 
 
 The earlier “fewer than half”, seven outcome-category totals, “9 of 18”, causal-grade totals and later-outcome hit rates are not findings of this edition. They cannot be repaired by changing Agrawal alone. The 82/84-study computations remain reproducible historical diagnostics, with their restricted scope and unresolved eligibility stated in their status metadata.
 
-Reinstating a prevalence analysis would require a new, consistently applied eligibility definition, version reconciliation and complete extraction for the resulting denominator, followed by a fresh audit. That is a separate research extension, not a prerequisite disguised as a completed result.
+A new estimate requires a consistently applied eligibility rule, reconciliation of source editions, extraction for the whole resulting denominator and an independent audit. Its interpretation also depends on how the papers were selected and which full texts could be retrieved. The original collection can support conclusions about a defined sample if these conditions are met.
 
 ## Current scientific scope
 

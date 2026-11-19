@@ -1,7 +1,7 @@
 {
  "figure": "fig1_loop",
  "width_mm": 160,
- "texts": 39,
+ "texts": 40,
  "rows": [
   {
    "text": "wall",
@@ -74,7 +74,7 @@
    "math": false
   },
   {
-   "text": "$\\tau_w=\\tau(h)-h\\,\\mathrm{d}p/\\mathrm{d}x$\n$-\\rho\\int_0^h \\mathrm{D}u/\\mathrm{D}t\\;\\mathrm{d}y$",
+   "text": "$\\tau_w=\\tau(h)-h\\,\\partial_x p$\n$-\\rho\\int_0^h a_x\\,\\mathrm{d}y$",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -349,6 +349,16 @@
    "weight": "normal",
    "rotation": 0.0,
    "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "At one instant",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
    "where": "figure",
    "role": "text",
    "math": false

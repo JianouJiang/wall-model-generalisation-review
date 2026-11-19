@@ -55,7 +55,8 @@ def panel_a(fig):
     ax.add_patch(FancyBboxPatch((bx0, by0), bx1 - bx0, by1 - by0, boxstyle='round,pad=0.02,rounding_size=0.14', fc='white', ec=ACC, lw=1.1, zorder=4))
     ax.text((bx0 + bx1) / 2, by1 - 0.4, 'wall model', fontsize=FS, ha='center', va='center', fontweight='bold', zorder=6)
     ax.text((bx0 + bx1) / 2, by1 - 0.95, 'approximates', fontsize=FS, ha='center', va='center', zorder=6)
-    ax.text((bx0 + bx1) / 2, by0 + 0.8, '$\\tau_w=\\tau(h)-h\\,\\mathrm{d}p/\\mathrm{d}x$' + '\n' + '$-\\rho\\int_0^h \\mathrm{D}u/\\mathrm{D}t\\;\\mathrm{d}y$', fontsize=FS, ha='center', va='center', zorder=6, linespacing=1.25)
+    ax.text((bx0 + bx1) / 2, by0 + 0.8, r'$\tau_w=\tau(h)-h\,\partial_x p$' + '\n' + r'$-\rho\int_0^h a_x\,\mathrm{d}y$',
+            fontsize=FS, ha='center', va='center', zorder=6, linespacing=1.25)
     arrow(ax, (x1 + 0.05, h), (bx0 - 0.04, h), color=ACC, lw=1.1)
     ax.text((x1 + bx0) / 2, h + 0.3, 'inputs', fontsize=FS, ha='center', va='center')
     (xo, xi, yp) = ((bx0 + bx1) / 2, 5.2, yw - 0.85)
@@ -79,6 +80,7 @@ def panel_a(fig):
     letter(fig, 0.008, 0.94, 'a', 'The coupled loop')
 
 def panel_b(fig):
+    fig.text(0.68, 0.845, 'At one instant', fontsize=FS, color=MUTE, ha='center', va='center')
     ax = fig.add_axes([0.535, 0.25, 0.215, 0.53])
     eta = np.linspace(0, 1.28, 300)
     u = -1.2 * eta + 2.2 * eta ** 2

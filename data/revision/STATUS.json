@@ -1,6 +1,9 @@
 {
   "current_edition": "Critical review, source-checked cases; no population estimates",
   "current_inputs": [
+    "retrieval_frame.csv",
+    "eligibility_rules.json",
+    "eligibility_examples.json",
     "comparison_map.json",
     "agrawal_validation.json",
     "dupuy_table5.json",

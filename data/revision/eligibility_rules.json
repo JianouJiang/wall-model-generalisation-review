@@ -1,0 +1,28 @@
+{
+  "question": "For which hydrodynamic observable, under which forcing, inputs and numerical conditions, does a published comparison support transfer of a wall treatment to a specified calculation?",
+  "basis": "Classify the design and the evidence supplied by the source before interpreting the direction or size of a discrepancy. These are retrospective rules applied to already known literature.",
+  "units": {
+    "paper": "One identifiable primary work across editions. Link the journal DOI to the edition actually read. Preserve retrieved works with no qualifying test in the retrieval frame.",
+    "test": "One physical case, model or estimator and comparison design, including the forcing, wall treatment, reference and solver conditions. Name the intervention and the coupled changes. A grid series or treatment contrast can be one comparative test with several runs.",
+    "observable": "One specified quantity, component, location or region, averaging convention and comparator within a test. Tag thermal outputs and hydrodynamic outputs individually.",
+    "dependence": "Keep a common test ID across outputs on the same runs. Link related reports through the treatment or calibration lineage and the parent simulation, experiment or benchmark. Repeated depths, meshes, snapshots and stations are nested observations. When summarising, count distinct works or families for the stated question and report shared evidence."
+  },
+  "eligibility": {
+    "physical_scope": "The main hydrodynamic question concerns turbulent flow of a Newtonian fluid over smooth walls in incompressible or low-Mach conditions. Record the case regime, property variation and forcing separately. Keep buoyant, transonic, rough-wall and thermal extensions identified for their own application. Unknown case support is recorded as unresolved for a strict regime-restricted total.",
+    "paper": "Include a work in the evidence frame when a source-located comparison tests a named treatment, its imposed response, a stress estimator, or a whole calculation using an identifiable wall treatment. The paper needs one qualifying design. An application without such a comparison, a wall-resolved flow study with no tested wall treatment, and unavailable evidence do not enter by default.",
+    "test": "Record the numerical or physical reference or matched baseline and what varies. A change of wall law is unnecessary for a solver-sensitivity question. A comparison that changes several factors can test the whole calculation. Attributing a change to the wall response requires a structural restriction or input-matched evidence. A baseline alone supports a difference, while discrepancy against physical measurements or a numerical benchmark requires that reference.",
+    "observable": "Enter a reported hydrodynamic observable only under its own quantity and design. A prescribed integral tests conservation. A measured thermal quantity enters the thermal group. Fields used to select a model may inform calibration performance. A transfer inference additionally needs a documented difference from the selection cases and controls at the target observable.",
+    "missing": "Distinguish a documented absence or incompatible design from an unreported field, a reading contradicted by the source, and an edition that could not be checked. Preserve unresolved cases when bounding later denominators."
+  },
+  "denominators": {
+    "constitutive_constraint": "A stated mathematical restriction on the wall mapping, or a paired observation capable of excluding that restriction at its actual inputs and filter. A structural restriction counts as a formulation, separately from any observed violation.",
+    "prescribed_input": "A measured model or estimator response with specified reference inputs outside solver feedback. Identify a future-stress forecast separately from an instantaneous wall boundary condition.",
+    "coupled_wmles": "A turbulent LES with an active wall treatment evaluated on a hydrodynamic output. A wall-resolved numerical reference is a comparator, not another wall-treatment run.",
+    "rans_comparison": "A hydrodynamic comparison from a RANS calculation using a named near-wall treatment. Record whether the outer closure or mesh changes too.",
+    "system_benchmark": "The coupled output of an identified complete calculation compared with numerical or physical reference data. Can overlap either solver group and does not imply that the wall law was isolated.",
+    "thermal": "A wall heat flux, temperature or heat-transfer measure. A separate observable even when measured on the same runs as shear.",
+    "controlled_wall_change": "A hydrodynamic quantity compared across active wall treatments with otherwise matched solver, grid, forcing and reference. Coupled feedback is part of this intervention.",
+    "independent_transfer": "The tested condition and intended observable are withheld from fitting and model selection for the claimed transfer dimension. Record what was known and retained. An undocumented selection history does not establish entry."
+  },
+  "counting": "For each named denominator take distinct eligible works, designs or test-observable pairs as specified. The labels overlap and cannot be added to estimate a number of independent studies. The worked records demonstrate the rule on a purposive subset. They supply no total for all retrieved papers."
+}

@@ -101,7 +101,7 @@ def channel(ax, first, second):
 
 
 def flat_plate(ax, first, second):
-    study(ax, 13.4, 'Sign of chordwise skin friction in the bubble', first)
+    study(ax, 13.4, 'Sign of mean chordwise skin friction', first)
     record = first['figure_example']
     cols = [46, 65]
     for x, angle in zip(cols, record['sweep_degrees']):
@@ -134,7 +134,7 @@ def speed_bump(ax, first, second):
         example = row['figure_example']
         prescribed = 'wall_condition' in example
         condition = (f"Prescribed mean stress, {example['grid'].lower()} mesh" if prescribed
-                     else f"Predicted skin friction, {example['grid'].lower()} mesh")
+                     else f"Predicted mean skin friction, {example['grid'].lower()} mesh")
         study(ax, top, condition, row)
         for i, entry in enumerate(example['measurements']):
             y = top+11.5 + i*5.2
@@ -145,7 +145,7 @@ def speed_bump(ax, first, second):
 
 
 def expansions(ax, first, second):
-    study(ax, 13.4, r'Step reattachment distance, $x_r/h_s$', first)
+    study(ax, 13.4, r'Mean step reattachment, $x_r/h_s$', first)
     example = first['figure_example']
     def location_x(value):
         return 26 + 19*(value-4)
@@ -154,7 +154,7 @@ def expansions(ax, first, second):
         y = 23.4 + i*4.6
         val = result['x_over_hs_approx']
         x = location_x(val)
-        label(ax, 2, y, result['treatment'])
+        label(ax, 2, y, result.get('display_label', result['treatment']))
         ref = result['treatment'] == 'Reference'
         color = INK if ref else BLUE
         ax.plot(x, y, 's' if ref else 'o', ms=4.2, mfc='white' if ref else color,

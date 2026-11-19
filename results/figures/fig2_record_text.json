@@ -154,7 +154,7 @@
    "math": false
   },
   {
-   "text": "Sign of chordwise skin friction in the bubble",
+   "text": "Sign of mean chordwise skin friction",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -444,7 +444,7 @@
    "math": false
   },
   {
-   "text": "Predicted skin friction, medium mesh",
+   "text": "Predicted mean skin friction, medium mesh",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -504,7 +504,7 @@
    "math": false
   },
   {
-   "text": "Step reattachment distance, $x_r/h_s$",
+   "text": "Mean step reattachment, $x_r/h_s$",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -564,7 +564,7 @@
    "math": false
   },
   {
-   "text": "Reference",
+   "text": "Wall-resolved",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -624,7 +624,7 @@
    "math": false
   },
   {
-   "text": "Jones & Utyuzhnikov (2016)†",
+   "text": "Jones & Utyuzhnikov (2016)",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,

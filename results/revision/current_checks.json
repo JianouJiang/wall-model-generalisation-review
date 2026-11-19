@@ -1,19 +1,19 @@
 {
   "status": "PASS",
   "edition": "critical review; aggregate claims withdrawn",
-  "pdf_pages": 12,
-  "pdf_sha256": "e7e2c1e1c3d84a32b6ca595a014f88d26b58fa99d72f00976eae54d7a63aa007",
-  "citations_with_support_record": 35,
+  "pdf_pages": 13,
+  "pdf_sha256": "1ae5a70e3fb1b91f3e24116ff11faea47071ac6781ba4ae414329f3b61cdac16",
+  "citations_with_support_record": 45,
   "caption_word_counts": [
-    118,
-    49,
-    142,
     121,
-    104,
+    70,
+    130,
+    121,
+    106,
     28,
     31
   ],
-  "abstract_words": 147,
+  "abstract_words": 137,
   "figures": 4,
   "tables": 3,
   "eligibility_records_checked": 33,
@@ -35,6 +35,12 @@
   },
   "panel_headings_matching_figure_1": 11,
   "comparison_map_sources": 8,
+  "study_selection": {
+    "screened_records": 2543,
+    "retrieval_roster": 115,
+    "worked_eligibility_papers": 6,
+    "pilot_groups_sharing_papers": 9
+  },
   "figure_layouts": {
     "fig1_loop": true,
     "fig2_record": true,

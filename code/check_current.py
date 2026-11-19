@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Check the current critical review without validating superseded census claims."""
+import csv
 import hashlib
 import json
 import math
 import re
 import subprocess
 from itertools import product
+from collections import Counter
 from pathlib import Path
 from xml.etree import ElementTree
 
@@ -122,6 +124,51 @@ def check_checklist_patterns(cases, keys, plotted):
     other_matches = [r['case'] for r in paired if r['A']['observable_class'] == r['B']['observable_class'] == 'other']
     assert other_matches == ['K08']
     return counts_by_degree
+
+def check_evidence_selection(comparisons, cases):
+    data = ROOT / 'data'
+    def read_csv(name):
+        with (data / name).open(newline='') as source:
+            return list(csv.DictReader(source))
+
+    screened = {r['screen_id']: r for r in read_csv('search_records.csv')}
+    frame = read_csv('revision/retrieval_frame.csv')
+    study = {r['study_id']: r for r in read_csv('studies.csv')}
+    assert len(set(r['screen_id'] for r in frame)) == len(frame) == 735
+    assert all(r['screen_id'] in screened for r in frame)
+    assert len(screened) == 2543
+    logged = Counter(r['retrieval'] for r in frame)
+    assert logged == {'no candidate route': 564, 'access refused': 28, 'unusable retrieval': 23, 'retrieved': 120}
+    obtained = [r for r in frame if r['retrieval'] == 'retrieved']
+    assert Counter(r['full_text_language_screen'] for r in obtained) == {'pass': 112, 'flagged': 8}
+    retained = {r['study_id']: r for r in frame if r['study_id']}
+    assert len(retained) == len(study) == 115 and retained.keys() == study.keys()
+    for sid, r in retained.items():
+        assert r['retrieval'] == 'retrieved'
+        assert screened[r['screen_id']]['doi'].casefold() == study[sid]['doi'].casefold()
+    doi = {s['doi'].casefold() for s in study.values()}
+    assert len({r['journal_doi'].casefold() for r in comparisons['rows']} & doi) == 8
+
+    rules = json.loads((data / 'revision/eligibility_rules.json').read_text())
+    examples = json.loads((data / 'revision/eligibility_examples.json').read_text())['records']
+    assert set(r['study_id'] for r in examples) == {'P05', 'N080', 'N054', 'N280', 'N626', 'P10'}
+    for r in examples:
+        assert study[r['study_id']]['doi'].casefold() == r['doi'].casefold()
+        assert r['edition'] and r['regime_and_forcing'] and r['calibration_and_dependence']
+        for t in r['tests']:
+            assert t['source_location'] and t['comparison'] and t['limit']
+            for obs in t['observables']:
+                assert set(obs['groups']) <= rules['denominators'].keys()
+    # Components of the graph whose vertices are source works and whose edges are case links.
+    components = []
+    for case in cases:
+        papers = {case['later'], *case['earlier']}
+        connected = [component for component in components if component & papers]
+        components = [component for component in components if component not in connected]
+        components.append(papers.union(*connected))
+    assert len(components) == 9
+    return dict(screened_records=len(screened), retrieval_roster=len(retained),
+                worked_eligibility_papers=len(examples), pilot_groups_sharing_papers=len(components))
 
 def main_check():
     support=json.loads((ROOT/'data/revision/claim_support.json').read_text())
@@ -242,6 +289,7 @@ def main_check():
                'Internal error', 'Total error', 'Two comparisons of coupled wall-stress predictions')), 'outdated Figure 3 in PDF'
     assert all(t in compact for t in ('Agreement by choice', 'Cases by combination of matches', 'Case IDs')), 'outdated Figure 4 in PDF'
     assert all(c['case'] in compact for c in cases), 'missing Figure 4 case identifier'
+    selection = check_evidence_selection(comparisons, cases)
     heading_count=check_panel_style(comparisons)
     figure_layouts={name:json.loads((ROOT/f'results/figures/{name}_layout.json').read_text())['passed']
                     for name in ('fig1_loop','fig2_record','fig3_contrast','fig4_checklist')}
@@ -255,7 +303,7 @@ def main_check():
             'retrospective_agreement':agreement,
             'checklist_cases_by_number_of_matching_choices':dict(enumerate(counts_by_degree)),
             'panel_headings_matching_figure_1':heading_count,
-            'comparison_map_sources':len(comparisons['rows']),
+            'comparison_map_sources':len(comparisons['rows']), 'study_selection':selection,
             'figure_layouts':figure_layouts,
             'circulation_text_scan':'PASS',
             'scientific_limit':'Pass checks consistency and specified support. It does not certify an exhaustive corpus or predictive checklist validity.'}

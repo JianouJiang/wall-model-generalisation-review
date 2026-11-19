@@ -5,7 +5,7 @@
     "reference_key": "BosePark2018",
     "source_version": "Author manuscript in PubMed Central of the 2018 journal review",
     "source_location": "Section 2.1, Eq. (4) and Eqs. (7)–(8) and their discussion of pressure gradient and matching height.",
-    "claim": "The equilibrium approximation neglects variation of total shear across the modelled layer. The size of neglected terms depends on loading and matching height. Equation (1) here is the wall-to-height integral of the stated thin-layer equation.",
+    "claim": "Equation (1) integrates the stated ensemble-mean thin-layer equation, retaining signed body acceleration and defining shear as viscous stress minus turbulent momentum flux. Near-constant shear, cancellation at the endpoints and a nearly uniform profile have distinct conditions. The signed test for an instantaneous aligned mapping and its four-sample counterexample are algebraic deductions in this review.",
     "source_text_sha256": "e5a03dfe65d7dd5f3f9d5be1f46630e0abacd374f377f14bcc71a3a4d9f48f58",
     "verification": "supporting passages checked in this revision",
     "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6800697/"
@@ -37,7 +37,7 @@
     "reference_key": "Quadrio2016",
     "source_version": "arXiv:1509.04877v1",
     "source_location": "Section 2, forcing strategies",
-    "claim": "With pressure forcing alone, plane/time averaging, stationarity, full development and centreline symmetry give a linear total shear and set the lower-wall mean. The fractional variation across the modelled layer is h/delta. This specialization follows from the mean momentum balance shown in the paper. With prescribed bulk flow the driving gradient adjusts.",
+    "claim": "In the symmetric pressure-driven channel the exact mean shear drops by h/delta of its lower-wall value at height h. A control volume gives mean drag per area of G A/P for a straight smooth duct, with G the imposed or adjusted mean pressure drop per unit length. The circle and plane channel have different A/P. On a body-driven periodic hill the mean integrated drive balances viscous and pressure drag on all walls.",
     "source_text_sha256": "586a5ff1c9eabb2009a7bbe6603578a2052447e5e99323d11964d032b65fd6a3",
     "verification": "supporting passages checked in this revision"
   },
@@ -47,7 +47,7 @@
     "reference_key": "Hayat2024preprint",
     "source_version": "arXiv:2403.05476v1",
     "source_location": "Section IV, Figs. 11–12 and 16",
-    "claim": "Thin reversed layer, matching-height sign limitation and cancellation of errors in the swept case. This is explicitly cited as a preprint, not as journal-equivalent.",
+    "claim": "In the v1 mean fields the matching point lies above the thin unswept reversed layer. Equilibrium mean chordwise skin friction stays positive there, while the PDE case gives negative mean friction. With sweep all three give negative mean chordwise friction. The reported energy-budget terms can compensate. The plotted means do not establish an instantaneous sign violation.",
     "source_text_sha256": "36fd5df4e9847d3018b4647d0d59d69f6619c4baae8df0ec3f5489f52cf0ac8a",
     "verification": "supporting passages checked in this revision",
     "figure_2_source_location": "arXiv:2403.05476v1, Sec. IV, Figs. 11(a), 12 and 13(a) and accompanying text.",
@@ -140,19 +140,21 @@
       "tolerance_origin": "Illustration chosen for this paper",
       "crossing_uncertainty_interval_in_source": null,
       "positions_source": "comparison_map.json, Dupuy2023graph, figure_example.crossings",
-      "interpretation": "Both nominal crossing errors exceed the illustrative tolerance. The residual has no unique attribution. The fixed-height and common-graph refinement is a proposed sensitivity test."
+      "interpretation": "Both nominal crossing errors exceed the illustrative tolerance. The residual has no unique attribution. The fixed-height and common-graph refinement is a proposed sensitivity test.",
+      "shared_reference": "A common crossing shift cancels from the absolute-error gain as long as both predictions stay upstream. Each discrepancy against the illustrative tolerance still depends on this crossing."
     }
   },
   {
     "claim_id": "S12",
     "manuscript_location": "Comparison matching; selected comparison in Fig. 2",
     "reference_key": "Jones2015",
-    "source_version": "identified author manuscript",
-    "source_location": "Sections 6 and 7.1",
-    "claim": "Near-wall grids differ between interface boundary condition and logarithmic baseline. Do not call pressure/recirculation results a controlled quantity-only contrast.",
-    "source_text_sha256": "4e6371e62ad188b4ca90e7172cb20aa3239ed7be1f4928a11e7a5b8ab1ca17be",
-    "verification": "supporting passages checked in this revision",
-    "figure_2_source_location": "Accepted manuscript of the 2016 article, Sec. 6 (mesh and offset), Sec. 7.1 and Fig. 5(b) (inclined-wall skin friction)."
+    "source_version": "Elsevier version of record, Applied Mathematical Modelling 40 (2016) 329–342, checked against the accepted author manuscript",
+    "source_location": "§§7–7.2, published pp. 337–341, Figs. 5(b), 6 and 7(b).",
+    "claim": "Comparing the log law with the interface method also changes the transverse grid. The interface method captures recirculation on the inclined wall and slightly improves the integrated pressure drop, but both calculations miss the pressure curvature at the outlet entrance. Within the interface method, a Dirichlet condition on turbulent kinetic energy, replacing a Robin condition, removes recirculation for the linear viscosity profile and shortens it for the Duprat profile.",
+    "verification": "Published mesh counts, inclined-wall recirculation, pressure curvature and pressure drop, and Robin/Dirichlet intervention verified in the final article.",
+    "figure_2_source_location": "Version of record, §§7–7.1, pp. 337–341, Fig. 5(b) (recirculation), Fig. 6 (pressure). §7 gives 30/50 transverse cells and a 5% interface offset. §7.2 and Fig. 7(b) change the condition on turbulent kinetic energy.",
+    "accepted_manuscript_text_sha256": "4e6371e62ad188b4ca90e7172cb20aa3239ed7be1f4928a11e7a5b8ab1ca17be",
+    "source_url": "https://personalpages.manchester.ac.uk/staff/S.Utyuzhnikov/Papers/AMM_AJSU2016.pdf"
   },
   {
     "claim_id": "S13",
@@ -201,6 +203,16 @@
       "first_proposed_test": "vary grid resolution and examine wall friction and reattachment",
       "second_proposed_test": "vary Reynolds number and compare mean velocity profiles",
       "source_location": "paired first-priority test proposals for K01; the categories are given in checklist_choices.json"
+    },
+    "dependence_example": {
+      "cases": [
+        "K05",
+        "K06"
+      ],
+      "shared_earlier": "N464",
+      "later_then_earlier": "N357",
+      "later_rough_wall_extension": "N437",
+      "source_location": "data/checklist_cases.json, earlier/later and group fields. The works are identified by DOI in data/studies.csv."
     }
   },
   {
@@ -355,7 +367,8 @@
     "source_version": "Journal version, published abstract (2022)",
     "source_url": "https://doi.org/10.1115/1.4053854",
     "source_location": "Journal abstract, first five sentences on the interpretation of the V&V 20 accuracy estimate and requirements.",
-    "claim": "The ASME validation procedure estimates model error in a specified quantity at the validation point. Meeting an application tolerance is a separate decision."
+    "claim": "The ASME validation procedure estimates model error in a specified quantity at the validation point. Meeting an application tolerance is a separate decision.",
+    "application_in_review": "The joint propagation and signed-interval decision are given here for this use. A deterministic bound or specified coverage and assumptions are required; Eça et al. supply the accuracy-estimation distinction."
   },
   {
     "claim_id": "S34",
@@ -393,5 +406,130 @@
     "source_url": "https://wmles.umd.edu/validation/",
     "source_location": "Validation, paragraphs on the complete WMLES method, decoupling the grid and wall model, and the choice of channel quantities.",
     "claim": "The guide already recommends choosing the measured quantity with other solver errors in mind, keeping the wall model fixed during grid refinement where possible, and testing sensitivity to other inputs."
+  },
+  {
+    "claim_id": "Sandham2017-outer-refinement",
+    "reference_key": "Sandham2017",
+    "manuscript_location": "Sampling, feedback and the outer flow",
+    "source_version": "version of record, Wiley full text",
+    "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/fld.4395",
+    "source_location": "Discussion of Figs. 7(a,b) and 8. Fig. 3 supplies the coarse-grid reference comparison.",
+    "claim": "At friction Reynolds number 4200 the LES grid changes from 24 × 24 × 42 to 96 × 96 × 56 with the quasi-DNS grid held at 24 cubed. The centreline velocity deficit falls from 3% to less than 1%. The near-wall peak in streamwise RMS improves, while above about 25 wall units the reported RMS departs farther from DNS.",
+    "comparison_controls": "The same coupled formulation and channel case are compared. The grid stretching, time step and number of grid points within the fixed physical averaging window change. The paired outputs can be compared within this refinement. A wall-law-only effect and a general rate of transfer cannot be identified.",
+    "verification": "Located the numerical and qualitative results in the published Wiley text under Figs. 7–8 and cross-checked arXiv:1704.08368v1. Percentages are the authors’ approximations."
+  },
+  {
+    "claim_id": "Chen2023-source-coupling",
+    "reference_key": "Chen2023",
+    "manuscript_location": "Sampling, feedback and the outer flow",
+    "source_version": "Cambridge version of record; the PDF held by Oxford Research Archive has the same SHA-256",
+    "source_url": "https://doi.org/10.1017/jfm.2022.1024",
+    "edition_url": "https://ora.ox.ac.uk/objects/uuid:8ec46c67-d5bd-4b70-8389-05510d65069e/files/r2514nm32z",
+    "source_location": "§3.3.1, pp. A5-27–28, Fig. 25. Fig. 24 plots a different quantity. The black curve in Fig. 25 is the Schlatter and Örlü (2012) DNS.",
+    "claim": "At the exit station, Re_theta approximately 1000, Fig. 25 gives U+ of approximately 19.3 in the one-scale calculation without source-term coupling, 16.6 in the two-scale calculation and 16.4 in the DNS reference at y+ = 100. Both simulated cases contain embedded blocks. The paper’s approximate 19% description concerns the uncoupled profile; it is not the stated error at this particular ordinate.",
+    "comparison_controls": "Same tripped boundary layer, exit station, global coarse-grid region and observable. The comparison changes the feedback of the embedded fine-grid source terms. It does not isolate a single constitutive coefficient. The blue/black difference is within the printed stroke thickness; a physical uncertainty interval is not reported by this curve reading.",
+    "profile_reading": {
+      "pdf_sha256": "7991f580b3e17f5a0618cab0233d1186e7d8ef14c0209af637b38636d6cc6c4a",
+      "page": 28,
+      "y_plus": 100,
+      "u_plus": {
+        "uncoupled": 19.3,
+        "coupled": 16.6,
+        "dns": 16.4
+      },
+      "selection": "Interior labelled tick on the log wall-distance axis. Intersect the black and red vector paths at the tick. Interpolate the two adjacent blue square centres linearly on the plotted log axis.",
+      "pdf_path_indices": {
+        "x_100": 323,
+        "vertical_zero": 297,
+        "vertical_25": 302,
+        "dns": 324,
+        "uncoupled": 325,
+        "coupled_bracketing_markers": [
+          342,
+          343
+        ]
+      },
+      "resolution": "Values are rounded to 0.1 wall-velocity units to identify the plotted coordinates. The reference stroke is about 0.46 such units thick. These readings cannot establish sub-percent physical accuracy."
+    }
+  },
+  {
+    "claim_id": "S38",
+    "manuscript_location": "Improvement over a baseline and accuracy against a reference",
+    "reference_key": "KamaciKaya2021",
+    "source_version": "Published article, special issue 28, pp. 469–475 (2021)",
+    "source_url": "https://dergipark.org.tr/en/download/article-file/2014051",
+    "source_location": "§2.2, printed p. 471, model selection on experimental drag.",
+    "claim": "The experimental drag was used to select a turbulence-closure and wall-function combination for the Ahmed body. This is a comparison of a selected RANS system.",
+    "worked_eligibility_record": "P05"
+  },
+  {
+    "claim_id": "S39",
+    "manuscript_location": "Improvement over a baseline and accuracy against a reference",
+    "reference_key": "HeRVACS2026",
+    "source_version": "Version of record, Int. J. Heat Fluid Flow 122, 110596, via White Rose Research Online",
+    "source_url": "https://eprints.whiterose.ac.uk/id/eprint/245405/",
+    "source_location": "§2.1, Fig. 1, Table 2 and §3.2.1, Figs. 7(a–d) and 9(a,b).",
+    "claim": "In the forced case gravity is set to zero. The two-scale wall-function calculations with SST and standard k-epsilon underestimate the hot-wall separation peak, whereas most simulations reproduce the lower shear peak. Shear and heat flux are distinct observables on these runs.",
+    "worked_eligibility_record": "N054"
+  },
+  {
+    "claim_id": "S40",
+    "manuscript_location": "Sampling, feedback and the outer flow",
+    "reference_key": "MartinezSanchez2026",
+    "source_version": "arXiv:2509.25065v1. The journal abstract in the Crossref record for Int. J. Numer. Methods Heat Fluid Flow 36, 2539–2567 (2026) confirms forecasting future wall shear from turbulent channel DNS. Equivalence of the final figure is unverified.",
+    "source_url": "https://arxiv.org/abs/2509.25065v1",
+    "source_location": "Journal abstract and arXiv v1 §4, especially §4.2 Fig. 10.",
+    "claim": "Offline forecasts of future streamwise wall shear use different combinations of prescribed velocity planes from channel DNS. This comparison establishes a response to supplied inputs.",
+    "worked_eligibility_record": "N080"
+  },
+  {
+    "claim_id": "S41",
+    "manuscript_location": "Sampling, feedback and the outer flow",
+    "reference_key": "MukhaBensow2021",
+    "source_version": "Version of record, Comput. Fluids 221, 104885, Chalmers copy. Also checked arXiv:2009.00295v1 §§3–4.",
+    "source_url": "https://research.chalmers.se/publication/522898/file/522898_Fulltext.pdf",
+    "source_location": "§3, §4.1.1, §4.1.3, Table 4 and Fig. 5 (journal pp. 6–7).",
+    "claim": "In a channel at prescribed bulk velocity, sampling at the second off-wall cell moves the physical height under refinement. The friction Reynolds number does not converge monotonically across grids. This diagnoses the coupled grid/sampling comparison. The hexahedral series in published Table 4 changes from +0.24 to −1.66 percent between d/delta = 1/15 and 1/30.",
+    "worked_eligibility_record": "N280"
+  },
+  {
+    "claim_id": "S42",
+    "reference_key": "Tsubokura2009",
+    "manuscript_location": "Choice of studies, Box 1",
+    "source_version": "Revised author manuscript in Hokkaido University repository",
+    "source_url": "https://hdl.handle.net/2115/49858",
+    "source_location": "§2, pp. 5–6 (PDF pp. 6–7).",
+    "claim": "This grid study of wall turbulence used no-slip at the solid wall with at least five points in the viscous sublayer and explicitly omitted artificial wall conditions based on a scaling law.",
+    "worked_eligibility_record": "P10"
+  },
+  {
+    "claim_id": "LozanoDuran2019-transverse-forcing",
+    "reference_key": "LozanoDuran2019",
+    "source_url": "https://doi.org/10.1017/jfm.2019.869",
+    "source_version": "Cambridge version of record",
+    "source_location": "§2 for outer units referenced to the initial friction velocity and channel half-height; §§4.1–4.3 and Fig. 18(a,b) for the forced channel and two components.",
+    "manuscript_location": "Stress direction and the near-wall momentum balance",
+    "claim": "At Re_tau about 1000 and pressure-gradient ratio 10, at t* about 1 the reported errors in the spanwise component are roughly 10% for EQWM and 2% for NEQWM and IWM. None reproduced the early drop in the streamwise component for t* up to roughly 0.4.",
+    "comparison_controls": "Same transverse forcing and DNS benchmark. The difference in component is accompanied by a different time interval in this comparison. The three formulations also differ in more than a single term. The errors do not supply a quantity-only reversal."
+  },
+  {
+    "claim_id": "Fogliatto2024-friction-and-profile",
+    "reference_key": "Fogliatto2024",
+    "source_url": "https://doi.org/10.1016/j.anucene.2024.110807",
+    "source_version": "Elsevier version of record, Annals of Nuclear Energy 209, 110807",
+    "source_location": "§4.3, p. 12, Figs. 6–8. Fig. 6 plots streamwise velocity; Fig. 7 compares the averaged friction coefficient. Fig. 8 concerns temperature and has a separate scope.",
+    "manuscript_location": "Improvement over a baseline and accuracy against a reference",
+    "claim": "For the backward-facing step at Re = 28,000, the wake function gives an averaged friction coefficient closer to the reference while the differences between velocity profiles from the two boundary treatments are negligible at matched resolution.",
+    "comparison_controls": "Realizable k–epsilon closure; several cells-per-step-height resolutions; same geometry, solver and buoyancy neglected. The two boundary treatments can be compared within a mesh. No signed deterioration of the streamwise velocity is established by a small difference between treatments."
+  },
+  {
+    "claim_id": "Arranz2024-bump-quantity-and-location",
+    "reference_key": "Arranz2024",
+    "source_url": "https://www.nature.com/articles/s44172-024-00278-1",
+    "source_version": "Springer Nature version of record",
+    "source_location": "Results, Separated flow over a bump, Fig. 6(d,e) and the paragraph that compares the two quantities. Fig. 2 describes the wall and SGS components.",
+    "manuscript_location": "Improvement over a baseline and accuracy against a reference",
+    "claim": "At freestream Mach 0.17 and Reynolds number 3.6 million, the authors report better mean pressure and skin-friction distributions than DSM–EQ and Vreman–EQ in the separation region x/L > 0.1. Upstream of the crest (x/L < 0) all three give poor friction predictions.",
+    "comparison_controls": "Matched location is essential. Poor upstream friction and improved downstream pressure differ in position as well as observable. The baseline calculations use an equilibrium wall model and a different SGS closure, whereas the building-block formulation supplies wall and SGS stresses. This does not isolate a change of wall law."
   }
 ]

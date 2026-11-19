@@ -12,6 +12,8 @@ Build the manuscript with latexmk from manuscript/. The template dependency is d
 
 To re-read the boundary-layer values directly, run `python3 code/verify_fig3_source.py /path/to/published.pdf` with PyMuPDF installed. The verifier finds the intersections of the published error traces with the four station coordinates and converts the logarithmic ordinates into percentages. The data file includes the digest of the PDF used. [Source article, Fig. 9](https://doi.org/10.1017/jfm.2023.331)
 
+For the tripped boundary-layer comparison, run `python3 code/verify_profile_source.py /path/to/published.pdf` with PyMuPDF installed. The script re-reads the two simulations and the DNS profile at the marked wall distance in Figure 25. The source record includes the PDF fingerprint, axes, rounding and plotting resolution. [Chen and He, Fig. 25](https://doi.org/10.1017/jfm.2022.1024)
+
 ## Historical diagnostics
 
 code/reproduce.py --historical also runs analyse_scope.py and analyse_revision.py. The former reproduces the original 82-treatment coding under two scope choices. The latter records the intermediate 84-treatment diagnosis and source corrections. Wider eligibility defects mean neither supplies a current population estimate.
