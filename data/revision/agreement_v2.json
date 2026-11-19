@@ -4,7 +4,8 @@
     "first": "One reading per work of all 115 works under the fact rules. It was given the source, the rule file and the earlier record of that work, and was told to keep the earlier disposition unless the source contradicted it. It is not independent of the earlier record.",
     "second": "A separate reading given only the rule file, the paper-level rule and the source: a random 30 of the 79 works not used to write the rules, every work with a constitutive candidate or a prescribed-input design, and every work with a fitted treatment or an earlier transfer record (74 works in all).",
     "third": "A reading that saw both earlier readings and the source and settled each listed disagreement, with quotations. It also checked every member contrast of the 17 member works that had no second reading, and classified near-wall methods on grids that reach the viscous sublayer. It is not blind.",
-    "pairings_of_19_november": "The second reading of 34 historical pairings received the quantities and source locations recorded by the first reading, and the sources. It was not limited to rules and sources."
+    "pairings_of_19_november": "The second reading of 34 historical pairings received the quantities and source locations recorded by the first reading, and the sources. It was not limited to rules and sources.",
+    "fourth": "One further automated reading of the source with located quotations, made after the settlement, for two questions: the wall-normal first-cell spacing of every coupled design that had no located class, and the flow regime of every counted test. The reader saw the item list of the settled record; it is not blind and it is not a second independent reading. It used a lighter automated reader than the earlier readings. Every quotation was checked by script against the source text on the stated page, and every answer that changes a count was read against the passage."
   },
   "protocol": {
     "rule_file_fixed_at": "2026-11-19T10:02:02Z",
@@ -10655,7 +10656,7 @@
       "settled_works_without_scope_boundary": 47,
       "of_eligible_works": [
         108,
-        97
+        96
       ],
       "reason": "Fails on the fresh sample: member_change_within_limit (members 12 against 10, allowed change 1.80). Disagreements by attribution: rule ambiguity: 3."
     },
@@ -10714,7 +10715,7 @@
       "settled_works_without_scope_boundary": 54,
       "of_eligible_works": [
         108,
-        97
+        96
       ],
       "reason": "All three statistical criteria met on the fresh sample and every disagreement settled against the source. Disagreements by attribution: rule ambiguity: 3."
     },
@@ -10773,7 +10774,7 @@
       "settled_works_without_scope_boundary": 56,
       "of_eligible_works": [
         108,
-        97
+        96
       ],
       "reason": "All three statistical criteria met on the fresh sample and every disagreement settled against the source. Disagreements by attribution: rule ambiguity: 3."
     },
@@ -10858,7 +10859,7 @@
       "every_disagreement_settled": true,
       "quotable": true,
       "settled_works": 17,
-      "settled_works_without_scope_boundary": 14,
+      "settled_works_without_scope_boundary": 13,
       "members": [
         "N080",
         "N166",
@@ -11035,16 +11036,16 @@
       "without_scope_boundary": {
         "tests": {
           "qualified": 9,
-          "partly exposed": 56,
+          "partly exposed": 55,
           "selection unresolved": 38
         },
-        "total_tests": 103,
+        "total_tests": 102,
         "works": {
           "qualified": 4,
-          "partly exposed": 18,
+          "partly exposed": 17,
           "selection unresolved": 19
         },
-        "total_works": 30,
+        "total_works": 29,
         "tests_not_shown_to_be_exposed": [
           9,
           47
@@ -11068,7 +11069,7 @@
       "quotable": true,
       "works_first_reading_label": {
         "works": 35,
-        "works_without_scope_boundary": 30
+        "works_without_scope_boundary": 29
       },
       "reason": "Reproduced on the fresh sample."
     },
@@ -11167,14 +11168,15 @@
       "N445",
       "N446",
       "N635",
-      "N719"
+      "N719",
+      "P08"
     ],
     "scope_boundary_by_kind": {
-      "estimator not presented as a wall model": 3,
+      "estimator not presented as a wall model": 4,
       "eligibility disputed between the readings on a rule ambiguity": 3,
       "sublayer-resolving near-wall method": 5
     },
-    "eligible_works_without_scope_boundary": 97,
+    "eligible_works_without_scope_boundary": 96,
     "contrasts_on_a_sublayer_resolving_grid": [
       "N300-K04",
       "N318-K01",
@@ -11182,7 +11184,31 @@
       "N318-K04",
       "N419-K02",
       "N446-K01"
-    ]
+    ],
+    "first_cell_class_of_eligible_works": {
+      "no stated design reaches the sublayer": 81,
+      "not stated": 8,
+      "both occur": 5,
+      "no design carries a treatment in a running solver": 9,
+      "every design reaches the sublayer": 5
+    },
+    "primary_scope": {
+      "eligible_works_inside": 104,
+      "eligible_works_wholly_outside": [
+        "N054",
+        "N189",
+        "N707",
+        "P02"
+      ],
+      "eligible_works_inside_as_first_written": 105,
+      "moved_by_clarification": [
+        "N189"
+      ],
+      "eligible_works_inside_without_scope_boundary": 92,
+      "recorded_tests": 615,
+      "recorded_tests_outside": 60,
+      "recorded_tests_with_compressibility_not_stated": 159
+    }
   },
   "attribution_totals": {
     "constitutive: first-reading error": 1,
@@ -11199,5 +11225,413 @@
     "transfer: rule ambiguity": 6,
     "verify: confirmed": 16,
     "verify: rule ambiguity": 1
+  },
+  "fourth_reading": {
+    "plan_fixed_at": "2026-11-19T13:35:52Z",
+    "data_commit_read": "b25c7e9",
+    "works_read": {
+      "regime": 108,
+      "first_cell": 66
+    },
+    "answers_written": [
+      "2026-11-19T13:36:47Z",
+      "2026-11-19T13:40:29Z"
+    ],
+    "quotations": {
+      "all": 530,
+      "found": 530,
+      "on_or_next_to_stated_page": 530,
+      "not_found": 0
+    },
+    "first_cell": {
+      "question": "The SUBLAYER question of the settlement, in the same words, put to every eligible work with a coupled LES, hybrid or RANS design that had no located class for every such design or that the third reading classed N. No keyword gate.",
+      "classes_given": {
+        "designs": {
+          "U": 139,
+          "N": 30,
+          "S": 7
+        },
+        "contrasts": {
+          "U": 75,
+          "N": 12,
+          "S": 3
+        }
+      },
+      "merge": "A class U or S located by the third reading stands; a missing or not-stated class takes the value of this reading. No located class was contradicted.",
+      "work_class": "Computed over the designs that carry a wall or near-wall treatment in a running solver (group coupled LES or RANS). A wall-resolved reference or a numerical test without such a group does not count (clarification S1, last sentence).",
+      "cross_check": {
+        "result": "No match describes a calculation that carries a member contrast on a grid stated to reach the viscous sublayer. No class was overridden.",
+        "works_whose_final_class_has_no_S_item": 86,
+        "first_cell_matches": 39,
+        "first_cell_matches_by_verdict": {
+          "general statement, definition of the layers, formula of a wall law or cited literature": 20,
+          "grid of the wall treatment itself (embedded ODE, thin-boundary-layer or near-wall block); the outer grid on which it acts starts above the sublayer": 5,
+          "false match of the pattern": 2,
+          "arm of a non-member contrast, or an arm without the treatment, on a finer grid": 2,
+          "reference calculation (wall-resolved LES, DNS or a database), not an arm of a contrast": 9,
+          "tested calculation whose wall-adjacent distance varies along the wall and exceeds five wall units elsewhere": 1
+        },
+        "basis": {
+          "N262": "Appendix: the equilibrium wall model's ODE is solved on an embedded mesh with a wall-adjacent spacing below one; the LES grid is uniform with 40 cells across the channel.",
+          "N456": "The IDDES and wall-resolved arms use y_w+ below one. The member contrast N456-K01 compares the wall-function and zonal arms, whose first cell lies at 9.9 to 20.1 wall units (Table 1).",
+          "N497": "Both statements describe the wall-resolved LES that supply the training and reference data.",
+          "N540": "Pages 8 and 13 describe the mesh of the wall-model ODE; page 23 gives the resolution of the wall-resolved hill reference.",
+          "N674": "Wall-resolved IDDES (y+ below one) creates the database. The tested runs use wall functions with wall-adjacent cells at y+ 14 to 45 at the inlet; on page 20 the wall-adjacent values fall to 0.06 only inside the separated region.",
+          "P07": "The near-wall quasi-DNS blocks start at z+ = 1.5; the LES to which they supply the wall stress has its first cell centre at z+ = 30 (page 9). The class refers to the grid on which the treatment acts, as for an embedded ODE wall model.",
+          "P15": "The wall-normal spacing of 2 belongs to the run without a wall model and 1.31 to the embedded boundary-layer grid of the wall model; the first LES point with the wall model lies at y+ 19.7 (page 5).",
+          "P21": "Appendix A describes the wall-resolved simulations of the database."
+        },
+        "verdicts": [
+          {
+            "study_id": "N147",
+            "page": 13,
+            "match": "r+ < 2.25",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N164",
+            "page": 7,
+            "match": "y + ≤ 5",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N174",
+            "page": 6,
+            "match": "y + ≤ 5",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N174",
+            "page": 6,
+            "match": "y+ < 5",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N218",
+            "page": 3,
+            "match": "y+ ≈ 1",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N218",
+            "page": 35,
+            "match": "y+ ≈ 1",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N262",
+            "page": 44,
+            "match": "∆y+ w < 1",
+            "verdict": "grid of the wall treatment itself (embedded ODE, thin-boundary-layer or near-wall block); the outer grid on which it acts starts above the sublayer"
+          },
+          {
+            "study_id": "N273",
+            "page": 7,
+            "match": "y+ ∼ 1",
+            "verdict": "false match of the pattern"
+          },
+          {
+            "study_id": "N392",
+            "page": 7,
+            "match": "y + = 1",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N456",
+            "page": 1,
+            "match": "y w + smaller than one",
+            "verdict": "arm of a non-member contrast, or an arm without the treatment, on a finer grid"
+          },
+          {
+            "study_id": "N457",
+            "page": 1,
+            "match": "y1+ ∼ 1",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N457",
+            "page": 3,
+            "match": "y1+ ∼ 1",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N497",
+            "page": 7,
+            "match": "∆y + ≃ 1",
+            "verdict": "reference calculation (wall-resolved LES, DNS or a database), not an arm of a contrast"
+          },
+          {
+            "study_id": "N497",
+            "page": 8,
+            "match": "y + = 1",
+            "verdict": "reference calculation (wall-resolved LES, DNS or a database), not an arm of a contrast"
+          },
+          {
+            "study_id": "N502",
+            "page": 2,
+            "match": "y+1 ∼ 1",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N540",
+            "page": 8,
+            "match": "y+ ≤ 5",
+            "verdict": "grid of the wall treatment itself (embedded ODE, thin-boundary-layer or near-wall block); the outer grid on which it acts starts above the sublayer"
+          },
+          {
+            "study_id": "N540",
+            "page": 13,
+            "match": "y+ = 1",
+            "verdict": "grid of the wall treatment itself (embedded ODE, thin-boundary-layer or near-wall block); the outer grid on which it acts starts above the sublayer"
+          },
+          {
+            "study_id": "N540",
+            "page": 23,
+            "match": "∆y+1 < 2",
+            "verdict": "reference calculation (wall-resolved LES, DNS or a database), not an arm of a contrast"
+          },
+          {
+            "study_id": "N540",
+            "page": 23,
+            "match": "∆y+1 ≈ 2.5",
+            "verdict": "reference calculation (wall-resolved LES, DNS or a database), not an arm of a contrast"
+          },
+          {
+            "study_id": "N582",
+            "page": 3,
+            "match": "y+ < 5",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N582",
+            "page": 3,
+            "match": "y+ < 5",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N582",
+            "page": 4,
+            "match": "y+ = 1",
+            "verdict": "false match of the pattern"
+          },
+          {
+            "study_id": "N674",
+            "page": 1,
+            "match": "y + < 1",
+            "verdict": "reference calculation (wall-resolved LES, DNS or a database), not an arm of a contrast"
+          },
+          {
+            "study_id": "N674",
+            "page": 1,
+            "match": "y + < 1",
+            "verdict": "reference calculation (wall-resolved LES, DNS or a database), not an arm of a contrast"
+          },
+          {
+            "study_id": "N674",
+            "page": 2,
+            "match": "y + < 1",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N674",
+            "page": 3,
+            "match": "y + < 1",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N674",
+            "page": 3,
+            "match": "y + < 1",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N674",
+            "page": 4,
+            "match": "y + < 1",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "N674",
+            "page": 9,
+            "match": "y + < 1",
+            "verdict": "reference calculation (wall-resolved LES, DNS or a database), not an arm of a contrast"
+          },
+          {
+            "study_id": "N674",
+            "page": 14,
+            "match": "y + < 1",
+            "verdict": "reference calculation (wall-resolved LES, DNS or a database), not an arm of a contrast"
+          },
+          {
+            "study_id": "N674",
+            "page": 20,
+            "match": "y + ≤ 1",
+            "verdict": "tested calculation whose wall-adjacent distance varies along the wall and exceeds five wall units elsewhere"
+          },
+          {
+            "study_id": "N674",
+            "page": 24,
+            "match": "y + < 1",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "P07",
+            "page": 9,
+            "match": "z + = 1.5",
+            "verdict": "grid of the wall treatment itself (embedded ODE, thin-boundary-layer or near-wall block); the outer grid on which it acts starts above the sublayer"
+          },
+          {
+            "study_id": "P07",
+            "page": 16,
+            "match": "z + < 1",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "P15",
+            "page": 7,
+            "match": "Δ y + ≈ 2",
+            "verdict": "arm of a non-member contrast, or an arm without the treatment, on a finer grid"
+          },
+          {
+            "study_id": "P15",
+            "page": 7,
+            "match": "Δ y + ≈1.31",
+            "verdict": "grid of the wall treatment itself (embedded ODE, thin-boundary-layer or near-wall block); the outer grid on which it acts starts above the sublayer"
+          },
+          {
+            "study_id": "P15",
+            "page": 9,
+            "match": "y + ≤5",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          },
+          {
+            "study_id": "P21",
+            "page": 34,
+            "match": "Δz + = 4",
+            "verdict": "reference calculation (wall-resolved LES, DNS or a database), not an arm of a contrast"
+          },
+          {
+            "study_id": "P27",
+            "page": 3,
+            "match": "y+=1",
+            "verdict": "general statement, definition of the layers, formula of a wall law or cited literature"
+          }
+        ],
+        "method_matches": {
+          "specific terms": 139,
+          "hybrid terms": 494
+        },
+        "specific_terms": "Read in full, 139 matches in 52 works. None states a first-cell distance at or below five wall units for a calculation that carries a member contrast. Arms named enhanced wall treatment, Menter-Lechner or a low-Reynolds-number model are compared with wall functions in N054, N085, N188, N459, N498, N635, N707, P02, P27 and P34. Where the source states the first-cell distance of the wall-function arms the class is U. N707, P02 and P34 state none and stay N: their member contrasts cannot be placed on either side of the sublayer.",
+        "hybrid_terms": {
+          "classified_by": "an automated reader, from the matched contexts and the source text",
+          "works": 46,
+          "by_class": {
+            "OWN-TESTED": 4,
+            "LITERATURE": 41,
+            "OWN-REFERENCE": 1
+          },
+          "reading_of_the_works_marked": {
+            "N025": "Hybrid method with wall enrichment on meshes whose first cell reaches about 120 wall units: class U stands.",
+            "N502": "First off-wall cell 51 to 191 wall units: class U stands.",
+            "N456": "The IDDES arm (y_w+ below one) belongs to contrast N456-K02, which is not a member because grid and outer closure differ.",
+            "N674": "The IDDES at y+ below one creates the database; the tested runs use wall functions on coarse wall-adjacent cells.",
+            "P24": "The IDDES creates training data only."
+          }
+        },
+        "departure_from_the_plan": "The plan said every matched context would be read by the same check. The 494 matches of hybrid terms were classified by an automated reader, and only the five works it marked as running such a calculation were read in full."
+      }
+    },
+    "estimator": {
+      "note": "Clarification S2 was checked in the settlement for eligible works without a coupled design. The first-cell reading showed that the only solver design of one further work is a wall-resolved calculation that tests no treatment, so the same question was put to it, by a reading given the settlement instructions and the source.",
+      "answers": {
+        "P08": {
+          "structured": {
+            "output_is_wall_quantity": true,
+            "presented_as_wall_model": false,
+            "forecast": false
+          },
+          "finding": "The source proposes 'a new predictive model of wall shear stress fluctuations' (Eq. 5.30), built from and tested on a wall-resolved LES database (no-slip bottom, first mesh centre within y+ = 1); no under-resolved calculation is run. Its output is the fluctuation of the streamwise and spanwise bottom wall shear stress; its inputs are the Langmuir-cell (streamwise-averaged) parts of the velocity at y/h = 0.1, plus a normalised demodulated wall-stress signal and coefficients taken from case 1 and an r.m.s. amplitude from a logarithmic law in Re_tau. The test is against the LES itself: the predicted field of case 1 against the real field (correlation 0.98 and 0.96 quoted; Fig. 19 against Fig. 3) and predicted mean-square values, skewness and kurtosis plotted against the LES values for cases 1-6 (Fig. 20; Fig. 18 for the background part). The source never calls the model a wall model, a wall-layer model or a boundary condition: every passage that links it to wall-layer modelling (abstract, Sec. 1, end of Sec. 5.3, Sec. 6) names a later use ('will be useful for improving', 'suggests a potential approach to improve', 'can be used as an essential supplement to the logarithmic law', 'has the potential to be used as a supplement to conventional wall-layer models'), and the improvement itself 'should be investigated in the future'. The tested prediction is at the same instant as the reference field (Fig. 19 caption; Eq. 5.2 has one t on both sides); a space-time correlation (Fig. 14) leads the source to say that the velocity at t + Delta t 'can also be used', but no time-shifted prediction is shown. The other mentions of wall-modelled LES (pp. 3, 8) are the simulations of Shrestha & Anderson (2020), and the other boundary-condition statements (pp. 4, 7, 23) describe the no-slip bottom, wind-stress surface and periodic sides of the database.",
+          "decision": "(1) output_is_wall_quantity = true: Eq. (5.30) returns the fluctuations of the streamwise and spanwise bottom wall shear stress (no heat flux; the mean stress is not modelled). Only part of the input is an off-wall flow quantity (the Langmuir-cell parts of u and w at y/h = 0.1, y+ = 100 in case 1); the background term also takes a stored normalised wall-stress signal 'from case 1' and an r.m.s. from a logarithmic law. (2) presented_as_wall_model = false: the source's words are 'predictive model of wall shear stress fluctuations'; it is not called a wall model, wall-layer model or wall boundary condition and is used in no under-resolved calculation. Six passages (seven quotes; one sentence spans pp. 35-36) name wall-layer modelling as a possible later use of the model, and three more name it as a later use of the study as a whole; none presents the model itself as such a treatment. The nearest is p. 32, 'can be used as an essential supplement to the logarithmic law', which the next sentences turn into an improvement that 'can be pursued' and 'should be investigated in the future'. (3) forecast = false: input and output are at the same instant in the tested prediction (Fig. 19 caption); the time-shift statement on p. 22 rests on a correlation and covers both signs of the shift. Consequence under S2 and S3: values of the relation and of the LES comparator are displayed (0.98/0.96 in the text, Fig. 20), so the prescribed-input design P08-D01 is a tested stress estimator if S2 admits (a) a relation that returns the stress fluctuation and (b) a second input that is a stored reference wall-stress signal and not an off-wall quantity of the tested flow. S2 as worded ('returns the wall shear stress from off-wall flow quantities') does not decide (b); for case 1 that stored signal comes from the tested case itself, and the source does not say from which snapshot. The question's phrase 'for use in an under-resolved calculation' also does not say whether a declared future use counts; it is read here as not counting. What the source says is not in doubt; confidence is medium only because of these two wording points.",
+          "confidence": "medium",
+          "quotes": [
+            {
+              "text": "Based on the scalings of these effects, a new predictive model of wall shear stress fluctuations is proposed for shallow-water Langmuir turbulence. The proposed model can predict the spatial distribution and statistics of wall shear stress fluctuations using the LCs parts of velocity fluctuations measured above the water bottom.",
+              "page": 1,
+              "location": "Abstract [source's words for the model]"
+            },
+            {
+              "text": "Owing to the persistence of the spanwise inhomogeneity of wall shear stresses induced by full-depth LCs, the new predictive model will be useful for improving the wall-layer modelling for shallow-water Langmuir turbulent flows.",
+              "page": 1,
+              "location": "Abstract [later use named for the model; model not itself presented as a wall treatment]"
+            },
+            {
+              "text": "Based on these scalings, a predictive model is developed. The proposed model establishes a physical foundation for the improvement of wall-layer modelling for coastal flows in the future.",
+              "page": 3,
+              "location": "Sec. 1, end of the paragraph after questions (i)-(iii) [later use named for the model; model not itself presented as a wall treatment]"
+            },
+            {
+              "text": "Based on the predictive models of the LCs part and background turbulence part of wall shear stress fluctuations in (5.2) and (5.23), respectively, the total wall shear stress fluctuations τi2+ can now be predicted by",
+              "page": 29,
+              "location": "Sec. 5.3, lead-in to Eq. (5.30) [source's words for the model]"
+            },
+            {
+              "text": "We note that the predictive model in (5.30) also suggests a potential approach to improve the traditional wall-layer model in shallow-water Langmuir turbulence.",
+              "page": 30,
+              "location": "Sec. 5.3, last paragraph [later use named for the model; model not itself presented as a wall treatment]"
+            },
+            {
+              "text": "The proposed predictive model (5.30) connects the spanwise inhomogeneous distribution of wall shear stress fluctuations to the velocities induced by full-depth LCs and, thus, can be used as an essential supplement to the logarithmic law.",
+              "page": 32,
+              "location": "Sec. 5.3, last paragraph [later use named for the model; model not itself presented as a wall treatment]"
+            },
+            {
+              "text": "Based on the impacts of full-depth LCs discussed in the present paper, a similar improvement of the wall-layer model for shallow-water Langmuir turbulence can be pursued, which should be investigated in the future.",
+              "page": 32,
+              "location": "Sec. 5.3, last paragraph [later use named for the model; model not itself presented as a wall treatment]"
+            },
+            {
+              "text": "A new predictive model (5.30) is proposed to quantify the effects of full-depth LCs on wall shear stress fluctuations under various flow conditions.",
+              "page": 35,
+              "location": "Sec. 6, first paragraph [source's words for the model]"
+            }
+          ],
+          "quotes_in_answer": 29,
+          "asked_because": "eligible work whose only LES design is a wall-resolved database with no tested wall treatment (clarification S2)",
+          "answer_sha256": "dc2434e12443ef425f60dcdea63767b7ef899b8f081b45ee014fc649bd49e468"
+        }
+      }
+    },
+    "scope_boundary_added": [
+      {
+        "study_id": "P08",
+        "kind": "estimator not presented as a wall model",
+        "basis": "(1) output_is_wall_quantity = true: Eq. (5.30) returns the fluctuations of the streamwise and spanwise bottom wall shear stress (no heat flux; the mean stress is not modelled). Only part of the input is an off-wall flow quantity (the Langmuir-cell parts of u and w at y/h = 0.1, y+ = 100 in case 1); the background term also takes a stored normalised wall-stress signal 'from case 1' and an r.m.s. from a logarithmic law. (2) presented_as_wall_model = false: the source's words are 'predictive model of wall shear stress fluctuations'; it is not called a wall model, wall-layer model or wall boundary condition and is used in no under-resolved calculation. Six passages (seven quotes; one sentence spans pp. 35-36) name wall-layer modelling as a possible later use of the model, and three more name it as a later use of the study as a whole; none presents the model itself as such a treatment. The nearest is p. 32, 'can be used as an essential supplement to the logarithmic law', which the next sentences turn into an improvement that 'can be pursued' and 'should be investigated in the future'. (3) forecast = false: input and output are at the same instant in the tested prediction (Fig. 19 caption); the time-shift statement on p. 22 rests on a correlation and covers both signs of the shift. Consequence under S2 and S3: values of the relation and of the LES comparator are displayed (0.98/0.96 in the text, Fig. 20), so the prescribed-input design P08-D01 is a tested stress estimator if S2 admits (a) a relation that returns the stress fluctuation and (b) a second input that is a stored reference wall-stress signal and not an off-wall quantity of the tested flow. S2 as worded ('returns the wall shear stress from off-wall flow quantities') does not decide (b); for case 1 that stored signal comes from the tested case itself, and the source does not say from which snapshot. The question's phrase 'for use in an under-resolved calculation' also does not say whether a declared future use counts; it is read here as not counting. What the source says is not in doubt; confidence is medium only because of these two wording points.",
+        "quotes": [
+          {
+            "text": "Based on the scalings of these effects, a new predictive model of wall shear stress fluctuations is proposed for shallow-water Langmuir turbulence. The proposed model can predict the spatial distribution and statistics of wall shear stress fluctuations using the LCs parts of velocity fluctuations measured above the water bottom.",
+            "page": 1,
+            "location": "Abstract [source's words for the model]"
+          },
+          {
+            "text": "Owing to the persistence of the spanwise inhomogeneity of wall shear stresses induced by full-depth LCs, the new predictive model will be useful for improving the wall-layer modelling for shallow-water Langmuir turbulent flows.",
+            "page": 1,
+            "location": "Abstract [later use named for the model; model not itself presented as a wall treatment]"
+          },
+          {
+            "text": "Based on these scalings, a predictive model is developed. The proposed model establishes a physical foundation for the improvement of wall-layer modelling for coastal flows in the future.",
+            "page": 3,
+            "location": "Sec. 1, end of the paragraph after questions (i)-(iii) [later use named for the model; model not itself presented as a wall treatment]"
+          },
+          {
+            "text": "Based on the predictive models of the LCs part and background turbulence part of wall shear stress fluctuations in (5.2) and (5.23), respectively, the total wall shear stress fluctuations τi2+ can now be predicted by",
+            "page": 29,
+            "location": "Sec. 5.3, lead-in to Eq. (5.30) [source's words for the model]"
+          }
+        ],
+        "found_by": "estimator question put in the fourth reading"
+      }
+    ],
+    "regime": "See regime_facts.json for the rule, the clarification, the quoted passages and the checks.",
+    "effect": "The collection counts and every decision are unchanged. The counts without boundary cases change by the works listed under scope_boundary_added."
   }
 }

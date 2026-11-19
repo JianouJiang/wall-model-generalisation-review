@@ -1,0 +1,3179 @@
+{
+  "unit": "Flow regime of every design of every eligible work, every member or upper-bound contrast, every transfer test and every qualifying constitutive candidate, recorded from the source, with the class derived from the facts by the rule below. The facts are stored with each record in source_dispositions.json, wall_change_contrasts.json, transfer_exposure.json and constitutive_facts.json; this file holds the rule, the quoted passages of each work and the checks.",
+  "rule": {
+    "text": "# Regime facts and the primary scope (fixed before any regime reading or count)\n\nThe paper's primary scope is \"turbulent flow of a Newtonian fluid over smooth walls\nunder incompressible or low-Mach conditions\". The facts below say, for each recorded\ntest, whether its flow lies inside that scope. They describe the tested flow case,\nnot the method.\n\n## Items\n\nEvery design of every eligible work; every contrast that is a strict, broad or\nupper-bound member; every transfer row; every constitutive candidate that has facts\n(i), (ii) and (iii).\n\n## Facts (one value per item and axis)\n\n- `surface`\n  - `smooth`: the source calls the wall on which the treatment acts smooth, or\n    describes no roughness or texture on it. A smooth wall of any shape (hill, bump,\n    step, aerofoil) is smooth.\n  - `rough`: that wall carries roughness or texture in every repetition of the item:\n    a sand-grain or equivalent roughness height, a roughness length, resolved or\n    modelled roughness elements, riblets, ice roughness, a vegetation or urban canopy.\n  - `both`: the item's repetitions include smooth and rough walls.\n- `compressibility`\n  - `low`: the source solves the incompressible equations for the case, or states a\n    free-stream, bulk, inflow or reference Mach number at or below 0.3, or calls the\n    case incompressible, quasi-incompressible, nearly incompressible or low-Mach.\n  - `compressible`: every repetition of the item has a stated Mach number above 0.3,\n    or the source calls the case transonic, supersonic or hypersonic.\n  - `both`: the repetitions include both.\n  - `not stated`: the source gives neither the equations nor a Mach number for the case.\n- `thermal_coupling`\n  - `none`: isothermal flow, or temperature or a scalar transported passively with\n    constant fluid properties.\n  - `coupled`: in every repetition buoyancy enters the momentum equation (natural or\n    mixed convection, stable or unstable stratification), or density or viscosity\n    vary with temperature or composition in the tested case (strongly heated or\n    cooled walls with variable properties, supercritical fluids, reacting flow).\n    Aerodynamic heating in a compressible flow is recorded under compressibility and\n    is `none` here unless the source also imposes buoyancy.\n  - `both`: the repetitions include both.\n- `fluid`\n  - `newtonian single-phase` (default);\n  - `other`: non-Newtonian, multiphase, free-surface, particle-laden or\n    magnetohydrodynamic flow.\n\n`mach_stated`: the Mach number or range the source gives for the item, or null.\n\nA located quote is required for every value `rough`, `both`, `compressible`,\n`coupled` and `other`, and for `low` (the statement of incompressibility or the Mach\nnumber). `smooth`, `none` and `newtonian single-phase` need no quote when the source\ndescribes no roughness, no temperature effect and no other fluid.\n\n## Derived class (script)\n\nAn axis lies outside when its value is `rough`, `compressible`, `coupled` or `other`.\nAn item is **outside the primary scope** when at least one axis lies outside, and\n**inside** otherwise. `both` on an axis counts as inside: at least one repetition of\nthe item has the primary-scope value on that axis. `not stated` compressibility\ncounts as inside and is reported as a number.\n\n- An eligible work is inside when at least one of its designs is inside.\n- A work is a matched-contrast member inside the primary scope when at least one of\n  its member contrasts of that tier is inside.\n- A work is a constitutive member inside when at least one qualifying candidate is inside.\n- A transfer test is inside or outside as its row.\n\n## Scope of these facts\n\nThey classify the conditions of the recorded tests. They are not evidence about\nwhether any wall treatment is accurate in a regime, and a test outside the primary\nscope remains a member of the collection.\n",
+    "sha256_of_rule_file": "76d776f1921b655e82f5f36166662f6de6f3041806bd838e9a1e499fec4e9a37",
+    "fixed_at": "2026-11-19T13:35:52Z"
+  },
+  "clarification": {
+    "text": "# Clarification R1 to the regime rule (written after the pass-3 reading)\n\nWritten on 19 November 2026 at 13:48:07 UTC, after the regime facts of all 615 items\nhad been read and the first counts had been computed. `regime_rule.md` is unchanged\n(its SHA-256 is in `freeze_pass3.txt`). This file narrows one clause and reports the\neffect.\n\n**Clause.** \"An eligible work is inside when at least one of its designs is inside.\"\n\n**Clarification.** \"Designs\" here means designs that test a wall treatment or a stress\nestimator: a design with at least one of the groups prescribed input, coupled LES,\nRANS or thermal. A design recorded without such a group (a wall-resolved reference\ncalculation, a verification of the numerical scheme without a wall model) does not\nplace a work inside the primary scope. The same narrowing is already used for the\nfirst-cell class of a work (clarification S1: a calculation that tests no treatment\n\"stays outside\").\n\n**Why.** N189 tests its wall model only at Mach 6 and Mach 7.7. Its record also holds\none design without a wall model, a set of scheme-verification cases that includes a\nMach 0.1 shear layer. Under the clause as first written that design alone would place\nN189 inside the primary scope.\n\n**Effect, reported with both values.** Eligible works wholly outside the primary\nscope: three under the clause as first written (N054, N707, P02), four under the\nclarification (also N189). No member of any group is affected, because N189 holds no\nmatched contrast, no constitutive candidate and no transfer test. The denominator\n\"eligible works inside the primary scope\" is 105 as first written and 104 as\nclarified. Both are stored in `results/revision/derived_memberships.json`; the paper\nprints the clarified value.\n\n**Rule applied as written elsewhere.** A prescribed roughness height makes a wall\n`rough` whatever its size in wall units. Two works prescribe a small roughness height\nin a pipe (N707: 0.005 mm; N188: 9e-7 m to 1 mm) and are recorded as rough. The source\ngives no roughness height in wall units for either. N707 is a member of the matched\ncontrast group and counts as outside the primary scope on that ground alone.\n",
+    "sha256": "d62c66d47b5c610003c7efd752d6ea4d0acf059f969ee8755ecac50b684c444f",
+    "written_at": "2026-11-19T13:48:07Z"
+  },
+  "reading": "One automated reading of the source with located quotes. The reader saw the item list of the record; it is not blind and it is not a second independent reading. A tag derived from the recorded case, target and comparison strings alone is a cross-check: every item on which the two differ and every item placed outside the primary scope was checked against the quoted passage.",
+  "items": 615,
+  "outside_primary_scope": [
+    "N037-K03",
+    "N037-T01",
+    "N054-D01",
+    "N054-D02",
+    "N054-D03",
+    "N054-D04",
+    "N054-D05",
+    "N054-K04",
+    "N054-K05",
+    "N054-V01",
+    "N147-K01",
+    "N147-T01",
+    "N147-V01",
+    "N147-V02",
+    "N166-V02",
+    "N188-D01",
+    "N189-D01",
+    "N189-D02",
+    "N262-C01",
+    "N262-K01",
+    "N262-K03",
+    "N262-K04",
+    "N262-K05",
+    "N262-T02",
+    "N262-V01",
+    "N262-V02",
+    "N262-V03",
+    "N262-V04",
+    "N297-D01",
+    "N297-K04",
+    "N297-K08",
+    "N297-V01",
+    "N418-D02",
+    "N418-K03",
+    "N437-D03",
+    "N437-K03",
+    "N437-K04",
+    "N530-T01",
+    "N707-D01",
+    "N707-K01",
+    "N707-K02",
+    "P02-D01",
+    "P02-K01",
+    "P02-K02",
+    "P02-V01",
+    "P02-V02",
+    "P21-C01",
+    "P21-D01",
+    "P21-D02",
+    "P21-D03",
+    "P21-D05",
+    "P21-K09",
+    "P21-K10",
+    "P21-K11",
+    "P21-T03",
+    "P21-T09",
+    "P21-T10",
+    "P21-T11",
+    "P21-T12",
+    "P21-T13"
+  ],
+  "compressibility_not_stated": [
+    "N011-D01",
+    "N011-D02",
+    "N011-D03",
+    "N011-T01",
+    "N011-T02",
+    "N011-T03",
+    "N011-T04",
+    "N011-V01",
+    "N080-C01",
+    "N080-C02",
+    "N080-D01",
+    "N147-D01",
+    "N147-K01",
+    "N147-T01",
+    "N147-V01",
+    "N147-V02",
+    "N147-V03",
+    "N147-V04",
+    "N166-C01",
+    "N166-D01",
+    "N166-V01",
+    "N166-V02",
+    "N253-C01",
+    "N253-C02",
+    "N253-D01",
+    "N253-D02",
+    "N253-K01",
+    "N253-T01",
+    "N253-V01",
+    "N291-D01",
+    "N291-V01",
+    "N318-D01",
+    "N318-K01",
+    "N318-K02",
+    "N318-K04",
+    "N318-T01",
+    "N318-T02",
+    "N318-V01",
+    "N318-V02",
+    "N318-V03",
+    "N357-C01",
+    "N357-K01",
+    "N357-K02",
+    "N357-K03",
+    "N357-linear-acceleration",
+    "N357-pulse",
+    "N357-sspg",
+    "N357-stationary",
+    "N392-D01",
+    "N392-V01",
+    "N418-D01",
+    "N418-D03",
+    "N418-K01",
+    "N418-K02",
+    "N418-V01",
+    "N418-V02",
+    "N434-V01",
+    "N434-V02",
+    "N434-V03",
+    "N459-D01",
+    "N459-K01",
+    "N459-K02",
+    "N459-V01",
+    "N464-D01",
+    "N464-D02",
+    "N464-V01",
+    "N476-D01",
+    "N476-K01",
+    "N476-K02",
+    "N476-V01",
+    "N497-D04",
+    "N497-T02",
+    "N582-D01",
+    "N582-D03",
+    "N582-T01",
+    "N582-T02",
+    "N582-T03",
+    "N582-T04",
+    "N623-D01",
+    "N623-D02",
+    "N623-D03",
+    "N623-K01",
+    "N623-K03",
+    "N623-T01",
+    "N623-T02",
+    "N623-T03",
+    "N623-T04",
+    "N623-T05",
+    "N623-T06",
+    "N623-V01",
+    "N623-V02",
+    "N623-V03",
+    "N623-V04",
+    "N623-V05",
+    "N653-D01",
+    "N657-D01",
+    "N657-V01",
+    "N657-V02",
+    "N719-C01",
+    "N719-D01",
+    "N719-V01",
+    "P02-D01",
+    "P02-K01",
+    "P02-K02",
+    "P02-V01",
+    "P02-V02",
+    "P03-D01",
+    "P03-D02",
+    "P04-D02",
+    "P12-V01",
+    "P12-V02",
+    "P16-D01",
+    "P16-D02",
+    "P16-K01",
+    "P16-K02",
+    "P16-K05",
+    "P16-T01",
+    "P16-T02",
+    "P19-APG",
+    "P19-C01",
+    "P19-FPG",
+    "P19-K01",
+    "P19-K02",
+    "P19-K03",
+    "P19-K04",
+    "P19-K05",
+    "P19-K06",
+    "P19-K08",
+    "P19-T01",
+    "P19-T02",
+    "P19-T03",
+    "P19-T04",
+    "P19-T05",
+    "P19-T06",
+    "P19-T08",
+    "P19-juncture",
+    "P19-laminar",
+    "P19-pipe",
+    "P19-plate",
+    "P19-transient",
+    "P20-K01",
+    "P20-K02",
+    "P20-T01",
+    "P20-T02",
+    "P20-T03",
+    "P20-actions",
+    "P20-agent",
+    "P20-channel",
+    "P23-T01",
+    "P23-channel",
+    "P24-T01",
+    "P24-T02",
+    "P24-T03",
+    "P24-extrapolation",
+    "P24-interpolation",
+    "P24-offline",
+    "P34-D01",
+    "P34-D02",
+    "P34-K01"
+  ],
+  "string_cross_check": {
+    "items_on_which_the_string_tag_differs": [
+      "N037-D01",
+      "N054-D01",
+      "N147-D01",
+      "N147-K01",
+      "N147-T01",
+      "N147-V02",
+      "N166-V02",
+      "N189-D02",
+      "N189-V01",
+      "N251-V01",
+      "N262-D01",
+      "N291-V01",
+      "N297-D01",
+      "N297-K04",
+      "N297-K08",
+      "N297-V01",
+      "N437-D03",
+      "N530-V01",
+      "N707-D01",
+      "N707-K01",
+      "N707-K02",
+      "P02-D01",
+      "P02-K01",
+      "P02-K02",
+      "P02-V01",
+      "P02-V02",
+      "P17-D01",
+      "P17-K01",
+      "P17-K02",
+      "P17-K03",
+      "P21-C01",
+      "P21-D01",
+      "P21-D02",
+      "P21-D03",
+      "P21-D05",
+      "P21-K09",
+      "P21-K10",
+      "P21-K11",
+      "P21-T03",
+      "P21-T09",
+      "P21-T10",
+      "P21-T11",
+      "P21-T12",
+      "P21-T13"
+    ],
+    "note": "The string tag reads only the short recorded description and is not a recorded fact."
+  },
+  "checks_of_quoted_passages": [
+    {
+      "study_id": "N476",
+      "kind": "form",
+      "item": "N476-K01",
+      "value": "default",
+      "reason": "contrast of design N476-D01, same channel; identifier left out of by_item"
+    },
+    {
+      "study_id": "N476",
+      "kind": "form",
+      "item": "N476-K02",
+      "value": "default",
+      "reason": "contrast of design N476-D01, same channel; identifier left out of by_item"
+    }
+  ],
+  "works": {
+    "N011": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The source describes turbulent channel (TCF) and boundary-layer (TBL) DNS data and wind-tunnel PIV/MPS3 channel measurements; it gives no governing equations, no Mach number and no statement of compressibility, roughness, buoyancy or non-Newtonian fluid. Compressibility is therefore not stated; the rest is smooth, isothermal-by-omission, single-phase.",
+      "quotes": [
+        {
+          "text": "DNS data of a fully developed TCF at a friction Reynolds number of Reτ ≈ 1, 000 is provided by the Johns Hopkins Turbulence Databases",
+          "page": 5,
+          "location": "Sec. 2.1",
+          "supports": "DNS channel input for D01-D03, V01; no equations or Mach number given"
+        },
+        {
+          "text": "wind tunnel side wall",
+          "page": 7,
+          "location": "Fig. 2 label (experimental setup)",
+          "supports": "experimental channel facility for D02, T01-T04; no Mach number stated"
+        }
+      ],
+      "check": null
+    },
+    "N019": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The RANS k-tau equations are written with the incompressible continuity equation (Q = 0), with the note that the equation also accommodates low-Mach flows. Heated cases use unit non-dimensional wall heat flux, Pr = 1 and Prt = 0.85; no buoyancy or property variation is stated. No roughness is described. The molten-salt reactor core case is not stated to differ.",
+      "quotes": [
+        {
+          "text": "µ is the molecular viscosity and µt is the turbulent viscosity, with the continuity equation for incompressible flow being",
+          "page": 3,
+          "location": "Sec. 2, Eqs. (2)-(4)",
+          "supports": "low compressibility, all items"
+        },
+        {
+          "text": "A heated case with Re = 50, 000 based on the channel half-width and P r = 1 has been simulated using both the wall-modeled and wall-resolved approaches.",
+          "page": 8,
+          "location": "Sec. 3.1",
+          "supports": "heat transfer treated with constant Pr; no buoyancy stated"
+        }
+      ],
+      "check": null
+    },
+    "N025": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The method is formulated and solved with the incompressible Navier-Stokes equations in a DG solver; channel flow at Re_tau 950 and periodic-hill flow at Re_H 10595-37000. The paper says the extension to compressible flow is future work. No roughness, buoyancy or non-Newtonian fluid.",
+      "quotes": [
+        {
+          "text": "We consider the incompressible Navier–Stokes equations in conservation form:",
+          "page": 4,
+          "location": "Sec. 2.1",
+          "supports": "low compressibility, all items"
+        },
+        {
+          "text": "we employ our high-performance matrix-free incompressible code INDEXA",
+          "page": 11,
+          "location": "Sec. 4",
+          "supports": "incompressible solver used for all runs"
+        }
+      ],
+      "check": null
+    },
+    "N037": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The channels are solved with the filtered incompressible Navier-Stokes equations; no Mach number is given. APG and rotation cases are smooth-wall; the roughness case (K03, T01, and the roughness part of D01) uses modelled sand-grain-equivalent roughness. No buoyancy or non-Newtonian fluid.",
+      "quotes": [
+        {
+          "text": "We solve the filtered incompressible Navier–Stokes equations, written in index notation",
+          "page": 6,
+          "location": "Sec. 2.1",
+          "supports": "low compressibility, all items (no Mach number stated)"
+        },
+        {
+          "text": "Third, channel flow with roughness on the bottom wall.",
+          "page": 7,
+          "location": "Sec. 2.2",
+          "supports": "rough surface for K03, T01 and the roughness part of D01"
+        },
+        {
+          "text": "Surface roughness is parameterized using the non-dimensional equivalent sandgrain roughness height, ks+ = ks uτ /ν.",
+          "page": 8,
+          "location": "Sec. 2.2, p. 8",
+          "supports": "rough surface, k_s+"
+        }
+      ],
+      "check": null
+    },
+    "N054": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The coolant is air with temperature-dependent density, viscosity, heat capacity and conductivity in DNS and RANS, so every item has variable properties. Buoyancy is off in the forced case (D01) and on in the mixed (D02) and natural-convection (D03-D05, V01, K04, K05) cases. The DNS uses a low-Mach-number solver; no Mach number is printed. Walls are smooth.",
+      "quotes": [
+        {
+          "text": "The coolant fluid within the RVACS is air. The thermophysical properties (𝜌, 𝜇, 𝑐𝑝 and 𝜆) are treated as temperature-dependent in both the DNS and RANS simulations",
+          "page": 4,
+          "location": "Sec. 2.1",
+          "supports": "variable properties, all items"
+        },
+        {
+          "text": "with buoyancy switched off in the FC case and on in the MC case to isolate its impact.",
+          "page": 4,
+          "location": "Sec. 2.1",
+          "supports": "buoyancy off for D01, on for D02"
+        },
+        {
+          "text": "The low-Mach-number solver in Nek5000",
+          "page": 5,
+          "location": "Sec. 2.2",
+          "supports": "low Mach for the DNS reference"
+        }
+      ],
+      "check": null
+    },
+    "N076": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The solver is an incompressible filtered Navier-Stokes code; no Mach number is printed. Cases are smooth-wall channels at Re_tau 1000-5000 and a backward-facing step at Re_H 28,000; no roughness, buoyancy or non-Newtonian fluid in the tests.",
+      "quotes": [
+        {
+          "text": "The CFD code used in this study is an in-house finite difference solver of three-dimensional incompressible filtered Navier-Stokes equations",
+          "page": 4,
+          "location": "Sec. II",
+          "supports": "low compressibility, all items"
+        }
+      ],
+      "check": null
+    },
+    "N080": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The source analyses DNS of turbulent channel flow at Re_tau about 180 with no-slip walls and periodic streamwise and spanwise directions. It gives no roughness, no temperature or buoyancy effect and no statement of the equations as incompressible or of a Mach number; compressibility is therefore not stated.",
+      "quotes": [
+        {
+          "text": "using data from a direct numerical simulation (DNS) at a friction Reynolds number Reτ = uτ h/ν ≈ 180",
+          "page": 9,
+          "location": "Sec. 4, first paragraph",
+          "supports": "DNS channel, Re_tau about 180, all items"
+        },
+        {
+          "text": "with periodic boundary conditions in the streamwise (x) and spanwise (z) directions, and no-slip conditions at the walls (y = 0 and y = 2h)",
+          "page": 9,
+          "location": "Sec. 4",
+          "supports": "smooth no-slip walls; no roughness described"
+        }
+      ],
+      "check": null
+    },
+    "N085": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The model is a kinetic model for incompressible turbulence, tested on turbulent plane Couette flow between smooth parallel plates (Re = 1300 and 10133). No roughness, buoyancy or variable properties are described. V02 is an analytical comparison of closure coefficients with no flow case; it takes the same default.",
+      "quotes": [
+        {
+          "text": "we present an extension and theoretical analysis of the kinetic model for incompressible turbulent flows",
+          "page": 1,
+          "location": "Abstract",
+          "supports": "incompressible: all items"
+        },
+        {
+          "text": "Reynolds number is defined as Re = 𝑈𝑤 ℎ/𝜈0",
+          "page": 13,
+          "location": "Sec. 5, Couette set-up",
+          "supports": "plane Couette, constant viscosity nu0"
+        }
+      ],
+      "check": null
+    },
+    "N147": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "An invited review of RANS limiters and wall treatments; it gives no Mach number or compressibility statement for the cases, and no buoyancy or variable-property case (the cascade heat-transfer case is shown without such a statement). The default is smooth-wall flow. The rough-wall ramp (V01, V02, K01, T01) carries roughness, and D01 combines smooth-wall wall-function tests with the rough ramp, so surface is both. V02 gives rough-wall profiles at r+ = 47 and 265 without naming a flow.",
+      "quotes": [
+        {
+          "text": "Figure 8 contains velocity profiles at various locations along a ramp covered by sandpaper",
+          "page": 15,
+          "location": "Sec. 4, p. 14",
+          "supports": "rough: ramp items"
+        },
+        {
+          "text": "the inlet roughness height is r+ = 360, although it decreases to zero as the flow separates",
+          "page": 15,
+          "location": "Sec. 4",
+          "supports": "rough ramp"
+        },
+        {
+          "text": "Figure 7 compares eddy viscosity profiles from Seo and Wilcox’s rough wall k–ω models",
+          "page": 15,
+          "location": "Sec. 4",
+          "supports": "rough: V02"
+        },
+        {
+          "text": "Figure 5 shows skin friction coefficients for two",
+          "page": 12,
+          "location": "Sec. 3, wall-function tests (ZPG boundary layer and separation bubble)",
+          "supports": "smooth: D01 wall-function part"
+        }
+      ],
+      "check": null
+    },
+    "N164": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "LES of incompressible plane channel flow at Re_tau = 590 with no-slip smooth walls and constant density; no roughness, temperature or other fluid.",
+      "quotes": [
+        {
+          "text": "We consider fully developed incompressible viscous flow",
+          "page": 6,
+          "location": "Sec. 5",
+          "supports": "incompressible"
+        },
+        {
+          "text": "for an incompressible plane turbulent channel flow are the filtered Navier–Stokes and continuity equations for constant density",
+          "page": 3,
+          "location": "Sec. 2",
+          "supports": "incompressible, constant density"
+        }
+      ],
+      "check": null
+    },
+    "N166": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "DNS database of transcritical isothermal-wall channel flow of nitrogen (Peng-Robinson equation of state, density and viscosity varying with temperature) with hot and cold walls. TR3, TR1.9 and TR1.4 are variable-property transcritical cases; TR1 has equal wall temperatures and is called a constant-property incompressible flow. No Mach number is given, and no roughness. Default is coupled; items that use TR1 together with the transcritical cases take thermal coupling both. Compressibility for the transcritical cases is not stated.",
+      "quotes": [
+        {
+          "text": "We use the cubic Peng-Robinson (PR) equation [46] as the equation of state (EoS) for transcritical nitrogen.",
+          "page": 7,
+          "location": "Sec. II",
+          "supports": "real-fluid variable properties, TR3/TR1.9/TR1.4"
+        },
+        {
+          "text": "In this study, we present results for four cases, i.e., TR3, TR1.9, TR1.4 and TR1.",
+          "page": 8,
+          "location": "Sec. II",
+          "supports": "cases"
+        },
+        {
+          "text": "In case TR1, the two reduced wall temperatures are the same at 0.79, resulting in a constant-property incompressible flow with negligible heat transfer.",
+          "page": 8,
+          "location": "Sec. II",
+          "supports": "TR1 incompressible, constant property"
+        },
+        {
+          "text": "the temperatures for the hot wall and the cold wall are kept spatially and temporally constant",
+          "page": 7,
+          "location": "Sec. II",
+          "supports": "hot and cold wall temperatures differ in TR3, TR1.9, TR1.4"
+        }
+      ],
+      "check": null
+    },
+    "N174": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Lattice Boltzmann wall-modelled LES of a smooth bi-periodic turbulent channel at Re_tau = 1000, described as isothermal, weakly-compressible flow; no numerical Mach number is given for the channel and no roughness or temperature effect. Recorded as low on the ground that the weakly compressible isothermal lattice scheme is nearly incompressible; the source does not give a Mach value.",
+      "quotes": [
+        {
+          "text": "For an isothermal, weakly-compressible flow",
+          "page": 4,
+          "location": "Sec. 2.1, LBM description",
+          "supports": "low/weakly compressible, isothermal: all items"
+        },
+        {
+          "text": "channel flow at a friction Reynolds number of 1000",
+          "page": 25,
+          "location": "Sec. 5 conclusions",
+          "supports": "Re_tau = 1000, all items"
+        }
+      ],
+      "check": null
+    },
+    "N181": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The paper solves the low-pass filtered incompressible Navier-Stokes equations for Newtonian fluid in smooth-wall turbulent channel flow (Re_tau 550 to 20000). No roughness (rough walls named only as a future extension), no buoyancy or variable properties, no Mach number.",
+      "quotes": [
+        {
+          "text": "For Newtonian incompressible flows, the following low-pass filtered Navier-Stokes (N-S) and continuity equations a",
+          "page": 2,
+          "location": "Sec. II A",
+          "supports": "compressibility low, fluid newtonian, all items"
+        },
+        {
+          "text": "considering the rough-wall boundary, the present wall model should be extended with specific designs.",
+          "page": 11,
+          "location": "Conclusions",
+          "supports": "rough walls not treated, so surface smooth"
+        }
+      ],
+      "check": null
+    },
+    "N188": {
+      "default": {
+        "surface": "rough",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Pipe flow of water (constant properties) solved as an incompressible Newtonian fluid with RANS standard k-epsilon and standard wall functions. The pipe wall is given a parametrized roughness height (9E-7 m to 0.001 m) in the Re sweep (D01). The mesh-independence study (V01) does not state a roughness or an inlet velocity. No Mach number, no buoyancy, no temperature dependence.",
+      "quotes": [
+        {
+          "text": "For an incompressible Newtonian fluid, the flow is described by the continuity (Eq 4) and Navierstokes (Eq 5) equations.",
+          "page": 3,
+          "location": "Sec. 3.1",
+          "supports": "low compressibility, newtonian, all items"
+        },
+        {
+          "text": "Stationary wall with no slip • Roughness height (Parametrized) – 9E07m to 0.001m • Roughness constant – 0.5",
+          "page": 6,
+          "location": "Boundary conditions, Pipe Wall",
+          "supports": "rough wall for D01"
+        }
+      ],
+      "check": null
+    },
+    "N189": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "compressible",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "6 to 7.7"
+      },
+      "finding": "Compressible Navier-Stokes equations for a calorically perfect gas with Sutherland viscosity; the two WMLES designs are hypersonic (Mach 6 shock impingement and Mach 7.7 compression ramp) on smooth isothermal cold walls (wall temperature fixed). No roughness, buoyancy or non-Newtonian fluid. V01 collects verification cases at Mach 2.37 (viscous shock tube), Mach 0.1 (double shear layer, Appendix A) and others whose Mach number is not printed here, so its compressibility is both.",
+      "quotes": [
+        {
+          "text": "The equation of state is for a calorically perfect gas so that e = p [ρ(γ − 1)]−1 is the internal energy",
+          "page": 4,
+          "location": "Sec. 2",
+          "supports": "compressible equations"
+        },
+        {
+          "text": "Case 4.4. Oblique Shock Impingement from 4◦ Wedge on Mach 6 Disturbed Laminar Boundary Layer",
+          "page": 22,
+          "location": "Case 4.4 heading",
+          "supports": "D01 Mach 6"
+        },
+        {
+          "text": "Case 4.5. Mach 7.7 Transition to Turbulence over a 15◦ Compression Ramp",
+          "page": 27,
+          "location": "Case 4.5 heading",
+          "supports": "D02 Mach 7.7"
+        },
+        {
+          "text": "Ma∞ 2.37 Re∞ 2,500 Pr 0.73 γ 1.4",
+          "page": 21,
+          "location": "Table 3",
+          "supports": "V01 repetition Mach 2.37"
+        },
+        {
+          "text": "Ma∞ 0.1 Re∞ 10,000 Pr 0.72 γ 1.4",
+          "page": 33,
+          "location": "Appendix A table",
+          "supports": "V01 repetition Mach 0.1"
+        }
+      ],
+      "check": null
+    },
+    "N195": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "All cases (channel flow at Re_b=125000, Re_tau about 5200, and backward-facing step at Re_H=37000) are solved with the filtered incompressible Navier-Stokes equations on smooth walls, with constant kinematic viscosity, no buoyancy and no temperature. The library mentions wall-roughness only as an option of another code's wall model.",
+      "quotes": [
+        {
+          "text": "applying spatial filtering to the incompressible NavierStokes equations",
+          "page": 4,
+          "location": "Sec. 2",
+          "supports": "compressibility low, newtonian, all items"
+        },
+        {
+          "text": "Reb = 125 000 is considered",
+          "page": 13,
+          "location": "Sec. 5.1",
+          "supports": "channel flow, constant nu"
+        }
+      ],
+      "check": null
+    },
+    "N218": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Steady incompressible RANS k-epsilon flow of a Newtonian fluid (constant kinematic viscosity) on smooth walls: backward-facing step at inlet Re 89,600, and pipe-bend, U-bend and Tesla-valve optimisation cases (turbulent, plus laminar Re 33 comparison designs). No roughness, Mach number, buoyancy or temperature.",
+      "quotes": [
+        {
+          "text": "The steady flow of an incompressible fluid governed by the RANS equations",
+          "page": 4,
+          "location": "Sec. 2.1",
+          "supports": "compressibility low, all items"
+        }
+      ],
+      "check": null
+    },
+    "N239": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "All items (body of revolution at Re_L 1.9e6 and DARPA Suboff bare hull at Re_L 1.2e6 and 1.2e7) are WMLES of the spatially filtered incompressible Navier-Stokes equations in curvilinear coordinates, on smooth bodies, with no Mach number, roughness, buoyancy or temperature effect.",
+      "quotes": [
+        {
+          "text": "The governing equations are the spatially filtered incompressible Navier-Stokes equations in non-orthogonal, generalized curvilinear coordinates as follows,",
+          "page": 5,
+          "location": "Sec. 2.1",
+          "supports": "compressibility low, newtonian, all items"
+        }
+      ],
+      "check": null
+    },
+    "N240": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The WMLES code solves the incompressible Navier-Stokes equations in a half-channel (channel at Re_tau 180 to 1e5, with suddenly imposed adverse or transverse pressure gradient). No wall roughness, buoyancy, temperature effect or non-Newtonian fluid is described; no Mach number is given.",
+      "quotes": [
+        {
+          "text": "The code solves the incompressible Navier-Stokes equations in a half-channel with a slip top boundary and periodicity in both the streamwise and the spanwise directions.",
+          "page": 11,
+          "location": "Sec. 4.1",
+          "supports": "low compressibility for all items (a-posteriori); a-priori items use DNS of channel flow with no stated compressibility"
+        }
+      ],
+      "check": null
+    },
+    "N251": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Ahmed-body RANS (k-omega SST and realizable k-epsilon) in air with constant density 1.225 kg/m3, energy equation off, inlet 40 m/s; no Mach number or incompressibility statement is printed, but constant density with the energy equation off means no compressibility or thermal effects are modelled. Smooth vehicle body, no roughness described.",
+      "quotes": [
+        {
+          "text": "The material of the fluid was air with constant density ρ = 1.225 kg/m3. The energy equation was turned off.",
+          "page": 4,
+          "location": "Sec. 3 set-up",
+          "supports": "low compressibility (constant density), no thermal coupling"
+        },
+        {
+          "text": "The magnitude of the velocity was 40 m/s.",
+          "page": 4,
+          "location": "Sec. 3 boundary conditions",
+          "supports": "inlet velocity; no Mach number stated"
+        }
+      ],
+      "check": null
+    },
+    "N253": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Turbulent channel flow (DNS data of the Johns Hopkins database at Re_tau about 1000 and 5200, and a 950 case) projected onto coarse DG/CG spaces; traditional WMLES and slip-wall WMLES of the channel with a DG solver. The source does not state the governing equation set as incompressible or give a Mach number, and describes no roughness, temperature effect or non-Newtonian fluid.",
+      "quotes": [
+        {
+          "text": "Taking a turbulent channel flow as an example",
+          "page": 1,
+          "location": "Abstract",
+          "supports": "flow case is channel flow; no compressibility statement found"
+        }
+      ],
+      "check": null
+    },
+    "N262": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "compressible",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.74 to 4.0"
+      },
+      "finding": "Channel flow solved with the compressible Navier-Stokes equations (JAX-Fluids, implicit LES). Cases cover quasi-incompressible Mb = 0.1 (temperature held constant, Table I) and compressible Mb = 0.74 to 4.0 with isothermal walls (Table II), viscosity following a power law in temperature. No roughness, buoyancy or non-Newtonian fluid. Thermal_coupling is recorded none because the only heating is aerodynamic heating.",
+      "quotes": [
+        {
+          "text": "quasi-incompressible cases with bulk Mach number Mb = 0.1 and friction Reynolds number Reτ = 180 ∼ 10,000, and compressible cases with Mb = 0.74 ∼ 4.0",
+          "page": 1,
+          "location": "Abstract",
+          "supports": "low for Mb = 0.1 items; compressible for Mb 0.74 to 4.0 items"
+        },
+        {
+          "text": "The governing equations are given by:",
+          "page": 12,
+          "location": "Sec. II E, Eqs. 12-15",
+          "supports": "compressible Navier-Stokes with energy equation (density, temperature, heat flux)"
+        },
+        {
+          "text": "the dynamic viscosity follows a power law relationship",
+          "page": 14,
+          "location": "Sec. II E",
+          "supports": "viscosity depends on temperature through aerodynamic heating (isothermal walls Tw = 1.0)"
+        },
+        {
+          "text": "at such low Mach number, the heat transfer is neglected by applying a source term in the energy equation to maintain a constant temperature matching the wall.",
+          "page": 23,
+          "location": "Sec. IV A",
+          "supports": "D03/T01 low Mach: constant temperature, nearly uniform density and viscosity"
+        },
+        {
+          "text": "For B, both incompressible and compressible DNS data are used.",
+          "page": 9,
+          "location": "Sec. II B, Fig. 2",
+          "supports": "D01 draws on both"
+        },
+        {
+          "text": "spanning from Mb = 0.8 to 4.0",
+          "page": 25,
+          "location": "Sec. IV B",
+          "supports": "compressible items"
+        },
+        {
+          "text": "Mb = 0.74, Reb = 21,092 and Mb = 1.57, Reb = 25,216, where the bulk Mach number",
+          "page": 13,
+          "location": "Sec. II E",
+          "supports": "V01/V03/C01"
+        },
+        {
+          "text": "For quasi-incompressible turbulent channel ﬂow, we examine cases with Mb = 0.1",
+          "page": 22,
+          "location": "Sec. IV A",
+          "supports": "D03, T01"
+        }
+      ],
+      "check": null
+    },
+    "N273": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Fully developed plane channel flow, filtered or Reynolds-averaged governing equations for an incompressible turbulent flow, with a conventional wall function at the wall (y+ = 300); no Mach number, roughness or thermal effect.",
+      "quotes": [
+        {
+          "text": "ltered (or Reynolds-averaged) governing equations for an incompressible",
+          "page": 2,
+          "location": "Sec. 2",
+          "supports": "low compressibility"
+        }
+      ],
+      "check": null
+    },
+    "N280": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "OpenFOAM WMLES of channel flow (Re_b = 125000) and zero-pressure-gradient flat-plate boundary layer, with the flow considered incompressible and a Spalding algebraic wall model; no roughness, thermal effects or Mach number.",
+      "quotes": [
+        {
+          "text": "The flow is considered incompressible and no explicit filtering is applied to the unknowns, i.e. the velocity, and pressure fields. Instead, the equations are considered to be implicitly filtered by the discretization procedure.",
+          "page": 5,
+          "location": "Sec. 3",
+          "supports": "low compressibility"
+        }
+      ],
+      "check": null
+    },
+    "N291": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Steady RANS (standard k-epsilon, wall functions) of the KCS model-scale ship hull, Re = 1.4e7, Fr = 0.26, double-body without free surface, no-slip on the hull. The source gives no Mach number and no statement of incompressibility, buoyancy or temperature effects; no roughness is applied (the 'surface roughness' label in the nomenclature is attached to the von Karman constant kappa).",
+      "quotes": [
+        {
+          "text": "The free-surface was not considered, i.e. a double body model without the free-surface was considered, and thus, a slip condition was applied on the top boundary. No-slip condition was applied on the ship surface.",
+          "page": 5,
+          "location": "Problem description",
+          "supports": "smooth no-slip hull, no free surface, single-phase, all items"
+        },
+        {
+          "text": "Steady computations were done for the Reynolds number (based on U∞ of 2.196 m/s and the length of the ship of 7.2786 m) of 1.4 × 107 and the Froude number (based on U∞ and the length of the ship) of 0.26.",
+          "page": 8,
+          "location": "Validation",
+          "supports": "flow conditions; no Mach number given"
+        }
+      ],
+      "check": null
+    },
+    "N297": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "other",
+        "mach_stated": null
+      },
+      "finding": "Fully developed pipe flow at Re_tau = 323, LES of an incompressible non-Newtonian (power-law, n = 0.6, shear-thinning) fluid, periodic pipe with no-slip walls, no roughness or heat transfer. The work default is therefore the non-Newtonian fluid (fluid = other); the Newtonian n = 1 cases (N297-D02, N297-K01) are single-phase Newtonian. Incompressibility is stated through the governing equations; no Mach number is given.",
+      "quotes": [
+        {
+          "text": "Applying the filtering operation on the continuity and momentum equations for an incompressible non-Newtonian fluid, LES governing equations can be derived as:",
+          "page": 7,
+          "location": "Sec. 2.1",
+          "supports": "compressibility low (incompressible) for all items"
+        },
+        {
+          "text": "Cases 6-22 are designed to assess the performance of WMLES for non-Newtonian power-law fluids.",
+          "page": 29,
+          "location": "Sec. 4.2, after Table 3",
+          "supports": "fluid other for D01, K04, K08, V01"
+        },
+        {
+          "text": "4.3. WMLES of Newtonian fluid flow",
+          "page": 32,
+          "location": "Sec. 4.3 heading",
+          "supports": "Newtonian cases (D02, K01)"
+        }
+      ],
+      "check": null
+    },
+    "N300": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Turbulent plane channel flow (Re_tau = 2000 and 5200), smooth walls, isothermal, Newtonian. The DHRL momentum equation is stated in incompressible form; the flow solver (Loci-CHEM) uses a Mach-number weighted flux, but no free-stream or bulk Mach number is given. All items share this regime.",
+      "quotes": [
+        {
+          "text": "The incompressible form of the momentum equation for the DHRL formulation used here can be expressed as:",
+          "page": 1,
+          "location": "Sec. 2.1.1",
+          "supports": "compressibility low, all items"
+        },
+        {
+          "text": "where the upwind weighting parameter η varies between zero and one.",
+          "page": 1,
+          "location": "Sec. 2.4 numerical method",
+          "supports": "context: solver flux with Mach weighting, no Mach number stated"
+        }
+      ],
+      "check": null
+    },
+    "N318": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Periodic channel (Re_delta 6875 and 98300), zero-pressure-gradient flat-plate boundary layer and decaying isotropic turbulence, all isothermal smooth no-slip walls (V02 has no wall). Computed with the compressible DLR-TAU solver using low-Mach-number preconditioning scaled toward the incompressible limit; the source states no Mach number and does not call the cases incompressible, so compressibility is recorded as not stated. No roughness, buoyancy or non-Newtonian fluid is mentioned.",
+      "quotes": [
+        {
+          "text": "Additionally, a low-Mach-number preconditioning matrix is introduced in the dissipation operator to consistently scale the dissipation towards the incompressible limit.",
+          "page": 9,
+          "location": "Sec. 3 numerical scheme",
+          "supports": "compressibility not stated (compressible solver, low-Mach preconditioning, no Mach number) for all items"
+        },
+        {
+          "text": "Periodic boundary conditions are applied in streamwise as well as spanwise directions whereas no-slip wall conditions are present for the upper and lower face.",
+          "page": 16,
+          "location": "Sec. 4.2",
+          "supports": "smooth no-slip channel walls"
+        }
+      ],
+      "check": null
+    },
+    "N327": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Plane-channel LES at Re_tau about 934 to 20000, a transient channel with sudden spanwise pressure gradient, a zero-pressure-gradient flat-plate boundary layer, and a-priori tests on filtered channel DNS; all smooth walls, isothermal, Newtonian. The method is solved with a staggered finite-difference fractional-step method and the SGS treatment is described for incompressible flows; no Mach number is given. No roughness, buoyancy or non-Newtonian fluid is simulated (rough walls are only mentioned as a possible extension).",
+      "quotes": [
+        {
+          "text": "For incompressible flows, the isotropic part of τijSGS is usually not defined by the SGS models and, since the system is already over-determined, we exclude the i = j components of (4.12).",
+          "page": 20,
+          "location": "Sec. 4",
+          "supports": "compressibility low, all items"
+        },
+        {
+          "text": "The simulations are computed with a staggered second-order finite difference (Orlandi 2000) and a fractionalstep method (Kim & Moin 1985)",
+          "page": 7,
+          "location": "Sec. 3.1",
+          "supports": "incompressible fractional-step solver"
+        }
+      ],
+      "check": null
+    },
+    "N332": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Both items use DNS data of turbulent open channel flow at Re_tau = 180 (and 550) from the pseudo-spectral solver SIMSON, whose cited reference describes it as a solver for incompressible flows; no Mach number is given. Smooth walls, isothermal, Newtonian single-phase; no roughness, buoyancy or other fluid is mentioned. The items are neural-network reconstructions from DNS planes, not wall-model simulations.",
+      "quotes": [
+        {
+          "text": "simulation of an open channel flow, at friction Reynolds numbers Reτ = 180 and Reτ = 550, performed with the pseudo-spectral solver SIMSON (Chevalier et al., 2007).",
+          "page": 9,
+          "location": "Sec. 2 data",
+          "supports": "flow case for D01, V01"
+        },
+        {
+          "text": "SIMSON : a pseudo-spectral solver for incompressible boundary layer flows.",
+          "page": 30,
+          "location": "References (Chevalier et al., 2007)",
+          "supports": "compressibility low (solver stated as incompressible); no Mach number given"
+        }
+      ],
+      "check": null
+    },
+    "N339": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.15 (NACA 0012); 0.2 (MD-30P30N)"
+      },
+      "finding": "All cases are smooth-wall aerofoil flows (NACA 0012 at M=0.15, Re_c=6e6; MD-30P30N at M=0.2, Re=9e6) solved with a weakly compressible athermal LBM-RANS model; no buoyancy, variable properties, roughness or non-Newtonian fluid is described. Mach numbers are below 0.3.",
+      "quotes": [
+        {
+          "text": "The flow is essentially incompressible (Mach number of 0.15) with a Reynolds number of Re = 106 based on the airfoil chord.",
+          "page": 18,
+          "location": "Sec. 3.1 NACA 0012 setup",
+          "supports": "compressibility low, M=0.15, NACA items"
+        },
+        {
+          "text": "The freestream Mach number is 0.2 and the Reynolds number, on the stowed element chord, is 9 million.",
+          "page": 35,
+          "location": "Sec. 3.2 MD-30P30N setup",
+          "supports": "compressibility low, M=0.2, high-lift items"
+        },
+        {
+          "text": "recovers the weakly compressible athermal Navier-Stokes equations,",
+          "page": 9,
+          "location": "Sec. 2 governing equations",
+          "supports": "thermal_coupling none"
+        }
+      ],
+      "check": null
+    },
+    "N357": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Wall-modelled LES of plane channel flow with the wall stress applied as a boundary condition on a smooth wall. The source gives no Mach number and does not say incompressible; the equations are written with constant density rho and kinematic viscosity nu, no temperature, buoyancy or roughness appears, and the fluid is a single-phase Newtonian liquid/gas not otherwise specified.",
+      "quotes": [
+        {
+          "text": "there is a linear shear layer connecting the profile to the no-slip boundary condition on the smooth wall.",
+          "page": 11,
+          "location": "Sec. 2.3 turbNEQ model",
+          "supports": "surface smooth, all items"
+        }
+      ],
+      "check": null
+    },
+    "N358": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "RANS (HRN k-epsilon, Code Saturne) calculations of an impinging jet (Re=70,000, constant-temperature plate, temperature transported with Pr=0.71) and a plane asymmetric diffuser (Re=18,000). The source writes its transport equations for incompressible RANS; no Mach number is given, and no buoyancy, variable-property effects, roughness or non-Newtonian fluid is described for the test cases (buoyant flow is mentioned only as an example of where wall functions would need modification).",
+      "quotes": [
+        {
+          "text": "In incompressible Reynolds-averaged Navier-Stokes simulations, the momentum, energy and many turbulence model function equations have the following form",
+          "page": 5,
+          "location": "Sec. 2 computational models",
+          "supports": "compressibility low, all items"
+        },
+        {
+          "text": "The flat plate is kept at a constant temperature. The Reynolds number based on pipe diameter and bulk velocity in the pipe is Re = 70, 000.",
+          "page": 10,
+          "location": "Sec. 6 impinging jet",
+          "supports": "thermal: heated plate, temperature transported, no buoyancy stated (jet items)"
+        }
+      ],
+      "check": null
+    },
+    "N364": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Wall-modelled LES of turbulent channel flow (mainly Re_tau=5200, other Re_tau up to 1e5) governed by the filtered incompressible Newtonian Navier-Stokes equations; no roughness, temperature or other fluid effects are described.",
+      "quotes": [
+        {
+          "text": "The governing equations for LES of an incompressible Newtonian flow are derived by applying spatial filtering to the Navier-Stokes equations,",
+          "page": 4,
+          "location": "Sec. 2.1",
+          "supports": "compressibility low, fluid newtonian, all items"
+        }
+      ],
+      "check": null
+    },
+    "N372": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "LES of fully developed turbulent pipe flow at Re_tau 361-2000 using the filtered incompressible mass and momentum equations; no roughness, heat transfer or non-Newtonian fluid is described, and the benchmark is smooth-pipe DNS.",
+      "quotes": [
+        {
+          "text": "In LES, the governing equations are the low pass filtered conservation equations of incompressible flow mass and momentum",
+          "page": 2,
+          "location": "Sec. II A mathematical formulation",
+          "supports": "compressibility low, all items"
+        }
+      ],
+      "check": null
+    },
+    "N391": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "CaLES solves the filtered incompressible Navier-Stokes equations; the two items are wall-modelled LES of a plane channel (Re_b=250,000, Re_tau,DNS=5185.9) and a square duct (Re_b=40,000). No roughness, temperature or non-Newtonian fluid is described.",
+      "quotes": [
+        {
+          "text": "The filtered incompressible Navier-Stokes (NS) equations read as",
+          "page": 3,
+          "location": "Sec. 2.1 governing equations",
+          "supports": "compressibility low, both items"
+        }
+      ],
+      "check": null
+    },
+    "N392": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Lattice Boltzmann (D3Q19 MRT) LES of turbulent channel flow with a Reichardt wall law on smooth walls at Re_tau 1000, 2000 and 5200. No roughness, buoyancy, variable properties or non-Newtonian fluid is described. No Mach number is given for the cases; the introduction only says LBM is used at low Mach numbers in general, so compressibility is recorded as not stated.",
+      "quotes": [
+        {
+          "text": "macroscopic scales (13–17 ) at low Mach numbers.",
+          "page": 2,
+          "location": "Introduction",
+          "supports": "general statement on LBM; no case Mach number given"
+        },
+        {
+          "text": "with cs is the speed of the sound, and c2s is equal to 1/3 lattice Boltzmann unit (LBU).",
+          "page": 4,
+          "location": "Sec. II.A",
+          "supports": "D3Q19 lattice model; no Mach number stated for the channel cases"
+        }
+      ],
+      "check": null
+    },
+    "N395": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Incompressible finite-volume LES of a smooth two-dimensional Gaussian bump (Re_L = 2e6) with turbulent boundary-layer inflow, and a precursor flat-plate boundary layer; no roughness, heat transfer, buoyancy or non-Newtonian fluid is described. The solver is stated to be tailored for incompressible flow (the reference DNS used a compressible solver, but all runs here are the incompressible LES). No Mach number is given for the present runs.",
+      "quotes": [
+        {
+          "text": "unstructuredmesh, finite-volume, LES code tailored for incompressible flow [31].",
+          "page": 4,
+          "location": "Sec. 2.1 Flow solver",
+          "supports": "low compressibility for all items"
+        },
+        {
+          "text": "adopting the physical conditions identical to the hybrid DNS-WRLES conducted by Uzun and Malik [26] using a compressible flow solver.",
+          "page": 6,
+          "location": "Sec. 2.2",
+          "supports": "reference DNS only; present simulations use the incompressible code"
+        }
+      ],
+      "check": null
+    },
+    "N418": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Wall-modeled LES with the compressible finite-volume code charLES. The Boeing speed bump (Re_L = 2e6 to 10e6, smooth wall) is simulated with the compressible equations but the source gives no Mach number for it, so compressibility is recorded as not stated. The Bachalo-Johnson axisymmetric bump (D02, K03) is transonic at Ma_e = 0.85, 0.875 and 0.90. The a-priori study D03 uses prescribed flows from other papers with no Mach number stated. No roughness, buoyancy or non-Newtonian fluid.",
+      "quotes": [
+        {
+          "text": "charLES, which solves the compressible Navier-Stokes equations as described in the preceding subsection.",
+          "page": 3,
+          "location": "Sec. II.B",
+          "supports": "governing equations for all LES items"
+        },
+        {
+          "text": "Rec = 2.76 × 106 . The three different Mach numbers are M ae = 0.85, 0.875, 0.90.",
+          "page": 13,
+          "location": "Sec. VI.A",
+          "supports": "compressible, D02 and K03"
+        },
+        {
+          "text": "FIG. 10. A comparison of the predicted surface pressure coefficient, Cp , between the equilibrium wall model and the proposed model for the three Mach number cases,",
+          "page": 14,
+          "location": "Fig. 10 caption",
+          "supports": "D02, K03 Mach numbers"
+        },
+        {
+          "text": "the transonic flow over the",
+          "page": 13,
+          "location": "Fig. 9 caption",
+          "supports": "transonic Bachalo-Johnson bump"
+        }
+      ],
+      "check": null
+    },
+    "N419": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Steady RANS (Fluent) of fully developed plane channel flow at Re_tau = 150, with constant physical properties for air, no-slip smooth walls, isothermal and uniform-heat-flux cases. Temperature is transported with constant properties (no buoyancy term is mentioned). No Mach number is given; constant density and properties are stated, so the flow is treated as incompressible, but the source does not use that word.",
+      "quotes": [
+        {
+          "text": "The steady turbulent Navier-Stokes and energy equations are numerically solved together with the continuity equation using the finite volume method. Physical properties are considered as constants",
+          "page": 2,
+          "location": "Simulation procedures, Test case",
+          "supports": "low compressibility, thermal none: constant properties for all items"
+        },
+        {
+          "text": "no-slip boundary conditions were imposed at the solid walls.",
+          "page": 2,
+          "location": "Simulation procedures, Test case",
+          "supports": "smooth wall, no roughness described"
+        },
+        {
+          "text": "(2) the walls were with uniform heat flux (qw=500 W/m2).",
+          "page": 2,
+          "location": "Simulation procedures, Test case",
+          "supports": "anisothermal case, passive temperature with constant properties"
+        }
+      ],
+      "check": null
+    },
+    "N434": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Discontinuous Galerkin LES with the compressible Navier-Stokes equations. The plane-channel cases (Re_tau = 550 and 2000, smooth walls) are given no Mach number, so compressibility is recorded as not stated. The NACA 64A-110 airfoil (D01 only) is transonic at Ma = 0.72, Re_c = 930 000. No roughness, buoyancy or non-Newtonian fluid.",
+      "quotes": [
+        {
+          "text": "We discretize the compressible Navier-Stokes equation using the same polynomial basis function as ansatz function in each three-dimensional element.",
+          "page": 3,
+          "location": "Sec. 2",
+          "supports": "governing equations, all items"
+        },
+        {
+          "text": "To conclude this work, we investigate the flow over a transonic NACA 64A-110 airfoil at an angle of attack of α = 0 deg.",
+          "page": 24,
+          "location": "Sec. 4",
+          "supports": "D01 airfoil"
+        },
+        {
+          "text": "The dimensionless simulation parameters are M a = 0.72 and Rec = 930 000.",
+          "page": 24,
+          "location": "Sec. 4",
+          "supports": "D01 airfoil Mach number"
+        }
+      ],
+      "check": null
+    },
+    "N437": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Incompressible wall-modelled LES (finite-difference code) of open channels, a channel with alternating smooth and rough strips (ks+ = 130 on the rough strip) and a rough-wall turbulent boundary layer under imposed pressure gradients (ks/delta0* = 0.31). The study covers smooth and rough walls, so there is no single surface default; no Mach number, heat transfer, buoyancy or non-Newtonian fluid is described. The boundary-layer item D03 evaluates rough-wall runs only; the corresponding smooth-wall runs are mentioned as 'not shown'.",
+      "quotes": [
+        {
+          "text": "The governing equations for LES of incompressible flow are as follows:",
+          "page": 7,
+          "location": "Sec. 2.1",
+          "supports": "low compressibility, all items"
+        },
+        {
+          "text": "considering both smooth and homogeneous rough-wall conditions.",
+          "page": 14,
+          "location": "Sec. 4",
+          "supports": "D02, K02 smooth and K03 rough"
+        },
+        {
+          "text": "Simulations with a sand-grain roughness height of ks+ 130 were performed, along with smooth-wall simulations,",
+          "page": 15,
+          "location": "Sec. 4",
+          "supports": "D02 both; K03 rough"
+        },
+        {
+          "text": "The Reynolds number, defined using the bulk velocity, was Reb = Ub δ/ν = 121 000.",
+          "page": 16,
+          "location": "Sec. 5.1, alternating smooth and rough strips",
+          "supports": "D01, K01 smooth and rough strips"
+        },
+        {
+          "text": "ks /δ0∗ = 0.31.",
+          "page": 19,
+          "location": "Sec. 5.2.1",
+          "supports": "D03, K04 rough boundary layer"
+        },
+        {
+          "text": "The discrepancies observed in these comparisons were also present in smooth-wall simulations (not shown)",
+          "page": 22,
+          "location": "Sec. 5.2",
+          "supports": "smooth boundary-layer runs not shown"
+        }
+      ],
+      "check": null
+    },
+    "N444": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "both",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.3 and 0.5"
+      },
+      "finding": "Compressible Favre-filtered Navier-Stokes solved for a controlled-diffusion blade at Ma 0.3 (C1, Re 8.30e5) and Ma 0.5 (C2, C3, Re 2.29e6); adiabatic no-slip smooth blade surface; no roughness, buoyancy or non-Newtonian fluid is reported. Design and contrast cover C1-C3, so both low and compressible conditions.",
+      "quotes": [
+        {
+          "text": "This study is carried out for two values of the Mach number, Ma ∞ = 0.3 and 0.5",
+          "page": 1,
+          "location": "Abstract",
+          "supports": "Mach 0.3 (C1) and 0.5 (C2, C3)"
+        },
+        {
+          "text": "The governing equations used in this study are the full Favre-filtered compressible Navier–Stokes",
+          "page": 1,
+          "location": "Governing equations",
+          "supports": "compressible equations"
+        },
+        {
+          "text": "At the airfoil surface, an adiabatic, no-slip condition is applied.",
+          "page": 1,
+          "location": "Computational setup",
+          "supports": "adiabatic wall, no buoyancy or property variation reported; smooth"
+        }
+      ],
+      "check": null
+    },
+    "N445": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "URANS of water flow in a duct and asymmetric diffuser with pulsating inlet; the equations are written with a water density and zero divergence, no Mach number is given, walls are no-slip with zero roughness, no temperature effect.",
+      "quotes": [
+        {
+          "text": "where ρ, u, t, , μ, Id, g, R and S are the water density, velocity field, time, pressure field,",
+          "page": 3,
+          "location": "Section 2, flow equations",
+          "supports": "water flow, constant density; Mach not stated"
+        },
+        {
+          "text": "The no-slip condition with zero roughness was applied for the walls.",
+          "page": 5,
+          "location": "Section 3, boundary conditions",
+          "supports": "smooth walls"
+        }
+      ],
+      "check": null
+    },
+    "N446": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Incompressible Navier-Stokes (OpenFOAM) for a zero-pressure-gradient boundary layer with constant density and viscosity. A single 2-D roughness element serves as a flow trip; the source describes no roughness of the wall itself and the wall treatment is tested on the plate downstream, so surface is recorded as smooth (the trip element is noted as a judgement point). No Mach, buoyancy or other fluid.",
+      "quotes": [
+        {
+          "text": "where u is the velocity vector, ρ is the constant density in the incompressible flow and ν",
+          "page": 6,
+          "location": "Section 2.1",
+          "supports": "incompressible"
+        },
+        {
+          "text": "A two-dimensional roughness element is used to trip a turbulent boundary layer.",
+          "page": 1,
+          "location": "Abstract",
+          "supports": "trip element only; plate wall otherwise treated as smooth"
+        }
+      ],
+      "check": null
+    },
+    "N456": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Incompressible, constant-property Navier-Stokes-Fourier channel flow with conjugate heat transfer into a solid; purely forced convection with temperature a passive scalar, so no buoyancy or property variation. Smooth channel walls, no roughness reported. All items share this regime.",
+      "quotes": [
+        {
+          "text": "In the case of turbulent incompressible Navier–Stokes–Fourier fluid flow with conjugate heat transfer and constant physical properties,",
+          "page": 1,
+          "location": "Section 2.1",
+          "supports": "incompressible, constant properties"
+        },
+        {
+          "text": "Note that, in the present study, purely forced convection is investigated. Therefore, no additional source terms for buoyancy effects appear in the balance equations and the temperature is treated as a passive scalar.",
+          "page": 1,
+          "location": "Section 2.1",
+          "supports": "thermal none"
+        }
+      ],
+      "check": null
+    },
+    "N457": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Incompressible Navier-Stokes with Spalart-Allmaras closure; channel and periodic-hill cases with no-slip smooth walls, isothermal, no Mach number needed.",
+      "quotes": [
+        {
+          "text": "2. INCOMPRESSIBLE NAVIER–STOKES EQUATIONS AND THE SPALART–ALLMARAS",
+          "page": 2,
+          "location": "Section 2",
+          "supports": "incompressible"
+        },
+        {
+          "text": "This work considers periodic as well as no-slip Dirichlet boundary conditions on solid walls",
+          "page": 3,
+          "location": "Section 2",
+          "supports": "no-slip walls, no roughness"
+        }
+      ],
+      "check": null
+    },
+    "N459": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Steady RANS of air flow around a 1:2 cyclist scale model at 20 m/s with zero-roughness no-slip walls. The source gives neither a Mach number nor the incompressible equations, so compressibility is not stated; isothermal, no buoyancy reported. Stand-alone case has the same conditions.",
+      "quotes": [
+        {
+          "text": "The surfaces of the scale model, the stand and the lower wind-tunnel wall were modelled as no-slip boundaries (i.e. walls) with zero roughness.",
+          "page": 20,
+          "location": "Appendix 1, boundary conditions",
+          "supports": "smooth walls"
+        },
+        {
+          "text": "Measurements were carried out at a wind speed of 20 m/s",
+          "page": 4,
+          "location": "Section 2.1",
+          "supports": "20 m/s air; no Mach or equation statement"
+        }
+      ],
+      "check": null
+    },
+    "N464": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Smooth-wall channel flow (Re_tau 1000 to 5200 and higher, plus a sudden spanwise pressure gradient case) simulated with LESGO LES and filtered channel DNS (JHTDB). The source states no Mach number and no governing-equation statement of incompressibility; it describes no roughness (it states the applications deal with smooth surfaces), no buoyancy or variable properties, and a single-phase Newtonian fluid. Compressibility is therefore recorded as not stated.",
+      "quotes": [
+        {
+          "text": "applications in the present paper only deal with smooth surfaces",
+          "page": 31,
+          "location": "Appendix C",
+          "supports": "surface smooth for all items"
+        }
+      ],
+      "check": null
+    },
+    "N476": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The only tested case is a fully developed one-dimensional plane channel flow at Re = u_tau h/nu = 395 with the high-Reynolds k-epsilon model, solved with constant nu = mu/rho and no temperature equation. No roughness, buoyancy, variable-property or non-Newtonian effect is applied in the test (the paper only remarks the approach could be generalized to variable viscosity and density). No Mach number or incompressibility statement is given, so compressibility is not stated.",
+      "quotes": [
+        {
+          "text": "A channel fully developed plane flow has been conducted as a test case.",
+          "page": 13,
+          "location": "Section 6",
+          "supports": "smooth channel test case, all items"
+        },
+        {
+          "text": "In the computations given below the Reynolds number is Re ≡ uτh/ν = 395,",
+          "page": 14,
+          "location": "Section 6",
+          "supports": "constant-property channel at Re_tau=395"
+        }
+      ],
+      "check": null
+    },
+    "N497": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.1"
+      },
+      "finding": "Smooth-wall channel and periodic-hill flows, solved with the compressible Argo-DG solver at low Mach number M = 0.1 (channel Re_tau=950; hill bulk Mach 0.1, Mach maintained at 0.1 in the wall-modelled hill runs), with adiabatic walls and no roughness, buoyancy or non-Newtonian effect. The Re_tau=2000 wall-modelled channel is the same solver and domain but its Mach number is not restated.",
+      "quotes": [
+        {
+          "text": "the simulation is conducted at a low Mach number of M = 0.1, i.e., it can be considered almost incompressible.",
+          "page": 6,
+          "location": "Sec 2.1.1, channel Re_tau=950",
+          "supports": "low Mach, D03 and T01"
+        },
+        {
+          "text": "The flow was simulated at a low bulk Mach number of Mb = 0.1,",
+          "page": 8,
+          "location": "Sec 2.1.1, periodic hill",
+          "supports": "low Mach, D01/C01 hill data"
+        },
+        {
+          "text": "The Mach number is maintained at the low value of 0.1,",
+          "page": 17,
+          "location": "Sec 3.2.2",
+          "supports": "low Mach, D02 and K01 wall-modelled hill"
+        }
+      ],
+      "check": null
+    },
+    "N498": {
+      "default": {
+        "surface": "both",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Incompressible, single-phase viscous flow solved in OpenFOAM v2212 (RANS and LES) for a parallel-plate/semi-duct water flow, with temperature- and salinity-induced density variations and buoyancy negligible. The single design starts with smooth-wall validation and then applies equivalent sand-grain roughness (k_s) to coated, biofouled and laser-cleaned plates, so the surface axis is both. No Mach number is stated.",
+      "quotes": [
+        {
+          "text": "solved for incompressible, single-phase viscous flow.",
+          "page": 4,
+          "location": "Section 2 methodology",
+          "supports": "compressibility low, single-phase"
+        },
+        {
+          "text": "temperatureand salinity-induced density variations and associated buoyancy effects are negligible",
+          "page": 4,
+          "location": "Section 2 methodology",
+          "supports": "thermal coupling none"
+        },
+        {
+          "text": "The hydraulic effect of surface roughness is represented using the equivalent sand grain roughness height, k s",
+          "page": 3,
+          "location": "Introduction/Section 2",
+          "supports": "rough walls in the rough-plate part of N498-D01"
+        }
+      ],
+      "check": null
+    },
+    "N500": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "Ma_LB 0.060-0.069 (stated 'much less than 0.3')"
+      },
+      "finding": "Turbulent channel flow (Re_tau = 640 and 2003) by weakly-compressible lattice Boltzmann LES intended for incompressible flow, with lattice Mach number Ma_LB set well below 0.3 (0.060 and 0.069 in Table 1). Smooth channel walls, no roughness, buoyancy or non-Newtonian fluid described.",
+      "quotes": [
+        {
+          "text": "Because the LBM is a weakly-compressible method for addressing incompressible flows,",
+          "page": 11,
+          "location": "Sec 3.1",
+          "supports": "low compressibility, N500-D01 and N500-K01"
+        },
+        {
+          "text": "to make sure that the Ma𝐿𝐿𝐿𝐿 ≪ 0.3",
+          "page": 11,
+          "location": "Sec 3.1",
+          "supports": "lattice Mach number much below 0.3"
+        }
+      ],
+      "check": null
+    },
+    "N502": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Incompressible Navier-Stokes DG implementation with a Spalart-Allmaras based DDES model, applied to smooth-wall turbulent channel flow over a range of Reynolds numbers and to periodic-hill flow at two Reynolds numbers. No Mach number, roughness, buoyancy or non-Newtonian fluid.",
+      "quotes": [
+        {
+          "text": "implementation of the incompressible Navier–Stokes equations with the SA model in [2],",
+          "page": 3,
+          "location": "Sec 2/3 solver description",
+          "supports": "compressibility low, all items"
+        }
+      ],
+      "check": null
+    },
+    "N530": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Meso-NH solves the anelastic equations (continuity enforced on rho_r u) with a neutral/neutrally stratified atmosphere; no Mach number is given. The cube case is a smooth-wall channel flow (z0/H ~ 1e-6 'smooth interface'); the MUST case has a roughness length z0 = 0.045 m and containers (rough), neutral with negligible buoyancy.",
+      "quotes": [
+        {
+          "text": "The anelastic approximation (Lipps and Hemler, 1982; Durran, 1989) is assumed",
+          "page": 3,
+          "location": "Sect. 2.1",
+          "supports": "compressibility low (anelastic, no Mach number) for all items"
+        },
+        {
+          "text": "The wind of the resolved scales has to satisfy the continuity equation",
+          "page": 3,
+          "location": "Sect. 2.2 The incompressibility condition",
+          "supports": "compressibility low"
+        },
+        {
+          "text": "The fluid is considered as neutrally stratified.",
+          "page": 14,
+          "location": "Sect. 5 common hypothesis",
+          "supports": "thermal none (cube)"
+        },
+        {
+          "text": "A small value of the roughness length z0 /H ≈ 10−6 is imposed (low value to model a smooth interface",
+          "page": 14,
+          "location": "Sect. 5.1 numerical details",
+          "supports": "surface smooth (N530-V01, cube part of N530-D01)"
+        },
+        {
+          "text": "the stability condition is supposed neutral; the buoyancy effects and the sensible heat flux are negligible",
+          "page": 17,
+          "location": "Sect. 5.2 physical details",
+          "supports": "thermal none (MUST)"
+        },
+        {
+          "text": "A roughness length z0 = 0.045 m is given by the experiment",
+          "page": 17,
+          "location": "Sect. 5.2 physical details",
+          "supports": "surface rough (MUST, N530-T01; MUST part of N530-D01)"
+        }
+      ],
+      "check": null
+    },
+    "N540": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "All cases solve the filtered incompressible Navier-Stokes equations (pisoFoam) for smooth-wall channel (Re_tau=5200) and periodic-hill (Re_H=10595) flow; no roughness, temperature or non-Newtonian effects are described. No Mach number is given.",
+      "quotes": [
+        {
+          "text": "In this work, we consider the filtered incompressible Navier-Stokes equations written in index notation",
+          "page": 3,
+          "location": "Sect. 2.1",
+          "supports": "compressibility low, all items"
+        },
+        {
+          "text": "For all cases, the unsteady, incompressible solver pisoFoam is used",
+          "page": 6,
+          "location": "Sect. 3",
+          "supports": "compressibility low, all items"
+        }
+      ],
+      "check": null
+    },
+    "N551": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Experiment and WMLES concern a spatially developing incompressible turbulent boundary layer on the floor of a smooth square duct with a 30-degree bend (Re_theta 4100-8500); no roughness, temperature effects or non-Newtonian fluid, and no Mach number is given. The experiment is called incompressible and the analysis assumes incompressible flow.",
+      "quotes": [
+        {
+          "text": "The experiment featured a spatially developing incompressible turbulent boundary layer, growing along the floor of a square duct with a 30◦ bend",
+          "page": 5,
+          "location": "Sect. 2.1",
+          "supports": "compressibility low, all items"
+        },
+        {
+          "text": "Assuming incompressible flow, the time-averaged momentum equations in the PDE NEQWM can be recast",
+          "page": 22,
+          "location": "Sect. 4",
+          "supports": "compressibility low (direction-restriction analysis)"
+        }
+      ],
+      "check": null
+    },
+    "N556": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Nek5000 solves the incompressible LES equations. Cases are fully developed channel flow at Re_tau about 8000 and a zero-pressure-gradient flat-plate boundary layer; no roughness, thermal or non-Newtonian effects are described and no Mach number is given.",
+      "quotes": [
+        {
+          "text": "The governing equations for LES of incompressible flow are",
+          "page": 2,
+          "location": "Sect. II A",
+          "supports": "compressibility low, all items"
+        },
+        {
+          "text": "The particular SEM approach used here is implemented in the incompressible flow solver Nek5000",
+          "page": 1,
+          "location": "Introduction",
+          "supports": "compressibility low"
+        }
+      ],
+      "check": null
+    },
+    "N582": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The paper proposes a mean-velocity law and an FNN wall model and evaluates them on DNS channel profiles, pipe and flat-plate experiments, and WMLES of channel flow at Re_tau = 1000 and 5200. Only the WMLES states its equations (incompressible Navier-Stokes); for the DNS and experimental profile comparisons no equations or Mach number are given, so compressibility is not stated. No roughness, thermal or non-Newtonian effects are described.",
+      "quotes": [
+        {
+          "text": "The governing equations are the incompressible",
+          "page": 12,
+          "location": "Sect. IV (WMLES in VFS-Wind)",
+          "supports": "compressibility low for N582-D02, N582-K02, N582-T05"
+        }
+      ],
+      "check": null
+    },
+    "N592": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The wall-model test (a priori, channel DNS at Re_tau = 180) uses snapshots from a pseudo-spectral solver for incompressible Navier-Stokes; no roughness, heat transfer or non-Newtonian effects, no Mach number. The non-wall test cases are the 1-D Kuramoto-Sivashinsky equation (not a fluid-flow solver; no flow regime stated) and 2-D Kolmogorov flow governed by the incompressible Navier-Stokes equations.",
+      "quotes": [
+        {
+          "text": "The numerical simulation were performed using the SIMSON flow software, a pseudo-spectral solver for incompressible Navier-Stokes equations",
+          "page": 13,
+          "location": "Sect. 4.3",
+          "supports": "compressibility low, N592-D01"
+        },
+        {
+          "text": "The Kolmogorov flow describes the motion of an incompressible fluid in a two-dimensional periodic domain, driven by a sinusoidal forcing.",
+          "page": 10,
+          "location": "Sect. 4.2",
+          "supports": "compressibility low, Kolmogorov part of N592-V01"
+        }
+      ],
+      "check": null
+    },
+    "N596": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Cold (non-reacting) air flow in a nonpremixed industrial gas burner, solved with the pressure-based incompressible RANS equations in FLUENT; combustion is not modelled. No wall roughness, buoyancy or variable properties are described. No Mach number is given.",
+      "quotes": [
+        {
+          "text": "The code is used to solve the pressure-based incompressible RANS equations.",
+          "page": 7,
+          "location": "Sec. 4 numerical method",
+          "supports": "compressibility low for all items"
+        },
+        {
+          "text": "Combustion is not modeled because",
+          "page": 2,
+          "location": "Abstract",
+          "supports": "thermal_coupling none, single-phase air"
+        }
+      ],
+      "check": null
+    },
+    "N611": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The paper solves the incompressible Navier-Stokes equations for channel flow (Re_tau 590-5000), periodic hill (Re_H 10,595 and 19,000) and backward-facing step flow, all on smooth walls with no temperature or second-phase effects described. No Mach number is given.",
+      "quotes": [
+        {
+          "text": "A novel approach to wall modeling for the incompressible Navier-Stokes equations including flows of moderate and large Reynolds numbers",
+          "page": 1,
+          "location": "Abstract",
+          "supports": "compressibility low, all items"
+        },
+        {
+          "text": "2. Incompressible Navier-Stokes equations",
+          "page": 3,
+          "location": "Section 2",
+          "supports": "compressibility low, all items"
+        }
+      ],
+      "check": null
+    },
+    "N623": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "All items are half-channel flow (periodic, driven by a constant pressure gradient) with a wall-shear-stress boundary condition, run in the LESGO pseudo-spectral code, or networks evaluated on prescribed channel-type inputs. The source describes no roughness, no temperature or buoyancy effect and no second phase. It states neither an incompressible equation set nor a Mach number, so compressibility is not stated.",
+      "quotes": [
+        {
+          "text": "The configuration is the half-channel flow.",
+          "page": 3,
+          "location": "Sec. II.A",
+          "supports": "smooth channel wall, no roughness described"
+        },
+        {
+          "text": "The flow is driven by a constant pressure gradient in the x direction.",
+          "page": 3,
+          "location": "Sec. II.A",
+          "supports": "no buoyancy or temperature; constant-density pressure-driven flow; no Mach number or equation set stated"
+        }
+      ],
+      "check": null
+    },
+    "N626": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The model assumes isothermal incompressible flow obeying the incompressible Navier-Stokes equations, and all considered flows are described as incompressible, although the AVBP solver solves the compressible equations. The cascade case is subsonic with a low freestream Mach number (no value given). No roughness, buoyancy or non-Newtonian fluid is described; all walls are smooth.",
+      "quotes": [
+        {
+          "text": "the flow is isothermal incompressible and obeys the incompressible Navier–Stokes equations without external body force.",
+          "page": 7,
+          "location": "Sec. 3 model assumptions",
+          "supports": "compressibility low, thermal_coupling none, all items"
+        },
+        {
+          "text": "although all the flows considered are incompressible",
+          "page": 9,
+          "location": "Sec. 3.1 scaling",
+          "supports": "compressibility low, all items"
+        },
+        {
+          "text": "The flow is subsonic, with a low freestream Mach number.",
+          "page": 21,
+          "location": "Sec. 4.2.4 cascade",
+          "supports": "compressibility low for N626-cascade and N626-K09; Mach not numerically stated"
+        }
+      ],
+      "check": null
+    },
+    "N632": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.172"
+      },
+      "finding": "JAXA JSM high-lift configuration at free-stream Mach 0.172, Re_c 1.96e6; the source calls the flow regime low Mach, with local peak M of about 0.75 on the slat at high angles of attack. Calculations use charLES (compressible) and Alya (purely incompressible), with only minor differences between them. Smooth walls, no buoyancy or heated-wall effects, single-phase air; no roughness described.",
+      "quotes": [
+        {
+          "text": "The JSM experiment is conducted with a free stream Mach number of 0.172",
+          "page": 4,
+          "location": "Sec. 2 / flow description",
+          "supports": "compressibility low; mach_stated 0.172"
+        },
+        {
+          "text": "overall the ﬂow regime is characterized by low Mach numbers.",
+          "page": 4,
+          "location": "Sec. 2",
+          "supports": "compressibility low (peak M about 0.75 locally on the slat noted)"
+        }
+      ],
+      "check": null
+    },
+    "N635": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Steady incompressible RANS equations for a 2D turbulent channel (Re_H 1e6 to 1e8), an application set of 2D cases, and a 3D double-bent pipe (Re_D 1e5). The wall-function treatment is a law of the wall for a smooth no-slip wall; no roughness, buoyancy, temperature or non-Newtonian fluid is described, and no Mach number is given.",
+      "quotes": [
+        {
+          "text": "The mean fluid velocity vi and pressure p follow from the steady incompressible RANS",
+          "page": 9,
+          "location": "Sec. 7 governing equations",
+          "supports": "compressibility low, all items"
+        },
+        {
+          "text": "We start with a brief discussion of a simple –yet commonly used– incompressible primal flow description.",
+          "page": 3,
+          "location": "Sec. 2",
+          "supports": "compressibility low"
+        }
+      ],
+      "check": null
+    },
+    "N647": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.09"
+      },
+      "finding": "The wall-resolved LES reference is run with a compressible Navier-Stokes DG code (implicit LES) at a freestream Mach number of 0.09, Re = 1.64e6, alpha = 12 deg, on a smooth NACA4412 section; no roughness, buoyancy or variable-property effects are described. All items use this wall-resolved LES field a priori or its comparison data.",
+      "quotes": [
+        {
+          "text": "solves the compressible Navier‐Stokes equations using an Implicit LES (ILES) approach",
+          "page": 5,
+          "location": "Section 2, p. 5",
+          "supports": "compressible equations solved; low-Mach by next quote"
+        },
+        {
+          "text": "No turbulence is introduced at the inlet and the flow conditions are chosen such that the freestream Mach number equals 0.09.",
+          "page": 5,
+          "location": "Section 2, p. 5",
+          "supports": "low compressibility, Mach 0.09, all items"
+        }
+      ],
+      "check": null
+    },
+    "N653": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The source describes air at 27 C, density 1.18 kg/m3 and 20 m/s in a subsonic open-circuit wind tunnel, solved with a cumulant lattice Boltzmann LES. It states no Mach number and does not say that the equations are incompressible, so compressibility is recorded as not stated. No roughness (the paper notes surface roughness only as an experimental imperfection), buoyancy or non-Newtonian fluid is described.",
+      "quotes": [
+        {
+          "text": "the fluid is defined as air with the properties identical to those in the experimental analysis, i.e. the temperature is set to 27°C, the density 1.18 kg/m3 and velocity 20 m/s.",
+          "page": 13,
+          "location": "Section 2.2.2, p. 13",
+          "supports": "fluid air, constant stated properties, 20 m/s, no Mach number given"
+        },
+        {
+          "text": "subsonic wind tunnel with a test section of 305mm by 305mm and 600mm long.",
+          "page": 4,
+          "location": "Section 2.1, p. 4",
+          "supports": "tunnel described as subsonic"
+        }
+      ],
+      "check": null
+    },
+    "N655": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.2"
+      },
+      "finding": "The DNS solve the incompressible Navier-Stokes equations in a smooth channel (no-slip walls). The wall-modelled LES use CharLES (compressible code) at a bulk Mach number of 0.2 chosen to match the incompressible DNS, and LESGO (incompressible) for the integral wall model. No roughness, buoyancy or non-Newtonian fluid.",
+      "quotes": [
+        {
+          "text": "discretising the incompressible Navier-Stokes equations",
+          "page": 6,
+          "location": "Section 2, p. 6",
+          "supports": "DNS incompressible"
+        },
+        {
+          "text": "The bulk Mach number is fixed at 0.2 for comparison with the incompressible DNS solution.",
+          "page": 28,
+          "location": "Section 4.2, p. 28",
+          "supports": "low Mach, CharLES runs"
+        },
+        {
+          "text": "The code solves the incompressible filtered Navier-Stokes equations in half channel",
+          "page": 28,
+          "location": "Section 4.2, p. 28",
+          "supports": "LESGO incompressible"
+        }
+      ],
+      "check": null
+    },
+    "N657": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Steady RANS of forced convection past a smooth sphere (no-slip walls with zero roughness) in air, with constant air properties and heat as a passive scalar; buoyancy and radiation are not included. No Mach number is given and the text does not call the flow incompressible (it states constant air properties and no density dependence on temperature), so compressibility is recorded as not stated.",
+      "quotes": [
+        {
+          "text": "no-slip walls with zero roughness since surface roughness values cannot be specified if LRNM is used (Fluent 12, 2009).",
+          "page": 5,
+          "location": "Section 2.1, p. 5",
+          "supports": "smooth surface, all items"
+        },
+        {
+          "text": "Heat was taken as the (passive) scalar to study convective transport, implying, amongst others, no dependency of air density on the temperature.",
+          "page": 5,
+          "location": "Section 2.1, p. 5",
+          "supports": "passive scalar, constant density, no thermal coupling"
+        },
+        {
+          "text": "Buoyancy effects were not taken into account in the simulations since the focus of this paper was on passive scalar transport.",
+          "page": 6,
+          "location": "Section 2.2, p. 6",
+          "supports": "no buoyancy"
+        }
+      ],
+      "check": null
+    },
+    "N672": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Incompressible LES of plane turbulent channel flow between smooth no-slip or Neumann-stress walls, with constant density and viscosity; no Mach number is needed. Roughness appears only in the literature review. No buoyancy or non-Newtonian fluid.",
+      "quotes": [
+        {
+          "text": "The incompressible LES equations are obtained by applying a spatial filter to the Navier–Stokes equations,",
+          "page": 5,
+          "location": "Section 3.1, p. 5",
+          "supports": "incompressible, all items"
+        }
+      ],
+      "check": null
+    },
+    "N674": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Hybrid RANS-LES (IDDES with an AKN k-epsilon model) in a fractional-step finite-volume code solving divergence-free momentum equations with density and kinematic viscosity as constants, for smooth-wall diffuser, hump, flat-plate and channel cases. No Mach number is stated; no roughness, buoyancy or non-Newtonian fluid is described. All items share this regime.",
+      "quotes": [
+        {
+          "text": "The solution procedure is based on fractional step.",
+          "page": 5,
+          "location": "Section 2, p. 5",
+          "supports": "fractional-step incompressible solver"
+        },
+        {
+          "text": "where v̄i , ρ, p, ν, νt denote velocity vector, , density, pressure, kinematic viscosity and kinematic, turbulent (i.e. modeled) viscosity, respectively.",
+          "page": 5,
+          "location": "Section 2.1, p. 5",
+          "supports": "constant density and viscosity; continuity equation (2) is the divergence-free form (extraction garbled)"
+        }
+      ],
+      "check": null
+    },
+    "N680": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The wall models are implemented in a compressible LES code but only the incompressible formulation is implemented and used; the validation cases are canonical incompressible channel, pipe and boundary-layer flows with no roughness, buoyancy or variable properties mentioned. No Mach number is stated.",
+      "quotes": [
+        {
+          "text": "A note-worthy caveat in this study is that currently only the incompressible formulation of both these wall models have been implemented.",
+          "page": 4,
+          "location": "Introduction, last paragraphs",
+          "supports": "compressibility low (incompressible formulation) for all items"
+        },
+        {
+          "text": "The reference used for the a posteriori test is the incompressible channel DNS of Hoyas and",
+          "page": 21,
+          "location": "Sec. 5.1",
+          "supports": "incompressible channel case for N680-D02 and N680-K05"
+        }
+      ],
+      "check": null
+    },
+    "N707": {
+      "default": {
+        "surface": "rough",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "All items are steady RANS (Fluent) calculations of water in drip-irrigation laterals, described as Newtonian, incompressible, steady and non-gravity, at Reynolds numbers 4728-22457; no Mach number is given and no heating (water temperature 18-22 C in the experiment). A pipe wall roughness height of 0.005 mm is prescribed, so surface is rough under the rule.",
+      "quotes": [
+        {
+          "text": "In the Newtonian, incompressible and steady-state flow condition, density of fluid is the constant",
+          "page": 4,
+          "location": "Sec. 2.2.2",
+          "supports": "compressibility low (incompressible, constant density) for all items"
+        },
+        {
+          "text": "Surface roughness roughness height height of of the the internal internal pi",
+          "page": 5,
+          "location": "Sec. 2.2.3 (right column; the extraction duplicates and interleaves the two columns; the rendered page reads: Surface roughness height of the internal pipe wall was accepted as 0.005 mm for PE pipes)",
+          "supports": "surface rough (prescribed wall roughness height 0.005 mm) for all items"
+        },
+        {
+          "text": "Range of Reynolds number Q (L h-1) Re 0.483 236.4-873.4 6079-22457 42 0.545 183.5-855.5 4728-22050 46",
+          "page": 4,
+          "location": "Table 2 (rendered page: Reynolds number range 6079-22457 for type A, 4728-22050 for type B)",
+          "supports": "Reynolds numbers of the items"
+        }
+      ],
+      "check": null
+    },
+    "N709": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The method solves the filtered Brinkman-Navier-Stokes equations written for incompressible flow (divergence-free velocity) of water-like viscosity; the validation is an isothermal rotor at tip-chord Reynolds number 38 882 with free-stream 0.56 m/s. No Mach number, roughness, buoyancy or non-Newtonian fluid is stated.",
+      "quotes": [
+        {
+          "text": "Incompressible flows in heterogeneous domains consisting of both fully fluid regions and porous media can be described using the filtered Brinkman–Navier–Stokes equations (FBNSE)",
+          "page": 2,
+          "location": "Sec. 2.1",
+          "supports": "compressibility low (incompressible equations) for N709-D01"
+        },
+        {
+          "text": "The free-stream axial velocity is set to U∞ := 0.56 m s−1 . Following Definition 2, the characteristic Reynolds number of the present system is Re := 38 882 for kinematic viscosity ν := 1.0035 × 10−6 m2 s−1 .",
+          "page": 9,
+          "location": "Sec. 4 Validation",
+          "supports": "flow conditions"
+        }
+      ],
+      "check": null
+    },
+    "N719": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "All items use channel DNS at Re_tau about 180 (and 395 for opposition control) with constant mass flux and a smooth, no-roughness wall; the source gives no governing equations beyond density and kinematic viscosity and states neither incompressibility nor a Mach number, so compressibility is not stated. No buoyancy, variable properties or non-Newtonian fluid is mentioned; the opposition-control runs replace the no-transpiration wall condition with blowing/suction.",
+      "quotes": [
+        {
+          "text": "The flow is driven by a constant mass flux imposed in the streamwise direction. The Reynolds number, based on the friction velocity 𝑢 𝜏 , is Re 𝜏 = 𝑢 𝜏 ℎ/𝜈 ≈ 180.",
+          "page": 7,
+          "location": "Sec. 3 (data)",
+          "supports": "flow conditions for N719-D01 and N719-C01; no Mach number or incompressibility statement"
+        },
+        {
+          "text": "Two Reynolds numbers are considered, Re 𝜏 = 180 and 395.",
+          "page": 18,
+          "location": "Sec. 3.3",
+          "supports": "flow conditions for N719-V01"
+        }
+      ],
+      "check": null
+    },
+    "P01": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "All cases are single-phase, smooth-wall, RANS calculations in OpenFOAM with constant thermophysical properties; the channel benchmark is stated as incompressible flow, the heated cases use temperature as a passive scalar (constant density, buoyancy neglected) and the rod bundle is water with a heat sink and constant properties. No Mach number, roughness or non-Newtonian fluid is stated.",
+      "quotes": [
+        {
+          "text": "The first benchmark case used to evaluate the accuracy of the set of boundary conditions is the simulation of incompressible flow between parallel plates",
+          "page": 7,
+          "location": "Sec. 4.1",
+          "supports": "compressibility low for P01-channel-U and P01-K01"
+        },
+        {
+          "text": "constant thermophysical properties (density, viscosity, thermal conductivity, and specific heat) were considered.",
+          "page": 6,
+          "location": "Sec. 3",
+          "supports": "no variable properties in any case (thermal coupling none)"
+        },
+        {
+          "text": "constant density and neglecting buoyancy effects.",
+          "page": 12,
+          "location": "Sec. 4.3",
+          "supports": "no buoyancy, constant density for the step (P01-step, P01-K03, P01-T01)"
+        },
+        {
+          "text": "the temperature was considered as a passive scalar,",
+          "page": 10,
+          "location": "Sec. 4.2",
+          "supports": "passive temperature for the heated channel P01-channel-T"
+        }
+      ],
+      "check": null
+    },
+    "P02": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "All items use one Fluent RANS model of a counterflow double-pipe water heat exchanger (inlet 0.5 m/s, 363.15 K hot and 288.15 K cold streams) in which all properties except heat capacity depend on temperature, so thermal coupling is coupled. The source gives no incompressible statement or Mach number (compressibility not stated), and describes no wall roughness or non-Newtonian fluid.",
+      "quotes": [
+        {
+          "text": "all properties except thermal capacity (which is fairly constant in the range of study) are dependent on temperature by using an interpolating polynomial.",
+          "page": 2,
+          "location": "Sec. 2.1",
+          "supports": "thermal_coupling coupled (temperature-dependent properties) for all items"
+        },
+        {
+          "text": "Inlet velocity 0.5 m/s Inlet temperature 363.15 K Inlet velocity 0.5 m/s Inlet temperature 288.15 K",
+          "page": 2,
+          "location": "Table 2",
+          "supports": "operating conditions, water in both pipes; no Mach number given"
+        }
+      ],
+      "check": null
+    },
+    "P03": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Steady and pulsatile turbulent pipe flow (Re=14500, Re_tau=900) in a 0.1 m pipe, simulated with ANSYS CFX RANS and compared with Sundstrom experiment. The source gives neither the incompressibility of the equations nor a Mach number, and describes no wall roughness (smooth wall referenced), temperature effect or non-Newtonian fluid.",
+      "quotes": [
+        {
+          "text": "The mean Reynolds number Re=Ub D/υ was 14500 within 0.4% during the experiment, where D is the pipe diameter.",
+          "page": 2,
+          "location": "Method",
+          "supports": "flow conditions for P03-D01 and P03-D02; no Mach number or compressibility statement"
+        }
+      ],
+      "check": null
+    },
+    "P04": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.2"
+      },
+      "finding": "The code solves fully compressible Navier-Stokes (RANS) equations. The 2DZP flat plate is run at M = 0.2, Re = 5e6 (low Mach). The step and valve flow-bench cases give no Mach number in the text (nitrogen, prescribed mass flow, no heat flux); compressibility is recorded as not stated. No roughness, buoyancy or non-Newtonian fluid is described.",
+      "quotes": [
+        {
+          "text": "HINOCA is based on fully compressible Navier-Stokes equations, which are Reynolds-averaged (RANS) or spatially-filtered (LES)",
+          "page": 1,
+          "location": "Abstract",
+          "supports": "governing equations, all items"
+        },
+        {
+          "text": "This case is run at M = 0.2 at a Reynolds number of Re = 5 106.",
+          "page": 4,
+          "location": "Sec. 2.2.3",
+          "supports": "compressibility low, mach 0.2, P04-D01 (both unrotated and rotated)"
+        },
+        {
+          "text": "The operating fluid is nitrogen gas, which flows from the left side of the picture at a mass flow rate of 0.055 kg/s.",
+          "page": 13,
+          "location": "Sec. 3.1",
+          "supports": "P04-D02 valve case: no Mach number stated"
+        }
+      ],
+      "check": null
+    },
+    "P05": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Three-dimensional, incompressible, steady turbulent air flow around an Ahmed body at 40 m/s (Re = 2.6e6) in ANSYS Fluent. No Mach number, roughness, buoyancy or non-Newtonian fluid is described.",
+      "quotes": [
+        {
+          "text": "numerical calculations are carried out for three-dimensional, incompressible, steady turbulent air flow; using a commercial solver, ANSYS Fluent, version 19.2.",
+          "page": 3,
+          "location": "Sec. 2.2",
+          "supports": "compressibility low, all items"
+        },
+        {
+          "text": "Solutions are obtained for a free stream velocity of 40 m/s at the inlet, which corresponds to a Reynolds number of Re = 2.6x106, based on length of Ahmed body, L.",
+          "page": 3,
+          "location": "Sec. 2.2",
+          "supports": "flow conditions for P05-D01 and P05-V01"
+        }
+      ],
+      "check": null
+    },
+    "P06": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Lattice Boltzmann solver (weakly compressible Navier-Stokes in the hydrodynamic limit) with SA model and wall function. Channel cases (Re_tau 2000-20000) are run with an acoustic time step set from a prescribed small Mach number, no value printed; the flat plate states free-stream M = 0.1 and U = 75 m/s. Air-like constant viscosity (1.5e-5 m2/s), smooth walls, no roughness, buoyancy or non-Newtonian fluid described. The a-priori item P06-V01 uses channel wall-function profiles with no flow solution.",
+      "quotes": [
+        {
+          "text": "the macroscopic equations solved by LBM in the hydrodynamic limit are the weakly compressible Navier-Stokes equations",
+          "page": 6,
+          "location": "Sec. 2 LBM description",
+          "supports": "governing equations, all items"
+        },
+        {
+          "text": "a reference velocity, a prescribed –small– Mach number and the spatial grid resolution",
+          "page": 22,
+          "location": "Sec. 4.1.1 channel test case",
+          "supports": "low Mach for channel items (P06-D01, K01, K02, T01, V01); no number printed"
+        },
+        {
+          "text": "and free-stream Mach number M = 0.1. An acoustic time step is prescribed for the LBM simulation.",
+          "page": 38,
+          "location": "Sec. 4.2.1 flat plate",
+          "supports": "low, M=0.1 for P06-D02, K03, T02"
+        }
+      ],
+      "check": null
+    },
+    "P07": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Incompressible Navier-Stokes equations, dimensionless, for plane turbulent channel flow at Re_tau = 4200 and 20000 (LES plus embedded QDNS blocks). No Mach number, roughness, buoyancy or non-Newtonian fluid is described.",
+      "quotes": [
+        {
+          "text": "Within these domains the incompressible Navier-Stokes equations are solved on stretched (in z ) grids",
+          "page": 6,
+          "location": "Sec. 2.1",
+          "supports": "compressibility low, all items"
+        }
+      ],
+      "check": null
+    },
+    "P08": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Wall-resolved LES of shallow-water Langmuir turbulence with continuity (incompressibility) and Craik-Leibovich equations for water, neutral stratification (buoyancy ignored), no-slip smooth bottom, flat surface with no penetration and wind stress; waves enter only as a Stokes-drift vortex force. No Mach number, roughness or non-Newtonian fluid. All items (database cases 1-9 and the model tests on cases 2-6) share this set-up.",
+      "quotes": [
+        {
+          "text": "is obtained by solving the following continuity and CL equations: ∂ui = 0,",
+          "page": 4,
+          "location": "Sec. 2.1, Eq. (2.1)",
+          "supports": "incompressible continuity equation, all items"
+        },
+        {
+          "text": "The present study focuses on the neutral stratification condition, i.e. no stratification in the flow, and, thus, the effect of the buoyancy force is ignored.",
+          "page": 4,
+          "location": "Sec. 2.1",
+          "supports": "thermal_coupling none"
+        },
+        {
+          "text": "The boundary conditions at the water surface y/h = 2 include no penetration, a constant streamwise wind shear stress τw and a zero spanwise wind shear stress.",
+          "page": 4,
+          "location": "Sec. 2.1",
+          "supports": "flat no-penetration surface, no free-surface deformation modelled"
+        }
+      ],
+      "check": null
+    },
+    "P11": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The source filters the Navier-Stokes equations of a fluid with constant density and constant viscosity (incompressible, isothermal); no roughness, Mach number, buoyancy or other fluid is mentioned. Test cases are a Re_tau=1000 channel (a priori) and the Re_H=10595 periodic hill, both with no-slip smooth walls.",
+      "quotes": [
+        {
+          "text": "The equations governing the volume-filtered flow of a fluid with constant density, ρ f , and constant dynamic viscosity, μ f , are obtained by applying the volume-filtering",
+          "page": 4,
+          "location": "Sec. 2, before Eq. (2.4)",
+          "supports": "compressibility low (constant-density Navier-Stokes, no Mach number stated); thermal none; fluid newtonian; all items"
+        }
+      ],
+      "check": null
+    },
+    "P12": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.189"
+      },
+      "finding": "Juncture Flow cases (D01, K01) are run with the compressible-LES solver charLES at freestream Mach 0.189 (<=0.3), adiabatic smooth aircraft walls, no buoyancy, Newtonian air. The channel at Re_tau=4200 (V01) is run with the same compressible-equation code and a finite-difference comparator; no Mach number or equations for those channel runs is given, so compressibility is not stated. V02 is an analytic formula evaluation with no flow.",
+      "quotes": [
+        {
+          "text": "The freestream Mach number is Ma = 0.189, the freestream temperature is 𝑇 = 288.84 K, and the dynamic pressure is 2476 Pa.",
+          "page": 5,
+          "location": "Sec. II.A",
+          "supports": "compressibility low, mach 0.189, items D01 and K01"
+        },
+        {
+          "text": "The code integrates the compressible LES equations using a kinetic-energy conserving, second-order accurate, finite",
+          "page": 6,
+          "location": "Sec. II.B",
+          "supports": "solver equations compressible; no Mach given for channel V01"
+        },
+        {
+          "text": "The walls are assumed adiabatic and the wall stress is obtained by an algebraic equilibrium wall model derived from the",
+          "page": 6,
+          "location": "Sec. II.B",
+          "supports": "thermal none (adiabatic walls)"
+        }
+      ],
+      "check": null
+    },
+    "P14": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The volume-filtered governing equations are written with divergence-free velocity and constant density and viscosity (rho_f, mu_f), i.e. incompressible Navier-Stokes; no Mach number, roughness, buoyancy or non-Newtonian fluid appears. Cases are a Re_tau=1000 channel (Re_b=40000) and the Re_H=10595 periodic hill, no-slip smooth walls for the unfiltered velocity.",
+      "quotes": [
+        {
+          "text": "Therefore, the governing equations for the volume-filtered velocity and pressure in the case of fixed walls are ∂uϵ,i = 0, ∂xi",
+          "page": 8,
+          "location": "Sec. II, Eq. (13)",
+          "supports": "compressibility low (divergence-free velocity, constant rho_f), all items"
+        },
+        {
+          "text": "VF-WMLES of a turbulent channel flow with a friction velocity Reynolds number Reτ = 1000 are performed, which is the same physical configuration as described in Graham",
+          "page": 17,
+          "location": "Sec. IV.A",
+          "supports": "channel case Re_tau=1000, smooth no-slip wall, no thermal effects"
+        }
+      ],
+      "check": null
+    },
+    "P15": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Incompressible, constant-density filtered Navier-Stokes LES of plane channel flow at Re_tau=590 with no-slip smooth walls; no roughness, temperature effect or other fluid.",
+      "quotes": [
+        {
+          "text": "The governing equations of LES for an incompressible plane channel flow are the filtered Navier-Stokes and continuity equations for constant density",
+          "page": 3,
+          "location": "Sec. 2",
+          "supports": "compressibility low; thermal none; P15-D01"
+        }
+      ],
+      "check": null
+    },
+    "P16": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The DG solver integrates the filtered compressible Navier-Stokes equations, but no Mach number (or statement of low-Mach or incompressible operation) is given for the channel or periodic-hill cases, so compressibility is not stated under the rule. Walls are smooth no-slip/slip-wall boundaries with no roughness, no buoyancy or temperature coupling mentioned, single-phase Newtonian fluid.",
+      "quotes": [
+        {
+          "text": "The governing equations are the filtered compressible Navier-Stokes equations in conservative form.",
+          "page": 11,
+          "location": "Sec. 6.1",
+          "supports": "compressibility not stated (compressible equations, no Mach number); all items"
+        },
+        {
+          "text": "The governing equations in this work are the compressible Navier-Stokes equations in their conservative form written as",
+          "page": 5,
+          "location": "Sec. 2",
+          "supports": "same"
+        }
+      ],
+      "check": null
+    },
+    "P17": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Both configurations (C0 and the 35-degree swept C35) are incompressible zero-pressure-gradient boundary layers on a flat smooth plate subjected to adverse then favourable pressure gradient; the compressible solver charLES is used but the source states the flow is incompressible, with adiabatic walls and negligible energy-equation role. No Mach number, roughness, buoyancy or other fluid.",
+      "quotes": [
+        {
+          "text": "In both configurations, an incompressible ZPG turbulent boundary layer on a flat plate is subjected to an APG followed by an FPG.",
+          "page": 3,
+          "location": "Sec. I",
+          "supports": "compressibility low; both C0 and C35"
+        },
+        {
+          "text": "The flow is incompressible in the present study and the role of the energy equation is insignificant.",
+          "page": 24,
+          "location": "Appendix C",
+          "supports": "compressibility low, thermal none"
+        }
+      ],
+      "check": null
+    },
+    "P18": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Wall-modelled LES of fully developed turbulent flow in a smooth square duct, solved with the filtered incompressible Navier-Stokes equations at constant mass flow; bulk Reynolds numbers 4e4 to 1.024e8. No roughness, buoyancy, variable properties or non-Newtonian fluid is described.",
+      "quotes": [
+        {
+          "text": "We solve the filtered incompressible Navier–Stokes equations:",
+          "page": 3,
+          "location": "Sec. 2, Numerical method",
+          "supports": "compressibility low (incompressible equations), P18-D01"
+        }
+      ],
+      "check": null
+    },
+    "P19": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Smooth-wall, isothermal (adiabatic walls) single-phase Newtonian flows solved with the charLES solver, which integrates the compressible LES equations. The training building-block flows are stated to be incompressible. A Mach number is given only for the NASA CRM High-lift case (0.20); for the canonical validation cases and the Juncture Flow case no Mach number is given, so compressibility is recorded as not stated. No roughness, buoyancy or variable-property effect is described, and the paper lists compressibility and heat transfer as outside the building blocks.",
+      "quotes": [
+        {
+          "text": "All the cases entail an incompressible flow confined between two parallel walls",
+          "page": 5,
+          "location": "Sec. 2.3",
+          "supports": "compressibility low for P19-inputs (building-block training flows)"
+        },
+        {
+          "text": "The code integrates the compressible LES equations using a kinetic-energy-conserving, second-order-accurate,",
+          "page": 14,
+          "location": "Sec. 3.1",
+          "supports": "solver equations; no Mach number given for the canonical validation cases"
+        },
+        {
+          "text": "The freestream Mach number is 0.20.",
+          "page": 22,
+          "location": "Sec. 4.7",
+          "supports": "P19-CRM, P19-K07, P19-T07: low, Mach 0.20"
+        },
+        {
+          "text": "The walls are assumed adiabatic",
+          "page": 15,
+          "location": "Sec. 3.2",
+          "supports": "thermal_coupling none"
+        }
+      ],
+      "check": null
+    },
+    "P20": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Half-channel flow over a smooth wall at constant pressure gradient, simulated with the pseudo-spectral code LESGO with a wall-shear-stress boundary condition. The source does not state the governing equations as incompressible or give a Mach number, and describes no roughness, buoyancy, temperature or non-Newtonian effect; compressibility is therefore recorded as not stated.",
+      "quotes": [
+        {
+          "text": "A wall-shear stress boundary condition is imposed at z = 0 (wall), and a symmetric condition is imposed at z = δ (at",
+          "page": 3,
+          "location": "Sec. II.A, flow configuration",
+          "supports": "smooth channel wall with wall-shear-stress condition; all items; no Mach number or incompressibility statement found"
+        }
+      ],
+      "check": null
+    },
+    "P21": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "below 0.3"
+      },
+      "finding": "Smooth-wall flows only. The database mixes six incompressible isothermal flows (channels CF1/CF2, N65, 3DD, BFS, APG) with five compressible anisothermal ones: cooled/heated channels (Mach below 0.3 stated for SC1/SC2, strong temperature-velocity coupling for SC2/SC3 with temperature-dependent viscosity) and the cooled transonic-outlet turbine vane MUR235 (outlet Mach 0.927). The incompressible WMLES check (Re_tau 950) is isothermal. Items are classified per case; the default is the low-Mach cooled channel.",
+      "quotes": [
+        {
+          "text": "uses a dataset of 12 high-fidelity numerical simulations, 6 incompressible isothermal simulations, and",
+          "page": 3,
+          "location": "Sec. 2, database",
+          "supports": "P21-D04, T01, T02, T04-T08: low, none"
+        },
+        {
+          "text": "The Mach number of the simulations is low (below 0.3).",
+          "page": 34,
+          "location": "Appendix A (SC1, SC2, SC3)",
+          "supports": "P21-D01, D02, K09, K10, T10, T11, C01: low, mach below 0.3"
+        },
+        {
+          "text": "the temperature variations generate a strong coupling between the fields of temperature and velocity",
+          "page": 34,
+          "location": "Appendix A",
+          "supports": "thermal_coupling coupled for the cooled channels"
+        },
+        {
+          "text": "the flow SC3 is similar to the flow SC2 but uses air as working fluid",
+          "page": 22,
+          "location": "Sec. 6.2",
+          "supports": "SC3 (K10, T10, T11) same regime as SC2"
+        },
+        {
+          "text": "Outlet Mach number Maoutlet",
+          "page": 25,
+          "location": "Table 5, MUR235 operating point; the value in the table is 0.927 (read from the extracted value row)",
+          "supports": "P21-D03, D05, K11, T03, T09, T12, T13: compressible"
+        },
+        {
+          "text": "there is a series of shocks quasi-normal to the blade on the suction",
+          "page": 26,
+          "location": "Sec. 7, MUR235",
+          "supports": "compressible, vane cases"
+        },
+        {
+          "text": "a cooled high-pressure turbine blade",
+          "page": 3,
+          "location": "Sec. 2, L89 description",
+          "supports": "wall cooled, variable properties"
+        },
+        {
+          "text": "The simulation of an incompressible fully developed turbulent channel flow at friction Reynolds number Re τ = 950 is performed",
+          "page": 38,
+          "location": "Appendix B",
+          "supports": "P21-V01, K12, T14: low, none"
+        }
+      ],
+      "check": null
+    },
+    "P22": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Flow over smooth periodic hills simulated by wall-resolved LES using the spatially filtered incompressible Navier-Stokes equations at Re_h 5600, 10595 and 19000. No roughness, heat transfer, buoyancy or non-Newtonian fluid is described.",
+      "quotes": [
+        {
+          "text": "the three-dimensional unsteady spatially filtered incompressible Navier-Stokes equations in",
+          "page": 6,
+          "location": "Sec. II, WRLES data generation",
+          "supports": "compressibility low for all items (incompressible equations)"
+        }
+      ],
+      "check": null
+    },
+    "P23": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Smooth-wall single-phase flows. The solver integrates the compressible LES equations with adiabatic walls. Stated conditions: pipe incompressible; Gaussian bump Mach 0.17; CRM-HL freestream Mach 0.2; Juncture Flow Mach 0.189. No Mach number is given for the channel cases, so compressibility is not stated there. The paper lists compressibility, shocks and wall roughness as future extensions, not in the model.",
+      "quotes": [
+        {
+          "text": "The configuration of the BBFs entails an incompressible turbulent flow confined",
+          "page": 3,
+          "location": "Methods/Results, building block flows",
+          "supports": "training flows incompressible"
+        },
+        {
+          "text": "the flow is incompressible",
+          "page": 5,
+          "location": "Turbulent pipe flow",
+          "supports": "P23-pipe, P23-T02: low"
+        },
+        {
+          "text": "a Mach number of 0.17, based on the freestream quantities",
+          "page": 6,
+          "location": "Separated flow over a bump",
+          "supports": "P23-bump, P23-V01, P23-T03: low, 0.17"
+        },
+        {
+          "text": "the freestream Mach number is 0.2.",
+          "page": 7,
+          "location": "CRM-HL",
+          "supports": "P23-CRM, P23-T04: low, 0.2"
+        },
+        {
+          "text": "the free-stream Mach number is M = 0.189",
+          "page": 8,
+          "location": "Juncture Flow",
+          "supports": "P23-juncture, P23-T05: low, 0.189"
+        },
+        {
+          "text": "The code integrates the compressible LES equations",
+          "page": 10,
+          "location": "Methods, flow solver",
+          "supports": "solver equations; no Mach number is given for the channel (P23-channel, P23-T01)"
+        },
+        {
+          "text": "The walls are assumed adiabatic",
+          "page": 11,
+          "location": "Methods, traditional SGS/wall models",
+          "supports": "thermal_coupling none"
+        }
+      ],
+      "check": null
+    },
+    "P24": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The source does not state a Mach number or call the flow incompressible; it solves the lattice Boltzmann equation, noting that a Chapman-Enskog analysis yields the Navier-Stokes equations. No roughness, buoyancy, temperature dependence or non-Newtonian fluid is described for the channel flow, so compressibility is recorded as not stated.",
+      "quotes": [
+        {
+          "text": "Through the application of a Chapman-Enskog analysis to the Boltzmann equation, it is possible to derive the Navier-Stokes equations.",
+          "page": 4,
+          "location": "Introduction",
+          "supports": "compressibility not stated: governing equations are LBM; no Mach number given, all items"
+        }
+      ],
+      "check": null
+    },
+    "P25": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "All cases are solved with the spatially filtered incompressible Navier-Stokes equations (VFS-Wind), for periodic hills, 2D/3D wavy walls and a Gaussian bump; no roughness elements, compressibility, buoyancy or non-Newtonian fluid is described.",
+      "quotes": [
+        {
+          "text": "The governing equations are the spatially filtered incompressible Navier-Stokes equations in non-orthogonal, generalized curvilinear coordinates",
+          "page": 7,
+          "location": "Sec. 3.1 WMLES environment",
+          "supports": "low compressibility, all items"
+        }
+      ],
+      "check": null
+    },
+    "P26": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Channel and zero-pressure-gradient boundary-layer cases are solved with the filtered incompressible Navier-Stokes equations; no Mach number, roughness, buoyancy or non-Newtonian fluid enters the tests (roughness, stratification and compressible flows are listed as future extensions).",
+      "quotes": [
+        {
+          "text": "We solve the filtered incompressible Navier-Stokes equations in a channel",
+          "page": 14,
+          "location": "Methods, Details of the flow simulation",
+          "supports": "low compressibility, all items"
+        },
+        {
+          "text": "extended to complex geometries and different flow configurations, such as flow over rough surfaces and stratified and compressible boundary layers.",
+          "page": 4,
+          "location": "Introduction",
+          "supports": "rough/stratified/compressible flows are not tested; future work"
+        }
+      ],
+      "check": null
+    },
+    "P27": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The source writes the compressible equations but states that the calculation cases are treated as incompressible. Steady in-cylinder flow of a four-valve engine and a smooth straight pipe are computed; no Mach number, roughness, buoyancy or non-Newtonian fluid is described.",
+      "quotes": [
+        {
+          "text": "して解 く.こ れ らの式は圧縮性 を考慮 しているが,後",
+          "page": 3,
+          "location": "Section 2.4, governing equations (left column)",
+          "supports": "equations written with compressibility"
+        },
+        {
+          "text": "述の計算事例では非圧縮性 とした。",
+          "page": 3,
+          "location": "Section 2.4, governing equations (continuation, left column)",
+          "supports": "low compressibility, both designs: the calculation cases are treated as incompressible"
+        }
+      ],
+      "check": null
+    },
+    "P29": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The method is a weakly compressible SPH scheme for RANS with a stiff isothermal equation of state chosen to keep density variation small; no Mach number is printed. Cases are channel flows with wall functions; no roughness, buoyancy, temperature dependence or non-Newtonian fluid is described. Compressibility is recorded as low on the basis of the small-density-variation, incompressible-limit formulation, with no Mach number stated.",
+      "quotes": [
+        {
+          "text": "To ensure small density variation, a stiff isothermal equation of state",
+          "page": 6,
+          "location": "Sec. 2.1 governing equations",
+          "supports": "low compressibility (weakly compressible, small density variation), all items"
+        },
+        {
+          "text": "Substituting Eq. (4) into Eq. (2) and considering the incompressible condition,",
+          "page": 6,
+          "location": "Sec. 2.1",
+          "supports": "incompressible momentum equation used"
+        }
+      ],
+      "check": null
+    },
+    "P30": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Incompressible Newtonian Navier-Stokes equations for turbulent channel flow (Re_tau 543, 1000, 2000); no Mach number, roughness, buoyancy or non-Newtonian fluid.",
+      "quotes": [
+        {
+          "text": "We consider incompressible, Newtonian flows as governed by the Navier-Stokes equations:",
+          "page": 2,
+          "location": "Section 2",
+          "supports": "low compressibility, newtonian single-phase, all items"
+        }
+      ],
+      "check": null
+    },
+    "P31": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The source solves the spatially filtered incompressible Navier-Stokes equations with a finite-volume LES code for every case (periodic hills, Gaussian bump, channel); no roughness, buoyancy, variable properties or non-Newtonian fluid is described for the tested walls and no Mach number is given.",
+      "quotes": [
+        {
+          "text": "The spatially-filtered incompressible Navier-Stokes equations are solved with second-order accuracy using cell-based, low-dissipative, and energy-conservative spatial discretization",
+          "page": 6,
+          "location": "Sec. III.A.1",
+          "supports": "compressibility low, all items"
+        },
+        {
+          "text": "The simulations are conducted using the aforementioned unstructured-mesh, incompressible, finite-volume flow solver that is coupled with the RL toolbox, smarties [56].",
+          "page": 21,
+          "location": "Sec. IV.A",
+          "supports": "compressibility low for the bump items"
+        }
+      ],
+      "check": null
+    },
+    "P32": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The source states the flow is assumed incompressible with a no-slip, smooth wall; Re = 38,000 on the step height, 2-D steady RANS. No Mach number, buoyancy or non-Newtonian fluid is stated.",
+      "quotes": [
+        {
+          "text": "Aliran diasumsikan incompressible dengan no-slip condition dan smooth wall condition untuk steady state.",
+          "page": 3,
+          "location": "Metodologi",
+          "supports": "compressibility low; surface smooth"
+        }
+      ],
+      "check": null
+    },
+    "P33": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.2"
+      },
+      "finding": "The source treats compressible RANS (S-A) at low Mach number with constant molecular viscosity; the bump-in-channel case has Re = 3e6 and M = 0.2. No roughness, buoyancy or non-Newtonian fluid is described.",
+      "quotes": [
+        {
+          "text": "is solved for the Reynolds number 𝑅𝑒 = 3 × 106 and the Mach number 𝑀 = 0.2.",
+          "page": 8,
+          "location": "Sec. 4.1",
+          "supports": "Mach 0.2, low"
+        },
+        {
+          "text": "molecular viscosity 𝜇 is assumed, which is a good approximation for low Mach number flows considered in this paper.",
+          "page": 3,
+          "location": "Sec. 1.1",
+          "supports": "constant viscosity, low Mach"
+        }
+      ],
+      "check": null
+    },
+    "P34": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "The source describes adiabatic flow simulations of air; the step case has an inlet speed of 44.2 m/s. Neither the governing equations as compressible/incompressible nor a Mach number is stated for the step or cabin cases; no roughness, buoyancy or other fluid is described.",
+      "quotes": [
+        {
+          "text": "The article describes numerical adiabatic flow simulations",
+          "page": 1,
+          "location": "Abstract",
+          "supports": "thermal none (adiabatic)"
+        },
+        {
+          "text": "The inlet speed was 44.2 m/s.",
+          "page": 4,
+          "location": "Sec. 3",
+          "supports": "only speed given for step case, no Mach number"
+        }
+      ],
+      "check": null
+    },
+    "P35": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.1"
+      },
+      "finding": "Lattice Boltzmann channel flow on a uniform grid with a wall-modelled boundary; the source states a free-stream Mach number of 0.1 (low-speed viscous fluid method), smooth Musker wall law, Re_tau 2000, 5200 and 20000, no roughness or temperature effects.",
+      "quotes": [
+        {
+          "text": "ある．チャネル内の一様流マッハ数は𝑀 = 0.1とし，スマゴ",
+          "page": 4,
+          "location": "Sec. 3",
+          "supports": "Mach 0.1, low"
+        },
+        {
+          "text": "ある．LBM は，低速の粘性流体に対する数値計算手法であ",
+          "page": 1,
+          "location": "Introduction",
+          "supports": "low-speed viscous fluid"
+        }
+      ],
+      "check": null
+    },
+    "P36": {
+      "default": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null
+      },
+      "finding": "Incompressible Navier-Stokes equations are solved; chord Reynolds numbers 1e4, 1e5 and 2.1e6, with a smooth airfoil surface (the experimental boundary-layer trips of the A-airfoil are not included in the simulations). No Mach number, buoyancy or other fluid is described.",
+      "quotes": [
+        {
+          "text": "The incompressible Navier–Stokes (N–S) equations in the generalized curvilinear coordinates are",
+          "page": 6,
+          "location": "Sec. 3.1",
+          "supports": "compressibility low, all items"
+        },
+        {
+          "text": "These trips, whose height is smaller than the first wall-adjacent grid spacing, are not included in the our simulations.",
+          "page": 13,
+          "location": "Sec. 4.3",
+          "supports": "no roughness on the simulated A-airfoil"
+        }
+      ],
+      "check": null
+    }
+  }
+}

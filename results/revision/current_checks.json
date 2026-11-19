@@ -2,7 +2,7 @@
   "status": "PASS",
   "edition": "Review with finite-sample source reassessment and edition-specific comparisons",
   "pdf_pages": 15,
-  "pdf_sha256": "144daaf1feec985e3b5876562469ea98e85f2d497326589a647be2e95ef63ff0",
+  "pdf_sha256": "70a989807ee0e01d47dbcf7d45ff466085f98b1a651e92ead383b30c58d5439d",
   "citations_with_support_record": 52,
   "caption_word_counts": [
     121,
@@ -93,30 +93,78 @@
     "memberships": {
       "eligible_reports": 108,
       "boundary_cases": {
-        "estimator not presented as a wall model": 3,
+        "estimator not presented as a wall model": 4,
         "eligibility disputed between the readings on a rule ambiguity": 3,
         "sublayer-resolving near-wall method": 5
       },
       "matched_wall_treatment_contrast": {
-        "strict": [
-          50,
-          47
+        "strict": {
+          "collection": 50,
+          "without_boundary_cases": 47,
+          "within_primary_scope": 45
+        },
+        "broad": {
+          "collection": 58,
+          "without_boundary_cases": 54,
+          "within_primary_scope": 54
+        },
+        "upper": {
+          "collection": 61,
+          "without_boundary_cases": 56,
+          "within_primary_scope": 56
+        }
+      },
+      "denominators": {
+        "collection": 108,
+        "without_boundary_cases": 96,
+        "within_primary_scope": 104
+      },
+      "constitutive_reports": {
+        "collection": 17,
+        "without_boundary_cases": 13,
+        "within_primary_scope": 16
+      },
+      "transfer_tests": {
+        "collection": {
+          "qualified": 9,
+          "partly exposed": 60,
+          "selection unresolved": 41
+        },
+        "without_boundary_cases": {
+          "qualified": 9,
+          "partly exposed": 55,
+          "selection unresolved": 38
+        },
+        "within_primary_scope": {
+          "qualified": 8,
+          "partly exposed": 53,
+          "selection unresolved": 39
+        }
+      },
+      "eligibility_agreement": {
+        "sample": [
+          27,
+          30
         ],
-        "broad": [
-          58,
-          54
-        ],
-        "upper": [
-          61,
-          56
+        "read_twice": [
+          64,
+          74
         ]
       },
-      "constitutive_reports": 17,
-      "transfer_tests": {
-        "qualified": 9,
-        "partly exposed": 60,
-        "selection unresolved": 41
+      "eligible_reports_wholly_outside_primary_scope": [
+        "N054",
+        "N189",
+        "N707",
+        "P02"
+      ],
+      "first_cell_class": {
+        "no stated design reaches the sublayer": 81,
+        "not stated": 8,
+        "both occur": 5,
+        "no design carries a treatment in a running solver": 9,
+        "every design reaches the sublayer": 5
       },
+      "printed_sentences_checked": 26,
       "quotable": {
         "strict": false,
         "broad": true,

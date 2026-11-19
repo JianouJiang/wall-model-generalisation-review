@@ -28,6 +28,7 @@
   "wall_change_contrasts.json",
   "constitutive_facts.json",
   "agreement_v2.json",
+  "regime_facts.json",
   "reader_agreement.json (pairings; its membership statistics are superseded by agreement_v2.json)",
   "table_digits.json"
  ],
@@ -59,6 +60,7 @@
    "complete-system benchmark label: Cohen's kappa 0.15 on the random sample",
    "coupled-LES label: the member count changed by more than the limit on the random sample"
   ],
+  "bases": "each quotable count is given for the collection, without the scope-boundary works and within the primary scope (regime_facts.json); first-cell spacing and regime were read once",
   "record": "agreement_v2.json (decisions), results/revision/derived_memberships.json and results/revision/agreement_check.json"
  }
 }

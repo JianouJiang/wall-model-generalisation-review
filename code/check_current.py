@@ -296,41 +296,61 @@ def check_table_types(comparisons):
     return Counter(row['type_of_test'] for row in comparisons['rows'])
 
 
+SMALL = ('zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen '
+         'eighteen nineteen').split()
+TENS = dict(zip(range(20, 100, 10), 'twenty thirty forty fifty sixty seventy eighty ninety'.split()))
+
+
+def spell(n, capital=False):
+    """Number word as printed at the start of a sentence or below twenty; whole tens are spelled, other numbers stay digits."""
+    word = SMALL[n] if n < 20 else TENS[n] if n in TENS else str(n)
+    return word.capitalize() if capital else word
+
+
 def check_memberships(plain, box):
-    """Tie every count of reports and tests printed in the paper to the derived memberships and the agreement record."""
+    """Tie every count of reports and tests printed in the paper to the derived memberships and the agreement record.
+
+    Each printed sentence is formatted here from the derived values, so a count, its value without boundary cases or its
+    value within the primary scope cannot be changed or removed in the text without failing this check."""
     derived = json.loads((ROOT/'results/revision/derived_memberships.json').read_text())
     agreement = json.loads((ROOT/'data/revision/agreement_v2.json').read_text())
     recomputed = json.loads((ROOT/'results/revision/agreement_check.json').read_text())
     records = json.loads((ROOT/'data/revision/source_dispositions.json').read_text())['records']
+    regime = json.loads((ROOT/'data/revision/regime_facts.json').read_text())
     status = Counter(r['eligibility_status'] for r in records)
-    assert status == {'documented eligible design': 108, 'contested': 2, 'excluded': 5}
     population, decisions, stats = derived['population'], agreement['decisions'], agreement['statistics']
-    assert population['works'] == 115 and population['eligible_works'] == status['documented eligible design']
+    eligible = status['documented eligible design']
+    assert population['works'] == len(records) == 115 and population['eligible_works'] == eligible
     kinds = population['scope_boundary_by_kind']
-    assert len(population['scope_boundary_works']) == sum(kinds.values()) == 11
-    assert [kinds[k] for k in ('sublayer-resolving near-wall method', 'estimator not presented as a wall model',
-                               'eligibility disputed between the readings on a rule ambiguity')] == [5, 3, 3]
-    assert population['eligible_works_without_scope_boundary'] == 108 - 11 == 97
+    boundary_ids = population['scope_boundary_works']
+    assert len(boundary_ids) == sum(kinds.values())
+    order = ('sublayer-resolving near-wall method', 'estimator not presented as a wall model',
+             'eligibility disputed between the readings on a rule ambiguity')
+    assert set(kinds) <= set(order)
+    narrow = population['eligible_works_without_scope_boundary']
+    assert narrow == eligible - len(boundary_ids)
     eligible_ids = {r['study_id'] for r in records if r['eligibility_status'] == 'documented eligible design'}
-    assert set(population['scope_boundary_works']) <= eligible_ids
+    assert set(boundary_ids) <= eligible_ids
 
     # Sample: a random 30 of the 79 works that were not read twice on 19 November, and the two pools.
     sample = agreement['sample']
     assert len(sample['fresh_sample_frame']) == 79 and set(sample['fresh_random_sample']) <= set(sample['fresh_sample_frame'])
     assert len(sample['fresh_random_sample']) == 30 and len(sample['all_works_read_twice']) == 74
     assert agreement['protocol']['rule_file_fixed_at'] < agreement['protocol']['settlement_plan_fixed_at']
+    work = {w['study_id']: w for w in agreement['per_work']}
+    same_disposition = lambda ids: sum(work[i]['first']['disposition'] == work[i]['second']['disposition'] for i in ids)
+    agree_sample, agree_all = same_disposition(sample['fresh_random_sample']), same_disposition(sample['all_works_read_twice'])
 
     # Matched wall-treatment contrast. Only tiers that met the criteria fixed in advance are printed.
     tiers = derived['matched_wall_treatment_change']['tiers']
-    count = {k: (tiers[k]['works'], tiers[k]['works_without_scope_boundary']) for k in ('strict', 'broad', 'upper')}
-    assert count['broad'] == (58, 54) and count['upper'][0] - count['broad'][0] == 3
+    broad, upper = tiers['broad'], tiers['upper']
+    scope = population['primary_scope']
     assert decisions['broad']['quotable'] and decisions['upper']['quotable'] and not decisions['strict']['quotable']
     assert all(recomputed[k]['quotable'] == decisions[k]['quotable'] for k in recomputed if 'quotable' in recomputed[k])
     fresh = stats['fresh_random_sample']
     assert [round(fresh['broad']['kappa'], 2), round(fresh['broad']['kappa_bootstrap_95'][0], 2)] == [0.87, 0.67]
     strict = fresh['strict']
     assert abs(strict['members_second'] - strict['members_first']) > max(1, 0.15 * strict['members_first'])
-    work = {w['study_id']: w for w in agreement['per_work']}
     disputed = sorted(i for i in sample['fresh_random_sample'] if 'broad' in work[i]['disagreements'])
     boundary = {b['study_id']: b for b in agreement['settlement']['scope_boundary']}
     assert len(disputed) == 2 and all(boundary[i]['kind'] == 'sublayer-resolving near-wall method' for i in disputed)
@@ -340,44 +360,109 @@ def check_memberships(plain, box):
 
     # Constitutive constraint and transfer.
     constitutive, pool = derived['constitutive_constraint'], stats['constitutive_pool']['constitutive']
-    assert constitutive['works'] == len(constitutive['members']) == 17 and decisions['constitutive_constraint']['quotable']
+    assert constitutive['works'] == len(constitutive['members']) and decisions['constitutive_constraint']['quotable']
     has_row = stats['transfer_pool']['has_transfer']
     assert [round(pool['kappa'], 2), round(has_row['kappa'], 2)] == [0.67, 0.86]
     assert [round(pool['kappa_bootstrap_95'][0], 2), round(has_row['kappa_bootstrap_95'][0], 2)] == [0.44, 0.61]
-    transfer = derived['transfer']['all_counted_works']
-    assert transfer['total_tests'] == 110 and transfer['total_works'] == 33 and decisions['transfer']['quotable']
-    assert transfer['tests'] == {'qualified': 9, 'partly exposed': 60, 'selection unresolved': 41}
+    both_readings = {i for i in sample['constitutive_pool'] if work[i]['first']['constitutive'] and work[i]['second']['constitutive']}
+    members_outside_boundary = set(constitutive['members']) - set(boundary_ids)
+    assert members_outside_boundary <= both_readings, 'a member outside the boundary cases was found by one reading only'
+    assert len(members_outside_boundary) == constitutive['works_without_scope_boundary']
+    transfer = derived['transfer']
+    whole, without, within = transfer['all_counted_works'], transfer['without_scope_boundary'], transfer['in_primary_scope']
+    assert decisions['transfer']['quotable']
     rows = [r for r in json.loads((ROOT/'data/revision/transfer_exposure.json').read_text())['records'] if r['work_counted']]
-    assert Counter(r['status'] for r in rows) == transfer['tests']
+    assert Counter(r['status'] for r in rows) == whole['tests'] and len(rows) == whole['total_tests']
     assert all(r['frozen_external'] or r['holdout_statement'] for r in rows if r['status'] == 'qualified')
     by_work = Counter(r['study_id'] for r in rows if r['status'] == 'qualified')
     study = next(r for r in records if r['study_id'] == by_work.most_common(1)[0][0])
     bib = (M/'references.bib').read_text()
     entry = bib[bib.index('LozanoDuranBae2023,'):].split('\n@')[0]
-    assert by_work.most_common(1)[0][1] == 6 and study['doi'] in entry
+    assert study['doi'] in entry
+    qualified_outside = transfer['qualified_tests_outside_primary_scope']
+    assert [axes for _, axes in qualified_outside] == ['surface'], qualified_outside
+    assert whole['tests']['qualified'] - within['tests']['qualified'] == len(qualified_outside)
 
-    for phrase in ('Of 108 eligible reports, 58 contain two coupled calculations that differ only in the wall treatment or its implementation',
-                   '(54 of 97 without boundary cases)', 'Three more leave one of those controls unreported',
-                   'Seventeen reports test an assumption shared by a class of wall laws on reference data alone',
-                   '33 reports test a fitted treatment at 110 conditions outside those that determined it',
-                   'Nine tests state that the target was withheld from training and model selection or apply unchanged coefficients '
-                   'published earlier by other authors, six of them in one study',
-                   'Sixty compare variants of the treatment at the target or select with it, and 41 remain unresolved'):
+    # Regime of the counted tests and first-cell spacing of the coupled designs (fourth reading).
+    assert regime['rule']['fixed_at'] < regime['clarification']['written_at']
+    assert scope['recorded_tests'] == regime['items'] and scope['recorded_tests_outside'] == len(regime['outside_primary_scope'])
+    wholly_outside = scope['eligible_works_wholly_outside']
+    assert scope['eligible_works_inside'] == eligible - len(wholly_outside)
+    axes = set()
+    for r in records:
+        if r['study_id'] in wholly_outside:
+            assert all(t['regime']['primary_scope'] == 'outside' for t in r['tests'] if {'prescribed_input', 'coupled_wmles', 'rans_comparison', 'thermal'} & set(t['groups']))
+            axes |= {a for t in r['tests'] for a in t['regime']['axes_outside']}
+    assert axes == {'surface', 'compressibility', 'thermal_coupling'}, axes
+    added = agreement['fourth_reading']['scope_boundary_added']
+    assert set(boundary_ids) == set(boundary) | {a['study_id'] for a in added} and not set(boundary) & {a['study_id'] for a in added}
+    assert len(added) == 1 and all(a['kind'] == order[1] and a['quotes'] for a in added), 'reword the sentence on boundary cases added by the fourth reading'
+    assert agreement['fourth_reading']['quotations']['not_found'] == 0
+    first_cell = population['first_cell_class_of_eligible_works']
+    assert sum(first_cell.values()) == eligible and first_cell['every design reaches the sublayer'] == kinds[order[0]]
+
+    q, pe, un = 'qualified', 'partly exposed', 'selection unresolved'
+    more = upper['works'] - broad['works']
+    more_restricted = {upper[k] - broad[k] for k in ('works_without_scope_boundary', 'works_in_primary_scope')}
+    assert len(more_restricted) == 1, 'the two restricted counts of reports with an unreported control differ: print both'
+    most = by_work.most_common(1)[0][1]
+    assert whole['works'][q] - within['works'][q] == len(qualified_outside) == 1, 'reword the sentence on the qualified test outside the primary scope'
+    ordinal = {1: 'first', 2: 'second', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth'}
+    assert 'at or below 0.3' in regime['rule']['text'], 'the Mach threshold printed in Box 1 is the threshold of the rule'
+    main_phrases = (
+        f"Of {eligible} eligible reports, {broad['works']} contain two coupled calculations that differ only in the wall treatment or its implementation",
+        f"for a hydrodynamic quantity ({broad['works_without_scope_boundary']} of {narrow} without boundary cases; "
+        f"{broad['works_in_primary_scope']} of {scope['eligible_works_inside']} within our primary scope)",
+        f"{spell(more, True)} more, {spell(more_restricted.pop())} on either restricted basis, leave one of those controls unreported",
+        f"{spell(constitutive['works'], True)} reports test an assumption shared by a class of wall laws on reference data alone "
+        f"({constitutive['works_without_scope_boundary']} without boundary cases, {constitutive['works_in_primary_scope']} within the primary scope)",
+        f"{whole['total_works']} reports test a fitted treatment at {whole['total_tests']} conditions outside the data used to fit it",
+        f"{spell(whole['tests'][q], True)} tests in {spell(whole['works'][q])} reports state that the target was withheld from training and model "
+        "selection or apply unchanged coefficients published earlier by other authors",
+        f"{spell(most, True)} of the {spell(whole['tests'][q])} come from one study",
+        f"and {spell(len(qualified_outside))}, a rough-wall channel, lies outside our primary scope",
+        f"{spell(whole['tests'][pe], True)} compare variants of the treatment at the target or select with it, and {whole['tests'][un]} remain unresolved",
+        f"Without boundary cases the counts are {without['total_tests']} conditions in {without['total_works']} reports "
+        f"({without['tests'][q]}, {without['tests'][pe]} and {without['tests'][un]}); within the primary scope, "
+        f"{within['total_tests']} in {within['total_works']} ({within['tests'][q]}, {within['tests'][pe]} and {within['tests'][un]})")
+    for phrase in main_phrases:
         assert phrase in plain, phrase
-    for phrase in ('All readings were automated', 'covered a random 30 of the 79 reports not used to write the rules',
-                   'A third, which saw both, settled each disagreement against the source',
-                   'After settlement 108 reports are eligible, two contested and five excluded',
-                   r"Cohen's $\kappa=0.87$ (lower 95\,\% bound 0.67)", 'Clarifications written after that test, before the third reading',
-                   'Eleven eligible reports are boundary cases: five use those methods, three test stress estimators never presented '
-                   'as wall models and three had disputed eligibility', 'Counts are given with and without them',
-                   r'$\kappa$ was 0.67 and 0.86 (lower bounds 0.44 and 0.61)', r'did not reproduce ($\kappa=0.15$)', 'We quote neither'):
+    assert 'outside those that determined it' not in plain, 'the transfer sentence must use the fitting-set definition of the rule'
+    box_phrases = (
+        'All readings were automated', 'covered a random 30 of the 79 reports not used to write the rules',
+        'A third, which saw both, settled each disagreement against the source',
+        f"After settlement {eligible} reports are eligible, {spell(status['contested'])} contested and {spell(status['excluded'])} excluded",
+        f"The first two readings agreed on eligibility for {agree_sample} of the {len(sample['fresh_random_sample'])} sampled reports and "
+        f"{agree_all} of the {len(sample['all_works_read_twice'])} read twice",
+        r"Cohen's $\kappa=0.87$ (lower 95\,\% bound 0.67)", 'Clarifications written after that test, before the third reading',
+        f"{spell(len(boundary_ids), True)} eligible reports are boundary cases: {spell(kinds[order[0]])} use those methods, {spell(kinds[order[1]])} test "
+        f"stress estimators never presented as wall models and {spell(kinds[order[2]])} had disputed eligibility",
+        'A fourth reading, done once, completed the record of first-cell spacing for every coupled design and recorded the flow regime of every counted test',
+        f"It added the {ordinal[kinds[order[1]]]} estimator; {spell(first_cell['not stated'])} reports state no first-cell distance in wall units and "
+        f"{spell(len(wholly_outside))} test only flows outside the primary scope",
+        'Counts are given for the collection, without boundary cases and within the primary scope',
+        r'$\kappa$ was 0.67 and 0.86 (lower bounds 0.44 and 0.61)',
+        f"The readings found {pool['members_first']} and {pool['members_second']} constitutive members; both found the "
+        f"{constitutive['works_without_scope_boundary']} that are not boundary cases",
+        r'did not reproduce ($\kappa=0.15$)', 'We quote neither',
+        'Our primary scope is turbulent flow of a single-phase Newtonian fluid with constant properties and no buoyancy over smooth walls at '
+        'Mach numbers up to 0.3')
+    for phrase in box_phrases:
         assert phrase in box, phrase
     # Counts that failed the criteria, and the figures they replaced, stay out of the paper.
     text = plain + box
-    assert not re.search(r'\b50 of 108\b|\b47 of 97\b|\b50 contain\b|0\.89--0\.94|reading of 36 reports|for which we quote no counts', text)
+    assert not re.search(r'\b50 of 108\b|\b47 of 97\b|\b45 of 104\b|\b50 contain\b|0\.89--0\.94|reading of 36 reports|for which we quote no counts', text)
     assert not re.search(r'\b(?:three|3) (?:qualified|independent) (?:transfer|test)', text, re.I)
-    return dict(eligible_reports=108, boundary_cases=kinds, matched_wall_treatment_contrast=dict(count),
-                constitutive_reports=constitutive['works'], transfer_tests=transfer['tests'],
+    return dict(eligible_reports=eligible, boundary_cases=kinds,
+                matched_wall_treatment_contrast={k: dict(collection=tiers[k]['works'], without_boundary_cases=tiers[k]['works_without_scope_boundary'],
+                                                         within_primary_scope=tiers[k]['works_in_primary_scope']) for k in ('strict', 'broad', 'upper')},
+                denominators=dict(collection=eligible, without_boundary_cases=narrow, within_primary_scope=scope['eligible_works_inside']),
+                constitutive_reports=dict(collection=constitutive['works'], without_boundary_cases=constitutive['works_without_scope_boundary'],
+                                          within_primary_scope=constitutive['works_in_primary_scope']),
+                transfer_tests=dict(collection=whole['tests'], without_boundary_cases=without['tests'], within_primary_scope=within['tests']),
+                eligibility_agreement=dict(sample=[agree_sample, 30], read_twice=[agree_all, 74]),
+                eligible_reports_wholly_outside_primary_scope=wholly_outside, first_cell_class=first_cell,
+                printed_sentences_checked=len(main_phrases) + len(box_phrases),
                 quotable={k: v['quotable'] for k, v in decisions.items()})
 
 

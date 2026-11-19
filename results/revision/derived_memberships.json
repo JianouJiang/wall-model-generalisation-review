@@ -17,14 +17,15 @@
       "N445",
       "N446",
       "N635",
-      "N719"
+      "N719",
+      "P08"
     ],
     "scope_boundary_by_kind": {
-      "estimator not presented as a wall model": 3,
+      "estimator not presented as a wall model": 4,
       "eligibility disputed between the readings on a rule ambiguity": 3,
       "sublayer-resolving near-wall method": 5
     },
-    "eligible_works_without_scope_boundary": 97,
+    "eligible_works_without_scope_boundary": 96,
     "contrasts_on_a_sublayer_resolving_grid": [
       "N300-K04",
       "N318-K01",
@@ -32,7 +33,31 @@
       "N318-K04",
       "N419-K02",
       "N446-K01"
-    ]
+    ],
+    "first_cell_class_of_eligible_works": {
+      "no stated design reaches the sublayer": 81,
+      "not stated": 8,
+      "both occur": 5,
+      "no design carries a treatment in a running solver": 9,
+      "every design reaches the sublayer": 5
+    },
+    "primary_scope": {
+      "eligible_works_inside": 104,
+      "eligible_works_wholly_outside": [
+        "N054",
+        "N189",
+        "N707",
+        "P02"
+      ],
+      "eligible_works_inside_as_first_written": 105,
+      "moved_by_clarification": [
+        "N189"
+      ],
+      "eligible_works_inside_without_scope_boundary": 92,
+      "recorded_tests": 615,
+      "recorded_tests_outside": 60,
+      "recorded_tests_with_compressibility_not_stated": 159
+    }
   },
   "matched_wall_treatment_change": {
     "meaning": "Works with at least one within-paper contrast of wall treatments in a coupled calculation, compared quantitatively with a reference on a hydrodynamic quantity. Strict: a different model with all six controls stated fixed. Broad (the group): also another imposition, input or parameter of one model. Upper bound: also contrasts with a control unreported.",
@@ -96,7 +121,16 @@
           "N300",
           "N318",
           "N446"
-        ]
+        ],
+        "works_in_primary_scope": 45,
+        "work_ids_outside_primary_scope": [
+          "N054",
+          "N262",
+          "N418",
+          "N707",
+          "P02"
+        ],
+        "works_in_primary_scope_without_scope_boundary": 42
       },
       "broad": {
         "works": 58,
@@ -166,7 +200,15 @@
           "N318",
           "N419",
           "N446"
-        ]
+        ],
+        "works_in_primary_scope": 54,
+        "work_ids_outside_primary_scope": [
+          "N054",
+          "N262",
+          "N707",
+          "P02"
+        ],
+        "works_in_primary_scope_without_scope_boundary": 50
       },
       "upper": {
         "works": 61,
@@ -240,7 +282,16 @@
           "N318",
           "N419",
           "N446"
-        ]
+        ],
+        "works_in_primary_scope": 56,
+        "work_ids_outside_primary_scope": [
+          "N054",
+          "N147",
+          "N262",
+          "N707",
+          "P02"
+        ],
+        "works_in_primary_scope_without_scope_boundary": 52
       }
     },
     "contrasts_in_counted_works": {
@@ -310,7 +361,12 @@
       "P21"
     ],
     "works": 17,
-    "works_without_scope_boundary": 14,
+    "works_without_scope_boundary": 13,
+    "works_in_primary_scope": 16,
+    "work_ids_outside_primary_scope": [
+      "N262"
+    ],
+    "works_in_primary_scope_without_scope_boundary": 12,
     "works_with_a_candidate": 36
   },
   "transfer": {
@@ -336,26 +392,68 @@
     "without_scope_boundary": {
       "tests": {
         "qualified": 9,
-        "partly exposed": 56,
+        "partly exposed": 55,
         "selection unresolved": 38
       },
-      "total_tests": 103,
+      "total_tests": 102,
       "works": {
         "qualified": 4,
-        "partly exposed": 18,
+        "partly exposed": 17,
+        "selection unresolved": 19
+      },
+      "total_works": 29,
+      "tests_not_shown_to_be_exposed": [
+        9,
+        47
+      ]
+    },
+    "in_primary_scope": {
+      "tests": {
+        "qualified": 8,
+        "partly exposed": 53,
+        "selection unresolved": 39
+      },
+      "total_tests": 100,
+      "works": {
+        "qualified": 3,
+        "partly exposed": 19,
         "selection unresolved": 19
       },
       "total_works": 30,
       "tests_not_shown_to_be_exposed": [
-        9,
+        8,
         47
+      ]
+    },
+    "qualified_tests_outside_primary_scope": [
+      [
+        "N037-T01",
+        "surface"
+      ]
+    ],
+    "in_primary_scope_without_scope_boundary": {
+      "tests": {
+        "qualified": 8,
+        "partly exposed": 48,
+        "selection unresolved": 37
+      },
+      "total_tests": 93,
+      "works": {
+        "qualified": 3,
+        "partly exposed": 16,
+        "selection unresolved": 18
+      },
+      "total_works": 27,
+      "tests_not_shown_to_be_exposed": [
+        8,
+        45
       ]
     }
   },
   "five_typed_groups": {
     "prescribed_input": {
       "works": 35,
-      "works_without_scope_boundary": 30
+      "works_without_scope_boundary": 29
     },
     "coupled_wmles": {
       "works": 68,

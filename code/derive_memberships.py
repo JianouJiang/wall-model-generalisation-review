@@ -1,8 +1,12 @@
 """Derive the three fact-based evidence groups from the recorded facts and check the stored values.
 
 Inputs (data/revision): wall_change_contrasts.json, constitutive_facts.json, transfer_exposure.json,
-source_dispositions.json. The rule text is stored in wall_change_contrasts.json["rule"]["text"].
-Every membership, baseline label and transfer status in the data must equal the value recomputed here.
+source_dispositions.json, regime_facts.json. The rule text is stored in wall_change_contrasts.json["rule"]["text"]
+and the regime rule in regime_facts.json["rule"]["text"].
+Every membership, baseline label, transfer status and primary-scope class in the data must equal the value
+recomputed here. Each count is derived three times: for the collection, without scope-boundary works, and for
+tests inside the paper's primary scope (smooth wall, incompressible or low Mach number, no buoyancy or
+variable-property coupling, single-phase Newtonian fluid).
 Output: results/revision/derived_memberships.json. Standard library only (python3 -I).
 """
 import hashlib
@@ -19,6 +23,12 @@ WALL_VARIANTS = {"different model", "same model, different imposition", "same mo
                  "same model, different parameter"}
 FACTORS = ("grid", "outer_closure", "numerics", "forcing", "reynolds_number", "domain")
 SOLVER_CLASSES = {"LES", "hybrid RANS-LES", "RANS"}
+# Regime rule: the value of each axis that places a test outside the primary scope.
+REGIME_OUTSIDE = dict(surface="rough", compressibility="compressible", thermal_coupling="coupled", fluid="other")
+REGIME_VALUES = dict(surface={"smooth", "rough", "both"}, compressibility={"low", "compressible", "both", "not stated"},
+                     thermal_coupling={"none", "coupled", "both"}, fluid={"newtonian single-phase", "other"})
+# Clarification R1: only a design that tests a wall treatment or estimator can place a work inside the primary scope.
+TESTING_GROUPS = {"prescribed_input", "coupled_wmles", "rans_comparison", "thermal"}
 LABEL = {
     "member": "identified within-setting alternative",
     "upper": "within-setting alternative with a control unreported",
@@ -89,16 +99,32 @@ def status(row):
     return "selection unresolved"
 
 
+def inside(regime):
+    """Regime rule: recompute the class from the recorded facts and compare with the stored class."""
+    assert all(regime[a] in REGIME_VALUES[a] for a in REGIME_VALUES), regime
+    outside = [a for a in REGIME_OUTSIDE if regime[a] == REGIME_OUTSIDE[a]]
+    assert regime["axes_outside"] == outside and regime["primary_scope"] == ("outside" if outside else "inside"), regime
+    return not outside
+
+
 def main():
     works = read("source_dispositions.json")["records"]
+    regime_file = read("regime_facts.json")
+    assert hashlib.sha256(regime_file["rule"]["text"].encode()).hexdigest() == regime_file["rule"]["sha256_of_rule_file"]
+    assert regime_file["rule"]["fixed_at"] < regime_file["clarification"]["written_at"]
     contrast_file = read("wall_change_contrasts.json")
     contrasts = contrast_file["records"]
     assert hashlib.sha256(contrast_file["rule"]["text"].encode()).hexdigest() == contrast_file["rule"]["sha256_of_rule_file"]
     eligible = {w["study_id"] for w in works if w["eligibility_status"] == "documented eligible design"}
     boundary = sorted(w["study_id"] for w in works if w.get("scope_boundary") and w["study_id"] in eligible)
-    by_work, by_design, outside_sublayer = {}, {}, {}
+    by_work, by_design, outside_sublayer, in_scope, in_scope_narrow = {}, {}, {}, {}, {}
     for c in contrasts:
         t, why = tier(c)
+        assert (c.get("regime") is not None) == (t != "none"), c["contrast_id"]
+        if t != "none" and inside(c["regime"]):
+            in_scope.setdefault(c["study_id"], []).append(t)
+            if c.get("sublayer_class") != "S":
+                in_scope_narrow.setdefault(c["study_id"], []).append(t)
         assert c["derived"] == {"tier": t, "reasons": why}, c["contrast_id"]
         assert c["work_counted"] == (c["study_id"] in eligible), c["contrast_id"]
         assert c.get("sublayer_class") in (None, "U", "S", "N"), c["contrast_id"]
@@ -115,6 +141,32 @@ def main():
     def member_narrow(sid, level):
         """Member without scope-boundary works and without contrasts on a grid that reaches the viscous sublayer."""
         return sid in eligible and sid not in boundary and bool(set(outside_sublayer.get(sid, [])) & reach[level])
+
+    # Works inside the primary scope: at least one design that tests a treatment (clarification R1) is inside.
+    scope_works, scope_works_as_first_written, first_cell = set(), set(), Counter()
+    for w in works:
+        if w["study_id"] not in eligible:
+            assert all("regime" not in t for t in w["tests"]) or w["eligibility_status"] != "excluded", w["study_id"]
+            continue
+        flags = [(inside(t["regime"]), bool(TESTING_GROUPS & set(t["groups"]))) for t in w["tests"]]
+        assert w["regime"]["in_primary_scope"] == any(i for i, _ in flags), w["study_id"]
+        if any(i for i, _ in flags):
+            scope_works_as_first_written.add(w["study_id"])
+        if any(i and g for i, g in flags):
+            scope_works.add(w["study_id"])
+        carrying = [t.get("sublayer_class") or "N" for t in w["tests"] if {"coupled_wmles", "rans_comparison"} & set(t["groups"])]
+        stated = [c for c in carrying if c in ("U", "S")]
+        first_cell["no design carries a treatment in a running solver" if not carrying else "not stated" if not stated else
+                   "every design reaches the sublayer" if set(stated) == {"S"} and len(stated) == len(carrying) else
+                   "no stated design reaches the sublayer" if set(stated) == {"U"} else "both occur"] += 1
+        if carrying and stated and set(stated) == {"S"} and len(stated) == len(carrying):
+            assert w.get("scope_boundary", {}).get("kind") == "sublayer-resolving near-wall method", w["study_id"]
+
+    def member_scope(sid, level):
+        return sid in eligible and bool(set(in_scope.get(sid, [])) & reach[level])
+
+    def member_scope_narrow(sid, level):
+        return sid in eligible and sid not in boundary and bool(set(in_scope_narrow.get(sid, [])) & reach[level])
 
     labels = Counter()
     label_works = {}
@@ -140,18 +192,25 @@ def main():
     change = {k: listing(s for s in eligible if member(s, k)) for k in order}
     for k in order:
         narrow = sorted(s for s in eligible if member_narrow(s, k))
+        scoped = sorted(s for s in eligible if member_scope(s, k))
+        assert set(scoped) <= scope_works
         change[k].update(works_without_scope_boundary=len(narrow),
-                         work_ids_dropped_without_scope_boundary=sorted(set(change[k]["work_ids"]) - set(narrow)))
+                         work_ids_dropped_without_scope_boundary=sorted(set(change[k]["work_ids"]) - set(narrow)),
+                         works_in_primary_scope=len(scoped),
+                         work_ids_outside_primary_scope=sorted(set(change[k]["work_ids"]) - set(scoped)),
+                         works_in_primary_scope_without_scope_boundary=len([s for s in eligible if member_scope_narrow(s, k)]))
     reasons = Counter(r.split(":")[0] for c in contrasts if c["work_counted"] for r in tier(c)[1])
 
     cons = read("constitutive_facts.json")
-    members = []
+    members, members_in_scope = [], []
     for r in cons["records"]:
-        is_member = r["study_id"] in eligible and any(
-            c["restriction"] and c["reference_only_paired_data"] and c["violation_statistic"] for c in r["candidates"])
+        qualifying = [c for c in r["candidates"] if c["restriction"] and c["reference_only_paired_data"] and c["violation_statistic"]]
+        is_member = r["study_id"] in eligible and bool(qualifying)
         assert r["member"] == is_member, r["study_id"]
         if is_member:
             members.append(r["study_id"])
+            if any(inside(c["regime"]) for c in qualifying):
+                members_in_scope.append(r["study_id"])
     assert sorted(members) == cons["members"]
     assert all(w["constitutive_constraint_member"] == (w["study_id"] in members) for w in works)
 
@@ -171,6 +230,7 @@ def main():
                     tests_not_shown_to_be_exposed=[tests.get("qualified", 0), tests.get("qualified", 0) + tests.get("selection unresolved", 0)])
 
     whole = split(counted)
+    scoped_rows = [r for r in counted if inside(r["regime"])]
     assert transfer["split_of_tests"] == {k: v for k, v in whole["tests"].items() if v}
     assert transfer["not_shown_to_be_exposed"] == whole["tests_not_shown_to_be_exposed"]
     fitted = sorted(w["study_id"] for w in works if w["has_fitted_treatment"] and w["study_id"] in eligible)
@@ -182,7 +242,15 @@ def main():
         population=dict(works=len(works), eligible_works=len(eligible), scope_boundary_works=boundary,
                         scope_boundary_by_kind=dict(Counter(w["scope_boundary"]["kind"] for w in works if w["study_id"] in boundary)),
                         eligible_works_without_scope_boundary=len(eligible) - len(boundary),
-                        contrasts_on_a_sublayer_resolving_grid=sorted(c["contrast_id"] for c in contrasts if c.get("sublayer_class") == "S" and c["work_counted"])),
+                        contrasts_on_a_sublayer_resolving_grid=sorted(c["contrast_id"] for c in contrasts if c.get("sublayer_class") == "S" and c["work_counted"]),
+                        first_cell_class_of_eligible_works=dict(first_cell),
+                        primary_scope=dict(
+                            eligible_works_inside=len(scope_works), eligible_works_wholly_outside=sorted(eligible - scope_works),
+                            eligible_works_inside_as_first_written=len(scope_works_as_first_written),
+                            moved_by_clarification=sorted(scope_works_as_first_written - scope_works),
+                            eligible_works_inside_without_scope_boundary=len(scope_works - set(boundary)),
+                            recorded_tests=regime_file["items"], recorded_tests_outside=len(regime_file["outside_primary_scope"]),
+                            recorded_tests_with_compressibility_not_stated=len(regime_file["compressibility_not_stated"]))),
         matched_wall_treatment_change=dict(
             meaning="Works with at least one within-paper contrast of wall treatments in a coupled calculation, compared quantitatively with a reference on a hydrodynamic quantity. Strict: a different model with all six controls stated fixed. Broad (the group): also another imposition, input or parameter of one model. Upper bound: also contrasts with a control unreported.",
             tiers=change, contrasts_in_counted_works=dict(Counter(tier(c)[0] for c in contrasts if c["work_counted"])),
@@ -191,13 +259,23 @@ def main():
                              by_label={k: dict(designs=labels[k], works=len(label_works[k])) for k in sorted(labels)}),
         constitutive_constraint=dict(members=sorted(members), works=len(members),
                                      works_without_scope_boundary=len([m for m in members if m not in boundary]),
+                                     works_in_primary_scope=len(members_in_scope),
+                                     work_ids_outside_primary_scope=sorted(set(members) - set(members_in_scope)),
+                                     works_in_primary_scope_without_scope_boundary=len([m for m in members_in_scope if m not in boundary]),
                                      works_with_a_candidate=len({r["study_id"] for r in cons["records"] if r["study_id"] in eligible})),
         transfer=dict(works_with_fitted_treatment=len(fitted), all_counted_works=whole,
-                      without_scope_boundary=split([r for r in counted if r["study_id"] not in boundary])),
+                      without_scope_boundary=split([r for r in counted if r["study_id"] not in boundary]),
+                      in_primary_scope=split(scoped_rows),
+                      qualified_tests_outside_primary_scope=sorted(
+                          (r["transfer_id"], ", ".join(r["regime"]["axes_outside"])) for r in counted if r["status"] == "qualified" and not inside(r["regime"])),
+                      in_primary_scope_without_scope_boundary=split([r for r in scoped_rows if r["study_id"] not in boundary])),
         five_typed_groups={g: dict(works=len(v), works_without_scope_boundary=len([i for i in v if i not in boundary])) for g, v in five.items()})
     (RESULTS / "derived_memberships.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n")
     print("Derived memberships agree with the stored values:",
           {k: v["works"] for k, v in change.items()}, "constitutive", len(members), "transfer", whole["tests"])
+    print("Primary scope:", len(scope_works), "of", len(eligible), "eligible works;",
+          {k: v["works_in_primary_scope"] for k, v in change.items()}, "constitutive", len(members_in_scope),
+          "transfer", split(scoped_rows)["tests"])
 
 
 if __name__ == "__main__":

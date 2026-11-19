@@ -48,7 +48,16 @@
       "frozen_note": "Coefficients are those of Luchini (2017, 2018), reproduced in Tables 1-2 and not re-tuned; the authors of this source are Fogliatto and Clifford.",
       "holdout_statement": false,
       "holdout_passage": "",
-      "source_location": "Sec. 4.3, Figs 6-8, PDF pp. 9-12"
+      "source_location": "Sec. 4.3, Figs 6-8, PDF pp. 9-12",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P01-T02",
@@ -87,7 +96,16 @@
       "frozen_note": "Coefficients are those of Luchini (2017, 2018), reproduced in Tables 1-2 and not re-tuned; the authors of this source are Fogliatto and Clifford.",
       "holdout_statement": false,
       "holdout_passage": "",
-      "source_location": "Sec. 4.4, Figs 10-14, PDF pp. 11-15"
+      "source_location": "Sec. 4.4, Figs 10-14, PDF pp. 11-15",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P06-T01",
@@ -129,7 +147,16 @@
       "frozen_note": "calibrated and applied in the same paper by the same authors",
       "holdout_statement": false,
       "holdout_passage": "Only a statement about the calibration: 'The calibrated value beta* will therefore serve as the reference blending parameter in the HRFD methodology for the remainder of this study' (p. 23). The source adds that the grid study suggests 'the calibration of the blending parameter depends on the grid resolution and is therefore not universal' (p. 31).",
-      "source_location": "Secs 4.1.2.4-4.1.2.6, Table 3, Figs 12(a,b), 13, 14(a), 15, 16(a) (PDF pp. 30-37)"
+      "source_location": "Secs 4.1.2.4-4.1.2.6, Table 3, Figs 12(a,b), 13, 14(a), 15, 16(a) (PDF pp. 30-37)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P06-T02",
@@ -173,7 +200,16 @@
       "frozen_note": "calibrated and applied in the same paper by the same authors",
       "holdout_statement": false,
       "holdout_passage": "Statements about the calibration only: 'For the HRFD method, the same blending factor beta = 0.28 as determined from the channel flow test case is employed' (p. 39); 'Calibration is performed in this paper by matching a reference canonical flow solution (the turbulent channel flow). The same calibration yields reasonable results in the flat plate case' (p. 46).",
-      "source_location": "Sec. 4.2, Table 4, Figs 18(a), 19, 20(a,d,g) (PDF pp. 37-44)"
+      "source_location": "Sec. 4.2, Table 4, Figs 18(a), 19, 20(a,d,g) (PDF pp. 37-44)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.1",
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P08-T01",
@@ -221,7 +257,16 @@
       "frozen_note": "Coefficients are determined in this work by the same authors.",
       "holdout_statement": false,
       "holdout_passage": "None. The source says the opposite: 'The other cases listed in table 1 are used to develop and validate the predictive model in Sec. 5' (Sec. 3, PDF p. 7).",
-      "source_location": "Sec. 5.2.3, Fig. 18 (PDF pp. 28-29); Sec. 5.3, Eq. (5.30), Fig. 20 (PDF pp. 29-31)"
+      "source_location": "Sec. 5.2.3, Fig. 18 (PDF pp. 28-29); Sec. 5.3, Eq. (5.30), Fig. 20 (PDF pp. 29-31)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P16-T01",
@@ -281,7 +326,16 @@
       "frozen_note": "The fit comes from Pradhan & Duraisamy (2023), which shares the author K. Duraisamy with this work; the limiter and C_wR are set in this work.",
       "holdout_statement": false,
       "holdout_passage": "None; the source gives no statement that the channel cases were kept out of the choice of model settings.",
-      "source_location": "Sec. 6.3, Table 1, Figs 1-6 (PDF pp. 14-19)"
+      "source_location": "Sec. 6.3, Table 1, Figs 1-6 (PDF pp. 14-19)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P16-T02",
@@ -335,7 +389,16 @@
       "frozen_note": "The fit comes from Pradhan & Duraisamy (2023), which shares the author K. Duraisamy with this work; the limiter and C_wR are set in this work.",
       "holdout_statement": false,
       "holdout_passage": "None.",
-      "source_location": "Sec. 6.4, Figs 10-16 (PDF pp. 21-26)"
+      "source_location": "Sec. 6.4, Figs 10-16 (PDF pp. 21-26)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P19-T01",
@@ -399,7 +462,16 @@
       "frozen_note": "The model is trained in this work by its authors.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 4, PDF p. 15: 'These cases are intended to test the predictive capabilities of the BFWM in flows that are comparable (but not identical) to the training and test sets.'",
-      "source_location": "Sec. 4.2, Fig. 8, PDF pp. 16-17"
+      "source_location": "Sec. 4.2, Fig. 8, PDF pp. 16-17",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P19-T02",
@@ -465,7 +537,16 @@
       "frozen_note": "The model is trained in this work by its authors.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 4, PDF p. 15: 'These cases are intended to test the predictive capabilities of the BFWM in flows that are comparable (but not identical) to the training and test sets.'",
-      "source_location": "Sec. 4.3, Fig. 9, PDF pp. 16-18"
+      "source_location": "Sec. 4.3, Fig. 9, PDF pp. 16-18",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P19-T03",
@@ -530,7 +611,16 @@
       "frozen_note": "The model is trained in this work by its authors.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 4, PDF p. 15: 'These cases are intended to test the predictive capabilities of the BFWM in flows that are comparable (but not identical) to the training and test sets.'",
-      "source_location": "Sec. 4.4, Fig. 10, PDF pp. 18-20"
+      "source_location": "Sec. 4.4, Fig. 10, PDF pp. 18-20",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P19-T04",
@@ -595,7 +685,16 @@
       "frozen_note": "The model is trained in this work by its authors.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 4.5, PDF p. 19: 'these validation cases are not included in the training or testing set discussed in Sec. 2.5. Hence the current cases assess the predictive capabilities of the BFWM when both Re_P and Re_U are simultaneously varied.'",
-      "source_location": "Sec. 4.5, Fig. 11, PDF pp. 19, 21"
+      "source_location": "Sec. 4.5, Fig. 11, PDF pp. 19, 21",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P19-T05",
@@ -660,7 +759,16 @@
       "frozen_note": "The model is trained in this work by its authors.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 4.5, PDF p. 19: 'these validation cases are not included in the training or testing set discussed in Sec. 2.5. Hence the current cases assess the predictive capabilities of the BFWM when both Re_P and Re_U are simultaneously varied.'",
-      "source_location": "Sec. 4.5, Fig. 12, PDF pp. 19, 22"
+      "source_location": "Sec. 4.5, Fig. 12, PDF pp. 19, 22",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P19-T06",
@@ -726,7 +834,16 @@
       "frozen_note": "The model is trained in this work by its authors.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 4, PDF p. 15: 'These cases are intended to test the predictive capabilities of the BFWM in flows that are comparable (but not identical) to the training and test sets.'",
-      "source_location": "Sec. 4.6, Fig. 13, PDF pp. 20-21, 23"
+      "source_location": "Sec. 4.6, Fig. 13, PDF pp. 20-21, 23",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P19-T07",
@@ -791,7 +908,16 @@
       "frozen_note": "The model is trained in this work by its authors.",
       "holdout_statement": false,
       "holdout_passage": "Sec. 4.7, PDF p. 24: 'It is worth remarking that the BFWM has never \"seen\" an aircraft-like flow or been trained in a case that resembles an aerofoil or a wing.' Also Sec. 2.3, p. 6: 'Cases with additional complexity, such as airfoils, wings, bumps, are intentionally avoided.'",
-      "source_location": "Sec. 4.7, Figs 15-16, PDF pp. 22-26"
+      "source_location": "Sec. 4.7, Figs 15-16, PDF pp. 22-26",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.20",
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P19-T08",
@@ -856,7 +982,16 @@
       "frozen_note": "The model is trained in this work by its authors.",
       "holdout_statement": false,
       "holdout_passage": "No statement specific to this case. The remark of Sec. 4.7 (p. 24) that the BFWM 'has never \"seen\" an aircraft-like flow' concerns what the model was trained on, and Sec. 4.8 (p. 27) says a preliminary version of the BFWM had already been run on the Juncture Flow.",
-      "source_location": "Sec. 4.8, Fig. 18, Table 1, PDF pp. 25-29"
+      "source_location": "Sec. 4.8, Fig. 18, Table 1, PDF pp. 25-29",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P20-T01",
@@ -915,7 +1050,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "No. The only statement concerns training: 'the RLWM has been trained using only one Reynolds number within this range (Re_tau = 1e4), and then tested for all Reynolds numbers' (Sec. II.A, PDF p. 3).",
-      "source_location": "Sec. III-IV, Figs 6-15, Tables II-III, PDF pp. 6-13"
+      "source_location": "Sec. III-IV, Figs 6-15, Tables II-III, PDF pp. 6-13",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P20-T02",
@@ -957,7 +1101,16 @@
       "frozen_note": "The policy was published earlier (Bae & Koumoutsakos 2022) and is described as 'BK22 tested in LESGO', but H. J. Bae is an author of both works.",
       "holdout_statement": false,
       "holdout_passage": "None. The paper states the training Reynolds numbers of BK22 (2000, 4200, 8000) and nothing about validation or selection.",
-      "source_location": "Fig. 2(a) p. 5, Fig. 3(a) p. 6, Figs 4-5 p. 7, Fig. 7(b) p. 8, Fig. 9(a) p. 9, Table III p. 12"
+      "source_location": "Fig. 2(a) p. 5, Fig. 3(a) p. 6, Figs 4-5 p. 7, Fig. 7(b) p. 8, Fig. 9(a) p. 9, Table III p. 12",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P20-T03",
@@ -989,7 +1142,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "No. The only statement concerns training: 'the RLWM has been trained using only one Reynolds number within this range (Re_tau = 1e4), and then tested for all Reynolds numbers' (Sec. II.A, PDF p. 3).",
-      "source_location": "Sec. II.B.2, Fig. 2(b), PDF p. 5"
+      "source_location": "Sec. II.B.2, Fig. 2(b), PDF p. 5",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P21-T01",
@@ -1042,7 +1204,16 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 5, PDF p. 14: 'The simulations that are not included in the training or validation dataset are referred to as test simulations. For the Full GNN model, the test simulations are the BFS and APG simulations in the incompressible isothermal case, and the L89 simulation in the compressible anisothermal case. For the ACSC GNN model, the test simulations are all the incompressible isothermal simulations, and the L89 simulation'. Table 3 note (p. 15): cells 'tinted in blue otherwise, that is for test simulations'.",
-      "source_location": "Table 3 p. 15; Figs 3(e), 5(e), 7(a); pp. 16-20"
+      "source_location": "Table 3 p. 15; Figs 3(e), 5(e), 7(a); pp. 16-20",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P21-T02",
@@ -1095,7 +1266,16 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 5, PDF p. 14: 'The simulations that are not included in the training or validation dataset are referred to as test simulations. For the Full GNN model, the test simulations are the BFS and APG simulations in the incompressible isothermal case, and the L89 simulation in the compressible anisothermal case. For the ACSC GNN model, the test simulations are all the incompressible isothermal simulations, and the L89 simulation'. Table 3 note (p. 15): cells 'tinted in blue otherwise, that is for test simulations'.",
-      "source_location": "Table 3 p. 15; Figs 3(f), 5(f), 7(b); pp. 16-20"
+      "source_location": "Table 3 p. 15; Figs 3(f), 5(f), 7(b); pp. 16-20",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P21-T03",
@@ -1148,7 +1328,19 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 5, PDF p. 14: 'The simulations that are not included in the training or validation dataset are referred to as test simulations. For the Full GNN model, the test simulations are the BFS and APG simulations in the incompressible isothermal case, and the L89 simulation in the compressible anisothermal case. For the ACSC GNN model, the test simulations are all the incompressible isothermal simulations, and the L89 simulation'. Table 3 note (p. 15): cells 'tinted in blue otherwise, that is for test simulations'.",
-      "source_location": "Table 3 p. 15; Figs 3(k), 4(e), 5(k), 6(e), 7(c); pp. 16-20"
+      "source_location": "Table 3 p. 15; Figs 3(k), 4(e), 5(k), 6(e), 7(c); pp. 16-20",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "compressible",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "outlet 0.927",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "compressibility",
+          "thermal_coupling"
+        ]
+      }
     },
     {
       "transfer_id": "P21-T04",
@@ -1199,7 +1391,16 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 5, PDF p. 14: 'The simulations that are not included in the training or validation dataset are referred to as test simulations. For the Full GNN model, the test simulations are the BFS and APG simulations in the incompressible isothermal case, and the L89 simulation in the compressible anisothermal case. For the ACSC GNN model, the test simulations are all the incompressible isothermal simulations, and the L89 simulation'. Table 3 note (p. 15): cells 'tinted in blue otherwise, that is for test simulations'.",
-      "source_location": "Table 3 p. 15; Figs 3(a,b), 5(a,b); pp. 14-18"
+      "source_location": "Table 3 p. 15; Figs 3(a,b), 5(a,b); pp. 14-18",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P21-T05",
@@ -1251,7 +1452,16 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 5, PDF p. 14: 'The simulations that are not included in the training or validation dataset are referred to as test simulations. For the Full GNN model, the test simulations are the BFS and APG simulations in the incompressible isothermal case, and the L89 simulation in the compressible anisothermal case. For the ACSC GNN model, the test simulations are all the incompressible isothermal simulations, and the L89 simulation'. Table 3 note (p. 15): cells 'tinted in blue otherwise, that is for test simulations'.",
-      "source_location": "Table 3 p. 15; Figs 3(c), 5(c); pp. 15-18"
+      "source_location": "Table 3 p. 15; Figs 3(c), 5(c); pp. 15-18",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P21-T06",
@@ -1303,7 +1513,16 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 5, PDF p. 14: 'The simulations that are not included in the training or validation dataset are referred to as test simulations. For the Full GNN model, the test simulations are the BFS and APG simulations in the incompressible isothermal case, and the L89 simulation in the compressible anisothermal case. For the ACSC GNN model, the test simulations are all the incompressible isothermal simulations, and the L89 simulation'. Table 3 note (p. 15): cells 'tinted in blue otherwise, that is for test simulations'.",
-      "source_location": "Table 3 p. 15; Figs 3(d), 5(d); pp. 15-18"
+      "source_location": "Table 3 p. 15; Figs 3(d), 5(d); pp. 15-18",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P21-T07",
@@ -1356,7 +1575,16 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 5, PDF p. 14: 'The simulations that are not included in the training or validation dataset are referred to as test simulations. For the Full GNN model, the test simulations are the BFS and APG simulations in the incompressible isothermal case, and the L89 simulation in the compressible anisothermal case. For the ACSC GNN model, the test simulations are all the incompressible isothermal simulations, and the L89 simulation'. Table 3 note (p. 15): cells 'tinted in blue otherwise, that is for test simulations'.",
-      "source_location": "Table 3 p. 15; Figs 3(e), 5(e), 7(a); pp. 15-20"
+      "source_location": "Table 3 p. 15; Figs 3(e), 5(e), 7(a); pp. 15-20",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P21-T08",
@@ -1409,7 +1637,16 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 5, PDF p. 14: 'The simulations that are not included in the training or validation dataset are referred to as test simulations. For the Full GNN model, the test simulations are the BFS and APG simulations in the incompressible isothermal case, and the L89 simulation in the compressible anisothermal case. For the ACSC GNN model, the test simulations are all the incompressible isothermal simulations, and the L89 simulation'. Table 3 note (p. 15): cells 'tinted in blue otherwise, that is for test simulations'.",
-      "source_location": "Table 3 p. 15; Figs 3(f), 5(f), 7(b); pp. 15-20"
+      "source_location": "Table 3 p. 15; Figs 3(f), 5(f), 7(b); pp. 15-20",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P21-T09",
@@ -1462,7 +1699,19 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 5, PDF p. 14: 'The simulations that are not included in the training or validation dataset are referred to as test simulations. For the Full GNN model, the test simulations are the BFS and APG simulations in the incompressible isothermal case, and the L89 simulation in the compressible anisothermal case. For the ACSC GNN model, the test simulations are all the incompressible isothermal simulations, and the L89 simulation'. Table 3 note (p. 15): cells 'tinted in blue otherwise, that is for test simulations'.",
-      "source_location": "Table 3 p. 15; Figs 3(k), 4(e), 5(k), 6(e), 7(c); pp. 15-20"
+      "source_location": "Table 3 p. 15; Figs 3(k), 4(e), 5(k), 6(e), 7(c); pp. 15-20",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "compressible",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "outlet 0.927",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "compressibility",
+          "thermal_coupling"
+        ]
+      }
     },
     {
       "transfer_id": "P21-T10",
@@ -1518,7 +1767,18 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "False: the statements concern training only - 'the symmetrically cooled channel flow SC3, not included in the training database' (p. 22); 'a different fully developed channel flow not seen during training' (p. 18). SC3 is not among the simulations of Table 1 or Table 3.",
-      "source_location": "Sec. 6.2, Fig. 10, Table 4, PDF pp. 22-24"
+      "source_location": "Sec. 6.2, Fig. 10, Table 4, PDF pp. 22-24",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "below 0.3",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "thermal_coupling"
+        ]
+      }
     },
     {
       "transfer_id": "P21-T11",
@@ -1574,7 +1834,18 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "False: the statements concern training only - 'the symmetrically cooled channel flow SC3, not included in the training database' (p. 22); 'a different fully developed channel flow not seen during training' (p. 18). SC3 is not among the simulations of Table 1 or Table 3.",
-      "source_location": "Sec. 6.2, Fig. 10, Table 4, PDF pp. 22-24"
+      "source_location": "Sec. 6.2, Fig. 10, Table 4, PDF pp. 22-24",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "below 0.3",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "thermal_coupling"
+        ]
+      }
     },
     {
       "transfer_id": "P21-T12",
@@ -1627,7 +1898,19 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 6, PDF p. 18: 'a complex test configuration that was not included in the training or validation dataset'; Sec. 5, p. 14, lists L89 as a test simulation of both models.",
-      "source_location": "Sec. 6.3, Figs 13-14, PDF pp. 23-28"
+      "source_location": "Sec. 6.3, Figs 13-14, PDF pp. 23-28",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "compressible",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "outlet 0.927",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "compressibility",
+          "thermal_coupling"
+        ]
+      }
     },
     {
       "transfer_id": "P21-T13",
@@ -1680,7 +1963,19 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": true,
       "holdout_passage": "Sec. 6, PDF p. 18: 'a complex test configuration that was not included in the training or validation dataset'; Sec. 5, p. 14, lists L89 as a test simulation of both models.",
-      "source_location": "Sec. 6.3, Fig. 13, PDF pp. 23-28"
+      "source_location": "Sec. 6.3, Fig. 13, PDF pp. 23-28",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "compressible",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "outlet 0.927",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "compressibility",
+          "thermal_coupling"
+        ]
+      }
     },
     {
       "transfer_id": "P21-T14",
@@ -1732,7 +2027,16 @@
       "frozen_note": "Both GNN models are trained in this work.",
       "holdout_statement": true,
       "holdout_passage": "Appendix B itself makes no statement. Sec. 5 (p. 14) lists all incompressible isothermal simulations, hence the Re_tau = 950 channel CF2, as test simulations of the ACSC model (not in its training or validation data).",
-      "source_location": "Appendix B, Fig. B1, PDF p. 38"
+      "source_location": "Appendix B, Fig. B1, PDF p. 38",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P22-T01",
@@ -1781,7 +2085,16 @@
       "frozen_note": "The networks are trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Only a statement about training: 'For the Reh = 19000 case, for which the flow data are not employed for training the model' (Conclusion, p. 25). Nothing is said about validation or model selection.",
-      "source_location": "Sec. IV.B, Figs 10-11, PDF pp. 21-23"
+      "source_location": "Sec. IV.B, Figs 10-11, PDF pp. 21-23",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P23-T01",
@@ -1826,7 +2139,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Statement about training only: 'Three spatially isotropic grid resolutions are tested: Delta = 0.05h, 0.1 and 0.2h, where the first was not included in the training dataset' (p. 5).",
-      "source_location": "Results, 'Turbulent channel flow', Fig. 4(C), PDF p. 5"
+      "source_location": "Results, 'Turbulent channel flow', Fig. 4(C), PDF p. 5",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P23-T02",
@@ -1872,7 +2194,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Statement about training only: 'We use this case to evaluate the performance of BFM at Reynolds numbers much higher than those it was trained for' (p. 5).",
-      "source_location": "Results, 'Turbulent pipe flow', Fig. 5, PDF pp. 5-6"
+      "source_location": "Results, 'Turbulent pipe flow', Fig. 5, PDF pp. 5-6",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P23-T03",
@@ -1923,7 +2254,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Statements about training only: 'The intentional exclusion of cases with additional complexities, such as airfoils, wings, bumps, etc.' (p. 3); 'The current version of BFM has been trained on coarse grids with 5 to 10 points per boundary layer. The behavior of BFM when extrapolating on finer grids is shown in Figure 10(A,B)' (p. 13).",
-      "source_location": "Results, Figs 6-7, PDF pp. 6-8; Methods, Fig. 10(A,B,E,F), pp. 13-14"
+      "source_location": "Results, Figs 6-7, PDF pp. 6-8; Methods, Fig. 10(A,B,E,F), pp. 13-14",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.17",
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P23-T04",
@@ -1972,7 +2312,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Statement about training only: 'it is worth noting that BFM has never 'seen' an aircraft-like flow or been trained in a case resembling an airfoil or a wing' (p. 8).",
-      "source_location": "Results, Fig. 8, PDF pp. 6-9"
+      "source_location": "Results, Fig. 8, PDF pp. 6-9",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.2",
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P23-T05",
@@ -2019,7 +2368,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "No statement specific to this case; the general statements concern training only (pp. 3, 8).",
-      "source_location": "Results, Fig. 9, PDF pp. 8-9"
+      "source_location": "Results, Fig. 9, PDF pp. 8-9",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.189",
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P24-T01",
@@ -2060,7 +2418,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "None. The source calls this set 'interpolation validation'.",
-      "source_location": "Sec. II.C, Fig. 4, PDF pp. 8-10"
+      "source_location": "Sec. II.C, Fig. 4, PDF pp. 8-10",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P24-T02",
@@ -2100,7 +2467,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Statement about training only: 'the first cell layer of the NNPC-based model corresponds to approximately y+ = 5000 and y+ = 50000, respectively, significantly exceeding the range of the initial training dataset' (p. 10).",
-      "source_location": "Sec. II.D, Fig. 5, PDF pp. 9-11"
+      "source_location": "Sec. II.D, Fig. 5, PDF pp. 9-11",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P24-T03",
@@ -2144,7 +2520,16 @@
       "frozen_note": "The networks are trained in this work by its authors.",
       "holdout_statement": false,
       "holdout_passage": "p.7: the error near y+ about 200 reflects 'the model's training on datasets below y+ = 200'. A statement about training only.",
-      "source_location": "Section II.B (pp.7-8); Fig. 3(a) (p.8)"
+      "source_location": "Section II.B (pp.7-8); Fig. 3(a) (p.8)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P25-T01",
@@ -2191,7 +2576,16 @@
       "frozen_note": "Trained in this work (wall-stress FNN following the authors' own earlier papers).",
       "holdout_statement": false,
       "holdout_passage": "Statements about training only: 'The FEL model was trained on a specific grid resolution. In this section, we examine the performance of the proposed model for different grid resolutions' (p. 13); 'cases with different grid resolutions were not included in the embedded model training' (p. 15).",
-      "source_location": "Table 2 (p. 12); Sec. 4.1, Figs 7, 9-11, PDF pp. 13-17"
+      "source_location": "Table 2 (p. 12); Sec. 4.1, Figs 7, 9-11, PDF pp. 13-17",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P25-T02",
@@ -2238,7 +2632,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Statements about training only (pp. 13, 15), as for H0.5.",
-      "source_location": "Table 2 (p. 12); Sec. 4.1, Figs 8-11, PDF pp. 13-17"
+      "source_location": "Table 2 (p. 12); Sec. 4.1, Figs 8-11, PDF pp. 13-17",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P25-T03",
@@ -2287,7 +2690,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Statement about training only: 'the performance of the FEL model is evaluated using the H1.0 case, which has a slope different from the training cases' (p. 15).",
-      "source_location": "Table 2 (p. 12); Sec. 4.2, Figs 12-15 (pp. 15-19); Sec. 4.4, Figs 20-26 (pp. 20-26); Appendix B (pp. 34-35)"
+      "source_location": "Table 2 (p. 12); Sec. 4.2, Figs 12-15 (pp. 15-19); Sec. 4.4, Figs 20-26 (pp. 20-26); Appendix B (pp. 34-35)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P25-T04",
@@ -2336,7 +2748,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Statement about generalisation only: 'the generalization ability of the FEL model is tested for a higher Reynolds number (i.e., Reh = 37000) using the H1.0 case' (p. 17).",
-      "source_location": "Table 2 (p. 12); Sec. 4.3, Figs 16-19, PDF pp. 17-21"
+      "source_location": "Table 2 (p. 12); Sec. 4.3, Figs 16-19, PDF pp. 17-21",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P25-T05",
@@ -2387,7 +2808,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "None specific; the case is introduced as one of 'other three flow configurations' on which 'the FEL model is further tested' (p. 26).",
-      "source_location": "Sec. 5, Table 3, Fig. 29, PDF pp. 26-30"
+      "source_location": "Sec. 5, Table 3, Fig. 29, PDF pp. 26-30",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P25-T06",
@@ -2439,7 +2869,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "None specific to this case.",
-      "source_location": "Sec. 5, Table 3, Fig. 28(a), Fig. 30, PDF pp. 26-30"
+      "source_location": "Sec. 5, Table 3, Fig. 28(a), Fig. 30, PDF pp. 26-30",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P25-T07",
@@ -2489,7 +2928,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Statement about training only: 'It is well beyond the training data of the FEL wall model, which are from cases with 2D configuration' (p. 30).",
-      "source_location": "Sec. 5, Table 3, Fig. 31, PDF pp. 27-32"
+      "source_location": "Sec. 5, Table 3, Fig. 31, PDF pp. 27-32",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P25-T08",
@@ -2540,7 +2988,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Statement about training only: 'It is well beyond the training data of the FEL wall model, which are from cases with 2D configuration' (p. 30).",
-      "source_location": "Sec. 5, Table 3, Fig. 28(b), Fig. 32, PDF pp. 27-32"
+      "source_location": "Sec. 5, Table 3, Fig. 28(b), Fig. 32, PDF pp. 27-32",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P25-T09",
@@ -2594,7 +3051,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Statements about training only: 'the 2D Gaussian bump, which has a Reynolds number significantly larger than the training case' (p. 29); 'neither of them was trained for simulating a developing boundary layer' (p. 32).",
-      "source_location": "Sec. 5, Table 3, Fig. 28(c), Fig. 33, PDF pp. 28-32"
+      "source_location": "Sec. 5, Table 3, Fig. 28(c), Fig. 33, PDF pp. 28-32",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P26-T01",
@@ -2653,7 +3119,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Statements about training only: 'as long as (h_m)+ is within the range observed during the training process (150 < (h_m)+ < 1200), the model will perform as expected' (p. 7); 'The training was performed using LES of a turbulent channel flow at moderate Reynolds numbers (Re_tau = 2000, 4200 and 8000)' (p. 11).",
-      "source_location": "Results, Figs 3-4, 6-7, PDF pp. 7-9; Methods, Table 1, pp. 15-16"
+      "source_location": "Results, Figs 3-4, 6-7, PDF pp. 7-9; Methods, Table 1, pp. 15-16",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P26-T02",
@@ -2705,7 +3180,16 @@
       "frozen_note": "Trained in this work.",
       "holdout_statement": false,
       "holdout_passage": "Statement about training only: 'the model is capable of adapting to variations of wall-shear stress in the streamwise direction, even when it was only trained on a channel flow simulation' (p. 8).",
-      "source_location": "Results, Fig. 5, PDF p. 8; Methods p. 16"
+      "source_location": "Results, Fig. 5, PDF p. 8; Methods p. 16",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P31-T01",
@@ -2753,7 +3237,16 @@
       "frozen_note": "Trained and applied in the same work by the same authors",
       "holdout_statement": false,
       "holdout_passage": "None. The source says only that the baseline mesh is the one 'also used in model training' (p. 9).",
-      "source_location": "Sec. III.B.1, pp. 9-13; Table 1; Figs. 1-3"
+      "source_location": "Sec. III.B.1, pp. 9-13; Table 1; Figs. 1-3",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P31-T02",
@@ -2800,7 +3293,16 @@
       "frozen_note": "Same authors, same work",
       "holdout_statement": false,
       "holdout_passage": "None. The statements concern training only: models 'trained ... using low-Reynolds-number flow over periodic hills' and 'validated through simulations of flows over periodic hills at higher Reynolds numbers' (abstract).",
-      "source_location": "Sec. III.B.2, pp. 17-19; Figs. 6-7"
+      "source_location": "Sec. III.B.2, pp. 17-19; Figs. 6-7",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P31-T03",
@@ -2855,7 +3357,16 @@
       "frozen_note": "Same authors, same work",
       "holdout_statement": false,
       "holdout_passage": "None. Statements concern training only: 'a flow configuration distinct from the one used in training' (p. 5); 'The range of Re_tau is beyond what was encountered during the training of the RLWMs' (p. 20).",
-      "source_location": "Sec. IV, pp. 20-27; Figs. 10-12"
+      "source_location": "Sec. IV, pp. 20-27; Figs. 10-12",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "P31-T04",
@@ -2902,7 +3413,16 @@
       "frozen_note": "Same authors, same work",
       "holdout_statement": false,
       "holdout_passage": "None. 'the RLWMs are originally trained using periodic-channel flow simulations ... the maximum Re_tau is approximately 1900, lower than that of the flat-plate channel flow cases examined here' (p. 29) concerns training only.",
-      "source_location": "Appendix II, pp. 28-30; Table 3; Fig. 14"
+      "source_location": "Appendix II, pp. 28-30; Table 3; Fig. 14",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N011-T01",
@@ -2965,7 +3485,16 @@
       "frozen_note": "Trained and applied by the same authors in this work",
       "holdout_statement": true,
       "holdout_passage": "Sec. 4.1.2, PDF p. 14: 'This neural network is solely trained on DNS data and first exposed to experimental data during testing, i.e., after the training is completed.'",
-      "source_location": "Sec. 4.1.2, Figs. 8-9, PDF pp. 14-16; App. A.3, PDF pp. 29-32"
+      "source_location": "Sec. 4.1.2, Figs. 8-9, PDF pp. 14-16; App. A.3, PDF pp. 29-32",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N011-T02",
@@ -3010,7 +3539,16 @@
       "frozen_note": "Trained and applied by the same authors in this work",
       "holdout_statement": false,
       "holdout_passage": "Only statements about training: Fig. 1 caption, PDF p. 3: 'the neural network is never trained on the specific characteristics of experimental measurement data. Precisely, the network is solely trained on Direct Numerical Simulation (DNS) data'",
-      "source_location": "Sec. 4.2, Fig. 11 (third row), Fig. 13, PDF pp. 16-19"
+      "source_location": "Sec. 4.2, Fig. 11 (third row), Fig. 13, PDF pp. 16-19",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N011-T03",
@@ -3056,7 +3594,16 @@
       "frozen_note": "Trained and applied by the same authors in this work",
       "holdout_statement": false,
       "holdout_passage": "Only statements about training, e.g. Sec. 4.2, PDF p. 16: 'Although the training data contain solely TBL flows at Reτ ≈ 390 and Reτ ≈ 1,500, the network reliably predicts wall-shear stress fields from TCF related velocity fields at those Reynolds numbers'",
-      "source_location": "Sec. 4.2, Fig. 11 (rows 1 and 4), Figs. 12 and 14, PDF pp. 16-20"
+      "source_location": "Sec. 4.2, Fig. 11 (rows 1 and 4), Figs. 12 and 14, PDF pp. 16-20",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N011-T04",
@@ -3102,7 +3649,16 @@
       "frozen_note": "Trained and applied by the same authors in this work",
       "holdout_statement": false,
       "holdout_passage": "Only statements about training: Sec. 4.2, PDF p. 16: 'Reτ ≈ 600, which was not part of the training dataset but within the covered Reynolds number range'; PDF p. 18: 'Reynolds numbers which were not covered by the training data'; Sec. 2.3, PDF p. 6: 'two additional configurations are considered to test the performance with an intermediate (Reτ ≈ 610) and an extrapolated (Reτ ≈ 2,025) dataset'",
-      "source_location": "Sec. 4.2, Fig. 11 (rows 2 and 5), Fig. 15, PDF pp. 16-20"
+      "source_location": "Sec. 4.2, Fig. 11 (rows 2 and 5), Fig. 15, PDF pp. 16-20",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N025-T01",
@@ -3174,7 +3730,16 @@
       "frozen_note": "Calibrated and applied by the same authors in this work",
       "holdout_statement": false,
       "holdout_passage": "No statement that the periodic hill was kept out of calibration or selection; the only related sentence concerns the fitting data: 'a careful calibration using turbulent channel flow yields C_DES = 0.85' (PDF p. 7)",
-      "source_location": "Sec. 5.2, Table 2, Figs. 11-17; PDF pp. 22-28"
+      "source_location": "Sec. 5.2, Table 2, Figs. 11-17; PDF pp. 22-28",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N037-T01",
@@ -3200,7 +3765,18 @@
       "frozen_note": "The correlation is cited from [90] and used as given ('we adopt the rough-wall model proposed by Forooghi et al. [90]', p. 15). The authors of [90] (Forooghi, Stroh, Magagnato, Jakirlic, Frohnapfel) share no name with the authors of this source (Yang Z., Bin, Shi, Yang X.I.A.).",
       "holdout_statement": false,
       "holdout_passage": "",
-      "source_location": "Sec. 3.3, Eq. (17), Fig. 7 (p. 15), Table 4 (p. 16); Table 1 (p. 8)"
+      "source_location": "Sec. 3.3, Eq. (17), Fig. 7 (p. 15), Table 4 (p. 16); Table 1 (p. 8)",
+      "regime": {
+        "surface": "rough",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "surface"
+        ]
+      }
     },
     {
       "transfer_id": "N076-T01",
@@ -3235,7 +3811,16 @@
       "frozen_note": "The model is tuned and applied in the same paper by the same authors.",
       "holdout_statement": false,
       "holdout_passage": "",
-      "source_location": "Sec. III B, Figs. 9-10 (PDF pp. 9-10)"
+      "source_location": "Sec. III B, Figs. 9-10 (PDF pp. 9-10)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N147-T01",
@@ -3261,7 +3846,18 @@
       "frozen_note": "The text attributes the predictions to Seo (2004), the work that calibrated the model ('Seo (2004) obtained very similar predictions for a number of test cases'); the review's author is a co-author with Seo of Durbin et al. (2001), where the test case was presented. The model is not applied by an independent group.",
       "holdout_statement": false,
       "holdout_passage": "",
-      "source_location": "Sec. 4, PDF pp. 14-15; Fig. 8, PDF p. 16"
+      "source_location": "Sec. 4, PDF pp. 14-15; Fig. 8, PDF p. 16",
+      "regime": {
+        "surface": "rough",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "surface"
+        ]
+      }
     },
     {
       "transfer_id": "N239-T01",
@@ -3295,7 +3891,16 @@
       "frozen_note": "The pretrained network comes from ref. [13] (Zhou, X. I. A. Yang, Zhang, X. L. Yang), which shares authors with this paper.",
       "holdout_statement": false,
       "holdout_passage": "None; the body of revolution is introduced as the case to which 'the proposed model is first applied' (p. 11) without a statement on training or selection data.",
-      "source_location": "Section 4.1, Figs 5-6, pp. 11-13"
+      "source_location": "Section 4.1, Figs 5-6, pp. 11-13",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N239-T02",
@@ -3337,7 +3942,16 @@
       "frozen_note": "Ref. [13] shares authors with this paper.",
       "holdout_statement": false,
       "holdout_passage": "None. p. 18: 'the FNN model trained using the data from the periodic hill case and logarithmic law could be generalized to predict the wall shear stress of the Suboff case' concerns pretraining only and says nothing on the embedded-learning data.",
-      "source_location": "Sections 4.2.2 and 4.2.4, Figs 9-10, 14-15, Tables 4 and 6, pp. 15-21"
+      "source_location": "Sections 4.2.2 and 4.2.4, Figs 9-10, 14-15, Tables 4 and 6, pp. 15-21",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N239-T03",
@@ -3378,7 +3992,16 @@
       "frozen_note": "Ref. [13] shares authors with this paper.",
       "holdout_statement": false,
       "holdout_passage": "p. 20: 'the proposed FEL-IB model is successful in predicting ... the flow over the Suboff at a higher Reynolds number than the training case using the G1 coarse grid' and p. 18 'To evaluate the generalization ability of the proposed FEL-IB model, we carry out the WMLES case ... at a higher Reynolds number'. This is a statement about training alone; nothing is said about validation or model selection.",
-      "source_location": "Section 4.2.3, Figs 11-13, Table 5, pp. 18-20"
+      "source_location": "Section 4.2.3, Figs 11-13, Table 5, pp. 18-20",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N240-T01",
@@ -3429,7 +4052,16 @@
       "frozen_note": "The mode is constructed in this work.",
       "holdout_statement": false,
       "holdout_passage": "None. p. 7-8: 'an ideal wall model should be able to perform well also at low Reynolds numbers. Therefore, we have performed a simple test at different Re_tau ... with the g mode from Re_tau = 5200'.",
-      "source_location": "Section 2.3, Fig. 6, p. 8; Section 3.1, Figs 7-8, pp. 9-10"
+      "source_location": "Section 2.3, Fig. 6, p. 8; Section 3.1, Figs 7-8, pp. 9-10",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N240-T02",
@@ -3480,7 +4112,16 @@
       "frozen_note": "The mode is constructed in this work.",
       "holdout_statement": false,
       "holdout_passage": "None.",
-      "source_location": "Section 4.2, Table 1 (p. 12), Fig. 10 (p. 13)"
+      "source_location": "Section 4.2, Table 1 (p. 12), Fig. 10 (p. 13)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N240-T03",
@@ -3526,7 +4167,16 @@
       "frozen_note": "The mode is constructed in this work.",
       "holdout_statement": false,
       "holdout_passage": "None.",
-      "source_location": "Section 3.2, Fig. 9 (p. 11); Fig. 12(a), Table 3 (p. 15); Appendix B, Fig. 15 (p. 18)"
+      "source_location": "Section 3.2, Fig. 9 (p. 11); Fig. 12(a), Table 3 (p. 15); Appendix B, Fig. 15 (p. 18)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N240-T04",
@@ -3580,7 +4230,16 @@
       "frozen_note": "The mode is constructed in this work.",
       "holdout_statement": false,
       "holdout_passage": "None.",
-      "source_location": "Section 4.3, Table 2 (p. 13), Fig. 11 (p. 14), Fig. 12(b,c) and Table 3 (p. 15); Appendix B, Fig. 16 (p. 19)"
+      "source_location": "Section 4.3, Table 2 (p. 13), Fig. 11 (p. 14), Fig. 12(b,c) and Table 3 (p. 15); Appendix B, Fig. 16 (p. 19)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N240-T05",
@@ -3627,7 +4286,16 @@
       "frozen_note": "The mode is constructed in this work.",
       "holdout_statement": false,
       "holdout_passage": "None.",
-      "source_location": "Section 4.4, Table 4 and Fig. 13 (p. 16); Appendix B, Fig. 17 (p. 19)"
+      "source_location": "Section 4.4, Table 4 and Fig. 13 (p. 16); Appendix B, Fig. 17 (p. 19)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N253-T01",
@@ -3679,7 +4347,16 @@
       "frozen_note": "fitted in this work by the same authors",
       "holdout_statement": false,
       "holdout_passage": "'While constructing the model-fit these resolutions have not been considered' (PDF p. 16) and Fig. 13 caption 'that is not part of the data used for fitting the model' (PDF p. 18): statements about fitting only; nothing is said about validation or model selection. Fig. 12 also plots the Cw,lambda of the traditional solutions on the two target meshes ('Pred.') against the model fit.",
-      "source_location": "Sec. 5 (PDF pp. 16-17); Fig. 12 (PDF p. 17); Fig. 13 (PDF p. 18)"
+      "source_location": "Sec. 5 (PDF pp. 16-17); Fig. 12 (PDF p. 17); Fig. 13 (PDF p. 18)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N262-T01",
@@ -3738,7 +4415,16 @@
       "frozen_note": "fitted in this work and in the authors' own earlier study [59]",
       "holdout_statement": false,
       "holdout_passage": "none; the source does not say which Reynolds numbers were excluded from the fit of Eq. (8)",
-      "source_location": "Sec. IV A; Table I (PDF p. 23); Fig. 10 (PDF p. 24)"
+      "source_location": "Sec. IV A; Table I (PDF p. 23); Fig. 10 (PDF p. 24)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.1",
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N262-T02",
@@ -3802,7 +4488,18 @@
       "frozen_note": "fitted in this work and in the authors' own earlier study [59]",
       "holdout_statement": false,
       "holdout_passage": "none; the source says only that for this case 'The DNS results at Mb = 4.0, Reb = 10,000 is used for reference' (PDF p. 30)",
-      "source_location": "Sec. IV B 2 (PDF pp. 28-30); Table II (PDF p. 25); Fig. 14 (PDF p. 29); Fig. 19 (PDF p. 38)"
+      "source_location": "Sec. IV B 2 (PDF pp. 28-30); Table II (PDF p. 25); Fig. 14 (PDF p. 29); Fig. 19 (PDF p. 38)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "compressible",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "4.0",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "compressibility"
+        ]
+      }
     },
     {
       "transfer_id": "N300-T01",
@@ -3859,7 +4556,16 @@
       "frozen_note": "The constants are set in this paper by the same authors.",
       "holdout_statement": false,
       "holdout_passage": "\"To investigate the generalizability of the WMRLES model, a second channel flow case was investigated with a different Reynolds number ... The simulation was run using model and numerical settings equivalent to Case 6.\" This says the settings were carried over; it does not say that the Re_tau = 2000 case was kept out of calibration and selection.",
-      "source_location": "Sec. 2.4 (Table 2, Grid I); Sec. 3 (Table 3, Case 22; Fig. 13 and the paragraph before the Conclusions)"
+      "source_location": "Sec. 2.4 (Table 2, Grid I); Sec. 3 (Table 3, Case 22; Fig. 13 and the paragraph before the Conclusions)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N300-T02",
@@ -3929,6 +4635,15 @@
         "first_reading": "row not recorded",
         "second_reading": "yes (kappa taken from the DNS of the same flow at this Reynolds number)",
         "third_reading": "rule C does not say how grid-free reference data are judged when only the grid differs"
+      },
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -3982,7 +4697,16 @@
       "frozen_note": "Calibrated and applied in the same work; the resulting values equal those of SST-IDDES [42] but are not applied as an external frozen model.",
       "holdout_statement": false,
       "holdout_passage": "",
-      "source_location": "Sec. 4.2.2-4.2.3, Figs 6, 7, 8 (pp. 19-23)"
+      "source_location": "Sec. 4.2.2-4.2.3, Figs 6, 7, 8 (pp. 19-23)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N318-T02",
@@ -4026,7 +4750,16 @@
       "frozen_note": "Same authors calibrate and apply.",
       "holdout_statement": false,
       "holdout_passage": "",
-      "source_location": "Sec. 4.3, Fig. 9 (pp. 23-26)"
+      "source_location": "Sec. 4.3, Fig. 9 (pp. 23-26)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N327-T01",
@@ -4061,7 +4794,16 @@
       "frozen_note": "Tuned and applied in the same work.",
       "holdout_statement": false,
       "holdout_passage": "",
-      "source_location": "Sec. 3.5, Table 1, Figs 7, 8, 9 (PDF pp. 12-15)"
+      "source_location": "Sec. 3.5, Table 1, Figs 7, 8, 9 (PDF pp. 12-15)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N364-T01",
@@ -4114,6 +4856,15 @@
         "first_reading": "one row for the four Reynolds numbers: partly exposed",
         "second_reading": "two rows: Re_tau = 2000 to 20000 qualified through (e); Re_tau = 100000 partly exposed",
         "third_reading": "the facts agree per condition; rule C does not fix the granularity"
+      },
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -4159,7 +4910,16 @@
       "frozen_note": "Trained and applied by the same authors in the same work.",
       "holdout_statement": true,
       "holdout_passage": "Table 1 (PDF p. 9), 'Summary of the simulations employed for the training and validation, as well as for both the a priori and a posteriori tests': TC950 has a cross under Training/Validation and a tick only under A priori tests. p. 13: 'The model is trained on the test case TC1000 and is evaluated on TC950 obtained with Argo-DG at three heights'.",
-      "source_location": "Section 3.1 (PDF p. 13), Table 3 (p. 15)"
+      "source_location": "Section 3.1 (PDF p. 13), Table 3 (p. 15)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.1",
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N497-T02",
@@ -4206,7 +4966,16 @@
       "frozen_note": "Trained and applied by the same authors in the same work.",
       "holdout_statement": true,
       "holdout_passage": "Table 1 (PDF p. 9): TC2000 has crosses under Training/Validation and A priori tests and a tick only under A posteriori tests.",
-      "source_location": "Section 3.2.1 and Fig. 5 (PDF pp. 15-16)"
+      "source_location": "Section 3.2.1 and Fig. 5 (PDF pp. 15-16)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N530-T01",
@@ -4248,7 +5017,18 @@
       "frozen_note": "The constant is fixed and applied by the same authors within this paper.",
       "holdout_statement": false,
       "holdout_passage": "None. The conclusion only states: 'These two LESs validate the proposed immersed wall model, switching the characteristic space scale defining the turbulent Reynolds number between one obtained by either a viscous length scale (the cube case) or a roughness length (the container case)' (p. 20).",
-      "source_location": "Sect. 5.2, Figs 16-19 and Table 2 (pp. 17-20); Sect. 6 (p. 20)"
+      "source_location": "Sect. 5.2, Figs 16-19 and Table 2 (pp. 17-20); Sect. 6 (p. 20)",
+      "regime": {
+        "surface": "rough",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "surface"
+        ]
+      }
     },
     {
       "transfer_id": "N582-T01",
@@ -4282,7 +5062,16 @@
       "frozen_note": "Fitted and tested in the same work.",
       "holdout_statement": false,
       "holdout_passage": "None. The text says only that the Re_tau = 5200 data 'are employed for calibrating the proposed formula' (p. 7).",
-      "source_location": "Sec. III, Figs 4-7, pp. 8-11"
+      "source_location": "Sec. III, Figs 4-7, pp. 8-11",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N582-T02",
@@ -4315,7 +5104,16 @@
       "frozen_note": "Fitted and tested in the same work.",
       "holdout_statement": false,
       "holdout_passage": "None.",
-      "source_location": "Sec. III, Fig. 8(a,c), pp. 11-12"
+      "source_location": "Sec. III, Fig. 8(a,c), pp. 11-12",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N582-T03",
@@ -4348,7 +5146,16 @@
       "frozen_note": "Fitted and tested in the same work.",
       "holdout_statement": false,
       "holdout_passage": "None.",
-      "source_location": "Sec. III, Fig. 8(b), pp. 11-12"
+      "source_location": "Sec. III, Fig. 8(b), pp. 11-12",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N582-T04",
@@ -4386,7 +5193,16 @@
       "frozen_note": "Trained and tested in the same work.",
       "holdout_statement": false,
       "holdout_passage": "None.",
-      "source_location": "Appendix A, p. 17; Fig. 13, p. 18"
+      "source_location": "Appendix A, p. 17; Fig. 13, p. 18",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N582-T05",
@@ -4427,7 +5243,16 @@
       "frozen_note": "Trained and applied in the same work.",
       "holdout_statement": false,
       "holdout_passage": "None.",
-      "source_location": "Sec. IV, pp. 12-13; Fig. 9, p. 14"
+      "source_location": "Sec. IV, pp. 12-13; Fig. 9, p. 14",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N623-T01",
@@ -4468,7 +5293,16 @@
       "frozen_note": "Weights were supplied by the model authors and not retrained (p. 7), but X. I. A. Yang is an author of this paper and of Ref. [80].",
       "holdout_statement": false,
       "holdout_passage": "'The three models have \"seen\" flows at only a few Reynolds numbers. We test if these ML wall models can extrapolate to unseen Reynolds numbers' (abstract) and 'unseen Re_tau > 1500' (p. 10) speak of training only.",
-      "source_location": "Sec. III.A (pp. 7-9), Figs. 5(b), 6, 7(b), 10(b), 16(b), 17(b), 18"
+      "source_location": "Sec. III.A (pp. 7-9), Figs. 5(b), 6, 7(b), 10(b), 16(b), 17(b), 18",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N623-T02",
@@ -4515,7 +5349,16 @@
       "frozen_note": "Not retrained (p. 7), but Ref. [82] lists X. I. A. Yang, an author of this paper.",
       "holdout_statement": false,
       "holdout_passage": "No statement that the target was withheld from validation or model selection; the abstract notes that 'one model requires re-training'.",
-      "source_location": "Sec. III.A (pp. 7-8), Figs. 5(c), 6, 7(c), 16(c)"
+      "source_location": "Sec. III.A (pp. 7-8), Figs. 5(c), 6, 7(c), 16(c)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N623-T03",
@@ -4564,7 +5407,16 @@
       "frozen_note": "'We tested the already trained ML models provided by the authors in our solver and did not retrain them' (p. 7). Ref. [83] is by H. J. Bae and P. Koumoutsakos; this paper is by Vadrot, X. I. A. Yang and Abkar (Bae is thanked in the acknowledgments). The weights were supplied by the authors; a public release is not cited.",
       "holdout_statement": false,
       "holdout_passage": "'unseen Reynolds numbers' (abstract) refers to training only; the source also notes 'Bae & Koumoutsakos reported results up to 10^6 [83]' (p. 8), so part of the Reynolds range was tested in the fitting work.",
-      "source_location": "Sec. III (pp. 7-10), Figs. 5(d), 6, 7(d), 8, 9, 10(c), 16(d), 18; Sec. IV.C (pp. 13-15), Table III"
+      "source_location": "Sec. III (pp. 7-10), Figs. 5(d), 6, 7(d), 8, 9, 10(c), 16(d), 18; Sec. IV.C (pp. 13-15), Table III",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N623-T04",
@@ -4596,7 +5448,16 @@
       "frozen_note": "X. I. A. Yang is an author of this paper and of Ref. [80].",
       "holdout_statement": false,
       "holdout_passage": "none beyond 'seen'/'unseen' Reynolds numbers of training (p. 10)",
-      "source_location": "Sec. IV.A (pp. 10-11), Fig. 11 (p. 11)"
+      "source_location": "Sec. IV.A (pp. 10-11), Fig. 11 (p. 11)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N623-T05",
@@ -4623,7 +5484,16 @@
       "frozen_note": "Supplied by the authors and not retrained (p. 7). Ref. [81] is printed as 'Z. Zhou, G. He, and X. Yang'; Ref. [82] lists 'X. I. A. Yang' and 'X. Yang' as two authors and the acknowledgments thank Xiaolei Yang and Zhideng Zhou, so Ref. [81] appears to share no author with this paper.",
       "holdout_statement": false,
       "holdout_passage": "'we tested it on a different configuration, namely channel flow, and in a different solver' (p. 12) describes the training set only.",
-      "source_location": "Sec. IV.B (p. 12), Fig. 12 (p. 12); the coupled ZHY21 runs are mentioned without data (p. 12)"
+      "source_location": "Sec. IV.B (p. 12), Fig. 12 (p. 12); the coupled ZHY21 runs are mentioned without data (p. 12)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N623-T06",
@@ -4649,7 +5519,16 @@
       "frozen_note": "Ref. [82] lists X. I. A. Yang, an author of this paper.",
       "holdout_statement": false,
       "holdout_passage": "none; the source states that law-of-the-wall data for Re_tau = 1e3 to 1e9 were in the training",
-      "source_location": "Sec. IV.B (p. 12), Fig. 12 (p. 12), Fig. 13 (p. 13)"
+      "source_location": "Sec. IV.B (p. 12), Fig. 12 (p. 12), Fig. 13 (p. 13)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N626-T01",
@@ -4682,7 +5561,16 @@
       "frozen_note": "model trained in this work",
       "holdout_statement": true,
       "holdout_passage": "Section 4.1, pp. 10-11: 'The BFS and APG simulations are only used as test simulations, to test the performance of the model on configurations not seen during training'; Table 3 lists BFS with a dash under Train/validation and 'Yes' under A priori test",
-      "source_location": "Section 4.1; Table 4 (p. 13), Figs 5-7 (pp. 12-15); Fig. A1a (p. 31)"
+      "source_location": "Section 4.1; Table 4 (p. 13), Figs 5-7 (pp. 12-15); Fig. A1a (p. 31)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N626-T02",
@@ -4716,7 +5604,16 @@
       "frozen_note": "model trained in this work",
       "holdout_statement": true,
       "holdout_passage": "Section 4.1, pp. 10-11: 'The BFS and APG simulations are only used as test simulations'; Table 3 lists APG with a dash under Train/validation and 'Yes' under A priori test",
-      "source_location": "Section 4.1; Table 4 (p. 13), Figs 5-7 (pp. 12-15); Fig. A1b (p. 31)"
+      "source_location": "Section 4.1; Table 4 (p. 13), Figs 5-7 (pp. 12-15); Fig. A1b (p. 31)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N626-T03",
@@ -4749,7 +5646,16 @@
       "frozen_note": "model trained in this work",
       "holdout_statement": true,
       "holdout_passage": "Section 4.1, p. 11: 'training is exclusively performed on the sub-configuration N65a, that is with an incidence angle I = 4 deg, while testing is exclusively performed on the sub-configuration N65b'; Table 3 lists N65b with a dash under Train/validation",
-      "source_location": "Section 4.1; Table 4 (p. 13), Figs 5-7 (pp. 12-15); Fig. A1c (p. 31)"
+      "source_location": "Section 4.1; Table 4 (p. 13), Figs 5-7 (pp. 12-15); Fig. A1c (p. 31)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N626-T04",
@@ -4783,7 +5689,16 @@
       "frozen_note": "model trained in this work",
       "holdout_statement": true,
       "holdout_passage": "p. 17: 'outside of the range of friction Reynolds numbers seen during training (Re_tau = 180 and 950)'; Table 3 lists 'Channel flow Re_tau = 2000' with a dash under Train/validation and under A priori test and 'Yes' under A posteriori test",
-      "source_location": "Section 4.2.2 (pp. 17-18); Fig. 11 (p. 19)"
+      "source_location": "Section 4.2.2 (pp. 17-18); Fig. 11 (p. 19)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N626-T05",
@@ -4818,7 +5733,16 @@
       "frozen_note": "models trained in this work",
       "holdout_statement": true,
       "holdout_passage": "Section 4.2.3, p. 18: 'The configuration is similar to the simulation BFS described in Section 2.1, which was not included in the training dataset'; Table 3 lists BFS with a dash under Train/validation and 'Yes' under A posteriori test",
-      "source_location": "Section 4.2.3 (pp. 18-21); Figs 13-16, Table 5 (pp. 20-22)"
+      "source_location": "Section 4.2.3 (pp. 18-21); Figs 13-16, Table 5 (pp. 20-22)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N626-T06",
@@ -4852,7 +5776,16 @@
       "frozen_note": "model trained in this work",
       "holdout_statement": true,
       "holdout_passage": "Section 4.2.4, p. 21: 'The configuration is similar to the simulation N65b described in Section 2.1 and Appendix A, which was not included in the training dataset'; Table 3 lists N65b with a dash under Train/validation and 'Yes' under A posteriori test",
-      "source_location": "Section 4.2.4 (pp. 21-25); Figs 18-21 (pp. 24-25)"
+      "source_location": "Section 4.2.4 (pp. 21-25); Figs 18-21 (pp. 24-25)",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N647-T01",
@@ -4884,6 +5817,15 @@
         "first_reading": "true (one coefficient set at five input heights)",
         "second_reading": "false",
         "third_reading": "rule C(c) does not decide whether input heights are variants; on the reading that they are evaluation positions c is false"
+      },
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.09",
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -4936,7 +5878,16 @@
       "frozen_note": "database built and applied in this source by its single author",
       "holdout_statement": false,
       "holdout_passage": "none; the source only says that the 15-degree diffuser is 'the same test case as the target data' of the other database",
-      "source_location": "Section 6.1, Figs 10-11; PDF pp. 16-17"
+      "source_location": "Section 6.1, Figs 10-11; PDF pp. 16-17",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N674-T02",
@@ -4988,7 +5939,16 @@
       "frozen_note": "database built and applied in this source by its single author",
       "holdout_statement": false,
       "holdout_passage": "none",
-      "source_location": "Section 6.1, Fig. 12; PDF p. 17"
+      "source_location": "Section 6.1, Fig. 12; PDF p. 17",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N674-T03",
@@ -5041,7 +6001,16 @@
       "frozen_note": "database built and applied in this source by its single author",
       "holdout_statement": false,
       "holdout_passage": "none",
-      "source_location": "Section 6.3, Fig. 19; PDF pp. 21-23"
+      "source_location": "Section 6.3, Fig. 19; PDF pp. 21-23",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N674-T04",
@@ -5094,7 +6063,16 @@
       "frozen_note": "database built and applied in this source by its single author",
       "holdout_statement": false,
       "holdout_passage": "none",
-      "source_location": "Section 6.4, Fig. 20; PDF pp. 23-24"
+      "source_location": "Section 6.4, Fig. 20; PDF pp. 23-24",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N674-T05",
@@ -5153,7 +6131,16 @@
       "frozen_note": "database built and applied in this source by its single author",
       "holdout_statement": false,
       "holdout_passage": "none",
-      "source_location": "Section 6.1, Fig. 12; PDF p. 17"
+      "source_location": "Section 6.1, Fig. 12; PDF p. 17",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N674-T06",
@@ -5212,7 +6199,16 @@
       "frozen_note": "database built and applied in this source by its single author",
       "holdout_statement": false,
       "holdout_passage": "none",
-      "source_location": "Section 6.2, Figs 13-16 and 18; PDF pp. 18-22"
+      "source_location": "Section 6.2, Figs 13-16 and 18; PDF pp. 18-22",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N674-T07",
@@ -5271,7 +6267,16 @@
       "frozen_note": "database built and applied in this source by its single author",
       "holdout_statement": false,
       "holdout_passage": "none",
-      "source_location": "Section 6.3, Fig. 19; PDF pp. 21-23"
+      "source_location": "Section 6.3, Fig. 19; PDF pp. 21-23",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "transfer_id": "N674-T08",
@@ -5331,7 +6336,16 @@
       "frozen_note": "database built and applied in this source by its single author",
       "holdout_statement": false,
       "holdout_passage": "none",
-      "source_location": "Section 6.4, Fig. 20; PDF pp. 23-24"
+      "source_location": "Section 6.4, Fig. 20; PDF pp. 23-24",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     }
   ],
   "first_reading_records_at_04a9064": [

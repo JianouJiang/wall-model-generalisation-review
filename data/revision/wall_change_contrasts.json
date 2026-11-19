@@ -53,7 +53,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P01-K02",
@@ -143,7 +152,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P01-K04",
@@ -190,7 +208,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P02-K01",
@@ -234,7 +261,18 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "N"
+      "sublayer_class": "N",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "thermal_coupling"
+        ]
+      }
     },
     {
       "contrast_id": "P02-K02",
@@ -278,7 +316,18 @@
         "tier": "broad",
         "reasons": []
       },
-      "sublayer_class": "N"
+      "sublayer_class": "N",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "thermal_coupling"
+        ]
+      }
     },
     {
       "contrast_id": "P02-K03",
@@ -419,7 +468,16 @@
         "tier": "broad",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.2",
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P04-K02",
@@ -594,7 +652,16 @@
         "tier": "broad",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P06-K02",
@@ -643,7 +710,16 @@
         "tier": "broad",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P06-K03",
@@ -690,7 +766,16 @@
         "tier": "broad",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.1",
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P06-K04",
@@ -819,6 +904,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -1079,6 +1174,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -1119,6 +1224,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.189",
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -1337,6 +1452,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -1379,6 +1504,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -1505,6 +1640,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "N",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -1552,7 +1697,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P17-K02",
@@ -1599,7 +1753,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P17-K03",
@@ -1646,7 +1809,16 @@
           "factor unreported: grid"
         ]
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P17-K04",
@@ -1731,6 +1903,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -1774,6 +1956,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -1816,6 +2008,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -1859,6 +2061,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -1902,6 +2114,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -1948,6 +2170,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -1992,6 +2224,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.20",
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -2034,6 +2276,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -2348,6 +2600,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -2400,6 +2662,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -2900,7 +3172,18 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "below 0.3",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "thermal_coupling"
+        ]
+      }
     },
     {
       "contrast_id": "P21-K10",
@@ -2953,7 +3236,18 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "below 0.3",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "thermal_coupling"
+        ]
+      }
     },
     {
       "contrast_id": "P21-K11",
@@ -3002,7 +3296,19 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "compressible",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "outlet 0.927",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "compressibility",
+          "thermal_coupling"
+        ]
+      }
     },
     {
       "contrast_id": "P21-K12",
@@ -3047,7 +3353,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P22-K01",
@@ -3513,7 +3828,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P25-K02",
@@ -3560,7 +3884,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P25-K03",
@@ -3607,7 +3940,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P25-K04",
@@ -3656,7 +3998,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P25-K05",
@@ -3700,7 +4051,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P25-K06",
@@ -3745,7 +4105,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P25-K07",
@@ -3788,7 +4157,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P25-K08",
@@ -3832,7 +4210,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P25-K09",
@@ -3876,7 +4263,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P26-K01",
@@ -3917,6 +4313,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -3959,6 +4365,16 @@
         "reasons": [
           "factor unreported: grid"
         ]
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -4087,6 +4503,16 @@
         "reasons": [
           "factor unreported: grid, reynolds_number"
         ]
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -4395,6 +4821,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -4613,6 +5049,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "N",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -4705,6 +5151,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "N",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -4794,6 +5250,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "N",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -4967,7 +5433,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.2",
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P34-K01",
@@ -5010,7 +5485,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "N"
+      "sublayer_class": "N",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "P34-K02",
@@ -5362,7 +5846,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N025-K02",
@@ -5533,6 +6026,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -5574,6 +6077,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -5615,6 +6128,18 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "rough",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "surface"
+        ]
       }
     },
     {
@@ -5882,7 +6407,18 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "thermal_coupling"
+        ]
+      }
     },
     {
       "contrast_id": "N054-K05",
@@ -5923,7 +6459,18 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "coupled",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "thermal_coupling"
+        ]
+      }
     },
     {
       "contrast_id": "N054-K06",
@@ -6009,6 +6556,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -6051,6 +6608,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -6094,6 +6661,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -6268,6 +6845,18 @@
         "tier": "upper",
         "reasons": [
           "factor unreported: grid, numerics, forcing, domain"
+        ]
+      },
+      "sublayer_class": "N",
+      "regime": {
+        "surface": "rough",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "surface"
         ]
       }
     },
@@ -6444,6 +7033,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -6492,6 +7091,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -6543,6 +7152,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -6587,6 +7206,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -6629,6 +7258,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -6672,6 +7311,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -6717,6 +7366,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -6760,6 +7419,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -6802,6 +7471,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -7370,6 +8049,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -7415,6 +8104,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -7459,6 +8158,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -7552,6 +8261,16 @@
         "reasons": [
           "factor unreported: outer_closure, forcing"
         ]
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -7603,7 +8322,18 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "compressible",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.74 to 4.0",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "compressibility"
+        ]
+      }
     },
     {
       "contrast_id": "N262-K02",
@@ -7695,7 +8425,18 @@
         "tier": "broad",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "compressible",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "1.57",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "compressibility"
+        ]
+      }
     },
     {
       "contrast_id": "N262-K04",
@@ -7741,7 +8482,18 @@
         "tier": "broad",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "compressible",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "1.57",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "compressibility"
+        ]
+      }
     },
     {
       "contrast_id": "N262-K05",
@@ -7784,7 +8536,18 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "compressible",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.74 to 4.0",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "compressibility"
+        ]
+      }
     },
     {
       "contrast_id": "N262-K06",
@@ -7914,6 +8677,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -8051,6 +8824,18 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "other",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "fluid"
+        ]
       }
     },
     {
@@ -8242,6 +9027,18 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "other",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "fluid"
+        ]
       }
     },
     {
@@ -8414,7 +9211,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "S"
+      "sublayer_class": "S",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N300-K05",
@@ -8502,7 +9308,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "S"
+      "sublayer_class": "S",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N318-K02",
@@ -8546,7 +9361,16 @@
         "tier": "broad",
         "reasons": []
       },
-      "sublayer_class": "S"
+      "sublayer_class": "S",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N318-K03",
@@ -8631,7 +9455,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "S"
+      "sublayer_class": "S",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N318-K05",
@@ -8760,6 +9593,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -8846,6 +9689,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -9019,6 +9872,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -9144,6 +10007,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -9365,7 +10238,16 @@
         "tier": "broad",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.15 (NACA 0012); 0.2 (MD-30P30N)",
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N357-K01",
@@ -9413,6 +10295,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -9458,6 +10350,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -9499,6 +10401,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -9543,7 +10455,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N358-K02",
@@ -9592,7 +10513,16 @@
           "factor unreported: grid"
         ]
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N358-K03",
@@ -9635,7 +10565,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N358-K04",
@@ -9723,7 +10662,16 @@
         "tier": "broad",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N364-K01",
@@ -9767,6 +10715,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -9810,6 +10768,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -9853,6 +10821,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -9899,6 +10877,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -9942,6 +10930,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -10080,6 +11078,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -10124,6 +11132,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -10393,6 +11411,16 @@
         "reasons": [
           "factor unreported: numerics, forcing"
         ]
+      },
+      "sublayer_class": "N",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -10434,6 +11462,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "N",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -10476,6 +11514,18 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "compressible",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.85, 0.875, 0.90",
+        "primary_scope": "outside",
+        "axes_outside": [
+          "compressibility"
+        ]
       }
     },
     {
@@ -10645,7 +11695,16 @@
         "tier": "broad",
         "reasons": []
       },
-      "sublayer_class": "S"
+      "sublayer_class": "S",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N419-K03",
@@ -10819,6 +11878,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "both",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -10861,6 +11930,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -10904,6 +11983,18 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "rough",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "surface"
+        ]
       }
     },
     {
@@ -10949,6 +12040,18 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "rough",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "surface"
+        ]
       }
     },
     {
@@ -10991,6 +12094,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "both",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.3 and 0.5",
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -11078,7 +12191,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "S"
+      "sublayer_class": "S",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N446-K02",
@@ -11171,7 +12293,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N456-K02",
@@ -11264,7 +12395,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N459-K02",
@@ -11309,7 +12449,16 @@
           "factor unreported: grid"
         ]
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N464-K01",
@@ -11531,7 +12680,16 @@
           "factor unreported: grid"
         ]
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N476-K02",
@@ -11579,7 +12737,16 @@
           "factor unreported: grid"
         ]
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N476-K03",
@@ -11749,6 +12916,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.1",
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -11928,6 +13105,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "Ma_LB 0.060-0.069 (stated 'much less than 0.3')",
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -12110,6 +13297,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -12155,6 +13352,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -12249,6 +13456,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -12381,6 +13598,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -12427,6 +13654,16 @@
         "reasons": [
           "factor unreported: outer_closure"
         ]
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -12606,6 +13843,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -12703,7 +13950,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N611-K02",
@@ -12746,7 +14002,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N611-K03",
@@ -12792,7 +14057,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N623-K01",
@@ -12838,6 +14112,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -12927,6 +14211,16 @@
       "derived": {
         "tier": "broad",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "not stated",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -13283,7 +14577,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N626-K07",
@@ -13327,7 +14630,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N626-K08",
@@ -13377,7 +14689,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N626-K09",
@@ -13421,7 +14742,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N635-K01",
@@ -13735,6 +15065,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": "0.2",
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -13822,6 +15162,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -13862,6 +15212,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -13908,7 +15268,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N674-K02",
@@ -13954,7 +15323,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N674-K03",
@@ -14001,7 +15379,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N674-K04",
@@ -14089,7 +15476,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N674-K06",
@@ -14133,7 +15529,16 @@
         "tier": "broad",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N674-K07",
@@ -14179,7 +15584,16 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "U"
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
+      }
     },
     {
       "contrast_id": "N680-K01",
@@ -14396,6 +15810,16 @@
       "derived": {
         "tier": "strict",
         "reasons": []
+      },
+      "sublayer_class": "U",
+      "regime": {
+        "surface": "smooth",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "inside",
+        "axes_outside": []
       }
     },
     {
@@ -14523,7 +15947,18 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "N"
+      "sublayer_class": "N",
+      "regime": {
+        "surface": "rough",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "surface"
+        ]
+      }
     },
     {
       "contrast_id": "N707-K02",
@@ -14565,7 +16000,18 @@
         "tier": "strict",
         "reasons": []
       },
-      "sublayer_class": "N"
+      "sublayer_class": "N",
+      "regime": {
+        "surface": "rough",
+        "compressibility": "low",
+        "thermal_coupling": "none",
+        "fluid": "newtonian single-phase",
+        "mach_stated": null,
+        "primary_scope": "outside",
+        "axes_outside": [
+          "surface"
+        ]
+      }
     },
     {
       "contrast_id": "N719-K01",
