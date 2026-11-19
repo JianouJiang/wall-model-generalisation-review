@@ -3,153 +3,80 @@
   "unit": "One source-located comparative series. Repeated stations, levels, observables and exposures can share a run. Record groups are descriptive and overlap.",
   "scope": "These are all-regime documentary counts by type. A strict incompressible smooth-wall success or failure fraction is not estimated. Design labels describe the identified comparison, not all calculations a paper could have run.",
   "disposition": {
-    "documented eligible design": 107,
-    "contested": 4,
-    "excluded": 4
+    "documented eligible design": 108,
+    "contested": 2,
+    "excluded": 5
   },
   "by_historical_cohort": {
     "historical 82": {
-      "documented eligible design": 82
+      "documented eligible design": 81,
+      "contested": 1
     },
     "other 33": {
-      "documented eligible design": 25,
-      "contested": 4,
-      "excluded": 4
+      "documented eligible design": 27,
+      "contested": 1,
+      "excluded": 5
     }
   },
   "contested": {
     "P09": "Reconstruction of near-wall velocity extends the prescribed-input category beyond a named traction or stress estimator.",
-    "N147": "Invited review. Figs. 4–5 trace to Kalitzin et al. 2005, especially Figs. 7, 18–19. Exclude from counts of new primary calculations. Exact redraw/recomputation undocumented.",
-    "N400": "Whole-pipe temporal forecast with a wall-shear loss, without a distinct deployed wall law. Relevant only under a broader estimator definition.",
-    "N635": "The adjoint wall treatment primarily estimates shape sensitivities. Separate the primal wall treatment and documentary comparison from independent physical validation."
+    "P13": "Disposition contested, by clarification S3. The diffuser LES is a whole calculation with an identifiable wall treatment that the source itself calls wall modelling (Sec. 2.3, Eq. 6), so the method is inside the paper-level rule; but its only comparison with a comparator is a statement, and the channel comparison is announced without any displayed or quoted value, so neither design qualifies, and the paper has no other qualifying design (the periodic-pipe comparison of two domain lengths has no comparator and no stated wall treatment). The published rule alone does not say whether a statement-only comparison is a 'source-located comparison'; S3 settles it as contested (second reading). Group coupled_wmles: both readings describe the diffuser LES and the channel validation with the same facts; membership follows the disposition, so under S3 no design enters coupled_wmles as a qualifying design. The sublayer point (first cell required inside the viscous sublayer) does not change the disposition: the wall-treatment definition of rules_v2 is not the paper-level rule."
   },
   "excluded": {
     "P10": "No active wall law or tested wall estimator.",
     "P28": "Decomposes observed fluctuations, no tested wall flux mapping; retain as adjacent structure evidence.",
     "N008": "Real wall-boundary comparison, outside turbulent population.",
-    "N144": "Reconstructs an outer velocity field; no near-wall treatment, stress estimator or imposed flux assessed."
+    "N144": "Reconstructs an outer velocity field; no near-wall treatment, stress estimator or imposed flux assessed.",
+    "N400": "Disposition excluded under the published rule with S2: the tested object is a learned surrogate of the whole wall-resolved r-z velocity field (work has no wall treatment, stress estimator or imposed wall flux). S3 would be met (Fig. 13 and quoted MAE values against DNS) but does not apply to an object S2 rules out. No coupled calculation; DNS radial spacing 0.35-2.24 wall units, no-slip wall. The readings do not disagree on any fact."
   },
   "missing_archived_full_text": [],
   "evidence_by_type": {
-    "constitutive_constraint": {
-      "designs": 8,
-      "works": 8,
-      "linked_groups": 7,
-      "design_ids": [
-        "N240-D01",
-        "N327-D02",
-        "N418-D03",
-        "N551-direction-restriction",
-        "N582-D01",
-        "N626-direction",
-        "P11-D01",
-        "P14-law"
-      ],
-      "work_ids": [
-        "N240",
-        "N327",
-        "N418",
-        "N551",
-        "N582",
-        "N626",
-        "P11",
-        "P14"
-      ],
-      "known_link_groups": [
-        [
-          "N240"
-        ],
-        [
-          "N327"
-        ],
-        [
-          "N418"
-        ],
-        [
-          "N551"
-        ],
-        [
-          "N582"
-        ],
-        [
-          "N626"
-        ],
-        [
-          "P11",
-          "P14"
-        ]
-      ],
-      "rule": "A stated mathematical restriction on the wall mapping, or a paired observation capable of excluding that restriction at its actual inputs and filter. A structural restriction counts as a formulation, separately from any observed violation.",
-      "contested_additions": {
-        "designs": 0,
-        "works": 0,
-        "linked_groups": 0,
-        "design_ids": [],
-        "work_ids": [],
-        "known_link_groups": []
-      },
-      "observable_members": {
-        "P11-D01": [
-          "filtered wall velocity"
-        ],
-        "P14-law": [
-          "filtered slip-to-gradient ratio for channel instantaneous profiles and periodic-hill stationwise mean profiles"
-        ],
-        "N240-D01": [
-          "wall-shear time series",
-          "reconstructed velocity and captured energy"
-        ],
-        "N327-D02": [
-          "paired instantaneous filtered wall-velocity and normal-gradient components",
-          "fitted slip length"
-        ],
-        "N418-D03": [
-          "absolute percentage error in mean total stress at matching height"
-        ],
-        "N551-direction-restriction": [
-          "Equilibrium wall stress direction constraint"
-        ],
-        "N582-D01": [
-          "mean U and mean gradient versus height",
-          "predicted shear at matched off-wall velocity"
-        ],
-        "N626-direction": [
-          "Admissible wall stress vector"
-        ]
-      }
-    },
     "prescribed_input": {
-      "designs": 35,
-      "works": 28,
-      "linked_groups": 24,
+      "designs": 49,
+      "works": 35,
+      "linked_groups": 29,
       "design_ids": [
         "N011-D01",
         "N011-D02",
         "N011-D03",
+        "N011-V01",
         "N080-D01",
         "N166-D01",
+        "N239-V01",
         "N240-D01",
         "N253-D01",
         "N262-D01",
         "N327-D02",
+        "N327-V04",
         "N332-D01",
+        "N332-V01",
         "N364-external-input",
+        "N392-V01",
         "N418-D03",
+        "N419-V01",
         "N464-D02",
+        "N464-V01",
         "N497-D01",
         "N497-D03",
         "N540-D01",
         "N556-D01",
+        "N556-V05",
+        "N556-V06",
         "N582-D01",
         "N582-D03",
         "N592-D01",
+        "N611-V01",
         "N623-D02",
         "N626-apriori",
         "N647-D01",
         "N680-D01",
         "N719-D01",
+        "P06-V01",
+        "P07-V01",
         "P08-D01",
         "P11-D01",
+        "P12-V02",
+        "P14-V01",
         "P14-law",
         "P19-inputs",
         "P21-D01",
@@ -163,26 +90,33 @@
         "N011",
         "N080",
         "N166",
+        "N239",
         "N240",
         "N253",
         "N262",
         "N327",
         "N332",
         "N364",
+        "N392",
         "N418",
+        "N419",
         "N464",
         "N497",
         "N540",
         "N556",
         "N582",
         "N592",
+        "N611",
         "N623",
         "N626",
         "N647",
         "N680",
         "N719",
+        "P06",
+        "P07",
         "P08",
         "P11",
+        "P12",
         "P14",
         "P19",
         "P21",
@@ -198,6 +132,9 @@
         ],
         [
           "N166"
+        ],
+        [
+          "N239"
         ],
         [
           "N240"
@@ -220,13 +157,20 @@
           "N582"
         ],
         [
+          "N392"
+        ],
+        [
           "N418"
+        ],
+        [
+          "N419"
         ],
         [
           "N464"
         ],
         [
-          "N497"
+          "N497",
+          "N611"
         ],
         [
           "N556"
@@ -251,6 +195,12 @@
           "N719"
         ],
         [
+          "P06"
+        ],
+        [
+          "P07"
+        ],
+        [
           "P08"
         ],
         [
@@ -258,6 +208,7 @@
           "P14"
         ],
         [
+          "P12",
           "P19"
         ],
         [
@@ -269,35 +220,43 @@
       ],
       "rule": "A measured model or estimator response with specified reference inputs outside solver feedback. Identify a future-stress forecast separately from an instantaneous wall boundary condition.",
       "contested_additions": {
-        "designs": 2,
-        "works": 2,
-        "linked_groups": 2,
+        "designs": 1,
+        "works": 1,
+        "linked_groups": 1,
         "design_ids": [
-          "N400-D01",
           "P09-D01"
         ],
         "work_ids": [
-          "N400",
           "P09"
         ],
         "known_link_groups": [
-          [
-            "N400"
-          ],
           [
             "P09"
           ]
         ]
       },
       "observable_members": {
+        "P06-V01": [
+          "ratio of the reconstructed to the analytical wall-normal velocity derivative at the boundary node, as a function of y_B+"
+        ],
+        "P07-V01": [
+          "near-wall RMS streamwise velocity, z+ up to 200"
+        ],
         "P08-D01": [
           "two bottom-stress fluctuation components and their moments"
         ],
         "P11-D01": [
           "filtered wall velocity"
         ],
+        "P12-V02": [
+          "relative error in friction velocity (wall stress)",
+          "relative error in wall-parallel velocity at the matching location"
+        ],
         "P14-law": [
           "filtered slip-to-gradient ratio for channel instantaneous profiles and periodic-hill stationwise mean profiles"
+        ],
+        "P14-V01": [
+          "mean volume-filtered streamwise velocity at the wall along x/H"
         ],
         "P19-inputs": [
           "classification probability; stress magnitude and direction",
@@ -332,11 +291,18 @@
         "N011-D03": [
           "shear field and spectra for numerical snapshots"
         ],
+        "N011-V01": [
+          "instantaneous wall-shear-stress fields and their modes",
+          "pre-multiplied power spectra of the modes"
+        ],
         "N080-D01": [
           "future wall shear field/component or magnitude"
         ],
         "N166-D01": [
           "mixing length and spectra"
+        ],
+        "N239-V01": [
+          "skin-friction coefficient along the hull"
         ],
         "N240-D01": [
           "wall-shear time series",
@@ -353,17 +319,34 @@
           "paired instantaneous filtered wall-velocity and normal-gradient components",
           "fitted slip length"
         ],
+        "N327-V04": [
+          "terms L, L + F and M of the dynamic procedure",
+          "estimated slip lengths l_L and l_(L+F) normalised by the optimal slip length"
+        ],
         "N332-D01": [
           "streamwise/spanwise shear and wall pressure"
+        ],
+        "N332-V01": [
+          "streamwise velocity fluctuation at the target plane: normalised mean-squared error, RMS error, correlation coefficient"
         ],
         "N364-external-input": [
           "A priori friction-velocity response to velocity and law parameters"
         ],
+        "N392-V01": [
+          "mean velocity profile u+(y+)"
+        ],
         "N418-D03": [
           "absolute percentage error in mean total stress at matching height"
         ],
+        "N419-V01": [
+          "turbulent kinetic energy k+(y+)",
+          "percentage error against the DNS of Kasagi et al. (stated as 3%)"
+        ],
         "N464-D02": [
           "mean and fluctuating filtered velocity profile on the source time scale"
+        ],
+        "N464-V01": [
+          "time signal of the non-equilibrium wall stress, two wall-parallel components"
         ],
         "N497-D01": [
           "moments and distributions of wall shear"
@@ -379,6 +362,14 @@
         "N556-D01": [
           "signed mean wall-stress error, coupled versus recomputed"
         ],
+        "N556-V05": [
+          "relative error of the mean wall shear stress against h/delta",
+          "propagation of an input-velocity error into friction velocity and wall stress"
+        ],
+        "N556-V06": [
+          "relative error of the mean wall shear stress against h/delta",
+          "relative error of the law's u+ profile"
+        ],
         "N582-D01": [
           "mean U and mean gradient versus height",
           "predicted shear at matched off-wall velocity"
@@ -389,6 +380,9 @@
         "N592-D01": [
           "predicted wall shear and parity",
           "derived wall-unit profiles"
+        ],
+        "N611-V01": [
+          "mean velocity u+ against y+"
         ],
         "N623-D02": [
           "network velocity-law departure",
@@ -411,20 +405,31 @@
       }
     },
     "coupled_wmles": {
-      "designs": 127,
+      "designs": 186,
       "works": 68,
       "linked_groups": 43,
       "design_ids": [
         "N025-D01",
         "N025-D02",
+        "N025-V01",
+        "N025-V02",
+        "N025-V03",
+        "N025-V04",
         "N037-D01",
+        "N037-V01",
         "N076-D01",
         "N076-D02",
+        "N076-V01",
         "N164-D01",
         "N174-D01",
+        "N174-V01",
+        "N174-V02",
+        "N174-V03",
         "N181-D01",
+        "N181-V01",
         "N189-D01",
         "N189-D02",
+        "N195-V01",
         "N195-channel",
         "N195-step-overview",
         "N195-step-parameters",
@@ -433,39 +438,62 @@
         "N239-suboff-low",
         "N240-D02",
         "N253-D02",
+        "N253-V01",
         "N262-D02",
         "N262-D03",
+        "N262-V01",
+        "N262-V02",
+        "N262-V03",
+        "N262-V04",
         "N273-D01",
         "N280-D01",
         "N280-D02",
         "N297-D01",
         "N297-D02",
         "N300-D01",
+        "N300-V01",
+        "N300-V02",
         "N318-D01",
+        "N318-V03",
         "N327-D01",
         "N327-D03",
+        "N327-V01",
+        "N327-V02",
+        "N327-V03",
+        "N327-V05",
         "N357-linear-acceleration",
         "N357-pulse",
         "N357-sspg",
         "N357-stationary",
         "N364-Re-series",
+        "N364-V01",
         "N364-fixed-Re-model-and-numerics",
         "N364-refit-high-Re",
         "N372-D01",
+        "N372-V01",
+        "N372-V02",
         "N391-D01",
         "N391-D02",
         "N392-D01",
         "N395-D01",
         "N395-D02",
+        "N395-V01",
+        "N395-V02",
+        "N395-V03",
         "N418-D01",
         "N418-D02",
+        "N418-V01",
+        "N418-V02",
         "N434-D01",
+        "N434-V03",
         "N437-D01",
         "N437-D02",
         "N437-D03",
         "N444-D01",
         "N446-D01",
+        "N446-V01",
         "N456-D01",
+        "N456-V01",
         "N464-D01",
         "N497-D02",
         "N497-D04",
@@ -473,11 +501,20 @@
         "N502-D01",
         "N502-D02",
         "N530-D01",
+        "N530-V01",
         "N540-D02",
         "N540-D03",
+        "N540-V01",
+        "N540-V02",
+        "N551-V01",
+        "N551-V02",
         "N551-coarse-duct",
         "N556-D02",
         "N556-D03",
+        "N556-V01",
+        "N556-V02",
+        "N556-V03",
+        "N556-V04",
         "N582-D02",
         "N611-channel",
         "N611-hill-high",
@@ -485,21 +522,34 @@
         "N611-step",
         "N623-D01",
         "N623-D03",
+        "N623-V01",
+        "N623-V02",
+        "N623-V03",
+        "N623-V04",
+        "N623-V05",
         "N626-cascade",
         "N626-channel-2000",
         "N626-channel-950",
+        "N626-direction",
         "N626-step",
         "N632-D01",
         "N653-D01",
         "N655-spatially-averaged-transient",
         "N672-D01",
+        "N672-V01",
+        "N672-V02",
+        "N674-V01",
+        "N674-channel",
+        "N674-diffusers",
+        "N674-flat-plate",
+        "N674-hump",
         "N680-D02",
         "N709-D01",
         "P07-D01",
         "P11-D02",
+        "P11-V01",
         "P12-D01",
-        "P13-D01",
-        "P13-D02",
+        "P12-V01",
         "P14-channel",
         "P14-hill",
         "P15-D01",
@@ -519,7 +569,9 @@
         "P20-channel",
         "P21-D02",
         "P21-D03",
+        "P21-V01",
         "P23-CRM",
+        "P23-V01",
         "P23-ablations",
         "P23-bump",
         "P23-channel",
@@ -534,6 +586,7 @@
         "P26-channel",
         "P26-stress-correlation",
         "P30-D01",
+        "P30-V01",
         "P31-bump",
         "P31-channel",
         "P31-hill-training",
@@ -590,12 +643,12 @@
         "N653",
         "N655",
         "N672",
+        "N674",
         "N680",
         "N709",
         "P07",
         "P11",
         "P12",
-        "P13",
         "P14",
         "P15",
         "P16",
@@ -739,6 +792,9 @@
           "N672"
         ],
         [
+          "N674"
+        ],
+        [
           "N680"
         ],
         [
@@ -746,9 +802,6 @@
         ],
         [
           "P07"
-        ],
-        [
-          "P13"
         ],
         [
           "P15"
@@ -771,12 +824,21 @@
       ],
       "rule": "A turbulent LES with an active wall treatment evaluated on a hydrodynamic output. A wall-resolved numerical reference is a comparator, not another wall-treatment run.",
       "contested_additions": {
-        "designs": 0,
-        "works": 0,
-        "linked_groups": 0,
-        "design_ids": [],
-        "work_ids": [],
-        "known_link_groups": []
+        "designs": 2,
+        "works": 1,
+        "linked_groups": 1,
+        "design_ids": [
+          "P13-D01",
+          "P13-D02"
+        ],
+        "work_ids": [
+          "P13"
+        ],
+        "known_link_groups": [
+          [
+            "P13"
+          ]
+        ]
       },
       "observable_members": {
         "P07-D01": [
@@ -787,17 +849,18 @@
           "mean streamwise and wall-normal velocity",
           "filtered wall velocity"
         ],
+        "P11-V01": [
+          "mean streamwise velocity profiles at x/H = 2 and x/H = 6"
+        ],
         "P12-D01": [
           "fuselage, juncture and separation-zone velocity",
           "wing pressure and separation footprints"
         ],
-        "P13-D01": [
-          "streamwise and azimuthal velocity",
-          "core reversal"
-        ],
-        "P13-D02": [
-          "mean channel velocity",
-          "authors describe comparison without tabulating a profile discrepancy"
+        "P12-V01": [
+          "mean velocity profile (Figs. 7a, 23a)",
+          "relative error of the mean velocity profile against grid size (Figs. 7b, 23b)",
+          "error of wall-parallel velocity at the matching location against error of friction velocity (Fig. 8a, circles)",
+          "instantaneous streamwise velocity at y = 0.3 delta (Fig. 24)"
         ],
         "P14-channel": [
           "mean filtered streamwise velocity and boundary value"
@@ -873,6 +936,10 @@
         "P21-D03": [
           "blade shear"
         ],
+        "P21-V01": [
+          "mean streamwise velocity (log-layer mismatch)",
+          "rms of streamwise velocity"
+        ],
         "P23-channel": [
           "mean U and mean wall stress"
         ],
@@ -896,6 +963,10 @@
           "centreline Cf and −Cp",
           "pipe U profile",
           "CRM force coefficients"
+        ],
+        "P23-V01": [
+          "centreline wall pressure coefficient",
+          "centreline skin-friction coefficient"
         ],
         "P24-interpolation": [
           "U+ versus y+",
@@ -930,6 +1001,12 @@
         "P30-D01": [
           "friction velocity",
           "mean and rms velocity"
+        ],
+        "P30-V01": [
+          "mean velocity profile u+ (Figs 3-4)",
+          "rms velocity fluctuations u'+, v'+, w'+ and u'v'+ (Figs 5-6)",
+          "wall-adjacent element size y1+ (Table 1)",
+          "enrichment and polynomial components of the mean velocity (Fig. 7)"
         ],
         "P31-hill-training": [
           "mean Cf, mean Cp, separation and reattachment locations, U/Rij profiles"
@@ -970,10 +1047,32 @@
           "separation and reattachment using mean wall friction",
           "velocity at hill stations"
         ],
+        "N025-V01": [
+          "mean velocity u+",
+          "RMS velocities u'+, v'+, w'+",
+          "Reynolds shear stress",
+          "velocity magnitude and Q-criterion snapshots (qualitative, Fig. 4)"
+        ],
+        "N025-V02": [
+          "mean velocity u+",
+          "RMS velocities u'+, v'+, w'+",
+          "Reynolds shear stress",
+          "number of linear solver iterations (statement)"
+        ],
+        "N025-V03": [
+          "not specified ('almost indistinguishable results')"
+        ],
+        "N025-V04": [
+          "mean streamwise velocity at ten stations",
+          "reattachment length"
+        ],
         "N037-D01": [
           "time to separation",
           "mean/bulk velocity",
           "roughness function"
+        ],
+        "N037-V01": [
+          "wall shear stress response at the application of the pressure gradient (statement only)"
         ],
         "N076-D01": [
           "mean streamwise velocity",
@@ -983,6 +1082,11 @@
           "reattachment length",
           "skin friction and mean U at downstream stations"
         ],
+        "N076-V01": [
+          "mean streamwise velocity (log-layer mismatch)",
+          "resolved rms velocity fluctuations",
+          "Reynolds shear stress"
+        ],
         "N164-D01": [
           "mean and rms velocity",
           "Reynolds shear"
@@ -991,10 +1095,37 @@
           "relative L2 discrepancies of mean U and normal and shear stresses",
           "cost"
         ],
+        "N174-V01": [
+          "u_tau,sim and Re_tau,sim with relative errors",
+          "mean velocity profile u+",
+          "Reynolds normal and shear stress profiles",
+          "MLUPs/node"
+        ],
+        "N174-V02": [
+          "u_tau,sim and Re_tau,sim with relative errors",
+          "mean velocity profile u+ and relative L2 norm",
+          "Reynolds normal and shear stresses (profiles and relative L2 norms)",
+          "MLUPs/node"
+        ],
+        "N174-V03": [
+          "u_tau,sim and Re_tau,sim with relative errors",
+          "mean velocity profile u+ and relative L2 norm",
+          "Reynolds normal and shear stresses (profiles and relative L2 norms)",
+          "MLUPs/node"
+        ],
         "N181-D01": [
           "mean U",
           "resolved and total Reynolds shear",
           "wall stress and spectra"
+        ],
+        "N181-V01": [
+          "wall shear stress errors epsilon_LW and epsilon_LD",
+          "mean velocity profile",
+          "resolved Reynolds normal and shear stresses",
+          "modelled plus viscous shear stress",
+          "SGS eddy viscosity",
+          "total shear stress deviation",
+          "total Reynolds shear stress"
         ],
         "N189-D01": [
           "transition location and density-gradient field"
@@ -1015,6 +1146,9 @@
         "N195-channel": [
           "Channel friction velocity and mean velocity"
         ],
+        "N195-V01": [
+          "mean friction velocity <u_tau> (relative error)"
+        ],
         "N239-suboff-low": [
           "Rms axial velocity profiles on the Suboff stern, ReL=1.2×10⁶",
           "Mean axial velocity profile error at x/L=.978 (low Reynolds number)",
@@ -1033,11 +1167,28 @@
         "N253-D02": [
           "mean and turbulent stresses"
         ],
+        "N253-V01": [
+          "lambda-normalised slip coefficient Cw (slip velocity over pre-multiplied wall-normal gradient at the wall of the WMLES solution) against normalised grid size and against slip Reynolds number"
+        ],
         "N262-D02": [
           "mean U and turbulent stresses"
         ],
         "N262-D03": [
           "mean U and turbulent stresses"
+        ],
+        "N262-V01": [
+          "mean velocity profile U+",
+          "relative errors of Cf, Bq and Tc/Tw (numbers given for the outer-scaled function only)"
+        ],
+        "N262-V02": [
+          "mean velocity profile U+",
+          "relative errors of Cf, Bq, Tc/Tw for ym at the first cell"
+        ],
+        "N262-V03": [
+          "mean velocity profile U+"
+        ],
+        "N262-V04": [
+          "maximum relative deviation of Cf, Bq and Tc/Tw from the unperturbed run"
         ],
         "N273-D01": [
           "mean velocity",
@@ -1063,8 +1214,19 @@
           "mean velocity",
           "resolved and total turbulent energy/shear"
         ],
+        "N300-V01": [
+          "mean velocity profile",
+          "turbulent kinetic energy profile"
+        ],
+        "N300-V02": [
+          "mean velocity profile",
+          "turbulent kinetic energy profile"
+        ],
         "N318-D01": [
           "mean U, friction Re, boundary-layer profiles"
+        ],
+        "N318-V03": [
+          "mean skin-friction coefficient c_f(x)"
         ],
         "N327-D01": [
           "velocity, fluctuations and free bulk flow"
@@ -1072,6 +1234,26 @@
         "N327-D03": [
           "stress vector components versus time",
           "mean velocity profile and developing friction"
+        ],
+        "N327-V01": [
+          "mean streamwise velocity profile",
+          "mean velocity profile shifted to the DNS centreline value",
+          "eddy-viscosity profile"
+        ],
+        "N327-V02": [
+          "mean streamwise velocity profile",
+          "eddy-viscosity profile"
+        ],
+        "N327-V03": [
+          "friction coefficient against Re_theta (imposed through the slip length in Sec. 3.6, predicted by WSIM in Sec. 5.4)",
+          "mean streamwise velocity profile",
+          "rms velocity fluctuations",
+          "wall-normal velocity at the wall",
+          "boundary-layer growth and flow state in the two runs with non-zero net wall mass flux (not shown)"
+        ],
+        "N327-V05": [
+          "error E of the mean velocity in the logarithmic region",
+          "mean streamwise velocity profile"
         ],
         "N357-pulse": [
           "Time-mean and phase-resolved velocity of pulsating channel",
@@ -1104,10 +1286,29 @@
           "Mean friction velocity across channel Reynolds numbers",
           "Mean streamwise velocity across channel Reynolds numbers"
         ],
+        "N364-V01": [
+          "error of mean friction velocity",
+          "L-infinity errors of mean velocity, resolved Reynolds shear stress and resolved TKE (isolines of gPCE metamodels)",
+          "total Sobol indices of these errors with respect to n_x, n_y, n_z"
+        ],
         "N372-D01": [
           "mean pipe U",
           "stress fluctuations",
           "spectra"
+        ],
+        "N372-V01": [
+          "Darcy friction factor and a-posteriori Re_tau",
+          "mean velocity profile (inner units, velocity-defect form)",
+          "rms velocity fluctuations",
+          "Reynolds shear stress",
+          "vortical structures (lambda_2)"
+        ],
+        "N372-V02": [
+          "Darcy friction factor and a-posteriori Re_tau (Table IV)",
+          "mean velocity profile",
+          "rms velocity fluctuations",
+          "Reynolds shear stress",
+          "quadrant joint PDFs and PDFs of velocity fluctuations, anisotropy-invariant maps, autocorrelations (no reference)"
         ],
         "N391-D01": [
           "friction coefficient",
@@ -1129,6 +1330,18 @@
           "mean first-cell velocity and velocity-defined bubble length",
           "mean skin friction and friction-defined bubble length"
         ],
+        "N395-V01": [
+          "separation-bubble length from the first-cell velocity",
+          "wall pressure coefficient Cp",
+          "mean streamwise velocity at x2/L = 2.38e-4 along x",
+          "mean streamwise velocity profile at x/L = 0.2"
+        ],
+        "N395-V02": [
+          "mean streamwise velocity profiles at x/L = -0.709, -0.025, 0.2"
+        ],
+        "N395-V03": [
+          "inner-scaled mean streamwise velocity profile"
+        ],
         "N418-D01": [
           "signed mean skin friction",
           "mean velocity and pressure"
@@ -1137,9 +1350,21 @@
           "pressure coefficient",
           "mean velocity and separated region"
         ],
+        "N418-V01": [
+          "surface pressure coefficient Cp",
+          "sensor activity"
+        ],
+        "N418-V02": [
+          "surface pressure coefficient Cp"
+        ],
         "N434-D01": [
           "channel velocity/stresses",
           "airfoil surface pressure and integrated forces"
+        ],
+        "N434-V03": [
+          "inner-scaled mean velocity",
+          "Reynolds stresses",
+          "computed Re_tau"
         ],
         "N437-D01": [
           "skin friction on each strip",
@@ -1160,8 +1385,17 @@
           "mean streamwise velocity",
           "rms profiles"
         ],
+        "N446-V01": [
+          "mean velocity profile U+",
+          "streamwise rms velocity profile",
+          "velocity power spectral density (probe behind the trip; y+ about 13.5 at Re_theta about 600 and 800)"
+        ],
         "N456-D01": [
           "mean and rms velocities and TKE"
+        ],
+        "N456-V01": [
+          "mean velocity U+",
+          "turbulent kinetic energy k+ (the text says rms velocity)"
         ],
         "N464-D01": [
           "mean U, stress PDFs and transient streamwise/spanwise shear"
@@ -1188,12 +1422,28 @@
           "mean velocity around cube",
           "horizontal speed, wind direction and scalar profile in array"
         ],
+        "N530-V01": [
+          "front recirculation length xf",
+          "presence of the vortex near the saddle node S2",
+          "nature of the incoming turbulent state"
+        ],
         "N540-D02": [
           "mean U",
           "mean turbulent kinetic energy"
         ],
         "N540-D03": [
           "velocity, TKE, signed bottom Cf and spatial means"
+        ],
+        "N540-V01": [
+          "mean velocity profile U+",
+          "mean TKE profile",
+          "TKE production",
+          "mean SGS eddy viscosity"
+        ],
+        "N540-V02": [
+          "mean streamwise velocity profiles",
+          "mean TKE profiles",
+          "Cf(x) and er(Cf) for BG against BL"
         ],
         "N551-coarse-duct": [
           "Magnitude and direction of mean velocity profiles on the duct centreline",
@@ -1202,11 +1452,42 @@
           "Boundary-layer thickness δ and momentum thickness θ",
           "Static pressure coefficient on floor, especially post-bend recovery"
         ],
+        "N551-V01": [
+          "mean velocity magnitude and mean flow direction at station 8",
+          "skin-friction coefficient along the centreline",
+          "Reynolds stresses u'u', -u'v', v'w' at station 8"
+        ],
+        "N551-V02": [
+          "Reynolds-stress anisotropy invariants along the wall normal at stations 4, 10, 12, 18",
+          "mean velocity in the Johnston triangular plot at stations 0-12"
+        ],
         "N556-D02": [
           "mean applied stress, mean matching velocity, pressure-driven stress estimate"
         ],
         "N556-D03": [
           "local friction and profiles of mean velocity"
+        ],
+        "N556-V01": [
+          "mean velocity (outer and inner scaling)",
+          "Reynolds stresses",
+          "mean wall stress from the wall model, from the wall gradient and from the driving pressure gradient",
+          "indicator function"
+        ],
+        "N556-V02": [
+          "inner-scaled mean velocity",
+          "indicator function",
+          "total viscosity profile",
+          "Reynolds stresses",
+          "wall stress from the wall gradient (-25.72 % Sigma, -84.85 % filter, 8.07 % Vreman)"
+        ],
+        "N556-V03": [
+          "mean wall stress from the wall model, the wall gradient and the driving pressure gradient",
+          "inner-scaled mean velocity",
+          "indicator function",
+          "Reynolds stresses"
+        ],
+        "N556-V04": [
+          "mean wall stress, reported in words only ('the stress is strongly under-predicted')"
         ],
         "N582-D02": [
           "mean U",
@@ -1235,6 +1516,23 @@
         "N623-D03": [
           "log-law mismatch against prescribed κ=0.4, B=5"
         ],
+        "N623-V01": [
+          "log-layer mismatch in inner units against Re_tau (Fig. 9)",
+          "instantaneous wall-shear-stress field (Fig. 8)"
+        ],
+        "N623-V02": [
+          "mean streamwise velocity profile u+(z+)"
+        ],
+        "N623-V03": [
+          "mean streamwise velocity profile u+(z+)"
+        ],
+        "N623-V04": [
+          "mean streamwise velocity profile u+(z+)"
+        ],
+        "N623-V05": [
+          "precision, recall and accuracy of the actions relative to the neutral line u_LES+ - u_LL+ = 0",
+          "log-layer mismatch in inner units per Re_tau (Table III)"
+        ],
         "N626-channel-950": [
           "Channel mean U profile/log-layer mismatch at Reτ=950",
           "Rms streamwise velocity in channel at Reτ=950"
@@ -1250,6 +1548,9 @@
         ],
         "N626-cascade": [
           "Blade surface spanwise-averaged mean shear, especially corner separation"
+        ],
+        "N626-direction": [
+          "Admissible wall stress vector"
         ],
         "N632-D01": [
           "lift, drag and pitching moment",
@@ -1267,6 +1568,33 @@
         "N672-D01": [
           "outer mean U, turbulence intensities and spectra"
         ],
+        "N672-V01": [
+          "mean streamwise velocity profile in wall units against x2/delta"
+        ],
+        "N672-V02": [
+          "outer-layer mean-velocity error E_m against grid size"
+        ],
+        "N674-diffusers": [
+          "Diffuser Cf, Cp and velocity profiles at 15° and 10°"
+        ],
+        "N674-hump": [
+          "Surface skin friction, upstream acceleration and recirculation over hump",
+          "Hump pressure coefficient and suction peak",
+          "Hump axial mean-velocity profiles at four stations",
+          "Total turbulent shear-stress profiles on hump"
+        ],
+        "N674-flat-plate": [
+          "Flat-plate skin-friction coefficient at Reθ=4000"
+        ],
+        "N674-channel": [
+          "Streamwise evolution of channel friction velocity uτ",
+          "Channel total shear at x/δ=6"
+        ],
+        "N674-V01": [
+          "pressure coefficient (suction peak)",
+          "skin-friction coefficient",
+          "mean velocity profiles at four stations"
+        ],
         "N680-D02": [
           "outer mean velocity",
           "wall model cost separately"
@@ -1278,9 +1606,9 @@
       }
     },
     "rans_comparison": {
-      "designs": 52,
-      "works": 28,
-      "linked_groups": 28,
+      "designs": 75,
+      "works": 31,
+      "linked_groups": 31,
       "design_ids": [
         "N019-D01",
         "N019-D02",
@@ -1290,11 +1618,22 @@
         "N054-D02",
         "N054-D03",
         "N054-D04",
+        "N054-V01",
+        "N085-D01",
+        "N147-D01",
+        "N147-V01",
         "N188-D01",
+        "N188-V01",
         "N218-D01",
         "N218-D02",
+        "N218-V01",
         "N251-D01",
+        "N251-V01",
         "N291-D01",
+        "N291-V01",
+        "N339-V01",
+        "N339-V02",
+        "N339-V03",
         "N339-highlift-high",
         "N339-highlift-low",
         "N339-naca-ten",
@@ -1308,25 +1647,37 @@
         "N457-D01",
         "N457-D02",
         "N459-D01",
+        "N459-V01",
         "N476-D01",
+        "N476-V01",
         "N498-D01",
         "N596-D01",
+        "N596-V01",
+        "N635-D01",
+        "N635-V01",
+        "N635-V02",
         "N657-D01",
+        "N657-V01",
+        "N657-V02",
         "N707-D01",
         "P01-bundle",
         "P01-channel-U",
         "P01-step",
         "P02-D01",
+        "P02-V01",
+        "P02-V02",
         "P03-D01",
         "P03-D02",
         "P04-D01",
         "P04-D02",
         "P05-D01",
+        "P05-V01",
         "P06-D01",
         "P06-D02",
         "P27-D01",
         "P27-D02",
         "P29-HCD",
+        "P29-V01",
         "P29-mild",
         "P29-straight",
         "P29-strong",
@@ -1338,6 +1689,8 @@
       "work_ids": [
         "N019",
         "N054",
+        "N085",
+        "N147",
         "N188",
         "N218",
         "N251",
@@ -1351,6 +1704,7 @@
         "N476",
         "N498",
         "N596",
+        "N635",
         "N657",
         "N707",
         "P01",
@@ -1371,6 +1725,12 @@
         ],
         [
           "N054"
+        ],
+        [
+          "N085"
+        ],
+        [
+          "N147"
         ],
         [
           "N188"
@@ -1410,6 +1770,9 @@
         ],
         [
           "N596"
+        ],
+        [
+          "N635"
         ],
         [
           "N657"
@@ -1453,25 +1816,12 @@
       ],
       "rule": "A hydrodynamic comparison from a RANS calculation using a named near-wall treatment. Record whether the outer closure or mesh changes too.",
       "contested_additions": {
-        "designs": 2,
-        "works": 2,
-        "linked_groups": 2,
-        "design_ids": [
-          "N147-D01",
-          "N635-D01"
-        ],
-        "work_ids": [
-          "N147",
-          "N635"
-        ],
-        "known_link_groups": [
-          [
-            "N147"
-          ],
-          [
-            "N635"
-          ]
-        ]
+        "designs": 0,
+        "works": 0,
+        "linked_groups": 0,
+        "design_ids": [],
+        "work_ids": [],
+        "known_link_groups": []
       },
       "observable_members": {
         "P01-channel-U": [
@@ -1485,6 +1835,15 @@
         ],
         "P02-D01": [
           "inner and outer pressure drops"
+        ],
+        "P02-V01": [
+          "inner-tube pressure drop",
+          "outer-tube pressure drop",
+          "outlet temperature (mentioned, not shown)"
+        ],
+        "P02-V02": [
+          "inner-tube pressure drop",
+          "outer-tube pressure drop"
         ],
         "P03-D01": [
           "shear at 8 m",
@@ -1504,6 +1863,11 @@
         ],
         "P05-D01": [
           "whole-body drag coefficient"
+        ],
+        "P05-V01": [
+          "drag coefficient (Table 1)",
+          "streamlines and velocity vectors on planes",
+          "surface pressure contours with skin-friction lines"
         ],
         "P06-D01": [
           "friction velocity and mean profile"
@@ -1529,6 +1893,10 @@
         ],
         "P29-HCD": [
           "U profile, k and near-wall predictions"
+        ],
+        "P29-V01": [
+          "velocity-gradient magnitude field",
+          "turbulent kinetic energy field (contours)"
         ],
         "P32-D01": [
           "lower-wall friction and pressure coefficient",
@@ -1570,8 +1938,27 @@
         "N054-D04": [
           "mean shear on each of hot, cold and two baffle faces"
         ],
+        "N054-V01": [
+          "wall shear stress along hot, baffle-left, baffle-right and cold walls",
+          "mean vertical velocity and turbulent kinetic energy at probe line 3"
+        ],
+        "N085-D01": [
+          "mean velocity",
+          "friction",
+          "Reynolds stress components"
+        ],
+        "N147-D01": [
+          "skin friction",
+          "velocity profiles"
+        ],
+        "N147-V01": [
+          "mean velocity profiles at x/d = 0.5, 0.71 and 1.0"
+        ],
         "N188-D01": [
           "pressure loss, friction factor and wall y+"
+        ],
+        "N188-V01": [
+          "maximum velocity at the pipe outlet against number of mesh elements"
         ],
         "N218-D01": [
           "U profiles and modelled turbulent quantities"
@@ -1579,14 +1966,26 @@
         "N218-D02": [
           "pressure loss and inlet pressure for final geometries"
         ],
+        "N218-V01": [
+          "turbulent eddy-viscosity field (contours)"
+        ],
         "N251-D01": [
           "drag and lift",
           "pressure and wake velocity field"
+        ],
+        "N251-V01": [
+          "drag force",
+          "lift force"
         ],
         "N291-D01": [
           "resistance",
           "bow/stern pressure",
           "k and dissipation"
+        ],
+        "N291-V01": [
+          "total resistance coefficient C_T",
+          "pressure coefficient at the fore perpendicular",
+          "pressure coefficient at midship"
         ],
         "N339-naca-zero": [
           "NACA 0012 surface C_p at 0°",
@@ -1607,6 +2006,17 @@
         "N339-highlift-high": [
           "Slat C_f, MD-30P30N at 16.21°",
           "Main-element and flap boundary-layer or wake velocity at 16.21°"
+        ],
+        "N339-V01": [
+          "friction, pressure and total drag coefficients and lift coefficient",
+          "Cp and Cf on the three elements"
+        ],
+        "N339-V02": [
+          "velocity profile at x/c = 0.85",
+          "eddy-viscosity ratio profile and field"
+        ],
+        "N339-V03": [
+          "eddy-viscosity ratio contours"
         ],
         "N358-diffuser-configuration": [
           "Inclined-wall mean C_f, presence or extent of recirculation",
@@ -1638,8 +2048,17 @@
           "drag, lift and pitch areas",
           "surface pressures"
         ],
+        "N459-V01": [
+          "drag area of the stand",
+          "lift area of the stand",
+          "pitching-moment area of the stand"
+        ],
         "N476-D01": [
           "mean velocity and friction/near-wall response as plotted"
+        ],
+        "N476-V01": [
+          "mean velocity profile u+(y+) over the channel",
+          "complemented near-wall velocity profile on 0 <= y+ <= 100"
         ],
         "N498-D01": [
           "skin-friction coefficient versus flow or plate condition"
@@ -1647,8 +2066,38 @@
         "N596-D01": [
           "static pressure, inlet-box loss and velocity field at full and part load"
         ],
+        "N596-V01": [
+          "air mass flow rate",
+          "RMS_A of Vx on cross sections at L1, L2, E3 (Table 2)",
+          "Vx and Vr profiles on lines L1, L2, E3 (Fig. 10)",
+          "wall static pressure on line F1 (Fig. 11)"
+        ],
+        "N635-D01": [
+          "primal mean velocity",
+          "adjoint profile and derivative of force/power loss"
+        ],
+        "N635-V01": [
+          "mean velocity u+(y+)",
+          "difference of turbulent viscosity between the two closures",
+          "difference of Reynolds shear stress between the two closures"
+        ],
+        "N635-V02": [
+          "power-loss objective over the optimisation cycles",
+          "optimised shape"
+        ],
         "N657-D01": [
           "drag"
+        ],
+        "N657-V01": [
+          "drag coefficient CD versus Re (Fig. 3a-b)",
+          "separation angle versus Re (Fig. 3e)",
+          "recirculation length Lr/D versus Re (Fig. 3f)",
+          "centre-plane streamlines at Re = 1e4 (Fig. 4, qualitative)"
+        ],
+        "N657-V02": [
+          "drag coefficient CD versus Re (Fig. 8a-b)",
+          "separation angle versus Re (Fig. 8e)",
+          "recirculation length Lr/D versus Re (Fig. 8f)"
         ],
         "N707-D01": [
           "total friction head loss versus flow in each lateral"
@@ -1656,7 +2105,7 @@
       }
     },
     "system_benchmark": {
-      "designs": 181,
+      "designs": 246,
       "works": 98,
       "linked_groups": 72,
       "design_ids": [
@@ -1666,20 +2115,32 @@
         "N019-D04",
         "N025-D01",
         "N025-D02",
+        "N025-V01",
+        "N025-V02",
+        "N025-V04",
         "N037-D01",
         "N054-D01",
         "N054-D02",
         "N054-D03",
         "N054-D04",
+        "N054-V01",
         "N076-D01",
         "N076-D02",
+        "N076-V01",
         "N085-D01",
+        "N147-D01",
+        "N147-V01",
         "N164-D01",
         "N174-D01",
+        "N174-V01",
+        "N174-V02",
+        "N174-V03",
         "N181-D01",
+        "N181-V01",
         "N188-D01",
         "N189-D01",
         "N189-D02",
+        "N195-V01",
         "N195-channel",
         "N195-step-overview",
         "N195-step-parameters",
@@ -1689,20 +2150,37 @@
         "N239-suboff-high",
         "N239-suboff-low",
         "N240-D02",
+        "N240-V01",
         "N251-D01",
         "N253-D02",
         "N262-D02",
         "N262-D03",
+        "N262-V01",
+        "N262-V02",
+        "N262-V03",
         "N273-D01",
         "N280-D01",
         "N280-D02",
         "N291-D01",
         "N297-D01",
         "N297-D02",
+        "N297-V01",
         "N300-D01",
+        "N300-V01",
+        "N300-V02",
         "N318-D01",
+        "N318-V01",
+        "N318-V02",
+        "N318-V03",
         "N327-D01",
         "N327-D03",
+        "N327-V01",
+        "N327-V02",
+        "N327-V03",
+        "N327-V05",
+        "N339-V01",
+        "N339-V02",
+        "N339-V03",
         "N339-highlift-high",
         "N339-highlift-low",
         "N339-naca-ten",
@@ -1716,30 +2194,45 @@
         "N358-diffuser-internal",
         "N358-impinging-jet",
         "N364-Re-series",
+        "N364-V01",
         "N364-fixed-Re-model-and-numerics",
         "N364-refit-high-Re",
         "N372-D01",
+        "N372-V01",
+        "N372-V02",
         "N391-D01",
         "N391-D02",
         "N392-D01",
         "N395-D01",
         "N395-D02",
+        "N395-V01",
+        "N395-V02",
+        "N395-V03",
         "N418-D01",
         "N418-D02",
+        "N418-V01",
+        "N418-V02",
         "N419-D01",
         "N434-D01",
+        "N434-V01",
+        "N434-V02",
+        "N434-V03",
         "N437-D01",
         "N437-D02",
         "N437-D03",
         "N444-D01",
         "N445-D01",
         "N446-D01",
+        "N446-V02",
         "N456-D01",
+        "N456-V01",
         "N457-D01",
         "N457-D02",
         "N459-D01",
+        "N459-V01",
         "N464-D01",
         "N476-D01",
+        "N476-V01",
         "N497-D02",
         "N497-D04",
         "N498-D01",
@@ -1749,16 +2242,28 @@
         "N530-D01",
         "N540-D02",
         "N540-D03",
+        "N540-V01",
+        "N540-V02",
+        "N551-V01",
         "N551-coarse-duct",
         "N556-D02",
         "N556-D03",
+        "N556-V01",
+        "N556-V02",
+        "N556-V03",
         "N582-D02",
         "N596-D01",
+        "N596-V02",
+        "N596-V03",
         "N611-channel",
         "N611-hill-high",
         "N611-hill-low",
         "N611-step",
         "N623-D01",
+        "N623-V01",
+        "N623-V02",
+        "N623-V03",
+        "N623-V04",
         "N626-cascade",
         "N626-channel-2000",
         "N626-channel-950",
@@ -1767,7 +2272,12 @@
         "N653-D01",
         "N655-spatially-averaged-transient",
         "N657-D01",
+        "N657-V01",
+        "N657-V02",
         "N672-D01",
+        "N672-V01",
+        "N672-V02",
+        "N674-V01",
         "N674-channel",
         "N674-diffusers",
         "N674-flat-plate",
@@ -1779,6 +2289,7 @@
         "P01-channel-U",
         "P01-step",
         "P02-D01",
+        "P02-V02",
         "P03-D01",
         "P03-D02",
         "P04-D01",
@@ -1787,9 +2298,9 @@
         "P06-D02",
         "P07-D01",
         "P11-D02",
+        "P11-V01",
         "P12-D01",
-        "P13-D01",
-        "P13-D02",
+        "P12-V01",
         "P14-channel",
         "P14-hill",
         "P15-D01",
@@ -1809,7 +2320,9 @@
         "P20-channel",
         "P21-D02",
         "P21-D03",
+        "P21-V01",
         "P23-CRM",
+        "P23-V01",
         "P23-ablations",
         "P23-bump",
         "P23-channel",
@@ -1830,6 +2343,7 @@
         "P29-straight",
         "P29-strong",
         "P30-D01",
+        "P30-V01",
         "P31-bump",
         "P31-channel",
         "P31-hill-training",
@@ -1849,6 +2363,7 @@
         "N054",
         "N076",
         "N085",
+        "N147",
         "N164",
         "N174",
         "N181",
@@ -1919,7 +2434,6 @@
         "P07",
         "P11",
         "P12",
-        "P13",
         "P14",
         "P15",
         "P16",
@@ -1973,6 +2487,9 @@
         ],
         [
           "N085"
+        ],
+        [
+          "N147"
         ],
         [
           "N164"
@@ -2150,9 +2667,6 @@
           "P07"
         ],
         [
-          "P13"
-        ],
-        [
           "P15"
         ],
         [
@@ -2188,18 +2702,19 @@
       ],
       "rule": "The coupled output of an identified complete calculation compared with numerical or physical reference data. Can overlap either solver group and does not imply that the wall law was isolated.",
       "contested_additions": {
-        "designs": 1,
+        "designs": 2,
         "works": 1,
         "linked_groups": 1,
         "design_ids": [
-          "N147-D01"
+          "P13-D01",
+          "P13-D02"
         ],
         "work_ids": [
-          "N147"
+          "P13"
         ],
         "known_link_groups": [
           [
-            "N147"
+            "P13"
           ]
         ]
       },
@@ -2215,6 +2730,10 @@
         ],
         "P02-D01": [
           "inner and outer pressure drops"
+        ],
+        "P02-V02": [
+          "inner-tube pressure drop",
+          "outer-tube pressure drop"
         ],
         "P03-D01": [
           "shear at 8 m",
@@ -2246,17 +2765,18 @@
           "mean streamwise and wall-normal velocity",
           "filtered wall velocity"
         ],
+        "P11-V01": [
+          "mean streamwise velocity profiles at x/H = 2 and x/H = 6"
+        ],
         "P12-D01": [
           "fuselage, juncture and separation-zone velocity",
           "wing pressure and separation footprints"
         ],
-        "P13-D01": [
-          "streamwise and azimuthal velocity",
-          "core reversal"
-        ],
-        "P13-D02": [
-          "mean channel velocity",
-          "authors describe comparison without tabulating a profile discrepancy"
+        "P12-V01": [
+          "mean velocity profile (Figs. 7a, 23a)",
+          "relative error of the mean velocity profile against grid size (Figs. 7b, 23b)",
+          "error of wall-parallel velocity at the matching location against error of friction velocity (Fig. 8a, circles)",
+          "instantaneous streamwise velocity at y = 0.3 delta (Fig. 24)"
         ],
         "P14-channel": [
           "mean filtered streamwise velocity and boundary value"
@@ -2331,6 +2851,10 @@
         "P21-D03": [
           "blade shear"
         ],
+        "P21-V01": [
+          "mean streamwise velocity (log-layer mismatch)",
+          "rms of streamwise velocity"
+        ],
         "P23-channel": [
           "mean U and mean wall stress"
         ],
@@ -2354,6 +2878,10 @@
           "centreline Cf and −Cp",
           "pipe U profile",
           "CRM force coefficients"
+        ],
+        "P23-V01": [
+          "centreline wall pressure coefficient",
+          "centreline skin-friction coefficient"
         ],
         "P24-interpolation": [
           "U+ versus y+",
@@ -2406,6 +2934,12 @@
         "P30-D01": [
           "friction velocity",
           "mean and rms velocity"
+        ],
+        "P30-V01": [
+          "mean velocity profile u+ (Figs 3-4)",
+          "rms velocity fluctuations u'+, v'+, w'+ and u'v'+ (Figs 5-6)",
+          "wall-adjacent element size y1+ (Table 1)",
+          "enrichment and polynomial components of the mean velocity (Fig. 7)"
         ],
         "P31-hill-training": [
           "mean Cf, mean Cp, separation and reattachment locations, U/Rij profiles"
@@ -2469,6 +3003,22 @@
           "separation and reattachment using mean wall friction",
           "velocity at hill stations"
         ],
+        "N025-V01": [
+          "mean velocity u+",
+          "RMS velocities u'+, v'+, w'+",
+          "Reynolds shear stress",
+          "velocity magnitude and Q-criterion snapshots (qualitative, Fig. 4)"
+        ],
+        "N025-V02": [
+          "mean velocity u+",
+          "RMS velocities u'+, v'+, w'+",
+          "Reynolds shear stress",
+          "number of linear solver iterations (statement)"
+        ],
+        "N025-V04": [
+          "mean streamwise velocity at ten stations",
+          "reattachment length"
+        ],
         "N037-D01": [
           "time to separation",
           "mean/bulk velocity",
@@ -2488,6 +3038,10 @@
         "N054-D04": [
           "mean shear on each of hot, cold and two baffle faces"
         ],
+        "N054-V01": [
+          "wall shear stress along hot, baffle-left, baffle-right and cold walls",
+          "mean vertical velocity and turbulent kinetic energy at probe line 3"
+        ],
         "N076-D01": [
           "mean streamwise velocity",
           "rms and shear stress"
@@ -2496,10 +3050,22 @@
           "reattachment length",
           "skin friction and mean U at downstream stations"
         ],
+        "N076-V01": [
+          "mean streamwise velocity (log-layer mismatch)",
+          "resolved rms velocity fluctuations",
+          "Reynolds shear stress"
+        ],
         "N085-D01": [
           "mean velocity",
           "friction",
           "Reynolds stress components"
+        ],
+        "N147-D01": [
+          "skin friction",
+          "velocity profiles"
+        ],
+        "N147-V01": [
+          "mean velocity profiles at x/d = 0.5, 0.71 and 1.0"
         ],
         "N164-D01": [
           "mean and rms velocity",
@@ -2509,10 +3075,37 @@
           "relative L2 discrepancies of mean U and normal and shear stresses",
           "cost"
         ],
+        "N174-V01": [
+          "u_tau,sim and Re_tau,sim with relative errors",
+          "mean velocity profile u+",
+          "Reynolds normal and shear stress profiles",
+          "MLUPs/node"
+        ],
+        "N174-V02": [
+          "u_tau,sim and Re_tau,sim with relative errors",
+          "mean velocity profile u+ and relative L2 norm",
+          "Reynolds normal and shear stresses (profiles and relative L2 norms)",
+          "MLUPs/node"
+        ],
+        "N174-V03": [
+          "u_tau,sim and Re_tau,sim with relative errors",
+          "mean velocity profile u+ and relative L2 norm",
+          "Reynolds normal and shear stresses (profiles and relative L2 norms)",
+          "MLUPs/node"
+        ],
         "N181-D01": [
           "mean U",
           "resolved and total Reynolds shear",
           "wall stress and spectra"
+        ],
+        "N181-V01": [
+          "wall shear stress errors epsilon_LW and epsilon_LD",
+          "mean velocity profile",
+          "resolved Reynolds normal and shear stresses",
+          "modelled plus viscous shear stress",
+          "SGS eddy viscosity",
+          "total shear stress deviation",
+          "total Reynolds shear stress"
         ],
         "N188-D01": [
           "pressure loss, friction factor and wall y+"
@@ -2536,6 +3129,9 @@
         "N195-channel": [
           "Channel friction velocity and mean velocity"
         ],
+        "N195-V01": [
+          "mean friction velocity <u_tau> (relative error)"
+        ],
         "N218-D01": [
           "U profiles and modelled turbulent quantities"
         ],
@@ -2557,6 +3153,9 @@
           "streamwise and spanwise mean shear over time",
           "mean velocity"
         ],
+        "N240-V01": [
+          "streamwise wall-shear stress versus time"
+        ],
         "N251-D01": [
           "drag and lift",
           "pressure and wake velocity field"
@@ -2569,6 +3168,17 @@
         ],
         "N262-D03": [
           "mean U and turbulent stresses"
+        ],
+        "N262-V01": [
+          "mean velocity profile U+",
+          "relative errors of Cf, Bq and Tc/Tw (numbers given for the outer-scaled function only)"
+        ],
+        "N262-V02": [
+          "mean velocity profile U+",
+          "relative errors of Cf, Bq, Tc/Tw for ym at the first cell"
+        ],
+        "N262-V03": [
+          "mean velocity profile U+"
         ],
         "N273-D01": [
           "mean velocity",
@@ -2595,12 +3205,37 @@
           "bulk and mean velocity",
           "rms and turbulent stress profiles"
         ],
+        "N297-V01": [
+          "mean axial velocity",
+          "total turbulent kinetic energy",
+          "mean apparent viscosity",
+          "rms velocities",
+          "shear Reynolds stress and mean viscous stress"
+        ],
         "N300-D01": [
           "mean velocity",
           "resolved and total turbulent energy/shear"
         ],
+        "N300-V01": [
+          "mean velocity profile",
+          "turbulent kinetic energy profile"
+        ],
+        "N300-V02": [
+          "mean velocity profile",
+          "turbulent kinetic energy profile"
+        ],
         "N318-D01": [
           "mean U, friction Re, boundary-layer profiles"
+        ],
+        "N318-V01": [
+          "mean velocity profile u+(y+)",
+          "Re_tau (legend: 4189 original RSM, 4168 eddy-viscosity approach, DNS 4179)"
+        ],
+        "N318-V02": [
+          "turbulent kinetic energy spectra at t = 0.87 s and 2 s"
+        ],
+        "N318-V03": [
+          "mean skin-friction coefficient c_f(x)"
         ],
         "N327-D01": [
           "velocity, fluctuations and free bulk flow"
@@ -2608,6 +3243,26 @@
         "N327-D03": [
           "stress vector components versus time",
           "mean velocity profile and developing friction"
+        ],
+        "N327-V01": [
+          "mean streamwise velocity profile",
+          "mean velocity profile shifted to the DNS centreline value",
+          "eddy-viscosity profile"
+        ],
+        "N327-V02": [
+          "mean streamwise velocity profile",
+          "eddy-viscosity profile"
+        ],
+        "N327-V03": [
+          "friction coefficient against Re_theta (imposed through the slip length in Sec. 3.6, predicted by WSIM in Sec. 5.4)",
+          "mean streamwise velocity profile",
+          "rms velocity fluctuations",
+          "wall-normal velocity at the wall",
+          "boundary-layer growth and flow state in the two runs with non-zero net wall mass flux (not shown)"
+        ],
+        "N327-V05": [
+          "error E of the mean velocity in the logarithmic region",
+          "mean streamwise velocity profile"
         ],
         "N339-naca-zero": [
           "NACA 0012 surface C_p at 0°",
@@ -2628,6 +3283,17 @@
         "N339-highlift-high": [
           "Slat C_f, MD-30P30N at 16.21°",
           "Main-element and flap boundary-layer or wake velocity at 16.21°"
+        ],
+        "N339-V01": [
+          "friction, pressure and total drag coefficients and lift coefficient",
+          "Cp and Cf on the three elements"
+        ],
+        "N339-V02": [
+          "velocity profile at x/c = 0.85",
+          "eddy-viscosity ratio profile and field"
+        ],
+        "N339-V03": [
+          "eddy-viscosity ratio contours"
         ],
         "N357-pulse": [
           "Time-mean and phase-resolved velocity of pulsating channel",
@@ -2672,10 +3338,29 @@
           "Mean friction velocity across channel Reynolds numbers",
           "Mean streamwise velocity across channel Reynolds numbers"
         ],
+        "N364-V01": [
+          "error of mean friction velocity",
+          "L-infinity errors of mean velocity, resolved Reynolds shear stress and resolved TKE (isolines of gPCE metamodels)",
+          "total Sobol indices of these errors with respect to n_x, n_y, n_z"
+        ],
         "N372-D01": [
           "mean pipe U",
           "stress fluctuations",
           "spectra"
+        ],
+        "N372-V01": [
+          "Darcy friction factor and a-posteriori Re_tau",
+          "mean velocity profile (inner units, velocity-defect form)",
+          "rms velocity fluctuations",
+          "Reynolds shear stress",
+          "vortical structures (lambda_2)"
+        ],
+        "N372-V02": [
+          "Darcy friction factor and a-posteriori Re_tau (Table IV)",
+          "mean velocity profile",
+          "rms velocity fluctuations",
+          "Reynolds shear stress",
+          "quadrant joint PDFs and PDFs of velocity fluctuations, anisotropy-invariant maps, autocorrelations (no reference)"
         ],
         "N391-D01": [
           "friction coefficient",
@@ -2697,6 +3382,18 @@
           "mean first-cell velocity and velocity-defined bubble length",
           "mean skin friction and friction-defined bubble length"
         ],
+        "N395-V01": [
+          "separation-bubble length from the first-cell velocity",
+          "wall pressure coefficient Cp",
+          "mean streamwise velocity at x2/L = 2.38e-4 along x",
+          "mean streamwise velocity profile at x/L = 0.2"
+        ],
+        "N395-V02": [
+          "mean streamwise velocity profiles at x/L = -0.709, -0.025, 0.2"
+        ],
+        "N395-V03": [
+          "inner-scaled mean streamwise velocity profile"
+        ],
         "N418-D01": [
           "signed mean skin friction",
           "mean velocity and pressure"
@@ -2705,12 +3402,34 @@
           "pressure coefficient",
           "mean velocity and separated region"
         ],
+        "N418-V01": [
+          "surface pressure coefficient Cp",
+          "sensor activity"
+        ],
+        "N418-V02": [
+          "surface pressure coefficient Cp"
+        ],
         "N419-D01": [
           "mean U and TKE"
         ],
         "N434-D01": [
           "channel velocity/stresses",
           "airfoil surface pressure and integrated forces"
+        ],
+        "N434-V01": [
+          "inner-scaled mean velocity (Fig. 2)",
+          "Reynolds stresses (Fig. 3)",
+          "computed Re_tau (Table 1)"
+        ],
+        "N434-V02": [
+          "inner-scaled mean velocity (Fig. 7)",
+          "Reynolds stresses (Fig. 8)",
+          "computed Re_tau (Table 3)"
+        ],
+        "N434-V03": [
+          "inner-scaled mean velocity",
+          "Reynolds stresses",
+          "computed Re_tau"
         ],
         "N437-D01": [
           "skin friction on each strip",
@@ -2735,8 +3454,18 @@
           "mean streamwise velocity",
           "rms profiles"
         ],
+        "N446-V02": [
+          "skin-friction coefficient Cf versus Re_theta",
+          "delta/delta* and delta/theta",
+          "shape factor H12",
+          "mean velocity, streamwise rms velocity and Reynolds shear stress profiles"
+        ],
         "N456-D01": [
           "mean and rms velocities and TKE"
+        ],
+        "N456-V01": [
+          "mean velocity U+",
+          "turbulent kinetic energy k+ (the text says rms velocity)"
         ],
         "N457-D01": [
           "mean U and friction"
@@ -2749,11 +3478,20 @@
           "drag, lift and pitch areas",
           "surface pressures"
         ],
+        "N459-V01": [
+          "drag area of the stand",
+          "lift area of the stand",
+          "pitching-moment area of the stand"
+        ],
         "N464-D01": [
           "mean U, stress PDFs and transient streamwise/spanwise shear"
         ],
         "N476-D01": [
           "mean velocity and friction/near-wall response as plotted"
+        ],
+        "N476-V01": [
+          "mean velocity profile u+(y+) over the channel",
+          "complemented near-wall velocity profile on 0 <= y+ <= 100"
         ],
         "N497-D02": [
           "separation and reattachment",
@@ -2787,6 +3525,17 @@
         "N540-D03": [
           "velocity, TKE, signed bottom Cf and spatial means"
         ],
+        "N540-V01": [
+          "mean velocity profile U+",
+          "mean TKE profile",
+          "TKE production",
+          "mean SGS eddy viscosity"
+        ],
+        "N540-V02": [
+          "mean streamwise velocity profiles",
+          "mean TKE profiles",
+          "Cf(x) and er(Cf) for BG against BL"
+        ],
         "N551-coarse-duct": [
           "Magnitude and direction of mean velocity profiles on the duct centreline",
           "Turning angle of mean surface traction relative to free stream",
@@ -2794,11 +3543,35 @@
           "Boundary-layer thickness δ and momentum thickness θ",
           "Static pressure coefficient on floor, especially post-bend recovery"
         ],
+        "N551-V01": [
+          "mean velocity magnitude and mean flow direction at station 8",
+          "skin-friction coefficient along the centreline",
+          "Reynolds stresses u'u', -u'v', v'w' at station 8"
+        ],
         "N556-D02": [
           "mean applied stress, mean matching velocity, pressure-driven stress estimate"
         ],
         "N556-D03": [
           "local friction and profiles of mean velocity"
+        ],
+        "N556-V01": [
+          "mean velocity (outer and inner scaling)",
+          "Reynolds stresses",
+          "mean wall stress from the wall model, from the wall gradient and from the driving pressure gradient",
+          "indicator function"
+        ],
+        "N556-V02": [
+          "inner-scaled mean velocity",
+          "indicator function",
+          "total viscosity profile",
+          "Reynolds stresses",
+          "wall stress from the wall gradient (-25.72 % Sigma, -84.85 % filter, 8.07 % Vreman)"
+        ],
+        "N556-V03": [
+          "mean wall stress from the wall model, the wall gradient and the driving pressure gradient",
+          "inner-scaled mean velocity",
+          "indicator function",
+          "Reynolds stresses"
         ],
         "N582-D02": [
           "mean U",
@@ -2806,6 +3579,15 @@
         ],
         "N596-D01": [
           "static pressure, inlet-box loss and velocity field at full and part load"
+        ],
+        "N596-V02": [
+          "Vx profiles on lines E1, E2, E3 (Fig. 14)",
+          "static pressure p* in the fuel inlet box (Table 6)"
+        ],
+        "N596-V03": [
+          "wall static pressure p* on lines F1 and F4 (Figs. 19, 24)",
+          "Vx profiles on lines E1, E2, E3 (Figs. 20, 25)",
+          "velocity and pressure contours in burner case and nozzle (Figs. 15-18, 21-23)"
         ],
         "N611-channel": [
           "Channel rms velocity fluctuations and Reynolds shear at Reτ=950"
@@ -2826,6 +3608,19 @@
         ],
         "N623-D01": [
           "mean velocity, predicted friction and stresses"
+        ],
+        "N623-V01": [
+          "log-layer mismatch in inner units against Re_tau (Fig. 9)",
+          "instantaneous wall-shear-stress field (Fig. 8)"
+        ],
+        "N623-V02": [
+          "mean streamwise velocity profile u+(z+)"
+        ],
+        "N623-V03": [
+          "mean streamwise velocity profile u+(z+)"
+        ],
+        "N623-V04": [
+          "mean streamwise velocity profile u+(z+)"
         ],
         "N626-channel-950": [
           "Channel mean U profile/log-layer mismatch at Reτ=950",
@@ -2859,8 +3654,25 @@
         "N657-D01": [
           "drag"
         ],
+        "N657-V01": [
+          "drag coefficient CD versus Re (Fig. 3a-b)",
+          "separation angle versus Re (Fig. 3e)",
+          "recirculation length Lr/D versus Re (Fig. 3f)",
+          "centre-plane streamlines at Re = 1e4 (Fig. 4, qualitative)"
+        ],
+        "N657-V02": [
+          "drag coefficient CD versus Re (Fig. 8a-b)",
+          "separation angle versus Re (Fig. 8e)",
+          "recirculation length Lr/D versus Re (Fig. 8f)"
+        ],
         "N672-D01": [
           "outer mean U, turbulence intensities and spectra"
+        ],
+        "N672-V01": [
+          "mean streamwise velocity profile in wall units against x2/delta"
+        ],
+        "N672-V02": [
+          "outer-layer mean-velocity error E_m against grid size"
         ],
         "N674-diffusers": [
           "Diffuser Cf, Cp and velocity profiles at 15° and 10°"
@@ -2878,6 +3690,11 @@
           "Streamwise evolution of channel friction velocity uτ",
           "Channel total shear at x/δ=6"
         ],
+        "N674-V01": [
+          "pressure coefficient (suction peak)",
+          "skin-friction coefficient",
+          "mean velocity profiles at four stations"
+        ],
         "N680-D02": [
           "outer mean velocity",
           "wall model cost separately"
@@ -2892,7 +3709,7 @@
       }
     },
     "thermal": {
-      "designs": 24,
+      "designs": 31,
       "works": 11,
       "linked_groups": 11,
       "design_ids": [
@@ -2908,14 +3725,21 @@
         "N262-D01",
         "N262-D02",
         "N262-D03",
+        "N262-V01",
+        "N262-V02",
+        "N262-V03",
         "N358-impinging-jet",
         "N419-D01",
         "N456-D01",
+        "N456-V01",
         "N657-D01",
+        "N657-V01",
+        "N657-V02",
         "P01-bundle",
         "P01-channel-T",
         "P01-step",
         "P02-D01",
+        "P02-V02",
         "P21-D01",
         "P21-D02",
         "P21-D03",
@@ -2991,6 +3815,9 @@
         "P02-D01": [
           "overall heat-transfer coefficient"
         ],
+        "P02-V02": [
+          "overall heat-transfer coefficient U (thermal)"
+        ],
         "P21-D01": [
           "conductive heat flux"
         ],
@@ -3039,6 +3866,17 @@
         "N262-D03": [
           "temperature and heat flux"
         ],
+        "N262-V01": [
+          "mean temperature profile"
+        ],
+        "N262-V02": [
+          "mean temperature profile"
+        ],
+        "N262-V03": [
+          "mean temperature profile",
+          "transformed temperature profile",
+          "psi_3 and the ratio of turbulent-kinetic-energy flux to turbulent heat conduction"
+        ],
         "N358-impinging-jet": [
           "Local Nusselt number at H/D=2,6"
         ],
@@ -3048,506 +3886,26 @@
         "N456-D01": [
           "mean and rms temperature and heat-transfer statistics"
         ],
+        "N456-V01": [
+          "mean and rms temperature in fluid and solid"
+        ],
         "N657-D01": [
           "local and mean surface scalar exchange"
-        ]
-      }
-    },
-    "controlled_wall_change": {
-      "designs": 62,
-      "works": 37,
-      "linked_groups": 25,
-      "design_ids": [
-        "N054-D03",
-        "N054-D04",
-        "N076-D02",
-        "N174-D01",
-        "N195-step-parameters",
-        "N240-D02",
-        "N262-D02",
-        "N297-D01",
-        "N327-D01",
-        "N339-naca-wall-change",
-        "N357-linear-acceleration",
-        "N357-pulse",
-        "N357-sspg",
-        "N358-diffuser-internal",
-        "N364-refit-high-Re",
-        "N395-D02",
-        "N418-D01",
-        "N418-D02",
-        "N437-D01",
-        "N437-D03",
-        "N500-D01",
-        "N540-D02",
-        "N540-D03",
-        "N551-coarse-duct",
-        "N582-D02",
-        "N623-D01",
-        "N626-cascade",
-        "N626-channel-2000",
-        "N626-channel-950",
-        "N626-step",
-        "N655-spatially-averaged-transient",
-        "N674-channel",
-        "N674-diffusers",
-        "N674-flat-plate",
-        "N674-hump",
-        "N707-D01",
-        "P01-bundle",
-        "P01-channel-U",
-        "P01-step",
-        "P02-D01",
-        "P06-D01",
-        "P06-D02",
-        "P11-D02",
-        "P16-D01",
-        "P16-D02",
-        "P17-D01",
-        "P19-APG",
-        "P19-CRM",
-        "P19-FPG",
-        "P19-juncture",
-        "P19-pipe",
-        "P19-plate",
-        "P19-transient",
-        "P20-channel",
-        "P21-D02",
-        "P21-D03",
-        "P25-D03",
-        "P26-channel",
-        "P31-bump",
-        "P31-hill-training",
-        "P31-hill-transfer",
-        "P34-D01"
-      ],
-      "work_ids": [
-        "N054",
-        "N076",
-        "N174",
-        "N195",
-        "N240",
-        "N262",
-        "N297",
-        "N327",
-        "N339",
-        "N357",
-        "N358",
-        "N364",
-        "N395",
-        "N418",
-        "N437",
-        "N500",
-        "N540",
-        "N551",
-        "N582",
-        "N623",
-        "N626",
-        "N655",
-        "N674",
-        "N707",
-        "P01",
-        "P02",
-        "P06",
-        "P11",
-        "P16",
-        "P17",
-        "P19",
-        "P20",
-        "P21",
-        "P25",
-        "P26",
-        "P31",
-        "P34"
-      ],
-      "known_link_groups": [
-        [
-          "N054"
         ],
-        [
-          "N076"
+        "N657-V01": [
+          "Nusselt number versus Re (Fig. 3c-d, thermal)"
         ],
-        [
-          "N174"
-        ],
-        [
-          "N195",
-          "N357",
-          "N364",
-          "N437",
-          "N540",
-          "N582",
-          "N655"
-        ],
-        [
-          "N240"
-        ],
-        [
-          "N262"
-        ],
-        [
-          "N297"
-        ],
-        [
-          "N327"
-        ],
-        [
-          "N339"
-        ],
-        [
-          "N358"
-        ],
-        [
-          "N395",
-          "N418",
-          "P11",
-          "P31"
-        ],
-        [
-          "N500"
-        ],
-        [
-          "N551"
-        ],
-        [
-          "N623",
-          "P20",
-          "P26"
-        ],
-        [
-          "N626",
-          "P21"
-        ],
-        [
-          "N674"
-        ],
-        [
-          "N707"
-        ],
-        [
-          "P01"
-        ],
-        [
-          "P02"
-        ],
-        [
-          "P06"
-        ],
-        [
-          "P16"
-        ],
-        [
-          "P17"
-        ],
-        [
-          "P19"
-        ],
-        [
-          "P25"
-        ],
-        [
-          "P34"
-        ]
-      ],
-      "rule": "A hydrodynamic quantity compared across active wall treatments with otherwise matched solver, grid, forcing and reference. Coupled feedback is part of this intervention.",
-      "contested_additions": {
-        "designs": 0,
-        "works": 0,
-        "linked_groups": 0,
-        "design_ids": [],
-        "work_ids": [],
-        "known_link_groups": []
-      },
-      "observable_members": {
-        "P01-channel-U": [
-          "mean streamwise velocity U+ versus y+"
-        ],
-        "P01-step": [
-          "mean U/U0; lower-wall mean Cf"
-        ],
-        "P01-bundle": [
-          "U/Ub"
-        ],
-        "P02-D01": [
-          "inner and outer pressure drops"
-        ],
-        "P06-D01": [
-          "friction velocity and mean profile"
-        ],
-        "P06-D02": [
-          "local and integrated friction",
-          "U profile at x/Lref=0.97"
-        ],
-        "P11-D02": [
-          "mean streamwise and wall-normal velocity",
-          "filtered wall velocity"
-        ],
-        "P16-D01": [
-          "mean U profile",
-          "integrated profile error",
-          "bulk response"
-        ],
-        "P16-D02": [
-          "U and W profiles",
-          "normal and shear Reynolds stresses at x/h=1,2,4,8"
-        ],
-        "P17-D01": [
-          "mean chordwise friction",
-          "mean velocities",
-          "skin-friction budget components"
-        ],
-        "P19-plate": [
-          "mean velocity, mean wall stress total error"
-        ],
-        "P19-pipe": [
-          "mean velocity and total wall stress"
-        ],
-        "P19-APG": [
-          "U profile; signed wall stress on same runs; classifier and internal assessment separate"
-        ],
-        "P19-FPG": [
-          "U profile; total wall-stress percentage error; classifier and internal assessment separate"
-        ],
-        "P19-transient": [
-          "wall stress components, stress angle and time-dependent response"
-        ],
-        "P19-CRM": [
-          "lift CL, drag CD and pitching moment CM"
-        ],
-        "P19-juncture": [
-          "mean streamwise and spanwise velocity components"
-        ],
-        "P20-channel": [
-          "mean U+, log-layer offset",
-          "resolved u+ rms(z/δ)",
-          "total and partial stress"
-        ],
-        "P21-D02": [
-          "mean and variance of velocity",
-          "wall friction"
-        ],
-        "P21-D03": [
-          "blade shear"
-        ],
-        "P25-D03": [
-          "mean velocity profiles",
-          "Reynolds shear and kinetic energy",
-          "bottom-wall friction and crossing"
-        ],
-        "P26-channel": [
-          "error in uτ against channel target",
-          "inner-scaled mean U+ profile versus conventional log law"
-        ],
-        "P31-hill-training": [
-          "mean Cf, mean Cp, separation and reattachment locations, U/Rij profiles"
-        ],
-        "P31-hill-transfer": [
-          "windward Cf, reattachment/separation, U and streamwise normal stress at five x/H stations"
-        ],
-        "P31-bump": [
-          "mean Cf and Cp at z/L=0",
-          "PIV mean U/U∞ profiles at four x/L",
-          "presence of recirculation"
-        ],
-        "P34-D01": [
-          "mean velocity profiles at 5.08 cm upstream and 2.54 cm downstream"
-        ],
-        "N054-D03": [
-          "mean shear on each of hot, cold and two baffle faces"
-        ],
-        "N054-D04": [
-          "mean shear on each of hot, cold and two baffle faces"
-        ],
-        "N076-D02": [
-          "reattachment length",
-          "skin friction and mean U at downstream stations"
-        ],
-        "N174-D01": [
-          "relative L2 discrepancies of mean U and normal and shear stresses",
-          "cost"
-        ],
-        "N195-step-parameters": [
-          "Step wall shear with or without ODE pressure term and alternative eddy viscosities"
-        ],
-        "N240-D02": [
-          "streamwise and spanwise mean shear over time",
-          "mean velocity"
-        ],
-        "N262-D02": [
-          "mean U and turbulent stresses"
-        ],
-        "N297-D01": [
-          "mean axial U and apparent viscosity",
-          "rms and stresses"
-        ],
-        "N327-D01": [
-          "velocity, fluctuations and free bulk flow"
-        ],
-        "N339-naca-wall-change": [
-          "Friction drag with adapted Nishimura versus VN at 0°"
-        ],
-        "N357-pulse": [
-          "Time-mean and phase-resolved velocity of pulsating channel",
-          "Time-mean and periodic Reynolds-stress components under pulsation",
-          "Periodic wall-stress response at ω⁺=.01",
-          "Periodic Reynolds shear-stress profile amplitude at ω⁺=.01",
-          "Harmonic shear-stress amplitude |u′v′ harmonic|/U_cl² at y⁺=50",
-          "Harmonic wall-normal normal-stress amplitude |v′v′ harmonic|/U_cl² at y⁺=50"
-        ],
-        "N357-sspg": [
-          "Mean wall-stress vector following suddenly applied spanwise pressure gradient"
-        ],
-        "N357-linear-acceleration": [
-          "Wall-stress evolution in linearly accelerating channel"
-        ],
-        "N358-diffuser-internal": [
-          "Inclined-wall C_f for Robin/Dirichlet k boundary condition",
-          "Straight-wall separation with exponential vs linear interface viscosity",
-          "Inclined-wall reattachment with exponential vs linear interface viscosity"
-        ],
-        "N364-refit-high-Re": [
-          "Mean friction velocity across channel Reynolds numbers",
-          "Mean streamwise velocity across channel Reynolds numbers"
-        ],
-        "N395-D02": [
-          "mean first-cell velocity and velocity-defined bubble length",
-          "mean skin friction and friction-defined bubble length"
-        ],
-        "N418-D01": [
-          "signed mean skin friction",
-          "mean velocity and pressure"
-        ],
-        "N418-D02": [
-          "pressure coefficient",
-          "mean velocity and separated region"
-        ],
-        "N437-D01": [
-          "skin friction on each strip",
-          "instantaneous wall and interface shear"
-        ],
-        "N437-D03": [
-          "skin friction",
-          "mean velocity profiles"
-        ],
-        "N500-D01": [
-          "inner and full mean velocity error",
-          "Reynolds normal/shear profiles"
-        ],
-        "N540-D02": [
-          "mean U",
-          "mean turbulent kinetic energy"
-        ],
-        "N540-D03": [
-          "velocity, TKE, signed bottom Cf and spatial means"
-        ],
-        "N551-coarse-duct": [
-          "Magnitude and direction of mean velocity profiles on the duct centreline",
-          "Turning angle of mean surface traction relative to free stream",
-          "Reynolds normal and shear stress profiles",
-          "Boundary-layer thickness δ and momentum thickness θ"
-        ],
-        "N582-D02": [
-          "mean U",
-          "streamwise and transverse normal and shear stresses"
-        ],
-        "N623-D01": [
-          "mean velocity, predicted friction and stresses"
-        ],
-        "N626-channel-950": [
-          "Channel mean U profile/log-layer mismatch at Reτ=950",
-          "Rms streamwise velocity in channel at Reτ=950"
-        ],
-        "N626-channel-2000": [
-          "Channel mean U at Reτ=2000"
-        ],
-        "N626-step": [
-          "Integrated error in mean shear magnitude and in mean streamwise component after step",
-          "Mean BFS reattachment location from signed streamwise shear",
-          "BFS integrated shear-magnitude error, N=4→5",
-          "BFS integrated streamwise-shear error, N=4→5"
-        ],
-        "N626-cascade": [
-          "Blade surface spanwise-averaged mean shear, especially corner separation"
-        ],
-        "N655-spatially-averaged-transient": [
-          "Mean spanwise-velocity profile over transient",
-          "Plane-mean streamwise and spanwise wall stress under transverse forcing",
-          "Early mean spanwise stress at t*≈0.2",
-          "Early mean streamwise stress at t*≈0.2"
-        ],
-        "N674-diffusers": [
-          "Diffuser Cf, Cp and velocity profiles at 15° and 10°"
-        ],
-        "N674-hump": [
-          "Surface skin friction, upstream acceleration and recirculation over hump",
-          "Hump pressure coefficient and suction peak",
-          "Hump axial mean-velocity profiles at four stations",
-          "Total turbulent shear-stress profiles on hump"
-        ],
-        "N674-flat-plate": [
-          "Flat-plate skin-friction coefficient at Reθ=4000"
-        ],
-        "N674-channel": [
-          "Streamwise evolution of channel friction velocity uτ",
-          "Channel total shear at x/δ=6"
-        ],
-        "N707-D01": [
-          "total friction head loss versus flow in each lateral"
-        ]
-      }
-    },
-    "independent_transfer": {
-      "designs": 3,
-      "works": 3,
-      "linked_groups": 3,
-      "design_ids": [
-        "N623-D03",
-        "N626-channel-2000",
-        "P22-D02"
-      ],
-      "work_ids": [
-        "N623",
-        "N626",
-        "P22"
-      ],
-      "known_link_groups": [
-        [
-          "N623"
-        ],
-        [
-          "N626"
-        ],
-        [
-          "P22"
-        ]
-      ],
-      "rule": "The tested condition and intended observable are withheld from fitting and model selection for the claimed transfer dimension. Record what was known and retained. An undocumented selection history does not establish entry.",
-      "contested_additions": {
-        "designs": 0,
-        "works": 0,
-        "linked_groups": 0,
-        "design_ids": [],
-        "work_ids": [],
-        "known_link_groups": []
-      },
-      "observable_members": {
-        "P22-D02": [
-          "instantaneous and mean bottom-wall shear versus x/h"
-        ],
-        "N623-D03": [
-          "log-law mismatch against prescribed κ=0.4, B=5"
-        ],
-        "N626-channel-2000": [
-          "Channel mean U at Reτ=2000"
+        "N657-V02": [
+          "Nusselt number versus Re (Fig. 8c-d, thermal)"
         ]
       }
     }
   },
   "baseline_availability": {
     "population": {
-      "designs": 179,
-      "works": 96,
-      "linked_groups": 70,
+      "designs": 261,
+      "works": 99,
+      "linked_groups": 73,
       "design_ids": [
         "N019-D01",
         "N019-D02",
@@ -3555,42 +3913,76 @@
         "N019-D04",
         "N025-D01",
         "N025-D02",
+        "N025-V01",
+        "N025-V02",
+        "N025-V03",
+        "N025-V04",
         "N037-D01",
+        "N037-V01",
         "N054-D01",
         "N054-D02",
         "N054-D03",
         "N054-D04",
+        "N054-V01",
         "N076-D01",
         "N076-D02",
+        "N076-V01",
+        "N085-D01",
+        "N147-D01",
+        "N147-V01",
         "N164-D01",
         "N174-D01",
+        "N174-V01",
+        "N174-V02",
+        "N174-V03",
         "N181-D01",
+        "N181-V01",
         "N188-D01",
+        "N188-V01",
         "N189-D01",
         "N189-D02",
+        "N195-V01",
         "N195-channel",
         "N195-step-overview",
         "N195-step-parameters",
         "N218-D01",
         "N218-D02",
+        "N218-V01",
         "N239-body-revolution",
         "N239-suboff-high",
         "N239-suboff-low",
         "N240-D02",
         "N251-D01",
+        "N251-V01",
         "N253-D02",
+        "N253-V01",
         "N262-D02",
         "N262-D03",
+        "N262-V01",
+        "N262-V02",
+        "N262-V03",
+        "N262-V04",
         "N273-D01",
         "N280-D01",
         "N280-D02",
         "N291-D01",
+        "N291-V01",
         "N297-D01",
         "N297-D02",
         "N300-D01",
+        "N300-V01",
+        "N300-V02",
         "N318-D01",
+        "N318-V03",
         "N327-D01",
         "N327-D03",
+        "N327-V01",
+        "N327-V02",
+        "N327-V03",
+        "N327-V05",
+        "N339-V01",
+        "N339-V02",
+        "N339-V03",
         "N339-highlift-high",
         "N339-highlift-low",
         "N339-naca-ten",
@@ -3604,30 +3996,43 @@
         "N358-diffuser-internal",
         "N358-impinging-jet",
         "N364-Re-series",
+        "N364-V01",
         "N364-fixed-Re-model-and-numerics",
         "N364-refit-high-Re",
         "N372-D01",
+        "N372-V01",
+        "N372-V02",
         "N391-D01",
         "N391-D02",
         "N392-D01",
         "N395-D01",
         "N395-D02",
+        "N395-V01",
+        "N395-V02",
+        "N395-V03",
         "N418-D01",
         "N418-D02",
+        "N418-V01",
+        "N418-V02",
         "N419-D01",
         "N434-D01",
+        "N434-V03",
         "N437-D01",
         "N437-D02",
         "N437-D03",
         "N444-D01",
         "N445-D01",
         "N446-D01",
+        "N446-V01",
         "N456-D01",
+        "N456-V01",
         "N457-D01",
         "N457-D02",
         "N459-D01",
+        "N459-V01",
         "N464-D01",
         "N476-D01",
+        "N476-V01",
         "N497-D02",
         "N497-D04",
         "N498-D01",
@@ -3635,28 +4040,56 @@
         "N502-D01",
         "N502-D02",
         "N530-D01",
+        "N530-V01",
         "N540-D02",
         "N540-D03",
+        "N540-V01",
+        "N540-V02",
+        "N551-V01",
+        "N551-V02",
         "N551-coarse-duct",
         "N556-D02",
         "N556-D03",
+        "N556-V01",
+        "N556-V02",
+        "N556-V03",
+        "N556-V04",
         "N582-D02",
         "N596-D01",
+        "N596-V01",
         "N611-channel",
         "N611-hill-high",
         "N611-hill-low",
         "N611-step",
         "N623-D01",
         "N623-D03",
+        "N623-V01",
+        "N623-V02",
+        "N623-V03",
+        "N623-V04",
+        "N623-V05",
         "N626-cascade",
         "N626-channel-2000",
         "N626-channel-950",
+        "N626-direction",
         "N626-step",
         "N632-D01",
+        "N635-D01",
+        "N635-V01",
+        "N635-V02",
         "N653-D01",
         "N655-spatially-averaged-transient",
         "N657-D01",
+        "N657-V01",
+        "N657-V02",
         "N672-D01",
+        "N672-V01",
+        "N672-V02",
+        "N674-V01",
+        "N674-channel",
+        "N674-diffusers",
+        "N674-flat-plate",
+        "N674-hump",
         "N680-D02",
         "N707-D01",
         "N709-D01",
@@ -3664,18 +4097,21 @@
         "P01-channel-U",
         "P01-step",
         "P02-D01",
+        "P02-V01",
+        "P02-V02",
         "P03-D01",
         "P03-D02",
         "P04-D01",
         "P04-D02",
         "P05-D01",
+        "P05-V01",
         "P06-D01",
         "P06-D02",
         "P07-D01",
         "P11-D02",
+        "P11-V01",
         "P12-D01",
-        "P13-D01",
-        "P13-D02",
+        "P12-V01",
         "P14-channel",
         "P14-hill",
         "P15-D01",
@@ -3695,7 +4131,9 @@
         "P20-channel",
         "P21-D02",
         "P21-D03",
+        "P21-V01",
         "P23-CRM",
+        "P23-V01",
         "P23-ablations",
         "P23-bump",
         "P23-channel",
@@ -3712,10 +4150,12 @@
         "P27-D01",
         "P27-D02",
         "P29-HCD",
+        "P29-V01",
         "P29-mild",
         "P29-straight",
         "P29-strong",
         "P30-D01",
+        "P30-V01",
         "P31-bump",
         "P31-channel",
         "P31-hill-training",
@@ -3735,6 +4175,8 @@
         "N037",
         "N054",
         "N076",
+        "N085",
+        "N147",
         "N164",
         "N174",
         "N181",
@@ -3788,10 +4230,12 @@
         "N623",
         "N626",
         "N632",
+        "N635",
         "N653",
         "N655",
         "N657",
         "N672",
+        "N674",
         "N680",
         "N707",
         "N709",
@@ -3804,7 +4248,6 @@
         "P07",
         "P11",
         "P12",
-        "P13",
         "P14",
         "P15",
         "P16",
@@ -3855,6 +4298,12 @@
         ],
         [
           "N076"
+        ],
+        [
+          "N085"
+        ],
+        [
+          "N147"
         ],
         [
           "N164"
@@ -3990,6 +4439,9 @@
           "N632"
         ],
         [
+          "N635"
+        ],
+        [
           "N653"
         ],
         [
@@ -3997,6 +4449,9 @@
         ],
         [
           "N672"
+        ],
+        [
+          "N674"
         ],
         [
           "N680"
@@ -4027,9 +4482,6 @@
         ],
         [
           "P07"
-        ],
-        [
-          "P13"
         ],
         [
           "P15"
@@ -4067,145 +4519,126 @@
       ]
     },
     "by_design": {
-      "grid or input change with same wall model": {
-        "designs": 23,
-        "works": 20,
-        "linked_groups": 17,
+      "alternative compared without a quantitative common reference": {
+        "designs": 12,
+        "works": 12,
+        "linked_groups": 12,
         "design_ids": [
-          "N189-D02",
-          "N195-channel",
-          "N239-suboff-low",
-          "N280-D01",
-          "N280-D02",
-          "N339-naca-ten",
-          "N339-naca-zero",
-          "N392-D01",
-          "N434-D01",
-          "N457-D02",
-          "N502-D02",
-          "N653-D01",
-          "N672-D01",
-          "N709-D01",
-          "P07-D01",
-          "P12-D01",
-          "P14-channel",
-          "P14-hill",
-          "P18-D01",
-          "P27-D02",
-          "P33-D01",
-          "P35-D01",
-          "P36-D01"
+          "N025-V03",
+          "N037-V01",
+          "N218-V01",
+          "N262-V04",
+          "N291-D01",
+          "N300-D01",
+          "N327-D03",
+          "N446-V01",
+          "N464-D01",
+          "N498-D01",
+          "N530-V01",
+          "P32-D01"
         ],
         "work_ids": [
-          "N189",
-          "N195",
-          "N239",
-          "N280",
-          "N339",
-          "N392",
-          "N434",
-          "N457",
-          "N502",
-          "N653",
-          "N672",
-          "N709",
-          "P07",
-          "P12",
-          "P14",
-          "P18",
-          "P27",
-          "P33",
-          "P35",
-          "P36"
+          "N025",
+          "N037",
+          "N218",
+          "N262",
+          "N291",
+          "N300",
+          "N327",
+          "N446",
+          "N464",
+          "N498",
+          "N530",
+          "P32"
         ],
         "known_link_groups": [
           [
-            "N189"
+            "N025"
           ],
           [
-            "N195",
-            "N280"
+            "N037"
           ],
           [
-            "N239"
+            "N218"
           ],
           [
-            "N339"
+            "N262"
           ],
           [
-            "N392"
+            "N291"
           ],
           [
-            "N434"
+            "N300"
           ],
           [
-            "N457",
-            "N502",
-            "P14"
+            "N327"
           ],
           [
-            "N653"
+            "N446"
           ],
           [
-            "N672"
+            "N464"
           ],
           [
-            "N709"
+            "N498"
           ],
           [
-            "P07"
+            "N530"
           ],
           [
-            "P12"
-          ],
-          [
-            "P18"
-          ],
-          [
-            "P27"
-          ],
-          [
-            "P33"
-          ],
-          [
-            "P35"
-          ],
-          [
-            "P36"
+            "P32"
           ]
         ]
       },
       "identified within-setting alternative": {
-        "designs": 70,
-        "works": 43,
-        "linked_groups": 27,
+        "designs": 103,
+        "works": 58,
+        "linked_groups": 40,
         "design_ids": [
           "N025-D02",
           "N037-D01",
           "N054-D03",
           "N054-D04",
+          "N076-D01",
           "N076-D02",
+          "N076-V01",
           "N174-D01",
+          "N181-D01",
+          "N195-V01",
+          "N195-channel",
           "N195-step-parameters",
+          "N218-D01",
           "N240-D02",
           "N262-D02",
+          "N262-V02",
+          "N262-V03",
           "N297-D01",
+          "N297-D02",
+          "N300-V02",
+          "N318-D01",
           "N327-D01",
-          "N327-D03",
+          "N327-V03",
+          "N327-V05",
           "N339-naca-wall-change",
           "N357-linear-acceleration",
           "N357-pulse",
           "N357-sspg",
           "N358-diffuser-internal",
+          "N358-impinging-jet",
           "N364-fixed-Re-model-and-numerics",
           "N364-refit-high-Re",
           "N395-D02",
-          "N418-D01",
           "N418-D02",
+          "N418-V02",
+          "N419-D01",
           "N437-D01",
+          "N437-D02",
           "N437-D03",
-          "N464-D01",
-          "N476-D01",
+          "N444-D01",
+          "N446-D01",
+          "N456-D01",
+          "N459-D01",
+          "N497-D02",
           "N500-D01",
           "N540-D02",
           "N540-D03",
@@ -4216,20 +4649,30 @@
           "N611-hill-low",
           "N611-step",
           "N623-D01",
+          "N623-V01",
           "N626-cascade",
           "N626-channel-2000",
           "N626-channel-950",
           "N626-step",
           "N655-spatially-averaged-transient",
+          "N672-V01",
+          "N672-V02",
+          "N674-channel",
+          "N674-diffusers",
+          "N674-flat-plate",
+          "N674-hump",
           "N680-D02",
           "N707-D01",
           "P01-bundle",
           "P01-channel-U",
           "P01-step",
           "P02-D01",
+          "P04-D01",
           "P06-D01",
           "P06-D02",
+          "P07-D01",
           "P11-D02",
+          "P12-D01",
           "P16-D01",
           "P16-D02",
           "P17-D01",
@@ -4240,15 +4683,20 @@
           "P19-pipe",
           "P19-plate",
           "P19-transient",
+          "P20-agent",
           "P20-channel",
           "P21-D02",
           "P21-D03",
+          "P21-V01",
+          "P25-D01",
+          "P25-D02",
           "P25-D03",
           "P26-channel",
-          "P26-stress-correlation",
+          "P30-D01",
           "P31-bump",
           "P31-hill-training",
           "P31-hill-transfer",
+          "P33-D01",
           "P34-D01"
         ],
         "work_ids": [
@@ -4257,10 +4705,14 @@
           "N054",
           "N076",
           "N174",
+          "N181",
           "N195",
+          "N218",
           "N240",
           "N262",
           "N297",
+          "N300",
+          "N318",
           "N327",
           "N339",
           "N357",
@@ -4268,9 +4720,13 @@
           "N364",
           "N395",
           "N418",
+          "N419",
           "N437",
-          "N464",
-          "N476",
+          "N444",
+          "N446",
+          "N456",
+          "N459",
+          "N497",
           "N500",
           "N540",
           "N551",
@@ -4280,12 +4736,17 @@
           "N623",
           "N626",
           "N655",
+          "N672",
+          "N674",
           "N680",
           "N707",
           "P01",
           "P02",
+          "P04",
           "P06",
+          "P07",
           "P11",
+          "P12",
           "P16",
           "P17",
           "P19",
@@ -4293,7 +4754,9 @@
           "P21",
           "P25",
           "P26",
+          "P30",
           "P31",
+          "P33",
           "P34"
         ],
         "known_link_groups": [
@@ -4301,6 +4764,7 @@
             "N025",
             "N395",
             "N418",
+            "N497",
             "N611",
             "P11",
             "P16",
@@ -4319,14 +4783,19 @@
             "N174"
           ],
           [
+            "N181"
+          ],
+          [
             "N195",
             "N357",
             "N364",
             "N437",
-            "N464",
             "N540",
             "N582",
             "N655"
+          ],
+          [
+            "N218"
           ],
           [
             "N240"
@@ -4338,6 +4807,12 @@
             "N297"
           ],
           [
+            "N300"
+          ],
+          [
+            "N318"
+          ],
+          [
             "N327"
           ],
           [
@@ -4347,7 +4822,19 @@
             "N358"
           ],
           [
-            "N476"
+            "N419"
+          ],
+          [
+            "N444"
+          ],
+          [
+            "N446"
+          ],
+          [
+            "N456"
+          ],
+          [
+            "N459"
           ],
           [
             "N500"
@@ -4356,7 +4843,8 @@
             "N551"
           ],
           [
-            "N556"
+            "N556",
+            "P30"
           ],
           [
             "N623",
@@ -4366,6 +4854,12 @@
           [
             "N626",
             "P21"
+          ],
+          [
+            "N672"
+          ],
+          [
+            "N674"
           ],
           [
             "N680"
@@ -4380,252 +4874,109 @@
             "P02"
           ],
           [
+            "P04"
+          ],
+          [
             "P06"
+          ],
+          [
+            "P07"
+          ],
+          [
+            "P12",
+            "P19"
           ],
           [
             "P17"
           ],
           [
-            "P19"
+            "P25"
           ],
           [
-            "P25"
+            "P33"
           ],
           [
             "P34"
           ]
         ]
       },
-      "identity or matching unresolved": {
-        "designs": 3,
-        "works": 3,
-        "linked_groups": 3,
-        "design_ids": [
-          "N364-Re-series",
-          "P13-D02",
-          "P32-D01"
-        ],
-        "work_ids": [
-          "N364",
-          "P13",
-          "P32"
-        ],
-        "known_link_groups": [
-          [
-            "N364"
-          ],
-          [
-            "P13"
-          ],
-          [
-            "P32"
-          ]
-        ]
-      },
       "no distinct wall-treatment baseline identified": {
-        "designs": 19,
-        "works": 16,
-        "linked_groups": 13,
+        "designs": 43,
+        "works": 28,
+        "linked_groups": 23,
         "design_ids": [
-          "N188-D01",
+          "N019-D02",
+          "N019-D03",
+          "N025-V04",
+          "N164-D01",
           "N195-step-overview",
           "N239-body-revolution",
           "N239-suboff-high",
-          "N262-D03",
-          "N357-stationary",
-          "N437-D02",
-          "N444-D01",
-          "N497-D04",
-          "N623-D03",
-          "P03-D02",
-          "P13-D01",
-          "P20-actions",
-          "P20-agent",
-          "P24-extrapolation",
-          "P24-interpolation",
-          "P26-ZPG",
-          "P27-D01",
-          "P36-D02"
-        ],
-        "work_ids": [
-          "N188",
-          "N195",
-          "N239",
-          "N262",
-          "N357",
-          "N437",
-          "N444",
-          "N497",
-          "N623",
-          "P03",
-          "P13",
-          "P20",
-          "P24",
-          "P26",
-          "P27",
-          "P36"
-        ],
-        "known_link_groups": [
-          [
-            "N188"
-          ],
-          [
-            "N195"
-          ],
-          [
-            "N239"
-          ],
-          [
-            "N262"
-          ],
-          [
-            "N357",
-            "N437"
-          ],
-          [
-            "N444"
-          ],
-          [
-            "N497"
-          ],
-          [
-            "N623",
-            "P20",
-            "P26"
-          ],
-          [
-            "P03"
-          ],
-          [
-            "P13"
-          ],
-          [
-            "P24"
-          ],
-          [
-            "P27"
-          ],
-          [
-            "P36"
-          ]
-        ]
-      },
-      "whole-system or multiple simultaneous changes": {
-        "designs": 64,
-        "works": 46,
-        "linked_groups": 38,
-        "design_ids": [
-          "N019-D01",
-          "N019-D02",
-          "N019-D03",
-          "N019-D04",
-          "N025-D01",
-          "N054-D01",
-          "N054-D02",
-          "N076-D01",
-          "N164-D01",
-          "N181-D01",
-          "N189-D01",
-          "N218-D01",
-          "N218-D02",
-          "N251-D01",
-          "N253-D02",
-          "N273-D01",
-          "N291-D01",
-          "N297-D02",
-          "N300-D01",
-          "N318-D01",
+          "N239-suboff-low",
+          "N318-V03",
+          "N327-V01",
+          "N339-V02",
+          "N339-V03",
           "N339-highlift-high",
           "N339-highlift-low",
-          "N358-diffuser-configuration",
-          "N358-impinging-jet",
-          "N372-D01",
-          "N391-D01",
-          "N391-D02",
-          "N395-D01",
-          "N419-D01",
-          "N445-D01",
-          "N446-D01",
-          "N456-D01",
-          "N457-D01",
-          "N459-D01",
-          "N497-D02",
-          "N498-D01",
-          "N502-D01",
-          "N530-D01",
-          "N556-D03",
+          "N395-V02",
+          "N395-V03",
+          "N497-D04",
+          "N540-V01",
+          "N540-V02",
+          "N551-V02",
+          "N556-V02",
+          "N556-V04",
           "N596-D01",
-          "N611-channel",
-          "N632-D01",
-          "N657-D01",
-          "P03-D01",
-          "P04-D01",
-          "P04-D02",
-          "P05-D01",
+          "N623-D03",
+          "N623-V03",
+          "N623-V04",
+          "N626-direction",
+          "N635-D01",
+          "N635-V01",
+          "N635-V02",
+          "N657-V01",
+          "N657-V02",
+          "P02-V02",
+          "P03-D02",
+          "P05-V01",
+          "P11-V01",
           "P15-D01",
-          "P23-CRM",
-          "P23-ablations",
-          "P23-bump",
-          "P23-channel",
-          "P23-juncture",
-          "P23-pipe",
-          "P25-D01",
-          "P25-D02",
-          "P29-HCD",
-          "P29-mild",
-          "P29-straight",
-          "P29-strong",
-          "P30-D01",
-          "P31-channel",
-          "P34-D02",
+          "P20-actions",
+          "P23-V01",
+          "P26-ZPG",
+          "P29-V01",
+          "P36-D02",
           "P36-D03"
         ],
         "work_ids": [
           "N019",
           "N025",
-          "N054",
-          "N076",
           "N164",
-          "N181",
-          "N189",
-          "N218",
-          "N251",
-          "N253",
-          "N273",
-          "N291",
-          "N297",
-          "N300",
+          "N195",
+          "N239",
           "N318",
+          "N327",
           "N339",
-          "N358",
-          "N372",
-          "N391",
           "N395",
-          "N419",
-          "N445",
-          "N446",
-          "N456",
-          "N457",
-          "N459",
           "N497",
-          "N498",
-          "N502",
-          "N530",
+          "N540",
+          "N551",
           "N556",
           "N596",
-          "N611",
-          "N632",
+          "N623",
+          "N626",
+          "N635",
           "N657",
+          "P02",
           "P03",
-          "P04",
           "P05",
+          "P11",
           "P15",
+          "P20",
           "P23",
-          "P25",
+          "P26",
           "P29",
-          "P30",
-          "P31",
-          "P34",
           "P36"
         ],
         "known_link_groups": [
@@ -4634,31 +4985,234 @@
           ],
           [
             "N025",
-            "N395",
-            "N457",
-            "N497",
-            "N502",
-            "N611",
-            "P23",
-            "P31"
-          ],
-          [
-            "N054"
-          ],
-          [
-            "N076"
+            "P11"
           ],
           [
             "N164"
           ],
           [
+            "N195",
+            "N540"
+          ],
+          [
+            "N239"
+          ],
+          [
+            "N318"
+          ],
+          [
+            "N327"
+          ],
+          [
+            "N339"
+          ],
+          [
+            "N395",
+            "P23"
+          ],
+          [
+            "N497"
+          ],
+          [
+            "N551"
+          ],
+          [
+            "N556"
+          ],
+          [
+            "N596"
+          ],
+          [
+            "N623",
+            "P20",
+            "P26"
+          ],
+          [
+            "N626"
+          ],
+          [
+            "N635"
+          ],
+          [
+            "N657"
+          ],
+          [
+            "P02"
+          ],
+          [
+            "P03"
+          ],
+          [
+            "P05"
+          ],
+          [
+            "P15"
+          ],
+          [
+            "P29"
+          ],
+          [
+            "P36"
+          ]
+        ]
+      },
+      "same wall treatment: grid, Reynolds number, numerical solution or discretisation varies": {
+        "designs": 71,
+        "works": 50,
+        "linked_groups": 42,
+        "design_ids": [
+          "N019-D01",
+          "N019-D04",
+          "N025-D01",
+          "N025-V02",
+          "N085-D01",
+          "N147-D01",
+          "N174-V01",
+          "N174-V02",
+          "N174-V03",
+          "N181-V01",
+          "N188-D01",
+          "N188-V01",
+          "N189-D01",
+          "N189-D02",
+          "N251-V01",
+          "N253-V01",
+          "N262-D03",
+          "N262-V01",
+          "N273-D01",
+          "N280-D01",
+          "N280-D02",
+          "N291-V01",
+          "N327-V02",
+          "N339-V01",
+          "N339-naca-ten",
+          "N339-naca-zero",
+          "N357-stationary",
+          "N364-Re-series",
+          "N364-V01",
+          "N372-V01",
+          "N372-V02",
+          "N391-D01",
+          "N391-D02",
+          "N392-D01",
+          "N395-D01",
+          "N395-V01",
+          "N418-V01",
+          "N434-D01",
+          "N456-V01",
+          "N457-D01",
+          "N457-D02",
+          "N502-D01",
+          "N502-D02",
+          "N530-D01",
+          "N551-V01",
+          "N556-D03",
+          "N556-V01",
+          "N596-V01",
+          "N611-channel",
+          "N623-V02",
+          "N623-V05",
+          "N632-D01",
+          "N653-D01",
+          "N657-D01",
+          "N672-D01",
+          "N674-V01",
+          "N709-D01",
+          "P02-V01",
+          "P04-D02",
+          "P14-channel",
+          "P14-hill",
+          "P18-D01",
+          "P23-channel",
+          "P24-extrapolation",
+          "P24-interpolation",
+          "P27-D01",
+          "P27-D02",
+          "P29-strong",
+          "P30-V01",
+          "P35-D01",
+          "P36-D01"
+        ],
+        "work_ids": [
+          "N019",
+          "N025",
+          "N085",
+          "N147",
+          "N174",
+          "N181",
+          "N188",
+          "N189",
+          "N251",
+          "N253",
+          "N262",
+          "N273",
+          "N280",
+          "N291",
+          "N327",
+          "N339",
+          "N357",
+          "N364",
+          "N372",
+          "N391",
+          "N392",
+          "N395",
+          "N418",
+          "N434",
+          "N456",
+          "N457",
+          "N502",
+          "N530",
+          "N551",
+          "N556",
+          "N596",
+          "N611",
+          "N623",
+          "N632",
+          "N653",
+          "N657",
+          "N672",
+          "N674",
+          "N709",
+          "P02",
+          "P04",
+          "P14",
+          "P18",
+          "P23",
+          "P24",
+          "P27",
+          "P29",
+          "P30",
+          "P35",
+          "P36"
+        ],
+        "known_link_groups": [
+          [
+            "N019"
+          ],
+          [
+            "N025",
+            "N457",
+            "N502",
+            "N611",
+            "P14"
+          ],
+          [
+            "N085"
+          ],
+          [
+            "N147"
+          ],
+          [
+            "N174"
+          ],
+          [
             "N181"
           ],
           [
-            "N189"
+            "N188"
           ],
           [
-            "N218"
+            "N189"
           ],
           [
             "N251"
@@ -4667,25 +5221,26 @@
             "N253"
           ],
           [
+            "N262"
+          ],
+          [
             "N273"
+          ],
+          [
+            "N280",
+            "N364"
           ],
           [
             "N291"
           ],
           [
-            "N297"
-          ],
-          [
-            "N300"
-          ],
-          [
-            "N318"
+            "N327"
           ],
           [
             "N339"
           ],
           [
-            "N358"
+            "N357"
           ],
           [
             "N372"
@@ -4694,25 +5249,24 @@
             "N391"
           ],
           [
-            "N419"
+            "N392"
           ],
           [
-            "N445"
+            "N395",
+            "N418",
+            "P23"
           ],
           [
-            "N446"
+            "N434"
           ],
           [
             "N456"
           ],
           [
-            "N459"
-          ],
-          [
-            "N498"
-          ],
-          [
             "N530"
+          ],
+          [
+            "N551"
           ],
           [
             "N556",
@@ -4722,112 +5276,551 @@
             "N596"
           ],
           [
+            "N623"
+          ],
+          [
             "N632"
+          ],
+          [
+            "N653"
           ],
           [
             "N657"
           ],
           [
-            "P03"
+            "N672"
+          ],
+          [
+            "N674"
+          ],
+          [
+            "N709"
+          ],
+          [
+            "P02"
           ],
           [
             "P04"
           ],
           [
+            "P18"
+          ],
+          [
+            "P24"
+          ],
+          [
+            "P27"
+          ],
+          [
+            "P29"
+          ],
+          [
+            "P35"
+          ],
+          [
+            "P36"
+          ]
+        ]
+      },
+      "whole-system or multiple simultaneous changes": {
+        "designs": 25,
+        "works": 17,
+        "linked_groups": 14,
+        "design_ids": [
+          "N025-V01",
+          "N054-D01",
+          "N054-D02",
+          "N054-V01",
+          "N218-D02",
+          "N251-D01",
+          "N300-V01",
+          "N358-diffuser-configuration",
+          "N372-D01",
+          "N434-V03",
+          "N445-D01",
+          "N476-V01",
+          "P03-D01",
+          "P05-D01",
+          "P12-V01",
+          "P23-CRM",
+          "P23-ablations",
+          "P23-bump",
+          "P23-juncture",
+          "P23-pipe",
+          "P29-HCD",
+          "P29-mild",
+          "P29-straight",
+          "P31-channel",
+          "P34-D02"
+        ],
+        "work_ids": [
+          "N025",
+          "N054",
+          "N218",
+          "N251",
+          "N300",
+          "N358",
+          "N372",
+          "N434",
+          "N445",
+          "N476",
+          "P03",
+          "P05",
+          "P12",
+          "P23",
+          "P29",
+          "P31",
+          "P34"
+        ],
+        "known_link_groups": [
+          [
+            "N025",
+            "P12",
+            "P23",
+            "P31"
+          ],
+          [
+            "N054"
+          ],
+          [
+            "N218"
+          ],
+          [
+            "N251"
+          ],
+          [
+            "N300"
+          ],
+          [
+            "N358"
+          ],
+          [
+            "N372"
+          ],
+          [
+            "N434"
+          ],
+          [
+            "N445"
+          ],
+          [
+            "N476"
+          ],
+          [
+            "P03"
+          ],
+          [
             "P05"
-          ],
-          [
-            "P15"
-          ],
-          [
-            "P25"
           ],
           [
             "P29"
           ],
           [
             "P34"
+          ]
+        ]
+      },
+      "within-setting alternative with a control unreported": {
+        "designs": 7,
+        "works": 7,
+        "linked_groups": 7,
+        "design_ids": [
+          "N147-V01",
+          "N253-D02",
+          "N418-D01",
+          "N459-V01",
+          "N476-D01",
+          "N556-V03",
+          "P26-stress-correlation"
+        ],
+        "work_ids": [
+          "N147",
+          "N253",
+          "N418",
+          "N459",
+          "N476",
+          "N556",
+          "P26"
+        ],
+        "known_link_groups": [
+          [
+            "N147"
           ],
           [
-            "P36"
+            "N253"
+          ],
+          [
+            "N418"
+          ],
+          [
+            "N459"
+          ],
+          [
+            "N476"
+          ],
+          [
+            "N556"
+          ],
+          [
+            "P26"
           ]
         ]
       }
     },
     "meaning": "Every eligible coupled LES/RANS series is at risk of lacking a within-setting wall-treatment alternative, including otherwise eligible single-treatment and grid-refinement series. Multiple baselines or controls in a series need observable-specific inspection in source_dispositions.json. The categories describe the principal comparison, and never assign an error direction to an absent baseline."
   },
-  "selection_sensitivity": {
-    "scope": "Sensitivity to requiring independence of fitting and method selection in the listed extrapolations. Each positive entry applies only to the fixed, pre-specified mapping and target stated. The possible additions are an identified sensitivity set. Other inherited or unreported calibration histories remain uncertified, so the upper number is not an archive-wide bound.",
-    "by_status": {
-      "partly exposed": {
-        "design_ids": [
-          "N011-D02",
-          "N626-apriori",
-          "P21-D05"
-        ],
+  "fact_derived_groups": {
+    "rule": {
+      "fixed_at": "2026-11-19T10:02:02Z",
+      "sha256": "b9bd1ae5496cc095cc3c59485d94fd3f3b0caf768e734a22f4e8344f43f48a8f"
+    },
+    "matched_wall_treatment_change": {
+      "strict": {
+        "works": 50,
+        "works_without_scope_boundary": 47,
         "work_ids": [
-          "N011",
-          "N626",
-          "P21"
-        ]
-      },
-      "qualified": {
-        "design_ids": [
-          "N623-D03",
-          "N626-channel-2000",
-          "P22-D02"
-        ],
-        "work_ids": [
+          "N025",
+          "N037",
+          "N054",
+          "N076",
+          "N174",
+          "N195",
+          "N218",
+          "N240",
+          "N262",
+          "N297",
+          "N300",
+          "N318",
+          "N327",
+          "N357",
+          "N358",
+          "N364",
+          "N395",
+          "N418",
+          "N437",
+          "N444",
+          "N446",
+          "N456",
+          "N459",
+          "N497",
+          "N500",
+          "N540",
+          "N551",
+          "N582",
+          "N611",
           "N623",
           "N626",
-          "P22"
-        ]
-      },
-      "selection unresolved": {
-        "design_ids": [
-          "N497-D04",
-          "N582-D03",
-          "P06-D02",
-          "P19-CRM",
-          "P23-CRM",
-          "P24-extrapolation",
-          "P25-D02",
-          "P26-ZPG",
-          "P31-bump",
-          "P31-channel",
-          "P31-hill-transfer"
-        ],
-        "work_ids": [
-          "N497",
-          "N582",
-          "P06",
+          "N655",
+          "N672",
+          "N674",
+          "N680",
+          "N707",
+          "P01",
+          "P02",
+          "P12",
+          "P16",
+          "P17",
           "P19",
-          "P23",
-          "P24",
+          "P20",
+          "P21",
           "P25",
           "P26",
-          "P31"
+          "P30",
+          "P31",
+          "P33",
+          "P34"
+        ],
+        "work_ids_dropped_without_scope_boundary": [
+          "N300",
+          "N318",
+          "N446"
+        ]
+      },
+      "broad": {
+        "works": 58,
+        "works_without_scope_boundary": 54,
+        "work_ids": [
+          "N025",
+          "N037",
+          "N054",
+          "N076",
+          "N174",
+          "N181",
+          "N195",
+          "N218",
+          "N240",
+          "N262",
+          "N297",
+          "N300",
+          "N318",
+          "N327",
+          "N339",
+          "N357",
+          "N358",
+          "N364",
+          "N395",
+          "N418",
+          "N419",
+          "N437",
+          "N444",
+          "N446",
+          "N456",
+          "N459",
+          "N497",
+          "N500",
+          "N540",
+          "N551",
+          "N556",
+          "N582",
+          "N611",
+          "N623",
+          "N626",
+          "N655",
+          "N672",
+          "N674",
+          "N680",
+          "N707",
+          "P01",
+          "P02",
+          "P04",
+          "P06",
+          "P07",
+          "P11",
+          "P12",
+          "P16",
+          "P17",
+          "P19",
+          "P20",
+          "P21",
+          "P25",
+          "P26",
+          "P30",
+          "P31",
+          "P33",
+          "P34"
+        ],
+        "work_ids_dropped_without_scope_boundary": [
+          "N300",
+          "N318",
+          "N419",
+          "N446"
+        ]
+      },
+      "upper": {
+        "works": 61,
+        "works_without_scope_boundary": 56,
+        "work_ids": [
+          "N025",
+          "N037",
+          "N054",
+          "N076",
+          "N147",
+          "N174",
+          "N181",
+          "N195",
+          "N218",
+          "N240",
+          "N253",
+          "N262",
+          "N297",
+          "N300",
+          "N318",
+          "N327",
+          "N339",
+          "N357",
+          "N358",
+          "N364",
+          "N395",
+          "N418",
+          "N419",
+          "N437",
+          "N444",
+          "N446",
+          "N456",
+          "N459",
+          "N476",
+          "N497",
+          "N500",
+          "N540",
+          "N551",
+          "N556",
+          "N582",
+          "N611",
+          "N623",
+          "N626",
+          "N655",
+          "N672",
+          "N674",
+          "N680",
+          "N707",
+          "P01",
+          "P02",
+          "P04",
+          "P06",
+          "P07",
+          "P11",
+          "P12",
+          "P16",
+          "P17",
+          "P19",
+          "P20",
+          "P21",
+          "P25",
+          "P26",
+          "P30",
+          "P31",
+          "P33",
+          "P34"
+        ],
+        "work_ids_dropped_without_scope_boundary": [
+          "N147",
+          "N300",
+          "N318",
+          "N419",
+          "N446"
         ]
       }
+    },
+    "constitutive_constraint": {
+      "members": [
+        "N080",
+        "N166",
+        "N253",
+        "N262",
+        "N327",
+        "N357",
+        "N497",
+        "N540",
+        "N626",
+        "N647",
+        "N655",
+        "N719",
+        "P08",
+        "P14",
+        "P17",
+        "P19",
+        "P21"
+      ],
+      "works": 17,
+      "works_without_scope_boundary": 14,
+      "works_with_a_candidate": 36
+    },
+    "transfer": {
+      "works_with_fitted_treatment": 41,
+      "all_counted_works": {
+        "tests": {
+          "qualified": 9,
+          "partly exposed": 60,
+          "selection unresolved": 41
+        },
+        "total_tests": 110,
+        "works": {
+          "qualified": 4,
+          "partly exposed": 20,
+          "selection unresolved": 21
+        },
+        "total_works": 33,
+        "tests_not_shown_to_be_exposed": [
+          9,
+          50
+        ]
+      },
+      "without_scope_boundary": {
+        "tests": {
+          "qualified": 9,
+          "partly exposed": 56,
+          "selection unresolved": 38
+        },
+        "total_tests": 103,
+        "works": {
+          "qualified": 4,
+          "partly exposed": 18,
+          "selection unresolved": 19
+        },
+        "total_works": 30,
+        "tests_not_shown_to_be_exposed": [
+          9,
+          47
+        ]
+      }
+    },
+    "scope_boundary": {
+      "works": 115,
+      "eligible_works": 108,
+      "scope_boundary_works": [
+        "N011",
+        "N080",
+        "N147",
+        "N166",
+        "N318",
+        "N372",
+        "N419",
+        "N445",
+        "N446",
+        "N635",
+        "N719"
+      ],
+      "scope_boundary_by_kind": {
+        "estimator not presented as a wall model": 3,
+        "eligibility disputed between the readings on a rule ambiguity": 3,
+        "sublayer-resolving near-wall method": 5
+      },
+      "eligible_works_without_scope_boundary": 97,
+      "contrasts_on_a_sublayer_resolving_grid": [
+        "N300-K04",
+        "N318-K01",
+        "N318-K02",
+        "N318-K04",
+        "N419-K02",
+        "N446-K01"
+      ]
     }
   },
-  "second_reading": {
-    "scope": "Agreement measures how reproducibly the labels are assigned inside the 115-work collection. It says nothing about whether the collection represents the literature.",
-    "status_by_type": {
-      "constitutive_constraint": "not quotable until repaired and re-read",
-      "prescribed_input": "quotable",
-      "coupled_wmles": "quotable",
-      "rans_comparison": "quotable",
-      "system_benchmark": "quotable",
-      "thermal": "quotable",
-      "controlled_wall_change": "not quotable until repaired and re-read",
-      "independent_transfer": "not assessable from this sample"
+  "quotability": {
+    "scope": "Agreement measures how reproducibly facts and labels are assigned inside the 115-work collection. It says nothing about whether the collection represents the literature. All readings were automated; none is a human screening.",
+    "decisions": {
+      "strict": {
+        "quotable": false,
+        "reason": "Fails on the fresh sample: member_change_within_limit (members 12 against 10, allowed change 1.80). Disagreements by attribution: rule ambiguity: 3."
+      },
+      "broad": {
+        "quotable": true,
+        "reason": "All three statistical criteria met on the fresh sample and every disagreement settled against the source. Disagreements by attribution: rule ambiguity: 3."
+      },
+      "upper": {
+        "quotable": true,
+        "reason": "All three statistical criteria met on the fresh sample and every disagreement settled against the source. Disagreements by attribution: rule ambiguity: 3."
+      },
+      "constitutive_constraint": {
+        "quotable": true,
+        "reason": "Kappa and its lower bound meet the thresholds over the complete pool and every disagreement is settled. Attribution: rule ambiguity: 6, first-reading error: 1. Fact (i), whether a restriction on a class is named, agrees less well than the membership (kappa 0.40)."
+      },
+      "transfer": {
+        "quotable": true,
+        "reason": "Work-level and status agreement meet the thresholds and every disagreement is settled. Attribution: first-reading omission: 2, row granularity (facts agree): 2, rule ambiguity: 6, first-reading error: 1."
+      },
+      "prescribed_input": {
+        "quotable": true,
+        "reason": "Reproduced on the fresh sample."
+      },
+      "coupled_wmles": {
+        "quotable": false,
+        "reason": "Regression check failed on the fresh sample: member_change_within_limit. Every disagreement is a work whose disposition differs between the readings (see the settlement). Among works both readings call eligible the label agrees."
+      },
+      "rans_comparison": {
+        "quotable": true,
+        "reason": "Reproduced on the fresh sample."
+      },
+      "system_benchmark": {
+        "quotable": false,
+        "reason": "Regression check failed on the fresh sample: kappa_at_least_0p60, lower_bound_at_least_0p40, member_change_within_limit. The instruction of this pass omitted the sentence that lets the label overlap the solver groups. The first reader, who saw the earlier record, kept the label on nearly every coupled design; the second reader, given the shortened definition, used it for a minority and not uniformly for comparable designs. The label therefore measures the instruction, and no system-benchmark count is quoted."
+      },
+      "thermal": {
+        "quotable": true,
+        "reason": "Reproduced on the fresh sample."
+      }
     },
-    "use": "Counts for a type whose status is not quotable are first-reading counts. Do not quote them. Series counts depend on how finely a paper is split and are not reproducible between readings; quote works.",
-    "design_counts_among_36_works_read_twice": {
-      "first": 71,
-      "second": 179
-    }
+    "use": "Quote a work count only for a group whose decision is quotable, with its range. Counts of design series depend on how finely a paper is split and are not reproducible between readings. The five typed groups above are labels of the first reading: their agreement on fresh works is given in agreement_v2.json and two of them did not reproduce."
   },
   "historical_pair_categories": {
     "different_tests": 55,

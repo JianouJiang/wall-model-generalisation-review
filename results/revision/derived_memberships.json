@@ -1,0 +1,377 @@
+{
+  "rule": {
+    "fixed_at": "2026-11-19T10:02:02Z",
+    "sha256": "b9bd1ae5496cc095cc3c59485d94fd3f3b0caf768e734a22f4e8344f43f48a8f"
+  },
+  "population": {
+    "works": 115,
+    "eligible_works": 108,
+    "scope_boundary_works": [
+      "N011",
+      "N080",
+      "N147",
+      "N166",
+      "N318",
+      "N372",
+      "N419",
+      "N445",
+      "N446",
+      "N635",
+      "N719"
+    ],
+    "scope_boundary_by_kind": {
+      "estimator not presented as a wall model": 3,
+      "eligibility disputed between the readings on a rule ambiguity": 3,
+      "sublayer-resolving near-wall method": 5
+    },
+    "eligible_works_without_scope_boundary": 97,
+    "contrasts_on_a_sublayer_resolving_grid": [
+      "N300-K04",
+      "N318-K01",
+      "N318-K02",
+      "N318-K04",
+      "N419-K02",
+      "N446-K01"
+    ]
+  },
+  "matched_wall_treatment_change": {
+    "meaning": "Works with at least one within-paper contrast of wall treatments in a coupled calculation, compared quantitatively with a reference on a hydrodynamic quantity. Strict: a different model with all six controls stated fixed. Broad (the group): also another imposition, input or parameter of one model. Upper bound: also contrasts with a control unreported.",
+    "tiers": {
+      "strict": {
+        "works": 50,
+        "works_without_scope_boundary": 47,
+        "work_ids": [
+          "N025",
+          "N037",
+          "N054",
+          "N076",
+          "N174",
+          "N195",
+          "N218",
+          "N240",
+          "N262",
+          "N297",
+          "N300",
+          "N318",
+          "N327",
+          "N357",
+          "N358",
+          "N364",
+          "N395",
+          "N418",
+          "N437",
+          "N444",
+          "N446",
+          "N456",
+          "N459",
+          "N497",
+          "N500",
+          "N540",
+          "N551",
+          "N582",
+          "N611",
+          "N623",
+          "N626",
+          "N655",
+          "N672",
+          "N674",
+          "N680",
+          "N707",
+          "P01",
+          "P02",
+          "P12",
+          "P16",
+          "P17",
+          "P19",
+          "P20",
+          "P21",
+          "P25",
+          "P26",
+          "P30",
+          "P31",
+          "P33",
+          "P34"
+        ],
+        "work_ids_dropped_without_scope_boundary": [
+          "N300",
+          "N318",
+          "N446"
+        ]
+      },
+      "broad": {
+        "works": 58,
+        "works_without_scope_boundary": 54,
+        "work_ids": [
+          "N025",
+          "N037",
+          "N054",
+          "N076",
+          "N174",
+          "N181",
+          "N195",
+          "N218",
+          "N240",
+          "N262",
+          "N297",
+          "N300",
+          "N318",
+          "N327",
+          "N339",
+          "N357",
+          "N358",
+          "N364",
+          "N395",
+          "N418",
+          "N419",
+          "N437",
+          "N444",
+          "N446",
+          "N456",
+          "N459",
+          "N497",
+          "N500",
+          "N540",
+          "N551",
+          "N556",
+          "N582",
+          "N611",
+          "N623",
+          "N626",
+          "N655",
+          "N672",
+          "N674",
+          "N680",
+          "N707",
+          "P01",
+          "P02",
+          "P04",
+          "P06",
+          "P07",
+          "P11",
+          "P12",
+          "P16",
+          "P17",
+          "P19",
+          "P20",
+          "P21",
+          "P25",
+          "P26",
+          "P30",
+          "P31",
+          "P33",
+          "P34"
+        ],
+        "work_ids_dropped_without_scope_boundary": [
+          "N300",
+          "N318",
+          "N419",
+          "N446"
+        ]
+      },
+      "upper": {
+        "works": 61,
+        "works_without_scope_boundary": 56,
+        "work_ids": [
+          "N025",
+          "N037",
+          "N054",
+          "N076",
+          "N147",
+          "N174",
+          "N181",
+          "N195",
+          "N218",
+          "N240",
+          "N253",
+          "N262",
+          "N297",
+          "N300",
+          "N318",
+          "N327",
+          "N339",
+          "N357",
+          "N358",
+          "N364",
+          "N395",
+          "N418",
+          "N419",
+          "N437",
+          "N444",
+          "N446",
+          "N456",
+          "N459",
+          "N476",
+          "N497",
+          "N500",
+          "N540",
+          "N551",
+          "N556",
+          "N582",
+          "N611",
+          "N623",
+          "N626",
+          "N655",
+          "N672",
+          "N674",
+          "N680",
+          "N707",
+          "P01",
+          "P02",
+          "P04",
+          "P06",
+          "P07",
+          "P11",
+          "P12",
+          "P16",
+          "P17",
+          "P19",
+          "P20",
+          "P21",
+          "P25",
+          "P26",
+          "P30",
+          "P31",
+          "P33",
+          "P34"
+        ],
+        "work_ids_dropped_without_scope_boundary": [
+          "N147",
+          "N300",
+          "N318",
+          "N419",
+          "N446"
+        ]
+      }
+    },
+    "contrasts_in_counted_works": {
+      "strict": 104,
+      "none": 174,
+      "broad": 32,
+      "upper": 11
+    },
+    "reasons_among_non_member_contrasts": {
+      "thermal observables only": 4,
+      "factor varied": 61,
+      "numerical-solution or discretisation variant": 15,
+      "no quantitative common reference": 59,
+      "prescribed input": 58,
+      "no coupled LES, hybrid or RANS feedback": 14,
+      "no hydrodynamic observable": 15,
+      "factor unreported": 11
+    }
+  },
+  "baseline_labels": {
+    "coupled_design_series": 261,
+    "by_label": {
+      "alternative compared without a quantitative common reference": {
+        "designs": 12,
+        "works": 12
+      },
+      "identified within-setting alternative": {
+        "designs": 103,
+        "works": 58
+      },
+      "no distinct wall-treatment baseline identified": {
+        "designs": 43,
+        "works": 28
+      },
+      "same wall treatment: grid, Reynolds number, numerical solution or discretisation varies": {
+        "designs": 71,
+        "works": 50
+      },
+      "whole-system or multiple simultaneous changes": {
+        "designs": 25,
+        "works": 17
+      },
+      "within-setting alternative with a control unreported": {
+        "designs": 7,
+        "works": 7
+      }
+    }
+  },
+  "constitutive_constraint": {
+    "members": [
+      "N080",
+      "N166",
+      "N253",
+      "N262",
+      "N327",
+      "N357",
+      "N497",
+      "N540",
+      "N626",
+      "N647",
+      "N655",
+      "N719",
+      "P08",
+      "P14",
+      "P17",
+      "P19",
+      "P21"
+    ],
+    "works": 17,
+    "works_without_scope_boundary": 14,
+    "works_with_a_candidate": 36
+  },
+  "transfer": {
+    "works_with_fitted_treatment": 41,
+    "all_counted_works": {
+      "tests": {
+        "qualified": 9,
+        "partly exposed": 60,
+        "selection unresolved": 41
+      },
+      "total_tests": 110,
+      "works": {
+        "qualified": 4,
+        "partly exposed": 20,
+        "selection unresolved": 21
+      },
+      "total_works": 33,
+      "tests_not_shown_to_be_exposed": [
+        9,
+        50
+      ]
+    },
+    "without_scope_boundary": {
+      "tests": {
+        "qualified": 9,
+        "partly exposed": 56,
+        "selection unresolved": 38
+      },
+      "total_tests": 103,
+      "works": {
+        "qualified": 4,
+        "partly exposed": 18,
+        "selection unresolved": 19
+      },
+      "total_works": 30,
+      "tests_not_shown_to_be_exposed": [
+        9,
+        47
+      ]
+    }
+  },
+  "five_typed_groups": {
+    "prescribed_input": {
+      "works": 35,
+      "works_without_scope_boundary": 30
+    },
+    "coupled_wmles": {
+      "works": 68,
+      "works_without_scope_boundary": 65
+    },
+    "rans_comparison": {
+      "works": 31,
+      "works_without_scope_boundary": 27
+    },
+    "system_benchmark": {
+      "works": 98,
+      "works_without_scope_boundary": 92
+    },
+    "thermal": {
+      "works": 11,
+      "works_without_scope_boundary": 10
+    }
+  }
+}

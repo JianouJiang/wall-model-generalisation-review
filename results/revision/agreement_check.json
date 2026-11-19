@@ -1,0 +1,98 @@
+{
+  "strict": {
+    "kappa": 0.857,
+    "lower_95": 0.627,
+    "members": [
+      12,
+      10
+    ],
+    "quotable": false
+  },
+  "broad": {
+    "kappa": 0.867,
+    "lower_95": 0.667,
+    "members": [
+      15,
+      13
+    ],
+    "quotable": true
+  },
+  "upper": {
+    "kappa": 0.867,
+    "lower_95": 0.667,
+    "members": [
+      16,
+      14
+    ],
+    "quotable": true
+  },
+  "prescribed_input": {
+    "kappa": 0.927,
+    "lower_95": 0.757,
+    "members": [
+      10,
+      11
+    ],
+    "quotable": true
+  },
+  "coupled_wmles": {
+    "kappa": 0.796,
+    "lower_95": 0.553,
+    "members": [
+      19,
+      16
+    ],
+    "quotable": false
+  },
+  "rans_comparison": {
+    "kappa": 1.0,
+    "lower_95": 1.0,
+    "members": [
+      9,
+      9
+    ],
+    "quotable": true
+  },
+  "system_benchmark": {
+    "kappa": 0.151,
+    "lower_95": 0.0,
+    "members": [
+      28,
+      16
+    ],
+    "quotable": false
+  },
+  "thermal": {
+    "kappa": 1.0,
+    "lower_95": 1.0,
+    "members": [
+      3,
+      3
+    ],
+    "quotable": true
+  },
+  "constitutive_constraint": {
+    "kappa": 0.672,
+    "lower_95": 0.44,
+    "members": [
+      20,
+      15
+    ],
+    "quotable": true
+  },
+  "transfer": {
+    "kappa_has_a_row": 0.859,
+    "lower_95": 0.614,
+    "status_kappa_matched_rows": 0.936,
+    "quotable": true,
+    "split_of_tests": {
+      "qualified": 9,
+      "partly exposed": 60,
+      "selection unresolved": 41
+    }
+  },
+  "fresh_works_both_readings_call_eligible": {
+    "works": 27,
+    "tiers_agree": 27
+  }
+}

@@ -142,7 +142,9 @@
     "verification": "Source edition and panel read directly. See displayed_comparisons.json for controls and precision.",
     "figure_2_source_location": "Published pp.337–338, §7 mesh; p.338 Fig. 5(a,b), p.340 Fig. 7(a,b) and p.341 §7.2, Eqs. (12) and (29); source experiment by Buice and Eaton.",
     "accepted_manuscript_text_sha256": "4e6371e62ad188b4ca90e7172cb20aa3239ed7be1f4928a11e7a5b8ab1ca17be",
-    "source_url": "https://personalpages.manchester.ac.uk/staff/S.Utyuzhnikov/Papers/AMM_AJSU2016.pdf"
+    "source_url": "https://personalpages.manchester.ac.uk/staff/S.Utyuzhnikov/Papers/AMM_AJSU2016.pdf",
+    "source_accessed": "18 or 19 November 2026: read no later than 19 November 2026, 01:25 UTC, when this record first entered the repository.",
+    "source_access_note": "Version of record: Appl. Math. Model. 40, 329-342 (2016), doi:10.1016/j.apm.2015.05.011. The author-hosted copy at source_url did not answer requests from the build host on 19 November 2026 at 12:39 and 13:06 UTC, so no checksum of the published PDF is stored. The checksum above belongs to the text of the accepted manuscript against which pagination, figures and equations were checked."
   },
   {
     "claim_id": "S13",
@@ -174,7 +176,9 @@
     "source_location": "Published §V, Eq. (17) pp.124603-11–13; Table I p.12, Fig. 6(a,b) p.13, Fig. 7 p.14 (Boeing). Published §VI, Table II p.19, Fig. 13(a–d) and Fig. 14 p.20, Fig. 15 p.21 (Bachalo–Johnson). The arXiv v1 plots are Figs. 4 and 10, respectively.",
     "claim": "Boeing: EQWM separates only on fine, SWM already separates on medium; coarse remains attached in the reported grid sequence. Streamwise velocity for both is similar upstream; downstream profiles and Cp/Cf respond to refinement. B–J: at M=0.85 the shock is too weak to separate at its foot; separation occurs downstream under APG (pressure plateau about x/c=0.75); SWM improves the plateau but still underpredicts separation. At M=0.875 and 0.90 stronger shock-induced separation is reasonably predicted by both; the reported SWM advantage is smaller, especially at 0.90. The sensor responds near x/c~0.67 and the reattachment moves downstream with Mach. This offers paired system evidence for the complete SWM at specified grids and separates weak-shock/downstream-APG from shock-foot separation.",
     "verification": "Source edition and panel read directly. See displayed_comparisons.json for controls and precision.",
-    "figure_2_source_location": "Published §V, Eq. (17) pp.124603-11–13; Table I p.12, Fig. 6(a,b) p.13, Fig. 7 p.14 (Boeing). Published §VI, Table II p.19, Fig. 13(a–d) and Fig. 14 p.20, Fig. 15 p.21 (Bachalo–Johnson). The arXiv v1 plots are Figs. 4 and 10, respectively."
+    "figure_2_source_location": "Published §V, Eq. (17) pp.124603-11–13; Table I p.12, Fig. 6(a,b) p.13, Fig. 7 p.14 (Boeing). Published §VI, Table II p.19, Fig. 13(a–d) and Fig. 14 p.20, Fig. 15 p.21 (Bachalo–Johnson). The arXiv v1 plots are Figs. 4 and 10, respectively.",
+    "source_accessed": "18 or 19 November 2026: read no later than 19 November 2026, 01:25 UTC, when this record first entered the repository.",
+    "source_access_note": "Version of record: Phys. Rev. Fluids 9, 124603 (2024), doi:10.1103/PhysRevFluids.9.124603. It was read in the author's public copy at source_url. Its bytes were not stored, so no checksum of the published PDF is given."
   },
   {
     "claim_id": "S16",
@@ -487,7 +491,7 @@
   {
     "claim_id": "S42",
     "reference_key": "Tsubokura2009",
-    "manuscript_location": "Choice of studies, Box 1",
+    "manuscript_location": "Choice of studies, Box 1 (the rule is stated there; this work is its worked example and is not cited)",
     "source_version": "Revised author manuscript in Hokkaido University repository",
     "source_url": "https://hdl.handle.net/2115/49858",
     "source_location": "§2, pp. 5–6 (PDF pp. 6–7).",

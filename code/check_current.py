@@ -194,8 +194,14 @@ def check_directions_and_agreement(main, box, paired):
     assert digits['P25-0.01']['references']['own wall-resolved LES (H1.0-WR)'] == ['0.22', '4.35']
     assert digits['P25-0.01']['controls']['status'] == 'not all reported' and rows['P25-0.03']['class'] == 'resolved concordant'
     assert digits['N611']['baseline_printed'][0] == '0.2' and digits['N497']['controls']['status'] == 'differ'
+    # Two contrasts move the crossings in opposite directions to the printed digits. The class recorded for N497 notes that its
+    # two runs were averaged over different intervals. That bears on sampling precision, which neither source reports.
+    opposite = sorted(k for k, r in rows.items() if 'separation' in r
+                      and {r['separation']['direction'], r['reattachment']['direction']} == {'closer', 'farther'})
+    assert opposite == ['N497', 'P25-0.01']
     for phrase in ('Of nine such comparisons, five move both crossings closer, by 0.06H to about 2H',
-                   'One is resolved in opposite directions', 'from 0.31H to 0.29H against 0.22H',
+                   'Two move them in opposite directions, and neither source reports a sampling uncertainty for a crossing',
+                   'from 0.31H to 0.29H against 0.22H',
                    'from 4.26H to 4.18H against 4.35H', 'as 0.2, which leaves its 0.05H change unresolved',
                    'about 15 and 19 flow-through times', 'the smaller change is at most 0.05H',
                    'These tables do not establish a trade-off between the two crossings'):
@@ -229,19 +235,12 @@ def check_directions_and_agreement(main, box, paired):
     gaps = [abs(r['Cp_RLWM']-r['Cp_experiment'])-abs(r['Cp_EQWM']-r['Cp_experiment']) for r in taps]
     assert len(gaps) == 10 and [round(min(gaps), 2), round(max(gaps), 2)] == [0.02, 0.05]
     assert 'on average by 0.20 and 0.24 in C_p' in plain and 'farther at each, by 0.02 to 0.05' in plain
-    agreement = json.loads((ROOT/'data/revision/reader_agreement.json').read_text())
-    stats = agreement['memberships']['statistics']['all_works_read_twice']
-    quotable = ['coupled_wmles', 'prescribed_input', 'rans_comparison', 'system_benchmark', 'thermal']
-    assert agreement['quotable_at_work_level'] == quotable
-    kappas = [stats[g]['kappa'] for g in quotable]
-    assert [round(min(kappas), 2), round(max(kappas), 2)] == [0.89, 0.94]
-    assert round(stats['controlled_wall_change']['kappa'], 2) == 0.67 and stats['coupled_wmles']['n'] == 36
-    pairs = agreement['pairs']['summary']
+    # Pairings read twice: the second reading received the quantities and locations recorded by the first.
+    pairs = json.loads((ROOT/'data/revision/reader_agreement.json').read_text())['pairs']['summary']
     assert pairs['pairs_read_twice'] == 34 and pairs['coarse_agreement_run_pair_or_not']['all'] == [31, 34]
     assert pairs['category_agreement']['other_pairs'] == [12, 24] and pairs['category_agreement']['seeded_different_tests'] == [10, 10]
-    for phrase in ('reading of 36 reports and 34 pairings', r"(Cohen's $\kappa$ 0.89--0.94)", '31 of 34 same-run judgements',
-                   r'($\kappa=0.67$)', '(12 of 24)', 'for which we quote no counts'):
-        assert phrase in box, phrase
+    assert ("A second automated reading of 34 pairings, given the first reading's quantities and locations, agreed on "
+            "31 of 34 same-run judgements and 12 of 24 finer categories") in box
     vocabulary = ['different_tests', 'no_shared_baseline', 'shared_runs_no_treatment_baseline', 'matched_no_common_reference',
                   'matched_no_opposing_rank', 'matched_support_dependent', 'opposing_point_estimates_on_restricted_support',
                   'matched_opposing_same_support']
@@ -249,14 +248,137 @@ def check_directions_and_agreement(main, box, paired):
     counts = Counter(r['adjudication'] for r in paired)
     assert counts['different_tests'] == 55 and counts['matched_opposing_same_support'] == 1
     assert sum(r['decision_tree_reading']['second'] is not None for r in paired) == 34
-    transfer = json.loads((ROOT/'data/revision/transfer_exposure.json').read_text())['records']
-    assert sum('second_reading_status' in r for r in transfer) == 3
-    assert not any(r.get('second_reading_status') == 'qualified' for r in transfer)
-    assert not re.search(r'\b(?:three|3) (?:qualified|independent) (?:transfer|test)', plain + box, re.I)
-    return dict(hill_classes=hill['by_class'], same_table_other_rows=sensitivity, channel_pairs_resolved=8,
-                bump_velocity_reversal_height=bump['pointwise_equal_error_between'],
-                kappa_range_reproducible_groups=[min(kappas), max(kappas)], pairs_read_twice=34,
-                pair_categories=dict(counts))
+    memberships = check_memberships(plain, box)
+    return dict(hill_classes=hill['by_class'], hill_contrasts_opposite_to_printed_digits=opposite, same_table_other_rows=sensitivity,
+                channel_pairs_resolved=8, bump_velocity_reversal_height=bump['pointwise_equal_error_between'],
+                pairs_read_twice=34, pair_categories=dict(counts), memberships=memberships)
+
+
+def check_table_types(comparisons):
+    """The type of test printed in Table 2 must follow from the facts recorded for the same comparison."""
+    table = (M/'evidence_table.tex').read_text()
+    body = table[table.index('\\midrule'):table.index('\\botrule')]
+    printed = {}
+    for line in body.split('\\\\'):
+        keys = [k.strip() for x in arguments(line, 'cite') for k in x.split(',')]
+        if keys:
+            printed[keys[0]] = arguments(line, 'emph')[0]
+    contrasts = {r['contrast_id']: r for r in json.loads((ROOT/'data/revision/wall_change_contrasts.json').read_text())['records']}
+    coupled = lambda c: c['feedback'].startswith('coupled')
+    fixed = lambda c, *names: all(c['factors'][n] == 'fixed' for n in names)
+    fits = {
+        'prescribed input': lambda c: c['feedback'] == 'prescribed input' and c['derived']['tier'] == 'none',
+        'wall model changed': lambda c: coupled(c) and c['variant_type'] == 'different model' and fixed(c, 'grid', 'outer_closure')
+                                        and c['derived']['tier'] in ('strict', 'upper'),
+        'wall condition changed': lambda c: coupled(c) and c['variant_type'] == 'same model, different imposition' and c['derived']['tier'] == 'broad',
+        'grid changed': lambda c: coupled(c) and c['factors']['grid'] == 'varied' and c['derived']['tier'] == 'none',
+        'complete systems': lambda c: coupled(c) and c['variant_type'] == 'different model' and c['factors']['grid'] == 'varied'
+                                      and c['derived']['tier'] == 'none',
+        'within one outer closure': lambda c: c['variant_type'] == 'different model' and fixed(c, 'grid', 'outer_closure'),
+    }
+    needs = {'Prescribed input': {'prescribed input'}, 'Coupled, wall model changed': {'wall model changed'},
+             'Coupled, grid changed': {'grid changed'}, 'Coupled, outer closure changed': set(),
+             'Complete systems, then coupled, wall condition changed': {'complete systems', 'wall condition changed'}}
+    for row in comparisons['rows']:
+        label = row['type_of_test']
+        assert printed[row['reference_key']] == label, (row['reference_key'], printed[row['reference_key']])
+        roles = set()
+        for link in row['recorded_contrasts']:
+            contrast = contrasts[link['contrast_id']]
+            assert contrast['work_counted'] and fits[link['role']](contrast), link
+            roles.add(link['role'])
+        assert needs[label] <= roles, (row['reference_key'], roles)
+        if label == 'Coupled, outer closure changed':
+            assert 'Outer closure' in row['changes'] and row['recorded_contrasts_note']
+        if any(contrasts[l['contrast_id']]['derived']['tier'] == 'upper' for l in row['recorded_contrasts']):
+            assert row['recorded_contrasts_note']
+    assert len(printed) == len(comparisons['rows']) == 8
+    return Counter(row['type_of_test'] for row in comparisons['rows'])
+
+
+def check_memberships(plain, box):
+    """Tie every count of reports and tests printed in the paper to the derived memberships and the agreement record."""
+    derived = json.loads((ROOT/'results/revision/derived_memberships.json').read_text())
+    agreement = json.loads((ROOT/'data/revision/agreement_v2.json').read_text())
+    recomputed = json.loads((ROOT/'results/revision/agreement_check.json').read_text())
+    records = json.loads((ROOT/'data/revision/source_dispositions.json').read_text())['records']
+    status = Counter(r['eligibility_status'] for r in records)
+    assert status == {'documented eligible design': 108, 'contested': 2, 'excluded': 5}
+    population, decisions, stats = derived['population'], agreement['decisions'], agreement['statistics']
+    assert population['works'] == 115 and population['eligible_works'] == status['documented eligible design']
+    kinds = population['scope_boundary_by_kind']
+    assert len(population['scope_boundary_works']) == sum(kinds.values()) == 11
+    assert [kinds[k] for k in ('sublayer-resolving near-wall method', 'estimator not presented as a wall model',
+                               'eligibility disputed between the readings on a rule ambiguity')] == [5, 3, 3]
+    assert population['eligible_works_without_scope_boundary'] == 108 - 11 == 97
+    eligible_ids = {r['study_id'] for r in records if r['eligibility_status'] == 'documented eligible design'}
+    assert set(population['scope_boundary_works']) <= eligible_ids
+
+    # Sample: a random 30 of the 79 works that were not read twice on 19 November, and the two pools.
+    sample = agreement['sample']
+    assert len(sample['fresh_sample_frame']) == 79 and set(sample['fresh_random_sample']) <= set(sample['fresh_sample_frame'])
+    assert len(sample['fresh_random_sample']) == 30 and len(sample['all_works_read_twice']) == 74
+    assert agreement['protocol']['rule_file_fixed_at'] < agreement['protocol']['settlement_plan_fixed_at']
+
+    # Matched wall-treatment contrast. Only tiers that met the criteria fixed in advance are printed.
+    tiers = derived['matched_wall_treatment_change']['tiers']
+    count = {k: (tiers[k]['works'], tiers[k]['works_without_scope_boundary']) for k in ('strict', 'broad', 'upper')}
+    assert count['broad'] == (58, 54) and count['upper'][0] - count['broad'][0] == 3
+    assert decisions['broad']['quotable'] and decisions['upper']['quotable'] and not decisions['strict']['quotable']
+    assert all(recomputed[k]['quotable'] == decisions[k]['quotable'] for k in recomputed if 'quotable' in recomputed[k])
+    fresh = stats['fresh_random_sample']
+    assert [round(fresh['broad']['kappa'], 2), round(fresh['broad']['kappa_bootstrap_95'][0], 2)] == [0.87, 0.67]
+    strict = fresh['strict']
+    assert abs(strict['members_second'] - strict['members_first']) > max(1, 0.15 * strict['members_first'])
+    work = {w['study_id']: w for w in agreement['per_work']}
+    disputed = sorted(i for i in sample['fresh_random_sample'] if 'broad' in work[i]['disagreements'])
+    boundary = {b['study_id']: b for b in agreement['settlement']['scope_boundary']}
+    assert len(disputed) == 2 and all(boundary[i]['kind'] == 'sublayer-resolving near-wall method' for i in disputed)
+    settled = {(i['study_id'], i['question']): i for i in agreement['settlement']['items']}
+    assert all(settled[i, 'scope']['attribution'] == 'rule ambiguity' for i in disputed)
+    assert round(fresh['system_benchmark']['kappa'], 2) == 0.15 and not decisions['system_benchmark']['quotable']
+
+    # Constitutive constraint and transfer.
+    constitutive, pool = derived['constitutive_constraint'], stats['constitutive_pool']['constitutive']
+    assert constitutive['works'] == len(constitutive['members']) == 17 and decisions['constitutive_constraint']['quotable']
+    has_row = stats['transfer_pool']['has_transfer']
+    assert [round(pool['kappa'], 2), round(has_row['kappa'], 2)] == [0.67, 0.86]
+    assert [round(pool['kappa_bootstrap_95'][0], 2), round(has_row['kappa_bootstrap_95'][0], 2)] == [0.44, 0.61]
+    transfer = derived['transfer']['all_counted_works']
+    assert transfer['total_tests'] == 110 and transfer['total_works'] == 33 and decisions['transfer']['quotable']
+    assert transfer['tests'] == {'qualified': 9, 'partly exposed': 60, 'selection unresolved': 41}
+    rows = [r for r in json.loads((ROOT/'data/revision/transfer_exposure.json').read_text())['records'] if r['work_counted']]
+    assert Counter(r['status'] for r in rows) == transfer['tests']
+    assert all(r['frozen_external'] or r['holdout_statement'] for r in rows if r['status'] == 'qualified')
+    by_work = Counter(r['study_id'] for r in rows if r['status'] == 'qualified')
+    study = next(r for r in records if r['study_id'] == by_work.most_common(1)[0][0])
+    bib = (M/'references.bib').read_text()
+    entry = bib[bib.index('LozanoDuranBae2023,'):].split('\n@')[0]
+    assert by_work.most_common(1)[0][1] == 6 and study['doi'] in entry
+
+    for phrase in ('Of 108 eligible reports, 58 contain two coupled calculations that differ only in the wall treatment or its implementation',
+                   '(54 of 97 without boundary cases)', 'Three more leave one of those controls unreported',
+                   'Seventeen reports test an assumption shared by a class of wall laws on reference data alone',
+                   '33 reports test a fitted treatment at 110 conditions outside those that determined it',
+                   'Nine tests state that the target was withheld from training and model selection or apply unchanged coefficients '
+                   'published earlier by other authors, six of them in one study',
+                   'Sixty compare variants of the treatment at the target or select with it, and 41 remain unresolved'):
+        assert phrase in plain, phrase
+    for phrase in ('All readings were automated', 'covered a random 30 of the 79 reports not used to write the rules',
+                   'A third, which saw both, settled each disagreement against the source',
+                   'After settlement 108 reports are eligible, two contested and five excluded',
+                   r"Cohen's $\kappa=0.87$ (lower 95\,\% bound 0.67)", 'Clarifications written after that test, before the third reading',
+                   'Eleven eligible reports are boundary cases: five use those methods, three test stress estimators never presented '
+                   'as wall models and three had disputed eligibility', 'Counts are given with and without them',
+                   r'$\kappa$ was 0.67 and 0.86 (lower bounds 0.44 and 0.61)', r'did not reproduce ($\kappa=0.15$)', 'We quote neither'):
+        assert phrase in box, phrase
+    # Counts that failed the criteria, and the figures they replaced, stay out of the paper.
+    text = plain + box
+    assert not re.search(r'\b50 of 108\b|\b47 of 97\b|\b50 contain\b|0\.89--0\.94|reading of 36 reports|for which we quote no counts', text)
+    assert not re.search(r'\b(?:three|3) (?:qualified|independent) (?:transfer|test)', text, re.I)
+    return dict(eligible_reports=108, boundary_cases=kinds, matched_wall_treatment_contrast=dict(count),
+                constitutive_reports=constitutive['works'], transfer_tests=transfer['tests'],
+                quotable={k: v['quotable'] for k, v in decisions.items()})
 
 
 def main_check():
@@ -379,6 +501,7 @@ def main_check():
     assert all(t in compact for t in ('Agreement by choice', 'Cases by combination of matches', 'Case IDs')), 'outdated Figure 4 in PDF'
     assert all(c['case'] in compact for c in cases), 'missing Figure 4 case identifier'
     selection = check_evidence_selection(comparisons, cases)
+    table_types = check_table_types(comparisons)
     heading_count=check_panel_style(comparisons)
     figure_layouts={name:json.loads((ROOT/f'results/figures/{name}_layout.json').read_text())['passed']
                     for name in ('fig1_loop','fig2_record','fig3_contrast','fig4_checklist')}
@@ -393,6 +516,7 @@ def main_check():
             'checklist_cases_by_number_of_matching_choices':dict(enumerate(counts_by_degree)),
             'panel_headings_matching_figure_1':heading_count,
             'comparison_map_sources':len(comparisons['rows']), 'study_selection':selection,
+            'table_2_types_of_test':dict(table_types),
             'figure_layouts':figure_layouts,
             'circulation_text_scan':'PASS',
             'scientific_limit':'Pass checks consistency and specified support. It does not certify an exhaustive corpus or predictive checklist validity.'}

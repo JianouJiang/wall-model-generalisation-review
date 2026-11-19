@@ -190,15 +190,20 @@ def main():
     links=read("study_families.json")["links"]
     assert all(set(link["works"])<=source_ids for link in links)
     ledger = denominators(works,links)
+    # Three groups are derived from recorded facts (derive_memberships.py) and replace the labels typed in the first reading.
+    derived = json.loads((RESULTS/"derived_memberships.json").read_text())
     exposure=read("transfer_exposure.json")
     listed=exposure["records"]
-    assert unique(r["design_id"] for r in listed)<=tests
-    certified=ledger["evidence_by_type"]["independent_transfer"]["design_ids"]
-    assert sorted(r["design_id"] for r in listed if r["status"]=="qualified")==certified
-    ledger["selection_sensitivity"]={"scope":exposure["estimand"],"by_status":{
-        st:{"design_ids":sorted(r["design_id"] for r in listed if r["status"]==st),
-            "work_ids":sorted({r["design_id"].split("-")[0] for r in listed if r["status"]==st})}
-        for st in sorted({r["status"] for r in listed})}}
+    unique(r["transfer_id"] for r in listed)
+    assert {r["study_id"] for r in listed}<=source_ids
+    for name in ("constitutive_constraint","independent_transfer","controlled_wall_change"):
+        ledger["evidence_by_type"].pop(name)
+    ledger["fact_derived_groups"]={
+        "rule":derived["rule"],
+        "matched_wall_treatment_change":derived["matched_wall_treatment_change"]["tiers"],
+        "constitutive_constraint":derived["constitutive_constraint"],
+        "transfer":derived["transfer"],
+        "scope_boundary":derived["population"]}
     paired = paired_results(links)
     assert paired["fine_DSM_bump"]["common_velocity"]["n"]==120
     assert paired["fine_DSM_bump"]["common_velocity"]["change"]>0>paired["fine_DSM_bump"]["outer_velocity"]["change"]
@@ -213,15 +218,15 @@ def main():
                         assert metrics["rmse"]<0<metrics["mae"]
                     else:
                         assert (d>0)==(wall=="baffleRight" and q.startswith("q"))
-    second=read("reader_agreement.json")
-    verdict=second["memberships"]["decision_rule_verdict"]
-    assert set(ledger["evidence_by_type"])<=set(verdict)
-    ledger["second_reading"]={
-        "scope":second["scope"],
-        "status_by_type":{k:verdict[k]["status"] for k in ledger["evidence_by_type"]},
-        "use":"Counts for a type whose status is not quotable are first-reading counts. Do not quote them. "
-              "Series counts depend on how finely a paper is split and are not reproducible between readings; quote works.",
-        "design_counts_among_36_works_read_twice":second["memberships"]["design_counts_among_works_read_twice"]["all_designs"]}
+    agreement=read("agreement_v2.json")
+    typed=("prescribed_input","coupled_wmles","rans_comparison","system_benchmark","thermal")
+    assert set(ledger["evidence_by_type"])==set(typed)
+    ledger["quotability"]={
+        "scope":agreement["scope"],
+        "decisions":{k:{f:v[f] for f in ("quotable","reason") if f in v} for k,v in agreement["decisions"].items()},
+        "use":"Quote a work count only for a group whose decision is quotable, with its range. Counts of design series depend on "
+              "how finely a paper is split and are not reproducible between readings. The five typed groups above are labels of "
+              "the first reading: their agreement on fresh works is given in agreement_v2.json and two of them did not reproduce."}
     vocabulary=list(read("paired_readings.json")["category_counts"])
     assert all(r["adjudication"] in vocabulary for r in p)
     ledger["historical_pair_categories"]={c:sum(r["adjudication"]==c for r in p) for c in vocabulary}

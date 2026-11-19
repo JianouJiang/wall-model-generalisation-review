@@ -67,7 +67,18 @@
       },
       "figure_source_location": "Table I; Sec. IV.A and Table II; preprint p.16, Fig. 11(a) inset, Fig. 11(b) at x/Y=0; p.17, Fig. 12; p.18, Fig. 13(a) inset, 13(b); Fig. 16 decomposes chordwise friction.",
       "journal_doi": "10.1103/gfr7-6l2m",
-      "comparison_controls": "Within a sweep, compare the three wall closures using CharLES, a constant-coefficient Vreman SGS, fine-grid results and common case DNS (Coleman et al.). Fine wall-parallel spacings are 0.00625Y, first normal spacing 0.0025Y; grid stretched in y. The coupled LES matching inputs need not coincide across closures. Across C0 to C35, imposed sweep, spanwise velocity, pressure-gradient history/response, bubble thickness and matching-point placement differ. The sweep contrast does not isolate a term of a wall equation. A matched fixed-input ablation of that term is absent."
+      "comparison_controls": "Within a sweep, compare the three wall closures using CharLES, a constant-coefficient Vreman SGS, fine-grid results and common case DNS (Coleman et al.). Fine wall-parallel spacings are 0.00625Y, first normal spacing 0.0025Y; grid stretched in y. The coupled LES matching inputs need not coincide across closures. Across C0 to C35, imposed sweep, spanwise velocity, pressure-gradient history/response, bubble thickness and matching-point placement differ. The sweep contrast does not isolate a term of a wall equation. A matched fixed-input ablation of that term is absent.",
+      "type_of_test": "Coupled, wall model changed",
+      "recorded_contrasts": [
+        {
+          "contrast_id": "P17-K01",
+          "role": "wall model changed"
+        },
+        {
+          "contrast_id": "P17-K02",
+          "role": "wall model changed"
+        }
+      ]
     },
     {
       "reference_key": "BaeKoumoutsakos2022",
@@ -109,7 +120,14 @@
       },
       "figure_source_location": "p.4, Fig. 3(a,b) and testing paragraph; pp.6–7 Methods, Eq. (9), p.7 Table 1.",
       "journal_doi": "10.1038/s41467-022-28957-7",
-      "comparison_controls": "Velocity-based wall model (VWM) and log-law-state model (LLWM) trained in constant-mass-flow channels at Re_tau about 2000, 4200 and 8000. Test channels use a prescribed pressure gradient and viscosity augmentation, which constrains mean total wall force in a stationary balance; a reported policy-output error does not thereby validate an independently predicted global force. At fixed Re_tau=50,000 the paired runs keep the learned policy, geometry, forcing, Delta x,z/delta=0.05; Delta y/delta changes from 0.05 to 0.01 while h_m^+ changes from 5000 to 1000. At 20,000 the analogous pair changes from 0.05/2000 to 0.025/1000. LES input field, numerical error and grid also change. No sole effect of matching height is identified."
+      "comparison_controls": "Velocity-based wall model (VWM) and log-law-state model (LLWM) trained in constant-mass-flow channels at Re_tau about 2000, 4200 and 8000. Test channels use a prescribed pressure gradient and viscosity augmentation, which constrains mean total wall force in a stationary balance; a reported policy-output error does not thereby validate an independently predicted global force. At fixed Re_tau=50,000 the paired runs keep the learned policy, geometry, forcing, Delta x,z/delta=0.05; Delta y/delta changes from 0.05 to 0.01 while h_m^+ changes from 5000 to 1000. At 20,000 the analogous pair changes from 0.05/2000 to 0.025/1000. LES input field, numerical error and grid also change. No sole effect of matching height is identified.",
+      "type_of_test": "Coupled, grid changed",
+      "recorded_contrasts": [
+        {
+          "contrast_id": "P26-K03",
+          "role": "grid changed"
+        }
+      ]
     },
     {
       "reference_key": "LozanoDuranBae2023",
@@ -150,7 +168,19 @@
       },
       "figure_source_location": "§§2.5, 4.1, 4.3; pp.A35-17–19, Fig. 9c,d; compare with the downstream textual summary on A35-18.",
       "journal_doi": "10.1017/jfm.2023.331",
-      "comparison_controls": "Within an outer treatment compare building-block (BFWM) and equilibrium (EQWM) wall models while keeping configuration, Reynolds station, LES mesh and SGS prescription. Fig. 9c uses exact-for-the-mean forcing (ESGS) calibrated to mean reference profiles; Fig. 9d uses dynamic Smagorinsky (DSM) or Vreman (VREM). This is a common mean reference, not identical instantaneous inputs across six runs. Changing SGS alters resolved matching fields and feedback. The comparison reveals sensitivity of the coupled errors, and internal error conditional on the exact-for-mean treatment; subtracting them does not identify an additive physical fraction."
+      "comparison_controls": "Within an outer treatment compare building-block (BFWM) and equilibrium (EQWM) wall models while keeping configuration, Reynolds station, LES mesh and SGS prescription. Fig. 9c uses exact-for-the-mean forcing (ESGS) calibrated to mean reference profiles; Fig. 9d uses dynamic Smagorinsky (DSM) or Vreman (VREM). This is a common mean reference, not identical instantaneous inputs across six runs. Changing SGS alters resolved matching fields and feedback. The comparison reveals sensitivity of the coupled errors, and internal error conditional on the exact-for-mean treatment; subtracting them does not identify an additive physical fraction.",
+      "type_of_test": "Coupled, outer closure changed",
+      "recorded_contrasts": [
+        {
+          "contrast_id": "P19-K10",
+          "role": "within one outer closure"
+        },
+        {
+          "contrast_id": "P19-K02",
+          "role": "within one outer closure"
+        }
+      ],
+      "recorded_contrasts_note": "The table row compares the same two wall laws across the outer treatments of these two recorded contrasts. Each recorded contrast changes the wall law within one outer treatment."
     },
     {
       "reference_key": "Mukha2025",
@@ -195,7 +225,14 @@
       },
       "figure_source_location": "Published section III.A Tables I–II (mesh/setup); III.B.2 Table III (mean stress and pressure-gradient estimate); VI.A Table VII and Figs. 16–17 (fixed-input filtering and coupled filtering, respectively).",
       "journal_doi": "10.1063/5.0283984",
-      "comparison_controls": "Nek5000 channel, fixed volume flux, target Re_tau 8000, h=0.2 delta, Spalding law with kappa=0.387 and B=4.2; common DNS and same sampled simulation within each table row. Online model on instantaneous input versus offline application to the same simulation mean, the latter suppressing feedback. Fig. 17 separately reruns WMLES with finite windows 5, 10, 50 and 500 time steps."
+      "comparison_controls": "Nek5000 channel, fixed volume flux, target Re_tau 8000, h=0.2 delta, Spalding law with kappa=0.387 and B=4.2; common DNS and same sampled simulation within each table row. Online model on instantaneous input versus offline application to the same simulation mean, the latter suppressing feedback. Fig. 17 separately reruns WMLES with finite windows 5, 10, 50 and 500 time steps.",
+      "type_of_test": "Prescribed input",
+      "recorded_contrasts": [
+        {
+          "contrast_id": "N556-K01",
+          "role": "prescribed input"
+        }
+      ]
     },
     {
       "reference_key": "ZhouBae2024",
@@ -231,7 +268,15 @@
       },
       "figure_source_location": "Table 1 p.5, Table 2 p.6, Figs. 7–8 p.9 (Group 1), Fig. 13 p.12, Fig. 14 p.13 and Fig. 15 p.14 (Group 2, with Group 1 Neumann comparison in Fig. 15).",
       "journal_doi": "10.1016/j.jcp.2024.112948",
-      "comparison_controls": "On the baseline isotropic Gaussian-bump mesh (Delta_c/L=4.76e-4; structured block 4200 x 176 x 168) and same velocity-Neumann condition supplied by the DNS, vary SGS among none, DSM, AMD, Vreman c=0.025, Vreman c=0.07 and MSM. Cross-mesh comparisons also change first-cell height. Group 2 holds a chosen SGS and mesh while changing between equilibrium and nonequilibrium DNS-conditioned effective-viscosity conditions. Fig. 15 compares those two with the prescribed velocity-Neumann result. The two effective viscosities are bounded below by zero and stresses are coupled to local conditions."
+      "comparison_controls": "On the baseline isotropic Gaussian-bump mesh (Delta_c/L=4.76e-4; structured block 4200 x 176 x 168) and same velocity-Neumann condition supplied by the DNS, vary SGS among none, DSM, AMD, Vreman c=0.025, Vreman c=0.07 and MSM. Cross-mesh comparisons also change first-cell height. Group 2 holds a chosen SGS and mesh while changing between equilibrium and nonequilibrium DNS-conditioned effective-viscosity conditions. Fig. 15 compares those two with the prescribed velocity-Neumann result. The two effective viscosities are bounded below by zero and stresses are coupled to local conditions.",
+      "type_of_test": "Coupled, outer closure changed",
+      "recorded_contrasts": [
+        {
+          "contrast_id": "N395-K01",
+          "role": "wall model changed"
+        }
+      ],
+      "recorded_contrasts_note": "The first comparison in the row changes only the Vreman coefficient under one imposed-traction condition, so the record of wall-treatment contrasts holds no entry for it. The recorded contrast is the second comparison named in the row, at fixed coefficient."
     },
     {
       "reference_key": "Agrawal2024",
@@ -269,7 +314,15 @@
       },
       "figure_source_location": "Published §V, Eq. (17) pp.124603-11–13; Table I p.12, Fig. 6(a,b) p.13, Fig. 7 p.14 (Boeing). Published §VI, Table II p.19, Fig. 13(a–d) and Fig. 14 p.20, Fig. 15 p.21 (Bachalo–Johnson). The arXiv v1 plots are Figs. 4 and 10, respectively.",
       "journal_doi": "10.1103/PhysRevFluids.9.124603",
-      "comparison_controls": "Within the NASA/Boeing spanwise-periodic bump at Re_L=2×10^6, compare sensor-based wall closure (SWM) and equilibrium wall closure at each coarse/medium/fine mesh (3M, 12M, 52M cells), holding dynamic tensor-coefficient SGS, geometry and corresponding grid; EQWM comparator reproduced from Agrawal et al. [7]. First-cell-centroid matching means grid refinements also change physical matching height. Inlet is plug flow, diagnostics shared between closures, coupled matching velocity/pressure are allowed to change. Same solver properties alone do not fix freestream Mach. No numeric Boeing freestream Mach is specified in §V; do not assign the common quasi-DNS or another study’s Mach to this calculation. B–J has Re_c=2.76×10^6, a 60-degree axisymmetric sector and 31M cells in the main comparison; SGS, mesh and wall-model implementations stay fixed as Mach is varied within this geometry. Geometry, confinement, pressure gradients, Re and reference all differ between the two bump configurations."
+      "comparison_controls": "Within the NASA/Boeing spanwise-periodic bump at Re_L=2×10^6, compare sensor-based wall closure (SWM) and equilibrium wall closure at each coarse/medium/fine mesh (3M, 12M, 52M cells), holding dynamic tensor-coefficient SGS, geometry and corresponding grid; EQWM comparator reproduced from Agrawal et al. [7]. First-cell-centroid matching means grid refinements also change physical matching height. Inlet is plug flow, diagnostics shared between closures, coupled matching velocity/pressure are allowed to change. Same solver properties alone do not fix freestream Mach. No numeric Boeing freestream Mach is specified in §V; do not assign the common quasi-DNS or another study’s Mach to this calculation. B–J has Re_c=2.76×10^6, a 60-degree axisymmetric sector and 31M cells in the main comparison; SGS, mesh and wall-model implementations stay fixed as Mach is varied within this geometry. Geometry, confinement, pressure gradients, Re and reference all differ between the two bump configurations.",
+      "type_of_test": "Coupled, wall model changed",
+      "recorded_contrasts": [
+        {
+          "contrast_id": "N418-K01",
+          "role": "wall model changed"
+        }
+      ],
+      "recorded_contrasts_note": "The equilibrium runs are reproduced from the authors’ earlier study, so numerics and forcing are recorded as unreported for this contrast."
     },
     {
       "reference_key": "Dupuy2023graph",
@@ -355,7 +408,14 @@
       },
       "figure_source_location": "§4.2.3 pp.e7-18–21, Fig. 16 and Table 5 p.e7-22.",
       "journal_doi": "10.1017/dce.2023.2",
-      "comparison_controls": "Step was outside the training data. Expansion 1.2, Re_h=5100, common 0.9M-point mesh, Sigma SGS, same mean inlet and upstream flow; wall-model changes confined to the bottom wall downstream of the step. Common reference is the study’s wall-resolved calculation. The law and GNN both align stress with first-cell tangential velocity and model its magnitude, limiting direction near reattachment. The coupled matching field and effective GNN footprint differ. N is the number of message-passing steps, so changing it changes the learned estimator and effective input region."
+      "comparison_controls": "Step was outside the training data. Expansion 1.2, Re_h=5100, common 0.9M-point mesh, Sigma SGS, same mean inlet and upstream flow; wall-model changes confined to the bottom wall downstream of the step. Common reference is the study’s wall-resolved calculation. The law and GNN both align stress with first-cell tangential velocity and model its magnitude, limiting direction near reattachment. The coupled matching field and effective GNN footprint differ. N is the number of message-passing steps, so changing it changes the learned estimator and effective input region.",
+      "type_of_test": "Coupled, wall model changed",
+      "recorded_contrasts": [
+        {
+          "contrast_id": "N626-K08",
+          "role": "wall model changed"
+        }
+      ]
     },
     {
       "reference_key": "Jones2015",
@@ -393,7 +453,18 @@
       },
       "figure_source_location": "Published pp.337–338, §7 mesh; p.338 Fig. 5(a,b), p.340 Fig. 7(a,b) and p.341 §7.2, Eqs. (12) and (29); source experiment by Buice and Eaton.",
       "journal_doi": "10.1016/j.apm.2015.05.011",
-      "comparison_controls": "Coupled 2D high-Re k–epsilon RANS, same inlet Re=18,000, geometry, 398 streamwise cells and experimental reference. Whole-configuration comparison: log-law scalable wall function on 30 equally spaced y cells across full cross-section (near-wall y+ 5–25); interface boundary conditions on 50 y cells covering central 90% (5% of local height excluded per wall; y+ 3–70), wall treatment/profile and normal mesh/interface change together. Low-Re k–omega SST reference calculation has its own 140-cell y mesh, max y+ 0.34. Authors checked grid doubling with an exception for y in log-law runs."
+      "comparison_controls": "Coupled 2D high-Re k–epsilon RANS, same inlet Re=18,000, geometry, 398 streamwise cells and experimental reference. Whole-configuration comparison: log-law scalable wall function on 30 equally spaced y cells across full cross-section (near-wall y+ 5–25); interface boundary conditions on 50 y cells covering central 90% (5% of local height excluded per wall; y+ 3–70), wall treatment/profile and normal mesh/interface change together. Low-Re k–omega SST reference calculation has its own 140-cell y mesh, max y+ 0.34. Authors checked grid doubling with an exception for y in log-law runs.",
+      "type_of_test": "Complete systems, then coupled, wall condition changed",
+      "recorded_contrasts": [
+        {
+          "contrast_id": "N358-K04",
+          "role": "complete systems"
+        },
+        {
+          "contrast_id": "N358-K05",
+          "role": "wall condition changed"
+        }
+      ]
     }
   ],
   "figure_panels": [
@@ -425,5 +496,6 @@
         "Jones2015"
       ]
     }
-  ]
+  ],
+  "type_of_test_meaning": "The label printed in italics in Table 2. recorded_contrasts points to the entries of wall_change_contrasts.json that hold the facts of the comparison; check_current.py verifies that those facts fit the label."
 }

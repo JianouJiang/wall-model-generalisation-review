@@ -1,0 +1,446 @@
+{
+  "scope": "Every design whose membership of the matched wall-treatment-contrast group differs between the record committed as 04a9064 and the settled record, with its cause and the reading that confirms it. A design series is one entry of source_dispositions.json (tests).",
+  "summary": {
+    "membership_changes": 32,
+    "gained": 31,
+    "lost": 1,
+    "by_cause": {
+      "first-reading omission (under-enumeration)": 23,
+      "first-reading omission": 8,
+      "label change under the fact rule": 1
+    },
+    "by_evidence": {
+      "third reading": 8,
+      "second reading": 23,
+      "second reading agrees that no contrast of this design has all controls stated fixed": 1
+    },
+    "label_scope_corrections_without_membership_change": 38,
+    "solver_group_added": 6,
+    "dispositions_changed_by_the_settlement": [
+      {
+        "study_id": "N147",
+        "first": "contested",
+        "settled": "eligible",
+        "attribution": "rule ambiguity"
+      },
+      {
+        "study_id": "N400",
+        "first": "contested",
+        "settled": "excluded",
+        "attribution": "rule ambiguity"
+      },
+      {
+        "study_id": "N635",
+        "first": "contested",
+        "settled": "eligible",
+        "attribution": "rule ambiguity"
+      },
+      {
+        "study_id": "P13",
+        "first": "eligible",
+        "settled": "contested",
+        "attribution": "rule ambiguity"
+      }
+    ]
+  },
+  "changes": [
+    {
+      "design": "P04-D01",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "third reading checked the facts of 1 member contrast(s) against the source: confirmed"
+    },
+    {
+      "design": "P07-D01",
+      "first_label": "grid or input change with same wall model",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K02"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"grid or input change with same wall model\"); the re-reading lists its contrasts one by one and finds K02 with all six controls fixed",
+      "independent_evidence": "third reading checked the facts of 1 member contrast(s) against the source: confirmed"
+    },
+    {
+      "design": "P12-D01",
+      "first_label": "grid or input change with same wall model",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"grid or input change with same wall model\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "third reading checked the facts of 1 member contrast(s) against the source: confirmed"
+    },
+    {
+      "design": "P19-laminar",
+      "first_label": "identity or matching unresolved",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"identity or matching unresolved\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "P20-agent",
+      "first_label": "no distinct wall-treatment baseline identified",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K02"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"no distinct wall-treatment baseline identified\"); the re-reading lists its contrasts one by one and finds K02 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "P25-D01",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01",
+        "K02",
+        "K03"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K01, K02, K03 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 3 member contrasts"
+    },
+    {
+      "design": "P25-D02",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K05",
+        "K06",
+        "K07",
+        "K08",
+        "K09"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K05, K06, K07, K08, K09 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 5 member contrasts"
+    },
+    {
+      "design": "P30-D01",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "third reading checked the facts of 1 member contrast(s) against the source: confirmed"
+    },
+    {
+      "design": "P33-D01",
+      "first_label": "grid or input change with same wall model",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"grid or input change with same wall model\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "third reading checked the facts of 1 member contrast(s) against the source: confirmed"
+    },
+    {
+      "design": "N025-D02",
+      "first_label": "identified within-setting alternative",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission: its own label named a within-setting alternative, but the group tag was missing",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "N037-D01",
+      "first_label": "identified within-setting alternative",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01",
+        "K02",
+        "K03"
+      ],
+      "cause": "first-reading omission: its own label named a within-setting alternative, but the group tag was missing",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 3 member contrasts"
+    },
+    {
+      "design": "N076-D01",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "N181-D01",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01",
+        "K02"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K01, K02 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 2 member contrasts"
+    },
+    {
+      "design": "N195-channel",
+      "first_label": "grid or input change with same wall model",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"grid or input change with same wall model\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "N218-D01",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01",
+        "K02"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K01, K02 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 2 member contrasts"
+    },
+    {
+      "design": "N297-D02",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "N318-D01",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01",
+        "K02",
+        "K04"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K01, K02, K04 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 3 member contrasts"
+    },
+    {
+      "design": "N358-impinging-jet",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "third reading checked the facts of 1 member contrast(s) against the source: confirmed"
+    },
+    {
+      "design": "N364-fixed-Re-model-and-numerics",
+      "first_label": "identified within-setting alternative",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01",
+        "K02",
+        "K03",
+        "K04"
+      ],
+      "cause": "first-reading omission: its own label named a within-setting alternative, but the group tag was missing",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 4 member contrasts"
+    },
+    {
+      "design": "N418-D01",
+      "first_label": "identified within-setting alternative",
+      "label": "within-setting alternative with a control unreported",
+      "first_member": true,
+      "member": false,
+      "member_contrasts": [],
+      "cause": "label change under the fact rule: factor unreported: numerics, forcing",
+      "independent_evidence": "second reading agrees that no contrast of this design has all controls stated fixed"
+    },
+    {
+      "design": "N419-D01",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K02"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K02 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "N437-D02",
+      "first_label": "no distinct wall-treatment baseline identified",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K02",
+        "K03"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"no distinct wall-treatment baseline identified\"); the re-reading lists its contrasts one by one and finds K02, K03 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 2 member contrasts"
+    },
+    {
+      "design": "N444-D01",
+      "first_label": "no distinct wall-treatment baseline identified",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"no distinct wall-treatment baseline identified\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "N446-D01",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "N456-D01",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "third reading checked the facts of 1 member contrast(s) against the source: confirmed"
+    },
+    {
+      "design": "N459-D01",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "third reading checked the facts of 1 member contrast(s) against the source: confirmed"
+    },
+    {
+      "design": "N497-D02",
+      "first_label": "whole-system or multiple simultaneous changes",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission (under-enumeration): one label described the whole design series (\"whole-system or multiple simultaneous changes\"); the re-reading lists its contrasts one by one and finds K01 with all six controls fixed",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "N556-D02",
+      "first_label": "identified within-setting alternative",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K02"
+      ],
+      "cause": "first-reading omission: its own label named a within-setting alternative, but the group tag was missing",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "N611-hill-low",
+      "first_label": "identified within-setting alternative",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K01"
+      ],
+      "cause": "first-reading omission: its own label named a within-setting alternative, but the group tag was missing",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "N611-hill-high",
+      "first_label": "identified within-setting alternative",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K02"
+      ],
+      "cause": "first-reading omission: its own label named a within-setting alternative, but the group tag was missing",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "N611-step",
+      "first_label": "identified within-setting alternative",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K03"
+      ],
+      "cause": "first-reading omission: its own label named a within-setting alternative, but the group tag was missing",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    },
+    {
+      "design": "N680-D02",
+      "first_label": "identified within-setting alternative",
+      "label": "identified within-setting alternative",
+      "first_member": false,
+      "member": true,
+      "member_contrasts": [
+        "K05"
+      ],
+      "cause": "first-reading omission: its own label named a within-setting alternative, but the group tag was missing",
+      "independent_evidence": "second reading (rules and source only) records a member contrast at the same figure or table for all 1 member contrasts"
+    }
+  ]
+}

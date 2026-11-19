@@ -1,0 +1,692 @@
+{
+  "unit": "One candidate test of an assumption shared by a class of wall models. A work is a member when a candidate has all three facts.",
+  "members": [
+    "N080",
+    "N166",
+    "N253",
+    "N262",
+    "N327",
+    "N357",
+    "N497",
+    "N540",
+    "N626",
+    "N647",
+    "N655",
+    "N719",
+    "P08",
+    "P14",
+    "P17",
+    "P19",
+    "P21"
+  ],
+  "records": [
+    {
+      "study_id": "P08",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "Outer-input form of wall-stress fluctuation estimators (Mathis et al. 2013 type, which the source says was used to improve LES wall-layer models): the large-scale (LC) part of the wall shear stress is a linear, instantaneous and spanwise-local function of the large-scale velocity at one height, tau_i2^L+ = alpha_i(y) u_i^L+(y,z,t), and the remaining background part depends on that velocity only through an amplitude modulation. The source examines this with reference data before building its own estimator on it.",
+          "restriction_location": "Sec. 1 (PDF p. 2, Mathis et al. 2013 model and its use in wall-layer models); Sec. 3.2 (PDF pp. 9-14); Sec. 5.1, Eq. (5.2) (PDF pp. 19-22); Sec. 5.2.1, Eqs (5.14)-(5.18) (PDF pp. 22-25)",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Wall-resolved LES alone (cases 1 and 7 for the joint p.d.f.s, cases 1-6 for the correlation profiles): LC parts of the streamwise and spanwise velocity (streamwise average over L_x, Eq. 2.5) at y/h = 0.1 (y+ = 100 at Re_tau = 1000) and at all heights 0 < y/h < 0.5, paired with the bottom wall-shear-stress fluctuations tau_12', tau_32' and their LC and background parts. Figs 4-7 (PDF pp. 10-14), Figs 11-15 (PDF pp. 20-25).",
+          "violation_statistic": true,
+          "statistic_note": "Joint p.d.f.s P(u^L, tau_12'), P(u^L, tau_12^T), P(u^L, tau_12^L) and P(w^L, tau_32') conditioned on the sign of u^L (Figs 4-7); correlation coefficient between u_i^L(y) and tau_i2^L as a function of height (Fig. 11, > 0.8 for 0 < y/h < 0.5); two-point spanwise correlation (Fig. 13); space-time correlation with a ridge giving the time delay (Fig. 14); correlation between u^L and the spanwise variation of the background-stress magnitude (Fig. 15a, below 0.8 at Re_tau = 395). All computed from the LES fields without evaluating the estimator."
+        },
+        {
+          "restriction": "Conventional wall-layer model based on the logarithmic law of the plane- and time-averaged velocity, applied to the spanwise-inhomogeneous locally averaged velocity and wall shear stress. The source states that it 'is insufficient to describe the relationship between the spanwise inhomogeneous time-averaged velocity and wall shear stress in shallow-water Langmuir turbulence'.",
+          "restriction_location": "Sec. 5.3 (PDF pp. 30, 32)",
+          "reference_only_paired_data": false,
+          "paired_data_note": "The deviation of the locally averaged mean velocity from the logarithmic law is cited from Tejada-Martinez et al. (2012) and Deng et al. (2019); this paper reports no data pairing the locally averaged velocity with the local mean wall stress.",
+          "violation_statistic": false,
+          "statistic_note": "No statistic of the log-law relation is reported here; the statement rests on the cited works."
+        }
+      ]
+    },
+    {
+      "study_id": "P11",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Wall value of the volume-filtered velocity determined by the wall-normal derivatives of the filtered velocity at the wall up to order N (filtering near the wall taken as predominantly wall-normal). The source derives this for its own boundary condition; it also names, without testing them, assumptions of classical wall-stress models ('assume a mean velocity profile for the instantaneous filtered velocity close to the wall').",
+          "restriction_location": "Sec. 3, Eqs (3.1), (3.8) (PDF pp. 5-6); Sec. 1 (PDF p. 2)",
+          "reference_only_paired_data": false,
+          "paired_data_note": "Fig. 2 (PDF p. 7) plots the output of the truncated expression (3.8) against the actual filtered wall velocity from DNS at sigma+ = 10 to 100. The DNS inputs (derivatives of the filtered velocity at the wall) are not reported by themselves; what is shown is a model output on reference inputs.",
+          "violation_statistic": false,
+          "statistic_note": "The only statistic is the scatter of the model prediction about the actual value, i.e. the error of a model's prediction, which the rule excludes. Fig. 2 is a prescribed-input test (contrast K01)."
+        }
+      ]
+    },
+    {
+      "study_id": "P14",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "The volume-filtered velocity at the wall is proportional to the wall-normal gradient of the volume-filtered velocity at the wall, with a factor set by the filter width alone: the ratio equals sigma and lies between sqrt(2/pi) sigma and sqrt(pi/2) sigma for any near-wall profile that can be expanded in root functions with coefficients of one sign, when filtering near the wall is taken as wall-normal only",
+          "restriction_location": "Sec. III.B, Eqs. (22), (24), (25), (26), PDF pp. 12-13; Appendix A, PDF pp. 34-35",
+          "reference_only_paired_data": true,
+          "paired_data_note": "DNS only. (a) Randomly picked instantaneous streamwise velocity profiles of the Re_tau = 1000 channel (Johns Hopkins database), filtered with a one-dimensional Gaussian at filter widths up to sigma+ = 300: filtered wall velocity paired with filtered wall-normal gradient (Fig. 3, PDF p. 14). (b) Mean streamwise profiles of the periodic-hill DNS of Krank et al. at x/H = 0.05, 2, 3, 4, 5, 6, 7, filtered at sigma/H from 0.005 to 0.1 (Fig. 8, PDF p. 24).",
+          "violation_statistic": true,
+          "statistic_note": "The ratio of the two paired quantities, (u_eps)_w / (d_n u_eps)_w, plotted against filter width for every profile and compared with the limits of Eq. (25) (Fig. 3 right, PDF p. 14; Fig. 8 right, PDF p. 24). The hill profile at x/H = 4.0 falls far outside the limits ('except for the profile at x/H = 4.0, the computed ratios lie within or close to the theoretical limits', PDF p. 24)."
+        },
+        {
+          "restriction": "Wall-shear-stress models impose the unfiltered wall shear stress (the unfiltered wall-normal velocity gradient) as a Neumann condition on the filtered velocity, so that the filtered wall velocity follows from the first-cell filtered velocity and the wall stress, Eq. (36)",
+          "restriction_location": "Sec. IV.B, Eq. (36) and the paragraph after Fig. 11, PDF pp. 26-28 ('wall shear stress models enforce the boundary condition of the unfiltered velocity, i.e., the unfiltered wall-normal velocity gradient, on the filtered velocity'); also Sec. I, PDF p. 3",
+          "reference_only_paired_data": true,
+          "paired_data_note": "DNS of Krank et al. for the periodic hill: explicitly volume-filtered mean streamwise velocity at an assumed first cell centre (sqrt(2) sigma / 2 from the wall) and the exact mean wall shear stress, paired with the explicitly volume-filtered mean velocity at the wall at filter width sqrt(2) sigma, for sigma/H = 0.035 and 0.07 at stations x/H = 0 to 7 (Eq. (36), PDF pp. 26-27; Figs. 11-12, PDF pp. 28-29).",
+          "violation_statistic": true,
+          "statistic_note": "The wall velocity implied by Eq. (36) from exact DNS inputs, plotted against the explicitly volume-filtered DNS wall velocity along x/H (squares against solid line, Figs. 11-12, PDF pp. 28-29); the difference is the size of what the Neumann condition with the unfiltered stress omits. No wall model supplies the stress: 'if the filtered velocity and the wall shear stress are known exactly' (PDF p. 26)."
+        }
+      ]
+    },
+    {
+      "study_id": "P17",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "Equilibrium in the wall-modelled layer: the total shear stress is constant because pressure-gradient and convection terms are neglected or assumed to balance, so that the log law holds (ODE EQWM and other models 'with an inherent log-law assumption')",
+          "restriction_location": "Abstract; Sec. III B 1 (PDF pp. 8-9); Sec. III B 2 (PDF pp. 10-11: 'contrary to their argument of convection and pressure gradient balancing each other in the log layer'); Sec. IV B 1 (PDF p. 16: 'EQWM completely ignores these terms'); Appendix C, Eq. C1 (PDF p. 24: 'The EQWM assumes a constant shear stress')",
+          "reference_only_paired_data": true,
+          "paired_data_note": "DNS of Coleman et al. (2018, 2019) alone: wall-normal distributions of the pre-multiplied integrands of the Renard-Deck skin-friction decomposition (viscous dissipation, TKE production, spatial-growth term with its convection, heterogeneity and pressure-gradient parts) at stations x/Y = -8.5 to 6 for C0 (Fig. 5, PDF p. 9), for C0 against C35 in nominal and wall units (Fig. 7, p. 11), and for the chordwise against the spanwise component in C35 (Figs 8-9, pp. 12-13); DNS terms of the modified decomposition (Eq. 7) integrated from the wall to the matching height h_wm/Y = 0.015 along x for C35 (black lines in Fig. 16, p. 21).",
+          "violation_statistic": true,
+          "statistic_note": "Size of the terms the class neglects, from the DNS: the spatial-growth term C*_f3,x (integral of the wall-normal gradient of total shear stress, i.e. pressure gradient plus convection) and its parts in the inner layer (Fig. 5, third column and insets; Fig. 7, bottom right: 'a strong imbalance of these terms in the log layer'), and its integral up to h_wm along x (black solid line in Fig. 16b). For the spanwise component the same DNS term C*_f3,z stays small (Figs 8-9), which the source reads as the log law remaining valid for W."
+        },
+        {
+          "restriction": "The wall shear stress is aligned with the velocity at the matching height (unidirectional velocity profile inside the wall model)",
+          "restriction_location": "Appendix C (PDF p. 24: 'The wall shear stress from the wall model is assumed to be aligned with the LES velocity at the matching height'); Sec. IV B 2 (PDF p. 18: 'alpha_skew,wm for EQWM is expectedly zero throughout, given its uni-directional flow assumption')",
+          "reference_only_paired_data": true,
+          "paired_data_note": "DNS of Coleman et al. (2019), case C35: direction of the mean wall shear stress alpha_w paired with the mean flow direction at the matching height alpha_hwm (h_wm/Y = 0.015), as a function of x (symbols in Fig. 14b, PDF p. 19).",
+          "violation_statistic": true,
+          "statistic_note": "Angle between the paired quantities from the DNS: alpha_skew,wm = alpha_w - alpha_hwm, about +6 degrees in the APG zone and about -5 degrees in the FPG zone (read from Fig. 14b). It is an angle between mean vectors; no instantaneous statistic is given."
+        },
+        {
+          "restriction": "No reversal of flow direction inside the wall-modelled layer: the sign of the wall stress follows the sign of the velocity at the matching height (EQWM and integral NEQWM)",
+          "restriction_location": "Sec. IV A (PDF p. 14: 'lower fidelity wall models incapable of representing sign change in the wall-model velocity profile'); Sec. IV B 1 (PDF p. 16: 'by design, both these wall models do not allow a sign change (flow direction reversal) in the wall-model velocity profile. Therefore, a positive velocity at the matching location predicts a positive C_f')",
+          "reference_only_paired_data": true,
+          "paired_data_note": "DNS of Coleman et al. (2018), case C0: mean streamwise velocity profile at x/Y = 0 with the matching height marked (symbols in Fig. 11b, PDF p. 16), positive at the matching height and negative near the wall, together with the DNS C_f(x) in Fig. 11(a). One station only.",
+          "violation_statistic": false,
+          "statistic_note": "No statistic of the DNS pairing is reported. The source argues from the LES and wall-model profiles at x/Y = 0 (Fig. 11b) and from the bubble height relative to the matching height (maximum bubble height 0.053Y in C0 and 0.095Y in C35, Sec. III B 2); the sign mismatch in the DNS can be read from the plotted mean profile but is not quantified."
+        }
+      ]
+    },
+    {
+      "study_id": "P19",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "The wall stress is aligned with the wall-parallel velocity at the wall-model sampling point (no mean-flow three-dimensionality): 'gamma_1w remains zero for the EQWM essentially by construction of the model'; 'the most widespread wall models are built upon the assumption of statistically in equilibrium wall-bounded turbulence without mean flow three-dimensionality'",
+          "restriction_location": "Sec. 4.6, PDF p. 21; Sec. 1, p. 3; Sec. 2.3, pp. 6-7 ('misalignment between the wall stress vector and mean shear vector')",
+          "reference_only_paired_data": true,
+          "paired_data_note": "DNS value of gamma_1w, the angle between the velocity at the first control volume and the wall stress, as a function of time after the spanwise pressure gradient is imposed (channel Re_tau = 700, Pi = 80); dashed line in Fig. 13(f) and 13(i), PDF p. 23. The sampling point is the first control volume of the h/Delta = 10 grid; its wall distance is not given as a number and the way the DNS curve was sampled is not described.",
+          "violation_statistic": true,
+          "statistic_note": "The DNS angle rises to about 0.45 rad just after t = 0 and decays to about 0.07 rad by t u_tau/h = 0.7 (Fig. 13f,i, p. 23): an angle between the paired quantities obtained from the DNS alone. The paper uses this curve as the reference for model error and does not present it as a separate test of the class."
+        }
+      ]
+    },
+    {
+      "study_id": "P21",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "Uncoupled law of the wall: the wall shear stress follows from the near-wall velocity through the incompressible law of the wall, and the heat flux from a passive-scalar temperature law, independently of temperature-driven property variations ('The uncoupled algebraic model does not take into account the effect of the temperature variations to determine the wall shear stress'; 'The models for velocity and temperature should necessarily be coupled in flows with strong temperature variations')",
+          "restriction_location": "Sec. 1, PDF p. 2; Sec. 4.1, Eqs (17)-(19), p. 10; Appendix A, p. 35",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Wall-resolved LES mean profiles of u+(y+) and T+(y+) for SC1, SC2, SC3 against Reichardt's and Kader's laws and the passive-scalar DNS of Kawamura et al. (Fig. A2, PDF p. 36; semi-local scaling in Fig. A3, p. 37), over the whole wall-normal range; and filtered reference data on the coarse meshes (Gaussian filter, 25 <= e+ <= 80) plotted as u+(y+) and T+(y+) with the local reference wall stress, with the mean reference profile (rows 'Ref.' of Fig. 3(g-j), p. 16, and Fig. 4(a-d), p. 17).",
+          "violation_statistic": true,
+          "statistic_note": "Departure of the reference mean velocity and temperature profiles from the analytical laws at temperature ratio 3: 'The mean streamwise velocity does not follow Reichardt's law (31), nor does the mean temperature profile follows Kader's law (32)' (Appendix A, p. 35, Fig. A2); scatter of the filtered reference data about these laws (Fig. 3 and Fig. 4, 'Ref.' rows); semi-local scaling restores the velocity law but not the temperature law (Fig. A3). All from reference simulations, without a wall model."
+        },
+        {
+          "restriction": "Equilibrium law of the wall applied locally and instantaneously: the wall shear stress is a function of the instantaneous velocity at one near-wall point ('The simplest such model uses the incompressible law of the wall locally and instantaneously, following a statistical equilibrium assumption'; the algebraic models 'are also intended for equilibrium flow configurations')",
+          "restriction_location": "Sec. 1, PDF p. 2 (and p. 3: the LS89 case 'strongly departs from equilibrium wall modeling assumptions'); Sec. 5, p. 15",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Filtered reference fields on the coarse tetrahedral meshes (25 <= e+ <= 80): scatter of the instantaneous wall-tangential velocity in wall units, built with the local reference wall shear stress, against y+ for each of the eleven simulations ('Ref.' row of Fig. 3, PDF p. 16), including the non-equilibrium flows N65, 3DD, BFS, APG and L89.",
+          "violation_statistic": true,
+          "statistic_note": "Scatter of the reference pairs about Reichardt's law (red line), wide in N65, 3DD, BFS, APG and L89 (Fig. 3(c-f,k), 'Ref.' row). The paper shows this row as the target for the model rows and does not discuss it as a test of the algebraic class; no number (correlation, variance) is extracted from it."
+        }
+      ]
+    },
+    {
+      "study_id": "P22",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Wall shear stress determined from the flow state at one off-wall point: 'In conventional wall models, the wall shear stress is determined by an empirical relation ... or simplified Navier-Stokes equations ... using the velocity at one off-wall grid node'; the source concludes 'only using the input features at one point is not surfficient to accurately model the complex near-wall turbulence encountered in this periodic hill case'",
+          "restriction_location": "Sec. III.B, PDF pp. 12-13; Fig. 4(a), p. 13; Conclusion p. 24",
+          "reference_only_paired_data": false,
+          "paired_data_note": "A paired WRLES data set is described (inputs at 95 nodes in 0.006 <= eta/h <= 0.1, points 0.03h apart, with the WRLES wall stress; Sec. II.B, pp. 8-10) and used for training, but no paired values are shown: the figures give only the wall stress (Figs 6-11) and network losses (Figs 4-5).",
+          "violation_statistic": false,
+          "statistic_note": "The only evidence is the training/validation loss of networks with 1 to 6 input points (Fig. 4a), i.e. the error of a model's prediction. No distribution, scatter or correlation of the reference data is reported."
+        }
+      ]
+    },
+    {
+      "study_id": "P25",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "The wall shear stress alone represents the effect of the unresolved near-wall flow on the outer flow (constant-stress layer): 'In separated flows, a near-wall layer of constant shear stress does not exist ... The wall shear stress boundary condition alone is not enough to model the way the unresolved near-wall flow affecting the outer flow'",
+          "restriction_location": "Sec. 1, PDF p. 3; Sec. 2.2, p. 5",
+          "reference_only_paired_data": false,
+          "paired_data_note": "The statement is a premise; no WRLES or DNS data on the stress balance or on the wall stress against outer-flow quantities are reported for it.",
+          "violation_statistic": false,
+          "statistic_note": "The source examines it only through coupled runs with different first-cell eddy viscosities (Fig. 24: FEL tau_w with DSM, with zero and with learned eddy viscosity), i.e. through model results."
+        }
+      ]
+    },
+    {
+      "study_id": "P26",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "In deterministic wall models the wall shear stress is a function of the instantaneous velocity at the sampling location, hence perfectly correlated with it: 'in deterministic wall models such as the EQWM, the wall-shear stress is perfectly correlated with the velocity at the sampling location [52, 53], as opposed to a correlation coefficient of 0.3 observed in DNS [50]'",
+          "restriction_location": "Results, 'Distribution of wall-shear stress', PDF p. 9",
+          "reference_only_paired_data": false,
+          "paired_data_note": "The source shows no DNS or experimental data. It quotes one DNS correlation value from ref. [50] without the sampling height or filter at which it was obtained (h_m = 0.1 delta is given only for the WMLES curves of Fig. 7).",
+          "violation_statistic": true,
+          "statistic_note": "The quoted DNS correlation coefficient (0.3, ref. [50]) between off-wall velocity and wall shear stress is a statistic of reference data obtained without a wall model, but it is cited from the literature, not computed or plotted in this source. Figs 6-7 show WMLES results with the EQWM and LLWM."
+        }
+      ]
+    },
+    {
+      "study_id": "N080",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "Forecasting models that take the streamwise velocity on one wall-parallel plane as their only input: the future streamwise wall-shear stress field tau_x(x,z,t+Delta T) is taken to be determined by u(x, y_ref, z, t) at a single height (near the wall, y* = 5 or 6, or at the channel centre, y/h = 1). The source states the class as 'the space of all possible forecasting models of Q_O^+ that take Q as input' and bounds the error of any such model by the information the inputs carry.",
+          "restriction_location": "Sec. 2.2, Eq. (3), p. 5; Sec. 4 and Sec. 4.1-4.2, pp. 9-13; Sec. 5, p. 15",
+          "reference_only_paired_data": true,
+          "paired_data_note": "DNS of channel flow at Re_tau ~ 180, about 7e5 time-resolved snapshots, unfiltered: streamwise velocity planes at y* = 5 and y/h = 1 (Sec. 4.1) and at y* = 5 and y* = 6 (Sec. 4.2), paired with the streamwise wall-shear stress field at lead time Delta T* = 20 (pp. 9-12).",
+          "violation_statistic": true,
+          "statistic_note": "Redundant, unique and synergistic mutual-information contributions of the two planes to the future wall-shear stress, with error bars from 100 random subsets (Figs. 6 and 9, middle panels, pp. 11 and 13), and the space-time correlation coefficient between each plane and the future wall-shear stress, Eq. (11) (right panels). In Fig. 6 the centre plane has negligible unique information and a correlation of about 0.1, against about 0.75 for the y* = 5 plane (values read from the plot). Computed from the DNS with a neural mutual-information estimator; no wall-stress model is evaluated for these statistics."
+        },
+        {
+          "restriction": "Forecasting models that take a single wall-parallel velocity component at one height as their only input: the future magnitude of the wall-shear stress |tau|(x,z,t+Delta T) is taken to be determined by u alone or by w alone at y* = 1.",
+          "restriction_location": "Sec. 4.3, pp. 13-14; Sec. 5, p. 15",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Same DNS database: streamwise and spanwise velocity planes at y* = 1 paired with the later wall-shear-stress magnitude (Sec. 4.3, p. 13). The lead time is not restated in this section.",
+          "violation_statistic": true,
+          "statistic_note": "Redundant, unique and synergistic mutual-information contributions of u1 and w1 to the future |tau| (Fig. 11, middle panel, p. 14): the synergistic and redundant terms dominate and the unique terms are small; the text concludes that 'neither alone provides sufficient knowledge about the future magnitude' (p. 13). Correlation coefficients of u1 and w1 with the future |tau| (Fig. 11, right panel): about 0.47 and about 0.02 (read from the plot). No wall-stress model is evaluated for these statistics."
+        }
+      ]
+    },
+    {
+      "study_id": "N166",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "The mixing length (eddy viscosity) of algebraic mixing-length wall models is a universal function of the inner-scaled wall distance alone, l_m = kappa*zeta*[1 - exp(-zeta+/A+)] with A+ = 26, or the same in semilocal units; it does not depend on the outer scale or on the property variation across the layer.",
+          "restriction_location": "Sec. III B, Eq. (6) and the text around it, PDF p. 20: 'In the non-equilibrium wall models, the algebraic mixing-length model ... is commonly employed to evaluate the eddy viscosity [49]'; Fig. 8 caption 'Examinations on the algebraic mixing-length wall model', PDF p. 21; 'the semilocal scaling is achieved by the normalization with the inner scaling', PDF p. 21",
+          "reference_only_paired_data": true,
+          "paired_data_note": "DNS mixing length paired with wall distance: l_m/(kappa*zeta) against zeta+ (about 0.3 to 40) and l_m/delta_v* against zeta* (about 0.1 to 500) at the hot and cold walls of the four transcritical channel DNS cases, Fig. 8(a,b), PDF p. 20; DNS described in Sec. II and Table I, PDF pp. 7-9. The formula by which l_m is computed from the DNS is not given.",
+          "violation_statistic": true,
+          "statistic_note": "Profiles of the DNS mixing length for the seven wall and case combinations in each inner scaling: in wall units 'the profiles cannot collapse onto the exponential curve given by 1 - exp(-zeta+/A+)' (Fig. 8a), in semilocal units 'the profiles near the hot wall do not collapse for all cases, implying the deficiency of semilocal scaling' (Fig. 8b), PDF p. 20. No wall model is solved and no wall stress is predicted. Supporting statistics on the same point: linear coherence spectrum between zeta* = 50 and 300 (Fig. 1, PDF p. 10) and energy spectra that do not collapse in inner scaling (Fig. 7a, PDF p. 19)."
+        }
+      ]
+    },
+    {
+      "study_id": "N181",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Equilibrium assumption applied to the near-wall feedback: the pressure-gradient and convection terms are negligible (or balance) in the wall-modelled layer, so that the modelled plus viscous shear stress equals the wall stress there (the WMn form)",
+          "restriction_location": "Sec. II B, PDF p. 4: 'In the equilibrium state, it is a prevailing assumption that the right-hand side of Eq.(3), which accounts for unsteadiness, convection, and pressure gradient effects, can be disregarded ... it is not obvious that the non-equilibrium effects can also be disregarded when adjusting the eddy viscosity in the modification zone'; Table I, PDF p. 5",
+          "reference_only_paired_data": false,
+          "paired_data_note": "The assumption is examined with coupled WMLES runs of the WMn, WMpn and WMpcn variants (Tables II-IV, Figs. 2-5). DNS and wall-resolved LES profiles appear only as references for the WMLES output (for example the Reynolds shear stress in Fig. 2c and the ratio R12 in Fig. 3); no reference-only budget or paired data at a stated filter or sampling height is reported.",
+          "violation_statistic": false,
+          "statistic_note": "The evidence is the output of wall-modelled runs: the deviation of the total shear stress from the linear profile (Figs. 2f, 4f, 5f) and the log-layer mismatch, all computed from simulations that use the models under test."
+        }
+      ]
+    },
+    {
+      "study_id": "N195",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "A law of the wall (equilibrium, zero-pressure-gradient profile) holds for the velocity sampled at the height h: 'Algebraic wall models are based on the assumption that a law of the wall is also valid for u-bar, the instantaneous filtered velocity sampled from the LES solution'; 'both models assume the velocity to be sampled from an equilibrium zero-pressure-gradient TBL'",
+          "restriction_location": "Section 3.2 p. 7; Section 6.4 p. 28",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Measured inner-scaled mean velocity profiles of Jovic [19] in the recovering boundary layer at x/H = 13.16, 15.13 and 20.29 are plotted against Spalding's law (Fig. 15, p. 23); the wall-model sampling points are stated to lie at y+ ~ 55 to 65. The experimental points share the axes with the WMLES curve.",
+          "violation_statistic": false,
+          "statistic_note": "p. 23 states that 'at x/H = 20.29 a good agreement with Spalding's law is found in the inner and log-law regions. At the two stations upstream, however, agreement with the law is found only at y+ < 60', without saying whether this refers to the experiment or to the WMLES (in the figure the experimental points fit that description; the WMLES curve at x/H = 20.29 lies below the law). What is reported is a mean profile drawn against the law curve; no distribution, scatter, correlation, lag or angle of the paired quantities and no size of neglected terms from reference data is given. The terms in Fig. 22 and the pressure gradient in Fig. 17 are sampled from the WMLES, not from reference data. Recorded as false; see uncertain_points."
+        }
+      ]
+    },
+    {
+      "study_id": "N240",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Equilibrium law-of-the-wall scaling of the near-wall velocity: algebraic equilibrium wall models take U = c LoW(y+), 'matched with the LES velocity at an off-wall location locally and instantaneously', with the wall stress following from that single mode (eqs 1.1, 2.1-2.3)",
+          "restriction_location": "Section 1, pp. 1-3 (eq. 1.1 on p. 3); Section 2.1, pp. 4-5",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Fig. 2(c), p. 3: mean velocity profiles in wall units (U+ against y+, 30 < y+ < 1000) at successive times after an adverse pressure gradient f_x = 100 f_x,0 is imposed on a Re_tau = 1000 channel, drawn with the log law and no model curve. The caption does not name the data source; the DNS of this case is 'by the present authors' (p. 13), and Fig. 12(a,b) (p. 15) shows the labelled DNS profile of the same case at t u_tau,0/delta = 0.035 with the two matching heights 1.5/12 and 3.5/12 delta, the DNS wall stress being 0.31 tau_w,0 (Table 3).",
+          "violation_statistic": false,
+          "statistic_note": "What the source reports is the inner-scaled mean profile drawn against the log-law line: Fig. 2(c) is annotated 'Does not follow LoW' and p. 3 states 'The mean velocity profile in inner units is above the LoW, and if one were to apply the LoW to predict the wall-shear stress, the wall-shear stress would be grossly over-predicted.' No distribution, scatter, correlation, lag or angle of the paired quantities and no size of the neglected (pressure-gradient, unsteady) terms is given, and the stated finding is the error the law would make on the reference input. Recorded as false; see uncertain_points."
+        },
+        {
+          "restriction": "The instantaneous near-wall velocity profile is represented by the single law-of-the-wall mode (one coefficient per direction, eq. 1.1); the deviation r = U - c1 LoW is neglected",
+          "restriction_location": "Section 1, pp. 3-4; Section 2.3, p. 7",
+          "reference_only_paired_data": false,
+          "paired_data_note": "DNS velocity realisations along the wall-normal direction are used (Re_tau = 5200, intervals from the wall to y/delta = 0.1, 0.2, 0.3 for the POD, Figs 4-5, pp. 7-8; Re_tau = 180, 540, 1000, 5200 over 0 <= y/delta <= 0.1 for Fig. 6, p. 8), but they are velocity profiles only: they are not paired with the wall stress and no single sampling height is used.",
+          "violation_statistic": true,
+          "statistic_note": "Fig. 6 (p. 8): fraction of the DNS streamwise turbulent kinetic energy captured when the one-mode ansatz is fitted by least squares over 0 <= y/delta <= 0.1 (below one at every Re_tau and falling with Re_tau; read from the plot roughly 0.87 at Re_tau = 180 and 0.53 at 1000 and 5200), i.e. the size of what the one-mode class leaves out; Fig. 5 gives the POD spectrum of the deviation from the LoW (first mode about 50%, second about 15% of its energy). The Fig. 6 number requires fitting the class ansatz to the DNS, though no wall stress is predicted."
+        }
+      ]
+    },
+    {
+      "study_id": "N253",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "Slip-wall models (Bose and Moin 2014; Bae et al. 2019) relate the slip velocity to the wall-normal gradient of the resolved field through one coefficient, u_s = Cw Delta du_h/dn, and a dynamic procedure takes Cw to be the same at the grid and the test-filter level, i.e. independent of the resolution in wall units",
+          "restriction_location": "Eq. (4.1) and Sec. 4 (PDF pp. 10-12); Sec. 6 item (ii) (PDF p. 18): 'the value of Cw cannot be assumed to be same at the original grid and the test filtered grid ... there is a dependence on the wall-units. This dependence is generally not considered in the existing slip-wall model forms'",
+          "reference_only_paired_data": true,
+          "paired_data_note": "3-D L2 projection of channel DNS (JHTDB, Re_tau ~ 1000 and ~ 5200) on wall-attached DG elements of size 0.011-0.28 delta (Re_tau ~ 1000) and 0.033-0.30 delta (Re_tau ~ 5200), p = 1 and 3; each realisation pairs the slip velocity of the projected field at the wall with its pre-multiplied wall-normal gradient (Sec. 4, PDF pp. 10-12; Fig. 7c,d, PDF p. 12). The wall quantity of this class is the slip velocity, not the wall stress.",
+          "violation_statistic": true,
+          "statistic_note": "least-squares ratio Cw (lambda-normalised) of slip velocity to pre-multiplied gradient over the realisations, plotted against the resolution in wall units for two Re_tau and two polynomial orders (Fig. 8 bottom, PDF p. 13); it varies with resolution, so it differs between Delta+ and 2 Delta+"
+        },
+        {
+          "restriction": "One slip coefficient is applied to all velocity components (the same Cw in the streamwise, spanwise and wall-normal directions)",
+          "restriction_location": "Sec. 6 item (i) (PDF p. 17): 'The slip model coefficients can be different in the stream-wise, span-wise and the wall-normal directions as observed in figure 8(bottom)'; Sec. 4 (PDF p. 12)",
+          "reference_only_paired_data": true,
+          "paired_data_note": "same projected DNS data as above, with the projection done separately for the streamwise, spanwise and wall-normal velocity fields (Sec. 4, PDF pp. 11-12)",
+          "violation_statistic": true,
+          "statistic_note": "Cw,lambda by component against resolution (Fig. 8 bottom with inset, PDF p. 13): positive and growing for the streamwise component, negative for the spanwise component, about zero for the wall-normal component"
+        }
+      ]
+    },
+    {
+      "study_id": "N262",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "The high-order term (turbulent transport of turbulent kinetic energy, q_tke, entering as psi_3) can be neglected in the mean energy balance behind the temperature law of the wall used to obtain the wall heat flux",
+          "restriction_location": "Sec. V B (PDF p. 36): 'According to Xu et al. [65], q_tke can be neglected in mixed isothermal/adiabatic wall configuration. However, it plays a significant role in classical isothermal wall configuration ... Can the high-order term be neglected in WMLES for the classical isothermal wall configuration?'",
+          "reference_only_paired_data": true,
+          "paired_data_note": "DNS of Gerolymos and Vallet at Mb = 0.74, Reb = 21,092 and Mb = 1.57, Reb = 25,215: profiles of psi_3 against y* and of the ratio q_tke/q_T (turbulent-kinetic-energy flux over turbulent heat conduction) against y/h, unfiltered mean statistics over the whole channel half-height (solid lines of Fig. 18 a1, a2, b1, b2, PDF p. 37)",
+          "violation_statistic": true,
+          "statistic_note": "size of the neglected term relative to the turbulent heat conduction, q_tke/q_T from DNS, running from about 0 near the wall to about -1 at the centreline (Fig. 18 a2, b2, PDF p. 37)"
+        },
+        {
+          "restriction": "The transformed velocity and temperature follow logarithmic laws with constant, Reynolds-number-independent intercepts B and BT, on which law-of-the-wall based (algebraic and control-based) wall models rely",
+          "restriction_location": "Sec. II B (PDF p. 9): 'WMLES is typically applied at high Reynolds numbers, where the log-law intercepts in Eq.(3) can be treated as constants. However, at lower Reynolds numbers, variations in B and BT are often observed'; Sec. V C (PDF pp. 38-39)",
+          "reference_only_paired_data": false,
+          "paired_data_note": "Fig. 2 (PDF p. 10) gives one intercept per DNS case against Re*_tau (refs 52, 85, 91-99 for B; Gerolymos and Vallet for BT). The profiles behind the intercepts and the height or range at which they were evaluated are not reported; Fig. 4 shows the transformed DNS profiles of one case only as a reference for the WMLES.",
+          "violation_statistic": true,
+          "statistic_note": "intercepts B and BT from DNS against Re*_tau with a +/- rms band and the fitted curves of Eq. (8) (Fig. 2, PDF p. 10): they rise above the asymptotic values 5.16 and 3.59 at low Re*_tau"
+        }
+      ]
+    },
+    {
+      "study_id": "N291",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Local equilibrium between production and dissipation of turbulent kinetic energy in the log-law layer (G_k = epsilon), from which wall functions take u_tau^2 = C_mu^(1/2) k",
+          "restriction_location": "Eqs (8)-(10), PDF pp. 3-4; discussion PDF pp. 9-11 (\"The assumption of the equilibrium state between the turbulent production and dissipation in the log law layer (Pope, 2000) delayed the turbulent production in the bow region\")",
+          "reference_only_paired_data": false,
+          "paired_data_note": "No DNS, experimental or wall-resolved data are reported; the assumption is examined only through the two wall-function RANS runs and the FLUENT run.",
+          "violation_statistic": false,
+          "statistic_note": "No statistic of reference data; the evidence is the contour comparison of the two wall-function runs (Figs 8-9), which is the output of wall models."
+        }
+      ]
+    },
+    {
+      "study_id": "N297",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Wall-stress models built on the Newtonian law of the wall (constant molecular viscosity, rheology-independent mapping from the sampled velocity to the wall stress) remain valid for a shear-thinning power-law fluid",
+          "restriction_location": "Abstract (PDF p. 1) and Sec. 4.4.1 (PDF pp. 35-36): \"the conventional WSM models developed for Newtonian fluids (WMLES6-11) ... all fail to predict the shear-thinning induced drag reduction phenomenon\"",
+          "reference_only_paired_data": false,
+          "paired_data_note": "The restriction is examined only by running the wall models in coupled WMLES (Fig. 10, Table 4). DNS and WRLES profiles of mean velocity and apparent viscosity (Fig. 4, PDF p. 26) are shown to validate the WRLES, not paired with a wall quantity at a sampling height.",
+          "violation_statistic": false,
+          "statistic_note": "Only errors of model predictions against the WRLES are reported (Tables 4-5), which the rule excludes."
+        }
+      ]
+    },
+    {
+      "study_id": "N327",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "The filtered velocity at the wall is proportional to its wall-normal gradient there, u_i|w = l_i du_i/dn|w with zero slip velocity v_i (slip, Robin, boundary condition), the form on which slip-based wall models rest",
+          "restriction_location": "Sec. 2, Eq. (2.1) p. 3; Sec. 2.1, Eq. (2.9) p. 4; Sec. 2.2 p. 5 ('A priori testing of the slip boundary condition is conducted to assess the validity of (2.1) in filtered DNS data')",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Channel DNS box-filtered in three directions gives the filtered wall velocity and its wall-normal gradient for the three components, at filter sizes 0.01, 0.02, 0.03 delta and Re_tau about 950 (Fig. 3a-c, p. 6); the mean ratio l1 at Delta_2 = 0.05 and 0.1 delta for Re_tau about 950, 2000, 4200 (Fig. 3d)",
+          "violation_statistic": true,
+          "statistic_note": "Joint PDFs (50 % and 95 % contours) of wall velocity and wall-normal gradient with least-squares lines, Fig. 3a-c; 'the spread of the joint PDFs increases with increasing filter size' and 'a linear relationship ... is still satisfied on average' (p. 5). Fig. 3d compares the mean ratio l1 with the logarithmic-law estimate (2.11)."
+        },
+        {
+          "restriction": "A slip length constant in the homogeneous directions forces the wall velocity and its wall-normal derivative to have the same instantaneous structure",
+          "restriction_location": "Sec. 3.4 p. 12, Fig. 6 (p. 13)",
+          "reference_only_paired_data": false,
+          "paired_data_note": "Fig. 6a shows only the box-filtered DNS streamwise velocity at the wall (filter 0.050 delta, Re_tau about 2000), next to a snapshot from the wall-modelled LES DSM-2000; no DNS wall-normal gradient field is paired with it",
+          "violation_statistic": false,
+          "statistic_note": "Single instantaneous snapshots; 'our analysis is qualitative' (p. 12)"
+        },
+        {
+          "restriction": "The slip length varies linearly with the filter size, l^ = Delta_R l, the scaling assumed by dynamic slip models (Eq. 4.7-4.8; also in Eq. 4.1 of the earlier dynamic slip model)",
+          "restriction_location": "Sec. 4.2 p. 20 ('This assumption will be shown to be reasonably well satisfied in figure 13(c)')",
+          "reference_only_paired_data": false,
+          "paired_data_note": "The supporting data are optimal slip lengths from LES run with the slip boundary condition under the constraint tau_w = tau_w(DNS), against grid size (Fig. 13c dashed, p. 24); they do not come from DNS, wall-resolved LES or experiment alone",
+          "violation_statistic": false,
+          "statistic_note": "No statistic of reference data alone is reported for this assumption"
+        }
+      ]
+    },
+    {
+      "study_id": "N332",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Self-similarity of the flow in the logarithmic region (eddy sizes scale linearly with wall distance), so that the field at an off-wall boundary plane (y/h = 0.1) can be obtained from an interior reference plane farther from the wall (y/h = 0.2), the basis of off-wall boundary conditions of the Mizuno & Jimenez type",
+          "restriction_location": "Sec. 1 p. 4; Sec. 2 p. 6; Sec. 3.2 p. 14",
+          "reference_only_paired_data": true,
+          "paired_data_note": "DNS velocity-fluctuation fields at y+ = 100 and y+ = 50 for Re_tau = 550 are shown as one instantaneous pair (Fig. 3, top two rows, p. 16) and the DNS spectra at y+ = 50 as shaded contours (Fig. 4); the paired planes otherwise enter only as network input and target",
+          "violation_statistic": false,
+          "statistic_note": "No correlation, coherence or joint statistic between the two DNS planes is reported; the evidence is the prediction error of the FCN and R-Net (Tables 1-2), which is a model output. The loss of coherence at large separation is cited from Sasaki et al. (2019), not computed here."
+        }
+      ]
+    },
+    {
+      "study_id": "N357",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "Equilibrium wall-stress models: the unsteady and advection terms of the near-wall momentum balance are neglected, so the wall stress follows instantaneously from the velocity at the wall-model height through an equilibrium profile",
+          "restriction_location": "Sec. 1, p.2 ('applications of the EQWM in LES usually assume such profiles to be valid locally and instantaneously'); Sec. 1, p.3 (non-equilibrium defined by non-negligible time-derivative and advection terms); Sec. 2.1, eq. (2.10), p.7 ('full equilibrium momentum balance, where the unsteady and advection terms are set to zero')",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Fig. 16 (p.23), dashed curves: DNS of Weng et al. (2016), time signals over one period of every term of the wall-normally integrated, phase-averaged x-momentum balance of eq. (3.10) (unsteady term, pressure-gradient term, viscous stress, Reynolds shear stress, wall stress) for omega_f+ = 0.01 at integration heights y/h = 0.067, 0.200 and 0.467. Related reference-only data: DNS periodic velocity amplitude and phase versus y+ (Fig. 6, p.17) and DNS and experimental periodic wall-stress amplitude and phase versus forcing frequency (Fig. 9, p.19).",
+          "violation_statistic": true,
+          "statistic_note": "Fig. 16 (p.23): the DNS curves give the size of the unsteady term, which the equilibrium class neglects, against the stress terms at the three heights; the text notes that 'the Reynolds stress oscillation amplitude is small relative to the d_t<u> term' (p.20). Fig. 9(b) (p.19) gives the phase of the periodic wall stress relative to the centreline velocity from DNS and experiments (rising to the Stokes value of 45 degrees). The LES curves in the same figures are model results and are not counted."
+        }
+      ]
+    },
+    {
+      "study_id": "N418",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Constant-stress (equilibrium) layer between the wall and the matching location: the stress fed to the outer flow equals the wall stress, i.e. pressure-gradient and convective terms are neglected below the matching location",
+          "restriction_location": "Sec. III.A, Eq. 5 and following text (PDF p. 4): 'the constant stress layer assumption invoked in the equilibrium wall model may incur large errors when the second term on the right-hand side becomes large'; Sec. IV (p. 7): 'the equilibrium wall model (which assumes a constant stress layer between the wall and the matching location)'",
+          "reference_only_paired_data": false,
+          "paired_data_note": "Fig. 2 (p. 7) places stations of three wall-resolved databases at y_match/delta = 0.1 in the plane of H and the Alber parameter, with y+_match in panel (c). The Alber parameter and y+_match come from the reference data alone, but H is evaluated through the model form of Eq. 7 (Kamogawa et al. approximation of the convective terms and a composite velocity profile), not from the budget terms of the databases, and the paired wall and matching-location stresses are not reported as such.",
+          "violation_statistic": false,
+          "statistic_note": "What is reported is the percentage error of two closures (the equilibrium wall model of Lehmkuhl et al. and Eq. 12) in the stress at the matching location (Fig. 2a-b), which is the error of a model's prediction. The text infers from it that 'the validity of the constant stress layer below the matching location can increase or decrease non-monotonically', but no model-free statistic of the neglected terms is given."
+        }
+      ]
+    },
+    {
+      "study_id": "N437",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Equilibrium: the wall stress is tied to the state at the wall-model interface through an equilibrium law, with unsteady and advection terms neglected, so that it responds without lag or lead to the outer flow.",
+          "restriction_location": "Abstract p. 1 ('wall-modelled large-eddy simulation often assume equilibrium'); Sec. 1.3 p. 5; Sec. 2.2.2 p. 8 ('The GMD model ... relies on the full equilibrium momentum balance, where unsteady and advection terms are neglected'); Sec. 5.2.2 p. 22 ('the wall models considered in this work are all strongly coupled to the flow dynamics at the wall-model interface')",
+          "reference_only_paired_data": false,
+          "paired_data_note": "The experimental C_f (Fig. 8), free-stream velocity (Fig. 7) and mean velocity profiles with the interface height marked (Fig. 9) are shown at the same seven stations, but only as references for the wall-modelled runs; the source does not pair the experimental velocity at the sampling height with the experimental wall stress.",
+          "violation_statistic": false,
+          "statistic_note": "No statistic of the reference data alone is computed. The nearest statement is qualitative (p. 22): in the experiment the maximum C_f aligns with the peak free-stream velocity in the FPG-APG cases and the dip in C_f occurs upstream of the velocity decrease in the FPG-APG-FPG cases; the assumption is otherwise examined through the errors of coupled wall-modelled LES."
+        }
+      ]
+    },
+    {
+      "study_id": "N444",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "An equilibrium law of the wall (Reichardt, or the logarithmic law) links the velocity at the sampling height to the wall shear stress, also in out-of-equilibrium (adverse-pressure-gradient) flow, provided the input point lies below the end of the log layer.",
+          "restriction_location": "Results, 'Mean flow profiles', paragraph on Fig. 10 and eqs 9-10: 'Although this law is dedicated to equilibrium flows, it should be applicable to out-of-equilibrium flows as long as the input position is chosen below the end of the log-layer region'",
+          "reference_only_paired_data": false,
+          "paired_data_note": "Fig. 10 shows inner-scaled mean wall-parallel velocity profiles on the suction side for C1 and C2; the text attributes them to the wall-modelled runs ('All WMLES profiles show quite a large log-region, which collapse on the Reichardt law-of-the-wall for y+ <= 300'), whose friction velocity comes from the wall model. The figure image is not in the archived XML, so whether wall-resolved profiles are also drawn could not be checked.",
+          "violation_statistic": false,
+          "statistic_note": "Only a visual comparison of mean profiles with two analytic laws; no distribution, correlation, lag, angle or size of neglected terms is reported from reference data."
+        }
+      ]
+    },
+    {
+      "study_id": "N446",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Near-wall turbulence behaves in a 'universal', self-sustained autonomous manner, independent of the outer large-scale structures (the premise of near-wall RANS in hybrid methods and of periodic minimal-flow-unit near-wall patches); the source examines whether trip-induced outer large scales 'footprint' on the near-wall flow.",
+          "restriction_location": "Section 1.1 (p. 2), section 1.3 (p. 4); examined in sections 2.3-2.4 (pp. 13-20)",
+          "reference_only_paired_data": false,
+          "paired_data_note": "From the authors' full wall-resolved LES (RFtrip-x10z7) alone: instantaneous velocity planes at y+ about 52 or 70 and at y+ about 13.5 with their EMD large-scale parts (Figs 12, 13, p. 17), premultiplied spectra (Fig. 10, p. 14), PSD at y+ about 40 and 13.5 (Fig. 11, p. 16) and DMD modes (Fig. 17, p. 20). These pair outer-layer velocity with near-wall velocity at y+ about 13.5; no wall quantity (wall stress) is paired, so set to false.",
+          "violation_statistic": false,
+          "statistic_note": "The absence of footprinting is judged from contour maps ('there seems to be little correlation between the outer and inner large-scale structures', p. 15; DMD mode contours, pp. 19-20). No correlation coefficient, joint distribution or other computed statistic between the paired quantities is reported."
+        }
+      ]
+    },
+    {
+      "study_id": "N464",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Quasi-equilibrium: between the wall and the wall-model height the (horizontally filtered) velocity follows the law of the wall with a local friction velocity, u_s = u_tau(x,z,t) f(y+); algebraic equilibrium wall models 'usually assume the velocity profile to be valid locally and instantaneously'",
+          "restriction_location": "Section 1 (PDF p. 2), Section 2 eq. (2.1) (p. 4), Section 2.3 (pp. 9-11)",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Channel DNS at Re_tau = 1000 (JHTDB), Gaussian-filtered at Delta_x+ = Delta_z+ = 196: velocity profiles from the wall to the sampling height Delta+ ~ 34 at one point and several instants, unfiltered in time and exponentially filtered at T1 and Ts (Fig. 2, p. 10). The profiles contain the class input (velocity at y = Delta) and the near-wall part of the same profile; the DNS wall stress itself is not reported, and in panels (d)-(f) the friction velocity used for scaling comes from the inverted law-of-the-wall fit, not from the DNS.",
+          "violation_statistic": false,
+          "statistic_note": "The evidence is a visual overlay of profiles at several instants. In panels (a)-(c) they are scaled with the global friction velocity, which cannot by itself show the local relation violated; the collapse test of panels (d)-(f) uses a local friction velocity 'computed using u_tau,l = nu/Delta Re_tau^fit(U_LES Delta/nu) where Re_tau^fit is the inverted law of the wall fit from Meneveau (2020)' (p. 10), i.e. a wall model evaluated on the DNS input. No distribution, correlation, lag or magnitude of neglected terms is computed."
+        }
+      ]
+    },
+    {
+      "study_id": "N497",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "The wall stress follows the law of the wall (Reichardt's profile) from the velocity at one sampling height, i.e. the boundary layer is 'fully turbulent, at equilibrium, and attached'",
+          "restriction_location": "Abstract (PDF p. 1); Section 1 (p. 2: 'models based on the law of the wall, which is valid for attached flow at moderate pressure gradients'); Section 3.1 (p. 13)",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Instantaneous (y+, u+) pairs, i.e. velocity at the wall-model height scaled with the local wall shear stress, from the wall-resolved LES of the periodic hill at Re_b = 10,595, lower wall (Fig. 4a) and upper wall (Fig. 4b), PDF p. 15 (empty black circles). The data are the probe-grid samples of the validation set; the height is named as h_wm/h = 0.115 for the companion Fig. 3 and is not restated for Fig. 4.",
+          "violation_statistic": true,
+          "statistic_note": "Scatter of the wall-resolved pairs about Reichardt's profile, sorted on the lower wall into separation, acceleration, recovery and recirculation regions (Fig. 4, p. 15). p. 13: 'The recirculation region is located below Reichardt's profile with negative values, while the recovery region is above'; 'a WSS model based on the Reichardt's profile would have a hard time correctly predicting the separation location'; upper wall: 'The instantaneous pairs (y+, u+) are asymmetrically distributed around Reichardt's profile'. The network's predictions are overlaid on the same plot but the reference scatter does not depend on them."
+        },
+        {
+          "restriction": "The wall stress is aligned with the velocity at the matching location",
+          "restriction_location": "Section 3.2.2 item (ii) (PDF p. 17) and Summary (p. 19: 'Many standard WSS models in the literature naturally align the wall shear stress with the velocity extracted at the matching location. At the separation, there is a strong misalignment between tau_w and u')",
+          "reference_only_paired_data": false,
+          "paired_data_note": "No wall-resolved data pairing the direction of the wall stress with the direction of the velocity at the sampling height are reported; the misalignment is asserted and the evidence is the coupled comparison of aligned and unaligned runs (K02).",
+          "violation_statistic": false,
+          "statistic_note": "None reported."
+        }
+      ]
+    },
+    {
+      "study_id": "N540",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "The ODE wall models considered (F_i = 0, the equilibrium model, and F_i = d_i<p>) leave the convective term out of the modelled thin-boundary-layer balance; the source examines the argument that convective and pressure-gradient terms approximately balance in the modelled layer, which would justify dropping both, and whether keeping only the pressure gradient is consistent",
+          "restriction_location": "Sec. 2.3, Eqs. (9)-(10) and the paragraph 'Before moving on, we want to comment on the fact that the convective term is not included in the ODE wall models' (pp. 4-6); taken up in Sec. 4.2.1 (pp. 14-15)",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Mean convective term <u_j>d_j<u_1> and mean pressure-gradient term d_1<p> of the authors' WRLES of the periodic hill (Re_H = 10595), extracted 'at positions corresponding to the matching locations used in the subsequent WMLES', i.e. the first off-wall cell centres of the coarse and fine meshes (Fig. 11, p. 14); wall-normal profiles of both terms at stations x/H = 0-8 and the field of their sum (Fig. 12, p. 15)",
+          "violation_statistic": true,
+          "statistic_note": "Size of the neglected terms and of their imbalance, from the WRLES alone: both terms along x at the matching heights (Fig. 11a) and their sum (Fig. 11b, 'the cancellation is not perfect ... most evident around the top of the hill'); near-wall profiles of the two terms and contours of their sum (Fig. 12a-b, 'some degree of imbalance is present in the near-wall region throughout almost the entire domain', p. 15)"
+        }
+      ]
+    },
+    {
+      "study_id": "N551",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Equilibrium, unidirectional wall layer: the wall stress is aligned with the LES velocity at the matching height and advection, pressure gradient and lateral diffusion are neglected in the modelled layer (class of equilibrium stress models)",
+          "restriction_location": "Sec. 2.3, p. 9 ('The velocity vector is assumed to be aligned with the LES velocity at the matching height'); Sec. 1, p. 3; Sec. 3.7, Eq. (3.18), p. 23",
+          "reference_only_paired_data": false,
+          "paired_data_note": "The terms of the balance (I_x, I_z and their advection, pressure-gradient and diffusion parts) are taken from the PDE and integral NEQWM solutions inside the WMLES, not from reference data: 'Ideally, this analysis should be done in a priori sense utilizing the fully resolved flow fields ... This was deemed infeasible in the present case due to the high Reynolds number' (p. 22). The experiment supplies the wall-stress direction (Fig. 10a) and flow-direction profiles (Fig. 12) in separate plots; they are not paired at a sampling height.",
+          "violation_statistic": false,
+          "statistic_note": "The sizes of the neglected terms (Figs 19-21, pp. 24-26) are computed from wall-model solutions, that is by evaluating wall models."
+        },
+        {
+          "restriction": "Isotropic eddy viscosity: the Reynolds shear stress vector is aligned with the mean velocity gradient vector. The source names it for 'the commonly used isotropic eddy viscosity model' and, in the Introduction, for 'many turbulence models (including wall models)'; all three wall models of the paper use a mixing-length eddy viscosity (p. 9).",
+          "restriction_location": "Sec. 3.4, p. 17; Sec. 1, p. 4",
+          "reference_only_paired_data": false,
+          "paired_data_note": "Fig. 15 (p. 19) plots the experimental directions of the Reynolds shear stress vector and of the mean velocity gradient vector against y/delta99 (about 0.1 to 1.2) at stations 10 and 17, alongside the three WMLES. These are outer-layer profiles: they pair no wall-model input with the wall stress, and 'the experiment did not have access to the Reynolds-stress data in the inner layer' (p. 17).",
+          "violation_statistic": true,
+          "statistic_note": "Lag angle between the two vectors from the experiment alone (black circles and crosses in Fig. 15); pp. 17-18: the stress vector 'lags behind the mean velocity gradient vector within the bend'."
+        }
+      ]
+    },
+    {
+      "study_id": "N556",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "The wall law holds for the mean velocity but is applied to the instantaneous sampled velocity (wall stress as a function of the instantaneous velocity at the sampling point)",
+          "restriction_location": "Sec. II C 1, pp. 3-4: 'the equations governing the wall model (e.g. the log-law) are valid for the mean velocity and not the transient LES signal'",
+          "reference_only_paired_data": false,
+          "paired_data_note": "The data are velocity samples at y = h from a WMLES on mesh M2 and Spalding-law stresses computed from them (Sec. III B 3, pp. 10-11). No DNS or experimental pairs of sampled velocity and wall stress are reported.",
+          "violation_statistic": false,
+          "statistic_note": "The reported quantities are errors of the model's mean stress (Table III, Figs 4-5)."
+        },
+        {
+          "restriction": "The wall stress is aligned with the sampled wall-parallel velocity",
+          "restriction_location": "Sec. II C 3, p. 5: 'The standard choice is to align tau_w with the sampled wall-parallel velocity'; Sec. III B 3, p. 10",
+          "reference_only_paired_data": false,
+          "paired_data_note": "Only WMLES probe data on M2 are used.",
+          "violation_statistic": false,
+          "statistic_note": "The gap between the mean stress magnitude and the magnitude of the mean stress (Fig. 4 left) is an output of Spalding's law on WMLES input."
+        }
+      ]
+    },
+    {
+      "study_id": "N623",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Asymptotic form that the activation function imposes on feed-forward-network wall models (extrapolation theorem): with sigmoid neurons the output tends to a finite constant as the input tends to infinity, with ReLU neurons it grows linearly with the input. For a network whose input ln(h_wm/y*) grows without bound with Reynolds number the predicted tau_w/(rho U_b^2) then diverges instead of tending to zero.",
+          "restriction_location": "Sec. IV opening (p. 10); Sec. IV.A (pp. 10-11); Sec. IV.B (p. 12)",
+          "reference_only_paired_data": false,
+          "paired_data_note": "The restriction is examined by evaluating the trained networks on law-of-the-wall inputs (HYK19 in Fig. 11, ZHY21 and ZYZY22 in Fig. 12). The DNS profiles in Fig. 11 serve as the comparison for the network output; no reference-only pairing of model inputs with wall stress at a stated sampling height is reported.",
+          "violation_statistic": false,
+          "statistic_note": "What is reported is network output against the law of the wall, that is a model's prediction error, not a statistic of reference data."
+        }
+      ]
+    },
+    {
+      "study_id": "N626",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "The law of the wall holds locally and instantaneously: the wall stress is given by the velocity at a near-wall point through the equilibrium law (Reichardt profile)",
+          "restriction_location": "Section 1, p. 2: the algebraic equilibrium wall model 'imposes the WSS ... by enforcing the law of the wall locally ... This assumption is relevant in fully developed boundary layers, for which the law of the wall holds in the mean, but cannot generally be assumed to hold in complex flows'; Section 4.1, p. 11: 'Agreement or departure of both reference data and model prediction from fully developed equilibrium wall turbulence is emphasized by comparing the instantaneous data points to the analytical profile of Reichardt (1951)'",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Fig. 5, left column (p. 12): instantaneous filtered tangential velocity at the near-wall nodes paired with the local reference filtered wall shear stress, shown as u+(y+) for CF1, CF2, 3DD, BFS, APG and N65b; data from the DNS/WRLES alone, filtered at the resolution of coarse meshes with 25 <= e+ <= 80 (nodes within three edges of the wall)",
+          "violation_statistic": true,
+          "statistic_note": "Scatter of the reference points about Reichardt's law in Fig. 5 (left column), described on p. 11: channel points 'scattered around the law of the wall, with a large variance'; 3DD points mostly below the law; N65b points mostly above. No number is attached to the scatter. The Reichardt columns of Table 4 and Fig. 6 are errors of a model prediction and are not counted here."
+        },
+        {
+          "restriction": "The wall stress vector is aligned with the tangential velocity at the first point above the wall (the model supplies only the stress magnitude)",
+          "restriction_location": "Section 4.2.3, p. 20; Section 3.2, p. 10 (the target is the norm of the shear stress vector)",
+          "reference_only_paired_data": false,
+          "paired_data_note": "No reference data pairing the direction of the near-wall velocity with the direction of the wall stress are reported. The evidence offered is the coupled LES result of Fig. 16 (streamwise stress component and reattachment), in which all runs use the alignment.",
+          "violation_statistic": false,
+          "statistic_note": "none; the statement that the assumption 'is unrealistic near the reattachment point' rests on the coupled runs"
+        }
+      ]
+    },
+    {
+      "study_id": "N635",
+      "work_counted": true,
+      "member": false,
+      "candidates": [
+        {
+          "restriction": "Constant-stress, unidirectional near-wall layer closed by the mixing-length hypothesis, with all primal mean-flow and turbulence quantities scaling algebraically with the friction velocity (the basis of the law of the wall and of wall-function boundary conditions)",
+          "restriction_location": "Section 2, p. 2 (Eq. 1: 'The validity of (1) is restricted to approximately the inner 20% of the boundary layer'); Section 5, p. 8 ('the algebraic scaling of all mean flow and turbulence parameters with the friction velocity U_tau within the logarithmic-layer')",
+          "reference_only_paired_data": false,
+          "paired_data_note": "No DNS, experimental or wall-resolved LES data are reported. The supporting calculations are the paper's own RANS runs: low-Re mixing-length channel profiles against the analytical laws (Fig. 3) and mixing-length versus k-epsilon fields (Fig. 2).",
+          "violation_statistic": false,
+          "statistic_note": "none computed from reference data; Fig. 2 (difference of eddy viscosity and Reynolds stress between two RANS closures) is a model-to-model comparison"
+        }
+      ]
+    },
+    {
+      "study_id": "N647",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "Equilibrium assumption of the two-layer model class: the convective terms and the pressure-gradient term are neglected in the modelled layer (or the convective terms alone are neglected while the pressure gradient is kept)",
+          "restriction_location": "Section 1, p. 4 (Eq. 4: 'The most frequent simplification neglects the convective terms ... the convective terms approximately balance the pressure-gradient term ... such that both should either be considered or neglected together'); Section 5, p. 16",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Fig. 15 (p. 15): terms of the two-layer-model balance (convective terms, pressure-gradient term and the two left-hand-side terms, in wall units) computed from the wall-resolved LES alone as functions of y+ at x/c = 0.2, 0.4, 0.6, 0.65; Fig. 16 (p. 16): the components of the convective terms at the same stations",
+          "violation_statistic": true,
+          "statistic_note": "Size of the neglected terms across the layer (Fig. 15); p. 16: 'both the pressure-gradient and the convective terms increase largely. At all the chordwise locations, as soon as y+ is of 30 or so, the pressure-gradient and the convective terms essentially balance each other'. No wall model is evaluated for this figure."
+        },
+        {
+          "restriction": "Universal law of the wall: the wall stress follows from the velocity at one height through u+ = f(y+), independently of the pressure gradient (the equilibrium algebraic laws)",
+          "restriction_location": "Section 1, p. 2 ('The latter appears to behave in an universal way, usually referred to as \"the law of the wall\" with u+ = f(y+)') and p. 3 ('Although these two laws are dedicated to equilibrium flows, they should also be applicable to APG as long as the boundary layer velocity profile features a log-layer region and as the wall-model input is before the end of that region')",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Fig. 10 (p. 12): mean tangential velocity in wall units u+(y+) from the wall-resolved LES at x/c = 0.05 to 0.80 in steps of 0.05 (velocity at every height paired with the local wall shear stress); Fig. 2 (p. 3): u+(y+) profiles over a bump under adverse pressure gradient from a DNS database at Re_tau = 395 and from an experiment at Re_tau = 6500; Fig. 11 (p. 12): Clauser parameter and p+ along the chord",
+          "violation_statistic": true,
+          "statistic_note": "Departure of the profiles in wall units from a common curve with station (Fig. 10; p. 11: 'all curves collapse in the viscous sublayer and in a part of the logarithmic region (y+ <= 100), to separate in the wake region'; Fig. 2: no logarithmic layer at the low Reynolds number), and the size of the pressure-gradient term in wall units (Fig. 11: p+ up to about 0.4, beta about 100 at x/c = 0.75). These are mean profiles and chordwise curves, not distributions of instantaneous data."
+        }
+      ]
+    },
+    {
+      "study_id": "N655",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "Eddy-viscosity (equilibrium) closure in the modelled layer: the Reynolds stress is proportional to and aligned with the mean strain, so that added shear raises the stress and the stress direction follows the mean-shear direction. The source states that the three wall models tested rest on it.",
+          "restriction_location": "Section 3.1, pp. 8-9: 'the classic theory anticipates an increase of the Reynolds stresses under the equilibrium assumption -<u_i' u_j'> + 1/3 <u_k' u_k'> delta_ij proportional to nu_e <S_ij>' and the angles 'are expected to satisfy gamma_tau about gamma_S in equilibrium 2DTBL'; Section 4.3, p. 29: 'The wall-models investigated are based on the eddy viscosity assumption; increasing shear rates in the flow results in additional strain rates'; Section 5, p. 32: 'none of the wall models considered is able to account for the initial deficit of Reynolds stress and drag reduction due to the nature underpinning their eddy-viscosity formulation'.",
+          "reference_only_paired_data": true,
+          "paired_data_note": "DNS only, no wall model evaluated: profiles of the mean Reynolds-stress direction gamma_tau and the mean-shear direction gamma_S against x2+ at t+ = 12 to 432 for Pi = 60, Re_tau about 500 (Fig. 5a, p. 10); mean velocity profiles (Fig. 3, p. 8) and Reynolds stresses (Fig. 4, p. 9); tangential Reynolds stress in the frame aligned with the mean shear (Fig. 5b, p. 10). Averages are over the homogeneous directions, both channel halves and several runs (Section 3.1, p. 8). These give the two sides of the assumed stress-strain relation at each wall distance; they do not pair a sampled velocity with the wall stress.",
+          "violation_statistic": true,
+          "statistic_note": "Angle between the Reynolds-stress and mean-shear directions (the stress direction 'lags behind the mean direction closer to the wall and leads further away', Fig. 5a, p. 10; text p. 9); percentage change D_tau of the shear-aligned tangential Reynolds stress after the strain is added, as maps over Pi and x2* and at x2+ = 30 and x2* = 0.15 to 0.4, with drops of up to 30% (Eq. 3.1, Figs 7-10, pp. 12-16). The DNS streamwise wall stress also falls for t* below about 0.4 while the strain grows (Fig. 19b, p. 29)."
+        }
+      ]
+    },
+    {
+      "study_id": "N719",
+      "work_counted": true,
+      "member": true,
+      "candidates": [
+        {
+          "restriction": "Pointwise (two-point, scalar) mapping between one velocity component at a single off-wall point and the streamwise wall shear stress at one wall point shifted by Delta x^max and lagged by Delta T: tau_x,+ = F(u_I), with the remainder of the velocity (u_R) carrying no information on the stress. The source names this as the simplification of its approximate decomposition (aIND), not as an assumption of wall models; the words 'wall model' do not occur in the paper.",
+          "restriction_location": "Sec. 2.3, p. 6 ('the source and target variables are restricted to be scalars ... we consider only two points in space'); Sec. 3, Eqs (3.1)-(3.2), p. 8; mappings tau_x,+ = F_u(u_I), F_v(v_I), F_w(w_I) in Sec. 3.1, pp. 12-13, Fig. 7; Appendix E 'Validity of aIND of u with respect to tau_x', p. 32",
+          "reference_only_paired_data": true,
+          "paired_data_note": "Channel DNS only, Re_tau about 180 (domain 8 pi h x 2h x 4 pi h, p. 7; parametric sweep in pi h x 2h x pi/2 h, p. 30): u, v or w at one point at height y paired with tau_x at (x - Delta x, z - Delta z, t + Delta T), Delta T* about 25 (also 5 and 10 in Fig. 7a). Stated heights: y* about 8, 19 and 6 for the u, v and w mappings (Fig. 7, pp. 12-13); all y up to 0.5h in the maps of Fig. 21 (p. 31); y*_0 about 10 in Fig. 22 (p. 32). Unfiltered DNS fields.",
+          "violation_statistic": true,
+          "statistic_note": "(1) Relative energy of the informative component E_I(Delta x, y) = ||u_I||^2/||u||^2, called by the source 'the information-theoretic generalisation of the two-point linear correlation' (p. 6): peak about 0.6 at y* about 8 with optimal shift Delta x_u^max about -h, low values farther from the wall (App. D, Fig. 21, pp. 30-32); (2) normalised mutual information between the residual velocity and the wall stress, I(u_R; tau_x,+)/H(tau_x) at most about 0.06, and I(u_I; tau_x,+)/H(tau_x), versus wall offset (App. E, Fig. 22, p. 32); (3) shape of the mapping F, which saturates for tau_x* > 2 ('u_I provides limited information about high values of tau_x,+ at the timescale Delta T* = 25', p. 13). All are computed from DNS without a wall model; the mapping F is obtained by an optimisation with a small bijective network, as part of the decomposition."
+        }
+      ]
+    }
+  ]
+}

@@ -2,12 +2,12 @@
   "status": "PASS",
   "edition": "Review with finite-sample source reassessment and edition-specific comparisons",
   "pdf_pages": 15,
-  "pdf_sha256": "c652ebff85cce87eea17cd36370591d26c64cb385df96544622a739de95758c3",
-  "citations_with_support_record": 53,
+  "pdf_sha256": "144daaf1feec985e3b5876562469ea98e85f2d497326589a647be2e95ef63ff0",
+  "citations_with_support_record": 52,
   "caption_word_counts": [
     121,
     70,
-    131,
+    132,
     133,
     106,
     39,
@@ -41,6 +41,13 @@
     "worked_eligibility_papers": 6,
     "pilot_groups_sharing_papers": 9
   },
+  "table_2_types_of_test": {
+    "Coupled, wall model changed": 3,
+    "Coupled, grid changed": 1,
+    "Coupled, outer closure changed": 2,
+    "Prescribed input": 1,
+    "Complete systems, then coupled, wall condition changed": 1
+  },
   "figure_layouts": {
     "fig1_loop": true,
     "fig2_record": true,
@@ -51,7 +58,7 @@
   "scientific_limit": "Pass checks consistency and specified support. It does not certify an exhaustive corpus or predictive checklist validity.",
   "archived_source_dispositions": 115,
   "historical_pairs_reassessed": 79,
-  "source_located_design_series": 228,
+  "source_located_design_series": 356,
   "direction_and_agreement_checks": {
     "hill_classes": {
       "controls differ": 1,
@@ -60,6 +67,10 @@
       "unrankable": 1,
       "unresolved": 1
     },
+    "hill_contrasts_opposite_to_printed_digits": [
+      "N497",
+      "P25-0.01"
+    ],
     "same_table_other_rows": {
       "resolved concordant": 7,
       "unrankable": 4,
@@ -70,10 +81,6 @@
       0.01557018,
       0.01609649
     ],
-    "kappa_range_reproducible_groups": [
-      0.8928571428571428,
-      0.9440993788819876
-    ],
     "pairs_read_twice": 34,
     "pair_categories": {
       "shared_runs_no_treatment_baseline": 3,
@@ -82,6 +89,46 @@
       "matched_support_dependent": 3,
       "matched_opposing_same_support": 1,
       "opposing_point_estimates_on_restricted_support": 1
+    },
+    "memberships": {
+      "eligible_reports": 108,
+      "boundary_cases": {
+        "estimator not presented as a wall model": 3,
+        "eligibility disputed between the readings on a rule ambiguity": 3,
+        "sublayer-resolving near-wall method": 5
+      },
+      "matched_wall_treatment_contrast": {
+        "strict": [
+          50,
+          47
+        ],
+        "broad": [
+          58,
+          54
+        ],
+        "upper": [
+          61,
+          56
+        ]
+      },
+      "constitutive_reports": 17,
+      "transfer_tests": {
+        "qualified": 9,
+        "partly exposed": 60,
+        "selection unresolved": 41
+      },
+      "quotable": {
+        "strict": false,
+        "broad": true,
+        "upper": true,
+        "constitutive_constraint": true,
+        "transfer": true,
+        "prescribed_input": true,
+        "coupled_wmles": false,
+        "rans_comparison": true,
+        "system_benchmark": false,
+        "thermal": true
+      }
     }
   }
 }

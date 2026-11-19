@@ -1,45 +1,64 @@
 {
-  "current_edition": "Source-reassessed Review. Design-specific and table-defined comparisons in a finite retrieved sample.",
-  "current_inputs": [
-    "retrieval_frame.csv",
-    "eligibility_rules.json",
-    "eligibility_examples.json",
-    "comparison_map.json",
-    "agrawal_validation.json",
-    "dupuy_table5.json",
-    "outer_input_error.json",
-    "claim_support.json",
-    "eligibility_audit.json",
-    "historical_source_manifest.json",
-    "checklist_choices.json",
-    "../checklist_cases.json (agreement flags and assurance decisions)",
-    "source_dispositions.json",
-    "paired_readings.json",
-    "additional_comparisons.json",
-    "displayed_comparisons.json",
-    "transfer_exposure.json",
-    "study_families.json",
-    "channel_scheme_table.json",
-    "he_profiles.json",
-    "hill_crossings.json",
-    "hill_table_population.json",
-    "measurements/",
-    "supplementary_sources.json"
+ "current_edition": "Source-reassessed Review. Design-specific and table-defined comparisons in a finite retrieved sample.",
+ "current_inputs": [
+  "retrieval_frame.csv",
+  "eligibility_rules.json",
+  "eligibility_examples.json",
+  "comparison_map.json",
+  "agrawal_validation.json",
+  "dupuy_table5.json",
+  "outer_input_error.json",
+  "claim_support.json",
+  "eligibility_audit.json",
+  "historical_source_manifest.json",
+  "checklist_choices.json",
+  "../checklist_cases.json (agreement flags and assurance decisions)",
+  "source_dispositions.json",
+  "paired_readings.json",
+  "additional_comparisons.json",
+  "displayed_comparisons.json",
+  "transfer_exposure.json",
+  "study_families.json",
+  "channel_scheme_table.json",
+  "he_profiles.json",
+  "hill_crossings.json",
+  "hill_table_population.json",
+  "measurements/",
+  "supplementary_sources.json",
+  "wall_change_contrasts.json",
+  "constitutive_facts.json",
+  "agreement_v2.json",
+  "reader_agreement.json (pairings; its membership statistics are superseded by agreement_v2.json)",
+  "table_digits.json"
+ ],
+ "historical_diagnostics": [
+  "test_codings.json",
+  "change_log.json",
+  "scope_decisions.json",
+  "source_versions.json",
+  "comparison_audit.json",
+  "../../results/revision/design_audit.json"
+ ],
+ "withdrawn_claims": [
+  "population prevalence of transfer or validation deficit",
+  "seven outcome-category totals",
+  "9-of-18 quantity-only contrast",
+  "causal-grade aggregates",
+  "retrospective predictive success rates"
+ ],
+ "reason": "Version, eligibility, comparison-unit and relative/absolute error defects prevent treating the archived coding as a settled field analysis.",
+ "count_status": {
+  "quotable": [
+   "matched wall-treatment contrast, same model family or implementation allowed (works)",
+   "the same with unreported controls as an upper bound (works)",
+   "constitutive constraint (works)",
+   "transfer tests of a fitted treatment and their three statuses (tests and works)"
   ],
-  "historical_diagnostics": [
-    "test_codings.json",
-    "change_log.json",
-    "scope_decisions.json",
-    "source_versions.json",
-    "comparison_audit.json",
-    "../../results/revision/design_audit.json"
+  "not_quotable": [
+   "matched contrast restricted to a change of model: the member count changed by more than the limit fixed in advance on the random sample",
+   "complete-system benchmark label: Cohen's kappa 0.15 on the random sample",
+   "coupled-LES label: the member count changed by more than the limit on the random sample"
   ],
-  "withdrawn_claims": [
-    "population prevalence of transfer or validation deficit",
-    "seven outcome-category totals",
-    "9-of-18 quantity-only contrast",
-    "causal-grade aggregates",
-    "retrospective predictive success rates"
-  ],
-  "reason": "Version, eligibility, comparison-unit and relative/absolute error defects prevent treating the archived coding as a settled field analysis."
+  "record": "agreement_v2.json (decisions), results/revision/derived_memberships.json and results/revision/agreement_check.json"
+ }
 }
