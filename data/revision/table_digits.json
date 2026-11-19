@@ -1,0 +1,1018 @@
+{
+  "description": "Digit strings exactly as printed in the named edition, captured with pdftotext -layout (poppler) and parsed by script. A dash means the table prints no value. References give [separation, reattachment] in hill heights.",
+  "rule": "# C1 rule: when is a printed direction of error change resolved?\n\nWritten before any recomputation in this pass. The rule follows an advisory proposal\nof 19 November. That proposal already quoted the\nN611, N497 and P25 (0.01 mesh) table values, so the rule is not blind to those three\ncontrasts. It is fixed before it is applied to every other printed direction and to\nthe full set of nine hill contrasts.\n\n## Quantities\n\nFor one output, a baseline run value b, an alternative run value a and a reference r\ngive the change in absolute error\n\n    D = |a - r| - |b - r|        (D < 0: alternative closer; D > 0: alternative farther)\n\n## Admissible values\n\nEach printed number x stands for the interval [x - h, x + h], where h is half a unit\nin its last printed decimal place, read from the mechanically captured digit string\n(`pdftotext -layout`), not from a transcription. Where the source gives an interval\nfor the reference (r +/- u, or a printed range r1-r2), the reference interval is\nwidened by it. A value read from a plotted curve carries the reading half-width\nrecorded with that reading; if none was recorded the value is \"plot reading, no\nhalf-width\" and the output is unresolved unless the source itself states the direction.\n\n## Resolution of one output (primary rule)\n\nEvaluate D over the box of admissible (a, b, r). The direction is\n- resolved closer   if max D < 0,\n- resolved farther  if min D > 0,\n- unresolved        otherwise.\nThe box extrema are found exactly (D is piecewise linear; evaluate at the box corners\nand at a = r, b = r where those lie inside the box).\n\nReported next to the primary result, without changing the class: the proposal's\nsimpler threshold |D| > h_a + h_b + h_r + u_r, and the nominal D.\n\nWhere a source prints more than one reference for an output, each is evaluated\nseparately. The output is resolved only if every printed reference that the source\noffers for that output gives the same resolved direction; otherwise it is\n\"reference dependent\" and counts as unresolved. The reference the paper's own table\ndesignates is named.\n\n## Controls\n\nRead from the source for the two runs: (i) nominal mesh including first-cell spacing,\n(ii) outer subgrid or turbulence closure and numerical scheme, (iii) flow and forcing,\n(iv) statistics accumulation window. Each is recorded as equal, different or not\nreported. The changed wall treatment itself, including what it necessarily changes\n(for example a first-cell eddy viscosity that is part of the treatment, or the\nsampling height it prescribes), is the intervention and is recorded as such, not as a\ncontrol difference.\n\n`controls_status` is \"documented equal\" only if all four are stated equal,\n\"differ\" if any is stated different, otherwise \"not all reported\".\n\n## Class of a two-output contrast (exactly one)\n\nApplied in this order:\n1. unrankable: an error is undefined for a run (for example no separation bubble).\n2. unresolved: at least one of the two directions is unresolved or reference dependent.\n3. controls differ: both directions resolved, but `controls_status` is \"differ\".\n4. resolved opposing: both resolved, opposite signs.\n5. resolved concordant: both resolved, same sign.\n\nClasses 4 and 5 carry the flag \"averaging window not reported\" (or the other missing\ncontrol) where `controls_status` is \"not all reported\". Counts are given both for all\nclass-4/5 contrasts and for the subset with documented equal controls.\n\nA single-output direction statement uses: unrankable / unresolved / controls differ /\nresolved closer / resolved farther, with the same flags.\n\n## What the rule does not cover\n\nIt bounds rounding and reported reference intervals only. Sampling error, discretisation\nerror and experimental uncertainty enter only where the source reports them. A resolved\nclass therefore means \"resolved to the printed precision and reported intervals\".\nMagnitudes are reported with every class so that a small resolved change is visible.\n\n## Scope of application\n\nEvery sentence of the manuscript (abstract, Sections 1-5, captions, tables) that states\nthat one calculation is closer to or farther from a reference than another for a named\noutput, or that an error rose or fell. Statements that only repeat a source's own\nqualitative verdict without numbers are listed with class \"source-stated, no number\nextracted\" and are not counted as resolved by this rule.\n\n## Bump station x/L = -0.4 (P31)\n\nThe rule written at 00:43 (paired_p_work/bump_rule.txt) stays primary: mean absolute\nvelocity discrepancy over the full shared support. Added in this pass, as description\nand not as a second ranking rule: the ranking as a function of the lower bound of the\nsupport, the two crossover heights (cumulative-support and pointwise) in units of y/L\nand of fine-mesh cells, the signed mean discrepancy below and above the crossover, and\nany stated uncertainty of the PIV reference if a lawfully accessible source gives one.\nThe manuscript sentence on a restricted height range may state only what these give.\n",
+  "rule_sha256": "8b9fbcea0359353251d624066865a68d14b5bc02f67e7dd89a4277cc01970481",
+  "edition_checks": {
+    "N025": "Run rows identical in the archived copy and the journal copy; only the journal table prints the DNS reattachment interval ± 0.06.",
+    "N611": "Run rows identical in arXiv v1 and the 2019 dissertation. The dissertation replaces the resolved-LES reference by DNS (0.20, 4.51 ± 0.06), drops the 10,600 experiment row and states the averaging window. The journal table was not accessible.",
+    "P25": "All 20 rows of Table 2 identical in arXiv v1 and the version of record.",
+    "P31": "arXiv v3 only; the AIAA Journal table was not accessible.",
+    "N497": "version of record."
+  },
+  "hill_population": [
+    {
+      "id": "N025",
+      "study_id": "N025",
+      "edition": "Int. J. Numer. Methods Fluids 90, 81-113 (2019), typeset journal copy; run rows identical in the archived arXiv:1705.08813v2",
+      "source_location": "Table 2",
+      "baseline": "ph10595_stretch2_NWM (no wall model)",
+      "alternative": "ph10595_stretch2 (enrichment)",
+      "baseline_printed": [
+        "0.29",
+        "3.99"
+      ],
+      "alternative_printed": [
+        "0.23",
+        "4.24"
+      ],
+      "references": {
+        "KKW DNS, journal table (4.51 ± 0.06)": [
+          "0.19",
+          "4.51 ± 0.06"
+        ],
+        "KKW DNS, archived table (no interval printed)": [
+          "0.19",
+          "4.51"
+        ]
+      },
+      "controls": {
+        "status": "documented equal",
+        "mesh": "32x16x16 cells, same vertical stretching",
+        "closure": "implicit (same scheme)",
+        "forcing": "same mass flow",
+        "averaging": "\"averaged during a simulation time corresponding to 61 flow-through times\" (p. 24-25)"
+      },
+      "intervention": "function enrichment switched on; changes the approximation space in the wall layer",
+      "note": ""
+    },
+    {
+      "id": "N611",
+      "study_id": "N611",
+      "edition": "arXiv:1505.05786v1 (2015), Table 2 p. 15; run rows identical in Krank, dissertation, TU Munich (2019), Table 7.2 p. 159. Journal table (J. Comput. Phys. 316) not inspected.",
+      "source_location": "Table 2 (arXiv v1); Table 7.2 (dissertation)",
+      "baseline": "PhFNWM (no wall model)",
+      "alternative": "PhF (enrichment)",
+      "baseline_printed": [
+        "0.2",
+        "3.68"
+      ],
+      "alternative_printed": [
+        "0.25",
+        "4.91"
+      ],
+      "references": {
+        "Froehlich resolved LES, arXiv table (0.2, 4.6-4.7)": [
+          "0.2",
+          "4.6 − 4.7"
+        ],
+        "Rapp experiment, arXiv table (reattachment only, 4.21)": [
+          null,
+          "4.21"
+        ],
+        "DNS, dissertation table (0.20, 4.51 ± 0.06)": [
+          "0.20",
+          "4.51 ± 0.06"
+        ]
+      },
+      "controls": {
+        "status": "documented equal",
+        "mesh": "96x48x48 for both runs",
+        "closure": "same",
+        "forcing": "mass flow held approximately constant",
+        "averaging": "\"statistics are sampled over 10,000 time steps\" (arXiv v1 p. 15); \"approximately ... 25 flow-through times for the fine mesh\" (dissertation p. 158)"
+      },
+      "intervention": "function enrichment switched on",
+      "note": "The no-wall-model separation is printed to one decimal (0.2). No edition prints it more precisely."
+    },
+    {
+      "id": "P25-0.01",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025), version of record; digit strings identical in arXiv:2409.00984v1",
+      "source_location": "Table 2, row H1.0-WM-0.01, Re_h = 10 595",
+      "baseline": "WW-DSM (Werner-Wengle)",
+      "alternative": "FEL wall stress and first-cell eddy viscosity",
+      "baseline_printed": [
+        "0.31",
+        "4.26"
+      ],
+      "alternative_printed": [
+        "0.29",
+        "4.18"
+      ],
+      "references": {
+        "own wall-resolved LES (H1.0-WR)": [
+          "0.22",
+          "4.35"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.01h",
+        "closure": "dynamic Smagorinsky away from the wall in both",
+        "forcing": "same",
+        "averaging": "not reported for the wall-modelled runs"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity both replaced (one package)",
+      "note": ""
+    },
+    {
+      "id": "P25-0.03",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025), version of record; digit strings identical in arXiv:2409.00984v1",
+      "source_location": "Table 2, row H1.0-WM-0.03, Re_h = 10 595",
+      "baseline": "WW-DSM (Werner-Wengle)",
+      "alternative": "FEL wall stress and first-cell eddy viscosity",
+      "baseline_printed": [
+        "0.86",
+        "2.35"
+      ],
+      "alternative_printed": [
+        "0.29",
+        "4.31"
+      ],
+      "references": {
+        "own wall-resolved LES (H1.0-WR)": [
+          "0.22",
+          "4.35"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.03h",
+        "closure": "dynamic Smagorinsky away from the wall in both",
+        "forcing": "same",
+        "averaging": "not reported for the wall-modelled runs"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity both replaced (one package)",
+      "note": ""
+    },
+    {
+      "id": "P25-0.06",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025), version of record; digit strings identical in arXiv:2409.00984v1",
+      "source_location": "Table 2, row H1.0-WM-0.06, Re_h = 10 595",
+      "baseline": "WW-DSM (Werner-Wengle)",
+      "alternative": "FEL wall stress and first-cell eddy viscosity",
+      "baseline_printed": [
+        "1.27",
+        "1.98"
+      ],
+      "alternative_printed": [
+        "0.36",
+        "5.07"
+      ],
+      "references": {
+        "own wall-resolved LES (H1.0-WR)": [
+          "0.22",
+          "4.35"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.06h",
+        "closure": "dynamic Smagorinsky away from the wall in both",
+        "forcing": "same",
+        "averaging": "not reported for the wall-modelled runs"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity both replaced (one package)",
+      "note": ""
+    },
+    {
+      "id": "P25-0.09",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025), version of record; digit strings identical in arXiv:2409.00984v1",
+      "source_location": "Table 2, row H1.0-WM-0.09, Re_h = 10 595",
+      "baseline": "WW-DSM (Werner-Wengle)",
+      "alternative": "FEL wall stress and first-cell eddy viscosity",
+      "baseline_printed": null,
+      "alternative_printed": [
+        "0.54",
+        "4.15"
+      ],
+      "references": {
+        "own wall-resolved LES (H1.0-WR)": [
+          "0.22",
+          "4.35"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.09h",
+        "closure": "dynamic Smagorinsky away from the wall in both",
+        "forcing": "same",
+        "averaging": "not reported for the wall-modelled runs"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity both replaced (one package)",
+      "note": "The table prints a dash for a run: no separation bubble, so no crossing error. "
+    },
+    {
+      "id": "P31-DSM",
+      "study_id": "P31",
+      "edition": "arXiv:2305.02540v3 (author preprint of AIAA J. article, DOI 10.2514/1.J063691); journal table not inspected",
+      "source_location": "Table 1 p. 7",
+      "baseline": "EQWM-DSM",
+      "alternative": "RLWM-DSM",
+      "baseline_printed": [
+        "0.57",
+        "3.05"
+      ],
+      "alternative_printed": [
+        "0.29",
+        "4.57"
+      ],
+      "references": {
+        "DNS [52] as printed": [
+          "0.20",
+          "4.51"
+        ],
+        "WRLES [53] as printed": [
+          "-0.11",
+          "4.31"
+        ]
+      },
+      "controls": {
+        "status": "documented equal",
+        "mesh": "128x64x64 for both",
+        "closure": "dynamic Smagorinsky in both",
+        "forcing": "same",
+        "averaging": "\"All simulations are run for about 50 FTTs after initial transients\" (p. 9)"
+      },
+      "intervention": "learned wall-eddy-viscosity condition sampled at the top of the first cell, against an equilibrium stress condition sampled at the second cell centre",
+      "note": "Training hill and training mesh for the learned model."
+    },
+    {
+      "id": "P31-VRE",
+      "study_id": "P31",
+      "edition": "arXiv:2305.02540v3 (author preprint of AIAA J. article, DOI 10.2514/1.J063691); journal table not inspected",
+      "source_location": "Table 1 p. 7",
+      "baseline": "EQWM-VRE",
+      "alternative": "RLWM-VRE",
+      "baseline_printed": [
+        "0.58",
+        "3.28"
+      ],
+      "alternative_printed": [
+        "0.39",
+        "3.96"
+      ],
+      "references": {
+        "DNS [52] as printed": [
+          "0.20",
+          "4.51"
+        ],
+        "WRLES [53] as printed": [
+          "-0.11",
+          "4.31"
+        ]
+      },
+      "controls": {
+        "status": "documented equal",
+        "mesh": "128x64x64 for both",
+        "closure": "Vreman in both",
+        "forcing": "same",
+        "averaging": "\"All simulations are run for about 50 FTTs after initial transients\" (p. 9)"
+      },
+      "intervention": "learned wall-eddy-viscosity condition sampled at the top of the first cell, against an equilibrium stress condition sampled at the second cell centre",
+      "note": "Training hill and training mesh for the learned model."
+    },
+    {
+      "id": "N497",
+      "study_id": "N497",
+      "edition": "Flow Turbul. Combust. 115, 1157-1180 (2025), version of record",
+      "source_location": "Tables 4-5, pp. 1173-1174",
+      "baseline": "Rcht-A-512-p4 (Reichardt wall-stress model)",
+      "alternative": "DD-A-512-p4 (data-driven, aligned)",
+      "baseline_printed": [
+        "0.538",
+        "3.652"
+      ],
+      "alternative_printed": [
+        "0.573",
+        "3.935"
+      ],
+      "references": {
+        "Expe. (Table 5)": [
+          "0.19",
+          "4.21"
+        ]
+      },
+      "controls": {
+        "status": "differ",
+        "mesh": "same degrees of freedom, p4, h_wm/h = 0.1",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "Table 4: about 15 flow-through times for the baseline and about 19 for the alternative"
+      },
+      "intervention": "data-driven wall-stress model replaces the analytical one",
+      "note": ""
+    }
+  ],
+  "hill_same_table_sensitivity": [
+    {
+      "id": "P25-H0.5-10595-0.01",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025); identical in arXiv v1",
+      "source_location": "Table 2, row H0.5-WM-0.01, Re_h = 10 595",
+      "baseline": "WW-DSM",
+      "alternative": "FEL",
+      "baseline_printed": [
+        "0.22",
+        "3.53"
+      ],
+      "alternative_printed": [
+        "0.0",
+        "5.24"
+      ],
+      "references": {
+        "own wall-resolved LES (H0.5-WR)": [
+          "0.0",
+          "5.28"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.01h",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not reported"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity",
+      "note": ""
+    },
+    {
+      "id": "P25-H0.5-10595-0.03",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025); identical in arXiv v1",
+      "source_location": "Table 2, row H0.5-WM-0.03, Re_h = 10 595",
+      "baseline": "WW-DSM",
+      "alternative": "FEL",
+      "baseline_printed": [
+        "0.35",
+        "2.51"
+      ],
+      "alternative_printed": [
+        "0.12",
+        "5.43"
+      ],
+      "references": {
+        "own wall-resolved LES (H0.5-WR)": [
+          "0.0",
+          "5.28"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.03h",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not reported"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity",
+      "note": ""
+    },
+    {
+      "id": "P25-H0.5-10595-0.06",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025); identical in arXiv v1",
+      "source_location": "Table 2, row H0.5-WM-0.06, Re_h = 10 595",
+      "baseline": "WW-DSM",
+      "alternative": "FEL",
+      "baseline_printed": [
+        "0.40",
+        "2.08"
+      ],
+      "alternative_printed": [
+        "0.21",
+        "5.34"
+      ],
+      "references": {
+        "own wall-resolved LES (H0.5-WR)": [
+          "0.0",
+          "5.28"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.06h",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not reported"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity",
+      "note": "Training case for the FEL model."
+    },
+    {
+      "id": "P25-H0.5-10595-0.09",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025); identical in arXiv v1",
+      "source_location": "Table 2, row H0.5-WM-0.09, Re_h = 10 595",
+      "baseline": "WW-DSM",
+      "alternative": "FEL",
+      "baseline_printed": [
+        "0.48",
+        "1.62"
+      ],
+      "alternative_printed": [
+        "0.27",
+        "4.47"
+      ],
+      "references": {
+        "own wall-resolved LES (H0.5-WR)": [
+          "0.0",
+          "5.28"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.09h",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not reported"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity",
+      "note": ""
+    },
+    {
+      "id": "P25-H1.5-10595-0.01",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025); identical in arXiv v1",
+      "source_location": "Table 2, row H1.5-WM-0.01, Re_h = 10 595",
+      "baseline": "WW-DSM",
+      "alternative": "FEL",
+      "baseline_printed": [
+        "0.52",
+        "3.64"
+      ],
+      "alternative_printed": [
+        "0.53",
+        "3.54"
+      ],
+      "references": {
+        "own wall-resolved LES (H1.5-WR)": [
+          "0.45",
+          "3.89"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.01h",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not reported"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity",
+      "note": ""
+    },
+    {
+      "id": "P25-H1.5-10595-0.03",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025); identical in arXiv v1",
+      "source_location": "Table 2, row H1.5-WM-0.03, Re_h = 10 595",
+      "baseline": "WW-DSM",
+      "alternative": "FEL",
+      "baseline_printed": [
+        "1.40",
+        "2.72"
+      ],
+      "alternative_printed": [
+        "0.58",
+        "3.89"
+      ],
+      "references": {
+        "own wall-resolved LES (H1.5-WR)": [
+          "0.45",
+          "3.89"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.03h",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not reported"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity",
+      "note": ""
+    },
+    {
+      "id": "P25-H1.5-10595-0.06",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025); identical in arXiv v1",
+      "source_location": "Table 2, row H1.5-WM-0.06, Re_h = 10 595",
+      "baseline": "WW-DSM",
+      "alternative": "FEL",
+      "baseline_printed": null,
+      "alternative_printed": [
+        "0.66",
+        "4.60"
+      ],
+      "references": {
+        "own wall-resolved LES (H1.5-WR)": [
+          "0.45",
+          "3.89"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.06h",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not reported"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity",
+      "note": "The table prints a dash for a run: no separation bubble, so no crossing error. Training case for the FEL model."
+    },
+    {
+      "id": "P25-H1.5-10595-0.09",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025); identical in arXiv v1",
+      "source_location": "Table 2, row H1.5-WM-0.09, Re_h = 10 595",
+      "baseline": "WW-DSM",
+      "alternative": "FEL",
+      "baseline_printed": null,
+      "alternative_printed": [
+        "0.86",
+        "3.93"
+      ],
+      "references": {
+        "own wall-resolved LES (H1.5-WR)": [
+          "0.45",
+          "3.89"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.09h",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not reported"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity",
+      "note": "The table prints a dash for a run: no separation bubble, so no crossing error. "
+    },
+    {
+      "id": "P25-H1.0-37000-0.01",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025); identical in arXiv v1",
+      "source_location": "Table 2, row H1.0-WM-0.01, Re_h = 37 000",
+      "baseline": "WW-DSM",
+      "alternative": "FEL",
+      "baseline_printed": [
+        "0.57",
+        "2.78"
+      ],
+      "alternative_printed": [
+        "0.30",
+        "4.21"
+      ],
+      "references": {
+        "own wall-resolved LES (H1.0-WR)": [
+          "0.29",
+          "4.01"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.01h",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not reported"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity",
+      "note": ""
+    },
+    {
+      "id": "P25-H1.0-37000-0.03",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025); identical in arXiv v1",
+      "source_location": "Table 2, row H1.0-WM-0.03, Re_h = 37 000",
+      "baseline": "WW-DSM",
+      "alternative": "FEL",
+      "baseline_printed": [
+        "1.06",
+        "2.06"
+      ],
+      "alternative_printed": [
+        "0.30",
+        "4.50"
+      ],
+      "references": {
+        "own wall-resolved LES (H1.0-WR)": [
+          "0.29",
+          "4.01"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.03h",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not reported"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity",
+      "note": ""
+    },
+    {
+      "id": "P25-H1.0-37000-0.06",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025); identical in arXiv v1",
+      "source_location": "Table 2, row H1.0-WM-0.06, Re_h = 37 000",
+      "baseline": "WW-DSM",
+      "alternative": "FEL",
+      "baseline_printed": null,
+      "alternative_printed": [
+        "0.37",
+        "5.38"
+      ],
+      "references": {
+        "own wall-resolved LES (H1.0-WR)": [
+          "0.29",
+          "4.01"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.06h",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not reported"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity",
+      "note": "The table prints a dash for a run: no separation bubble, so no crossing error. "
+    },
+    {
+      "id": "P25-H1.0-37000-0.09",
+      "study_id": "P25",
+      "edition": "J. Fluid Mech. 1002, A3 (2025); identical in arXiv v1",
+      "source_location": "Table 2, row H1.0-WM-0.09, Re_h = 37 000",
+      "baseline": "WW-DSM",
+      "alternative": "FEL",
+      "baseline_printed": null,
+      "alternative_printed": [
+        "0.54",
+        "4.18"
+      ],
+      "references": {
+        "own wall-resolved LES (H1.0-WR)": [
+          "0.29",
+          "4.01"
+        ]
+      },
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same mesh, first-cell height 0.09h",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not reported"
+      },
+      "intervention": "wall stress and first off-wall eddy viscosity",
+      "note": "The table prints a dash for a run: no separation bubble, so no crossing error. "
+    }
+  ],
+  "other_tabulated": [
+    {
+      "id": "N364-no explicit SGS-linear",
+      "study_id": "N364",
+      "edition": "arXiv:1810.05213v2 (journal: Comput. Fluids, DOI 10.1016/j.compfluid.2019.03.025, table not inspected)",
+      "source_location": "Tables 1-2, pp. 11, 13",
+      "baseline": "no wall model",
+      "alternative": "Spalding's law, fourth cell",
+      "controls": {
+        "status": "not all reported",
+        "mesh": "n/delta = 28 in both",
+        "closure": "no explicit SGS, linear scheme in both",
+        "forcing": "fixed bulk flow",
+        "averaging": "not compared between the two runs"
+      },
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "-6.15",
+          "baseline": "-53.36"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "6.03",
+          "baseline": "2.38"
+        }
+      }
+    },
+    {
+      "id": "N364-no explicit SGS-LUST",
+      "study_id": "N364",
+      "edition": "arXiv:1810.05213v2 (journal: Comput. Fluids, DOI 10.1016/j.compfluid.2019.03.025, table not inspected)",
+      "source_location": "Tables 1-2, pp. 11, 13",
+      "baseline": "no wall model",
+      "alternative": "Spalding's law, fourth cell",
+      "controls": {
+        "status": "not all reported",
+        "mesh": "n/delta = 28 in both",
+        "closure": "no explicit SGS, LUST scheme in both",
+        "forcing": "fixed bulk flow",
+        "averaging": "not compared between the two runs"
+      },
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "0.20",
+          "baseline": "-56.73"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "0.70",
+          "baseline": "5.16"
+        }
+      }
+    },
+    {
+      "id": "N364-WALE-linear",
+      "study_id": "N364",
+      "edition": "arXiv:1810.05213v2 (journal: Comput. Fluids, DOI 10.1016/j.compfluid.2019.03.025, table not inspected)",
+      "source_location": "Tables 1-2, pp. 11, 13",
+      "baseline": "no wall model",
+      "alternative": "Spalding's law, fourth cell",
+      "controls": {
+        "status": "not all reported",
+        "mesh": "n/delta = 28 in both",
+        "closure": "WALE, linear scheme in both",
+        "forcing": "fixed bulk flow",
+        "averaging": "not compared between the two runs"
+      },
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "-4.28",
+          "baseline": "-5.56"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "3.08",
+          "baseline": "2.98"
+        }
+      }
+    },
+    {
+      "id": "N364-WALE-LUST",
+      "study_id": "N364",
+      "edition": "arXiv:1810.05213v2 (journal: Comput. Fluids, DOI 10.1016/j.compfluid.2019.03.025, table not inspected)",
+      "source_location": "Tables 1-2, pp. 11, 13",
+      "baseline": "no wall model",
+      "alternative": "Spalding's law, fourth cell",
+      "controls": {
+        "status": "not all reported",
+        "mesh": "n/delta = 28 in both",
+        "closure": "WALE, LUST scheme in both",
+        "forcing": "fixed bulk flow",
+        "averaging": "not compared between the two runs"
+      },
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "0.38",
+          "baseline": "-11.75"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "0.58",
+          "baseline": "1.19"
+        }
+      }
+    },
+    {
+      "id": "N364-Smagorinsky-linear",
+      "study_id": "N364",
+      "edition": "arXiv:1810.05213v2 (journal: Comput. Fluids, DOI 10.1016/j.compfluid.2019.03.025, table not inspected)",
+      "source_location": "Tables 1-2, pp. 11, 13",
+      "baseline": "no wall model",
+      "alternative": "Spalding's law, fourth cell",
+      "controls": {
+        "status": "not all reported",
+        "mesh": "n/delta = 28 in both",
+        "closure": "Smagorinsky, linear scheme in both",
+        "forcing": "fixed bulk flow",
+        "averaging": "not compared between the two runs"
+      },
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "-1.80",
+          "baseline": "-5.13"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "1.16",
+          "baseline": "0.83"
+        }
+      }
+    },
+    {
+      "id": "N364-Smagorinsky-LUST",
+      "study_id": "N364",
+      "edition": "arXiv:1810.05213v2 (journal: Comput. Fluids, DOI 10.1016/j.compfluid.2019.03.025, table not inspected)",
+      "source_location": "Tables 1-2, pp. 11, 13",
+      "baseline": "no wall model",
+      "alternative": "Spalding's law, fourth cell",
+      "controls": {
+        "status": "not all reported",
+        "mesh": "n/delta = 28 in both",
+        "closure": "Smagorinsky, LUST scheme in both",
+        "forcing": "fixed bulk flow",
+        "averaging": "not compared between the two runs"
+      },
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "-0.00",
+          "baseline": "-6.06"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "0.70",
+          "baseline": "0.95"
+        }
+      }
+    },
+    {
+      "id": "N364-dynamic k-equation-linear",
+      "study_id": "N364",
+      "edition": "arXiv:1810.05213v2 (journal: Comput. Fluids, DOI 10.1016/j.compfluid.2019.03.025, table not inspected)",
+      "source_location": "Tables 1-2, pp. 11, 13",
+      "baseline": "no wall model",
+      "alternative": "Spalding's law, fourth cell",
+      "controls": {
+        "status": "not all reported",
+        "mesh": "n/delta = 28 in both",
+        "closure": "dynamic k-equation, linear scheme in both",
+        "forcing": "fixed bulk flow",
+        "averaging": "not compared between the two runs"
+      },
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "-1.60",
+          "baseline": "-6.77"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "1.01",
+          "baseline": "0.58"
+        }
+      }
+    },
+    {
+      "id": "N364-dynamic k-equation-LUST",
+      "study_id": "N364",
+      "edition": "arXiv:1810.05213v2 (journal: Comput. Fluids, DOI 10.1016/j.compfluid.2019.03.025, table not inspected)",
+      "source_location": "Tables 1-2, pp. 11, 13",
+      "baseline": "no wall model",
+      "alternative": "Spalding's law, fourth cell",
+      "controls": {
+        "status": "not all reported",
+        "mesh": "n/delta = 28 in both",
+        "closure": "dynamic k-equation, LUST scheme in both",
+        "forcing": "fixed bulk flow",
+        "averaging": "not compared between the two runs"
+      },
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "0.43",
+          "baseline": "-12.62"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "0.76",
+          "baseline": "1.56"
+        }
+      }
+    },
+    {
+      "id": "N626-law-to-4",
+      "study_id": "N626",
+      "edition": "Data-Centric Engineering 4, e7 (2023), version of record",
+      "source_location": "Table 5, p. e7-22",
+      "baseline": "law",
+      "alternative": "n4",
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not compared"
+      },
+      "outputs": {
+        "integral of squared stress-magnitude error": {
+          "alternative": "0.067",
+          "baseline": "0.806"
+        },
+        "integral of squared streamwise-stress error": {
+          "alternative": "0.308",
+          "baseline": "0.686"
+        }
+      }
+    },
+    {
+      "id": "N626-4-to-5",
+      "study_id": "N626",
+      "edition": "Data-Centric Engineering 4, e7 (2023), version of record",
+      "source_location": "Table 5, p. e7-22",
+      "baseline": "n4",
+      "alternative": "n5",
+      "controls": {
+        "status": "not all reported",
+        "mesh": "same",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "not compared"
+      },
+      "outputs": {
+        "integral of squared stress-magnitude error": {
+          "alternative": "0.066",
+          "baseline": "0.067"
+        },
+        "integral of squared streamwise-stress error": {
+          "alternative": "0.367",
+          "baseline": "0.308"
+        }
+      }
+    },
+    {
+      "id": "MukhaBensow-hex-15-to-30",
+      "study_id": "worked example (not in the 115)",
+      "edition": "Comput. Fluids 221, 104885 (2021), Chalmers repository copy of the published article",
+      "source_location": "Table 4",
+      "baseline": "hexahedral d = delta/15",
+      "alternative": "hexahedral d = delta/30",
+      "controls": {
+        "status": "differ",
+        "mesh": "refined: the physical sampling height moves",
+        "closure": "same",
+        "forcing": "fixed bulk velocity",
+        "averaging": "not compared"
+      },
+      "outputs": {
+        "friction Reynolds number error (%)": {
+          "alternative": "−1.66",
+          "baseline": "0.24"
+        }
+      },
+      "note": "Grid and sampling height change together by design; the manuscript says so."
+    },
+    {
+      "id": "Mukha2025-M1",
+      "study_id": "N556",
+      "edition": "Phys. Fluids 37, 105158 (2025), publisher HTML",
+      "source_location": "Table VII",
+      "baseline": "wall law in the coupled run",
+      "alternative": "same law applied offline to the run mean velocity",
+      "controls": {
+        "status": "documented equal",
+        "mesh": "same run",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "same run"
+      },
+      "outputs": {
+        "mean wall-stress error (%)": {
+          "alternative": "0.06",
+          "baseline": "0.71"
+        }
+      },
+      "note": "Two-decimal values as stored from the publisher table; Table III prints different coupled values for the same cases."
+    },
+    {
+      "id": "Mukha2025-M2",
+      "study_id": "N556",
+      "edition": "Phys. Fluids 37, 105158 (2025), publisher HTML",
+      "source_location": "Table VII",
+      "baseline": "wall law in the coupled run",
+      "alternative": "same law applied offline to the run mean velocity",
+      "controls": {
+        "status": "documented equal",
+        "mesh": "same run",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "same run"
+      },
+      "outputs": {
+        "mean wall-stress error (%)": {
+          "alternative": "0.20",
+          "baseline": "0.76"
+        }
+      },
+      "note": "Two-decimal values as stored from the publisher table; Table III prints different coupled values for the same cases."
+    },
+    {
+      "id": "Mukha2025-M3",
+      "study_id": "N556",
+      "edition": "Phys. Fluids 37, 105158 (2025), publisher HTML",
+      "source_location": "Table VII",
+      "baseline": "wall law in the coupled run",
+      "alternative": "same law applied offline to the run mean velocity",
+      "controls": {
+        "status": "documented equal",
+        "mesh": "same run",
+        "closure": "same",
+        "forcing": "same",
+        "averaging": "same run"
+      },
+      "outputs": {
+        "mean wall-stress error (%)": {
+          "alternative": "-1.07",
+          "baseline": "-0.54"
+        }
+      },
+      "note": "Two-decimal values as stored from the publisher table; Table III prints different coupled values for the same cases."
+    }
+  ],
+  "rule_fixed": {
+    "fixed_at": "2026-11-19T08:42:05Z",
+    "sha256_of_fixed_file": "dfad0bfec7b95f1e6b3329eebb6fd81e13a37ec13ec0c1aa9d864870501a28ac",
+    "wording_removed_here": 2,
+    "note": "The text stored here is the fixed file with internal file and role names removed. Nothing else differs."
+  }
+}

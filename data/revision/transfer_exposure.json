@@ -4,17 +4,20 @@
     {
       "design_id": "P22-D02",
       "status": "qualified",
-      "basis": "Fixed pre-specified estimators: training and model-size selection use Re 5600/10595; test Re 19000. Choosing the preferred output head on 19000 is target-exposed."
+      "basis": "Fixed pre-specified estimators: training and model-size selection use Re 5600/10595; test Re 19000. Choosing the preferred output head on 19000 is target-exposed.",
+      "second_reading_status": "partly exposed"
     },
     {
       "design_id": "N623-D03",
       "status": "qualified",
-      "basis": "Supplied frozen BK22 weights; analytic log-law target at Reτ=10^10 beyond the original test range. This does not assess a resolved high-Re flow."
+      "basis": "Supplied frozen BK22 weights; analytic log-law target at Reτ=10^10 beyond the original test range. This does not assess a resolved high-Re flow.",
+      "second_reading_status": "selection unresolved"
     },
     {
       "design_id": "N626-channel-2000",
       "status": "qualified",
-      "basis": "Table 3 labels 2000 as coupled test only. Network depth selection in Appendix A used other named cases."
+      "basis": "Table 3 labels 2000 as coupled test only. Network depth selection in Appendix A used other named cases.",
+      "second_reading_status": "selection unresolved"
     },
     {
       "design_id": "N011-D02",
@@ -86,5 +89,6 @@
       "status": "partly exposed",
       "basis": "BFS, APG and cascade were withheld from weight fitting but Appendix A uses them to justify the hyperparameter N."
     }
-  ]
+  ],
+  "reader_agreement": "A second reading labelled none of the three \"qualified\" tests as qualified (see reader_agreement.json). The facts recorded agree; the label depends on how strictly documented withholding is required. Between zero and three tests qualify. The count is not quoted."
 }

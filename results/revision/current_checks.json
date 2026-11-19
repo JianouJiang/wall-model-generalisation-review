@@ -2,8 +2,8 @@
   "status": "PASS",
   "edition": "Review with finite-sample source reassessment and edition-specific comparisons",
   "pdf_pages": 15,
-  "pdf_sha256": "a96c557000146c3ee352af03dfe691c336bd2bc347a0c55edf0c7c5e28455f83",
-  "citations_with_support_record": 52,
+  "pdf_sha256": "c652ebff85cce87eea17cd36370591d26c64cb385df96544622a739de95758c3",
+  "citations_with_support_record": 53,
   "caption_word_counts": [
     121,
     70,
@@ -51,5 +51,37 @@
   "scientific_limit": "Pass checks consistency and specified support. It does not certify an exhaustive corpus or predictive checklist validity.",
   "archived_source_dispositions": 115,
   "historical_pairs_reassessed": 79,
-  "source_located_design_series": 228
+  "source_located_design_series": 228,
+  "direction_and_agreement_checks": {
+    "hill_classes": {
+      "controls differ": 1,
+      "resolved concordant": 5,
+      "resolved opposing": 1,
+      "unrankable": 1,
+      "unresolved": 1
+    },
+    "same_table_other_rows": {
+      "resolved concordant": 7,
+      "unrankable": 4,
+      "unresolved": 1
+    },
+    "channel_pairs_resolved": 8,
+    "bump_velocity_reversal_height": [
+      0.01557018,
+      0.01609649
+    ],
+    "kappa_range_reproducible_groups": [
+      0.8928571428571428,
+      0.9440993788819876
+    ],
+    "pairs_read_twice": 34,
+    "pair_categories": {
+      "shared_runs_no_treatment_baseline": 3,
+      "matched_no_opposing_rank": 16,
+      "different_tests": 55,
+      "matched_support_dependent": 3,
+      "matched_opposing_same_support": 1,
+      "opposing_point_estimates_on_restricted_support": 1
+    }
+  }
 }

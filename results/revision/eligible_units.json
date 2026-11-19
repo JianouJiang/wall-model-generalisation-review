@@ -4810,5 +4810,33 @@
         ]
       }
     }
+  },
+  "second_reading": {
+    "scope": "Agreement measures how reproducibly the labels are assigned inside the 115-work collection. It says nothing about whether the collection represents the literature.",
+    "status_by_type": {
+      "constitutive_constraint": "not quotable until repaired and re-read",
+      "prescribed_input": "quotable",
+      "coupled_wmles": "quotable",
+      "rans_comparison": "quotable",
+      "system_benchmark": "quotable",
+      "thermal": "quotable",
+      "controlled_wall_change": "not quotable until repaired and re-read",
+      "independent_transfer": "not assessable from this sample"
+    },
+    "use": "Counts for a type whose status is not quotable are first-reading counts. Do not quote them. Series counts depend on how finely a paper is split and are not reproducible between readings; quote works.",
+    "design_counts_among_36_works_read_twice": {
+      "first": 71,
+      "second": 179
+    }
+  },
+  "historical_pair_categories": {
+    "different_tests": 55,
+    "no_shared_baseline": 0,
+    "shared_runs_no_treatment_baseline": 3,
+    "matched_no_common_reference": 0,
+    "matched_no_opposing_rank": 16,
+    "matched_support_dependent": 3,
+    "opposing_point_estimates_on_restricted_support": 1,
+    "matched_opposing_same_support": 1
   }
 }

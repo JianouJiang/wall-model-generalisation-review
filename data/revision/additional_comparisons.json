@@ -468,7 +468,12 @@
       "inference": "Nominal opposition in the two integral measures for a depth change. The one-unit last-digit gain has no joint physical/numerical uncertainty bound. Algebraic→four improves both measures and improves nominal reattachment.",
       "precision_and_uncertainty": "Source table values retain their displayed precision. No coverage interval for the paired discrepancies follows from the decimal places.",
       "comparison_scope": "source-found comparison; see matching and support in identity/controls",
-      "source_question": "How well does the graph wall-stress model reproduce prescribed-input labels and coupled channel, step and compressor-cascade observables?"
+      "source_question": "How well does the graph wall-stress model reproduce prescribed-input labels and coupled channel, step and compressor-cascade observables?",
+      "second_reading": {
+        "category": "matched_no_opposing_rank",
+        "matched_detail": "one_direction_unresolved",
+        "note": "The magnitude integral 0.067 to 0.066 lies inside the rounding interval; the streamwise integral 0.308 to 0.367 is resolved farther."
+      }
     },
     {
       "pair_id": "N626-extra-blade-region",
@@ -572,7 +577,12 @@
       "inference": "A component tradeoff of the coupled stress vector, under the fixed early transient. The transient sign of an individual component versus its own past is not the paired ranking.",
       "precision_and_uncertainty": "Publisher assets xrefs 1543,1544, 304×233 and 305×230: t*=0→1 at columns 5→301 and 6→302, respectively. Vertical ordinate rows 227→2 span 0→.7 in (a), .95→1.15 in (b). Separately interpolate bracketing black open squares and blue circle centres, red DNS at t*=.2. Allow about .005 in (a), .002 in (b) for plot reading; joint physical uncertainty unavailable.",
       "comparison_scope": "source-found comparison; see matching and support in identity/controls",
-      "source_question": "How does the channel respond to sudden lateral forcing, and how do wall treatments represent the transient components?"
+      "source_question": "How does the channel respond to sudden lateral forcing, and how do wall treatments represent the transient components?",
+      "second_reading": {
+        "category": "matched_opposing_same_support",
+        "basis_streamwise": "At t* ~ 0.2 (plot readings, half-width 0.003): DNS ~0.983, EQWM ~1.012, NEQWM ~1.041; box min D = (1.038-0.986) - (1.015-0.980) = +0.017 > 0 -> farther. Whole transient, source p. 29: 'The EQWM and the IWM predict the wall-stress throughout the transient within 5% and 2% error ... The NEQWM ... with deviations from the DNS up to 7%' -> farther in max error. Over time: NEQWM farther for t* < ~0.65, curves cross ~0.65-0.72, NEQWM closer for t* > ~0.75 (t* ~ 0.96: DNS ~1.072, EQWM ~1.115, NEQWM ~1.097)",
+        "basis_spanwise": "At t* ~ 0.2 (plot readings, half-width 0.01): DNS ~0.185, NEQWM ~0.187, EQWM ~0.105; box max D = 0.022 - 0.060 = -0.038 < 0 -> closer. Holds at every plotted time; source: NEQWM 'fairly accurate prediction of <tau3> throughout the transient', EQWM '50% to 25% under-prediction'; t* ~ 1 errors ~2% vs 10%"
+      }
     },
     {
       "pair_id": "P19-new-CRM7",
@@ -678,7 +688,13 @@
       "source_url": "https://www.aimsciences.org/data/article/export-pdf?id=6578251d4aaea52710702d59",
       "identity": "Reichardt → Musker at fixed MRT collision and Vreman SGS at each of y+=12.5,25,50",
       "source_location": "§4.2 Table 4, Table 5",
-      "inference": "At y+=25 relative L2 of mean U increases .01400→.01553, whereas shear stress error decreases .3592→.3351. At 50, mean U improves .04129→.03731 and shear worsens .5353→.5511. Errors are relative to the same DNS. Single solver and channel."
+      "inference": "At y+=25 relative L2 of mean U increases .01400→.01553, whereas shear stress error decreases .3592→.3351. At 50, mean U improves .04129→.03731 and shear worsens .5353→.5511. Errors are relative to the same DNS. Single solver and channel.",
+      "second_reading": "Table 5 gives friction-velocity errors for the same runs: Reichardt to Musker 1.53 % to 5.66 % at y+ = 50, 5.34 % to 0.55 % at 25 and 18.89 % to 11.23 % at 12.5. With Table 4 (relative L2 of mean velocity 0.04129 to 0.03731, 0.01400 to 0.01553, 0.03120 to 0.02014), friction velocity and mean velocity move oppositely at y+ = 50 and 25 and together at 12.5. The first reading used the Reynolds shear-stress column of Table 4 (0.5353 to 0.5511, 0.3592 to 0.3351, 0.1726 to 0.1738). Inner scaling couples the two outputs through the friction velocity.",
+      "second_reading_categories": {
+        "12.5": "matched_no_opposing_rank",
+        "25": "matched_opposing_same_support",
+        "50": "matched_opposing_same_support"
+      }
     },
     {
       "pair_id": "N457-reference-choice",

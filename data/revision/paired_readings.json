@@ -53,7 +53,42 @@
       "comparison_scope": "one-system comparison",
       "source_question": "How do numerics, exchange height, mesh and ODE choices affect predicted flow in the channel and step?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "shared_runs_no_treatment_baseline",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "shared_runs_no_treatment_baseline",
+          "matched_detail": null,
+          "basis": "one selected n/delta=30 run carries both outputs"
+        },
+        "second": {
+          "category": "shared_runs_no_treatment_baseline",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "arXiv:1807.11786v1 [physics.flu-dyn], 31 Jul 2018 (preprint, 32 pp.)",
+          "passages_used": [
+            "Mean velocity: sec. 6.2 Fig. 12 (x/H=-1.05, PDF p.22), Fig. 14 (shear layer/recirculation, p.23), Fig. 15 (recovery, p.23); sec. 6.3 Fig. 20 (8-run campaign, p.28)",
+            "rms and Reynolds shear: sec. 6.2 Fig. 12 (x/H=-1.05, p.22) and Fig. 16 (x/H=13.16, 15.13, 20.29, p.24)"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "The only runs shared with output 2 are one run (sec. 6.2); there is no second wall treatment on those figures. p.22: 'The agreement with the reference experimental data is very good at all five stations' (absolute agreement, no contrast).",
+          "direction_output_2": "unresolved",
+          "basis_2": "Single run only. p.24: 'The agreement between the WMLES and the reference is overall acceptable, in particular for urms. The WMLES values of vrms and <u'v'> away from the wall are, however, lower than the corresponding experimental values.' Absolute statement, no baseline.",
+          "confidence": "high",
+          "what_would_change_it": "An rms/Reynolds-stress figure for the sec. 6.3 h=1st/h=2nd (or ODE-model) runs, e.g. in the journal (CPC 2019) version or supplementary material, would create a run pair."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "shared_runs_no_treatment_baseline",
+          "matched_detail": null,
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "N195-02",
@@ -107,7 +142,47 @@
       "comparison_scope": "conditional, common subset",
       "source_question": "How do numerics, exchange height, mesh and ODE choices affect predicted flow in the channel and step?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "matched_no_opposing_rank",
+      "matched_detail": "one_direction_unresolved",
+      "intervention_type": "grid",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "concordant",
+          "basis": "n/delta 15 to 20 at fixed scheme and sampling; profiles and Cf zero both closer"
+        },
+        "second": {
+          "category": "opposing_point_estimates_on_restricted_support",
+          "matched_detail": null,
+          "intervention_type": "near-wall implementation or sampling",
+          "run_pair": {
+            "baseline": "n/delta=20, LUST, h=1st (wall-adjacent-cell sampling, downstream wall)",
+            "alternative": "n/delta=20, LUST, h=2nd (second off-wall cell sampling)",
+            "what_differs": "wall-model sampling height h on the downstream wall",
+            "also_changes": "nothing else stated: same grid, scheme, Spalding law, domain and averaging (8 Tft + ~45 Tft). Other shared h-pairs: n/delta=20 linear (x_r closer on both methods; mean velocity curves overlap -> unresolved); n/delta=15 LUST (x_r method-dependent -> unresolved); n/delta=15 linear (x_r cf=0 tie -> unresolved)."
+          },
+          "edition_seen": "arXiv:1807.11786v1 [physics.flu-dyn], 31 Jul 2018 (preprint, 32 pp.)",
+          "passages_used": [
+            "Mean velocity: sec. 6.3 Fig. 20 (inner-scaled <u>+ at x/H=13.16, 15.13, 20.29, PDF p.28) with text p.27; Figs 12, 14, 15 (pp.22-23) are the single n/delta=30 run only",
+            "x_r: sec. 6.3 Table 4 (p.27, cf=0 and P(u<0)=0.5 columns), text pp.26-27; Figs 18-19 (pp.26-27); n/delta=30 run x_r/H~5.55 (p.22)"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "Fig. 20 (p.28): gold dashed-square (LUST,h=1st,20) lies ~3 units of <u>+ above the data across y+~100-600 at all three stations, while green dashed-square (LUST,h=2nd,20) follows the data there (h=2nd closer on log region); in the outer region y+>1500 gold is near the data (~30 vs ~30-31) and green is ~3 units low (~27, ~27, ~26) (h=2nd farther); near the wall green's first point is low (~10.5 vs ~12.5 at x/H=13.16). Sign depends on height. Text p.27: LUST h=1st under-predicts cf, 'also reflected in the inner-scaled mean velocity profiles ... see the dashed golden and brown lines' (implies h=1st worse in the log-region shift only).",
+          "direction_output_2": "closer",
+          "basis_2": "Table 4 digits (pdftotext -layout): cf=0: b=4.54, a=4.56; P(u<0)=0.5: b=4.66, a=4.68; r=6.8. Box with h=0.005 (a,b) and 0.05 (r=6.8 printed to one decimal): |a-r|-|b-r| = -0.02 nominal; max D = -0.02+0.01 = -0.01 < 0 for both methods (r cancels since both below r) -> resolved closer for both methods.",
+          "confidence": "medium",
+          "what_would_change_it": "Choosing a different shared run pair moves the leaf: n/delta=20 linear h-pair gives matched_no_opposing_rank/one_direction_unresolved; grid pair LUST 15->20 gives concordant closer (text p.27 'employing a denser grid results in better agreement'; x_r 4.43->4.54, 4.55->4.66). Reading the paper's p.27 sentence as a complete-support statement that h=1st LUST profiles are worse would make velocity 'closer' and the leaf concordant/support-dependent."
+        },
+        "categories_agree": false,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "cause_of_disagreement": "rule ambiguity",
+          "reason": "Two run pairs carry both outputs (arXiv:1807.11786v1, Table 4 p. 27 and Fig. 20 p. 28). Grid 15 to 20 cells per delta at fixed scheme and sampling: both closer (x_r 4.43 to 4.54 and 4.41 to 4.56 against 6.8). First to second sampling cell at 20 cells, LUST: x_r 4.54 to 4.56 (closer by 0.02, resolved by digits); velocity closer in the log region by the source text (p. 27), with an outer-layer reversal seen only by plot reading, not measured. The historical question did not say which pair. Neither pair has an opposing direction on complete support."
+        }
+      }
     },
     {
       "pair_id": "N195-03",
@@ -161,7 +236,20 @@
       "comparison_scope": "no common run pair",
       "source_question": "How do numerics, exchange height, mesh and ODE choices affect predicted flow in the channel and step?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "no common run pair"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N239-01",
@@ -215,7 +303,20 @@
       "comparison_scope": "different case",
       "source_question": "How does a learned immersed-boundary treatment perform on body-of-revolution and submarine-hull flows as resolution and Reynolds number change?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N339-01",
@@ -269,7 +370,20 @@
       "comparison_scope": "different case",
       "source_question": "Can the virtual-node lattice-Boltzmann RANS boundary treatment predict aerodynamic loads and boundary-layer profiles across airfoil configurations and grids?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N339-02",
@@ -323,7 +437,20 @@
       "comparison_scope": "different case",
       "source_question": "Can the virtual-node lattice-Boltzmann RANS boundary treatment predict aerodynamic loads and boundary-layer profiles across airfoil configurations and grids?",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity"
+      "historical_observable_contrast": "same quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N339-03",
@@ -377,7 +504,42 @@
       "comparison_scope": "different case",
       "source_question": "Can the virtual-node lattice-Boltzmann RANS boundary treatment predict aerodynamic loads and boundary-layer profiles across airfoil configurations and grids?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "Author's peer-reviewed accepted manuscript, Physics of Fluids, 'PLEASE CITE THIS ARTICLE AS DOI: 10.1063/5.0306421' (PDF created 23 Jan 2026). Fig. 5 ends on PDF p. 22, Fig. 7 on p. 24, Fig. 17 on p. 38-39.",
+          "passages_used": [
+            "Output 1: section 3.1.2, Fig. 5(a), NACA 0012 Cp at alpha = 0 deg, PDF p. 20-22; grid series Fig. 7(a), PDF p. 24",
+            "Output 2: section 3.2.2, Fig. 17(b,d,f) and text, MD-30P30N at alpha = 8.10 deg, PDF p. 37-39"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "No wall-treatment contrast in the located passage: one LBM treatment vs references; 'the pressure distribution predicted by the LBM approach is in good overall agreement with the reference RANS solutions' (p. 20). Fig. 7: 'increasing the grid resolution consistently reduces the discrepancies' (p. 24), a grid contrast for NACA only.",
+          "direction_output_2": "unresolved",
+          "basis_2": "'while the RANS simulation captures a small separation at the flap trailing edge, this feature is absent in the LBM predictions, likely due to the limitations of the equilibrium wall model employed' (p. 37). Fig. 17(f): LBM Cf stays positive at the flap TE where Fluent dips; this is LBM vs a reference, not an alternative vs a baseline on a shared case.",
+          "confidence": "high",
+          "what_would_change_it": "Nothing in this edition: the MD-30P30N grid study (Fig. 19, Table 5) and the NACA grid study (Fig. 7) are separate run sets. The only same-case wall-treatment contrast in the paper is VN vs Nishimura on NACA 0012 at 0 deg (Figs. 11-13, PDF p. 30-32), which reports Cp and Cf but is not the nominated pair."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "N339-04",
@@ -431,7 +593,20 @@
       "comparison_scope": "different case",
       "source_question": "Can the virtual-node lattice-Boltzmann RANS boundary treatment predict aerodynamic loads and boundary-layer profiles across airfoil configurations and grids?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N339-05",
@@ -485,7 +660,20 @@
       "comparison_scope": "different case",
       "source_question": "Can the virtual-node lattice-Boltzmann RANS boundary treatment predict aerodynamic loads and boundary-layer profiles across airfoil configurations and grids?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N339-06",
@@ -539,7 +727,20 @@
       "comparison_scope": "different case",
       "source_question": "Can the virtual-node lattice-Boltzmann RANS boundary treatment predict aerodynamic loads and boundary-layer profiles across airfoil configurations and grids?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N339-07",
@@ -593,7 +794,20 @@
       "comparison_scope": "different case",
       "source_question": "Can the virtual-node lattice-Boltzmann RANS boundary treatment predict aerodynamic loads and boundary-layer profiles across airfoil configurations and grids?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N339-08",
@@ -647,7 +861,20 @@
       "comparison_scope": "different case",
       "source_question": "Can the virtual-node lattice-Boltzmann RANS boundary treatment predict aerodynamic loads and boundary-layer profiles across airfoil configurations and grids?",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity"
+      "historical_observable_contrast": "same quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N339-09",
@@ -701,7 +928,42 @@
       "comparison_scope": "different case",
       "source_question": "Can the virtual-node lattice-Boltzmann RANS boundary treatment predict aerodynamic loads and boundary-layer profiles across airfoil configurations and grids?",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity"
+      "historical_observable_contrast": "same quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "Author's peer-reviewed accepted manuscript, Physics of Fluids, DOI 10.1063/5.0306421 (PDF created 23 Jan 2026). Fig. 5 on PDF p. 21-22, Fig. 7 on p. 24, Fig. 18 on p. 39-40.",
+          "passages_used": [
+            "Output 1: section 3.1.2, Fig. 5(b), NACA 0012 Cf at alpha = 0 deg, PDF p. 20-22; Fig. 7(b) grid series, PDF p. 24",
+            "Output 2: section 3.2.2, Fig. 18(b), slat Cf, MD-30P30N alpha = 16.21 deg, PDF p. 37, 39"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "Single LBM treatment vs references: 'reasonably good agreement, particularly in the aft region of the airfoil (x/c > 0.45)' (p. 20). Fig. 7(b): Cf insensitive to grid except near the leading edge, where 'discrepancies ... (x/c < 0.2) increase with grid refinement' (p. 24) - a grid contrast on NACA only.",
+          "direction_output_2": "unresolved",
+          "basis_2": "'The largest discrepancy arises in the skin-friction distribution over the slat (Figure 18(b)) ... Further downstream, closer to the slat trailing edge, the LBM-predicted skin friction converges toward the RANS solution' (p. 37). LBM vs reference only.",
+          "confidence": "high",
+          "what_would_change_it": "Nothing in this edition; the nearest same-case contrast is VN vs Nishimura on NACA 0012 at 0 deg (Fig. 12: Cp both close to reference, Nishimura Cf ~28% high at x/c = 0.5), which is not the nominated pair."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "N339-10",
@@ -755,7 +1017,20 @@
       "comparison_scope": "different case",
       "source_question": "Can the virtual-node lattice-Boltzmann RANS boundary treatment predict aerodynamic loads and boundary-layer profiles across airfoil configurations and grids?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N357-01",
@@ -809,7 +1084,47 @@
       "comparison_scope": "common subset, first sign unresolved",
       "source_question": "How well does the multi-time-scale wall model reproduce unsteady forcing responses in wall stress, velocity and turbulence?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "matched_support_dependent",
+      "matched_detail": null,
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "basis": "velocity unresolved; periodic shear-stress amplitude farther at one frequency"
+        },
+        "second": {
+          "category": "opposing_point_estimates_on_restricted_support",
+          "matched_detail": null,
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "LES with classical equilibrium wall model (EQWM)",
+            "alternative": "LES with multi-time-scale (MTS) wall model",
+            "what_differs": "wall model",
+            "also_changes": "none stated: same LESGO code, Lagrangian scale-dependent dynamic SGS model, grid 128x30x48, wall-model height at third grid point, forcing; averaging window not stated as different"
+          },
+          "edition_seen": "J. Fluid Mech. (2023), vol. 974, A51, doi:10.1017/jfm.2023.585, published version (Open Access, Cambridge University Press)",
+          "passages_used": [
+            "Velocity: sec. 3 Fig. 4 (centreline, PDF p.15/A51-15), Fig. 5(a) (time mean, p.16/A51-16), Fig. 6 (periodic amplitude and phase, p.17/A51-17), text A51-15 to A51-17; Table 1 (A51-14)",
+            "Reynolds stresses: Fig. 5(b) (time mean, A51-16), Figs 11-15 (periodic, A51-21 to A51-23), text A51-20 to A51-21 incl. Fig. 12(c)"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "A51-15: 'The MTS wall model and the EQWM give nearly identical first- and second-order statistics.' A51-16/17: 'The MTS wall model and EQWM produce similar results, with the greatest discrepancies between the two occurring in the first few grid points away from the wall.' Fig. 4 curves overlap. Restricted to the first grid point (y+~12) in Fig. 6, MTS is visibly farther from DNS at several frequencies (e.g. omega_f+=0.02 amplitude ~0.77 vs DNS ~0.85, EQWM ~0.87; phase ~3 deg vs DNS ~13, EQWM ~14; omega_f+=0.04 amplitude ~0.82 vs ~0.95) -> restricted-support direction 'farther'.",
+          "direction_output_2": "unresolved",
+          "basis_2": "Time mean (Fig. 5b): equal. Periodic (A51-20/21): 'in figure 12(c), the EQWM agrees well with the DNS, whereas the MTS wall model significantly underpredicts the amplitude ... Overall, the LES with the EQWM appear to agree with the DNS better than the MTS wall model for the u'v' and u'u' components; however, the reverse is true for the v'v' and w'w' components, where the EQWM tends to overpredict the amplitudes.' Component-dependent on complete support; restricted: u'v', u'u' farther; v'v', w'w' closer.",
+          "confidence": "medium",
+          "what_would_change_it": "If the first-grid-point velocity discrepancy were judged within line width (no source statement of direction), velocity has no resolved direction anywhere and the leaf becomes matched_support_dependent (stresses change sign under restriction) or matched_no_opposing_rank/one_direction_unresolved. If the restricted stress comparison is u'v' (Fig. 12c, MTS farther) it is concordant with velocity at the first point."
+        },
+        "categories_agree": false,
+        "settled": {
+          "category": "matched_support_dependent",
+          "matched_detail": null,
+          "cause_of_disagreement": "rule ambiguity",
+          "reason": "J. Fluid Mech. 974, A51: velocity \"nearly identical\" for the two wall models (p. A51-15); for the periodic Reynolds stresses the source states that the equilibrium model agrees better for u'v' and u'u' and the multi-time-scale model for v'v' and w'w' (pp. A51-20 to 21). The stress direction therefore depends on the component, by the source's own statement. The first reading used one component; the second added a first-grid-point velocity reading that the source does not state."
+        }
+      }
     },
     {
       "pair_id": "N357-02",
@@ -863,7 +1178,42 @@
       "comparison_scope": "different case",
       "source_question": "How well does the multi-time-scale wall model reproduce unsteady forcing responses in wall stress, velocity and turbulence?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "J. Fluid Mech. (2023), vol. 974, A51, doi:10.1017/jfm.2023.585, published version",
+          "passages_used": [
+            "Velocity: sec. 3 Figs 4-6 (A51-15 to A51-17), Table 1",
+            "Stationary-channel wall-stress PDFs: Appendix A Fig. 26(a-d) (PDF p.36/A51-36) and text A51-35/36"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "Different test from output 2; within its own test MTS vs EQWM 'produce similar results' (A51-17).",
+          "direction_output_2": "unresolved",
+          "basis_2": "No baseline in Fig. 26. Text A51-36: turbNEQ addition 'yields very realistic PDFs of the streamwise component ... but overestimates the level of variability of the spanwise wall-stress component' relative to an unshown earlier model version.",
+          "confidence": "high",
+          "what_would_change_it": "Nothing in this file; only a velocity output for the Re_tau=1000/5200 stationary runs with a baseline model would create a shared run pair."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "N357-03",
@@ -917,7 +1267,20 @@
       "comparison_scope": "different case",
       "source_question": "How well does the multi-time-scale wall model reproduce unsteady forcing responses in wall stress, velocity and turbulence?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N357-04",
@@ -971,7 +1334,42 @@
       "comparison_scope": "different case",
       "source_question": "How well does the multi-time-scale wall model reproduce unsteady forcing responses in wall stress, velocity and turbulence?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "J. Fluid Mech. (2023), vol. 974, A51, doi:10.1017/jfm.2023.585, published version",
+          "passages_used": [
+            "SSPG mean wall stress: Appendix A Fig. 28(a,b) (PDF p.38/A51-38) and text A51-36/37",
+            "Stationary-channel wall-stress PDFs: Appendix A Fig. 26(a-d) (A51-36)"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "Not ranked here because there is no shared run with output 2. For information: A51-37 'Overall, the MTS wall model agrees well with the DNS results, with improvement over the popular EQWM'; Fig. 28(a) streamwise is time-dependent (EQWM grey above, MTS lower; DNS dips).",
+          "direction_output_2": "unresolved",
+          "basis_2": "No baseline model in Fig. 26.",
+          "confidence": "high",
+          "what_would_change_it": "Nothing in this file; would need a wall-stress PDF for the SSPG runs or an SSPG-type output for the stationary runs with a baseline."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "N358-01",
@@ -1025,7 +1423,47 @@
       "comparison_scope": "same runs, common miss",
       "source_question": "How do near-wall domain-decomposition transfer conditions and viscosity profiles perform in diffuser separation and impingement compared with standard RANS wall treatments?",
       "original_nomination": true,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "matched_no_opposing_rank",
+      "matched_detail": "concordant",
+      "intervention_type": "whole system or several changes",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "concordant",
+          "basis": "recirculation recovered; net pressure drop slightly closer; outlet curvature missed by both; transverse mesh also changes"
+        },
+        "second": {
+          "category": "matched_support_dependent",
+          "matched_detail": null,
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "HRN k-epsilon with log-law scalable wall function",
+            "alternative": "k-epsilon with IBC (near-wall domain decomposition), Duprat et al. (2011) mu_t profile",
+            "what_differs": "near-wall treatment (wall function vs interface boundary condition from a 1-D boundary-layer equation)",
+            "also_changes": "mesh in wall-normal direction: log law 30 equal cells, y+ 5-25; IBC 50 cells covering 90% of height with 5% interface offset, y+ 3-70; same 398 streamwise cells; tau_w averaged per iteration only for the exponential profile. Linear and exponential IBC variants also available as alternatives (SST is a different outer closure, not the pair)."
+          },
+          "edition_seen": "Accepted author manuscript (University of Manchester Research Explorer) of Applied Mathematical Modelling 40(1) (2016) 329-342, doi:10.1016/j.apm.2015.05.011; 23 PDF pages, downloaded 17 Nov 2026",
+          "passages_used": [
+            "Cf inclined wall: sec. 7.1 Fig. 5(b) (PDF p.16, ms p.15) and text ms pp.14-16; mesh/set-up sec. 7 ms p.14",
+            "Cp: sec. 7.1 Fig. 6(a,b) (PDF p.18, ms p.17) and text ms pp.16-18 (outlet curvature and whole-diffuser pressure drop)"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "Text ms p.16: 'Figure 5b shows that the IBC method predicts a recirculation region, whereas the log law fails to ... the profile of Duprat et al. predicts the separation point to be in almost exactly the same location as the experimental data'; Fig. 5(b): log law stays positive (min ~+0.05e-3) where data are ~-0.15 to -0.27e-3 for x/H~8-15, Duprat ~-0.2e-3; Duprat reattaches at x/H~21 vs data ~29 (extent under-predicted, but log law predicts none). Duprat also closer at x/H~5 (0.15 vs log ~0.55, data 0.32) and x/H~27 (+0.15 vs log +0.25, data -0.12).",
+          "direction_output_2": "closer",
+          "basis_2": "Whole diffuser: ms p.18 'The pressure drops across the whole diffuser are slightly more accurate for all results with IBCs than for the standard log law because the results with IBCs predict tau_w more accurately'; Fig. 6 plateau Duprat ~0.79-0.80 vs log law ~0.85, data ~0.735. Outlet shape: ms p.16 'none of the k-epsilon models are able to capture the change in the curvature of CP at the diffuser outlet entrance' -> common miss (unresolved) on that restricted support. Diffuser entry x/H~1.5-3.5 (Fig. 6b): data ~0.34/0.48, log law ~0.32/0.50, Duprat ~0.27/0.42 -> Duprat farther on that restricted support (separation ~0.05, larger than line width).",
+          "confidence": "medium",
+          "what_would_change_it": "If the entry-region Cp separation is not accepted as clearly resolved (plot reading, no source statement), no restricted sign change remains and the category is matched_no_opposing_rank / concordant (both closer). If 'C_p shape near outlet' alone is taken as output 2, it is a common miss and the category is matched_no_opposing_rank / one_direction_unresolved. Choosing the exponential profile as alternative would make inclined-wall Cf support-dependent (far too negative for x/H<15)."
+        },
+        "categories_agree": false,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "concordant",
+          "cause_of_disagreement": "rule ambiguity",
+          "reason": "Appl. Math. Model. 40, 329-342 (accepted manuscript pp. 14-18): the interface condition recovers the inclined-wall recirculation and the source states that whole-diffuser pressure drops are \"slightly more accurate\"; none captures the outlet curvature. The second reader's entry-region reversal (x/H about 1 to 4, about 0.05 in Cp) is a plot reading with no recorded half-width and no source statement; it is kept as a flagged possible local reversal. The transverse mesh also differs between the two runs."
+        }
+      }
     },
     {
       "pair_id": "N364-01",
@@ -1080,7 +1518,42 @@
       "comparison_scope": "no common run pair",
       "source_question": "Which numerical settings and wall-model inputs influence channel flow predictions, and how do selected settings perform as Reynolds number changes?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "no common run pair"
+        },
+        "second": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "arXiv:1810.05213v2 [physics.flu-dyn], 29 Mar 2019 (accepted manuscript of Computers & Fluids, DOI 10.1016/j.compfluid.2019.03.025), 40 pp.",
+          "passages_used": [
+            "Output 1: Sec. 5.7 and Table 3, PDF p. 31 (errors in <u_tau> for Re_tau = 2000, 5200, 8000, 20000, 100000) plus the text rerun at Re_tau = 1e5 with kappa=0.392, B=4.07 (p. 31)",
+            "Output 2: Sec. 4.2/Eq. (10)-(12) p. 10; Sec. 5.1 Tables 1-2 (no wall model vs Spalding WM, n/delta=28, h/delta=0.125) pp. 12-13; Sec. 5.3 Fig. 11 (error vs sampling height h/delta, n/delta=15 and 25) pp. 20-21; all at Re_tau = 5200"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "No shared run pair with output 2. Within its own contrast at Re_tau=1e5 only: [<u_tau>] -1.74 % (kappa=0.395,B=4.8) -> -0.24 % (kappa=0.392,B=4.07), closer, but this contrast is at Re_tau=1e5, not 5200.",
+          "direction_output_2": "unresolved",
+          "basis_2": "Output 2 is reported only for Re_tau=5200 runs at n/delta=28 (no-WM vs WM) or the h sweep (Fig. 11); none of these is the Table 3 Re-sweep or the Re_tau=1e5 kappa/B pair.",
+          "confidence": "medium",
+          "what_would_change_it": "If output 2 were read as the eps_inf[<u>] column of Table 3 rather than the Re_tau=5200 mismatch, the Re_tau=1e5 kappa/B rerun is a run pair with both outputs: [<u_tau>] -1.74 -> -0.24 (closer) and eps_inf[<u>] 0.96 -> 0.92 (closer; max D = 0.925-0.955 = -0.03), i.e. matched_no_opposing_rank/concordant (wall treatment). If the Table 3 Re_tau=5200 run (n/delta=25, h/delta=0.1, LUST/WALE) were taken as a point of the Fig. 11 h-sweep, a 5200 run pair could be built from Fig. 11, but that is not the located output-1 passage."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "N364-02",
@@ -1135,7 +1608,42 @@
       "comparison_scope": "no common run pair",
       "source_question": "Which numerical settings and wall-model inputs influence channel flow predictions, and how do selected settings perform as Reynolds number changes?",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity"
+      "historical_observable_contrast": "same quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "no common run pair"
+        },
+        "second": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "arXiv:1810.05213v2 [physics.flu-dyn], 29 Mar 2019 (accepted manuscript of Computers & Fluids, DOI 10.1016/j.compfluid.2019.03.025), 40 pp.",
+          "passages_used": [
+            "Output 1: Sec. 5.7, Table 3 (eps_inf[<u>] column) p. 31; Fig. 20(a) and Fig. 21 p. 32 (inner-scaled <u>+ across Re_tau; kappa/B comparison at Re_tau=1e5)",
+            "Output 2: Sec. 4.2/Eq. (10)-(12) p. 10; Sec. 5.1 Tables 1-2 pp. 12-13; Sec. 5.3 Fig. 11(a,b) pp. 20-21; all at Re_tau = 5200"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "No shared run pair with output 2. Within its own contrast at Re_tau=1e5: eps_inf[<u>] 0.96 % -> 0.92 % ('reduces only slightly', p. 31), and Fig. 21 shows the kappa=0.392,B=4.07 profile visibly nearer the reference in the log region; this is at Re_tau=1e5.",
+          "direction_output_2": "unresolved",
+          "basis_2": "Mismatch/eps_inf[<u>] at Re_tau=5200 is reported for no-WM vs WM at n/delta=28 and for the h sweep, not for any run pair of the Re sweep.",
+          "confidence": "medium",
+          "what_would_change_it": "Reading output 2 as the mean-velocity error of the same Table 3 runs would allow the Re_tau=1e5 kappa/B pair, but then both quantities are the same mean-velocity output (eps_inf[<u>] 0.96->0.92 closer; Fig. 21 closer), giving at most a concordant reading, not an opposing one. A run pair linking the Re sweep to the 5200 mismatch contrasts is not reported."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "N364-03",
@@ -1189,7 +1697,20 @@
       "comparison_scope": "no common run pair",
       "source_question": "Which numerical settings and wall-model inputs influence channel flow predictions, and how do selected settings perform as Reynolds number changes?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "no common run pair"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N551-01",
@@ -1243,7 +1764,47 @@
       "comparison_scope": "common active subset, no opposite sign",
       "source_question": "How do equilibrium, integral and PDE wall models represent a three-dimensional boundary layer turning through a square duct?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "matched_no_opposing_rank",
+      "matched_detail": "one_direction_unresolved",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "basis": "EQ to PDE: velocity magnitude indistinguishable; turning closer"
+        },
+        "second": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "EQWM, coarse mesh",
+            "alternative": "PDE NEQWM, coarse mesh (integral NEQWM is a second alternative)",
+            "what_differs": "wall model (equilibrium ODE vs 3-D unsteady RANS wall model on a separate near-wall mesh)",
+            "also_changes": "nothing stated; same LES mesh, Vreman SGS, CharLES numerics, inflow and matching height; averaging window not reported"
+          },
+          "edition_seen": "arXiv:2204.00537v1 [physics.flu-dyn], 1 Apr 2022, preprint headed 'Under consideration for publication in J. Fluid Mech.' (30 pp.); not the JFM 960 A29 version of record",
+          "passages_used": [
+            "Fig. 4 (station 0, PDF p.8), Fig. 11 (stations 4, 8, 12, 16, 20; PDF p.16) and Fig. 12 (flow direction at stations 0, 6, 10; PDF p.17) with text on PDF pp.16-17",
+            "Fig. 10(a,b) and text, PDF pp.14-16"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "PDF p.16: 'the mean velocity profiles across the three wall models are almost identical'; PDF p.16: 'A difference of approximately 3 degrees is observed between the WMLES and the experimental results. However, the predicted angles from the different wall models are almost identical' (common miss). Rendered curves overlap within line width.",
+          "direction_output_2": "closer",
+          "basis_2": "PDF p.14: 'the PDE NEQWM gives the most accurate prediction among the three (especially within the bend region), followed by the integral NEQWM, and then the EQWM. The maximum difference between the PDE NEQWM and the EQWM is roughly 5 degrees'. Rendered Fig. 10(a): blue above red and nearer the squares throughout the bend; curves merge downstream (x'/L > 0.75) with no reversal.",
+          "confidence": "high",
+          "what_would_change_it": "Taking no-slip LES as baseline gives closer for velocity but no turning-angle result (no-slip absent from Fig. 10) -> no_shared_baseline for that contrast; a digitised station-wise velocity difference exceeding line width could resolve output 1."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "N551-02",
@@ -1297,7 +1858,47 @@
       "comparison_scope": "same runs, concordance where reported",
       "source_question": "How do equilibrium, integral and PDE wall models represent a three-dimensional boundary layer turning through a square duct?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "matched_no_opposing_rank",
+      "matched_detail": "concordant",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "concordant",
+          "basis": "no-slip to active wall treatment: velocity and stress profiles both closer"
+        },
+        "second": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "both_unresolved_or_common_miss",
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "EQWM, coarse mesh",
+            "alternative": "PDE NEQWM, coarse mesh (integral NEQWM second alternative)",
+            "what_differs": "wall model",
+            "also_changes": "nothing stated; averaging window not reported"
+          },
+          "edition_seen": "arXiv:2204.00537v1 [physics.flu-dyn], 1 Apr 2022, preprint headed 'Under consideration for publication in J. Fluid Mech.' (30 pp.)",
+          "passages_used": [
+            "Figs 4, 11, 12 and text, PDF pp.8, 16-17",
+            "Fig. 13 (PDF p.18), Fig. 14 and Fig. 15 (stations 10 and 17; PDF p.19), text PDF pp.17-18"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "PDF p.16: 'the mean velocity profiles across the three wall models are almost identical'; Fig. 12 angles 'almost identical' with a shared ~3 deg miss.",
+          "direction_output_2": "unresolved",
+          "basis_2": "PDF p.18: 'results from different wall models do not show notable difference'; PDF p.27: 'The three wall models produce almost the same mean velocity and Reynolds stresses profiles.' Rendered Figs 13-15: wall-model curves overlap; isolated separations of about one marker width in Fig. 15 go in both directions (station 10 gamma_tau PDE slightly nearer, station 17 gamma_tau EQWM slightly nearer).",
+          "confidence": "high",
+          "what_would_change_it": "Using the no-slip LES vs wall-model contrast (present in Figs 11-14) gives closer for both outputs (source: no-slip 'very poor', wall models 'significantly improve') -> concordant; digitising Fig. 15 at single heights could produce small restricted-support signs."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "concordant",
+          "cause_of_disagreement": "detail only",
+          "reason": "Same category. The first reading ranked no-slip against the wall models (both outputs closer); the second ranked equilibrium against PDE (neither resolved). Both pairs exist in the source; the detail depends on the pair."
+        }
+      }
     },
     {
       "pair_id": "N551-03",
@@ -1351,7 +1952,42 @@
       "comparison_scope": "common active subset, shared pressure bias",
       "source_question": "How do equilibrium, integral and PDE wall models represent a three-dimensional boundary layer turning through a square duct?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "matched_no_opposing_rank",
+      "matched_detail": "both_unresolved_or_common_miss",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "both_unresolved_or_common_miss",
+          "basis": "active models close in velocity; pressure bias shared, differences reported negligible"
+        },
+        "second": {
+          "category": "shared_runs_no_treatment_baseline",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "arXiv:2204.00537v1 [physics.flu-dyn], 1 Apr 2022, preprint headed 'Under consideration for publication in J. Fluid Mech.' (30 pp.)",
+          "passages_used": [
+            "Figs 4, 11, 12 and text, PDF pp.8, 16-17",
+            "Fig. 8 and text, PDF pp.13-14"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "PDF p.16: mean velocity profiles of the three wall models 'almost identical'; Fig. 12 angles 'almost identical'.",
+          "direction_output_2": "unresolved",
+          "basis_2": "No second wall treatment is shown; caption PDF p.13 says other models are 'almost identical'. PDF p.14: recovery-region disagreement 'remains unclear to us'; Cp 'naturally vanishes' in simulation while experiment stays slightly negative, and 'extending the duct further downstream in the simulation did not change the trend' (a miss common to the simulation, not a wall-model contrast).",
+          "confidence": "medium",
+          "what_would_change_it": "If the caption's 'almost identical' is accepted as reporting the other runs, Cp becomes a common miss (unresolved) and the pair falls to matched_no_opposing_rank, both_unresolved_or_common_miss."
+        },
+        "categories_agree": false,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "both_unresolved_or_common_miss",
+          "cause_of_disagreement": "rule ambiguity",
+          "reason": "Fig. 8 plots pressure for the equilibrium model only; the caption says the other models are \"almost identical\". Counting that statement as a report gives a matched pair with no resolved direction; requiring plotted values gives no second treatment. Either way no pressure ranking between wall models exists."
+        }
+      }
     },
     {
       "pair_id": "N551-04",
@@ -1405,7 +2041,47 @@
       "comparison_scope": "common active subset, no opposite sign",
       "source_question": "How do equilibrium, integral and PDE wall models represent a three-dimensional boundary layer turning through a square duct?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "matched_no_opposing_rank",
+      "matched_detail": "one_direction_unresolved",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "basis": "stress profiles modest differences; turning closer"
+        },
+        "second": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "EQWM, coarse mesh",
+            "alternative": "PDE NEQWM, coarse mesh (integral NEQWM second alternative)",
+            "what_differs": "wall model",
+            "also_changes": "nothing stated; averaging window not reported"
+          },
+          "edition_seen": "arXiv:2204.00537v1 [physics.flu-dyn], 1 Apr 2022, preprint headed 'Under consideration for publication in J. Fluid Mech.' (30 pp.)",
+          "passages_used": [
+            "Figs 13-15 and text, PDF pp.17-19",
+            "Fig. 10(a,b) and text, PDF pp.14-16"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "PDF p.18: 'results from different wall models do not show notable difference'; PDF p.27: 'almost the same mean velocity and Reynolds stresses profiles'. Restricted separations in Fig. 15 are about one marker width and go both ways.",
+          "direction_output_2": "closer",
+          "basis_2": "PDF p.14: PDE NEQWM 'gives the most accurate prediction among the three (especially within the bend region)'; rendered Fig. 10(a) confirms, with no downstream reversal.",
+          "confidence": "high",
+          "what_would_change_it": "A digitised single-height reading in Fig. 15(b) (station 17, y/delta99 ~0.4-0.5, gamma_tau EQWM slightly nearer) taken as resolved would give opposing_point_estimates_on_restricted_support; the separation is about one marker width and the source says no notable difference."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "N551-05",
@@ -1459,7 +2135,42 @@
       "comparison_scope": "common active subset, shared pressure bias",
       "source_question": "How do equilibrium, integral and PDE wall models represent a three-dimensional boundary layer turning through a square duct?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "matched_no_opposing_rank",
+      "matched_detail": "both_unresolved_or_common_miss",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "both_unresolved_or_common_miss",
+          "basis": "stress differences component dependent; pressure bias shared"
+        },
+        "second": {
+          "category": "shared_runs_no_treatment_baseline",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "arXiv:2204.00537v1 [physics.flu-dyn], 1 Apr 2022, preprint headed 'Under consideration for publication in J. Fluid Mech.' (30 pp.)",
+          "passages_used": [
+            "Figs 13-15 and text, PDF pp.17-19",
+            "Fig. 8 and text, PDF pp.13-14"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "PDF p.18: 'results from different wall models do not show notable difference'.",
+          "direction_output_2": "unresolved",
+          "basis_2": "Only one wall treatment plotted (Fig. 8 caption, PDF p.13); recovery-region miss shared by the simulation (PDF p.14).",
+          "confidence": "medium",
+          "what_would_change_it": "Accepting the caption statement as reporting all runs makes both outputs unresolved -> matched_no_opposing_rank, both_unresolved_or_common_miss."
+        },
+        "categories_agree": false,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "both_unresolved_or_common_miss",
+          "cause_of_disagreement": "rule ambiguity",
+          "reason": "As N551-03."
+        }
+      }
     },
     {
       "pair_id": "N551-06",
@@ -1513,7 +2224,47 @@
       "comparison_scope": "common active subset, no opposite sign",
       "source_question": "How do equilibrium, integral and PDE wall models represent a three-dimensional boundary layer turning through a square duct?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "matched_no_opposing_rank",
+      "matched_detail": "one_direction_unresolved",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "basis": "thickness no preference; turning closer"
+        },
+        "second": {
+          "category": "opposing_point_estimates_on_restricted_support",
+          "matched_detail": null,
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "EQWM, coarse mesh",
+            "alternative": "PDE NEQWM, coarse mesh",
+            "what_differs": "wall model",
+            "also_changes": "nothing stated; averaging window not reported"
+          },
+          "edition_seen": "arXiv:2204.00537v1 [physics.flu-dyn], 1 Apr 2022, preprint headed 'Under consideration for publication in J. Fluid Mech.' (30 pp.)",
+          "passages_used": [
+            "Fig. 3(a) delta99 and 3(b) Re_theta (labelled momentum thickness), coarse mesh, PDF p.7, text PDF p.7",
+            "Fig. 10(a,b) and text, PDF pp.14-16"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "Source gives no ranking (PDF p.7: 'the simulation agrees well with the experiment in terms of the distributions of the boundary layer and momentum thicknesses'). Rendered Fig. 3(b) at 600 dpi: from x'/L ~0.45 to 1 PDE (blue) lies ~150-450 below EQWM (red) while the squares lie below both, so PDE nearer at ~17 of 22 stations (gap several line widths); at x'/L ~0.30-0.41 the squares lie above both curves and PDE is lower, so PDE farther by ~100-300. Fig. 3(a) delta99: PDE nearer in the bend (gap ~0.002-0.004), marginally farther at x'/L ~0.38-0.40, overlapping elsewhere. Plot readings, no recorded half-width.",
+          "direction_output_2": "closer",
+          "basis_2": "PDF p.14: PDE NEQWM most accurate, especially within the bend; Fig. 10(a) confirms; no reversal downstream.",
+          "confidence": "low",
+          "what_would_change_it": "If the Fig. 3 station-wise curve separations are judged not decisive (the source states no ranking), thickness becomes unresolved -> matched_no_opposing_rank, one_direction_unresolved; if the restricted upstream reversal is disregarded as a 2-D pre-bend region, -> matched_no_opposing_rank, concordant. With integral NEQWM as alternative, Fig. 3 is unresolved (green tracks red)."
+        },
+        "categories_agree": false,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "cause_of_disagreement": "rule ambiguity",
+          "reason": "Turning angle closer for the PDE model by the source statement. For boundary-layer and momentum thickness the source gives no ranking (p. 7); the second reader's station-wise reading of Fig. 3 (closer over the bend, farther at x'/L about 0.30 to 0.41) has no recorded half-width. Kept as a flagged possible local reversal."
+        }
+      }
     },
     {
       "pair_id": "N551-07",
@@ -1567,7 +2318,47 @@
       "comparison_scope": "common active subset, no opposite sign",
       "source_question": "How do equilibrium, integral and PDE wall models represent a three-dimensional boundary layer turning through a square duct?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "matched_no_opposing_rank",
+      "matched_detail": "both_unresolved_or_common_miss",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "both_unresolved_or_common_miss",
+          "basis": "no active-model ranking in thickness or stresses"
+        },
+        "second": {
+          "category": "matched_support_dependent",
+          "matched_detail": null,
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "EQWM, coarse mesh",
+            "alternative": "PDE NEQWM, coarse mesh",
+            "what_differs": "wall model",
+            "also_changes": "nothing stated; averaging window not reported"
+          },
+          "edition_seen": "arXiv:2204.00537v1 [physics.flu-dyn], 1 Apr 2022, preprint headed 'Under consideration for publication in J. Fluid Mech.' (30 pp.)",
+          "passages_used": [
+            "Fig. 3(a,b), PDF p.7",
+            "Figs 13-15 and text, PDF pp.17-19"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "As N551-06: no source ranking; rendered Fig. 3(b) shows PDE ~150-450 nearer the experiment over the bend and recovery (~17 of 22 stations), farther by ~100-300 at x'/L ~0.30-0.41; delta99 nearer in the bend. Plot readings, no recorded half-width.",
+          "direction_output_2": "unresolved",
+          "basis_2": "PDF p.18: 'results from different wall models do not show notable difference'; PDF p.27: 'almost the same ... Reynolds stresses profiles'.",
+          "confidence": "low",
+          "what_would_change_it": "Judging the Fig. 3 separations undecisive (no source ranking) makes thickness unresolved -> matched_no_opposing_rank, both_unresolved_or_common_miss; ignoring the upstream reversal -> matched_no_opposing_rank, one_direction_unresolved."
+        },
+        "categories_agree": false,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "both_unresolved_or_common_miss",
+          "cause_of_disagreement": "rule ambiguity",
+          "reason": "As N551-06 for thickness; Reynolds stresses show \"no notable difference\" between wall models (p. 18)."
+        }
+      }
     },
     {
       "pair_id": "N551-08",
@@ -1621,7 +2412,42 @@
       "comparison_scope": "common active subset, shared pressure bias",
       "source_question": "How do equilibrium, integral and PDE wall models represent a three-dimensional boundary layer turning through a square duct?",
       "original_nomination": true,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "matched_no_opposing_rank",
+      "matched_detail": "both_unresolved_or_common_miss",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "both_unresolved_or_common_miss",
+          "basis": "thickness no ranking; pressure bias shared"
+        },
+        "second": {
+          "category": "shared_runs_no_treatment_baseline",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "arXiv:2204.00537v1 [physics.flu-dyn], 1 Apr 2022, preprint headed 'Under consideration for publication in J. Fluid Mech.' (30 pp.)",
+          "passages_used": [
+            "Fig. 3(a,b), PDF p.7",
+            "Fig. 8 and text, PDF pp.13-14"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "Rendered Fig. 3: PDE nearer over the bend and recovery, farther at x'/L ~0.30-0.41; no source ranking.",
+          "direction_output_2": "unresolved",
+          "basis_2": "Only EQWM plotted (Fig. 8 caption, PDF p.13); recovery-region miss shared by the simulation and unexplained (PDF p.14).",
+          "confidence": "medium",
+          "what_would_change_it": "Accepting the caption's 'almost identical' as a reported comparison makes Cp unresolved (common miss) -> matched_no_opposing_rank (one_direction_unresolved, or support-dependent given the Fig. 3 upstream reversal)."
+        },
+        "categories_agree": false,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "both_unresolved_or_common_miss",
+          "cause_of_disagreement": "rule ambiguity",
+          "reason": "As N551-03."
+        }
+      }
     },
     {
       "pair_id": "N611-01",
@@ -1675,7 +2501,20 @@
       "comparison_scope": "different case",
       "source_question": "How does wall-function enrichment of the finite-element approximation perform across attached and separated turbulent flows?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N611-02",
@@ -1729,7 +2568,20 @@
       "comparison_scope": "different case",
       "source_question": "How does wall-function enrichment of the finite-element approximation perform across attached and separated turbulent flows?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N611-03",
@@ -1783,7 +2635,20 @@
       "comparison_scope": "different case",
       "source_question": "How does wall-function enrichment of the finite-element approximation perform across attached and separated turbulent flows?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N611-04",
@@ -1837,7 +2702,20 @@
       "comparison_scope": "different case",
       "source_question": "How does wall-function enrichment of the finite-element approximation perform across attached and separated turbulent flows?",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity"
+      "historical_observable_contrast": "same quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N611-05",
@@ -1891,7 +2769,20 @@
       "comparison_scope": "different case",
       "source_question": "How does wall-function enrichment of the finite-element approximation perform across attached and separated turbulent flows?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N611-06",
@@ -1945,7 +2836,42 @@
       "comparison_scope": "different case",
       "source_question": "How does wall-function enrichment of the finite-element approximation perform across attached and separated turbulent flows?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "Krank & Wall, arXiv:1505.05786v1 [physics.flu-dyn], 21 May 2015, 26 pp.",
+          "passages_used": [
+            "Output 1: Sec. 5.3, Table 3 (reattachment lengths) PDF p. 19; Fig. 14 (cf, cp along lower wall) p. 20",
+            "Output 2: Sec. 5.1, Table 1 p. 12; Fig. 7 (u'+, v'+, w'+, (u'v')+ at Re_tau=950) p. 14"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "Own contrast only: x_reatt/h 13.49 (NWM) vs 6.78 (WM3) against 6.0 +/- 0.15 and 6.28; closer for both references. Fig. 14: WM3 cf follows the references, NWM 'does not give physically reasonable results' (p. 20).",
+          "direction_output_2": "unresolved",
+          "basis_2": "No run on the BFS case; within the channel the only contrasts are mesh refinement (WM) and WM-coarse vs wall-resolved Ch96 (different grid and treatment). Text: v'+ 'generally predicted too small', Ch96 in favourable agreement (p. 13-14).",
+          "confidence": "high",
+          "what_would_change_it": "Only a report of channel second-order statistics for the BFS NWM/WM3 runs (or step friction for the channel runs) would create a shared run pair; none is given."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "N626-01",
@@ -1999,7 +2925,20 @@
       "comparison_scope": "different case",
       "source_question": "How well does the graph wall-stress model reproduce prescribed-input labels and coupled channel, step and compressor-cascade observables?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N626-02",
@@ -2053,7 +2992,20 @@
       "comparison_scope": "different case",
       "source_question": "How well does the graph wall-stress model reproduce prescribed-input labels and coupled channel, step and compressor-cascade observables?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N626-03",
@@ -2107,7 +3059,20 @@
       "comparison_scope": "different case",
       "source_question": "How well does the graph wall-stress model reproduce prescribed-input labels and coupled channel, step and compressor-cascade observables?",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity"
+      "historical_observable_contrast": "same quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N626-04",
@@ -2161,7 +3126,47 @@
       "comparison_scope": "same runs, concordance",
       "source_question": "How well does the graph wall-stress model reproduce prescribed-input labels and coupled channel, step and compressor-cascade observables?",
       "original_nomination": true,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "matched_no_opposing_rank",
+      "matched_detail": "concordant",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "concordant",
+          "basis": "log law to four-step graph model: both integrals and the crossing closer"
+        },
+        "second": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "concordant",
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "LES with law-of-the-wall (algebraic) model",
+            "alternative": "LES with GNN WSS model, N = 4 (the paper's baseline GNN)",
+            "what_differs": "wall-shear-stress model on the bottom wall downstream of the step",
+            "also_changes": "nothing else reported: same 0.9 M-point mesh, Sigma SGS, Lax-Wendroff scheme, inflow; GNN only applied after the step; averaging window not reported for either run"
+          },
+          "edition_seen": "Data-Centric Engineering (2023), 4: e7, doi:10.1017/dce.2023.2 (version of record; received 31 Aug 2022, accepted 4 Feb 2023)",
+          "passages_used": [
+            "Section 4.2.3, Table 5 (integrals over 0-14 h_s of (tau - tau_ref)^2 and (tau_x - tau_xref)^2), PDF page 22 (e7-22); Fig. 15 PDF page 21 (e7-21)",
+            "Section 4.2.3, Fig. 16 (mean streamwise wall-stress component tau_x; zero crossing = reattachment) PDF page 22 (e7-22); text on p. e7-20: 'significant underestimation of the reattachment point location in all LESs (Figure 16)'"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "Table 5: magnitude column 0.806 -> 0.067 (D = -0.739); streamwise-component column 0.686 -> 0.308 (D = -0.378); these are squared-error integrals (reference 0), box max D far below 0 in both columns. Text e7-21: 'the model associated with N = 4 message-passing steps leads to more accurate results than the algebraic model'",
+          "direction_output_2": "closer",
+          "basis_2": "Fig. 16 plot readings (half-width 0.1 h_s): law-of-the-wall zero crossing ~4.65 h_s, GNN N = 4 ~5.25 h_s; Reference ~6.05 h_s: box max D = (6.15-5.15)-(5.95-4.75) = -0.2 < 0; Le et al. ~6.3 h_s: max D = (6.4-5.15)-(6.2-4.75) = -0.2 < 0. Both references give closer, though all LES underpredict reattachment (source)",
+          "confidence": "high",
+          "what_would_change_it": "Choosing a different alternative: GNN N = 1 reattachment (~4.9 h_s) is only marginally later than law-of-the-wall and could be unresolved; N = 5 vs N = 4 is the separate pair X1. A numerical reattachment value from the authors could tighten the plot reading but the 0.6 h_s gap is well beyond line width."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "concordant",
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "N626-05",
@@ -2215,7 +3220,20 @@
       "comparison_scope": "different case",
       "source_question": "How well does the graph wall-stress model reproduce prescribed-input labels and coupled channel, step and compressor-cascade observables?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N655-01",
@@ -2269,7 +3287,47 @@
       "comparison_scope": "same runs, first sign unresolved",
       "source_question": "How does the channel respond to sudden lateral forcing, and how do wall treatments represent the transient components?",
       "original_nomination": true,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "matched_support_dependent",
+      "matched_detail": null,
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_support_dependent",
+          "matched_detail": null,
+          "basis": "velocity unresolved; wall-stress direction depends on component and time window (low confidence in the leaf)"
+        },
+        "second": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "both_unresolved_or_common_miss",
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "WMLES with EQWM (Kawai & Larsson), CharLES",
+            "alternative": "WMLES with NEQWM (Park & Moin), CharLES",
+            "what_differs": "wall model (ODE equilibrium vs full unsteady RANS PDE non-equilibrium model, resolved-stress subtraction)",
+            "also_changes": "nothing else reported: same CharLES code, grid (130x31x66), dynamic Smagorinsky, Mach 0.2, exchange at third cell x2* ~ 0.16, same Pi = 10 forcing and initial 2-D state; internal wall-model grids 30-40 cells for both. IWM excluded as alternative because it runs in a different solver (LESGO, Lagrangian-dynamic SGS)"
+          },
+          "edition_seen": "arXiv:1904.11079v2 [physics.flu-dyn], 30 May 2019 (JFM-style preprint, not the version of record); preprint Fig. 19 = journal Fig. 18, preprint Fig. 20(b) = journal Fig. 19(b)",
+          "passages_used": [
+            "Section 4.3, Fig. 20(b) (mean spanwise velocity <u3>+ vs x2+ at t* = 0, 0.21, 0.405, 0.615, 0.825, 1.02) and text, PDF pages 29-30",
+            "Section 4.3, Fig. 19(a) <tau3>/<tau1>_2D and Fig. 19(b) <tau1>/<tau1>_2D vs t* in [0,1] and text, PDF page 29"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "Fig. 20(b): the three WMLES overlap the DNS in the outer region at all times; source p. 29: 'All the WMLESs considered provide an excellent prediction of the boundary layer growth.' Only at the first one or two points (x2+ ~ 30, 90) at late times do squares sit ~0.3 below circles (e.g. top curve x2+ ~ 90: DNS ~9.0, EQWM ~8.95, NEQWM ~8.65), comparable with marker size; no source statement of direction",
+          "direction_output_2": "unresolved",
+          "basis_2": "Component-dependent: spanwise <tau3> NEQWM closer at every plotted time (text p. 28-29: NEQWM 'fairly accurate ... throughout the transient', EQWM '50% to 25% under-prediction'; at t* ~ 1 errors 2% vs 10%); streamwise <tau1> NEQWM farther over most of the transient (text: EQWM 'within 5%', NEQWM 'deviations from the DNS up to 7%'; e.g. t* ~ 0.2 DNS ~0.983, EQWM ~1.012, NEQWM ~1.041), with a crossover near t* ~ 0.7 after which NEQWM is closer. The combined wall-stress output therefore has no single direction",
+          "confidence": "medium",
+          "what_would_change_it": "Splitting output 2 into components (tau3 closer, tau1 farther) is pair N655-X1; taking tau3 alone would give one_direction_unresolved. If the late-time near-wall points of Fig. 20(b) were judged resolved (NEQWM farther), pairing with tau3 (closer) would give opposing_point_estimates_on_restricted_support. Using IWM or DNS-vs-WMLES as the contrast would change the run pair."
+        },
+        "categories_agree": false,
+        "settled": {
+          "category": "matched_support_dependent",
+          "matched_detail": null,
+          "cause_of_disagreement": "rule ambiguity",
+          "reason": "Spanwise mean velocity: the three wall models overlap. Wall stress: the non-equilibrium model is closer for the spanwise component (about 2 % against 10 % one outer time unit after forcing) and farther for the early streamwise component (source: within 5 % against up to 7 %). As worded, the wall-stress output has no single direction; the direction depends on the component. Treated like N357-01."
+        }
+      }
     },
     {
       "pair_id": "N674-01",
@@ -2323,7 +3381,20 @@
       "comparison_scope": "different case",
       "source_question": "Do time-averaged WR-IDDES database wall functions improve hybrid IDDES predictions across diffusers, hump, plate and developing channel?",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity"
+      "historical_observable_contrast": "same quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N674-02",
@@ -2377,7 +3448,42 @@
       "comparison_scope": "different case",
       "source_question": "Do time-averaged WR-IDDES database wall functions improve hybrid IDDES predictions across diffusers, hump, plate and developing channel?",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity"
+      "historical_observable_contrast": "same quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "Davidson, arXiv:2410.17767v2 [physics.flu-dyn], 3 Mar 2025 (preprint, not the Journal of Turbulence version of record), 37 pp.; figure numbers 13, 15, 18, 20 match the locators",
+          "passages_used": [
+            "Output 1: Sec. 6.4, Fig. 20(a) friction velocity vs x/delta, channel Re_tau=16000, PDF p. 23-24",
+            "Output 2: Sec. 6.2, Figs 13(b), 15(b), 18(b) hump friction coefficient, PDF pp. 18-21"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "Own contrasts only: 'Reichardt's wall function and the KDTree using hump flow data predict the skin friction very well. The KDTree using diffuser flow data and Reichardt's wall function predict ... approximately 2% and 4% too large ... the WR-IDDES ... 5% too high' (p. 24); the paragraph is internally inconsistent about Reichardt.",
+          "direction_output_2": "unresolved",
+          "basis_2": "Own contrasts only: 'KDTree with hump flow data exhibits too strong a backflow ... Reichardt's wall function gives too weak a backflow' (p. 20); upstream Cf over-predicted by all wall functions.",
+          "confidence": "high",
+          "what_would_change_it": "Nothing in this file reports both quantities for the same runs; a version of record with different figures could only change locators, not the flow-case separation."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "N674-03",
@@ -2431,7 +3537,20 @@
       "comparison_scope": "different case",
       "source_question": "Do time-averaged WR-IDDES database wall functions improve hybrid IDDES predictions across diffusers, hump, plate and developing channel?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N674-04",
@@ -2485,7 +3604,20 @@
       "comparison_scope": "different case",
       "source_question": "Do time-averaged WR-IDDES database wall functions improve hybrid IDDES predictions across diffusers, hump, plate and developing channel?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "N674-05",
@@ -2539,7 +3671,20 @@
       "comparison_scope": "different case",
       "source_question": "Do time-averaged WR-IDDES database wall functions improve hybrid IDDES predictions across diffusers, hump, plate and developing channel?",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": null,
+      "adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "different case"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P01-01",
@@ -2590,7 +3735,46 @@
       "inference": "Friction improves. Fig. 6 does not resolve a penalty from the wall substitution; a reattachment-region error common to both does not supply that sign.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": true,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "matched_no_opposing_rank",
+      "matched_detail": "one_direction_unresolved",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "basis": "friction closer; velocity difference negligible"
+        },
+        "second": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "standard wall functions (nutWallFunction; dashed / 'wall'), at a given mesh of 1, 2 or 4 cells per step height",
+            "alternative": "wake functions (nutWakeFunction, Luchini wake-corrected profile; solid / 'wake'), same mesh",
+            "what_differs": "the turbulent-viscosity wall boundary condition (wall function vs wake function)",
+            "also_changes": "the wake function requires bulk/geometrical inputs (bulk velocity, channel height); thermal wall BC (alphat wall vs wake) probably changes together but is not relevant to the momentum outputs. Mesh, realizable k-epsilon closure, steady buoyantFoam second-order solver and flow conditions are the same for each pair; no averaging window (steady RANS)."
+          },
+          "edition_seen": "Annals of Nuclear Energy 209 (2024) 110807, version of record (doi 10.1016/j.anucene.2024.110807; received 13 Mar 2024, revised 20 Jun 2024, accepted 18 Jul 2024), 15 pp.",
+          "passages_used": [
+            "Fig. 7 (averaged lower-wall friction coefficient <Cf> vs cells per step height), PDF p.10; Sec. 4.3 discussion, PDF p.12 ('As is shown in Fig. 7, the average friction coefficient obtained with the use of the wake functions is significantly closer to the value obtained from the reference simulations')",
+            "Fig. 6(a,b) (U/U0 profiles at x/h = -1 to 20), PDF p.9; Sec. 4.3 discussion, PDF p.12 ('the differences in the velocity profiles obtained with the different boundary conditions are neglectable')"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "Source statement p.12: wake-function <Cf> 'significantly closer to the value obtained from the reference simulations'. Plot reading Fig. 7 (no half-width, so the source sentence carries the direction): wall ~1.22e-3, 1.28e-3, 1.06e-3 vs wake ~7.8e-4, 7.1e-4, 6.8e-4 at 1, 2, 4 cells/h; LES ~7.2e-4. Wake closer at every mesh, separation far exceeding marker size.",
+          "direction_output_2": "unresolved",
+          "basis_2": "Source statement p.12: 'the differences in the velocity profiles obtained with the different boundary conditions are neglectable'. At 300 dpi the dashed (wall) and solid (wake) lines of each colour overlap within the line width at every station; both share the same miss in the reattachment zone for the 1-cell mesh.",
+          "confidence": "high",
+          "what_would_change_it": "Tabulated U/U0 values or a quantitative profile error showing a resolvable wall-vs-wake difference at some station (would at most create a restricted-support direction); a reading that the thermal BC change makes the pair a several-changes intervention would alter intervention_type only."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "P01-02",
@@ -2641,7 +3825,19 @@
       "inference": "Retain both application-specific results. Their errors cannot establish opposing ranks on identical runs.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P14-01",
@@ -2692,7 +3888,19 @@
       "inference": "Both diagnose source-specific limitations and successes. There is no paired wall-law change.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity, other location"
+      "historical_observable_contrast": "same quantity, other location",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P14-02",
@@ -2739,11 +3947,45 @@
       "controls": "Within VF, changing SGS at a fixed grid is possible; this differs from switching the near-boundary representation.",
       "reference": "Same parent hill DNS, but filter width at physical points and surface markers differs.",
       "criterion": "Each comparison has its own support; no corresponding interior profile for the exact-shear baseline.",
-      "adjudication": "no_shared_baseline",
+      "adjudication": "shared_runs_no_treatment_baseline",
       "inference": "Evidence for filtered boundary kinematics and outer SGS sensitivity survives. A two-treatment opposing rank does not follow.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity, other location"
+      "historical_observable_contrast": "same quantity, other location",
+      "legacy_adjudication": "no_shared_baseline",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "no_shared_baseline",
+          "matched_detail": null,
+          "basis": "exact-stress comparator is a constructed diagnostic, not a second coupled run"
+        },
+        "second": {
+          "category": "shared_runs_no_treatment_baseline",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "arXiv:2411.11600v1 [physics.flu-dyn], 18 Nov 2024 (dated 19 Nov 2024), 35 pp. preprint; not the Phys. Rev. Fluids 10, 044604 (2025) version of record named by the first locators. Figure numbers 9-12 and Eq. (36) match the locators.",
+          "passages_used": [
+            "Sec. IV.B, Fig. 11 (fine mesh, PDF p.28) and Fig. 12 (coarse mesh, PDF p.29), Eq. (36) and text PDF pp.26-28: mean volume-filtered streamwise velocity enforced at the wall vs x/H",
+            "Sec. IV.B, Fig. 9 (fine, PDF p.26) and Fig. 10 (coarse, PDF p.27), text PDF pp.24-25: mean volume-filtered streamwise and wall-normal velocity profiles"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "As a wall-treatment contrast the 'baseline' is not a run but an a-priori Eq. (36) construction; the source states 'The exact wall shear stress model predicts large deviations from the explicitly volume-filtered DNS velocity and does not even show the correct trend' (p.27) and 'provides poor predictions' (p.28), i.e. VF-WMLES much closer, but this is not a run-pair contrast. Among the actual runs (NL/VRE/Mix) the source says the subfilter-model influence 'is very minor' (p.27) / 'not very sensitive' (p.28): no rank.",
+          "direction_output_2": "unresolved",
+          "basis_2": "No alternative wall treatment is run, so no wall-treatment direction exists. Among subfilter models the source states 'the best agreement is achieved with the Vreman model' (fine, p.25; coarse, p.25), deviations near the lower wall in the reattachment region slightly overpredicted by all models.",
+          "confidence": "medium",
+          "what_would_change_it": "If Amendment 1 is applied to the subfilter-model runs (outer closure, e.g. B = NL, A = VRE, same mesh): both outputs exist for that pair, output 1 unresolved ('very minor' influence) and output 2 closer for VRE ('best agreement is achieved with the Vreman model') -> matched_no_opposing_rank / one_direction_unresolved with intervention_type 'outer closure'. Fine vs coarse is not a usable pair because the reference (filtered DNS) changes with sigma. The PRF version of record could also contain a coupled wall-shear-stress WMLES run absent from this arXiv v1."
+        },
+        "categories_agree": false,
+        "settled": {
+          "category": "shared_runs_no_treatment_baseline",
+          "matched_detail": null,
+          "cause_of_disagreement": "first-reading error",
+          "reason": "Both outputs come from the same volume-filtered runs with one wall condition; the \"exact wall-stress\" comparator is computed from DNS by Eq. (36), not run. Under the tree this is the single-treatment leaf. The first reading carried over an earlier label."
+        }
+      }
     },
     {
       "pair_id": "P19-01",
@@ -2794,7 +4036,19 @@
       "inference": "FPG stress favours BFWM; APG profiles show errors for both. This is evidence of conditional performance, not opposite effects on two outputs from one run pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P19-02",
@@ -2845,7 +4099,19 @@
       "inference": "FPG stress favours BFWM; the 7° lift favours EQWM. This is evidence of conditional performance, not opposite effects on two outputs from one run pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P19-03",
@@ -2896,7 +4162,19 @@
       "inference": "FPG stress favours BFWM; the coupled APG nominal wall-stress rank often favours EQWM. This is evidence of conditional performance, not opposite effects on two outputs from one run pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity"
+      "historical_observable_contrast": "same quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P20-01",
@@ -2947,7 +4225,46 @@
       "inference": "The source supports a high-Re mean improvement and a common unresolved rms peak. For an actual Reτ=1000 matched DNS comparison, the Figs. 7b,c curves change rank across heights: the higher-resolution arXiv v3 panel suggests smaller VYBA23 rms discrepancy near z/δ=.05–.07 and ≈.02 uτ-units greater near z/δ=.24–.26, while Fig. 9a log offset falls ≈1.0→.3. The journal curve separation at the latter heights is only about two native pixels, and many of the 48 levels are obscured. Treat this retrospective local direction as plot-limited; no integrated or high-Re opposite error ranking is established. Comparing VYBA23 to EWM in only one output would change the baseline.",
       "read_precision_and_physical_uncertainty": "Figs. 7 and 9 opened in the version of record; panels 7b,c checked against the larger raster in the arXiv PDF. Published line thickness, overlapping Reynolds-number colours, missing high-Re DNS and lack of a physical uncertainty interval limit the inference. paired_p_work/check_p20_rms.py extracts the common visible subset, which is not the full-profile norm.",
       "original_nomination": true,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "matched_no_opposing_rank",
+      "matched_detail": "one_direction_unresolved",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "basis": "mean offset closer; rms peak missed by both"
+        },
+        "second": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "BK22 RLWM (log-law states, Bae & Koumoutsakos policy) in LESGO",
+            "alternative": "VYBA23 RLWM (normalized first state, Eq. 10, trained at Re_tau = 1e4 in LESGO)",
+            "what_differs": "wall model: the RL state definition and the trained policy",
+            "also_changes": "training Reynolds number, training solver and RL settings (part of the policy, hence the intervention). Grid 48^3, domain, SGS model, pressure-gradient forcing are the same; h_wm = dz stated for the RLWM framework; statistics averaging window not reported."
+          },
+          "edition_seen": "arXiv:2302.14391v3 [physics.flu-dyn], 2 May 2023 (dated 3 May 2023), 16 pp.; not the Physics of Fluids 35, 055122 (2023) version of record. Figure numbering matches the locators (Figs. 2, 6, 7, 9).",
+          "passages_used": [
+            "Fig. 9(a) log-law mismatch vs Re_tau for BK22 and VYBA23 (legend misprinted 'AYAB23'), PDF p.9; Fig. 2(a) BK22 mean velocity, PDF p.5; Fig. 6 VYBA23 mean velocity and text Sec. III.A, PDF p.7",
+            "Fig. 7(a-c) u+_rms(z/delta) for EWM, BK22, VYBA23, and text, PDF p.8"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "Source p.7: 'The VYBA23 WM outperforms the BK22 WM (Figure 2), providing an accurate prediction of the log law outside of its training range'. Fig. 9a plot reading: BK22 ~ +1.0, +1.5, +2.0, +2.0, +1.0, -0.9, -2.2, -3.1, -3.1, -3.2 vs VYBA23 ~ +0.3 to +0.75 for Re_tau = 1e3 ... 1e10. At Re_tau = 180 both miss by about the same amount (BK22 ~2.2, VYBA23 ~2.4; source attributes it to h_wm in the buffer layer), treated as a common miss.",
+          "direction_output_2": "unresolved",
+          "basis_2": "No source statement ranks BK22 vs VYBA23 on u+_rms; source p.8: 'none of the WMs capture this bump' (outer peak) and 'the inner peak cannot be observed'. At 400 dpi the high-Re curves in Fig. 7b and 7c coincide within line width and both deviate from DNS Re 5200 in the same way; the LES curves at Re_tau = 1000 and 5200 cannot be isolated from the colour map. Only Re_tau = 180 differs visibly between (b) and (c), and no DNS reference is given at 180. Common miss.",
+          "confidence": "medium",
+          "what_would_change_it": "If Re_tau = 180 in Fig. 9a (VYBA23 ~0.2 units farther than BK22) is read as a resolved 'farther' rather than a common miss, output 1 becomes support dependent -> matched_support_dependent. A quantitative u_rms comparison at Re_tau = 1000/5200 separating BK22 and VYBA23 curves could resolve output 2."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "P20-02",
@@ -2994,11 +4311,50 @@
       "controls": "Keep policy pair fixed if comparing Fig. 7. Do not identify common unresolved peaks as a worsening.",
       "reference": "Known neutral line versus physical DNS for limited Reynolds numbers.",
       "criterion": "Action accuracy rises; no direction of a matched rms penalty under a defined norm in this claim.",
-      "adjudication": "different_criteria_no_adverse_delta",
+      "adjudication": "matched_no_opposing_rank",
       "inference": "Good analytical action classification and unresolved peaks can coexist; no second opposite error change is established.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_criteria_no_adverse_delta",
+      "matched_detail": "one_direction_unresolved",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "basis": "output 1 is an action-classification accuracy, not a flow quantity; rms peak missed by both"
+        },
+        "second": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "BK22 RLWM in LESGO",
+            "alternative": "VYBA23 RLWM in LESGO",
+            "what_differs": "wall model: RL state definition and trained policy",
+            "also_changes": "training Re, training solver and RL settings (part of the intervention); grid, SGS, forcing equal; averaging window not reported"
+          },
+          "edition_seen": "arXiv:2302.14391v3 [physics.flu-dyn], 2 May 2023 (dated 3 May 2023), 16 pp.; not the Physics of Fluids 35, 055122 (2023) version of record.",
+          "passages_used": [
+            "Sec. IV, Eqs. (13)-(14), PDF p.11; Table III (precision, recall, accuracy for BK22 and VYBA23), PDF p.12; Fig. 11 states-action maps (VYBA23 only), PDF p.11",
+            "Fig. 7(a-c) u+_rms(z/delta), PDF p.8"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "Table III as printed (pdftotext -layout), BK22 -> VYBA23 [prec a>1, prec a<1, rec a>1, rec a<1, accuracy]: Re 180: 0.61,0.38,0.48,0.51,0.49 -> 0.91,0.92,0.90,0.93,0.92; Re 1e3: 0.61,0.40,0.49,0.52,0.50 -> 0.92,0.91,0.90,0.93,0.91; Re 1e5: 0.66,0.40,0.51,0.55,0.53 -> 0.85,0.80,0.80,0.85,0.83; Re 1e10: 0.57,0.42,0.45,0.53,0.49 -> 0.64,0.65,0.67,0.62,0.64. Every entry higher for VYBA23; with h = 0.005 and r = 1 the box max D < 0 for each (smallest margin: prec a>1 at 1e10, D in [-0.08,-0.06]). Source p.11: 'The VYBA23 WM consistently demonstrates higher precision, recall, and accuracy levels compared to the BK22 WM'.",
+          "direction_output_2": "unresolved",
+          "basis_2": "As in P20-01: no ranking stated; 'none of the WMs capture this bump' (p.8); BK22 and VYBA23 high-Re curves coincide and share the same miss of the DNS Re 5200 profile; Re-specific LES curves at 1000/5200 not separable.",
+          "confidence": "medium",
+          "what_would_change_it": "If classification scores are not accepted as having a reference (they score policy consistency with the log law, not agreement with a measurement or higher-fidelity calculation), Q2 gives matched_no_common_reference. A resolvable u_rms difference at the DNS Reynolds numbers could resolve output 2."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "P23-01",
@@ -3049,7 +4405,19 @@
       "inference": "Strong local agreements and missed features are documented in each endpoint. They cannot be assigned as opposite error changes in one run pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P23-02",
@@ -3100,7 +4468,19 @@
       "inference": "Strong local agreements and missed features are documented in each endpoint. They cannot be assigned as opposite error changes in one run pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity, other location"
+      "historical_observable_contrast": "same quantity, other location",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P23-03",
@@ -3151,7 +4531,19 @@
       "inference": "Strong local agreements and missed features are documented in each endpoint. They cannot be assigned as opposite error changes in one run pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P23-04",
@@ -3202,7 +4594,19 @@
       "inference": "Strong local agreements and missed features are documented in each endpoint. They cannot be assigned as opposite error changes in one run pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P23-05",
@@ -3253,7 +4657,19 @@
       "inference": "Strong local agreements and missed features are documented in each endpoint. They cannot be assigned as opposite error changes in one run pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P23-06",
@@ -3304,7 +4720,19 @@
       "inference": "Strong local agreements and missed features are documented in each endpoint. They cannot be assigned as opposite error changes in one run pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P23-07",
@@ -3355,7 +4783,46 @@
       "inference": "BFM improves BOTH full-support errors versus DSM-EQ: mean |ΔCp| ≈0.038 vs 0.091 (33 pressure points), mean |10³ΔCf| ≈0.46 vs 0.79 (17 friction points). Downstream x/L>.1 both improve. For upstream x/L<0 the friction average is essentially tied (0.66 each, 10 points), and Cf near x/L≈−0.198 is worse (~1.1 vs 0.13). Pairing this local windward loss with the downstream pressure gain is defensible only with both spatial supports stated. An undifferentiated opposite ranking is unsupported.",
       "read_precision_and_physical_uncertainty": "Native marker centres and model paths interpolated at those centres; typical plot precision ≈0.01 in Cp or ≈0.1 in 10³Cf, separate from unknown physical/solver intervals. Script paired_p_work/read_p23.py. Signs near individual crossing points depend on reading precision.",
       "original_nomination": true,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "matched_support_dependent",
+      "matched_detail": null,
+      "intervention_type": "whole system or several changes",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_support_dependent",
+          "matched_detail": null,
+          "basis": "both full-support errors closer; local windward friction farther"
+        },
+        "second": {
+          "category": "matched_support_dependent",
+          "matched_detail": null,
+          "intervention_type": "whole system or several changes",
+          "run_pair": {
+            "baseline": "DSM-EQ (dynamic Smagorinsky SGS + equilibrium wall model), 8.7M-CV grid",
+            "alternative": "BFM (one ANN closure replacing both SGS and wall model), same 8.7M-CV grid",
+            "what_differs": "the whole closure: wall model and SGS model are replaced together by BFM",
+            "also_changes": "nothing else reported: 'same flow conditions' and grid stated ('Similar WMLESes are conducted using DSM-EQ and VRE-EQ'); statistics window not reported. VRE-EQ is a second baseline that behaves like DSM-EQ."
+          },
+          "edition_seen": "arXiv:2403.09000v2 [physics.flu-dyn], 14 Jun 2024 (preprint; not the Communications Engineering version of record named by the locators). Fig. 6 on PDF p. 7, Fig. 10 on PDF p. 14, bump text on PDF p. 6.",
+          "passages_used": [
+            "Output 1: Fig. 6D (centreline -Cp vs x/L) and Fig. 6F (-Cp vs z/L at x/L = 0), PDF p. 7; text 'Separated flow over a bump', PDF p. 6",
+            "Output 2: Fig. 6E (centreline Cf vs x/L), PDF p. 7; text PDF p. 6; Fig. 10B (finer grid, Delta_min ~ 0.015h), PDF p. 14 and Methods 'Effect of the grid size', PDF p. 12-13"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "Source, p. 6: 'the BFM yields more accurate predictions of the Cp and Cf evolution in the separation region (x/L > 0.1) compared to DSM-EQ and VRE-EQ' and 'The improved predictions by the BFM also extend to the presssure along the spanwise direction at the bump apex (x/L = 0), as shown in Fig. 6F'. Figure: apex peak exp ~1.20, BFM ~1.20, DSM-EQ ~1.30; upstream curves coincide. But in Fig. 6F at the off-centre taps z/L ~ -0.22, +0.22, +0.25 (exp ~1.32, 1.26, 1.21) DSM-EQ (~1.27-1.29, ~1.24, ~1.19) lies visibly closer than BFM (~1.22, ~1.18, ~1.15); BFM is closer only for |z/L| < ~0.1. Plot readings, no half-width.",
+          "direction_output_2": "closer",
+          "basis_2": "Source, p. 6: BFM more accurate for Cf in the separation region, where DSM-EQ and VRE-EQ 'even fail to predict flow separation' (BFM negative Cf at x/L ~ 0.1-0.35 matching exp; DSM-EQ near zero/positive and recovers too high at x/L > 0.4). Upstream (x/L -0.5 to -0.3) exp ~2.0-2.6e-3, BFM ~1.5-2.2e-3, DSM-EQ ~1.1-1.8e-3, so BFM also nearer there; only the x/L ~ -0.8 tap (exp ~3.2e-3; BFM ~4.2e-3, DSM ~3.8e-3) favours DSM-EQ slightly. On the separate finer-grid run set (Fig. 10B) BFM is farther upstream (BFM ~1.0e-3 vs exp ~2.0e-3 vs DSM ~2.5-3e-3 at x/L -0.3) and closer downstream; the text concedes 'slightly less accurate upstream the bump'.",
+          "confidence": "medium",
+          "what_would_change_it": "If the apex-span sub-curve (Fig. 6F) is read as outside the nominated quantity, or the off-centre separations (~0.04-0.06 in -Cp) are judged within reading tolerance, the category becomes matched_no_opposing_rank / concordant. If the Fig. 10A,B finer-grid run set were taken as the run pair, Cp and Cf both become support-dependent (BFM farther upstream and at the apex peak, closer downstream). Intervention is a whole closure change, not a wall treatment alone, so it is excluded from wall-treatment tabulations."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "matched_support_dependent",
+          "matched_detail": null,
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "P23-08",
@@ -3406,7 +4873,19 @@
       "inference": "Strong local agreements and missed features are documented in each endpoint. They cannot be assigned as opposite error changes in one run pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P24-01",
@@ -3457,7 +4936,41 @@
       "inference": "Constitutive or relative inferiority cannot be inferred. Preserve the near-wall stress miss and far-wall agreement.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": true,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "shared_runs_no_treatment_baseline",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "shared_runs_no_treatment_baseline",
+          "matched_detail": null,
+          "basis": "two outputs of one simulation, no second coupled treatment"
+        },
+        "second": {
+          "category": "shared_runs_no_treatment_baseline",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "arXiv:2402.08037v1 [physics.flu-dyn], 12 Feb 2024 ('Dated: 14 February 2024'); not the Communications Physics version named by the locators. Fig. 4 on PDF p. 10, section II.C on PDF p. 8-10.",
+          "passages_used": [
+            "Output 1: Fig. 4(a), u+ vs y+ at Re_tau = 1000, 2000, 5200, PDF p. 10; text section II.C 'Interpolation validation', PDF p. 8-9",
+            "Output 2: Fig. 4(b), <u'v'>+ vs y/delta at the same Re_tau, PDF p. 10; text PDF p. 9"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "No second wall treatment is run in LBM; the text reports only agreement: 'The results of our LBM NNPC-based wall model demonstrate good alignment with the DNS data' (p. 9). The NNWC/NNPC contrast exists only for the offline u_tau ARE on IDDES data (Fig. 3), not for u+.",
+          "direction_output_2": "unresolved",
+          "basis_2": "Single treatment; 'Discrepancies are observed in the first three cells near the wall ... Beyond the fourth grid cell, the LBM results closely match the DNS data' (p. 9). Figure: LBM points at y/delta ~ 0.05-0.25 lie ~0.2-0.6 above (less negative than) DNS; no alternative run to rank.",
+          "confidence": "high",
+          "what_would_change_it": "Only a published edition that adds an LBM run with another wall treatment (e.g. NNWC or an analytic log-law model) at these Re_tau. Note the text says NNWC was 'selected' for interpolation tests while Fig. 4 is labelled NNPC; either way only one model is shown."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "shared_runs_no_treatment_baseline",
+          "matched_detail": null,
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "P24-02",
@@ -3508,7 +5021,41 @@
       "inference": "A law-consistent extrapolated mean cannot certify near-wall stress or a relative ranking on the moderate-Re runs.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "arXiv:2402.08037v1 [physics.flu-dyn], 12 Feb 2024 ('Dated: 14 February 2024'). Fig. 5 on PDF p. 11, Fig. 4 on PDF p. 10.",
+          "passages_used": [
+            "Output 1: Fig. 5, u+ vs y+ at Re_tau = 1.0e5 and 1.0e6 (purple, yellow), PDF p. 11; section II.D 'Extrapolation studies', PDF p. 9-10",
+            "Output 2: Fig. 4(b), <u'v'>+ vs y/delta at Re_tau = 1000, 2000, 5200, PDF p. 10"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "One treatment only; text: 'it aligns remarkably well with the logarithmic wall law up to Re_tau = 1.0 x 10^6' (p. 10). Figure shows Re_tau = 1e5 points close to the log law with the outer points slightly below it.",
+          "direction_output_2": "unresolved",
+          "basis_2": "One treatment only; discrepancies in the first three cells, agreement beyond the fourth (p. 9). No <u'v'>+ is reported at Re_tau = 1e5 or 1e6.",
+          "confidence": "high",
+          "what_would_change_it": "If 'mean U+ in high-Re extrapolations' were taken to include the faded Re_tau <= 5200 points of Fig. 5, the runs would be shared with Fig. 4b and the category would become shared_runs_no_treatment_baseline; no reading yields a ranked run pair."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "P26-01",
@@ -3555,11 +5102,50 @@
       "controls": "Holding Re fixed across grid refinement changes both grid and physical hm; all large-Re VWM curves cannot be read (two omitted). EQWM is not a velocity baseline in Fig. 4.",
       "reference": "Channel target versus log-law shape at sampled heights.",
       "criterion": "At e.g. Reτ=50000 on standard grid, LLWM has both smaller uτ error and a profile closer to the log law than VWM; mean alignment of some cases and friction errors in other cases do not reverse this.",
-      "adjudication": "matched_subset_no_opposing_rank",
+      "adjudication": "matched_no_opposing_rank",
       "inference": "Source establishes range-limited VWM and favourable LLWM performance. No opposing treatment rank is supported by the historical pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "matched_subset_no_opposing_rank",
+      "matched_detail": "concordant",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "concordant",
+          "basis": "subset where both treatments are plotted; LLWM closer in profile and friction velocity"
+        },
+        "second": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "concordant",
+          "intervention_type": "grid",
+          "run_pair": {
+            "baseline": "VWM, channel Re_tau = 2e4, standard grid dy/delta = 0.05, (h_m)+ = 2000",
+            "alternative": "VWM, channel Re_tau = 2e4, refined dy/delta = 0.025, (h_m)+ = 1000 (the 5e4 pair, dy 0.05 -> 0.01, (h_m)+ 5000 -> 1000, behaves the same)",
+            "what_differs": "wall-normal grid spacing, which moves the matching point h_m to within the trained (h_m)+ range",
+            "also_changes": "matching height (h_m)+ (a consequence of the grid change); dx,z/delta = 0.05 and test span 300 delta/u_tau stated for all cases"
+          },
+          "edition_seen": "Bae & Koumoutsakos, arXiv:2106.11144v2 [physics.flu-dyn], 1 Feb 2022 (Springer Nature LaTeX template preprint, not the typeset version of record)",
+          "passages_used": [
+            "Fig. 4a p.7 (VWM mean velocity profiles <u>* vs y*, with log law kappa=0.41, B=5.2); Table 1 p.16; Discussion p.11",
+            "Fig. 3a p.7 (error in u_tau^m, %, VWM empty symbols, circles standard grid dy=0.05, triangles refined); text pp.7-8; Table 1 p.16"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "Fig. 4a: the standard-grid Re_tau=2e4 open circles lie ~3-4 units above the log law (5e4: ~10 units); the refined-grid markers lie on the dashed line. The separation is far larger than marker size. Also p.11: 'The model captures the mean velocity profile ... when the wall-normal location of the sampling point is within the training set.' Note axes are <u>* vs y* (modeled u_tau scaling).",
+          "direction_output_2": "closer",
+          "basis_2": "pp.7-8: 'Cases at Re_tau = 2e4 and 5e4 produce high errors as the (h_m)+ is not within the trained range. Once the values of (h_m)+ are adjusted to be within the range by refining the grid, the errors decrease significantly.' Fig. 3a (plot reading, no half-width): 2e4 ~-10% -> ~+2.5%; 5e4 ~-29% -> ~+3%.",
+          "confidence": "medium",
+          "what_would_change_it": "A different run pair. VWM -> LLWM on the same grid (a wall-treatment contrast) is also concordant closer in both Fig. 3a and Fig. 4. EQWM appears only as u_tau error crosses in Fig. 3b with no EQWM profiles, so a VWM/LLWM-vs-EQWM pair would be shared_runs_no_treatment_baseline for the profile output. No run pair in this edition shows VWM profile alignment and u_tau error ranking in opposite directions."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "concordant",
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "P29-01",
@@ -3610,7 +5196,19 @@
       "inference": "Both favourable and adverse regions concern a complete SPH-RANS calculation. They cannot establish an error trade-off from changing a wall treatment.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity"
+      "historical_observable_contrast": "same quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P29-02",
@@ -3661,7 +5259,19 @@
       "inference": "Both favourable and adverse regions concern a complete SPH-RANS calculation. They cannot establish an error trade-off from changing a wall treatment.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P31-01",
@@ -3712,7 +5322,19 @@
       "inference": "These successes and misses can inform transfer across cases; they do not jointly establish opposite error changes on one pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity"
+      "historical_observable_contrast": "same quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P31-02",
@@ -3759,11 +5381,50 @@
       "controls": "Same 128×64×64 grid, flow-control algorithm and SGS. Agent at upper face of first cell, learned wall eddy viscosity and feedback versus equilibrium matching at second-cell centre and wall-stress imposition. Coarse green excluded.",
       "reference": "Same WRLES source ref. 53 at Re_H=37000 for both.",
       "criterion": "Absolute windward-peak Cf error; absolute mean U at the middle plotted station x/H=4, y/H=2. Check at y/H=1.5–2.5 in increments of .25. Both spatial choices are retrospective and explicitly limited.",
-      "adjudication": "opposing_point_estimates_on_restricted_support",
+      "adjudication": "matched_opposing_same_support",
       "inference": "Switch to RLWM improves peak |ΔCf| from ≈.010 to ≈.001 but worsens |ΔU/Ub| from ≈.00–.01 to ≈.09 at that station/height. At five heights the RLWM deviations are ≈.07–.09 versus ≤.02 for EQWM. Opposing nominal changes genuinely present; avoid claiming the rank for the full fields, both Re or both SGS models.",
       "read_precision_and_physical_uncertainty": "Native raster median line coordinates, coarse precision ≈.0002 in Cf and ≈.01 in U/Ub. Units and horizontal offset checked on axes. No physical error interval. Script paired_p_work/read_hill.py.",
       "original_nomination": true,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "opposing_point_estimates_on_restricted_support",
+      "matched_detail": null,
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "opposing_point_estimates_on_restricted_support",
+          "matched_detail": null,
+          "basis": "peak friction closer; interior velocity at one station farther"
+        },
+        "second": {
+          "category": "matched_opposing_same_support",
+          "matched_detail": null,
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "EQWM-VRE, baseline mesh 128x64x64, periodic hill Re_H = 37000",
+            "alternative": "RLWM-VRE, same mesh, same SGS model, same Re_H",
+            "what_differs": "wall model: equilibrium wall model with wall-shear-stress BC matched at the centre of the second off-wall cell vs RL wall model acting on wall eddy viscosity with agents at the top of the first cell (both part of the treatment)",
+            "also_changes": "none stated; same mesh, SGS model, body-force driving, ~50 FTT averaging for all simulations (p.17). Three further run pairs (DSM-37000, DSM-19000, VRE-19000) share both outputs; see what_would_change_it"
+          },
+          "edition_seen": "Zhou & Bae, arXiv:2305.02540v3 [physics.flu-dyn], 26 Jul 2024 (author preprint; footnote cites AIAA Paper 2023-3985)",
+          "passages_used": [
+            "Sec. III.B.2 text p.17 and Fig. 6(a-d) p.18 (Cf along bottom wall, Re_H = 19000 and 37000)",
+            "Sec. III.B.2 text p.17 and Fig. 7(a,b,e,f) p.19 (mean streamwise velocity at x/H = 0.05, 2, 4, 6, 8)"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "p.17: 'The RLWM simulations align more closely with the WRLES results on hill windward side than the EQWM simulations do' and 'Unlike the EQWM simulations, which considerably underestimate the size of the separation bubble, the RLWM simulations are more accurate.' Fig. 6d (plot reading, no half-width): windward peak WRLES ~0.019, RLWM ~0.020, EQWM ~0.010; elsewhere RLWM and EQWM comparable, no region where RLWM is clearly farther.",
+          "direction_output_2": "farther",
+          "basis_2": "p.17: 'when the Reynolds number rises to Re_H = 37000, the EQWM simulations deliver velocity-field results that match or even surpass the RLWM simulations, despite their inaccurate predictions of Cf, as illustrated in Fig. 6(c,d).' Also 'RLWM-DSM yield better velocity-field predictions compared to those with RLWM-VRE, especially at Re_H = 37000.' Fig. 7f: the RLWM-VRE (red) profiles sit visibly to the right of WRLES above y/H~1.3 at x/H = 2, 4, 6 by more than the line width, while EQWM lies on WRLES (EQWM slightly off near the wall at x/H=4).",
+          "confidence": "medium",
+          "what_would_change_it": "Run-pair choice. For DSM at Re_H=37000 (Fig 6c/7e) the velocity is at most a 'match' (unresolved) and RLWM Cf is locally farther than EQWM inside the bubble (min ~-0.0043 vs WRLES ~-0.002, EQWM ~-0.0008), so that pair would be matched_no_opposing_rank (one_direction_unresolved) or matched_support_dependent. At Re_H=19000 the source gives no velocity ranking against EQWM (DSM panel 7a suggests RLWM closer near the wall at x/H=4,6). If the pair is judged across both SGS models, 'match or even surpass' would make output 2 unresolved."
+        },
+        "categories_agree": false,
+        "settled": {
+          "category": "matched_opposing_same_support",
+          "matched_detail": null,
+          "cause_of_disagreement": "first-reading error",
+          "reason": "arXiv:2305.02540v3 p. 17: at Re_H = 37000 \"the EQWM simulations deliver velocity-field results that match or even surpass the RLWM simulations, despite their inaccurate predictions of C_f\". The source itself states the two directions over its reported stations, so the restriction to one station in the first reading was unnecessary. The wording is hedged (\"match or even surpass\"); the digitised station x/H = 4 gives deviations of 0.07 to 0.09 U_b for the learned wall against at most 0.02 for the equilibrium wall."
+        }
+      }
     },
     {
       "pair_id": "P31-03",
@@ -3814,7 +5475,19 @@
       "inference": "These successes and misses can inform transfer across cases; they do not jointly establish opposite error changes on one pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity"
+      "historical_observable_contrast": "same quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P31-04",
@@ -3865,7 +5538,19 @@
       "inference": "These successes and misses can inform transfer across cases; they do not jointly establish opposite error changes on one pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P31-05",
@@ -3916,7 +5601,41 @@
       "inference": "These successes and misses can inform transfer across cases; they do not jointly establish opposite error changes on one pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "intervention_type": "none",
+          "run_pair": null,
+          "edition_seen": "Zhou & Bae, arXiv:2305.02540v3 [physics.flu-dyn], 26 Jul 2024 (author preprint)",
+          "passages_used": [
+            "Sec. III.B.2 text p.17 and Fig. 6(a-d) p.18 (periodic hill, Re_H = 19000/37000)",
+            "Appendix II text pp.28-29, Table 3 and Fig. 14 p.30 (plane channel Re_tau = 2000/5000)"
+          ],
+          "direction_output_1": "unresolved",
+          "basis_1": "Not ranked because the outputs share no runs; within the hill case RLWM is stated closer than EQWM on the windward side and bubble size (p.17).",
+          "direction_output_2": "unresolved",
+          "basis_2": "The channel appendix has no EQWM or other wall-treatment baseline; p.29 'LLM becomes apparent at higher Re_tau'. That is a Re trend for one model, not a treatment contrast.",
+          "confidence": "high",
+          "what_would_change_it": "Nothing in this edition. A channel run with EQWM, or a hill velocity profile in inner units, would be needed to form a shared run pair."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "P31-06",
@@ -3967,7 +5686,19 @@
       "inference": "These successes and misses can inform transfer across cases; they do not jointly establish opposite error changes on one pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity"
+      "historical_observable_contrast": "same quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P31-07",
@@ -4018,7 +5749,19 @@
       "inference": "These successes and misses can inform transfer across cases; they do not jointly establish opposite error changes on one pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     },
     {
       "pair_id": "P31-08",
@@ -4069,7 +5812,46 @@
       "inference": "RLWM improves crest friction while neither internal model captures the leeward bubble. A common failure is not a worsening relative to EQWM.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "same quantity, other location"
+      "historical_observable_contrast": "same quantity, other location",
+      "legacy_adjudication": "matched_no_opposing_rank",
+      "matched_detail": "one_direction_unresolved",
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "basis": "crest friction closer; leeward bubble missed by both"
+        },
+        "second": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "EQWM-DSM, medium mesh (37e6 CV), Boeing bump Re_L = 2e6",
+            "alternative": "RLWM-DSM, same mesh and SGS",
+            "what_differs": "wall model (EQWM wall-shear-stress BC matched at second off-wall cell centre vs RLWM wall eddy viscosity, agents at top of first cell)",
+            "also_changes": "none stated; same mesh, SGS, inflow, CFL 2, 1.5 FTT transient + 1.5 FTT statistics. The other five mesh/SGS pairs give the same pattern"
+          },
+          "edition_seen": "Zhou & Bae, arXiv:2305.02540v3 [physics.flu-dyn], 26 Jul 2024 (author preprint)",
+          "passages_used": [
+            "Sec. IV.B text p.23 and Fig. 10(a-f) p.24 (Cf along bump surface at z/L=0, coarse/medium/fine meshes, DSM/Vreman)",
+            "Sec. IV.B text p.22 and Fig. 9 p.22 (instantaneous u_x, medium mesh), p.23 statement on separation, Fig. 10 leeward region p.24"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "p.23: 'the simulations using the EQWM overpredict Cf near the bump peak. In contrast, the developed RLWMs provide more accurate predictions for this region' and 'the performance of the current RLWMs within the region upstream of the bump is better than that of the EQWM'. Leeward: 'the predictions of Cf from both wall models are comparable'. Downstream: 'the developed RLWMs provide lower skin friction than the EQWM' (Fig. 10: experiment ~2.6-3.0e-3, RLWM ~2.1e-3, EQWM ~3.0-3.2e-3, so RLWM farther there).",
+          "direction_output_2": "unresolved",
+          "basis_2": "Common miss. p.22: 'the flow is attached over the entire bump surface in the simulations, which is qualitatively different with the experimental observations'; p.23: 'a large separation bubble appears downstream of the bump peak, which is not captured in all simulations.' Fig. 10b: both RLWM and EQWM Cf minima stay positive on the leeward side.",
+          "confidence": "medium",
+          "what_would_change_it": "Reading output 1 on the complete Cf curve gives a mixed (unresolved) direction, which would make it both_unresolved_or_common_miss. Treating RLWM's lower leeward Cf minimum (coarse mesh ~1.0e-3 vs EQWM ~1.7e-3) as 'closer to separating' would resolve output 2 as closer, giving concordant. No reading gives an opposing pair."
+        },
+        "categories_agree": true,
+        "settled": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "cause_of_disagreement": null,
+          "reason": "Both readings agree."
+        }
+      }
     },
     {
       "pair_id": "P31-09",
@@ -4120,7 +5902,46 @@
       "inference": "Fine DSM: 10³Cf crest maximum is ≈8.8 in Gray measurements, ≈9.3 RLWM and ≈11.4 EQWM, so absolute friction error improves. At x/L≈.263 in Fig. 11c mean Cp≈−.16 measured, +.15 RLWM, +.10 EQWM. The wall treatment worsens absolute local pressure error; both internal models miss the bubble. Across ten recoverable grey/black square centers at x/L>.2, MAE≈.237 RLWM vs .203 EQWM and EQWM is closer at all ten. These are opposite nominal changes for different quantities and explicitly different bump regions, not a domainwide pressure failure. It is the same test family as the new velocity contrast.",
       "read_precision_and_physical_uncertainty": "Native source raster for the fine DSM model and experimental profiles; ≈.1 in 10³Cf and ≈.01 in Cp, with finer precision reserved for the reproduced averages. Authors describe overall Cp predictions as comparable. No joint physical intervals. See paired_p_work/read_bump_pressure.py and per-station CSV.",
       "original_nomination": true,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "opposing_point_estimates_on_restricted_support",
+      "matched_detail": null,
+      "intervention_type": "wall treatment",
+      "decision_tree_reading": {
+        "first": {
+          "category": "opposing_point_estimates_on_restricted_support",
+          "matched_detail": null,
+          "basis": "crest friction closer; recovery pressure at ten taps farther"
+        },
+        "second": {
+          "category": "matched_no_opposing_rank",
+          "matched_detail": "one_direction_unresolved",
+          "intervention_type": "wall treatment",
+          "run_pair": {
+            "baseline": "EQWM-DSM, medium mesh, Boeing bump Re_L = 2e6",
+            "alternative": "RLWM-DSM, same mesh and SGS",
+            "what_differs": "wall model (EQWM wall-shear-stress BC vs RLWM wall eddy-viscosity BC, as part of the treatment)",
+            "also_changes": "none stated; the same pattern holds for all six mesh/SGS pairs"
+          },
+          "edition_seen": "Zhou & Bae, arXiv:2305.02540v3 [physics.flu-dyn], 26 Jul 2024 (author preprint)",
+          "passages_used": [
+            "Sec. IV.B text p.23 and Fig. 10(a-f) p.24 (Cf at z/L=0)",
+            "Sec. IV.B text pp.23-25 and Fig. 11(a-f) p.25 (Cp at z/L=0); spanwise Cp only described in text, details omitted (refers to [39])"
+          ],
+          "direction_output_1": "closer",
+          "basis_1": "p.23: EQWM 'overpredict Cf near the bump peak. In contrast, the developed RLWMs provide more accurate predictions for this region'; Fig. 10b peak: EQWM ~11e-3, RLWM ~9e-3, experiment ~8.8e-3 (plot reading). Downstream RLWM lower than experiment and farther than EQWM.",
+          "direction_output_2": "unresolved",
+          "basis_2": "p.23: 'the RLWMs and EQWM provide similar Cp predictions, with only minor differences observed on the leeward side of the bump.' Fig. 11: both curves overlie except leeward x/L~0.2-0.35, where RLWM is ~0.03 higher than EQWM while both miss the experiment by ~0.3 (shared discrepancy). Spanwise: 'simulation results align closely with each other' (p.23).",
+          "confidence": "high",
+          "what_would_change_it": "Treating the small leeward Cp offset (RLWM slightly higher, i.e. marginally farther from the experiment at x/L~0.3) as resolved 'farther' would make this opposing on restricted support (opposing_point_estimates_on_restricted_support). The source calls the differences minor."
+        },
+        "categories_agree": false,
+        "settled": {
+          "category": "opposing_point_estimates_on_restricted_support",
+          "matched_detail": null,
+          "cause_of_disagreement": "rule ambiguity",
+          "reason": "Crest friction closer for the learned wall (both readings). Recovery pressure: the source calls the two curves similar; two independent digitisations give the learned wall farther from all ten measurements between x/L = 0.20 and 0.39, by 0.018 to 0.046 in C_p, against a line width of 0.01 to 0.02 and a common miss of 0.07 to 0.33 (means 0.20 and 0.24). The difference exceeds the line width at the upstream taps and not at the last ones. A measured reading with a recorded half-width outranks the source's qualitative summary, so the leaf stands, with the magnitude and the common miss stated."
+        }
+      }
     },
     {
       "pair_id": "P31-10",
@@ -4171,7 +5992,153 @@
       "inference": "These successes and misses can inform transfer across cases; they do not jointly establish opposite error changes on one pair.",
       "read_precision_and_physical_uncertainty": "Source captions, legends, tables and authors’ discussion establish the stated design and qualitative comparison. Marker/line resolution does not bound sampling, discretisation or reference discrepancy. No joint physical interval for the two error changes was identified.",
       "original_nomination": false,
-      "historical_observable_contrast": "different quantity"
+      "historical_observable_contrast": "different quantity",
+      "legacy_adjudication": "different_tests",
+      "matched_detail": null,
+      "intervention_type": "none",
+      "decision_tree_reading": {
+        "first": {
+          "category": "different_tests",
+          "matched_detail": null,
+          "basis": "legacy different_tests"
+        },
+        "second": null,
+        "note": "Coded different_tests from the located passages; not drawn for a second reading."
+      }
     }
-  ]
+  ],
+  "decision_tree": {
+    "text": "# C2 decision tree: what does a nominated pair of quantities actually compare?\n\nWritten before recoding any record or issuing any second reading in this pass.\n\n## The object\n\nA historical pair names two reported quantities (outputs) in one paper. The earlier\nsynthesis treated such a pair as a \"mixed\" result: favourable on one quantity,\nunfavourable on the other. The tree asks what the located source passages allow one\nto compare. It assigns exactly one category.\n\nTerms. A *run pair* is a baseline calculation B and an alternative calculation A of\nthe same flow case and conditions that differ by a named change of wall treatment or\nnear-wall boundary implementation (anything else that also changes is recorded).\nA *reference* is the measurement or higher-fidelity calculation both runs are compared\nwith for that output. The *direction* for an output is whether A is closer to or\nfarther from the reference than B in absolute discrepancy.\n\n## Questions, in order\n\nQ1. Run identity. In the located passages, is each of the two outputs reported for\n    the same run pair (the same B and the same A)?\n    - The two outputs come from different flow cases, operating points, Reynolds\n      numbers or sets of runs, with no run pair common to both -> `different_tests`.\n    - Each output has its own contrast between runs, but the two contrasts do not use\n      the same B and A -> `no_shared_baseline`.\n    - Both outputs are reported for the same run or runs, but for at least one output\n      there is only one wall treatment, so nothing can be ranked (Q5: no treatment\n      baseline) -> `shared_runs_no_treatment_baseline`.\n    - Yes -> Q2.\n\nQ2. Reference. Is there, for each output, one reference against which both B and A\n    are compared? If an output has none -> `matched_no_common_reference`.\n    Otherwise -> Q3.\n\nQ3. Support. For each output note the support on which the direction is assessed:\n    \"complete\" (every station, height, tap or time the source reports for that output\n    on these runs, or the source's own global or integrated measure) or \"restricted\"\n    (one station, a height range, a subset of taps or an instant chosen within a larger\n    reported support).\n\nQ4. Direction of each output: closer / farther / unresolved. For tabulated numbers\n    apply the frozen C1 rule (rounding box and reported reference interval). For\n    curves use the source's own statement of direction or a separation clearly larger\n    than the line or marker width; otherwise unresolved. A discrepancy that B and A\n    share (both miss the reference by about the same amount) is \"unresolved\", not\n    \"farther\".\n\nLeaves after Q4:\n    - Both directions resolved and opposite, both on complete support (or both at the\n      same single station and time, where that station is all the source reports)\n      -> `matched_opposing_same_support`.\n    - Opposite directions that exist only with at least one output on restricted\n      support, or with the two outputs at different stations of a larger reported\n      support -> `opposing_point_estimates_on_restricted_support`.\n    - Not opposing on complete support, but the direction for an output changes sign\n      when its support is restricted -> `matched_support_dependent`.\n    - Otherwise -> `matched_no_opposing_rank`, with `matched_detail` one of\n      `concordant` (both resolved, same sign), `one_direction_unresolved`,\n      `both_unresolved_or_common_miss`.\n\n## Closed vocabulary\n\n`different_tests`, `no_shared_baseline`, `shared_runs_no_treatment_baseline`,\n`matched_no_common_reference`, `matched_no_opposing_rank` (+ `matched_detail`),\n`matched_support_dependent`, `opposing_point_estimates_on_restricted_support`,\n`matched_opposing_same_support`.\n\nEarlier labels map as follows: `matched_subset_no_opposing_rank` ->\n`matched_no_opposing_rank` with `subset_only: true`; `different_criteria_no_adverse_delta`\n-> decided again by the tree (the earlier label is kept in `legacy_adjudication`).\n\n## Reading procedure\n\nFirst reading: the existing records (written before this tree) are recoded from their\nown fields; the source is opened wherever a field does not decide a branch.\nSecond reading: a reader who is given the pair's two quantities and original locators,\nthis tree and the source file, and none of the first reading's category, inference or\ndirection. Second readings cover every pair whose first-reading category is not\n`different_tests`, a seeded random ten of the `different_tests` pairs\n(numpy default_rng(20261119), drawn without replacement from the sorted pair IDs), and\nthe same-run contrasts that the paper or response uses outside the 79\n(N655 at t* = 0.2, N626 four to five message-passing steps, N174).\n\nAgreement is reported on the category (and on the grouped question \"is there a run\npair with both outputs: yes/no\"). Both readings are kept. A disagreement is settled\nby citing the source passage, and the settled category is recorded with its reason.\n\n## What the categories can and cannot support\n\nThe 79 pairs were nominated because the earlier coding called them mixed. The\ncategories describe what those nominations compared. They do not estimate how often\nrankings reverse between quantities in the literature.\n\n## Amendment 1 (made before any record was recoded and before any second reading was issued)\n\nSome nominated pairs compare two runs that differ by grid resolution, outer closure\nor a whole package, with the wall law unchanged. Q1 therefore accepts any run pair B, A\nthat differs by a named change, and the reader records `intervention_type`:\n`wall treatment`, `near-wall implementation or sampling`, `grid`, `outer closure`,\n`whole system or several changes`. Categories are assigned as above. Tabulations that\nconcern the effect of a wall treatment use only the first two types.\n",
+    "fixed": {
+      "fixed_at": "2026-11-19T08:42:27Z; amendment 1 2026-11-19T08:44:13Z",
+      "sha256_of_fixed_file": "367b29458e6e6d52968b238df1658b25b50d45928589c01ba75d95ec1162e427",
+      "wording_removed_here": 0,
+      "note": "The text stored here is the fixed file with internal file and role names removed. Nothing else differs."
+    },
+    "amendment_2_after_second_readings": [
+      "Where the source offers more than one run pair for the two outputs, each is recorded. The pair-level category is taken from a change of wall treatment or near-wall implementation at fixed grid and numerics where one exists.",
+      "A verbal statement that the unplotted runs are \"almost identical\" counts as a source-stated unresolved direction for those runs.",
+      "A restricted-support leaf requires the source's own statement of the local reversal or a recorded numerical reading with its half-width. A visual impression without a recorded half-width is flagged as a possible local reversal and does not move the leaf.",
+      "Where the source states that the direction of one output differs between its components (for example stress components), the leaf is matched_support_dependent."
+    ]
+  },
+  "category_counts": {
+    "different_tests": 55,
+    "no_shared_baseline": 0,
+    "shared_runs_no_treatment_baseline": 3,
+    "matched_no_common_reference": 0,
+    "matched_no_opposing_rank": 16,
+    "matched_support_dependent": 3,
+    "opposing_point_estimates_on_restricted_support": 1,
+    "matched_opposing_same_support": 1
+  },
+  "categories_by_work": {
+    "N195": {
+      "different_tests": 1,
+      "matched_no_opposing_rank": 1,
+      "shared_runs_no_treatment_baseline": 1
+    },
+    "N239": {
+      "different_tests": 1
+    },
+    "N339": {
+      "different_tests": 10
+    },
+    "N357": {
+      "different_tests": 3,
+      "matched_support_dependent": 1
+    },
+    "N358": {
+      "matched_no_opposing_rank": 1
+    },
+    "N364": {
+      "different_tests": 3
+    },
+    "N551": {
+      "matched_no_opposing_rank": 8
+    },
+    "N611": {
+      "different_tests": 6
+    },
+    "N626": {
+      "different_tests": 4,
+      "matched_no_opposing_rank": 1
+    },
+    "N655": {
+      "matched_support_dependent": 1
+    },
+    "N674": {
+      "different_tests": 5
+    },
+    "P01": {
+      "different_tests": 1,
+      "matched_no_opposing_rank": 1
+    },
+    "P14": {
+      "different_tests": 1,
+      "shared_runs_no_treatment_baseline": 1
+    },
+    "P19": {
+      "different_tests": 3
+    },
+    "P20": {
+      "matched_no_opposing_rank": 2
+    },
+    "P23": {
+      "different_tests": 7,
+      "matched_support_dependent": 1
+    },
+    "P24": {
+      "different_tests": 1,
+      "shared_runs_no_treatment_baseline": 1
+    },
+    "P26": {
+      "matched_no_opposing_rank": 1
+    },
+    "P29": {
+      "different_tests": 2
+    },
+    "P31": {
+      "different_tests": 7,
+      "matched_no_opposing_rank": 1,
+      "matched_opposing_same_support": 1,
+      "opposing_point_estimates_on_restricted_support": 1
+    }
+  },
+  "works_by_strongest_category": {
+    "different_tests": [
+      "N239",
+      "N339",
+      "N364",
+      "N611",
+      "N674",
+      "P19",
+      "P29"
+    ],
+    "no_shared_baseline": [],
+    "shared_runs_no_treatment_baseline": [
+      "P14",
+      "P24"
+    ],
+    "matched_no_common_reference": [],
+    "matched_no_opposing_rank": [
+      "N195",
+      "N358",
+      "N551",
+      "N626",
+      "P01",
+      "P20",
+      "P26"
+    ],
+    "matched_support_dependent": [
+      "N357",
+      "N655",
+      "P23"
+    ],
+    "opposing_point_estimates_on_restricted_support": [],
+    "matched_opposing_same_support": [
+      "P31"
+    ]
+  },
+  "scope_of_categories": "The 79 pairings were nominated because an earlier coding called them mixed. The categories say what those nominations compared. They do not estimate how often rankings reverse between quantities."
 }

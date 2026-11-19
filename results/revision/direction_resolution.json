@@ -1,0 +1,1129 @@
+{
+  "rule_sha256": "8b9fbcea0359353251d624066865a68d14b5bc02f67e7dd89a4277cc01970481",
+  "meaning": "Resolved means resolved to the printed digits and reported reference intervals. Sampling, discretisation and measurement uncertainty enter only where a source reports them.",
+  "periodic_hill": {
+    "summary": {
+      "contrasts": 9,
+      "works": 5,
+      "by_class": {
+        "controls differ": 1,
+        "resolved concordant": 5,
+        "resolved opposing": 1,
+        "unrankable": 1,
+        "unresolved": 1
+      },
+      "ids_by_class": {
+        "controls differ": [
+          "N497"
+        ],
+        "resolved concordant": [
+          "N025",
+          "P25-0.03",
+          "P25-0.06",
+          "P31-DSM",
+          "P31-VRE"
+        ],
+        "resolved opposing": [
+          "P25-0.01"
+        ],
+        "unrankable": [
+          "P25-0.09"
+        ],
+        "unresolved": [
+          "N611"
+        ]
+      },
+      "resolved_with_documented_equal_controls": {
+        "resolved concordant": [
+          "N025",
+          "P31-DSM",
+          "P31-VRE"
+        ],
+        "resolved opposing": []
+      },
+      "nominal_point_signs": {
+        "both_closer": 5,
+        "opposite": 3,
+        "unrankable": 1
+      },
+      "smaller_change_in_each_nominally_opposite_contrast": {
+        "N611": 0.05,
+        "P25-0.01": 0.02,
+        "N497": 0.035
+      },
+      "range_of_changes_in_resolved_concordant_contrasts": [
+        0.06,
+        1.96
+      ]
+    },
+    "contrasts": [
+      {
+        "id": "N025",
+        "study_id": "N025",
+        "source_location": "Table 2",
+        "controls_status": "documented equal",
+        "separation": {
+          "direction": "closer",
+          "by_reference": {
+            "KKW DNS, journal table (4.51 ± 0.06)": {
+              "alternative": "0.23",
+              "baseline": "0.29",
+              "reference": "0.19",
+              "nominal_change": -0.06,
+              "change_min": -0.07,
+              "change_max": -0.05,
+              "direction": "closer"
+            },
+            "KKW DNS, archived table (no interval printed)": {
+              "alternative": "0.23",
+              "baseline": "0.29",
+              "reference": "0.19",
+              "nominal_change": -0.06,
+              "change_min": -0.07,
+              "change_max": -0.05,
+              "direction": "closer"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "closer",
+          "by_reference": {
+            "KKW DNS, journal table (4.51 ± 0.06)": {
+              "alternative": "4.24",
+              "baseline": "3.99",
+              "reference": "4.51 ± 0.06",
+              "nominal_change": -0.25,
+              "change_min": -0.26,
+              "change_max": -0.24,
+              "direction": "closer"
+            },
+            "KKW DNS, archived table (no interval printed)": {
+              "alternative": "4.24",
+              "baseline": "3.99",
+              "reference": "4.51",
+              "nominal_change": -0.25,
+              "change_min": -0.26,
+              "change_max": -0.24,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "resolved concordant"
+      },
+      {
+        "id": "N611",
+        "study_id": "N611",
+        "source_location": "Table 2 (arXiv v1); Table 7.2 (dissertation)",
+        "controls_status": "documented equal",
+        "separation": {
+          "direction": "unresolved",
+          "by_reference": {
+            "Froehlich resolved LES, arXiv table (0.2, 4.6-4.7)": {
+              "alternative": "0.25",
+              "baseline": "0.2",
+              "reference": "0.2",
+              "nominal_change": 0.05,
+              "change_min": -0.1,
+              "change_max": 0.105,
+              "direction": "unresolved"
+            },
+            "DNS, dissertation table (0.20, 4.51 ± 0.06)": {
+              "alternative": "0.25",
+              "baseline": "0.2",
+              "reference": "0.20",
+              "nominal_change": 0.05,
+              "change_min": -0.015,
+              "change_max": 0.06,
+              "direction": "unresolved"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "reference dependent",
+          "by_reference": {
+            "Froehlich resolved LES, arXiv table (0.2, 4.6-4.7)": {
+              "alternative": "4.91",
+              "baseline": "3.68",
+              "reference": "4.6 − 4.7",
+              "nominal_change": -0.71,
+              "change_min": -0.92,
+              "change_max": -0.5,
+              "direction": "closer"
+            },
+            "Rapp experiment, arXiv table (reattachment only, 4.21)": {
+              "alternative": "4.91",
+              "baseline": "3.68",
+              "reference": "4.21",
+              "nominal_change": 0.17,
+              "change_min": 0.15,
+              "change_max": 0.19,
+              "direction": "farther"
+            },
+            "DNS, dissertation table (0.20, 4.51 ± 0.06)": {
+              "alternative": "4.91",
+              "baseline": "3.68",
+              "reference": "4.51 ± 0.06",
+              "nominal_change": -0.43,
+              "change_min": -0.57,
+              "change_max": -0.29,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "unresolved"
+      },
+      {
+        "id": "P25-0.01",
+        "study_id": "P25",
+        "source_location": "Table 2, row H1.0-WM-0.01, Re_h = 10 595",
+        "controls_status": "not all reported",
+        "separation": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H1.0-WR)": {
+              "alternative": "0.29",
+              "baseline": "0.31",
+              "reference": "0.22",
+              "nominal_change": -0.02,
+              "change_min": -0.03,
+              "change_max": -0.01,
+              "direction": "closer"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "farther",
+          "by_reference": {
+            "own wall-resolved LES (H1.0-WR)": {
+              "alternative": "4.18",
+              "baseline": "4.26",
+              "reference": "4.35",
+              "nominal_change": 0.08,
+              "change_min": 0.07,
+              "change_max": 0.09,
+              "direction": "farther"
+            }
+          }
+        },
+        "class": "resolved opposing"
+      },
+      {
+        "id": "P25-0.03",
+        "study_id": "P25",
+        "source_location": "Table 2, row H1.0-WM-0.03, Re_h = 10 595",
+        "controls_status": "not all reported",
+        "separation": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H1.0-WR)": {
+              "alternative": "0.29",
+              "baseline": "0.86",
+              "reference": "0.22",
+              "nominal_change": -0.57,
+              "change_min": -0.58,
+              "change_max": -0.56,
+              "direction": "closer"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H1.0-WR)": {
+              "alternative": "4.31",
+              "baseline": "2.35",
+              "reference": "4.35",
+              "nominal_change": -1.96,
+              "change_min": -1.97,
+              "change_max": -1.95,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "resolved concordant"
+      },
+      {
+        "id": "P25-0.06",
+        "study_id": "P25",
+        "source_location": "Table 2, row H1.0-WM-0.06, Re_h = 10 595",
+        "controls_status": "not all reported",
+        "separation": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H1.0-WR)": {
+              "alternative": "0.36",
+              "baseline": "1.27",
+              "reference": "0.22",
+              "nominal_change": -0.91,
+              "change_min": -0.92,
+              "change_max": -0.9,
+              "direction": "closer"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H1.0-WR)": {
+              "alternative": "5.07",
+              "baseline": "1.98",
+              "reference": "4.35",
+              "nominal_change": -1.65,
+              "change_min": -1.67,
+              "change_max": -1.63,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "resolved concordant"
+      },
+      {
+        "id": "P25-0.09",
+        "study_id": "P25",
+        "source_location": "Table 2, row H1.0-WM-0.09, Re_h = 10 595",
+        "controls_status": "not all reported",
+        "class": "unrankable"
+      },
+      {
+        "id": "P31-DSM",
+        "study_id": "P31",
+        "source_location": "Table 1 p. 7",
+        "controls_status": "documented equal",
+        "separation": {
+          "direction": "closer",
+          "by_reference": {
+            "DNS [52] as printed": {
+              "alternative": "0.29",
+              "baseline": "0.57",
+              "reference": "0.20",
+              "nominal_change": -0.28,
+              "change_min": -0.29,
+              "change_max": -0.27,
+              "direction": "closer"
+            },
+            "WRLES [53] as printed": {
+              "alternative": "0.29",
+              "baseline": "0.57",
+              "reference": "-0.11",
+              "nominal_change": -0.28,
+              "change_min": -0.29,
+              "change_max": -0.27,
+              "direction": "closer"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "closer",
+          "by_reference": {
+            "DNS [52] as printed": {
+              "alternative": "4.57",
+              "baseline": "3.05",
+              "reference": "4.51",
+              "nominal_change": -1.4,
+              "change_min": -1.42,
+              "change_max": -1.38,
+              "direction": "closer"
+            },
+            "WRLES [53] as printed": {
+              "alternative": "4.57",
+              "baseline": "3.05",
+              "reference": "4.31",
+              "nominal_change": -1.0,
+              "change_min": -1.02,
+              "change_max": -0.98,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "resolved concordant"
+      },
+      {
+        "id": "P31-VRE",
+        "study_id": "P31",
+        "source_location": "Table 1 p. 7",
+        "controls_status": "documented equal",
+        "separation": {
+          "direction": "closer",
+          "by_reference": {
+            "DNS [52] as printed": {
+              "alternative": "0.39",
+              "baseline": "0.58",
+              "reference": "0.20",
+              "nominal_change": -0.19,
+              "change_min": -0.2,
+              "change_max": -0.18,
+              "direction": "closer"
+            },
+            "WRLES [53] as printed": {
+              "alternative": "0.39",
+              "baseline": "0.58",
+              "reference": "-0.11",
+              "nominal_change": -0.19,
+              "change_min": -0.2,
+              "change_max": -0.18,
+              "direction": "closer"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "closer",
+          "by_reference": {
+            "DNS [52] as printed": {
+              "alternative": "3.96",
+              "baseline": "3.28",
+              "reference": "4.51",
+              "nominal_change": -0.68,
+              "change_min": -0.69,
+              "change_max": -0.67,
+              "direction": "closer"
+            },
+            "WRLES [53] as printed": {
+              "alternative": "3.96",
+              "baseline": "3.28",
+              "reference": "4.31",
+              "nominal_change": -0.68,
+              "change_min": -0.69,
+              "change_max": -0.67,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "resolved concordant"
+      },
+      {
+        "id": "N497",
+        "study_id": "N497",
+        "source_location": "Tables 4-5, pp. 1173-1174",
+        "controls_status": "differ",
+        "separation": {
+          "direction": "farther",
+          "by_reference": {
+            "Expe. (Table 5)": {
+              "alternative": "0.573",
+              "baseline": "0.538",
+              "reference": "0.19",
+              "nominal_change": 0.035,
+              "change_min": 0.034,
+              "change_max": 0.036,
+              "direction": "farther"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "closer",
+          "by_reference": {
+            "Expe. (Table 5)": {
+              "alternative": "3.935",
+              "baseline": "3.652",
+              "reference": "4.21",
+              "nominal_change": -0.283,
+              "change_min": -0.284,
+              "change_max": -0.282,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "controls differ"
+      }
+    ]
+  },
+  "periodic_hill_same_table_sensitivity": {
+    "by_class": {
+      "resolved concordant": 7,
+      "unrankable": 4,
+      "unresolved": 1
+    },
+    "contrasts": [
+      {
+        "id": "P25-H0.5-10595-0.01",
+        "study_id": "P25",
+        "source_location": "Table 2, row H0.5-WM-0.01, Re_h = 10 595",
+        "controls_status": "not all reported",
+        "separation": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H0.5-WR)": {
+              "alternative": "0.0",
+              "baseline": "0.22",
+              "reference": "0.0",
+              "nominal_change": -0.22,
+              "change_min": -0.275,
+              "change_max": -0.065,
+              "direction": "closer"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H0.5-WR)": {
+              "alternative": "5.24",
+              "baseline": "3.53",
+              "reference": "5.28",
+              "nominal_change": -1.71,
+              "change_min": -1.72,
+              "change_max": -1.7,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "resolved concordant"
+      },
+      {
+        "id": "P25-H0.5-10595-0.03",
+        "study_id": "P25",
+        "source_location": "Table 2, row H0.5-WM-0.03, Re_h = 10 595",
+        "controls_status": "not all reported",
+        "separation": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H0.5-WR)": {
+              "alternative": "0.12",
+              "baseline": "0.35",
+              "reference": "0.0",
+              "nominal_change": -0.23,
+              "change_min": -0.24,
+              "change_max": -0.22,
+              "direction": "closer"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H0.5-WR)": {
+              "alternative": "5.43",
+              "baseline": "2.51",
+              "reference": "5.28",
+              "nominal_change": -2.62,
+              "change_min": -2.64,
+              "change_max": -2.6,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "resolved concordant"
+      },
+      {
+        "id": "P25-H0.5-10595-0.06",
+        "study_id": "P25",
+        "source_location": "Table 2, row H0.5-WM-0.06, Re_h = 10 595",
+        "controls_status": "not all reported",
+        "separation": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H0.5-WR)": {
+              "alternative": "0.21",
+              "baseline": "0.40",
+              "reference": "0.0",
+              "nominal_change": -0.19,
+              "change_min": -0.2,
+              "change_max": -0.18,
+              "direction": "closer"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H0.5-WR)": {
+              "alternative": "5.34",
+              "baseline": "2.08",
+              "reference": "5.28",
+              "nominal_change": -3.14,
+              "change_min": -3.16,
+              "change_max": -3.12,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "resolved concordant"
+      },
+      {
+        "id": "P25-H0.5-10595-0.09",
+        "study_id": "P25",
+        "source_location": "Table 2, row H0.5-WM-0.09, Re_h = 10 595",
+        "controls_status": "not all reported",
+        "separation": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H0.5-WR)": {
+              "alternative": "0.27",
+              "baseline": "0.48",
+              "reference": "0.0",
+              "nominal_change": -0.21,
+              "change_min": -0.22,
+              "change_max": -0.2,
+              "direction": "closer"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H0.5-WR)": {
+              "alternative": "4.47",
+              "baseline": "1.62",
+              "reference": "5.28",
+              "nominal_change": -2.85,
+              "change_min": -2.86,
+              "change_max": -2.84,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "resolved concordant"
+      },
+      {
+        "id": "P25-H1.5-10595-0.01",
+        "study_id": "P25",
+        "source_location": "Table 2, row H1.5-WM-0.01, Re_h = 10 595",
+        "controls_status": "not all reported",
+        "separation": {
+          "direction": "unresolved",
+          "by_reference": {
+            "own wall-resolved LES (H1.5-WR)": {
+              "alternative": "0.53",
+              "baseline": "0.52",
+              "reference": "0.45",
+              "nominal_change": 0.01,
+              "change_min": 0.0,
+              "change_max": 0.02,
+              "direction": "unresolved"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "farther",
+          "by_reference": {
+            "own wall-resolved LES (H1.5-WR)": {
+              "alternative": "3.54",
+              "baseline": "3.64",
+              "reference": "3.89",
+              "nominal_change": 0.1,
+              "change_min": 0.09,
+              "change_max": 0.11,
+              "direction": "farther"
+            }
+          }
+        },
+        "class": "unresolved"
+      },
+      {
+        "id": "P25-H1.5-10595-0.03",
+        "study_id": "P25",
+        "source_location": "Table 2, row H1.5-WM-0.03, Re_h = 10 595",
+        "controls_status": "not all reported",
+        "separation": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H1.5-WR)": {
+              "alternative": "0.58",
+              "baseline": "1.40",
+              "reference": "0.45",
+              "nominal_change": -0.82,
+              "change_min": -0.83,
+              "change_max": -0.81,
+              "direction": "closer"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H1.5-WR)": {
+              "alternative": "3.89",
+              "baseline": "2.72",
+              "reference": "3.89",
+              "nominal_change": -1.17,
+              "change_min": -1.18,
+              "change_max": -1.15,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "resolved concordant"
+      },
+      {
+        "id": "P25-H1.5-10595-0.06",
+        "study_id": "P25",
+        "source_location": "Table 2, row H1.5-WM-0.06, Re_h = 10 595",
+        "controls_status": "not all reported",
+        "class": "unrankable"
+      },
+      {
+        "id": "P25-H1.5-10595-0.09",
+        "study_id": "P25",
+        "source_location": "Table 2, row H1.5-WM-0.09, Re_h = 10 595",
+        "controls_status": "not all reported",
+        "class": "unrankable"
+      },
+      {
+        "id": "P25-H1.0-37000-0.01",
+        "study_id": "P25",
+        "source_location": "Table 2, row H1.0-WM-0.01, Re_h = 37 000",
+        "controls_status": "not all reported",
+        "separation": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H1.0-WR)": {
+              "alternative": "0.30",
+              "baseline": "0.57",
+              "reference": "0.29",
+              "nominal_change": -0.27,
+              "change_min": -0.28,
+              "change_max": -0.26,
+              "direction": "closer"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H1.0-WR)": {
+              "alternative": "4.21",
+              "baseline": "2.78",
+              "reference": "4.01",
+              "nominal_change": -1.03,
+              "change_min": -1.05,
+              "change_max": -1.01,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "resolved concordant"
+      },
+      {
+        "id": "P25-H1.0-37000-0.03",
+        "study_id": "P25",
+        "source_location": "Table 2, row H1.0-WM-0.03, Re_h = 37 000",
+        "controls_status": "not all reported",
+        "separation": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H1.0-WR)": {
+              "alternative": "0.30",
+              "baseline": "1.06",
+              "reference": "0.29",
+              "nominal_change": -0.76,
+              "change_min": -0.77,
+              "change_max": -0.75,
+              "direction": "closer"
+            }
+          }
+        },
+        "reattachment": {
+          "direction": "closer",
+          "by_reference": {
+            "own wall-resolved LES (H1.0-WR)": {
+              "alternative": "4.50",
+              "baseline": "2.06",
+              "reference": "4.01",
+              "nominal_change": -1.46,
+              "change_min": -1.48,
+              "change_max": -1.44,
+              "direction": "closer"
+            }
+          }
+        },
+        "class": "resolved concordant"
+      },
+      {
+        "id": "P25-H1.0-37000-0.06",
+        "study_id": "P25",
+        "source_location": "Table 2, row H1.0-WM-0.06, Re_h = 37 000",
+        "controls_status": "not all reported",
+        "class": "unrankable"
+      },
+      {
+        "id": "P25-H1.0-37000-0.09",
+        "study_id": "P25",
+        "source_location": "Table 2, row H1.0-WM-0.09, Re_h = 37 000",
+        "controls_status": "not all reported",
+        "class": "unrankable"
+      }
+    ]
+  },
+  "other_tabulated": [
+    {
+      "id": "N364-no explicit SGS-linear",
+      "study_id": "N364",
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "-6.15",
+          "baseline": "-53.36",
+          "reference": null,
+          "nominal_change": -47.21,
+          "change_min": -47.22,
+          "change_max": -47.2,
+          "direction": "closer"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "6.03",
+          "baseline": "2.38",
+          "reference": null,
+          "nominal_change": 3.65,
+          "change_min": 3.64,
+          "change_max": 3.66,
+          "direction": "farther"
+        }
+      },
+      "class": "resolved opposing"
+    },
+    {
+      "id": "N364-no explicit SGS-LUST",
+      "study_id": "N364",
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "0.20",
+          "baseline": "-56.73",
+          "reference": null,
+          "nominal_change": -56.53,
+          "change_min": -56.54,
+          "change_max": -56.52,
+          "direction": "closer"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "0.70",
+          "baseline": "5.16",
+          "reference": null,
+          "nominal_change": -4.46,
+          "change_min": -4.47,
+          "change_max": -4.45,
+          "direction": "closer"
+        }
+      },
+      "class": "resolved concordant"
+    },
+    {
+      "id": "N364-WALE-linear",
+      "study_id": "N364",
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "-4.28",
+          "baseline": "-5.56",
+          "reference": null,
+          "nominal_change": -1.28,
+          "change_min": -1.29,
+          "change_max": -1.27,
+          "direction": "closer"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "3.08",
+          "baseline": "2.98",
+          "reference": null,
+          "nominal_change": 0.1,
+          "change_min": 0.09,
+          "change_max": 0.11,
+          "direction": "farther"
+        }
+      },
+      "class": "resolved opposing"
+    },
+    {
+      "id": "N364-WALE-LUST",
+      "study_id": "N364",
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "0.38",
+          "baseline": "-11.75",
+          "reference": null,
+          "nominal_change": -11.37,
+          "change_min": -11.38,
+          "change_max": -11.36,
+          "direction": "closer"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "0.58",
+          "baseline": "1.19",
+          "reference": null,
+          "nominal_change": -0.61,
+          "change_min": -0.62,
+          "change_max": -0.6,
+          "direction": "closer"
+        }
+      },
+      "class": "resolved concordant"
+    },
+    {
+      "id": "N364-Smagorinsky-linear",
+      "study_id": "N364",
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "-1.80",
+          "baseline": "-5.13",
+          "reference": null,
+          "nominal_change": -3.33,
+          "change_min": -3.34,
+          "change_max": -3.32,
+          "direction": "closer"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "1.16",
+          "baseline": "0.83",
+          "reference": null,
+          "nominal_change": 0.33,
+          "change_min": 0.32,
+          "change_max": 0.34,
+          "direction": "farther"
+        }
+      },
+      "class": "resolved opposing"
+    },
+    {
+      "id": "N364-Smagorinsky-LUST",
+      "study_id": "N364",
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "-0.00",
+          "baseline": "-6.06",
+          "reference": null,
+          "nominal_change": -6.06,
+          "change_min": -6.065,
+          "change_max": -6.05,
+          "direction": "closer"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "0.70",
+          "baseline": "0.95",
+          "reference": null,
+          "nominal_change": -0.25,
+          "change_min": -0.26,
+          "change_max": -0.24,
+          "direction": "closer"
+        }
+      },
+      "class": "resolved concordant"
+    },
+    {
+      "id": "N364-dynamic k-equation-linear",
+      "study_id": "N364",
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "-1.60",
+          "baseline": "-6.77",
+          "reference": null,
+          "nominal_change": -5.17,
+          "change_min": -5.18,
+          "change_max": -5.16,
+          "direction": "closer"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "1.01",
+          "baseline": "0.58",
+          "reference": null,
+          "nominal_change": 0.43,
+          "change_min": 0.42,
+          "change_max": 0.44,
+          "direction": "farther"
+        }
+      },
+      "class": "resolved opposing"
+    },
+    {
+      "id": "N364-dynamic k-equation-LUST",
+      "study_id": "N364",
+      "outputs": {
+        "friction velocity error (%)": {
+          "alternative": "0.43",
+          "baseline": "-12.62",
+          "reference": null,
+          "nominal_change": -12.19,
+          "change_min": -12.2,
+          "change_max": -12.18,
+          "direction": "closer"
+        },
+        "outer mean-velocity error (%)": {
+          "alternative": "0.76",
+          "baseline": "1.56",
+          "reference": null,
+          "nominal_change": -0.8,
+          "change_min": -0.81,
+          "change_max": -0.79,
+          "direction": "closer"
+        }
+      },
+      "class": "resolved concordant"
+    },
+    {
+      "id": "N626-law-to-4",
+      "study_id": "N626",
+      "outputs": {
+        "integral of squared stress-magnitude error": {
+          "alternative": "0.067",
+          "baseline": "0.806",
+          "reference": null,
+          "nominal_change": -0.739,
+          "change_min": -0.74,
+          "change_max": -0.738,
+          "direction": "closer"
+        },
+        "integral of squared streamwise-stress error": {
+          "alternative": "0.308",
+          "baseline": "0.686",
+          "reference": null,
+          "nominal_change": -0.378,
+          "change_min": -0.379,
+          "change_max": -0.377,
+          "direction": "closer"
+        }
+      },
+      "class": "resolved concordant"
+    },
+    {
+      "id": "N626-4-to-5",
+      "study_id": "N626",
+      "outputs": {
+        "integral of squared stress-magnitude error": {
+          "alternative": "0.066",
+          "baseline": "0.067",
+          "reference": null,
+          "nominal_change": -0.001,
+          "change_min": -0.002,
+          "change_max": 0.0,
+          "direction": "unresolved"
+        },
+        "integral of squared streamwise-stress error": {
+          "alternative": "0.367",
+          "baseline": "0.308",
+          "reference": null,
+          "nominal_change": 0.059,
+          "change_min": 0.058,
+          "change_max": 0.06,
+          "direction": "farther"
+        }
+      },
+      "class": "unresolved"
+    },
+    {
+      "id": "MukhaBensow-hex-15-to-30",
+      "study_id": "worked example (not in the 115)",
+      "outputs": {
+        "friction Reynolds number error (%)": {
+          "alternative": "−1.66",
+          "baseline": "0.24",
+          "reference": null,
+          "nominal_change": 1.42,
+          "change_min": 1.41,
+          "change_max": 1.43,
+          "direction": "farther"
+        }
+      },
+      "class": "resolved farther"
+    },
+    {
+      "id": "Mukha2025-M1",
+      "study_id": "N556",
+      "outputs": {
+        "mean wall-stress error (%)": {
+          "alternative": "0.06",
+          "baseline": "0.71",
+          "reference": null,
+          "nominal_change": -0.65,
+          "change_min": -0.66,
+          "change_max": -0.64,
+          "direction": "closer"
+        }
+      },
+      "class": "resolved closer"
+    },
+    {
+      "id": "Mukha2025-M2",
+      "study_id": "N556",
+      "outputs": {
+        "mean wall-stress error (%)": {
+          "alternative": "0.20",
+          "baseline": "0.76",
+          "reference": null,
+          "nominal_change": -0.56,
+          "change_min": -0.57,
+          "change_max": -0.55,
+          "direction": "closer"
+        }
+      },
+      "class": "resolved closer"
+    },
+    {
+      "id": "Mukha2025-M3",
+      "study_id": "N556",
+      "outputs": {
+        "mean wall-stress error (%)": {
+          "alternative": "-1.07",
+          "baseline": "-0.54",
+          "reference": null,
+          "nominal_change": 0.53,
+          "change_min": 0.52,
+          "change_max": 0.54,
+          "direction": "farther"
+        }
+      },
+      "class": "resolved farther"
+    }
+  ],
+  "bump_station_velocity": {
+    "source": "arXiv:2305.02540v3, Fig. 12(c), x/L = -0.4, fine mesh, dynamic Smagorinsky closure",
+    "units": "U/U_inf",
+    "full_support": {
+      "n": 120,
+      "mean_signed_equilibrium": 0.0075062625,
+      "mean_signed_learned": 0.01625277833333334,
+      "mae_equilibrium": 0.009690280833333327,
+      "mae_learned": 0.01625277833333334,
+      "y_min": 0.002017544,
+      "y_max": 0.05973684
+    },
+    "ranking_by_full_support_mean_absolute_discrepancy": "equilibrium closer",
+    "lower_bound_at_which_the_ranking_changes": [
+      0.006842105,
+      0.007324561
+    ],
+    "lower_bound_cell": 8,
+    "pointwise_equal_error_between": [
+      0.01557018,
+      0.01609649
+    ],
+    "pointwise_cells": [
+      16,
+      17
+    ],
+    "below_pointwise_crossover": {
+      "n": 29,
+      "mean_signed_equilibrium": -0.0021426862068965468,
+      "mean_signed_learned": 0.046525803448275886,
+      "mae_equilibrium": 0.00689463103448275,
+      "mae_learned": 0.046525803448275886
+    },
+    "above_pointwise_crossover": {
+      "n": 91,
+      "mean_signed_equilibrium": 0.010581202197802196,
+      "mean_signed_learned": 0.0066053307692307646,
+      "mae_equilibrium": 0.010581202197802196,
+      "mae_learned": 0.0066053307692307646
+    },
+    "above_0p02": {
+      "n": 82,
+      "mean_signed_equilibrium": 0.010523381707317071,
+      "mean_signed_learned": 0.006517524390243899,
+      "mae_equilibrium": 0.010523381707317071,
+      "mae_learned": 0.006517524390243899
+    },
+    "below_0p02": {
+      "n": 38,
+      "mean_signed_equilibrium": 0.000995636842105267,
+      "mean_signed_learned": 0.03726043157894739,
+      "mae_equilibrium": 0.007892536842105257,
+      "mae_learned": 0.03726043157894739
+    },
+    "margin_above_0p02": 0.004005857317073172,
+    "reference_shift_that_would_reverse_the_ranking_above_0p02": 0.008520453048780486,
+    "mesh": {
+      "min_dy_over_L": 0.0009,
+      "stretching": 1.013,
+      "learned_wall_sample_height": 0.0009,
+      "equilibrium_matching_height": 0.001355850000000003,
+      "lowest_measured_height_cell": 3
+    },
+    "statistics": "1.5 flow-through times after a 1.5 flow-through transient in each bump run (source p. 21). No sampling interval is reported.",
+    "experiment": "Gray (2023), doctoral thesis: freestream velocity uncertainty about 0.4 % at 95 % confidence (Appendix G.1); the PIV uncertainty treatment covers random error only (Section 2.4.5, Appendix G.4)."
+  }
+}

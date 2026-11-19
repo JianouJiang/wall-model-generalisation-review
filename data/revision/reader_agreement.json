@@ -1,0 +1,1710 @@
+{
+  "design": {
+    "text": "# C3 plan: how reproducible are the eligibility memberships behind the denominators?\n\nWritten before the sample is drawn and before any second reading in this pass.\n\n## Question\n\nThe Level 2 record assigns each located comparison design in the 115 retrieved works\nto overlapping evidence groups (eight denominators), gives each coupled LES or RANS\nseries a baseline-design label and gives some extrapolation tests a transfer status.\nThose labels were assigned by one automated reading per work. This plan measures how\nwell a second reader, who sees only the rule and the source, reproduces them.\n\n## Sample (fixed here; drawn by draw_sample.py with numpy default_rng(20261119))\n\n1. Random: 12 works from the historical 82 and 8 from the other 33, without\n   replacement, from the sorted study IDs of each cohort in archived_sources.csv.\n2. Forced, because the first reading found them contested, excluded or decisive for\n   the transfer count: P09, N147, N400, N635 (contested); P10, P28, N008, N144\n   (excluded); P22, N623, N626, N011, P21 (transfer status qualified or partly exposed).\n3. Top-up for two rare groups: 2 works each, drawn with the same generator after the\n   random draw, from the first reading's member lists of `constitutive_constraint`\n   and `thermal`, excluding works already selected. These four are selected on the\n   first reader's positive label. They inform positive agreement only and are\n   excluded from kappa on the random sample.\n\n## Second reading\n\nA reader receives: eligibility_rules.json (verbatim), the label definitions below,\nand the archived source file and its text extraction. It does not receive the first\nreading, the design inventory, the cohort label or the reason a work was sampled.\nIt lists every source-located comparison design, with location, case, what changes,\nobservables, reference, the evidence groups, the baseline-design label and the\ntransfer status, and gives the work one disposition.\n\n## Label definitions given to the second reader\n\nThe eight evidence groups: the `denominators` block of eligibility_rules.json.\n\nWork disposition: `eligible` (at least one qualifying design), `contested` (membership\ndepends on a broader reading of the rule; say which), `excluded` (no tested wall\ntreatment, stress estimator or imposed wall flux; or outside turbulent flow).\n\nBaseline-design label for each coupled LES or RANS series (the first reading used\nthese label strings without a written definition; the definitions are written now\nfrom the strings and from how the assembly code applied them, which is itself a\npossible source of disagreement):\n- `within-setting alternative`: at least two different wall treatments (or the same\n  calculation with and without the treatment) on the same flow, mesh, outer closure\n  and numerics.\n- `whole-system or simultaneous changes`: the compared calculations differ in more\n  than the wall treatment (solver, mesh or outer closure change with it), or the\n  package that replaces the baseline changes several components at once.\n- `grid or input change, same wall model`: one wall treatment; mesh, sampling height,\n  Reynolds number or inputs vary.\n- `no distinct baseline`: one treatment compared with reference data only.\n- `matching unresolved`: the source does not let one tell whether compared runs match.\n\nTransfer status of a test presented as extrapolation of a fitted or learned treatment:\n- `qualified`: the source documents that the tested condition and observable were\n  withheld from both fitting and model selection for the stated transfer dimension.\n- `partly exposed`: not used in fitting, but the target or its results informed a\n  choice among models, architectures or settings, or the reported comparison of\n  variants uses the target.\n- `selection unresolved`: tested outside the fitting conditions; independence of\n  model selection is not documented.\n- `not a transfer test`.\n\n## Comparison and statistics (numpy only, python3 -I)\n\nUnit: work x group (binary: the work has at least one design in the group). Also the\nwork disposition, the binary \"work has a coupled series with a within-setting\nalternative\", and the transfer status of the forced transfer records.\nFor each group: the 2 x 2 table, observed agreement, positive and negative specific\nagreement, Cohen's kappa, and a percentile bootstrap interval over works\n(10,000 resamples, generator seed 20261119). Reported for (a) the random 20 and\n(b) all works read twice. Also: the member count in the random sample under each\nreading, and the ratio of design counts per group (second/first), because splitting\na paper into \"series\" is a separate judgement from membership.\nThe estimators are checked first on two identical label files (kappa = 1) and on a\nhand-computed 2 x 2 table.\n\n## Decision rule, fixed before reading\n\nA group is quotable as a denominator at Level 3 if, over all works read twice,\n(a) kappa >= 0.60, (b) the lower 95 % bootstrap bound >= 0.40, and (c) its member\ncount in the random sample changes by no more than max(1 work, 15 %) when the second\nreading replaces the first. A group with fewer than three member works in either\nreading among the works read twice is \"not assessable from this sample\": it may be\ncited only as the listed works, not as a count that stands for the archive.\nA group that fails is not quotable until its rule text is repaired and it is read\nagain. Every disagreement is settled against the source by a third,\nnon-blind reading and attributed to rule ambiguity, first-reading error or\nsecond-reading error. Rule text is repaired where ambiguity is the cause; no vote is\ntaken.\n\n## Scope of the result\n\nAgreement measures reproducibility of labels inside the 115-work frame. It does not\nshow that the frame represents the literature, and it does not turn documentary\nmembership into evidence of validation.\n",
+    "fixed": {
+      "fixed_at": "2026-11-19T08:43:22Z",
+      "sha256_of_fixed_file": "783838bf4c70f9a73582620818ede58ae19632f0eab0accbc3c317abd8766227",
+      "wording_removed_here": 1,
+      "note": "The text stored here is the fixed file with internal file and role names removed. Nothing else differs."
+    },
+    "sample": {
+      "seed": 20261119,
+      "random_historical": [
+        "N174",
+        "N291",
+        "N327",
+        "N357",
+        "N358",
+        "N391",
+        "N418",
+        "N476",
+        "N540",
+        "N556",
+        "P17",
+        "P29"
+      ],
+      "random_other": [
+        "N054",
+        "N085",
+        "N280",
+        "N419",
+        "N632",
+        "N672",
+        "N719",
+        "P10"
+      ],
+      "forced": [
+        "P09",
+        "N147",
+        "N400",
+        "N635",
+        "P10",
+        "P28",
+        "N008",
+        "N144",
+        "P22",
+        "N623",
+        "N626",
+        "N011",
+        "P21"
+      ],
+      "topup": {
+        "constitutive_constraint": [
+          "N240",
+          "P11"
+        ],
+        "thermal": [
+          "N189",
+          "P02"
+        ]
+      },
+      "all_works": [
+        "N008",
+        "N011",
+        "N054",
+        "N085",
+        "N144",
+        "N147",
+        "N174",
+        "N189",
+        "N240",
+        "N280",
+        "N291",
+        "N327",
+        "N357",
+        "N358",
+        "N391",
+        "N400",
+        "N418",
+        "N419",
+        "N476",
+        "N540",
+        "N556",
+        "N623",
+        "N626",
+        "N632",
+        "N635",
+        "N672",
+        "N719",
+        "P02",
+        "P09",
+        "P10",
+        "P11",
+        "P17",
+        "P21",
+        "P22",
+        "P28",
+        "P29"
+      ]
+    },
+    "readers": "First reading: the source dispositions of this collection. Second reading: a separate automated reading given the rule text, the label definitions and the archived source only, without the first reading. Neither is a human screening. Disagreements were settled by a third reading that saw both.",
+    "limits": [
+      "The label definitions for baseline design and transfer status were written for the second reading; the first reading had used the labels without written definitions.",
+      "The second reading received the source locations recorded by the first, which makes agreement easier.",
+      "For N551, P14, P20 and N655 the second reading used preprints and the first used versions of record.",
+      "The three-level disposition vocabulary given to the second reading had no level for a regime-specific extension (N189).",
+      "The direction rule was written after three of the nine hill comparisons had been quoted in a proposal.",
+      "Amendment 2 of the pairing tree was written after the second readings."
+    ],
+    "estimator_self_check": "kappa=1 on identical labels; hand 2x2 table reproduces kappa=0.4"
+  },
+  "memberships": {
+    "statistics": {
+      "all_works_read_twice": {
+        "constitutive_constraint": {
+          "n": 36,
+          "both": 4,
+          "first_only": 1,
+          "second_only": 5,
+          "neither": 26,
+          "observed_agreement": 0.8333333333333334,
+          "positive_agreement": 0.5714285714285714,
+          "negative_agreement": 0.896551724137931,
+          "kappa": 0.47826086956521746,
+          "members_first": 5,
+          "members_second": 9,
+          "kappa_bootstrap_95": [
+            0.09433962264150941,
+            0.8011049723756906
+          ],
+          "bootstrap_resamples_with_defined_kappa": 10000
+        },
+        "prescribed_input": {
+          "n": 36,
+          "both": 12,
+          "first_only": 0,
+          "second_only": 1,
+          "neither": 23,
+          "observed_agreement": 0.9722222222222222,
+          "positive_agreement": 0.96,
+          "negative_agreement": 0.9787234042553191,
+          "kappa": 0.9387755102040816,
+          "members_first": 12,
+          "members_second": 13,
+          "kappa_bootstrap_95": [
+            0.7874015748031495,
+            1.0
+          ],
+          "bootstrap_resamples_with_defined_kappa": 10000
+        },
+        "coupled_wmles": {
+          "n": 36,
+          "both": 16,
+          "first_only": 1,
+          "second_only": 0,
+          "neither": 19,
+          "observed_agreement": 0.9722222222222222,
+          "positive_agreement": 0.9696969696969697,
+          "negative_agreement": 0.9743589743589743,
+          "kappa": 0.9440993788819876,
+          "members_first": 17,
+          "members_second": 16,
+          "kappa_bootstrap_95": [
+            0.8175675675675675,
+            1.0
+          ],
+          "bootstrap_resamples_with_defined_kappa": 10000
+        },
+        "rans_comparison": {
+          "n": 36,
+          "both": 7,
+          "first_only": 0,
+          "second_only": 1,
+          "neither": 28,
+          "observed_agreement": 0.9722222222222222,
+          "positive_agreement": 0.9333333333333333,
+          "negative_agreement": 0.9824561403508771,
+          "kappa": 0.9158878504672897,
+          "members_first": 7,
+          "members_second": 8,
+          "kappa_bootstrap_95": [
+            0.6842105263157894,
+            1.0
+          ],
+          "bootstrap_resamples_with_defined_kappa": 9999
+        },
+        "system_benchmark": {
+          "n": 36,
+          "both": 24,
+          "first_only": 1,
+          "second_only": 0,
+          "neither": 11,
+          "observed_agreement": 0.9722222222222222,
+          "positive_agreement": 0.9795918367346939,
+          "negative_agreement": 0.9565217391304348,
+          "kappa": 0.9361702127659575,
+          "members_first": 25,
+          "members_second": 24,
+          "kappa_bootstrap_95": [
+            0.7742946708463949,
+            1.0
+          ],
+          "bootstrap_resamples_with_defined_kappa": 10000
+        },
+        "thermal": {
+          "n": 36,
+          "both": 5,
+          "first_only": 1,
+          "second_only": 0,
+          "neither": 30,
+          "observed_agreement": 0.9722222222222222,
+          "positive_agreement": 0.9090909090909091,
+          "negative_agreement": 0.9836065573770492,
+          "kappa": 0.8928571428571428,
+          "members_first": 6,
+          "members_second": 5,
+          "kappa_bootstrap_95": [
+            0.625,
+            1.0
+          ],
+          "bootstrap_resamples_with_defined_kappa": 9983
+        },
+        "controlled_wall_change": {
+          "n": 36,
+          "both": 14,
+          "first_only": 0,
+          "second_only": 6,
+          "neither": 16,
+          "observed_agreement": 0.8333333333333334,
+          "positive_agreement": 0.8235294117647058,
+          "negative_agreement": 0.8421052631578947,
+          "kappa": 0.6746987951807228,
+          "members_first": 14,
+          "members_second": 20,
+          "kappa_bootstrap_95": [
+            0.43749999999999994,
+            0.8888888888888888
+          ],
+          "bootstrap_resamples_with_defined_kappa": 10000
+        },
+        "independent_transfer": {
+          "n": 36,
+          "both": 0,
+          "first_only": 3,
+          "second_only": 0,
+          "neither": 33,
+          "observed_agreement": 0.9166666666666666,
+          "positive_agreement": 0.0,
+          "negative_agreement": 0.9565217391304348,
+          "kappa": 0.0,
+          "members_first": 3,
+          "members_second": 0,
+          "kappa_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "bootstrap_resamples_with_defined_kappa": 9551
+        },
+        "eligible_disposition": {
+          "n": 36,
+          "both": 27,
+          "first_only": 1,
+          "second_only": 0,
+          "neither": 8,
+          "observed_agreement": 0.9722222222222222,
+          "positive_agreement": 0.9818181818181818,
+          "negative_agreement": 0.9411764705882353,
+          "kappa": 0.923076923076923,
+          "members_first": 28,
+          "members_second": 27,
+          "kappa_bootstrap_95": [
+            0.7216494845360822,
+            1.0
+          ],
+          "bootstrap_resamples_with_defined_kappa": 10000
+        },
+        "within_setting_alternative_in_a_coupled_series": {
+          "n": 36,
+          "both": 16,
+          "first_only": 0,
+          "second_only": 4,
+          "neither": 16,
+          "observed_agreement": 0.8888888888888888,
+          "positive_agreement": 0.8888888888888888,
+          "negative_agreement": 0.8888888888888888,
+          "kappa": 0.7804878048780487,
+          "members_first": 16,
+          "members_second": 20,
+          "kappa_bootstrap_95": [
+            0.5649546827794563,
+            0.9444444444444444
+          ],
+          "bootstrap_resamples_with_defined_kappa": 10000
+        }
+      },
+      "random_sample": {
+        "constitutive_constraint": {
+          "n": 20,
+          "both": 1,
+          "first_only": 1,
+          "second_only": 3,
+          "neither": 15,
+          "observed_agreement": 0.8,
+          "positive_agreement": 0.3333333333333333,
+          "negative_agreement": 0.8823529411764706,
+          "kappa": 0.23076923076923064,
+          "members_first": 2,
+          "members_second": 4,
+          "kappa_bootstrap_95": [
+            -0.16666666666666685,
+            0.7727272727272725
+          ],
+          "bootstrap_resamples_with_defined_kappa": 9960
+        },
+        "prescribed_input": {
+          "n": 20,
+          "both": 5,
+          "first_only": 0,
+          "second_only": 1,
+          "neither": 14,
+          "observed_agreement": 0.95,
+          "positive_agreement": 0.9090909090909091,
+          "negative_agreement": 0.9655172413793104,
+          "kappa": 0.8749999999999999,
+          "members_first": 5,
+          "members_second": 6,
+          "kappa_bootstrap_95": [
+            0.5454545454545455,
+            1.0
+          ],
+          "bootstrap_resamples_with_defined_kappa": 9997
+        },
+        "coupled_wmles": {
+          "n": 20,
+          "both": 11,
+          "first_only": 0,
+          "second_only": 0,
+          "neither": 9,
+          "observed_agreement": 1.0,
+          "positive_agreement": 1.0,
+          "negative_agreement": 1.0,
+          "kappa": 1.0,
+          "members_first": 11,
+          "members_second": 11,
+          "kappa_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "bootstrap_resamples_with_defined_kappa": 10000
+        },
+        "rans_comparison": {
+          "n": 20,
+          "both": 6,
+          "first_only": 0,
+          "second_only": 1,
+          "neither": 13,
+          "observed_agreement": 0.95,
+          "positive_agreement": 0.9230769230769231,
+          "negative_agreement": 0.9629629629629629,
+          "kappa": 0.8863636363636362,
+          "members_first": 6,
+          "members_second": 7,
+          "kappa_bootstrap_95": [
+            0.6153846153846153,
+            1.0
+          ],
+          "bootstrap_resamples_with_defined_kappa": 10000
+        },
+        "system_benchmark": {
+          "n": 20,
+          "both": 18,
+          "first_only": 0,
+          "second_only": 0,
+          "neither": 2,
+          "observed_agreement": 1.0,
+          "positive_agreement": 1.0,
+          "negative_agreement": 1.0,
+          "kappa": 1.0,
+          "members_first": 18,
+          "members_second": 18,
+          "kappa_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "bootstrap_resamples_with_defined_kappa": 8732
+        },
+        "thermal": {
+          "n": 20,
+          "both": 3,
+          "first_only": 0,
+          "second_only": 0,
+          "neither": 17,
+          "observed_agreement": 1.0,
+          "positive_agreement": 1.0,
+          "negative_agreement": 1.0,
+          "kappa": 1.0,
+          "members_first": 3,
+          "members_second": 3,
+          "kappa_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "bootstrap_resamples_with_defined_kappa": 9620
+        },
+        "controlled_wall_change": {
+          "n": 20,
+          "both": 8,
+          "first_only": 0,
+          "second_only": 6,
+          "neither": 6,
+          "observed_agreement": 0.7,
+          "positive_agreement": 0.7272727272727273,
+          "negative_agreement": 0.6666666666666666,
+          "kappa": 0.4444444444444444,
+          "members_first": 8,
+          "members_second": 14,
+          "kappa_bootstrap_95": [
+            0.15384615384615388,
+            0.782608695652174
+          ],
+          "bootstrap_resamples_with_defined_kappa": 10000
+        },
+        "independent_transfer": {
+          "n": 20,
+          "both": 0,
+          "first_only": 0,
+          "second_only": 0,
+          "neither": 20,
+          "observed_agreement": 1.0,
+          "positive_agreement": NaN,
+          "negative_agreement": 1.0,
+          "kappa": NaN,
+          "members_first": 0,
+          "members_second": 0,
+          "kappa_bootstrap_95": null,
+          "bootstrap_resamples_with_defined_kappa": 0
+        },
+        "eligible_disposition": {
+          "n": 20,
+          "both": 19,
+          "first_only": 0,
+          "second_only": 0,
+          "neither": 1,
+          "observed_agreement": 1.0,
+          "positive_agreement": 1.0,
+          "negative_agreement": 1.0,
+          "kappa": 1.0,
+          "members_first": 19,
+          "members_second": 19,
+          "kappa_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "bootstrap_resamples_with_defined_kappa": 6490
+        },
+        "within_setting_alternative_in_a_coupled_series": {
+          "n": 20,
+          "both": 10,
+          "first_only": 0,
+          "second_only": 4,
+          "neither": 6,
+          "observed_agreement": 0.8,
+          "positive_agreement": 0.8333333333333334,
+          "negative_agreement": 0.75,
+          "kappa": 0.6000000000000001,
+          "members_first": 10,
+          "members_second": 14,
+          "kappa_bootstrap_95": [
+            0.27272727272727326,
+            0.8979591836734693
+          ],
+          "bootstrap_resamples_with_defined_kappa": 10000
+        }
+      }
+    },
+    "disposition_first_by_second": {
+      "eligible": {
+        "eligible": [
+          "N011",
+          "N054",
+          "N085",
+          "N174",
+          "N240",
+          "N280",
+          "N291",
+          "N327",
+          "N357",
+          "N358",
+          "N391",
+          "N418",
+          "N419",
+          "N476",
+          "N540",
+          "N556",
+          "N623",
+          "N626",
+          "N632",
+          "N672",
+          "N719",
+          "P02",
+          "P11",
+          "P17",
+          "P21",
+          "P22",
+          "P29"
+        ],
+        "contested": [
+          "N189"
+        ],
+        "excluded": []
+      },
+      "contested": {
+        "eligible": [],
+        "contested": [
+          "N147",
+          "N400",
+          "N635"
+        ],
+        "excluded": [
+          "P09"
+        ]
+      },
+      "excluded": {
+        "eligible": [],
+        "contested": [],
+        "excluded": [
+          "N008",
+          "N144",
+          "P10",
+          "P28"
+        ]
+      }
+    },
+    "decision_rule_verdict": {
+      "constitutive_constraint": {
+        "status": "not quotable until repaired and re-read",
+        "kappa": 0.47826086956521746,
+        "kappa_lower_95": 0.09433962264150941,
+        "random_sample_members": [
+          2,
+          4
+        ],
+        "allowed_change": 1,
+        "criteria": {
+          "kappa_at_least_0p60": false,
+          "lower_bound_at_least_0p40": false,
+          "member_change_within_limit": false
+        }
+      },
+      "prescribed_input": {
+        "status": "quotable",
+        "kappa": 0.9387755102040816,
+        "kappa_lower_95": 0.7874015748031495,
+        "random_sample_members": [
+          5,
+          6
+        ],
+        "allowed_change": 1,
+        "criteria": {
+          "kappa_at_least_0p60": true,
+          "lower_bound_at_least_0p40": true,
+          "member_change_within_limit": true
+        }
+      },
+      "coupled_wmles": {
+        "status": "quotable",
+        "kappa": 0.9440993788819876,
+        "kappa_lower_95": 0.8175675675675675,
+        "random_sample_members": [
+          11,
+          11
+        ],
+        "allowed_change": 1.65,
+        "criteria": {
+          "kappa_at_least_0p60": true,
+          "lower_bound_at_least_0p40": true,
+          "member_change_within_limit": true
+        }
+      },
+      "rans_comparison": {
+        "status": "quotable",
+        "kappa": 0.9158878504672897,
+        "kappa_lower_95": 0.6842105263157894,
+        "random_sample_members": [
+          6,
+          7
+        ],
+        "allowed_change": 1,
+        "criteria": {
+          "kappa_at_least_0p60": true,
+          "lower_bound_at_least_0p40": true,
+          "member_change_within_limit": true
+        }
+      },
+      "system_benchmark": {
+        "status": "quotable",
+        "kappa": 0.9361702127659575,
+        "kappa_lower_95": 0.7742946708463949,
+        "random_sample_members": [
+          18,
+          18
+        ],
+        "allowed_change": 2.6999999999999997,
+        "criteria": {
+          "kappa_at_least_0p60": true,
+          "lower_bound_at_least_0p40": true,
+          "member_change_within_limit": true
+        }
+      },
+      "thermal": {
+        "status": "quotable",
+        "kappa": 0.8928571428571428,
+        "kappa_lower_95": 0.625,
+        "random_sample_members": [
+          3,
+          3
+        ],
+        "allowed_change": 1,
+        "criteria": {
+          "kappa_at_least_0p60": true,
+          "lower_bound_at_least_0p40": true,
+          "member_change_within_limit": true
+        }
+      },
+      "controlled_wall_change": {
+        "status": "not quotable until repaired and re-read",
+        "kappa": 0.6746987951807228,
+        "kappa_lower_95": 0.43749999999999994,
+        "random_sample_members": [
+          8,
+          14
+        ],
+        "allowed_change": 1.2,
+        "criteria": {
+          "kappa_at_least_0p60": true,
+          "lower_bound_at_least_0p40": true,
+          "member_change_within_limit": false
+        }
+      },
+      "independent_transfer": {
+        "status": "not assessable from this sample",
+        "reason": "fewer than three member works in a reading among the works read twice"
+      },
+      "within_setting_alternative_in_a_coupled_series": {
+        "status": "not quotable until repaired and re-read",
+        "kappa": 0.7804878048780487,
+        "kappa_lower_95": 0.5649546827794563,
+        "random_sample_members": [
+          10,
+          14
+        ],
+        "allowed_change": 1.5,
+        "criteria": {
+          "kappa_at_least_0p60": true,
+          "lower_bound_at_least_0p40": true,
+          "member_change_within_limit": false
+        }
+      }
+    },
+    "design_counts_among_works_read_twice": {
+      "constitutive_constraint": {
+        "first": 5,
+        "second": 16
+      },
+      "prescribed_input": {
+        "first": 17,
+        "second": 36
+      },
+      "coupled_wmles": {
+        "first": 32,
+        "second": 75
+      },
+      "rans_comparison": {
+        "first": 15,
+        "second": 26
+      },
+      "system_benchmark": {
+        "first": 47,
+        "second": 90
+      },
+      "thermal": {
+        "first": 14,
+        "second": 15
+      },
+      "controlled_wall_change": {
+        "first": 23,
+        "second": 48
+      },
+      "independent_transfer": {
+        "first": 3,
+        "second": 0
+      },
+      "all_designs": {
+        "first": 71,
+        "second": 179
+      }
+    },
+    "transfer_status_of_forced_transfer_works": {
+      "P22": {
+        "first": [
+          "qualified"
+        ],
+        "second": [
+          "partly exposed"
+        ]
+      },
+      "N623": {
+        "first": [
+          "qualified"
+        ],
+        "second": [
+          "selection unresolved"
+        ]
+      },
+      "N626": {
+        "first": [
+          "partly exposed",
+          "qualified"
+        ],
+        "second": [
+          "partly exposed",
+          "selection unresolved"
+        ]
+      },
+      "N011": {
+        "first": [
+          "partly exposed"
+        ],
+        "second": [
+          "partly exposed",
+          "selection unresolved"
+        ]
+      },
+      "P21": {
+        "first": [
+          "partly exposed"
+        ],
+        "second": [
+          "partly exposed"
+        ]
+      }
+    },
+    "settlement": {
+      "controlled_wall_change": {
+        "cause": "Four first-reading omissions or inconsistencies and two rule ambiguities; the second reading added six works and removed none.",
+        "works": {
+          "N672": "first-reading omission: no-slip against equilibrium wall model at Re_tau about 950 on one grid (Sec. 2, Fig. 2) and exact wall stress against equilibrium model at 4200 (Appendix A)",
+          "N556": "first-reading omission: viscosity-based against Neumann imposition of the same modelled stress on three meshes (arXiv v1 Sec. III D)",
+          "N476": "first-reading inconsistency: the design was labelled within-setting alternative but not entered in this group",
+          "N291": "first-reading omission of a qualitative contrast: two wall-function production terms in one solver, compared through contour plots only",
+          "N419": "rule ambiguity: an imposed near-wall turbulence-kinetic-energy profile with and without the user function, for each RANS model",
+          "P29": "rule ambiguity: near-wall weighting of the particle velocity gradient in a smoothed-particle RANS solver"
+        },
+        "after_settlement": "N672, N556, N476 and N419 enter under the clarified rule; N291 (no quantitative comparison) and P29 (discretisation change) do not."
+      },
+      "constitutive_constraint": {
+        "cause": "Rule ambiguity. The rule admits any \"stated mathematical restriction on the wall mapping\", which every model has. The second reading tagged formulation statements in five further works and did not tag the one first-reading member in the random sample.",
+        "works": {
+          "N418": "first only",
+          "N540": "second only",
+          "N556": "second only",
+          "N623": "second only",
+          "P17": "second only",
+          "P21": "second only"
+        },
+        "after_settlement": "Not settled work by work. The group needs the narrower rule below and a full re-read before any count is quoted."
+      },
+      "independent_transfer": {
+        "cause": "Rule ambiguity about what \"documented\" withholding requires. The two readings record the same facts and attach different labels.",
+        "works": {
+          "P22": "first: qualified for each fixed estimator; second: partly exposed, because the comparison of the two estimators is reported on the Re_h = 19 000 target",
+          "N623": "first: qualified, frozen published weights tested by another group at Re_tau = 10^10 against the analytic log law; second: selection unresolved, because the original selection history is not documented",
+          "N626": "first: channel at Re_tau = 2000 qualified, depth selection used other named cases; second: selection unresolved, because other architecture choices are not documented as independent of that case"
+        },
+        "after_settlement": "Between zero and three tests qualify, depending on how strictly documentation is required. No count of independent transfers is quotable."
+      },
+      "other": {
+        "N189": "same facts; the first reading has a separate status for a regime-specific extension (hypersonic), which the three-level vocabulary given to the second reading lacked",
+        "P09": "contested (first) against excluded (second); outside every denominator in both",
+        "N419 prescribed_input": "second-reading over-inclusion acknowledged as a broad reading: a turbulence-kinetic-energy formula, not a stress estimator",
+        "N085 rans_comparison": "rule ambiguity: a kinetic (BGK) solver at RANS level with a log-law wall function"
+      }
+    },
+    "per_work": [
+      {
+        "study_id": "N008",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "excluded",
+          "groups": [],
+          "designs": 0
+        },
+        "second": {
+          "disposition": "excluded",
+          "groups": [],
+          "designs": 3,
+          "edition_seen": "Journal of Applied Mathematics and Computational Mechanics 2022, 21(2), 39-50, DOI 10.17512/jamcm.2022.2.04 (journal version)"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N011",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "prescribed_input"
+          ],
+          "designs": 3
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "prescribed_input"
+          ],
+          "designs": 6,
+          "edition_seen": "arXiv:2409.03933v1 [physics.flu-dyn], 5 Sep 2024"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N054",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "rans_comparison",
+            "system_benchmark",
+            "thermal"
+          ],
+          "designs": 5
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "rans_comparison",
+            "system_benchmark",
+            "thermal"
+          ],
+          "designs": 4,
+          "edition_seen": "International Journal of Heat and Fluid Flow 122 (2026) 110596, doi:10.1016/j.ijheatfluidflow.2026.110596 (published version via White Rose eprint 245405)"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N085",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "system_benchmark"
+          ],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "rans_comparison",
+            "system_benchmark"
+          ],
+          "designs": 3,
+          "edition_seen": "arXiv:2512.06433v2 [physics.flu-dyn], 12 Mar 2026 (JFM-style draft)"
+        },
+        "group_disagreements": [
+          "rans_comparison"
+        ]
+      },
+      {
+        "study_id": "N144",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "excluded",
+          "groups": [],
+          "designs": 0
+        },
+        "second": {
+          "disposition": "excluded",
+          "groups": [],
+          "designs": 2,
+          "edition_seen": "arXiv:2107.01750v2 [physics.flu-dyn] 23 Oct 2021 (preprint submitted to Elsevier)"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N147",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "contested",
+          "groups": [],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "contested",
+          "groups": [],
+          "designs": 6,
+          "edition_seen": "Journal: Fluid Dynamics Research 41 (2009) 012203 (18pp), doi:10.1088/0169-5983/41/1/012203, IOP download dated 17/11/2026"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N174",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 4,
+          "edition_seen": "Discrete & Continuous Dynamical Systems - Series S, Vol. 17, No. 11, November 2024, pp. 3224-3251, doi:10.3934/dcdss.2023212"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N189",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "coupled_wmles",
+            "system_benchmark",
+            "thermal"
+          ],
+          "designs": 2
+        },
+        "second": {
+          "disposition": "contested",
+          "groups": [],
+          "designs": 2,
+          "edition_seen": "arXiv:2405.11376v1 [physics.flu-dyn], 18 May 2024 ('Preprint submitted to Journal of Computational Physics', dated May 21, 2024)"
+        },
+        "group_disagreements": [
+          "coupled_wmles",
+          "system_benchmark",
+          "thermal"
+        ]
+      },
+      {
+        "study_id": "N240",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 2
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 7,
+          "edition_seen": "arXiv:2301.06803v2 [physics.flu-dyn], 17 Oct 2023 (JFM LaTeX draft; journal details not printed)"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N280",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 2
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 2,
+          "edition_seen": "arXiv:2009.00295v1 [physics.flu-dyn], 1 Sep 2020 (preprint submitted to Elsevier, dated September 2, 2020)"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N291",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "rans_comparison",
+            "system_benchmark"
+          ],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "rans_comparison",
+            "system_benchmark"
+          ],
+          "designs": 2,
+          "edition_seen": "journal: Int. J. Naval Archit. Ocean Eng. (2013) 5:33-46, doi:10.3744/JNAOE.2013.5.1.033"
+        },
+        "group_disagreements": [
+          "controlled_wall_change"
+        ]
+      },
+      {
+        "study_id": "N327",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 3
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 16,
+          "edition_seen": "arXiv:1810.04214v1 [physics.flu-dyn], 9 Oct 2018"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N357",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 4
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 6,
+          "edition_seen": "journal: J. Fluid Mech. (2023), vol. 974, A51, doi:10.1017/jfm.2023.585 (open access, published online by Cambridge University Press)"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N358",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "rans_comparison",
+            "system_benchmark",
+            "thermal"
+          ],
+          "designs": 3
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "rans_comparison",
+            "system_benchmark",
+            "thermal"
+          ],
+          "designs": 3,
+          "edition_seen": "Accepted author manuscript (Manchester Research Explorer; 'Preprint submitted to Elsevier, February 12, 2015') of Applied Mathematical Modelling 40(1) (2016) 329-342, doi:10.1016/j.apm.2015.05.011"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N391",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 2
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 2,
+          "edition_seen": "arXiv:2411.09364v2 [physics.flu-dyn], 15 Nov 2024 (preprint; no journal DOI printed in the file)"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N400",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "contested",
+          "groups": [],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "contested",
+          "groups": [],
+          "designs": 6,
+          "edition_seen": "arXiv:2512.24757v2 [physics.flu-dyn] 20 Jun 2026"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N418",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 3
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 6,
+          "edition_seen": "arXiv:2407.11390v1 [physics.flu-dyn], 16 Jul 2024 (dated July 17, 2024)"
+        },
+        "group_disagreements": [
+          "constitutive_constraint"
+        ]
+      },
+      {
+        "study_id": "N419",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "rans_comparison",
+            "system_benchmark",
+            "thermal"
+          ],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "prescribed_input",
+            "rans_comparison",
+            "system_benchmark",
+            "thermal"
+          ],
+          "designs": 5,
+          "edition_seen": "Conference/proceedings-style paper; no journal name, volume, DOI or arXiv identifier is printed in the file (6 pages; cites ref [16] as 'Int. J. CFD, accepted with corrections (2010)')"
+        },
+        "group_disagreements": [
+          "prescribed_input",
+          "controlled_wall_change"
+        ]
+      },
+      {
+        "study_id": "N476",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "rans_comparison",
+            "system_benchmark"
+          ],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "rans_comparison",
+            "system_benchmark"
+          ],
+          "designs": 3,
+          "edition_seen": "Undated preprint/manuscript (no journal or arXiv identifier printed in the file; PDF metadata created 21 Oct 2003, Acrobat Distiller; UMIST affiliation, FLOMANIA acknowledgement)"
+        },
+        "group_disagreements": [
+          "controlled_wall_change"
+        ]
+      },
+      {
+        "study_id": "N540",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 3
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 6,
+          "edition_seen": "arXiv:2412.16668v1 [physics.flu-dyn], 21 Dec 2024 (preprint dated December 24, 2024 in footer; no journal DOI printed in the file)"
+        },
+        "group_disagreements": [
+          "constitutive_constraint"
+        ]
+      },
+      {
+        "study_id": "N556",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 3
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 10,
+          "edition_seen": "arXiv:2404.05378v1 [physics.flu-dyn], 8 Apr 2024 (dated April 9, 2024)"
+        },
+        "group_disagreements": [
+          "constitutive_constraint",
+          "controlled_wall_change"
+        ]
+      },
+      {
+        "study_id": "N623",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "coupled_wmles",
+            "independent_transfer",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 3
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 8,
+          "edition_seen": "arXiv:2211.03614v2 [physics.flu-dyn] 22 May 2023 (dated May 23, 2023)"
+        },
+        "group_disagreements": [
+          "constitutive_constraint",
+          "independent_transfer"
+        ]
+      },
+      {
+        "study_id": "N626",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "independent_transfer",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 6
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 12,
+          "edition_seen": "Data-Centric Engineering (2023), 4: e7, doi:10.1017/dce.2023.2 (Cambridge University Press, open access; received 31 Aug 2022, accepted 04 Feb 2023)"
+        },
+        "group_disagreements": [
+          "independent_transfer"
+        ]
+      },
+      {
+        "study_id": "N632",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 5,
+          "edition_seen": "Journal: Flow (2021), 1, E14, doi:10.1017/flo.2021.17 (received 31 May 2021, revised 29 Sep 2021, accepted 12 Nov 2021; Cambridge University Press, Open Access)"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N635",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "contested",
+          "groups": [],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "contested",
+          "groups": [],
+          "designs": 6,
+          "edition_seen": "arXiv:2012.09564v1 [physics.flu-dyn] 17 Dec 2020 (title page carries a compile date of March 23, 2022)"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "N672",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 4,
+          "edition_seen": "arXiv:1806.01914v5 [physics.flu-dyn], 4 Apr 2019; header 'Journal of Computational Physics (2019)' (author preprint in journal template)"
+        },
+        "group_disagreements": [
+          "controlled_wall_change"
+        ]
+      },
+      {
+        "study_id": "N719",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "prescribed_input"
+          ],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "prescribed_input"
+          ],
+          "designs": 3,
+          "edition_seen": "arXiv:2402.11448v2 [physics.flu-dyn] 5 Nov 2024 (header: 'Under consideration for publication in J. Fluid Mech.')"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "P02",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "rans_comparison",
+            "system_benchmark",
+            "thermal"
+          ],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "rans_comparison",
+            "system_benchmark",
+            "thermal"
+          ],
+          "designs": 3,
+          "edition_seen": "Chemical Engineering Transactions, vol. 88 (2021) pp. 1243-1248, DOI 10.3303/CET2188207 (journal edition)"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "P09",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "contested",
+          "groups": [],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "excluded",
+          "groups": [],
+          "designs": 5,
+          "edition_seen": "arXiv:2304.13707v1 [physics.flu-dyn], 26 Apr 2023 (dated April 27, 2023)"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "P10",
+        "stratum": "random",
+        "first": {
+          "disposition": "excluded",
+          "groups": [],
+          "designs": 0
+        },
+        "second": {
+          "disposition": "excluded",
+          "groups": [],
+          "designs": 2,
+          "edition_seen": "Author's revised manuscript deposited in HUSCAP (hdl 2115/49858; preprint dated 23 January 2007) of the journal article Computers & Fluids 38(1), 37-48, 2009, doi:10.1016/j.compfluid.2007.10.018"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "P11",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 2
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark"
+          ],
+          "designs": 3,
+          "edition_seen": "J. Fluid Mech. (2025), vol. 1022, R4, doi:10.1017/jfm.2025.10816 (journal edition, open access)"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "P17",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 1
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "system_benchmark"
+          ],
+          "designs": 2,
+          "edition_seen": "arXiv:2403.05476v1 [physics.flu-dyn], 8 Mar 2024 (dated March 11, 2024)"
+        },
+        "group_disagreements": [
+          "constitutive_constraint"
+        ]
+      },
+      {
+        "study_id": "P21",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark",
+            "thermal"
+          ],
+          "designs": 5
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "constitutive_constraint",
+            "controlled_wall_change",
+            "coupled_wmles",
+            "prescribed_input",
+            "system_benchmark",
+            "thermal"
+          ],
+          "designs": 10,
+          "edition_seen": "Journal: Data-Centric Engineering (2024), 5: e10, doi:10.1017/dce.2024.7 (received 26 Aug 2023, revised 2 Dec 2023, accepted 5 Mar 2024; Open Access, Cambridge University Press)"
+        },
+        "group_disagreements": [
+          "constitutive_constraint"
+        ]
+      },
+      {
+        "study_id": "P22",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "independent_transfer",
+            "prescribed_input"
+          ],
+          "designs": 2
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "prescribed_input"
+          ],
+          "designs": 3,
+          "edition_seen": "arXiv:2011.04157v1 [physics.flu-dyn], 9 Nov 2020 (preprint; no journal DOI printed in the file)"
+        },
+        "group_disagreements": [
+          "independent_transfer"
+        ]
+      },
+      {
+        "study_id": "P28",
+        "stratum": "forced or top-up",
+        "first": {
+          "disposition": "excluded",
+          "groups": [],
+          "designs": 0
+        },
+        "second": {
+          "disposition": "excluded",
+          "groups": [],
+          "designs": 1,
+          "edition_seen": "J. Fluid Mech. (2026), vol. 1036, A17, doi:10.1017/jfm.2026.11595 (Open Access journal version; received 16 Nov 2025, accepted 23 Apr 2026)"
+        },
+        "group_disagreements": []
+      },
+      {
+        "study_id": "P29",
+        "stratum": "random",
+        "first": {
+          "disposition": "eligible",
+          "groups": [
+            "rans_comparison",
+            "system_benchmark"
+          ],
+          "designs": 4
+        },
+        "second": {
+          "disposition": "eligible",
+          "groups": [
+            "controlled_wall_change",
+            "rans_comparison",
+            "system_benchmark"
+          ],
+          "designs": 8,
+          "edition_seen": "arXiv:2501.18397v1 [physics.flu-dyn], 30 Jan 2025 (preprint submitted to Elsevier); journal edition not seen"
+        },
+        "group_disagreements": [
+          "controlled_wall_change"
+        ]
+      }
+    ]
+  },
+  "pairs": {
+    "summary": {
+      "pairs_read_twice": 34,
+      "seeded_different_tests_pairs": 10,
+      "other_pairs": 24,
+      "category_agreement": {
+        "all": [
+          22,
+          34
+        ],
+        "seeded_different_tests": [
+          10,
+          10
+        ],
+        "other_pairs": [
+          12,
+          24
+        ],
+        "kappa_other_pairs": 0.21095890410958898,
+        "kappa_other_pairs_bootstrap_95": [
+          -0.049189886727524806,
+          0.4636871508379888
+        ]
+      },
+      "coarse_agreement_run_pair_or_not": {
+        "all": [
+          31,
+          34
+        ],
+        "kappa": 0.8210526315789474
+      },
+      "opposing_direction_found": {
+        "first": [
+          "P31-02",
+          "P31-09"
+        ],
+        "second": [
+          "N195-02",
+          "N357-01",
+          "N551-06",
+          "P31-02"
+        ],
+        "both": [
+          "P31-02"
+        ]
+      },
+      "causes_of_disagreement": {
+        "rule ambiguity": 10,
+        "detail only": 1,
+        "first-reading error": 2
+      }
+    },
+    "amendment_2_after_second_readings": [
+      "Where the source offers more than one run pair for the two outputs, each is recorded. The pair-level category is taken from a change of wall treatment or near-wall implementation at fixed grid and numerics where one exists.",
+      "A verbal statement that the unplotted runs are \"almost identical\" counts as a source-stated unresolved direction for those runs.",
+      "A restricted-support leaf requires the source's own statement of the local reversal or a recorded numerical reading with its half-width. A visual impression without a recorded half-width is flagged as a possible local reversal and does not move the leaf.",
+      "Where the source states that the direction of one output differs between its components (for example stress components), the leaf is matched_support_dependent."
+    ],
+    "note": "Per-pair readings and settlements are stored with each record in paired_readings.json."
+  },
+  "quotable_at_work_level": [
+    "coupled_wmles",
+    "prescribed_input",
+    "rans_comparison",
+    "system_benchmark",
+    "thermal"
+  ],
+  "not_quotable": [
+    "constitutive_constraint",
+    "controlled_wall_change",
+    "independent_transfer",
+    "within_setting_alternative_in_a_coupled_series"
+  ],
+  "scope": "Agreement measures how reproducibly the labels are assigned inside the 115-work collection. It says nothing about whether the collection represents the literature."
+}

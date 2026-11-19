@@ -170,6 +170,95 @@ def check_evidence_selection(comparisons, cases):
     return dict(screened_records=len(screened), retrieval_roster=len(retained),
                 worked_eligibility_papers=len(examples), pilot_groups_sharing_papers=len(components))
 
+def check_directions_and_agreement(main, box, paired):
+    """Tie the printed direction statements and agreement figures to their recomputed values."""
+    plain = main.replace('$', '').replace('{,}', ',')
+    resolved = json.loads((ROOT/'results/revision/direction_resolution.json').read_text())
+    register = json.loads((ROOT/'data/revision/table_digits.json').read_text())
+    assert resolved['rule_sha256'] == register['rule_sha256'] == hashlib.sha256(register['rule'].encode()).hexdigest()
+    hill = resolved['periodic_hill']['summary']
+    assert hill['contrasts'] == 9 and hill['works'] == 5
+    assert hill['by_class'] == {'controls differ': 1, 'resolved concordant': 5, 'resolved opposing': 1, 'unrankable': 1, 'unresolved': 1}
+    assert hill['ids_by_class']['resolved opposing'] == ['P25-0.01'] and hill['ids_by_class']['unresolved'] == ['N611']
+    assert hill['ids_by_class']['controls differ'] == ['N497'] and hill['ids_by_class']['unrankable'] == ['P25-0.09']
+    assert hill['nominal_point_signs'] == dict(both_closer=5, opposite=3, unrankable=1)
+    low, high = hill['range_of_changes_in_resolved_concordant_contrasts']
+    assert round(low, 2) == 0.06 and round(high) == 2
+    assert max(hill['smaller_change_in_each_nominally_opposite_contrast'].values()) <= 0.05 + 1e-12
+    rows = {r['id']: r for r in resolved['periodic_hill']['contrasts']}
+    krank = rows['N611']
+    assert krank['separation']['direction'] == 'unresolved' and krank['reattachment']['direction'] == 'reference dependent'
+    assert sorted(v['direction'] for v in krank['reattachment']['by_reference'].values()) == ['closer', 'closer', 'farther']
+    digits = {r['id']: r for r in register['hill_population']}
+    assert digits['P25-0.01']['baseline_printed'] == ['0.31', '4.26'] and digits['P25-0.01']['alternative_printed'] == ['0.29', '4.18']
+    assert digits['P25-0.01']['references']['own wall-resolved LES (H1.0-WR)'] == ['0.22', '4.35']
+    assert digits['P25-0.01']['controls']['status'] == 'not all reported' and rows['P25-0.03']['class'] == 'resolved concordant'
+    assert digits['N611']['baseline_printed'][0] == '0.2' and digits['N497']['controls']['status'] == 'differ'
+    for phrase in ('Of nine such comparisons, five move both crossings closer, by 0.06H to about 2H',
+                   'One is resolved in opposite directions', 'from 0.31H to 0.29H against 0.22H',
+                   'from 4.26H to 4.18H against 4.35H', 'as 0.2, which leaves its 0.05H change unresolved',
+                   'about 15 and 19 flow-through times', 'the smaller change is at most 0.05H',
+                   'These tables do not establish a trade-off between the two crossings'):
+        assert phrase in plain, phrase
+    assert not re.search(r'Three nominally bring one closer|favours the learned wall|at each of ten measured', plain)
+    sensitivity = resolved['periodic_hill_same_table_sensitivity']['by_class']
+    assert 'resolved opposing' not in sensitivity and sum(sensitivity.values()) == 12
+    tab = {r['id']: r for r in resolved['other_tabulated']}
+    linear = [r for k, r in tab.items() if k.startswith('N364') and k.endswith('linear')]
+    blended = [r for k, r in tab.items() if k.startswith('N364') and k.endswith('LUST')]
+    assert len(linear) == len(blended) == 4
+    assert all(r['class'] == 'resolved opposing' for r in linear) and all(r['class'] == 'resolved concordant' for r in blended)
+    rises = [max(v['nominal_change'] for v in r['outputs'].values()) for r in linear]
+    assert [round(min(rises), 2), round(max(rises), 2)] == [0.10, 3.65] and 'by 0.10 to 3.65 percentage points' in plain
+    assert tab['N626-4-to-5']['class'] == 'unresolved' and tab['MukhaBensow-hex-15-to-30']['class'] == 'resolved farther'
+    bump = resolved['bump_station_velocity']
+    full, above, below = bump['full_support'], bump['above_0p02'], bump['below_pointwise_crossover']
+    assert [round(full['mae_equilibrium'], 3), round(full['mae_learned'], 3)] == [0.010, 0.016]
+    assert round(bump['pointwise_equal_error_between'][1], 3) == 0.016 and bump['pointwise_cells'] == [16, 17]
+    assert round(below['mean_signed_learned'], 2) == 0.05 and abs(below['mean_signed_equilibrium']) < 0.005
+    assert [round(above['mean_signed_equilibrium'], 3), round(above['mean_signed_learned'], 3)] == [0.011, 0.007]
+    assert round(bump['reference_shift_that_would_reverse_the_ranking_above_0p02'], 3) == 0.009
+    for phrase in ('below y/L\\approx0.016', 'by about 0.011 and 0.007', 'were 0.009 higher', 'by about 0.05',
+                   'span 1.5 flow-through times'):
+        assert phrase in plain, phrase
+    pressure = json.loads((ROOT/'results/revision/paired_error_changes.json').read_text())['fine_DSM_bump']
+    assert pressure['pressure_stations_worsening'] == pressure['recovery_pressure']['n'] == 10
+    assert [round(pressure['recovery_pressure'][k], 2) for k in ('baseline_mae', 'alternative_mae')] == [0.20, 0.24]
+    with (ROOT/'data/revision/measurements/P31_Fig11c_markers.csv').open(newline='') as stream:
+        taps = [{k: float(v) for k, v in r.items()} for r in csv.DictReader(stream) if float(r['x_over_L']) > .2]
+    gaps = [abs(r['Cp_RLWM']-r['Cp_experiment'])-abs(r['Cp_EQWM']-r['Cp_experiment']) for r in taps]
+    assert len(gaps) == 10 and [round(min(gaps), 2), round(max(gaps), 2)] == [0.02, 0.05]
+    assert 'on average by 0.20 and 0.24 in C_p' in plain and 'farther at each, by 0.02 to 0.05' in plain
+    agreement = json.loads((ROOT/'data/revision/reader_agreement.json').read_text())
+    stats = agreement['memberships']['statistics']['all_works_read_twice']
+    quotable = ['coupled_wmles', 'prescribed_input', 'rans_comparison', 'system_benchmark', 'thermal']
+    assert agreement['quotable_at_work_level'] == quotable
+    kappas = [stats[g]['kappa'] for g in quotable]
+    assert [round(min(kappas), 2), round(max(kappas), 2)] == [0.89, 0.94]
+    assert round(stats['controlled_wall_change']['kappa'], 2) == 0.67 and stats['coupled_wmles']['n'] == 36
+    pairs = agreement['pairs']['summary']
+    assert pairs['pairs_read_twice'] == 34 and pairs['coarse_agreement_run_pair_or_not']['all'] == [31, 34]
+    assert pairs['category_agreement']['other_pairs'] == [12, 24] and pairs['category_agreement']['seeded_different_tests'] == [10, 10]
+    for phrase in ('reading of 36 reports and 34 pairings', r"(Cohen's $\kappa$ 0.89--0.94)", '31 of 34 same-run judgements',
+                   r'($\kappa=0.67$)', '(12 of 24)', 'for which we quote no counts'):
+        assert phrase in box, phrase
+    vocabulary = ['different_tests', 'no_shared_baseline', 'shared_runs_no_treatment_baseline', 'matched_no_common_reference',
+                  'matched_no_opposing_rank', 'matched_support_dependent', 'opposing_point_estimates_on_restricted_support',
+                  'matched_opposing_same_support']
+    assert all(r['adjudication'] in vocabulary and r['decision_tree_reading']['first']['category'] in vocabulary for r in paired)
+    counts = Counter(r['adjudication'] for r in paired)
+    assert counts['different_tests'] == 55 and counts['matched_opposing_same_support'] == 1
+    assert sum(r['decision_tree_reading']['second'] is not None for r in paired) == 34
+    transfer = json.loads((ROOT/'data/revision/transfer_exposure.json').read_text())['records']
+    assert sum('second_reading_status' in r for r in transfer) == 3
+    assert not any(r.get('second_reading_status') == 'qualified' for r in transfer)
+    assert not re.search(r'\b(?:three|3) (?:qualified|independent) (?:transfer|test)', plain + box, re.I)
+    return dict(hill_classes=hill['by_class'], same_table_other_rows=sensitivity, channel_pairs_resolved=8,
+                bump_velocity_reversal_height=bump['pointwise_equal_error_between'],
+                kappa_range_reproducible_groups=[min(kappas), max(kappas)], pairs_read_twice=34,
+                pair_categories=dict(counts))
+
+
 def main_check():
     support=json.loads((ROOT/'data/revision/claim_support.json').read_text())
     cited={k.strip() for x in arguments(alltext,'cite') for k in x.split(',')}
@@ -316,6 +405,7 @@ def main_check():
     report['historical_pairs_reassessed']=len(paired)
     report['source_located_design_series']=sum(len(r['tests']) for r in audited)
     report['edition']='Review with finite-sample source reassessment and edition-specific comparisons'
+    report['direction_and_agreement_checks']=check_directions_and_agreement(main, (M/'methods_box.tex').read_text(), paired)
     (ROOT/'results/revision/current_checks.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(report,indent=2))
 

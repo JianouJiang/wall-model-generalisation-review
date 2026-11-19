@@ -537,8 +537,8 @@
     "reference_key": "DiZhou2024",
     "source_url": "https://doi.org/10.2514/1.J063691",
     "source_version": "arXiv:2305.02540v3, title page dated 26 July 2024",
-    "source_location": "arXiv:2305.02540v3, §§III–IV, Figs. 6d, 7f, 10c and 12c and Fig. 11c recovery at the ten experimental pressure taps with x/L>0.20",
-    "claim": "At the bump station x/L=-0.4 the fine-grid DSM learned wall law improves skin friction relative to internal EQWM but has larger mean absolute profile error on common plotted heights. High-altitude-only restriction changes the order. The same runs bring crest friction closer and recovery pressure farther from the respective measurements."
+    "source_location": "arXiv:2305.02540v3, §§III–IV, Figs. 6d, 7f, 10c and 12c, Fig. 11c recovery at the ten experimental pressure taps with x/L>0.20, and the statements on pp. 17, 21, 23 and 25.",
+    "claim": "At the bump station x/L = -0.4 the fine-grid learned wall is closer in skin friction and farther in mean velocity over the 120 common measured heights (mean absolute discrepancy 0.010 against 0.016 of freestream speed). The source states the same: the equilibrium model \"outperforms the RLWMs in velocity prediction, even though its prediction of mean skin friction is less ideal\". The difference arises below y/L of about 0.016, where the learned profile lies about 0.05 above the measurements. Above y/L = 0.02 both profiles lie above the measurements by about 0.011 and 0.007, and a measured profile higher by 0.009 would reverse that order. Statistics span 1.5 flow-through times. Crest friction is closer for the learned wall. At the ten recovery taps both models miss by 0.07 to 0.33 in Cp (means 0.20 and 0.24) and the learned wall is farther at each by 0.02 to 0.05; the source calls these differences minor. At Re_H = 37,000 on the hill the source states that the equilibrium simulations \"match or even surpass\" the learned ones in velocity \"despite their inaccurate predictions of C_f\"."
   },
   {
     "claim_id": "L2-CRM",
@@ -560,27 +560,27 @@
     "claim_id": "hill-tables-N025",
     "reference_key": "Krank2018",
     "source_url": "https://doi.org/10.1002/fld.4712",
-    "source_version": "Published Wiley tables in the TUM author copy",
+    "source_version": "Int. J. Numer. Methods Fluids 90, 81-113 (2019), journal copy. Run rows identical in arXiv:1705.08813v2; only the journal table prints the DNS interval.",
     "source_location": "Table 2 p. 106, stretch2 with and without enrichment, KKW row",
-    "claim": "Separation and reattachment both improve on the same 10595 grid. DNS reports 4.51 ±0.06 for reattachment; this common interval preserves the paired order.",
+    "claim": "Separation 0.29 to 0.23 against 0.19 and reattachment 3.99 to 4.24 against 4.51 ± 0.06 on the same 32x16x16 grid, both averaged over 61 flow-through times. Both crossings closer, resolved with the reference interval included.",
     "manuscript_location": "Calibration, validation and transfer, standard periodic-hill crossings."
   },
   {
     "claim_id": "hill-tables-N611",
     "reference_key": "Krank2016",
     "source_url": "https://doi.org/10.1016/j.jcp.2016.04.001",
-    "source_version": "arXiv:1505.05786v1",
-    "source_location": "Table 2 PhFNWM, PhF and Fröhlich row. Rapp gives only reattachment.",
-    "claim": "Separation error increases and reattachment error decreases against the common resolved LES. Using experiment only for reattachment would reverse that outcome.",
+    "source_version": "arXiv:1505.05786v1 (Table 2, p. 15). The same run values appear in B. Krank, doctoral dissertation, Technical University of Munich (accepted 30 January 2019), Table 7.2, p. 159. The journal table was not accessible.",
+    "source_location": "Table 2, rows PhFNWM and PhF with the resolved-LES row (0.2, 4.6-4.7) and the experimental reattachment 4.21. Dissertation Table 7.2 gives DNS (0.20, 4.51 ± 0.06) and states about 25 flow-through times of averaging for this mesh.",
+    "claim": "Separation is printed as 0.2 without the wall model and 0.25 with it against 0.2. One printed decimal leaves the 0.05H change unresolved. Reattachment moves from 3.68 to 4.91: closer to the resolved LES and to the DNS of the dissertation edition, farther from the experiment in the same table. The comparison is unresolved under the stated rule.",
     "manuscript_location": "Calibration, validation and transfer, standard periodic-hill crossings."
   },
   {
     "claim_id": "hill-tables-P25",
     "reference_key": "ZhouFEL2025",
     "source_url": "https://doi.org/10.1017/jfm.2024.1127",
-    "source_version": "Published JFM 1002 A3; inspected publisher PDF",
+    "source_version": "J. Fluid Mech. 1002, A3 (2025), version of record. All 20 rows of Table 2 are identical in arXiv:2409.00984v1.",
     "source_location": "Tables 1–2 and §5.1, four H1.0 cases at Re=10595",
-    "claim": "FEL and WW coupled packages, fixed mesh at each first-cell spacing. One opposing pair, two pairs closer in both, one baseline misses bubble. Author reference at x/H=(.22,4.35).",
+    "claim": "Four unit-shape cases at Re = 10,595 on fixed meshes. First-cell height 0.01: separation 0.31 to 0.29 and reattachment 4.26 to 4.18 against 0.22 and 4.35, resolved in opposite directions at the printed digits; the averaging interval of the wall-modelled runs is not reported. Heights 0.03 and 0.06: both crossings closer. Height 0.09: the baseline has no bubble. The twelve other rows of the same table (other shapes and Re = 37,000) contain no resolved opposite change.",
     "manuscript_location": "Calibration, validation and transfer, standard periodic-hill crossings."
   },
   {
@@ -589,7 +589,7 @@
     "source_url": "https://doi.org/10.1007/s10494-025-00641-y",
     "source_version": "Springer version of record",
     "source_location": "Tables 4–5 pp.1173–1174, Rcht-A-512-p4, DD-A-512-p4 and experimental row",
-    "claim": "Aligned stochastic and equilibrium calculations share height and nominal mesh; separated and reattached crossings rank oppositely. Their averaging windows differ.",
+    "claim": "Aligned data-driven and Reichardt calculations share sampling height and nominal mesh. Separation 0.538 to 0.573 against 0.19 and reattachment 3.652 to 3.935 against 4.21 are resolved in opposite directions at the printed digits. Table 4 gives about 15 and about 19 flow-through times of averaging, so the comparison is classed as controls differ.",
     "manuscript_location": "Calibration, validation and transfer, standard periodic-hill crossings."
   },
   {
@@ -598,7 +598,17 @@
     "source_url": "https://doi.org/10.2514/1.J063691",
     "source_version": "arXiv:2305.02540v3",
     "source_location": "Table 1, 128×64×64 hill at 10595, compare internally at fixed DSM or Vreman.",
-    "claim": "Both crossings improve with learned wall in both SGS cases against either WRLES or DNS. This is a training hill/mesh. Sampling and implementation change with wall package.",
+    "claim": "Both crossings move closer with the learned wall for both subgrid closures, against either the DNS or the wall-resolved LES printed in the table, by 0.19H to 1.40H. All runs are averaged for about 50 flow-through times. This is the training hill and mesh of the learned model. Sampling and implementation change with the wall package. The AIAA Journal table was not accessible.",
     "manuscript_location": "Calibration, validation and transfer, standard periodic-hill crossings."
+  },
+  {
+    "claim_id": "L2-Gray2023",
+    "manuscript_location": "Calibration, validation and transfer, bump station comparison.",
+    "reference_key": "Gray2023",
+    "source_version": "Doctoral dissertation, University of Notre Dame, December 2023, public repository copy (file SHA-256 a602398652a7…; © the author, all rights reserved; not redistributed).",
+    "source_url": "https://doi.org/10.7274/7s75db8212v",
+    "source_location": "Appendix G.1 (printed p. 243): freestream velocity uncertainty at 95 % confidence. Section 2.4.5 (printed p. 36) and Appendix G.4: treatment of PIV uncertainty.",
+    "claim": "The freestream velocity uncertainty is \"approximately εU/U = 0.4%\" at 95 % confidence. The PIV uncertainty calculation \"is limited to the random uncertainties\". No systematic PIV uncertainty for the mean velocity profile is given, so the 0.004 U∞ margin between the two simulated profiles above y/L = 0.02 cannot be compared with a total measurement uncertainty. The bump paper cites the conference reports of the same experiment.",
+    "verification": "Passages captured with pdftotext from the downloaded dissertation; quotations taken from the saved text."
   }
 ]

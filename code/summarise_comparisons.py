@@ -213,6 +213,18 @@ def main():
                         assert metrics["rmse"]<0<metrics["mae"]
                     else:
                         assert (d>0)==(wall=="baffleRight" and q.startswith("q"))
+    second=read("reader_agreement.json")
+    verdict=second["memberships"]["decision_rule_verdict"]
+    assert set(ledger["evidence_by_type"])<=set(verdict)
+    ledger["second_reading"]={
+        "scope":second["scope"],
+        "status_by_type":{k:verdict[k]["status"] for k in ledger["evidence_by_type"]},
+        "use":"Counts for a type whose status is not quotable are first-reading counts. Do not quote them. "
+              "Series counts depend on how finely a paper is split and are not reproducible between readings; quote works.",
+        "design_counts_among_36_works_read_twice":second["memberships"]["design_counts_among_works_read_twice"]["all_designs"]}
+    vocabulary=list(read("paired_readings.json")["category_counts"])
+    assert all(r["adjudication"] in vocabulary for r in p)
+    ledger["historical_pair_categories"]={c:sum(r["adjudication"]==c for r in p) for c in vocabulary}
     save("eligible_units.json",ledger)
     save("paired_error_changes.json",paired)
     print(f"Checked {len(works)} works, {len(tests)} design series and {len(p)} historical pairings.")

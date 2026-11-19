@@ -223,7 +223,8 @@
       "condition": "96×48×48; same forcing and baseline grid",
       "exposure": "Method development case; earlier DG enrichment lineage.",
       "design": "fixed grid",
-      "interpretation_limit": "Table prints the reference and baseline separation as 0.2. The experimental reattachment-only reference 4.21 makes the reattachment error grow from 0.53 to 0.70. Its separation is unreported in this table."
+      "interpretation_limit": "Table prints the reference and baseline separation as 0.2. The experimental reattachment-only reference 4.21 makes the reattachment error grow from 0.53 to 0.70. Its separation is unreported in this table.",
+      "edition_check": "Run values identical in the 2019 dissertation of the first author (Table 7.2), which uses DNS (0.20, 4.51 ± 0.06) as reference and states about 25 flow-through times of averaging for this mesh. Journal table not accessible."
     },
     {
       "study_id": "P25",
@@ -450,5 +451,6 @@
     "N623": "Survey primary tests carried out on channel data; the 10595 periodic-hill treatment occurs in its discussion of prior work. Not an additional hill pair.",
     "N626": "Reviewed context: incidental hill mention/other-case output, or Reynolds-number-only match. No located qualifying treatment table.",
     "N674": "Prior periodic-hill simulations motivate the method. Its own applications are other separated configurations, with no qualifying tabulated hill pair."
-  }
+  },
+  "direction_resolution": "The printed digit strings, reference intervals, averaging windows and edition checks for these comparisons are in table_digits.json. code/resolve_directions.py classifies each direction under the rule stored there. Nominal ranks of point values (five, three and one) are kept in results/revision/paired_error_changes.json for comparison; the resolved classes are five concordant, one opposing, one unresolved, one with differing controls and one unrankable."
 }
