@@ -51,16 +51,16 @@ def check_figure2(comparisons, plotted, support_by_id):
     assert channel['friction_reynolds_number'] == 50000
     assert channel['training_height_wall_units'] == [150, 1200]
     assert [(m['dy_over_delta'], m['height_wall_units']) for m in channel['measurements']] == [(.01, 1000), (.05, 5000)]
-    pairs = example('Mukha2024preprint')['measurements']
+    pairs = example('Mukha2025')['measurements']
     assert [(p['mesh'], p['coupled'], p['offline_mean']) for p in pairs] == [
         ('M1', .71, .06), ('M2', .76, .20), ('M3', -.54, -1.07)]
     sweep = example('Hayat2024preprint')
     assert sweep['sweep_degrees'] == [0, 35]
-    assert [m['signs'] for m in sweep['measurements']] == [[1, -1], [1, -1], [-1, -1]]
+    assert [m['signs'] for m in sweep['measurements']] == [[None, -1], [1, -1], [-1, -1]]
     closures = example('LozanoDuranBae2023')['measurements']
     assert [(m['outer_closure'], m['stress_error']) for m in closures] == [
         ('Exact for the mean', 'Internal'), ('Dynamic Smagorinsky', 'Total'), ('Vreman', 'Total')]
-    outer, wall = example('Zhou2024preprint'), example('Agrawal2024')
+    outer, wall = example('ZhouBae2024'), example('Agrawal2024')
     assert outer['length_reynolds_number'] == wall['length_reynolds_number'] == 2000000
     assert [(m['coefficient'], m['reversal']) for m in outer['measurements']] == [(.025, True), (.070, False)]
     assert [(m['model'], m['reversal']) for m in wall['measurements']] == [('Equilibrium', False), ('Sensor-based', True)]
@@ -284,7 +284,7 @@ def main_check():
     assert not re.search(r'undefined references|Citation .* undefined|Overfull \\[hv]box',log)
     assert all(title in compact for title in ('Plane channel', 'Flat-plate boundary layers',
                'Gaussian speed bump', 'Step and diffuser', 'Signed error in mean wall stress',
-               'Prescribed mean stress, baseline mesh', 'Recirculation on the inclined diffuser wall')), 'outdated Figure 2 in PDF'
+               'First-cell mean velocity', 'Recirculation on the inclined diffuser wall')), 'outdated Figure 2 in PDF'
     assert all(s in compact for s in ('Backward-facing step with a graph wall model', 'Streamwise component',
                'Internal error', 'Total error', 'Two comparisons of coupled wall-stress predictions')), 'outdated Figure 3 in PDF'
     assert all(t in compact for t in ('Agreement by choice', 'Cases by combination of matches', 'Case IDs')), 'outdated Figure 4 in PDF'
@@ -307,6 +307,15 @@ def main_check():
             'figure_layouts':figure_layouts,
             'circulation_text_scan':'PASS',
             'scientific_limit':'Pass checks consistency and specified support. It does not certify an exhaustive corpus or predictive checklist validity.'}
+    audited=json.loads((ROOT/'data/revision/source_dispositions.json').read_text())['records']
+    paired=json.loads((ROOT/'data/revision/paired_readings.json').read_text())['records']
+    eligible=json.loads((ROOT/'results/revision/eligible_units.json').read_text())
+    assert sum(eligible['disposition'].values())==len(audited)==115
+    assert len(paired)==79 and sum(r['original_nomination'] for r in paired)==10
+    report['archived_source_dispositions']=len(audited)
+    report['historical_pairs_reassessed']=len(paired)
+    report['source_located_design_series']=sum(len(r['tests']) for r in audited)
+    report['edition']='Review with finite-sample source reassessment and edition-specific comparisons'
     (ROOT/'results/revision/current_checks.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(report,indent=2))
 

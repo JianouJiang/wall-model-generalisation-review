@@ -4,6 +4,8 @@ The current manuscript is a corrected critical review prepared for expert feedba
 
 Completed corrections are documented in [scientific-corrections.md](scientific-corrections.md): source/version reconciliation for retained cases, explicit physical-scope uncertainty, separation of relative and absolute error, withdrawal of unsupported aggregates, and a limited interpretation of retrospective checklist records.
 
+The source reassessment traces every retrieved work. For the standard periodic hill at bulk Reynolds number 10,595, five studies tabulate separation and reattachment against a reference for both crossings. Their nine fixed-mesh wall-treatment comparisons include favourable changes, opposing rankings and one missing bubble. The studies reuse meshes, measurements and trained treatments. [Numerical results](../results/revision/paired_error_changes.json) · [Source tables](../data/revision/hill_table_population.json)
+
 ## Limits of the current work
 
 - The collection is not exhaustive and its historical coding is not a certified census of current journal versions.

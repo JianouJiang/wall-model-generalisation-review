@@ -1,0 +1,404 @@
+{
+  "referee_rows": {
+    "1": "Dupuy2023/Fig.16",
+    "2": "Dupuy2023/Table5",
+    "3": "LozanoDuranBae2023",
+    "4": "BaeKoumoutsakos2022",
+    "5": "HayatPark2025",
+    "6": "MukhaParsaniSchlatter2025",
+    "7": "ZhouBae2024",
+    "8": "JonesUtyuzhnikov2016"
+  },
+  "figure_examples": {
+    "Hayat2024preprint": "HayatPark2025",
+    "BaeKoumoutsakos2022": "BaeKoumoutsakos2022",
+    "LozanoDuranBae2023": "LozanoDuranBae2023",
+    "Mukha2025": "MukhaParsaniSchlatter2025",
+    "ZhouBae2024": "ZhouBae2024",
+    "Agrawal2024": "AgrawalBoseMoin2024",
+    "Dupuy2023graph": "Dupuy2023",
+    "Jones2015": "JonesUtyuzhnikov2016"
+  },
+  "readings": {
+    "HayatPark2025": {
+      "study_id": "P17",
+      "doi": "10.1103/gfr7-6l2m",
+      "authors": [
+        "Imran Hayat",
+        "George Ilhwan Park"
+      ],
+      "edition": "arXiv:2403.05476v1, submitted March 8, 2024 (PDF title page dated March 11), for figures; APS Phys. Rev. Fluids 10, 104602 (2025) for the authors' published abstract. Only v1 is listed by arXiv. Published figures could not be equated to v1.",
+      "pdf_url": "https://arxiv.org/pdf/2403.05476v1",
+      "locations": "Table I; Sec. IV.A and Table II; preprint p.16, Fig. 11(a) inset, Fig. 11(b) at x/Y=0; p.17, Fig. 12; p.18, Fig. 13(a) inset, 13(b); Fig. 16 decomposes chordwise friction.",
+      "observable": "Mean chordwise friction coefficient 2<tau_w,x>/(rho_inf U_inf^2) against x/Y, including the presence of a resolved negative part. Spanwise Cf,z is a distinct quantity in C35.",
+      "results": "Case C0: only PDE NEQWM has clearly negative chordwise stress; EQWM reaches zero within the stroke, integral NEQWM approaches zero. Treat EQWM as having no resolved negative interval, rather than strictly positive everywhere. In Case C35, EQWM, integral NEQWM and PDE NEQWM all have clearly negative mean chordwise stress in the bubble. Positive Cf,z there does not negate the reversal of the chordwise component. In C0 the EQWM coupled LES has near-wall reversed mean velocity despite absence of a clear negative wall stress because the matching point typically lies above this very thin bubble. The higher swept bubble places matching points in reversed flow. The authors' C0 energy balance identifies spatial growth as critical and the PDE model captures it; the published abstract verifies that physical conclusion.",
+      "controls": "Within a sweep, compare the three wall closures using CharLES, a constant-coefficient Vreman SGS, fine-grid results and common case DNS (Coleman et al.). Fine wall-parallel spacings are 0.00625Y, first normal spacing 0.0025Y; grid stretched in y. The coupled LES matching inputs need not coincide across closures. Across C0 to C35, imposed sweep, spanwise velocity, pressure-gradient history/response, bubble thickness and matching-point placement differ. The sweep contrast does not isolate a term of a wall equation. A matched fixed-input ablation of that term is absent.",
+      "uncertainty": "A graphical sign boundary is explicit for unswept EQWM. It reaches an inset centreline distance 0.084 PDF point below zero, well under the combined half-width 0.379 point of curve plus zero line. Sign of this tiny excursion is unresolved. Sampling and reference uncertainty are not supplied for these signs.",
+      "digitised": {
+        "C0": {
+          "EQWM": {
+            "min_Cf_x": -1.657e-06,
+            "Cf_x_at_x_over_Y_zero": 6.594e-06,
+            "two_strokes_halfwidth_in_Cf": 7.437e-06
+          },
+          "integral NEQWM": {
+            "min_Cf_x": 6.947e-06,
+            "Cf_x_at_x_over_Y_zero": 1.764e-05,
+            "two_strokes_halfwidth_in_Cf": 7.437e-06
+          },
+          "PDE NEQWM": {
+            "min_Cf_x": -4.7837e-05,
+            "Cf_x_at_x_over_Y_zero": -4.4095e-05,
+            "two_strokes_halfwidth_in_Cf": 7.437e-06
+          }
+        },
+        "C35": {
+          "EQWM": {
+            "min_Cf_x": -9.2307e-05,
+            "Cf_x_at_x_over_Y_zero": -8.0989e-05,
+            "two_strokes_halfwidth_in_Cf": 7.526e-06
+          },
+          "integral NEQWM": {
+            "min_Cf_x": -7.6154e-05,
+            "Cf_x_at_x_over_Y_zero": -4.0668e-05,
+            "two_strokes_halfwidth_in_Cf": 7.526e-06
+          },
+          "PDE NEQWM": {
+            "min_Cf_x": -0.000149689,
+            "Cf_x_at_x_over_Y_zero": -0.000100087,
+            "two_strokes_halfwidth_in_Cf": 7.526e-06
+          }
+        }
+      },
+      "pdf_sha256": "cde8bbe38e14e095b2596067de5716fa853e5167d02e7150c073f834981e0934"
+    },
+    "ZhouBae2024": {
+      "study_id": "N395",
+      "doi": "10.1016/j.jcp.2024.112948",
+      "authors": [
+        "Di Zhou",
+        "H. Jane Bae"
+      ],
+      "edition": "Author-hosted Elsevier version of record. Title page states Journal of Computational Physics 506 (2024) 112948.",
+      "pdf_url": "https://www.its.caltech.edu/~jbae/publications/Zhou_Bae_2024_JCP.pdf",
+      "locations": "Table 1 p.5, Table 2 p.6, Figs. 7–8 p.9 (Group 1), Fig. 13 p.12, Fig. 14 p.13 and Fig. 15 p.14 (Group 2, with Group 1 Neumann comparison in Fig. 15).",
+      "observable": "Group 1 Fig. 7 plots <u1>/U_inf against x/L at x2/L=2.38e-4, the first off-wall cell centre. The 3D reference DNS profile is sampled at the same height. DNS mean shear is prescribed on the wall, so its sign cannot diagnose independent friction prediction. Fig. 8 uses first-cell reversal to define a bubble length.",
+      "controls": "On the baseline isotropic Gaussian-bump mesh (Delta_c/L=4.76e-4; structured block 4200 x 176 x 168) and same velocity-Neumann condition supplied by the DNS, vary SGS among none, DSM, AMD, Vreman c=0.025, Vreman c=0.07 and MSM. Cross-mesh comparisons also change first-cell height. Group 2 holds a chosen SGS and mesh while changing between equilibrium and nonequilibrium DNS-conditioned effective-viscosity conditions. Fig. 15 compares those two with the prescribed velocity-Neumann result. The two effective viscosities are bounded below by zero and stresses are coupled to local conditions.",
+      "results": "Fig. 7: no SGS and DSM remain positive. AMD displays a very narrow negative first-cell velocity interval (confirmed by Fig. 8's small nonzero length). Vreman 0.025 and MSM show clear backflow. Vreman 0.07 closely approaches the zero line without a resolved negative interval; the Group 1 bubble length in Fig. 8 is zero. The DNS crosses below zero. Group 2 Fig. 14 shows that a fixed SGS can have appreciably different lengths depending on whether computed from wall friction or first-cell velocity. At baseline Vreman c=0.07, equilibrium versus nonequilibrium friction lengths change from about zero to 0.14L while lengths from first-cell velocity stay about zero in both. For AMD the nonequilibrium condition brings the wall-friction length nearer the DNS but changes the first-cell length comparatively little. Fixed SGS is important; Fig. 15(b), Vreman 0.07, responds little in first-cell velocity to any of the three BCs whereas Fig. 15(a,c), Vreman 0.025 and MSM, show a shift in reattachment.",
+      "uncertainty": "Signs extracted from native raster, not sampling intervals. Group 1's graph statistics and common DNS constitute dependent evidence.",
+      "digitised": {
+        "none": 0.116,
+        "DSM": 0.0533,
+        "AMD": -0.0053,
+        "Vreman c=0.025": -0.0962,
+        "Vreman c=0.07": 0.0048,
+        "MSM": -0.1002
+      },
+      "pdf_sha256": "f86e09bb6fd3be385dc3f54522048f9677b2013d60737cdcb83de7cb847c039d"
+    },
+    "BaeKoumoutsakos2022": {
+      "study_id": "P26",
+      "doi": "10.1038/s41467-022-28957-7",
+      "authors": [
+        "H. Jane Bae",
+        "Petros Koumoutsakos"
+      ],
+      "edition": "Nature Communications 13, 1443 (2022), publisher PDF.",
+      "pdf_url": "https://www.nature.com/articles/s41467-022-28957-7.pdf",
+      "locations": "p.4, Fig. 3(a,b) and testing paragraph; pp.6–7 Methods, Eq. (9), p.7 Table 1.",
+      "observable": "Signed relative error in modeled friction velocity u_tau^m in percent versus Re_tau. Both panels' axis labels and Fig. 3 title refer to friction velocity although the caption's first sentence refers to mean wall shear stress. The two error measures have different scaling.",
+      "controls": "Velocity-based wall model (VWM) and log-law-state model (LLWM) trained in constant-mass-flow channels at Re_tau about 2000, 4200 and 8000. Test channels use a prescribed pressure gradient and viscosity augmentation, which constrains mean total wall force in a stationary balance; a reported policy-output error does not thereby validate an independently predicted global force. At fixed Re_tau=50,000 the paired runs keep the learned policy, geometry, forcing, Delta x,z/delta=0.05; Delta y/delta changes from 0.05 to 0.01 while h_m^+ changes from 5000 to 1000. At 20,000 the analogous pair changes from 0.05/2000 to 0.025/1000. LES input field, numerical error and grid also change. No sole effect of matching height is identified.",
+      "results": "Training range 150<h_m^+<1200 is stated in the text. The two tested heights at 50,000 are exact source table entries. For VWM, the open symbols in Fig. 3(a) show about -29% on the standard grid vs about +3% on the refined grid; at 20,000 about -10% to +3%. LLWM's friction-velocity errors remain small outside this range (source states <4% across cases). Do not apply the VWM training-height condition indiscriminately to LLWM.",
+      "uncertainty": "Grid and matching numbers are source-tabulated; signed error values are approximate graphical readings; no confidence limits reported for the paired errors.",
+      "digitised": {
+        "20000 standard VWM": [
+          -10.25
+        ],
+        "20000 refined VWM": [
+          2.74,
+          2.34
+        ],
+        "50000 standard VWM": [
+          -28.62
+        ],
+        "50000 refined VWM": [
+          3.14,
+          2.73
+        ]
+      },
+      "pdf_sha256": "6415ca7055b7ef5724e82dd81bd6341d91f6778da06efc2a6ceca7eee4ba7229"
+    },
+    "MukhaParsaniSchlatter2025": {
+      "study_id": "N556",
+      "doi": "10.1063/5.0283984",
+      "authors": [
+        "Timofey Mukha",
+        "Matteo Parsani",
+        "Philipp Schlatter"
+      ],
+      "edition": "Publisher HTML, Phys. Fluids 37, 105158, published 22 October 2025, three authors; publisher PDF title page also verified. CC BY. Compared with two-author arXiv:2404.05378v1 Table III.",
+      "sha256_html": "d1d6d6ffae215194bd57fe905c454530e90ac7a12984ca288c7629f2d0422a6e",
+      "html_url": "https://aipp.silverchair-cdn.com/article-minimal/3368918",
+      "publisher_pdf_url": "https://pubs.aip.org/aip/pof/article-pdf/doi/10.1063/5.0283984/20770930/105158_1_5.0283984.pdf",
+      "locations": "Published section III.A Tables I–II (mesh/setup); III.B.2 Table III (mean stress and pressure-gradient estimate); VI.A Table VII and Figs. 16–17 (fixed-input filtering and coupled filtering, respectively).",
+      "observable": "Relative signed errors (%) of mean modeled wall stress versus the channel DNS, recomputed wall stress using mean velocity at h, and mean matching velocity. M1 to M3 double the element count per direction.",
+      "controls": "Nek5000 channel, fixed volume flux, target Re_tau 8000, h=0.2 delta, Spalding law with kappa=0.387 and B=4.2; common DNS and same sampled simulation within each table row. Online model on instantaneous input versus offline application to the same simulation mean, the latter suppressing feedback. Fig. 17 separately reruns WMLES with finite windows 5, 10, 50 and 500 time steps.",
+      "table_VII": {
+        "rows": [
+          "M1",
+          "M2",
+          "M3"
+        ],
+        "simulated_signed_wall_error_percent": [
+          0.71,
+          0.76,
+          -0.54
+        ],
+        "recomputed_at_mean_velocity_percent": [
+          0.06,
+          0.2,
+          -1.07
+        ],
+        "mean_matching_velocity_error_percent": [
+          0.06,
+          0.13,
+          -0.57
+        ]
+      },
+      "table_III": {
+        "rows": [
+          "M1",
+          "M2",
+          "M3"
+        ],
+        "simulated_signed_wall_error_percent": [
+          0.64,
+          1.32,
+          -0.31
+        ],
+        "pressure_force_stress_error_percent": [
+          -2.06,
+          -1.88,
+          -3.94
+        ]
+      },
+      "results": "Table VII reproduces the old v1 Table III values exactly. Within that table applying the wall law to mean velocity reduces the absolute stress discrepancy on M1 and M2 but increases it on M3. The authors state Table VII first column repeats published Table III: it does not. Even using the alternate Table III values the three qualitative directions survive, but the paired numbers are explicitly Table VII only. The M2 time-window reruns show no systematic improvement because the matching velocity shifts with the coupling.",
+      "uncertainty": "Table entries are rounded to two decimals in percent. Published internal disagreement (M1 0.71 vs 0.64, M2 0.76 vs 1.32, M3 -0.54 vs -0.31) exceeds rounding. No reconciliation of the contradictory online magnitudes is supported."
+    },
+    "LozanoDuranBae2023": {
+      "study_id": "P19",
+      "doi": "10.1017/jfm.2023.331",
+      "authors": [
+        "Adrián Lozano-Durán",
+        "H. Jane Bae"
+      ],
+      "edition": "Cambridge version of record; Journal of Fluid Mechanics 963, A35 (2023).",
+      "pdf_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S0022112023003312",
+      "locations": "§§2.5, 4.1, 4.3; pp.A35-17–19, Fig. 9c,d; compare with the downstream textual summary on A35-18.",
+      "observable": "Relative absolute error in mean wall stress as a percentage, log ordinate versus Re_x (linear, horizontal multiplier 10^5), zero-pressure-gradient turbulent flat-plate boundary layer, local station Re_x=10^6. The grid is uniform in all three axes; its relative resolution varies downstream, from about 1/5 of inlet thickness to 1/20 of outlet thickness. Reference is Towne et al. DNS, same numerical set-up, Re_theta 800–2000.",
+      "controls": "Within an outer treatment compare building-block (BFWM) and equilibrium (EQWM) wall models while keeping configuration, Reynolds station, LES mesh and SGS prescription. Fig. 9c uses exact-for-the-mean forcing (ESGS) calibrated to mean reference profiles; Fig. 9d uses dynamic Smagorinsky (DSM) or Vreman (VREM). This is a common mean reference, not identical instantaneous inputs across six runs. Changing SGS alters resolved matching fields and feedback. The comparison reveals sensitivity of the coupled errors, and internal error conditional on the exact-for-mean treatment; subtracting them does not identify an additive physical fraction.",
+      "results": "At Re_x=10^6, ESGS errors are about 0.25% BFWM and 1.9% EQWM. Total errors at the same x are about 14% BFWM vs 19% EQWM under DSM, and 7.6% vs 9% under Vreman. The source text gives below 0.5% and about 2% internal downstream, and broadly summarizes total errors as 5–15%. The 19% is explicitly a local curve reading outside that prose range; report the station and model pair. It should not replace the whole-profile description.",
+      "uncertainty": "At exactly 10 on the Re_x ×10^5 printed axis the square/dashed DSM-EQWM stroke centre is 19.28%, and the half-stroke covers 18.79–19.78%. Including ±0.79 PDF point horizontally (half a symbol width) broadens to 18.43–20.27%. Including a half marker spacing (~1.85 pt or 2.36×10^4 in Re_x) broadens to 18.43–20.88%. Approx. 19–20%, or about 19% with a conservative plotting allowance of ±2 percentage points. These bounds refer only to reading and registration. The published curves give no sampling/benchmark confidence interval for this point.",
+      "digitised": {
+        "ESGS-EQWM": {
+          "center_percent": 1.896,
+          "stroke_only": [
+            1.848,
+            1.946
+          ],
+          "half_symbol_width": [
+            1.779,
+            1.977
+          ],
+          "half_symbol_spacing": [
+            1.721,
+            1.977
+          ]
+        },
+        "ESGS-BFWM": {
+          "center_percent": 0.253,
+          "stroke_only": [
+            0.246,
+            0.259
+          ],
+          "half_symbol_width": [
+            0.224,
+            0.284
+          ],
+          "half_symbol_spacing": [
+            0.198,
+            0.293
+          ]
+        },
+        "DSM-EQWM": {
+          "center_percent": 19.276,
+          "stroke_only": [
+            18.786,
+            19.78
+          ],
+          "half_symbol_width": [
+            18.427,
+            20.266
+          ],
+          "half_symbol_spacing": [
+            18.427,
+            20.884
+          ]
+        },
+        "DSM-BFWM": {
+          "center_percent": 13.845,
+          "stroke_only": [
+            13.492,
+            14.207
+          ],
+          "half_symbol_width": [
+            13.453,
+            14.234
+          ],
+          "half_symbol_spacing": [
+            13.401,
+            14.234
+          ]
+        },
+        "VREM-EQWM": {
+          "center_percent": 8.948,
+          "stroke_only": [
+            8.72,
+            9.181
+          ],
+          "half_symbol_width": [
+            8.714,
+            9.395
+          ],
+          "half_symbol_spacing": [
+            8.66,
+            9.91
+          ]
+        },
+        "VREM-BFWM": {
+          "center_percent": 7.601,
+          "stroke_only": [
+            7.407,
+            7.8
+          ],
+          "half_symbol_width": [
+            7.313,
+            7.881
+          ],
+          "half_symbol_spacing": [
+            7.188,
+            7.94
+          ]
+        }
+      },
+      "pdf_sha256": "44fb93471124818e265bf4d6d3aeef1a9bf957e9bd314195155ba14044127ccf"
+    },
+    "Dupuy2023": {
+      "study_id": "N626",
+      "doi": "10.1017/dce.2023.2",
+      "authors": [
+        "Dorian Dupuy",
+        "Nicolas Odier",
+        "Corentin Lapeyre",
+        "Dimitrios Papadogiannis"
+      ],
+      "edition": "Cambridge version of record, Data-Centric Engineering 4, e7 (2023).",
+      "pdf_url": "https://doi.org/10.1017/dce.2023.2",
+      "locations": "§4.2.3 pp.e7-18–21, Fig. 16 and Table 5 p.e7-22.",
+      "observable": "Fig. 16 plots tau_x in Pa against x/h_s; use the positive-going downstream zero crossing for reattachment. Reference is the solid “Reference” line; Le et al. is a distinct dot-dashed comparison, not the reference used in Table 5. Table 5 integrates squared discrepancy from x=0 to 14 h_s for stress magnitude and streamwise component. It prints N²/m² on both integrals; record units as printed. There is no normalization in those two original tabulations.",
+      "controls": "Step was outside the training data. Expansion 1.2, Re_h=5100, common 0.9M-point mesh, Sigma SGS, same mean inlet and upstream flow; wall-model changes confined to the bottom wall downstream of the step. Common reference is the study’s wall-resolved calculation. The law and GNN both align stress with first-cell tangential velocity and model its magnitude, limiting direction near reattachment. The coupled matching field and effective GNN footprint differ. N is the number of message-passing steps, so changing it changes the learned estimator and effective input region.",
+      "table5": {
+        "models": [
+          "wall law",
+          "GNN N=1",
+          "GNN N=2",
+          "GNN N=3",
+          "GNN N=4",
+          "GNN N=5"
+        ],
+        "integrated_magnitude_error": [
+          0.806,
+          0.687,
+          0.217,
+          0.12,
+          0.067,
+          0.066
+        ],
+        "integrated_streamwise_error": [
+          0.686,
+          0.585,
+          0.311,
+          0.302,
+          0.308,
+          0.367
+        ],
+        "printed_units": "N²/m²"
+      },
+      "comparison_1": "N=4 versus the wall law: both integrated errors decrease, to 0.083 and 0.449 times baseline respectively. Downstream reattachment improves from about 4.7 to 5.2 h_s relative to the common reference about 6.0 h_s. Relative to an illustrative ±0.5 h_s tolerance both predictions still fall short. This is improved agreement without meeting tolerance, not an opposite direction.",
+      "comparison_2": "N=5 versus N=4, same step: magnitude integrated error decreases from 0.067 to 0.066, while component integrated error increases from 0.308 to 0.367. Hence opposing directions for two source-tabulated measures in this contrast; magnitude change only 0.001 in the printed units. A source uncertainty on this difference is unavailable, so superiority is not resolved statistically.",
+      "uncertainty": "Graphical centerline and local-fit/±1 pixel sensitivity shown below; report about 4.7, 5.2, 6.0 h_s to the nearest tenth. Figure line widths and dash overlap with other GNN curves do not support raw-data precision. Table 5 rounds to 0.001. Shared reference errors and limited sampling affect validation uncertainty independently of graphical reading.",
+      "digitised": {
+        "wall law": {
+          "zero_crossing_x_over_h": 4.656,
+          "fit_and_one_pixel_range": [
+            4.624,
+            4.687
+          ]
+        },
+        "GNN N=4": {
+          "zero_crossing_x_over_h": 5.203,
+          "fit_and_one_pixel_range": [
+            5.187,
+            5.219
+          ]
+        },
+        "WR reference": {
+          "zero_crossing_x_over_h": 6.003,
+          "fit_and_one_pixel_range": [
+            5.99,
+            6.021
+          ]
+        }
+      },
+      "pdf_sha256": "426f0b1e9c14c87aea9b28d1635efceb4eb743a133f64b1c0df86f435e2c7410"
+    },
+    "AgrawalBoseMoin2024": {
+      "study_id": "N418",
+      "doi": "10.1103/PhysRevFluids.9.124603",
+      "authors": [
+        "Rahul Agrawal",
+        "Sanjeeb T. Bose",
+        "Parviz Moin"
+      ],
+      "edition": "27-page typeset APS version, Physical Review Fluids 9, 124603 (2024). Title page with authors, receipt 16 July, acceptance 25 Nov, publication 20 Dec inspected from author’s public published PDF (uploaded 21 Dec 2024). A separate checksum below belongs to the arXiv v1 PDF; the raw bytes of the VOR were not returned to the local HTTP client.",
+      "publisher_url": "https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.9.124603",
+      "pdf_url": "https://www.researchgate.net/profile/Rahul-Agrawal-22/publication/387287722_Nonequilibrium_wall_model_for_large_eddy_simulations_of_complex_flows_exhibiting_turbulent_smooth_body_separation/links/67667010117f340ec3d19049/Nonequilibrium-wall-model-for-large-eddy-simulations-of-complex-flows-exhibiting-turbulent-smooth-body-separation.pdf",
+      "locations": "Published §V, Eq. (17) pp.124603-11–13; Table I p.12, Fig. 6(a,b) p.13, Fig. 7 p.14 (Boeing). Published §VI, Table II p.19, Fig. 13(a–d) and Fig. 14 p.20, Fig. 15 p.21 (Bachalo–Johnson). The arXiv v1 plots are Figs. 4 and 10, respectively.",
+      "observable": "Boeing: skin friction C_f=2 tau_w/(rho_inf U_inf²), surface pressure C_p=2(p−p_ref)/(rho_inf U_inf²), versus x/L; sign/corresponding separation plateau and mean velocity profiles compared with Uzun and Malik quasi-DNS. B–J: pressure plateau and reattachment in x/c under transonic shock/adverse gradient against experiments, with measured velocity profiles at M=0.875.",
+      "controls": "Within the NASA/Boeing spanwise-periodic bump at Re_L=2×10^6, compare sensor-based wall closure (SWM) and equilibrium wall closure at each coarse/medium/fine mesh (3M, 12M, 52M cells), holding dynamic tensor-coefficient SGS, geometry and corresponding grid; EQWM comparator reproduced from Agrawal et al. [7]. First-cell-centroid matching means grid refinements also change physical matching height. Inlet is plug flow, diagnostics shared between closures, coupled matching velocity/pressure are allowed to change. Same solver properties alone do not fix freestream Mach. No numeric Boeing freestream Mach is specified in §V; do not assign the common quasi-DNS or another study’s Mach to this calculation. B–J has Re_c=2.76×10^6, a 60-degree axisymmetric sector and 31M cells in the main comparison; SGS, mesh and wall-model implementations stay fixed as Mach is varied within this geometry. Geometry, confinement, pressure gradients, Re and reference all differ between the two bump configurations.",
+      "results": "Boeing: EQWM separates only on fine, SWM already separates on medium; coarse remains attached in the reported grid sequence. Streamwise velocity for both is similar upstream; downstream profiles and Cp/Cf respond to refinement. B–J: at M=0.85 the shock is too weak to separate at its foot; separation occurs downstream under APG (pressure plateau about x/c=0.75); SWM improves the plateau but still underpredicts separation. At M=0.875 and 0.90 stronger shock-induced separation is reasonably predicted by both; the reported SWM advantage is smaller, especially at 0.90. The sensor responds near x/c~0.67 and the reattachment moves downstream with Mach. This offers paired system evidence for the complete SWM at specified grids and separates weak-shock/downstream-APG from shock-foot separation.",
+      "uncertainty": "Fig. 13 distinguishes modeled temporal RMS fluctuations from experimental measurement uncertainty; those bars are not both intervals on the estimated mean. Five flow-throughs used for statistics after five transient flow-throughs. Shared quasi-DNS for Boeing, shared experimental traces for the two model evaluations within each B–J Mach. Approximate plateau location is author-reported, not a precise shock indicator.",
+      "vor_sha256": null,
+      "local_other_edition_sha256": "420f5d5707abb0cde27edc7d9fc5f19b647ba485653a2ca7e5ede557a46d4f28"
+    },
+    "JonesUtyuzhnikov2016": {
+      "study_id": "N358",
+      "doi": "10.1016/j.apm.2015.05.011",
+      "authors": [
+        "Adam Jones",
+        "Sergey Utyuzhnikov"
+      ],
+      "edition": "Author-hosted published PDF, Applied Mathematical Modelling 40 (2016) 329–342; source pagination, running headers, Fig. 5, Fig. 7 and §7.2 checked against the Manchester accepted manuscript. Local HTTP timed out on the author server; published PDF read through the research browser.",
+      "pdf_url": "https://personalpages.manchester.ac.uk/staff/S.Utyuzhnikov/Papers/AMM_AJSU2016.pdf",
+      "publisher_url": "https://doi.org/10.1016/j.apm.2015.05.011",
+      "locations": "Published pp.337–338, §7 mesh; p.338 Fig. 5(a,b), p.340 Fig. 7(a,b) and p.341 §7.2, Eqs. (12) and (29); source experiment by Buice and Eaton.",
+      "observable": "Mean signed skin-friction coefficient tau_w/(0.5 rho U_b²) vs x/H on straight and inclined walls; sign and recirculation extent (the adopted source units are dimensionless).",
+      "controls": "Coupled 2D high-Re k–epsilon RANS, same inlet Re=18,000, geometry, 398 streamwise cells and experimental reference. Whole-configuration comparison: log-law scalable wall function on 30 equally spaced y cells across full cross-section (near-wall y+ 5–25); interface boundary conditions on 50 y cells covering central 90% (5% of local height excluded per wall; y+ 3–70), wall treatment/profile and normal mesh/interface change together. Low-Re k–omega SST reference calculation has its own 140-cell y mesh, max y+ 0.34. Authors checked grid doubling with an exception for y in log-law runs.",
+      "comparison_1": "Inclined wall Fig. 5(b): standard log law stays positive while interface cases predict recirculation, but predicted length differs from experiment; on straight wall the exponential viscosity profile gives a spurious negative interval while the linear and Duprat profiles give no bubble. A unique wall-treatment effect cannot be inferred by comparing 30 to 50 cells.",
+      "comparison_2": "Within the interface calculation at fixed mesh and viscosity model, replace the Robin condition on k (Eq. 12) by a Dirichlet equilibrium-length condition (Eq. 29). Fig. 7(b) solid/connected versus unconnected points: linear viscosity loses inclined-wall recirculation; Duprat retains it with smaller extent; exponential changes little. This isolates the k-boundary choice conditional on the viscosity prescription and illustrates an interaction.",
+      "uncertainty": "Comparisons are based on sign and the named curve; source says none of the main models recover the correct recirculation length. The sign and extent are not numerical confidence limits.",
+      "vor_sha256": null,
+      "local_other_edition_sha256": "20d499385418ccd2a822a1bb35f27083b4d9b86660ae8382be7f1911244d3d85"
+    }
+  }
+}

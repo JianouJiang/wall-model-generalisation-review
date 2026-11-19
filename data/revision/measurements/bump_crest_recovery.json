@@ -1,0 +1,166 @@
+{
+  "doi": "10.2514/1.J063691",
+  "publication": "AIAA Journal 62(10), 3713–3727 (2024)",
+  "locations": [
+    "§IV.A (p. 21), Table 2, Eq. (4) and §IV.B (pp. 22–23).",
+    "Fig. 10(c), p. 24, native page image object 556; combined legend object 558. Along bump centreplane z/L=0, ordinate 1000 Cf, abscissa x/L. Gray et al. experiment black filled squares, internal RLWM red solid, internal EQWM blue dash. The orange external medium-grid trace [36] is a distinct study/reynolds number.",
+    "Fig. 11(c), p. 25, native image 579 and legend 583. Centreplane, Cp vs x/L, same two internal models, same Gray et al. measurement series [28]."
+  ],
+  "controls": "Same fine mesh (100 million control volumes; minimum Δx/L 0.0013, min Δy/L and Δz/L 0.0009), dynamic Smagorinsky SGS, inlet, geometry, Re_L and LES solver, 1.5 flow-through-time transient plus 1.5 to sample. Different complete wall treatments: EQWM matches at the second cell centre, RLWM places an agent on the upper face of the wall-adjacent cell and updates wall eddy viscosity. This is a package swap including sampling implementation. Both internal Cf profiles stay positive despite the measured recirculation.",
+  "reference": "Gray, Gluzman, Thomas & Corke, AIAA Paper 2022-1209 (January 2022), DOI 10.2514/6.2022-1209. The two panels specify measurements at the same Re_L = 2 × 10^6. Pressure and wall shear have different station grids and are distinct observables.",
+  "extraction": "Identify exact RGB colors. Fit six major x tick centres against −1 to +1.5; five y ticks are exactly 263 graphics pixels apart. Compute per-column coloured-ink centreline; interpolate across blue dashes. A 22×22 erosion of square black symbol masks recovers the individual measured centres even when neighboring squares touch. Experimental symbols denote locations and carry no sampling intervals in these panels. The high-precision values below document the digitization, not measured physical precision.",
+  "shear_summary": "Digitized upstream crest-peak heights (1000 Cf) are Gray maximum printed square 8.83 at x/L≈−0.006, RLWM 9.27 at x/L≈−0.021 and EQWM 11.40 at x/L≈−0.012. Differences from sampled maximum ~0.44 vs ~2.57. At the single station of Gray’s highest square, RLWM≈9.15 and EQWM≈11.38, same ordering. The continuum maximum of the experimental flow between stations is unknown. An experimental symbol has half-height ~0.20 in 1000 Cf, and the model crest strokes roughly ~0.1.",
+  "pressure_summary": "Ten measured marker centres read x/L=0.201–0.388. Both simulation curves are above the data; EQWM is closer at every one. Excess RLWM absolute Cp error is +0.018 to +0.046. The leftmost marker is too close to x/L=.2 to adjudicate membership by its footprint; excluding it leaves the same ordering at nine centres. At x/L≈.263, experimental −.161, EQWM +.102, RLWM +.148, absolute errors .262 and .308. Fig. 11 cannot establish the error ordering after the final measurement at ≈.388. The authors describe the overall Cp curves as similar. The observed tradeoff is between the crest shear and measured downstream pressure recovery.",
+  "graphic_precision": "The x half-width of one experimental marker maps to 0.018L, and its vertical Cp half-height to ~0.020. The coloured strokes near x=.263 span up to roughly 0.01–0.02 Cp in total orthogonal section, depending on slope and overlap. At the ≈.263 station, shifting the common abscissa across the full marker footprint leaves the between-model absolute-error difference +.037 to +.051 before stroke allowance. Shared marker vertical placement cancels in the difference while both predictions overestimate; the plotted reference remains below both throughout the measured portion. Near the last stations the gap is smaller and proportionally more sensitive to stroke choice. No experimental confidence bands or simulation sampling errors in these curves.",
+  "crest_peaks": {
+    "RLWM": {
+      "x_over_L": -0.020812928501469284,
+      "1000Cf": 9.2680608365019
+    },
+    "EQWM": {
+      "x_over_L": -0.0122428991185114,
+      "1000Cf": 11.397338403041825
+    },
+    "Gray_max_marker": {
+      "x_over_L": -0.0062438785504408826,
+      "1000Cf": 8.830798479087452
+    }
+  },
+  "measured_recovery": [
+    {
+      "x_over_L": 0.2011508325171399,
+      "Gray_Cp": -0.2461977186311787,
+      "RLWM_Cp": 0.060361216730038025,
+      "RLWM_absolute_error": 0.3065589353612167,
+      "EQWM_Cp": 0.02709125475285171,
+      "EQWM_absolute_error": 0.2732889733840304,
+      "absolute_error_RLWM_minus_EQWM": 0.03326996197718629,
+      "gap_at_horizontal_marker_extent": [
+        0.020912547528517067,
+        0.05133079847908745
+      ]
+    },
+    {
+      "x_over_L": 0.22171890303623878,
+      "Gray_Cp": -0.22338403041825095,
+      "RLWM_Cp": 0.10266159695817491,
+      "RLWM_absolute_error": 0.32604562737642584,
+      "EQWM_Cp": 0.05798479087452472,
+      "EQWM_absolute_error": 0.2813688212927757,
+      "absolute_error_RLWM_minus_EQWM": 0.044676806083650156,
+      "gap_at_horizontal_marker_extent": [
+        0.03422053231939165,
+        0.05133079847908745
+      ]
+    },
+    {
+      "x_over_L": 0.2422869735553377,
+      "Gray_Cp": -0.1967680608365019,
+      "RLWM_Cp": 0.13022813688212928,
+      "RLWM_absolute_error": 0.3269961977186312,
+      "EQWM_Cp": 0.08650190114068441,
+      "EQWM_absolute_error": 0.2832699619771863,
+      "absolute_error_RLWM_minus_EQWM": 0.04372623574144491,
+      "gap_at_horizontal_marker_extent": [
+        0.03422053231939165,
+        0.05133079847908745
+      ]
+    },
+    {
+      "x_over_L": 0.2628550440744366,
+      "Gray_Cp": -0.16064638783269963,
+      "RLWM_Cp": 0.14781368821292776,
+      "RLWM_absolute_error": 0.3084600760456274,
+      "EQWM_Cp": 0.10171102661596958,
+      "EQWM_absolute_error": 0.2623574144486692,
+      "absolute_error_RLWM_minus_EQWM": 0.046102661596958194,
+      "gap_at_horizontal_marker_extent": [
+        0.037072243346007616,
+        0.05133079847908745
+      ]
+    },
+    {
+      "x_over_L": 0.28342311459353553,
+      "Gray_Cp": -0.1188212927756654,
+      "RLWM_Cp": 0.16017110266159695,
+      "RLWM_absolute_error": 0.27899239543726234,
+      "EQWM_Cp": 0.12214828897338403,
+      "EQWM_absolute_error": 0.24096958174904942,
+      "absolute_error_RLWM_minus_EQWM": 0.03802281368821292,
+      "gap_at_horizontal_marker_extent": [
+        0.03422053231939165,
+        0.04657794676806082
+      ]
+    },
+    {
+      "x_over_L": 0.30399118511263445,
+      "Gray_Cp": -0.07699619771863118,
+      "RLWM_Cp": 0.16587452471482889,
+      "RLWM_absolute_error": 0.24287072243346008,
+      "EQWM_Cp": 0.12927756653992395,
+      "EQWM_absolute_error": 0.20627376425855515,
+      "absolute_error_RLWM_minus_EQWM": 0.03659695817490494,
+      "gap_at_horizontal_marker_extent": [
+        0.02929484963705503,
+        0.03992395437262358
+      ]
+    },
+    {
+      "x_over_L": 0.326273261508325,
+      "Gray_Cp": -0.0370722433460076,
+      "RLWM_Cp": 0.16634980988593157,
+      "RLWM_absolute_error": 0.20342205323193918,
+      "EQWM_Cp": 0.13783269961977188,
+      "EQWM_absolute_error": 0.17490494296577946,
+      "absolute_error_RLWM_minus_EQWM": 0.028517110266159718,
+      "gap_at_horizontal_marker_extent": [
+        0.024714828897338392,
+        0.037417905288627706
+      ]
+    },
+    {
+      "x_over_L": 0.3468413320274239,
+      "Gray_Cp": -0.0009505703422053232,
+      "RLWM_Cp": 0.16254752851711027,
+      "RLWM_absolute_error": 0.1634980988593156,
+      "EQWM_Cp": 0.13640684410646386,
+      "EQWM_absolute_error": 0.1373574144486692,
+      "absolute_error_RLWM_minus_EQWM": 0.026140684410646403,
+      "gap_at_horizontal_marker_extent": [
+        0.0232524129862533,
+        0.02851711026615969
+      ]
+    },
+    {
+      "x_over_L": 0.3674094025465228,
+      "Gray_Cp": 0.029467680608365018,
+      "RLWM_Cp": 0.1520912547528517,
+      "RLWM_absolute_error": 0.12262357414448669,
+      "EQWM_Cp": 0.1294238081310325,
+      "EQWM_absolute_error": 0.09995612752266747,
+      "absolute_error_RLWM_minus_EQWM": 0.022667446621819215,
+      "gap_at_horizontal_marker_extent": [
+        0.01901140684410646,
+        0.025665399239543724
+      ]
+    },
+    {
+      "x_over_L": 0.3879774730656217,
+      "Gray_Cp": 0.05038022813688213,
+      "RLWM_Cp": 0.1397338403041825,
+      "RLWM_absolute_error": 0.08935361216730038,
+      "EQWM_Cp": 0.12167300380228137,
+      "EQWM_absolute_error": 0.07129277566539924,
+      "absolute_error_RLWM_minus_EQWM": 0.018060836501901142,
+      "gap_at_horizontal_marker_extent": [
+        0.012357414448669182,
+        0.02303305059959057
+      ]
+    }
+  ],
+  "edition": {
+    "identifier": "arXiv:2305.02540v3 (26 July 2024), verified on title page",
+    "url": "https://arxiv.org/pdf/2305.02540v3",
+    "sha256": "cb427efb38bf00e0b2d3ca5568fa576bd4f13e02ca0b8a0978d47fbf7c80c6c5"
+  }
+}

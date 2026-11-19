@@ -1,0 +1,677 @@
+{
+  "study_id": "N054",
+  "primary_work": "Jundi He et al., Benchmarking of CFD modelling of a reactor vessel auxiliary cooling system (RVACS), International Journal of Heat and Fluid Flow 122, 110596 (2026).",
+  "doi": "10.1016/j.ijheatfluidflow.2026.110596",
+  "publisher_version_verified_in": "White Rose Research Online author-deposit cover followed by Elsevier typeset title page; first PDF page is a repository cover.",
+  "pdf_sha256": "408f22247613e306d5cfc6221c3e8e63643585658732c296ba6ef4244cf04f84",
+  "source_url": "https://eprints.whiterose.ac.uk/id/eprint/245405/",
+  "locations": "Printed p.6 Table 3 (PDF p.7); printed p.14 Fig. 12b (PDF p.15), printed p.15 Fig. 13 and Table 6 (PDF p.16); data statement p.19.",
+  "paired_cases": "Natural convection; STFC standard k–epsilon URANS in Code Saturne 8.0 with two-scale and scalable wall functions, both 11,683 cells, y_wall+ >30, same configuration, benchmark DNS and matching grid. These are two RANS wall-treatment variants. In Fig. 12 their traces are blue open circles (two-scale) and blue crosses (scalable). FNC standard k–epsilon EWT is a third case from another participant, solver and mesh, not a substitute for either.",
+  "figure_relations": "Fig. 12b plots signed wall stress tau_w [Pa] versus y [m] on baffle-left; the authors single out scalable as failing the rise at the baffle end. Fig. 13 plots heat flux q_w [W/m²] only on the hot and cold walls. Its legend omits both of these STFC standard-k–epsilon runs. The plotted standard-k–epsilon heat trace is FNC EWT. The text explicitly selected models on their agreement in the shear comparison. Fig. 13 alone cannot establish a thermal ranking of the STFC pair. Table 6 is the authors’ coarse joint qualitative categorisation, not a numerical within-pair heat-error ranking.",
+  "archive": {
+    "doi": "10.5286/edata/979",
+    "landing": "https://edata.stfc.ac.uk/items/c62b2aa3-a74f-46c2-9203-23742a4d2485",
+    "nc_zip": "https://edata.stfc.ac.uk/bitstreams/234b81f1-36ce-4c57-a320-dd691400a151/download",
+    "bytes": 1519158,
+    "sha256": "c51a51d6006412fb8d74b3bb533494e21fc59fa209bfc5630ebcb4663788b6fb",
+    "readme": "https://edata.stfc.ac.uk/bitstreams/6aad5aa5-28bd-4b05-8309-555043959b08/download",
+    "readme_sha256": "3e0487a5bab6da5ff1cc71853d015a9cd7326d54b99eed2c658d6894f3e27a0c",
+    "plotWall": "https://edata.stfc.ac.uk/bitstreams/e9ec7189-6435-4c0d-b5d6-d0c44d4f7a9c/download",
+    "plotWall_sha256": "d664aa70d57bdf74a465f89b97f4bbc7c06c19ae402e3818b1957b77e84fddc1",
+    "fields": "All 12 named DNS/RANS wall files contain the four columns y(m), T(K), q_w(W/m²), tau_w(Pa), with finite values and identical y coordinates between the two RANS files on each wall."
+  },
+  "analysis": "For each of the four walls and each observable, compare both complete model profiles to the same DNS over the entire common y support. Piecewise-linear interpolation using the union of source knots, with no endpoint extrapolation. Compute RMSE=sqrt(int[(Q_model-Q_DNS)^2]dy/(ymax-ymin)), exact element formula dy*(e0²+e0 e1+e1²)/3; relative L2 (%)=100*||Q_model-Q_DNS||₂/||Q_DNS||₂. Compute exact linear absolute-error integral with zero crossings for MAE and recompute after trimming 5% of common span at either end. This is a newly defined retrospective summary of deposited profiles, not an author-specified tolerance or uncertainty.",
+  "findings": "Switching from scalable to two-scale lowers wall-shear RMSE on every wall. It lowers heat-flux RMSE on hot, cold and baffle-left walls. On baffle-right the shear RMSE falls from 0.002442 to 0.000855 Pa while heat flux worsens from 118.16 to 155.29 W/m². Baffle-right relative L2 errors therefore change from 69.39 to 24.28% for shear and 34.09 to 44.80% for heat flux. Both comparisons use the identical baffle-right y interval [0.45187, 1.8716] m, same runs and same DNS. The same opposing signs survive MAE and trimming 5% off each end. They are not a change of wall or station, nor merely a threshold crossing. These directions do not extend to the other three walls.",
+  "caveat": "These are numerical distances to the shared DNS in a coupled buoyancy/thermal field. The archive contains means, with no per-profile sampling covariance or statistical inference in this analysis. The two-scale and scalable formulations change the coupled near-wall treatment; the pair does not isolate a single physical source of discrepancy.",
+  "walls": {
+    "hotWall": {
+      "common_y_m": [
+        0.0025,
+        1.8716
+      ],
+      "count_DNS_twoScale_scalable": [
+        1770,
+        200,
+        200
+      ],
+      "data_file_sha256": {
+        "NaturalConvection/DNS/hotWall.dat": "528a9667fae063d7f43f24cca9635b40f3a6ecba945c1454b2c782cfb691f2a8",
+        "NaturalConvection/RANS/STFC_StandardKeps_twoScaleWF/hotWall.dat": "20a2c5de2753ca29f9cbcef6eb843b5ec2d324d9f193745e53bf7e03a50f977f",
+        "NaturalConvection/RANS/STFC_StandardKeps_scalableWF/hotWall.dat": "bab4f6a4dc6504ab9e6860ec797b73afadd9df0aba33b474a70cc1090080a5cc"
+      },
+      "quantities": {
+        "tau_w_Pa": {
+          "full": {
+            "two_scale": {
+              "rmse": 0.0042946515328971145,
+              "mae": 0.0032685084858187522,
+              "relative_L2_percent": 54.12603108364013
+            },
+            "scalable": {
+              "rmse": 0.007506007575858657,
+              "mae": 0.006271421684011571,
+              "relative_L2_percent": 94.59915344770694
+            }
+          },
+          "trimmed_5pct_each_end": {
+            "two_scale": {
+              "rmse": 0.0039508062140722385,
+              "mae": 0.002982022783299066,
+              "relative_L2_percent": 50.42035294822181
+            },
+            "scalable": {
+              "rmse": 0.0074015698435336555,
+              "mae": 0.006114527383647628,
+              "relative_L2_percent": 94.45914166901689
+            }
+          },
+          "local_lower_abs_error_at_RANS_nodes": {
+            "two_scale": 200,
+            "scalable": 0,
+            "tie": 0
+          }
+        },
+        "q_w_W_per_m2": {
+          "full": {
+            "two_scale": {
+              "rmse": 284.6224262686537,
+              "mae": 175.80151188413342,
+              "relative_L2_percent": 21.642209480277863
+            },
+            "scalable": {
+              "rmse": 961.0039337810767,
+              "mae": 667.8452628924682,
+              "relative_L2_percent": 73.07311907540895
+            }
+          },
+          "trimmed_5pct_each_end": {
+            "two_scale": {
+              "rmse": 265.33773915420346,
+              "mae": 163.74332503371014,
+              "relative_L2_percent": 22.97858228194872
+            },
+            "scalable": {
+              "rmse": 722.4973815123143,
+              "mae": 555.174561623831,
+              "relative_L2_percent": 62.56918289307059
+            }
+          },
+          "local_lower_abs_error_at_RANS_nodes": {
+            "two_scale": 200,
+            "scalable": 0,
+            "tie": 0
+          }
+        }
+      }
+    },
+    "coldWall": {
+      "common_y_m": [
+        0.0025,
+        1.8716
+      ],
+      "count_DNS_twoScale_scalable": [
+        1770,
+        200,
+        200
+      ],
+      "data_file_sha256": {
+        "NaturalConvection/DNS/coldWall.dat": "fc2ba49a425d6d8ff56c311d42ba16cdad22b85da0a2bcb3e15d1f4e179ea246",
+        "NaturalConvection/RANS/STFC_StandardKeps_twoScaleWF/coldWall.dat": "a153c6c343081379f4611f4982c6ca55e356653c6559061f8c758192d618e709",
+        "NaturalConvection/RANS/STFC_StandardKeps_scalableWF/coldWall.dat": "b9be826a0beb2ebb5e8f9407e1dc5a1163de984b4b23a9d94a8f875d97562c7d"
+      },
+      "quantities": {
+        "tau_w_Pa": {
+          "full": {
+            "two_scale": {
+              "rmse": 0.0034335020699099656,
+              "mae": 0.003302538550165671,
+              "relative_L2_percent": 57.869478840655184
+            },
+            "scalable": {
+              "rmse": 0.004970589227829115,
+              "mae": 0.0048312216581336016,
+              "relative_L2_percent": 83.7760986563169
+            }
+          },
+          "trimmed_5pct_each_end": {
+            "two_scale": {
+              "rmse": 0.0034907053074476435,
+              "mae": 0.0033922958497027674,
+              "relative_L2_percent": 57.28730333828741
+            },
+            "scalable": {
+              "rmse": 0.005080812348267945,
+              "mae": 0.004981861088977677,
+              "relative_L2_percent": 83.38315972394867
+            }
+          },
+          "local_lower_abs_error_at_RANS_nodes": {
+            "two_scale": 199,
+            "scalable": 1,
+            "tie": 0
+          }
+        },
+        "q_w_W_per_m2": {
+          "full": {
+            "two_scale": {
+              "rmse": 151.7661264038819,
+              "mae": 142.6411070143417,
+              "relative_L2_percent": 20.974052487729956
+            },
+            "scalable": {
+              "rmse": 399.8567788493549,
+              "mae": 393.50196947735975,
+              "relative_L2_percent": 55.26013785739268
+            }
+          },
+          "trimmed_5pct_each_end": {
+            "two_scale": {
+              "rmse": 152.48575317451443,
+              "mae": 145.22091658297998,
+              "relative_L2_percent": 20.85659045850874
+            },
+            "scalable": {
+              "rmse": 396.0980062465876,
+              "mae": 394.0314708485288,
+              "relative_L2_percent": 54.17721803991884
+            }
+          },
+          "local_lower_abs_error_at_RANS_nodes": {
+            "two_scale": 200,
+            "scalable": 0,
+            "tie": 0
+          }
+        }
+      }
+    },
+    "baffleLeft": {
+      "common_y_m": [
+        0.45187,
+        1.8716
+      ],
+      "count_DNS_twoScale_scalable": [
+        1357,
+        147,
+        147
+      ],
+      "data_file_sha256": {
+        "NaturalConvection/DNS/baffleLeft.dat": "97502fffd0b4ab466e4aee506e743d017fc1dbbaec6e8db4359ac196a2b29739",
+        "NaturalConvection/RANS/STFC_StandardKeps_twoScaleWF/baffleLeft.dat": "f2a0dae227d81546ea51d1fdd9a39230e7c2276f68fe3e567895e75659c39deb",
+        "NaturalConvection/RANS/STFC_StandardKeps_scalableWF/baffleLeft.dat": "33723def8922c8c9442a581dbcf5d332f0f5c9cb8cbcd1cafceaf9560ddd5f13"
+      },
+      "quantities": {
+        "tau_w_Pa": {
+          "full": {
+            "two_scale": {
+              "rmse": 0.0011173772561147491,
+              "mae": 0.0005155330052647736,
+              "relative_L2_percent": 39.91288641224049
+            },
+            "scalable": {
+              "rmse": 0.0022220573798785778,
+              "mae": 0.001972498560468277,
+              "relative_L2_percent": 79.37222931577774
+            }
+          },
+          "trimmed_5pct_each_end": {
+            "two_scale": {
+              "rmse": 0.0005070916784328108,
+              "mae": 0.0003563233490249746,
+              "relative_L2_percent": 20.007904228988668
+            },
+            "scalable": {
+              "rmse": 0.001874663174546724,
+              "mae": 0.001824671845129191,
+              "relative_L2_percent": 73.96706128931775
+            }
+          },
+          "local_lower_abs_error_at_RANS_nodes": {
+            "two_scale": 147,
+            "scalable": 0,
+            "tie": 0
+          }
+        },
+        "q_w_W_per_m2": {
+          "full": {
+            "two_scale": {
+              "rmse": 110.45696216210034,
+              "mae": 102.62096651103974,
+              "relative_L2_percent": 30.431618575485984
+            },
+            "scalable": {
+              "rmse": 123.74521489426932,
+              "mae": 107.79013402438812,
+              "relative_L2_percent": 34.09261948266806
+            }
+          },
+          "trimmed_5pct_each_end": {
+            "two_scale": {
+              "rmse": 112.6740646303459,
+              "mae": 105.4762948739224,
+              "relative_L2_percent": 30.294194097760563
+            },
+            "scalable": {
+              "rmse": 121.00107808460872,
+              "mae": 104.44661594085844,
+              "relative_L2_percent": 32.53304260886826
+            }
+          },
+          "local_lower_abs_error_at_RANS_nodes": {
+            "two_scale": 77,
+            "scalable": 70,
+            "tie": 0
+          }
+        }
+      }
+    },
+    "baffleRight": {
+      "common_y_m": [
+        0.45187,
+        1.8716
+      ],
+      "count_DNS_twoScale_scalable": [
+        1357,
+        147,
+        147
+      ],
+      "data_file_sha256": {
+        "NaturalConvection/DNS/baffleRight.dat": "0f35ff9994c4f65cf3cc3dab29f5c2d393521d0a5bec4fbe01aae5f8dc9ac371",
+        "NaturalConvection/RANS/STFC_StandardKeps_twoScaleWF/baffleRight.dat": "24bfa5da292e912f3581b7c0a5d715e4c0f7384e6878580f83ab1598bfb124ad",
+        "NaturalConvection/RANS/STFC_StandardKeps_scalableWF/baffleRight.dat": "ce9d3743bdf78f95371563df857508583e82c93423730a6ac7b1f9ef56e6d918"
+      },
+      "quantities": {
+        "tau_w_Pa": {
+          "full": {
+            "two_scale": {
+              "rmse": 0.00085465273684203,
+              "mae": 0.0007319431751892419,
+              "relative_L2_percent": 24.2825575268237
+            },
+            "scalable": {
+              "rmse": 0.0024422526497386936,
+              "mae": 0.002299323310653579,
+              "relative_L2_percent": 69.38975083780602
+            }
+          },
+          "trimmed_5pct_each_end": {
+            "two_scale": {
+              "rmse": 0.0008091661714917103,
+              "mae": 0.0007103816523454083,
+              "relative_L2_percent": 22.017696048144693
+            },
+            "scalable": {
+              "rmse": 0.00253875164470841,
+              "mae": 0.0024414667604622476,
+              "relative_L2_percent": 69.08032493729857
+            }
+          },
+          "local_lower_abs_error_at_RANS_nodes": {
+            "two_scale": 132,
+            "scalable": 15,
+            "tie": 0
+          }
+        },
+        "q_w_W_per_m2": {
+          "full": {
+            "two_scale": {
+              "rmse": 155.2935514211199,
+              "mae": 137.36835649063076,
+              "relative_L2_percent": 44.80250859943085
+            },
+            "scalable": {
+              "rmse": 118.16059219204172,
+              "mae": 101.90934062650544,
+              "relative_L2_percent": 34.089573580824315
+            }
+          },
+          "trimmed_5pct_each_end": {
+            "two_scale": {
+              "rmse": 139.05954779273074,
+              "mae": 130.96839323380365,
+              "relative_L2_percent": 38.74792543439153
+            },
+            "scalable": {
+              "rmse": 112.14999176952993,
+              "mae": 97.78286719723806,
+              "relative_L2_percent": 31.249774557231323
+            }
+          },
+          "local_lower_abs_error_at_RANS_nodes": {
+            "two_scale": 43,
+            "scalable": 104,
+            "tie": 0
+          }
+        }
+      }
+    }
+  },
+  "replay": "code/verify_he_profiles.py [NaturalConvection.zip]",
+  "sst_comparison": {
+    "baseline": "STFC_KomgSST_allYplusWF",
+    "alternative": "STFC_KomgSST_twoScaleWF",
+    "source": "same DNS and archived wall files as for standard k–ε; no exchange of the two turbulence closures",
+    "walls": {
+      "hotWall": {
+        "common_y_m": [
+          0.0025,
+          1.8716
+        ],
+        "count_DNS_twoScale_all_y_plus": [
+          1770,
+          200,
+          200
+        ],
+        "data_file_sha256": {
+          "NaturalConvection/DNS/hotWall.dat": "528a9667fae063d7f43f24cca9635b40f3a6ecba945c1454b2c782cfb691f2a8",
+          "NaturalConvection/RANS/STFC_KomgSST_twoScaleWF/hotWall.dat": "c698d86f0886a78ae871c06186400207cd335ffb0e9cc0edb3082b0da25bd304",
+          "NaturalConvection/RANS/STFC_KomgSST_allYplusWF/hotWall.dat": "f09bf4fb223f667481ea8d3988abeef07e4c336bf5ca35f45dcd5fbc0375375d"
+        },
+        "quantities": {
+          "tau_w_Pa": {
+            "full": {
+              "two_scale": {
+                "rmse": 0.0034511250810605196,
+                "mae": 0.0030180552330580836,
+                "relative_L2_percent": 43.494961577243934
+              },
+              "all_y_plus": {
+                "rmse": 0.0033480575711379752,
+                "mae": 0.002957509347048098,
+                "relative_L2_percent": 42.195988842658
+              }
+            },
+            "trimmed_5pct_each_end": {
+              "two_scale": {
+                "rmse": 0.0031736738543314486,
+                "mae": 0.0028713685362096943,
+                "relative_L2_percent": 40.50255750534499
+              },
+              "all_y_plus": {
+                "rmse": 0.0030619836827263562,
+                "mae": 0.002807570633471023,
+                "relative_L2_percent": 39.07716289775383
+              }
+            },
+            "local_lower_abs_error_at_RANS_nodes": {
+              "two_scale": 133,
+              "all_y_plus": 67,
+              "tie": 0
+            }
+          },
+          "q_w_W_per_m2": {
+            "full": {
+              "two_scale": {
+                "rmse": 302.37421050749657,
+                "mae": 196.49697999010417,
+                "relative_L2_percent": 22.99202522804715
+              },
+              "all_y_plus": {
+                "rmse": 297.2148879215218,
+                "mae": 194.5461133887334,
+                "relative_L2_percent": 22.5997190361359
+              }
+            },
+            "trimmed_5pct_each_end": {
+              "two_scale": {
+                "rmse": 277.5676974371363,
+                "mae": 170.43074013431118,
+                "relative_L2_percent": 24.037712067274327
+              },
+              "all_y_plus": {
+                "rmse": 270.476403279568,
+                "mae": 167.71764551794283,
+                "relative_L2_percent": 23.423597064996095
+              }
+            },
+            "local_lower_abs_error_at_RANS_nodes": {
+              "two_scale": 106,
+              "all_y_plus": 94,
+              "tie": 0
+            }
+          }
+        }
+      },
+      "coldWall": {
+        "common_y_m": [
+          0.0025,
+          1.8716
+        ],
+        "count_DNS_twoScale_all_y_plus": [
+          1770,
+          200,
+          200
+        ],
+        "data_file_sha256": {
+          "NaturalConvection/DNS/coldWall.dat": "fc2ba49a425d6d8ff56c311d42ba16cdad22b85da0a2bcb3e15d1f4e179ea246",
+          "NaturalConvection/RANS/STFC_KomgSST_twoScaleWF/coldWall.dat": "d41b734e8eef98dc73f0988e846784d5fbdca3fdf580653e0cb1caacd42bb643",
+          "NaturalConvection/RANS/STFC_KomgSST_allYplusWF/coldWall.dat": "474405ff6898b81e433fe254c93c65845e236820d72769260856669a568ceb7f"
+        },
+        "quantities": {
+          "tau_w_Pa": {
+            "full": {
+              "two_scale": {
+                "rmse": 0.0013187124602997875,
+                "mae": 0.0009844999268664376,
+                "relative_L2_percent": 22.226054117459146
+              },
+              "all_y_plus": {
+                "rmse": 0.0011758745643952156,
+                "mae": 0.0008009500600370477,
+                "relative_L2_percent": 19.81861284426659
+              }
+            },
+            "trimmed_5pct_each_end": {
+              "two_scale": {
+                "rmse": 0.0011747629127154054,
+                "mae": 0.0009135608811030333,
+                "relative_L2_percent": 19.279484632435388
+              },
+              "all_y_plus": {
+                "rmse": 0.0010052527838519006,
+                "mae": 0.0007138246869363002,
+                "relative_L2_percent": 16.4975889076954
+              }
+            },
+            "local_lower_abs_error_at_RANS_nodes": {
+              "two_scale": 19,
+              "all_y_plus": 181,
+              "tie": 0
+            }
+          },
+          "q_w_W_per_m2": {
+            "full": {
+              "two_scale": {
+                "rmse": 131.5756426057768,
+                "mae": 122.94369765204276,
+                "relative_L2_percent": 18.183731109907097
+              },
+              "all_y_plus": {
+                "rmse": 137.96114953891822,
+                "mae": 129.29527798557226,
+                "relative_L2_percent": 19.066207066498723
+              }
+            },
+            "trimmed_5pct_each_end": {
+              "two_scale": {
+                "rmse": 131.05792252298954,
+                "mae": 123.49903828917564,
+                "relative_L2_percent": 17.92574951757401
+              },
+              "all_y_plus": {
+                "rmse": 138.1764847040143,
+                "mae": 130.3760140998314,
+                "relative_L2_percent": 18.89940727229648
+              }
+            },
+            "local_lower_abs_error_at_RANS_nodes": {
+              "two_scale": 184,
+              "all_y_plus": 16,
+              "tie": 0
+            }
+          }
+        }
+      },
+      "baffleLeft": {
+        "common_y_m": [
+          0.45187,
+          1.8716
+        ],
+        "count_DNS_twoScale_all_y_plus": [
+          1357,
+          147,
+          147
+        ],
+        "data_file_sha256": {
+          "NaturalConvection/DNS/baffleLeft.dat": "97502fffd0b4ab466e4aee506e743d017fc1dbbaec6e8db4359ac196a2b29739",
+          "NaturalConvection/RANS/STFC_KomgSST_twoScaleWF/baffleLeft.dat": "ea5e5067a56679691246f77c500ffed1e2ead3b2985770d19e5871138fb006de",
+          "NaturalConvection/RANS/STFC_KomgSST_allYplusWF/baffleLeft.dat": "6925bb210f5f6e3352af2d0bf91308a68a450bf7254f079b7ed6d7c7bdfc009f"
+        },
+        "quantities": {
+          "tau_w_Pa": {
+            "full": {
+              "two_scale": {
+                "rmse": 0.0023420959596252497,
+                "mae": 0.001915810101026053,
+                "relative_L2_percent": 83.66002573573957
+              },
+              "all_y_plus": {
+                "rmse": 0.002345979458615736,
+                "mae": 0.0019218122248232333,
+                "relative_L2_percent": 83.79874491338624
+              }
+            },
+            "trimmed_5pct_each_end": {
+              "two_scale": {
+                "rmse": 0.00203993994041871,
+                "mae": 0.0016948071726335494,
+                "relative_L2_percent": 80.488252315492
+              },
+              "all_y_plus": {
+                "rmse": 0.002043810585896024,
+                "mae": 0.0017010644577364232,
+                "relative_L2_percent": 80.64097322831354
+              }
+            },
+            "local_lower_abs_error_at_RANS_nodes": {
+              "two_scale": 114,
+              "all_y_plus": 33,
+              "tie": 0
+            }
+          },
+          "q_w_W_per_m2": {
+            "full": {
+              "two_scale": {
+                "rmse": 210.205360909274,
+                "mae": 200.15538416360798,
+                "relative_L2_percent": 57.912957594521636
+              },
+              "all_y_plus": {
+                "rmse": 208.7765655941166,
+                "mae": 198.66058523352973,
+                "relative_L2_percent": 57.51931510062884
+              }
+            },
+            "trimmed_5pct_each_end": {
+              "two_scale": {
+                "rmse": 216.6489596646236,
+                "mae": 208.4808439907864,
+                "relative_L2_percent": 58.24947965346032
+              },
+              "all_y_plus": {
+                "rmse": 215.17039516564773,
+                "mae": 206.9271860112562,
+                "relative_L2_percent": 57.85194433719225
+              }
+            },
+            "local_lower_abs_error_at_RANS_nodes": {
+              "two_scale": 0,
+              "all_y_plus": 147,
+              "tie": 0
+            }
+          }
+        }
+      },
+      "baffleRight": {
+        "common_y_m": [
+          0.45187,
+          1.8716
+        ],
+        "count_DNS_twoScale_all_y_plus": [
+          1357,
+          147,
+          147
+        ],
+        "data_file_sha256": {
+          "NaturalConvection/DNS/baffleRight.dat": "0f35ff9994c4f65cf3cc3dab29f5c2d393521d0a5bec4fbe01aae5f8dc9ac371",
+          "NaturalConvection/RANS/STFC_KomgSST_twoScaleWF/baffleRight.dat": "ce3cc78dc4b195bc79810680048d0ef1bb6231af3af4189eedd0ad8f99c2512e",
+          "NaturalConvection/RANS/STFC_KomgSST_allYplusWF/baffleRight.dat": "2454fb67b1c278df99f155dec46edfd6d1e09315ee790c18f6943f2cf3bbbb29"
+        },
+        "quantities": {
+          "tau_w_Pa": {
+            "full": {
+              "two_scale": {
+                "rmse": 0.0023446605867229017,
+                "mae": 0.001726076360108041,
+                "relative_L2_percent": 66.61694642007396
+              },
+              "all_y_plus": {
+                "rmse": 0.002370947256440222,
+                "mae": 0.001730758703500985,
+                "relative_L2_percent": 67.36380832325818
+              }
+            },
+            "trimmed_5pct_each_end": {
+              "two_scale": {
+                "rmse": 0.002457301474747732,
+                "mae": 0.0018655861605582401,
+                "relative_L2_percent": 66.86403717287327
+              },
+              "all_y_plus": {
+                "rmse": 0.0024840661533643274,
+                "mae": 0.0018674805780814375,
+                "relative_L2_percent": 67.59231348912127
+              }
+            },
+            "local_lower_abs_error_at_RANS_nodes": {
+              "two_scale": 69,
+              "all_y_plus": 78,
+              "tie": 0
+            }
+          },
+          "q_w_W_per_m2": {
+            "full": {
+              "two_scale": {
+                "rmse": 244.9378240897913,
+                "mae": 224.28190817024588,
+                "relative_L2_percent": 70.66506541762504
+              },
+              "all_y_plus": {
+                "rmse": 243.56814978187737,
+                "mae": 222.97404641322564,
+                "relative_L2_percent": 70.26991156611497
+              }
+            },
+            "trimmed_5pct_each_end": {
+              "two_scale": {
+                "rmse": 240.89959113747187,
+                "mae": 227.9495238755741,
+                "relative_L2_percent": 67.1249083053477
+              },
+              "all_y_plus": {
+                "rmse": 239.3097582302104,
+                "mae": 226.45887947909304,
+                "relative_L2_percent": 66.68191299922512
+              }
+            },
+            "local_lower_abs_error_at_RANS_nodes": {
+              "two_scale": 20,
+              "all_y_plus": 127,
+              "tie": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "sensitivity_note": "Full-length RMSE and MAE give the specified standard k–ε result on all walls. Under 5% trimming the left-baffle heat MAE changes direction while its RMSE still decreases. Right-baffle signs are preserved. Small SST changes have no established physical uncertainty interval."
+}

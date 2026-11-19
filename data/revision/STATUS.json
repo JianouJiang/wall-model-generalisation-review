@@ -1,5 +1,5 @@
 {
-  "current_edition": "Critical review, source-checked cases; no population estimates",
+  "current_edition": "Source-reassessed Review. Design-specific and table-defined comparisons in a finite retrieved sample.",
   "current_inputs": [
     "retrieval_frame.csv",
     "eligibility_rules.json",
@@ -12,7 +12,19 @@
     "eligibility_audit.json",
     "historical_source_manifest.json",
     "checklist_choices.json",
-    "../checklist_cases.json (agreement flags and assurance decisions)"
+    "../checklist_cases.json (agreement flags and assurance decisions)",
+    "source_dispositions.json",
+    "paired_readings.json",
+    "additional_comparisons.json",
+    "displayed_comparisons.json",
+    "transfer_exposure.json",
+    "study_families.json",
+    "channel_scheme_table.json",
+    "he_profiles.json",
+    "hill_crossings.json",
+    "hill_table_population.json",
+    "measurements/",
+    "supplementary_sources.json"
   ],
   "historical_diagnostics": [
     "test_codings.json",

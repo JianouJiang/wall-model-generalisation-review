@@ -1,0 +1,141 @@
+{
+  "definition": "A link is a documented shared treatment, computation, benchmark or geometry. For the sensitivity calculation, connect included works with a recorded link; retain a work with no known link as its own group. Some links are deliberately broad. Separate groups have not been established to be statistically independent. Named benchmarks and references for all remaining tests are in source_dispositions.json.",
+  "links": [
+    {
+      "id": "enrichment-DG",
+      "relation": "shared wall enrichment method and related authors; the extensions change the discretisation/application",
+      "works": [
+        "N025",
+        "N457",
+        "N502",
+        "N611"
+      ]
+    },
+    {
+      "id": "WMLES-OpenFOAM",
+      "relation": "Mukha and collaborators, related implementations of the wall-model library",
+      "works": [
+        "N195",
+        "N280",
+        "N364",
+        "N540"
+      ]
+    },
+    {
+      "id": "Dupuy-graph",
+      "relation": "related trained graph models and partly reused benchmark flows",
+      "works": [
+        "P21",
+        "N626"
+      ]
+    },
+    {
+      "id": "building-block",
+      "relation": "building-block wall-treatment lineage; the whole-system model in P23 additionally changes the outer closure",
+      "works": [
+        "P19",
+        "P23"
+      ]
+    },
+    {
+      "id": "BK22",
+      "relation": "BK22 channel policy or later implementation/modified successor; original learned policies are not independent baselines",
+      "works": [
+        "P20",
+        "P26",
+        "N623"
+      ]
+    },
+    {
+      "id": "relaxation",
+      "relation": "LaRTE and its later multi-time-scale/rough-wall relatives",
+      "works": [
+        "N357",
+        "N437",
+        "N464"
+      ]
+    },
+    {
+      "id": "transverse-gradient",
+      "relation": "same sudden-spanwise-forcing channel benchmark family; match Re, pressure gradient and time within work",
+      "works": [
+        "N357",
+        "N464",
+        "N655"
+      ]
+    },
+    {
+      "id": "filtered-wall",
+      "relation": "volume-filter boundary condition and the periodic-hill/channel test family",
+      "works": [
+        "P11",
+        "P14"
+      ]
+    },
+    {
+      "id": "speed-bump",
+      "relation": "NASA/Boeing Gaussian speed-bump geometry. Re, reference type, Mach and supporting data differ among works",
+      "works": [
+        "P23",
+        "P31",
+        "N395",
+        "N418"
+      ]
+    },
+    {
+      "id": "Juncture",
+      "relation": "NASA Juncture Flow experimental application",
+      "works": [
+        "P12",
+        "P19",
+        "P23"
+      ]
+    },
+    {
+      "id": "hill-experiment",
+      "relation": "Rapp–Manhart periodic-hill experiment; only the comparable Reynolds-number series",
+      "works": [
+        "P16",
+        "N497",
+        "N611"
+      ]
+    },
+    {
+      "id": "channel-5200",
+      "relation": "Lee–Moser canonical channel DNS explicitly used in at least one series",
+      "works": [
+        "N364",
+        "N437",
+        "N540",
+        "N582"
+      ]
+    },
+    {
+      "id": "DG-channel",
+      "relation": "spectral-element channel computations; compare authors and study table before identifying any repeated run",
+      "works": [
+        "P30",
+        "N556"
+      ]
+    },
+    {
+      "id": "FEL",
+      "relation": "features-embedded-learning lineage; implementation and applications differ",
+      "works": [
+        "P25",
+        "N239"
+      ]
+    },
+    {
+      "id": "KKW-periodic-hill-DNS",
+      "relation": "Krank, Kronbichler and Wall numerical hill reference, nominal bulk ReH=10595. Printed separation differs by rounding among papers.",
+      "works": [
+        "N025",
+        "N502",
+        "P31",
+        "P14",
+        "P11"
+      ]
+    }
+  ]
+}

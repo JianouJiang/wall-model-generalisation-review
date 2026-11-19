@@ -1,0 +1,756 @@
+{
+  "table_defined_population": "hill_table_population.json",
+  "unit": "New questions and contrasts on explicit supports. Several entries share exactly the same runs as each other or a historical question.",
+  "records": [
+    {
+      "pair_id": "N195-extra-sampling-stations",
+      "study_id": "N195",
+      "origin": "additional comparison found in the primary source",
+      "source_url": "https://arxiv.org/abs/1807.11786v1",
+      "edition": "arXiv:1807.11786v1 (2018), pp. 13–29. Journal DOI 10.1016/j.cpc.2019.01.016.",
+      "source_location": "§6.3 Fig. 18 right, p. 26 | §6.3 Fig. 18 left and discussion p. 27",
+      "original_quantities": [
+        "Negative C_f magnitude under the recirculation bubble",
+        "Skin friction in the recovering boundary layer x/H≳8"
+      ],
+      "first": {
+        "quantity": "Negative C_f magnitude under the recirculation bubble",
+        "source_location": "§6.3 Fig. 18 right, p. 26",
+        "runs": "Same Spalding step runs on a given n/δ=15 or 20 mesh and same interpolation; move sampling first→second cell downstream.",
+        "reference": "Jovic step experiment [19].",
+        "criterion": "Absolute difference from negative C_f peak under bubble.",
+        "source_reading": "Sampling in the second cell diminishes the already underestimated negative peak; the first cell gives closer agreement where the thin reversed layer is under-resolved.",
+        "design_ids": [
+          "N195-step-parameters"
+        ]
+      },
+      "second": {
+        "quantity": "Skin friction in the recovering boundary layer x/H≳8",
+        "source_location": "§6.3 Fig. 18 left and discussion p. 27",
+        "runs": "Same first→second-cell intervention, same step runs. Both choices use second-cell sampling upstream.",
+        "reference": "Jovic step experiment [19].",
+        "criterion": "Departure of downstream C_f from measured distribution.",
+        "source_reading": "Second-cell sampling improves recovering-wall friction, most visibly with LUST; first-cell/LUST strongly underpredicts it.",
+        "design_ids": [
+          "N195-step-parameters"
+        ]
+      },
+      "identity": "Same two complete runs for any fixed mesh/scheme. Two distinct streamwise regions of the same wall observable.",
+      "controls": "First→second downstream cell changes physical height/input velocity. Spalding, inlet, geometry, mesh and numerics held within a stratum.",
+      "reference": [
+        "Jovic step experiment [19].",
+        "Jovic step experiment [19]."
+      ],
+      "criterion": [
+        "Absolute difference from negative C_f peak under bubble.",
+        "Departure of downstream C_f from measured distribution."
+      ],
+      "direction_of_discrepancy_change": [
+        "farther",
+        "closer"
+      ],
+      "inference": "A spatial reversal of sampling-height preference; the target wall region changes. It does not demonstrate an effect of observable alone.",
+      "precision_and_uncertainty": "Qualitative reading of the published profiles at the stated support. No joint sampling, discretisation and reference interval is available for the paired errors.",
+      "comparison_scope": "source-found comparison; see matching and support in identity/controls",
+      "source_question": "How do numerics, exchange height, mesh and ODE choices affect predicted flow in the channel and step?"
+    },
+    {
+      "pair_id": "N239-extra-low-Re-grid",
+      "study_id": "N239",
+      "origin": "additional comparison found in the primary source",
+      "source_url": "https://arxiv.org/abs/2506.21985v1",
+      "edition": "arXiv:2506.21985v1 (2025), pp. 6–21; journal DOI 10.1016/j.compfluid.2026.107247.",
+      "source_location": "§4.2.2 Table 4 p. 16 and §4.2.4 Table 6 p. 20 | §4.2.4 Figs 14,15 and Table 6, pp. 20–21",
+      "original_quantities": [
+        "Mean axial velocity profile error at x/L=.978 (low Reynolds number)",
+        "Rms axial velocity profiles on the Suboff stern, ReL=1.2×10⁶"
+      ],
+      "first": {
+        "quantity": "Mean axial velocity profile error at x/L=.978 (low Reynolds number)",
+        "source_location": "§4.2.2 Table 4 p. 16 and §4.2.4 Table 6 p. 20",
+        "runs": "Same FEL-IB G1→G2, ReL=1.2×10⁶, x/L=.978; G1 and G2 have different physical resolution.",
+        "reference": "Kumar–Mahesh WRLES [31].",
+        "criterion": "Relative integral of |mean U_WM−mean U_ref| normalised as in Eq. 14.",
+        "source_reading": "0.86→1.73% (farther). At .904, 1.51→1.12% instead; against experiments the mean-profile error increases at both stations.",
+        "design_ids": [
+          "N239-suboff-low"
+        ]
+      },
+      "second": {
+        "quantity": "Rms axial velocity profiles on the Suboff stern, ReL=1.2×10⁶",
+        "source_location": "§4.2.4 Figs 14,15 and Table 6, pp. 20–21",
+        "runs": "FEL-IB G1→G2, x/L=.904 and .978, same forcing and physical case as low-Re mean cases.",
+        "reference": "Kumar–Mahesh WRLES [31] and Huang experiments.",
+        "criterion": "Relative integrated rms-profile error (Eq. 14) with WRLES reference at fixed station.",
+        "source_reading": "Refinement lowers 77.29→12.96% at .904 and 78.13→6.79% at .978. Refined and WRLES rms both exceed experiment. This is sensitivity to grid, not a relative wall-law ranking.",
+        "design_ids": [
+          "N239-suboff-low"
+        ]
+      },
+      "identity": "Select the x/L=.978 entries for both, same two G1 and G2 calculations at ReL=1.2×10⁶.",
+      "controls": "FEL-IB, uniform inflow, stern station and Kumar–Mahesh WRLES fixed. G1→G2 changes the LES grid and hence inputs, filtering and resolved turbulence.",
+      "reference": [
+        "Kumar–Mahesh WRLES [31].",
+        "Kumar–Mahesh WRLES [31] and Huang experiments."
+      ],
+      "criterion": [
+        "Relative integral of |mean U_WM−mean U_ref| normalised as in Eq. 14.",
+        "Relative integrated rms-profile error (Eq. 14) with WRLES reference at fixed station."
+      ],
+      "direction_of_discrepancy_change": [
+        "farther (0.86→1.73%)",
+        "closer (78.13→6.79%)"
+      ],
+      "inference": "Opposing changes of same-station mean and rms profile error under grid refinement. At .904 both errors decrease against this reference. Distinguish from the historical comparison across Reynolds numbers.",
+      "precision_and_uncertainty": "Source table values retain their displayed precision. No coverage interval for the paired discrepancies follows from the decimal places.",
+      "comparison_scope": "source-found comparison; see matching and support in identity/controls",
+      "source_question": "How does a learned immersed-boundary treatment perform on body-of-revolution and submarine-hull flows as resolution and Reynolds number change?"
+    },
+    {
+      "pair_id": "N339-extra-NACA-grid",
+      "study_id": "N339",
+      "origin": "additional comparison found in the primary source",
+      "source_url": "https://arxiv.org/abs/2601.18443",
+      "edition": "Author-accepted Physics of Fluids manuscript bearing DOI 10.1063/5.0306421, distributed through arXiv:2601.18443.",
+      "source_location": "§3.1.3 Fig. 7(a), p. 24 | §3.1.3 Fig. 7(b) and accompanying text, p. 24",
+      "original_quantities": [
+        "Near-leading-edge pressure vs grid resolution",
+        "Near-leading-edge friction peak vs grid resolution"
+      ],
+      "first": {
+        "quantity": "Near-leading-edge pressure vs grid resolution",
+        "source_location": "§3.1.3 Fig. 7(a), p. 24",
+        "runs": "NACA 0012 at 0°, medium/fine/ultrafine VN grids in same LBM-RANS.",
+        "reference": "NASA CFL3D grid-converged solution.",
+        "criterion": "Local pressure near leading edge, qualitative curve overlays.",
+        "source_reading": "As Cartesian mesh is refined, pressure approaches the numerical reference more closely.",
+        "design_ids": [
+          "N339-naca-zero"
+        ]
+      },
+      "second": {
+        "quantity": "Near-leading-edge friction peak vs grid resolution",
+        "source_location": "§3.1.3 Fig. 7(b) and accompanying text, p. 24",
+        "runs": "Same NACA VN meshes at 0°.",
+        "reference": "NASA CFL3D grid-converged solution.",
+        "criterion": "Peak and near-leading-edge C_f, x/c<.2.",
+        "source_reading": "C_f peak overshoot grows on the finer meshes; sampled nodes can fall outside the very thin developing boundary layer. Aft behavior differs.",
+        "design_ids": [
+          "N339-naca-zero"
+        ]
+      },
+      "identity": "Same grid sequence with one VN wall treatment, same section and incidence; distinct local pressure/friction distributions, with the leading-edge region specified.",
+      "controls": "Refining the Cartesian grid also moves velocity probe/virtual node relative to the BL. Compare only the same refinement run on both panels.",
+      "reference": [
+        "NASA CFL3D grid-converged solution.",
+        "NASA CFL3D grid-converged solution."
+      ],
+      "criterion": [
+        "Local pressure near leading edge, qualitative curve overlays.",
+        "Peak and near-leading-edge C_f, x/c<.2."
+      ],
+      "direction_of_discrepancy_change": [
+        "closer, near leading edge",
+        "farther at friction peak"
+      ],
+      "inference": "Grid sensitivity makes leading-edge pressure and skin friction respond differently. This is a numerical-intervention result; pointwise signs do not cover the full chord.",
+      "precision_and_uncertainty": "Qualitative reading of the published profiles at the stated support. No joint sampling, discretisation and reference interval is available for the paired errors.",
+      "comparison_scope": "source-found comparison; see matching and support in identity/controls",
+      "source_question": "Can the virtual-node lattice-Boltzmann RANS boundary treatment predict aerodynamic loads and boundary-layer profiles across airfoil configurations and grids?"
+    },
+    {
+      "pair_id": "N357-extra-pulse-harmonic",
+      "study_id": "N357",
+      "origin": "additional comparison found in the primary source",
+      "source_url": "https://doi.org/10.1017/jfm.2023.585",
+      "edition": "Journal of Fluid Mechanics 974, A51 (2023), version of record.",
+      "source_location": "§3 Figs 7,9 and 16(a–c), pp. A51-18–20,23 | §3 Fig. 12(c), p. A51-21, with text on p. A51-20",
+      "original_quantities": [
+        "Periodic wall-stress response at ω⁺=.01",
+        "Periodic Reynolds shear-stress profile amplitude at ω⁺=.01"
+      ],
+      "first": {
+        "quantity": "Periodic wall-stress response at ω⁺=.01",
+        "source_location": "§3 Figs 7,9 and 16(a–c), pp. A51-18–20,23",
+        "runs": "The ω⁺=.01 MTS and EQWM runs of §3. Fig. 16 gives phase-averaged streamwise momentum terms, including wall stress.",
+        "reference": "Weng et al. (2016) pulsating-channel DNS at the six lower frequencies; high-frequency Stokes solution is an analytical comparator, not DNS at all frequencies.",
+        "criterion": "Phase-resolved periodic wall-stress amplitude/history relative to reference under identical forcing.",
+        "source_reading": "MTS produces a wall-stress time history closer to DNS; authors discuss small acceleration errors and large relative errors in the small oscillating Reynolds shear.",
+        "design_ids": [
+          "N357-pulse"
+        ]
+      },
+      "second": {
+        "quantity": "Periodic Reynolds shear-stress profile amplitude at ω⁺=.01",
+        "source_location": "§3 Fig. 12(c), p. A51-21, with text on p. A51-20",
+        "runs": "Same ω⁺=.01 MTS and EQWM runs, sampled across wall-normal coordinate. Compare the phase-harmonic profile, not the time-mean stress. ",
+        "reference": "Weng et al. (2016) pulsating-channel DNS at the six lower frequencies; high-frequency Stokes solution is an analytical comparator, not DNS at all frequencies.",
+        "criterion": "Absolute amplitude discrepancy near the maximum of periodic u′v′ versus y⁺.",
+        "source_reading": "The EQWM peak is close to DNS and MTS undershoots it. Wall stress is sampled on the wall while Reynolds shear is an interior profile.",
+        "design_ids": [
+          "N357-pulse"
+        ]
+      },
+      "identity": "Same MTS and EQWM trajectories, same ω⁺=.01 and cycle, common Weng DNS. Two observables at the wall and within the same domain.",
+      "controls": "Wall model is changed as a package: non-equilibrium terms, correction and memory. Same third-cell matching, LESGO, dynamic SGS, forcing and mesh.",
+      "reference": [
+        "Weng et al. (2016) pulsating-channel DNS at the six lower frequencies; high-frequency Stokes solution is an analytical comparator, not DNS at all frequencies.",
+        "Weng et al. (2016) pulsating-channel DNS at the six lower frequencies; high-frequency Stokes solution is an analytical comparator, not DNS at all frequencies."
+      ],
+      "criterion": [
+        "Phase-resolved periodic wall-stress amplitude/history relative to reference under identical forcing.",
+        "Absolute amplitude discrepancy near the maximum of periodic u′v′ versus y⁺."
+      ],
+      "direction_of_discrepancy_change": [
+        "closer",
+        "farther near amplitude peak"
+      ],
+      "inference": "Under this particular oscillation the phase-dependent wall stress improves while the periodic Reynolds shear profile loses amplitude. No component-wide or full-frequency ranking is implied.",
+      "precision_and_uncertainty": "Qualitative reading of the published profiles at the stated support. No joint sampling, discretisation and reference interval is available for the paired errors.",
+      "comparison_scope": "source-found comparison; see matching and support in identity/controls",
+      "source_question": "How well does the multi-time-scale wall model reproduce unsteady forcing responses in wall stress, velocity and turbulence?"
+    },
+    {
+      "pair_id": "N357-extra-two-periodic-components",
+      "study_id": "N357",
+      "origin": "additional comparison found in the primary source",
+      "source_url": "https://doi.org/10.1017/jfm.2023.585",
+      "edition": "Journal of Fluid Mechanics 974, A51 (2023), version of record.",
+      "source_location": "§3 Fig. 12(c), A51-21; component notation and common DNS/EQWM/MTS legend in Fig. 12 | §3 Fig. 14(c), A51-22; curves as Fig. 12",
+      "original_quantities": [
+        "Harmonic shear-stress amplitude |u′v′ harmonic|/U_cl² at y⁺=50",
+        "Harmonic wall-normal normal-stress amplitude |v′v′ harmonic|/U_cl² at y⁺=50"
+      ],
+      "first": {
+        "quantity": "Harmonic shear-stress amplitude |u′v′ harmonic|/U_cl² at y⁺=50",
+        "source_location": "§3 Fig. 12(c), A51-21; component notation and common DNS/EQWM/MTS legend in Fig. 12",
+        "runs": "Same EQWM→MTS sinusoidally forced channel at ω⁺=.01, within-study velocity and stress scaling, same wall-normal coordinate y⁺=50, not a selected-wall-stress peak.",
+        "reference": "Weng et al. (2016) pulsating-channel DNS at the six lower frequencies; high-frequency Stokes solution is an analytical comparator, not DNS at all frequencies.",
+        "criterion": "Absolute error in the plotted dimensionless Fourier amplitude at fixed y⁺.",
+        "source_reading": "In units 10⁻⁴, DNS≈2.39, EQ≈2.43, MTS≈1.26. Error magnitude ≈.04→1.13. Common coordinate sweep y⁺=25,30,40,50,60,70,100 gives the same preference; at 150 EQ still closer.",
+        "design_ids": [
+          "N357-pulse"
+        ]
+      },
+      "second": {
+        "quantity": "Harmonic wall-normal normal-stress amplitude |v′v′ harmonic|/U_cl² at y⁺=50",
+        "source_location": "§3 Fig. 14(c), A51-22; curves as Fig. 12",
+        "runs": "Identical forcing and EQWM→MTS runs and wall-normal support y⁺=50 as Fig. 12(c).",
+        "reference": "Weng et al. (2016) pulsating-channel DNS at the six lower frequencies; high-frequency Stokes solution is an analytical comparator, not DNS at all frequencies.",
+        "criterion": "Absolute error in the dimensionless harmonic amplitude at the same y⁺.",
+        "source_reading": "In units 10⁻⁴, DNS≈2.90, EQ≈4.90, MTS≈2.21. Error magnitude ≈2.00→.69. Same preference for all sampled heights 25–100; at y⁺=150 EQ is closer for this component also.",
+        "design_ids": [
+          "N357-pulse"
+        ]
+      },
+      "identity": "The same Weng DNS, EQWM and MTS channel, same ω⁺=.01, identical y⁺=50, average and phase-harmonic amplitude convention.",
+      "controls": "Change entire active wall treatment EQ→MTS at fixed LESGO, SGS, grid, sampling height and imposed sinusoid. Two different components of the interior Reynolds-stress tensor.",
+      "reference": [
+        "Weng et al. (2016) pulsating-channel DNS at the six lower frequencies; high-frequency Stokes solution is an analytical comparator, not DNS at all frequencies.",
+        "Weng et al. (2016) pulsating-channel DNS at the six lower frequencies; high-frequency Stokes solution is an analytical comparator, not DNS at all frequencies."
+      ],
+      "criterion": [
+        "Absolute error in the plotted dimensionless Fourier amplitude at fixed y⁺.",
+        "Absolute error in the dimensionless harmonic amplitude at the same y⁺."
+      ],
+      "direction_of_discrepancy_change": [
+        "farther for periodic shear amplitude",
+        "closer for periodic wall-normal stress amplitude"
+      ],
+      "inference": "A same-height, same-forcing component reversal in complete coupled runs. The sign pair also holds at checked heights y⁺=25,30,40,60,70,100, while at y⁺=150 equilibrium is closer on both. This supplies no reversal of wall-traction sign.",
+      "precision_and_uncertainty": "Direct read of published vector centre lines, dashed DNS, grey dash-dot EQWM and black continuous MTS. Fig. 12(c) axes x=231.149+18.827 log10(y⁺) pt and ordinate (504.311−YPDF)/9.970 in 10⁻⁴; Fig. 14(c) x=243.589+20.150 log10(y⁺), ordinate (325.197−YPDF)/6.0975 in 10⁻⁴. Line interpolation read tolerance roughly .05–.1 in displayed amplitude units, distinct from physical and sampling uncertainty, which is unreported jointly.",
+      "comparison_scope": "source-found comparison; see matching and support in identity/controls",
+      "source_question": "How well does the multi-time-scale wall model reproduce unsteady forcing responses in wall stress, velocity and turbulence?"
+    },
+    {
+      "pair_id": "N358-extra-viscosity-walls",
+      "study_id": "N358",
+      "origin": "additional comparison found in the primary source",
+      "source_url": "https://personalpages.manchester.ac.uk/staff/S.Utyuzhnikov/Papers/AMM_AJSU2016.pdf",
+      "edition": "Applied Mathematical Modelling 40 (2016), 329–342, version of record. Checked also against the Manchester accepted manuscript.",
+      "source_location": "§7.1 Fig. 5(a), pp. 338–340 | §7.1 Fig. 5(b) and text p. 340",
+      "original_quantities": [
+        "Straight-wall separation with exponential vs linear interface viscosity",
+        "Inclined-wall reattachment with exponential vs linear interface viscosity"
+      ],
+      "first": {
+        "quantity": "Straight-wall separation with exponential vs linear interface viscosity",
+        "source_location": "§7.1 Fig. 5(a), pp. 338–340",
+        "runs": "On the IBC mesh, Robin k, linear→exponential viscosity.",
+        "reference": "Buice–Eaton diffuser experiment [25] in journal edition; low-Re k–ω SST is a separate prediction.",
+        "criterion": "Presence of a spurious straight-wall negative C_f region.",
+        "source_reading": "Exponential predicts recirculation on the straight wall where measurements show no bubble; linear does not.",
+        "design_ids": [
+          "N358-diffuser-internal"
+        ]
+      },
+      "second": {
+        "quantity": "Inclined-wall reattachment with exponential vs linear interface viscosity",
+        "source_location": "§7.1 Fig. 5(b) and text p. 340",
+        "runs": "Same IBC mesh/Robin k. The exponential calculation averages τ_w during iteration to accelerate convergence.",
+        "reference": "Buice–Eaton diffuser experiment [25] in journal edition; low-Re k–ω SST is a separate prediction.",
+        "criterion": "Downstream zero of mean C_f, compared with measured reattachment.",
+        "source_reading": "Exponential gives the closest reattachment of the studied IBC profiles; linear ends at the second corner x/H≈21.",
+        "design_ids": [
+          "N358-diffuser-internal"
+        ]
+      },
+      "identity": "Same linear→exponential IBC treatment runs, but two distinct walls and two different aspects of recirculation.",
+      "controls": "Same interface/grid and k condition. Viscosity profile changes and an iterative τ averaging is employed in the exponential calculation.",
+      "reference": [
+        "Buice–Eaton diffuser experiment [25] in journal edition; low-Re k–ω SST is a separate prediction.",
+        "Buice–Eaton diffuser experiment [25] in journal edition; low-Re k–ω SST is a separate prediction."
+      ],
+      "criterion": [
+        "Presence of a spurious straight-wall negative C_f region.",
+        "Downstream zero of mean C_f, compared with measured reattachment."
+      ],
+      "direction_of_discrepancy_change": [
+        "farther (false separation)",
+        "closer (reattachment)"
+      ],
+      "inference": "Nominal opposing changes across walls and separation criteria. Do not treat this as a single-station quantity contrast.",
+      "precision_and_uncertainty": "Qualitative reading of the published profiles at the stated support. No joint sampling, discretisation and reference interval is available for the paired errors.",
+      "comparison_scope": "source-found comparison; see matching and support in identity/controls",
+      "source_question": "How do near-wall domain-decomposition transfer conditions and viscosity profiles perform in diffuser separation and impingement compared with standard RANS wall treatments?"
+    },
+    {
+      "pair_id": "N364-extra-fixed-linear-no-SGS",
+      "study_id": "N364",
+      "origin": "additional comparison found in the primary source",
+      "source_url": "https://arxiv.org/abs/1810.05213v2",
+      "edition": "arXiv:1810.05213v2 (2019), pp. 7–15, 30–32; journal DOI 10.1016/j.compfluid.2019.03.025.",
+      "source_location": "§5.1 Tables 1 and 2, pp. 11,13 | §5.1 Tables 1,2, pp. 11,13, Eq. 10",
+      "original_quantities": [
+        "Mean friction-velocity error at fixed Reτ≈5200 and grid",
+        "Maximum normalized outer mean-velocity error on same runs"
+      ],
+      "first": {
+        "quantity": "Mean friction-velocity error at fixed Reτ≈5200 and grid",
+        "source_location": "§5.1 Tables 1 and 2, pp. 11,13",
+        "runs": "Linear finite-volume flux, no explicit SGS, n/δ=28. Coarse wall-unmodelled LES → active Spalding law, κ=.395, B=4.8, h/δ=.125 (fourth centre).",
+        "reference": "Lee–Moser DNS.",
+        "criterion": "Absolute value of signed relative error in mean friction velocity.",
+        "source_reading": "−53.36%→−6.15%, closer; same comparison with LUST gives −56.73%→+.20%, closer.",
+        "design_ids": [
+          "N364-fixed-Re-model-and-numerics"
+        ]
+      },
+      "second": {
+        "quantity": "Maximum normalized outer mean-velocity error on same runs",
+        "source_location": "§5.1 Tables 1,2, pp. 11,13, Eq. 10",
+        "runs": "Identical runs to the preceding friction reading: linear/no explicit SGS and n/δ=28; LUST is separate numerical stratum.",
+        "reference": "Lee–Moser DNS.",
+        "criterion": "Maximum discrepancy in .2≤y/δ≤1, divided by full reference-profile maximum.",
+        "source_reading": "Linear flux 2.38%→6.03%, farther. LUST flux instead 5.16%→.70%, closer.",
+        "design_ids": [
+          "N364-fixed-Re-model-and-numerics"
+        ]
+      },
+      "identity": "Exactly the same two n/δ=28 calculations; boundary friction and outer-profile norm are separate observables on the same flow.",
+      "controls": "Activate Spalding at fourth centre, retaining linear flux, no explicit SGS, forcing, mesh and DNS; feedback included. The comparison starts from no wall model.",
+      "reference": [
+        "Lee–Moser DNS.",
+        "Lee–Moser DNS."
+      ],
+      "criterion": [
+        "Absolute value of signed relative error in mean friction velocity.",
+        "Maximum discrepancy in .2≤y/δ≤1, divided by full reference-profile maximum."
+      ],
+      "direction_of_discrepancy_change": [
+        "closer (53.36→6.15%)",
+        "farther (2.38→6.03%)"
+      ],
+      "inference": "With LUST substituted for linear, both corresponding errors decrease. A numerical setting modifies the sign of the outer-profile response at fixed active treatment.",
+      "precision_and_uncertainty": "Source table values retain their displayed precision. No coverage interval for the paired discrepancies follows from the decimal places.",
+      "comparison_scope": "source-found comparison; see matching and support in identity/controls",
+      "source_question": "Which numerical settings and wall-model inputs influence channel flow predictions, and how do selected settings perform as Reynolds number changes?"
+    },
+    {
+      "pair_id": "N611-extra-hill-crossings",
+      "study_id": "N611",
+      "origin": "additional comparison found in the primary source",
+      "source_url": "https://arxiv.org/abs/1505.05786v1",
+      "edition": "Krank & Wall, arXiv:1505.05786v1 (2015), pp. 12–22. Journal of Computational Physics 316 (2016), DOI 10.1016/j.jcp.2016.04.001.",
+      "source_location": "§5.2 Table 2 p. 15 | §5.2 Table 2 p. 15",
+      "original_quantities": [
+        "Separation crossing x_sep/H, Re_H=10,595",
+        "Reattachment crossing x_reatt/H, Re_H=10,595"
+      ],
+      "first": {
+        "quantity": "Separation crossing x_sep/H, Re_H=10,595",
+        "source_location": "§5.2 Table 2 p. 15",
+        "runs": "PhFNWM→PhF, same fine 96×48×48 mesh, enrichment activated.",
+        "reference": "Fröhlich et al. highly resolved periodic-hill LES at Re_H=10,595; Rapp experiment near 10,600 is a separate benchmark.",
+        "criterion": "Absolute separation-location discrepancy against WRLES x_sep/H=.2 (table precision).",
+        "source_reading": "No enrichment .2, enrichment .25: nominal departure increases. The published benchmark rounds the separation to one decimal.",
+        "design_ids": [
+          "N611-hill-low"
+        ]
+      },
+      "second": {
+        "quantity": "Reattachment crossing x_reatt/H, Re_H=10,595",
+        "source_location": "§5.2 Table 2 p. 15",
+        "runs": "Same PhFNWM→PhF.",
+        "reference": "Fröhlich et al. WRLES x_reatt/H=4.6–4.7 and Rapp physical experiment 4.21.",
+        "criterion": "Absolute reattachment-location discrepancy versus a named reference.",
+        "source_reading": "3.68→4.91. For WRLES, error .92–1.02→.21–.31 H. For Rapp, error .53→.70 H. Both directions are nominal and the references cannot be pooled.",
+        "design_ids": [
+          "N611-hill-low"
+        ]
+      },
+      "identity": "Same lower wall, same runs; two distinct zero-crossing locations. Release and reattachment have different physical support.",
+      "controls": "PhFNWM→PhF changes finite-element enrichment/near-wall representation, at matched fine grid, Reynolds number and outer setup. Both evaluated against Fröhlich.",
+      "reference": [
+        "Fröhlich et al. highly resolved periodic-hill LES at Re_H=10,595; Rapp experiment near 10,600 is a separate benchmark.",
+        "Fröhlich et al. WRLES x_reatt/H=4.6–4.7 and Rapp physical experiment 4.21."
+      ],
+      "criterion": [
+        "Absolute separation-location discrepancy against WRLES x_sep/H=.2 (table precision).",
+        "Absolute reattachment-location discrepancy versus a named reference."
+      ],
+      "direction_of_discrepancy_change": [
+        "nominally farther at reported rounding",
+        "closer vs Fröhlich; farther vs Rapp"
+      ],
+      "inference": "Against Fröhlich the reported separation and reattachment discrepancies change oppositely. Against Rapp only reattachment is tabulated and its ranking reverses. The especially small separation shift and reference precision preclude a physical significance claim.",
+      "precision_and_uncertainty": "Source table values retain their displayed precision. No coverage interval for the paired discrepancies follows from the decimal places.",
+      "comparison_scope": "source-found comparison; see matching and support in identity/controls",
+      "source_question": "How does wall-function enrichment of the finite-element approximation perform across attached and separated turbulent flows?"
+    },
+    {
+      "pair_id": "N626-extra-depth",
+      "study_id": "N626",
+      "origin": "additional comparison found in the primary source",
+      "source_url": "https://doi.org/10.1017/dce.2023.2",
+      "edition": "Data-Centric Engineering 4, e7 (2023), version of record.",
+      "source_location": "§4.2.3 Table 5, e7-22, magnitude column | §4.2.3 Table 5, e7-22, signed-component column",
+      "original_quantities": [
+        "BFS integrated shear-magnitude error, N=4→5",
+        "BFS integrated streamwise-shear error, N=4→5"
+      ],
+      "first": {
+        "quantity": "BFS integrated shear-magnitude error, N=4→5",
+        "source_location": "§4.2.3 Table 5, e7-22, magnitude column",
+        "runs": "Four→five message-passing steps, fixed step/numerics; trained network, effective receptive field and feedback all change.",
+        "reference": "Solid black reference wall-resolved BFS simulation of Dupuy et al. (2022). Le et al. (1997), plotted separately in Fig. 16, is not this reference.",
+        "criterion": "Decrease in ∫₀¹⁴ʰ(τ−τ_ref)²dx, source units N²/m².",
+        "source_reading": "0.067→0.066 (difference −.001, one final displayed table unit). Three→four is .120→.067.",
+        "design_ids": [
+          "N626-step"
+        ]
+      },
+      "second": {
+        "quantity": "BFS integrated streamwise-shear error, N=4→5",
+        "source_location": "§4.2.3 Table 5, e7-22, signed-component column",
+        "runs": "Same four→five trajectories and integration interval as magnitude.",
+        "reference": "Solid black reference wall-resolved BFS simulation of Dupuy et al. (2022). Le et al. (1997), plotted separately in Fig. 16, is not this reference.",
+        "criterion": "Decrease in ∫₀¹⁴ʰ(τ_x−τ_x,ref)²dx, source units N²/m².",
+        "source_reading": "0.308→0.367 (+.059). Three→four likewise .302→.308. From Fig. 16 the four/five reattachment crossings are too close to assign a reliable crossing ranking at 0.1h_s plot precision.",
+        "design_ids": [
+          "N626-step"
+        ]
+      },
+      "identity": "Same two complete step runs N=4→5, same wall, x range, reference and squared-error convention.",
+      "controls": "Message-passing depth, learned parameters, receptive field and feedback covary. The lower-wall solver/intervention and reference stay common.",
+      "reference": [
+        "Solid black reference wall-resolved BFS simulation of Dupuy et al. (2022). Le et al. (1997), plotted separately in Fig. 16, is not this reference.",
+        "Solid black reference wall-resolved BFS simulation of Dupuy et al. (2022). Le et al. (1997), plotted separately in Fig. 16, is not this reference."
+      ],
+      "criterion": [
+        "Decrease in ∫₀¹⁴ʰ(τ−τ_ref)²dx, source units N²/m².",
+        "Decrease in ∫₀¹⁴ʰ(τ_x−τ_x,ref)²dx, source units N²/m²."
+      ],
+      "direction_of_discrepancy_change": [
+        "closer by .001",
+        "farther by .059"
+      ],
+      "inference": "Nominal opposition in the two integral measures for a depth change. The one-unit last-digit gain has no joint physical/numerical uncertainty bound. Algebraic→four improves both measures and improves nominal reattachment.",
+      "precision_and_uncertainty": "Source table values retain their displayed precision. No coverage interval for the paired discrepancies follows from the decimal places.",
+      "comparison_scope": "source-found comparison; see matching and support in identity/controls",
+      "source_question": "How well does the graph wall-stress model reproduce prescribed-input labels and coupled channel, step and compressor-cascade observables?"
+    },
+    {
+      "pair_id": "N626-extra-blade-region",
+      "study_id": "N626",
+      "origin": "additional comparison found in the primary source",
+      "source_url": "https://doi.org/10.1017/dce.2023.2",
+      "edition": "Data-Centric Engineering 4, e7 (2023), version of record.",
+      "source_location": "§4.2.4 Fig. 21 e7-25, Figs 18–20 e7-24–25 and Table 6 | §4.2.4 Fig. 21 e7-25, Figs 18–20 e7-24–25 and Table 6",
+      "original_quantities": [
+        "Blade surface spanwise-averaged mean shear, especially corner separation",
+        "Blade surface spanwise-averaged mean shear, especially corner separation"
+      ],
+      "first": {
+        "quantity": "Blade surface spanwise-averaged mean shear, especially corner separation",
+        "source_location": "§4.2.4 Fig. 21 e7-25, Figs 18–20 e7-24–25 and Table 6",
+        "runs": "7° NACA 65-009 cascade, two WMLES on 15 million-point mesh, Sigma SGS; local surface and endwall trips.",
+        "reference": "Corresponding wall-resolved N65b cascade, not the BFS benchmark.",
+        "criterion": "Local error in shear magnitude in specified pressure-side, accelerating suction-side or separated suction-side region.",
+        "source_reading": "GNN reduces overpredicted shear on pressure side and near suction leading edge; its separated aft-region shear exceeds reference and law of wall is closer there. A genuine spatial reversal inside the cascade, distinct from a step-to-blade comparison.",
+        "design_ids": [
+          "N626-cascade"
+        ]
+      },
+      "second": {
+        "quantity": "Blade surface spanwise-averaged mean shear, especially corner separation",
+        "source_location": "§4.2.4 Fig. 21 e7-25, Figs 18–20 e7-24–25 and Table 6",
+        "runs": "7° NACA 65-009 cascade, two WMLES on 15 million-point mesh, Sigma SGS; local surface and endwall trips.",
+        "reference": "Corresponding wall-resolved N65b cascade, not the BFS benchmark.",
+        "criterion": "Local error in shear magnitude in specified pressure-side, accelerating suction-side or separated suction-side region.",
+        "source_reading": "GNN reduces overpredicted shear on pressure side and near suction leading edge; its separated aft-region shear exceeds reference and law of wall is closer there. A genuine spatial reversal inside the cascade, distinct from a step-to-blade comparison.",
+        "design_ids": [
+          "N626-cascade"
+        ]
+      },
+      "identity": "Use the same two cascade calculations with spatial supports selected separately: accelerating surface near leading edge vs aft suction-side corner separation.",
+      "controls": "Same N65b mesh/solver; GNN vs algebraic law, but surface region/pressure gradient change.",
+      "reference": [
+        "Corresponding wall-resolved N65b cascade, not the BFS benchmark.",
+        "Corresponding wall-resolved N65b cascade, not the BFS benchmark."
+      ],
+      "criterion": [
+        "Local error in shear magnitude in specified pressure-side, accelerating suction-side or separated suction-side region.",
+        "Local error in shear magnitude in specified pressure-side, accelerating suction-side or separated suction-side region."
+      ],
+      "direction_of_discrepancy_change": [
+        "closer in accelerating region",
+        "farther in separated region"
+      ],
+      "inference": "Changing the comparison location reverses the preference for the same shear magnitude. No signed global or cross-geometry error is inferred.",
+      "precision_and_uncertainty": "Qualitative reading of the published profiles at the stated support. No joint sampling, discretisation and reference interval is available for the paired errors.",
+      "comparison_scope": "source-found comparison; see matching and support in identity/controls",
+      "source_question": "How well does the graph wall-stress model reproduce prescribed-input labels and coupled channel, step and compressor-cascade observables?"
+    },
+    {
+      "pair_id": "N655-extra-early-components",
+      "study_id": "N655",
+      "origin": "additional comparison found in the primary source",
+      "source_url": "https://doi.org/10.1017/jfm.2019.869",
+      "edition": "Journal of Fluid Mechanics 883, A20 (2020), Lozano-Durán, Giometto, Park & Moin, version of record.",
+      "source_location": "§4.3 Fig. 18(a), A20-29 | §4.3 Fig. 18(b), A20-29",
+      "original_quantities": [
+        "Early mean spanwise stress at t*≈0.2",
+        "Early mean streamwise stress at t*≈0.2"
+      ],
+      "first": {
+        "quantity": "Early mean spanwise stress at t*≈0.2",
+        "source_location": "§4.3 Fig. 18(a), A20-29",
+        "runs": "Choose EQWM→PDE NEQWM only; same CharLES, DSM, grid, third-cell input, initial Re and transverse forcing. Use square vs circle, red DNS.",
+        "reference": "Matched transient DNS in this source at Π=10, Reτ≈1000 (plane/ensemble mean); all stress components normalized by initial mean streamwise wall stress.",
+        "criterion": "Absolute error of τ₃/τ₁,initial at common t*≈.2.",
+        "source_reading": "In units of initial streamwise stress, DNS≈.189, EQ≈.117, PDE≈.201 (absolute error ≈.072→.012). The square and circle traces bracket t*=.2, interpolated separately. Similar ordering persists over much of the initial transient.",
+        "design_ids": [
+          "N655-spatially-averaged-transient"
+        ]
+      },
+      "second": {
+        "quantity": "Early mean streamwise stress at t*≈0.2",
+        "source_location": "§4.3 Fig. 18(b), A20-29",
+        "runs": "Same two CharLES trajectories at the same wall, time and normalization.",
+        "reference": "Matched transient DNS in this source at Π=10, Reτ≈1000 (plane/ensemble mean); all stress components normalized by initial mean streamwise wall stress.",
+        "criterion": "Absolute error of τ₁/τ₁,initial at t*≈.2.",
+        "source_reading": "DNS≈.984, EQ≈1.013, PDE≈1.043 (absolute error ≈.029→.059). Both are above DNS, with the PDE square farther. Published maximum PDE discrepancy of 7% for t*<.4 is not the value at t*=.2.",
+        "design_ids": [
+          "N655-spatially-averaged-transient"
+        ]
+      },
+      "identity": "Same wall and same time, same two CharLES runs; IWM excluded from paired reading.",
+      "controls": "EQWM→PDE NEQWM at fixed grid, forcing, matching location and outer model; both wall closures were modified for transverse forcing, and actual input velocities can respond.",
+      "reference": [
+        "Matched transient DNS in this source at Π=10, Reτ≈1000 (plane/ensemble mean); all stress components normalized by initial mean streamwise wall stress.",
+        "Matched transient DNS in this source at Π=10, Reτ≈1000 (plane/ensemble mean); all stress components normalized by initial mean streamwise wall stress."
+      ],
+      "criterion": [
+        "Absolute error of τ₃/τ₁,initial at common t*≈.2.",
+        "Absolute error of τ₁/τ₁,initial at t*≈.2."
+      ],
+      "direction_of_discrepancy_change": [
+        "closer (spanwise)",
+        "farther (streamwise)"
+      ],
+      "inference": "A component tradeoff of the coupled stress vector, under the fixed early transient. The transient sign of an individual component versus its own past is not the paired ranking.",
+      "precision_and_uncertainty": "Publisher assets xrefs 1543,1544, 304×233 and 305×230: t*=0→1 at columns 5→301 and 6→302, respectively. Vertical ordinate rows 227→2 span 0→.7 in (a), .95→1.15 in (b). Separately interpolate bracketing black open squares and blue circle centres, red DNS at t*=.2. Allow about .005 in (a), .002 in (b) for plot reading; joint physical uncertainty unavailable.",
+      "comparison_scope": "source-found comparison; see matching and support in identity/controls",
+      "source_question": "How does the channel respond to sudden lateral forcing, and how do wall treatments represent the transient components?"
+    },
+    {
+      "pair_id": "P19-new-CRM7",
+      "study_id": "P19",
+      "edition": "Journal of Fluid Mechanics 963, A35 (2023), version of record.",
+      "source_url": "https://doi.org/10.1017/jfm.2023.331",
+      "source_location": [
+        "§4.7, Fig. 15a, p. A35-25; discussion p. A35-24",
+        "§4.7, Fig. 15c, p. A35-25"
+      ],
+      "original_quantities": [
+        "NASA CRM-HL integrated lift (historical “drag or force” category)",
+        "NASA CRM-HL integrated pitching moment at 7°"
+      ],
+      "first": {
+        "observable": "NASA CRM-HL integrated lift (historical “drag or force” category)",
+        "source_location": "§4.7, Fig. 15a, p. A35-25; discussion p. A35-24",
+        "test_id": "P19-CRM",
+        "runs": "DSM–BFWM versus DSM–EQWM on CRM-HL at 7° and 19°",
+        "changed": "wall treatment; distinct aircraft and reference from canonical pressure-gradient cases",
+        "held": "same CRM grid (~30 M), angle and SGS within each comparison",
+        "reference": "free-air corrected experimental CL",
+        "criterion": "absolute difference at a fixed angle of attack",
+        "source_reading": "EQWM gives closer lift at 7°, BFWM closer around 19°. Error cancellation is an author interpretation; it does not reverse the observed absolute ranking.",
+        "design_ids": [
+          "P19-CRM"
+        ]
+      },
+      "second": {
+        "observable": "NASA CRM-HL integrated pitching moment at 7°",
+        "source_location": "§4.7, Fig. 15c, p. A35-25",
+        "test_id": "P19-CRM",
+        "runs": "Internal DSM–BFWM versus DSM–EQWM at 7°",
+        "changed": "wall treatment package",
+        "held": "same grid, aircraft, SGS, angle, forcing and wind-tunnel comparison as Fig. 15a",
+        "reference": "corrected wind-tunnel pitching moment",
+        "criterion": "absolute CM discrepancy after interpolating black dashed line at the symbol’s angle",
+        "source_reading": "CM approx −0.372 reference, −0.339 EQWM, −0.349 BFWM. BFWM is closer.",
+        "design_ids": [
+          "P19-CRM"
+        ]
+      },
+      "identity": "Same two NASA CRM-HL 7° calculations, DSM–BFWM minus DSM–EQWM.",
+      "controls": "~30M points, identical aircraft/angle/SGS. Switch complete wall treatment and its input representation.",
+      "reference": "Same corrected wind-tunnel series for CL and CM, at the plotted angle.",
+      "criterion": "Absolute discrepancies vs reference in their own units. Lower angle identified in §4.7; retrospective secondary contrast.",
+      "adjudication": "opposing_point_estimates",
+      "inference": "CL errors rise from ≈0.012 to ≈0.071; CM errors fall from ≈0.033 to ≈0.023. This is a distinct affirmative example, outside the original P19 paired rows. An error cancellation explanation for CL requires further evidence.",
+      "read_precision_and_physical_uncertainty": "Vector path centers and linearly interpolated published wind-tunnel line. Round CL to ≈0.01, CM to ≈0.002; no experimental/CFD joint uncertainty from this plot. Script paired_p_work/read_crm.py."
+    },
+    {
+      "pair_id": "P31-new-bump-minus04",
+      "study_id": "P31",
+      "edition": "Zhou & Bae author preprint arXiv:2305.02540v3 (26 July 2024); linked AIAA Journal article DOI 10.2514/1.J063691.",
+      "source_url": "https://arxiv.org/abs/2305.02540v3",
+      "source_location": [
+        "§IV.B, Fig. 10a–f pp. 23–24",
+        "Fig. 12c p. 26; §IV.A–B, pp. 21–25"
+      ],
+      "original_quantities": [
+        "bump crest/upstream mean Cf and local leeward Cf",
+        "fine-grid DSM centreline mean U/U∞ at x/L=−.4"
+      ],
+      "first": {
+        "observable": "bump crest/upstream mean Cf and local leeward Cf",
+        "source_location": "§IV.B, Fig. 10a–f pp. 23–24",
+        "test_id": "P31-bump",
+        "runs": "RLWM and matching in-house EQWM on 6M,37M,100M mesh separated by DSM/Vreman; external runs have other Re and grids",
+        "changed": "wall package within panel; do not switch SGS, mesh or study",
+        "held": "same internal solver and Re_L=2e6; z/L=0",
+        "reference": "Gray et al. friction samples, ref. 28",
+        "criterion": "local absolute discrepancy around peak or at stated station; a different criterion than binary separation",
+        "source_reading": "RLWM closer than internal EQWM near crest across grid series; upstream support differs. Internal calculations still miss the measured leeward recirculation.",
+        "design_ids": [
+          "P31-bump"
+        ]
+      },
+      "second": {
+        "observable": "fine-grid DSM centreline mean U/U∞ at x/L=−.4",
+        "source_location": "Fig. 12c p. 26; §IV.A–B, pp. 21–25",
+        "test_id": "P31-bump",
+        "runs": "Red solid RLWM-DSM versus blue solid EQWM-DSM; dashed curves denote Vreman. PIV open circles.",
+        "changed": "complete wall formulation (matching inputs/imposition/learned state)",
+        "held": "fine 100M mesh; same in-house incompressible finite-volume solver, DSM, plug inlet, sampling after 1.5 through-times for 1.5 further through-times",
+        "reference": "Gray et al. PIV, ref. 29, all plotted common heights",
+        "criterion": "Primary rule saved before examination: equal weight on absolute U/U∞ errors at every distinct experimental height on shared support, no extrapolation. Linear displayed y/L axis.",
+        "source_reading": "At 120 PIV heights y/L=.0020–.0597, mean errors ≈.0163 RLWM and .0097 EQWM. Omitting the lowest point yields .0154/.0096. Above .02 alone gives .0065/.0105, illustrating the dependence on the target profile region.",
+        "design_ids": [
+          "P31-bump"
+        ]
+      },
+      "identity": "Internal fine-grid DSM pair at common x/L=−.4, z/L=0; Fig. 10c local Cf and Fig. 12c full PIV profile.",
+      "controls": "Different wall boundary treatment, different exchange mechanics and coupled flow response. Hold fine grid, DSM, geometry, Re_L=2e6 and inlet fixed. Exclude Agrawal (higher Re, different meshes), Vreman and other refinement levels.",
+      "reference": "Friction Gray et al. [28] linearly interpolated between measured x/L≈−.420 and −.349. Velocity PIV Gray et al. [29] at x/L=−.4; identical model runs but different quantities/measurement series.",
+      "criterion": "Absolute local Cf error; preread unweighted MAE over all common experimental heights in U/U∞ with no extrapolation.",
+      "adjudication": "opposing_point_estimates",
+      "inference": "Friction 10³Cf: experiment ≈2.35, RLWM≈2.18, EQWM≈3.09. Absolute errors ≈.17 vs .74. Velocity MAE ≈.016 vs .010 in reverse order. Fine-grid DSM supports opposing nominal errors. Medium DSM is closer to a tie (.0132/.0117); coarse DSM nominal ordering differs (.0120/.0126) and the small difference is unresolved at plotting precision. These are nested tests of this paper, not independent studies.",
+      "read_precision_and_physical_uncertainty": "Native embedded raster pixels, legend identities, axis calibration, segmented solid traces, PIV marker centres. Within ~.1 in 10³Cf and ~.002 in U/U∞ profile MAE (graph-level estimates). Reference spatial interpolation and physical uncertainty are separate; sampling uncertainty not supplied. See paired_p_work/bump_rule.txt, read_bump.py and 120-point Fig12c CSV."
+    },
+    {
+      "pair_id": "N174-channel-law",
+      "study_id": "N174",
+      "source_url": "https://www.aimsciences.org/data/article/export-pdf?id=6578251d4aaea52710702d59",
+      "identity": "Reichardt → Musker at fixed MRT collision and Vreman SGS at each of y+=12.5,25,50",
+      "source_location": "§4.2 Table 4, Table 5",
+      "inference": "At y+=25 relative L2 of mean U increases .01400→.01553, whereas shear stress error decreases .3592→.3351. At 50, mean U improves .04129→.03731 and shear worsens .5353→.5511. Errors are relative to the same DNS. Single solver and channel."
+    },
+    {
+      "pair_id": "N457-reference-choice",
+      "study_id": "N457",
+      "source_url": "https://arxiv.org/abs/1610.08205v1",
+      "identity": "Enriched SA grid 16×8 → 32×16, constant ReH=10595",
+      "source_location": "Table II, Figs. 6–11",
+      "inference": "Reattachment length 7.32→7.59 H gets closer to fine-grid SA 7.7 but farther from resolved LES 4.6–4.7. This is a change of reference for one output, not a two-output effect."
+    },
+    {
+      "pair_id": "N025-enrichment-and-grid",
+      "study_id": "N025",
+      "source_url": "https://doi.org/10.1002/fld.4712",
+      "identity": "ReH=10595, ph10595_stretch2_NWM → ph10595_stretch2, then separately ph10595_stretch2 → ph10595_stretch3.",
+      "source_location": "Archived Table 2; KKW DNS at (xsep/H,xreatt/H)=(0.19,4.51).",
+      "inference": "Same grid, switching on enrichment moves (.29,3.99) to (.23,4.24): both errors decrease. With enrichment fixed, increasing wall-normal stretching moves (.23,4.24) to (.19,3.98): separation improves and reattachment worsens. Same solver family as N611. At the higher Reynolds numbers only reattachment has a target in the table."
+    },
+    {
+      "pair_id": "N054-SST-walls",
+      "study_id": "N054",
+      "source_url": "https://eprints.whiterose.ac.uk/id/eprint/245405/1/1-s2.0-S0142727X26003620-main.pdf",
+      "identity": "Same STFC SST runs, all-y+ to two-scale, four walls as for the standard k–ε pair.",
+      "source_location": "Published Table 3 and DOI 10.5286/edata/979, STFC_KomgSST_allYplusWF and STFC_KomgSST_twoScaleWF.",
+      "inference": "Full-length RMSE for shear and heat increases on the hot wall. The two directions oppose on the other three walls. The left-baffle shear gain is about 0.0000039 Pa. See he_profiles.json."
+    },
+    {
+      "pair_id": "N502-grid-hill",
+      "study_id": "N502",
+      "source_url": "https://arxiv.org/abs/1712.08469v1",
+      "identity": "Same enriched DDES, ph10595 coarse and fine.",
+      "source_location": "Table 2, periodic hills ReH=10595",
+      "inference": "Against KKW DNS (.19,4.51)H, coarse (.25,4.51) to fine (.16,4.40) improves separation but worsens reattachment; a grid change, outside the fixed-grid wall-package population."
+    },
+    {
+      "pair_id": "N054-deposited-walls",
+      "study_id": "N054",
+      "source_url": "https://eprints.whiterose.ac.uk/id/eprint/245405/1/1-s2.0-S0142727X26003620-main.pdf",
+      "identity": "Same standard k–ε STFC runs, scalable to two-scale on each of four walls.",
+      "source_location": "Table 3 and STFC natural-convection dataset for He et al.",
+      "inference": "See he_profiles.json. Opposite shear and heat-flux RMSE directions on baffle right. Both improve on each of the other three walls."
+    },
+    {
+      "pair_id": "N497-hill-crossings",
+      "study_id": "N497",
+      "source_url": "https://link.springer.com/content/pdf/10.1007/s10494-025-00641-y.pdf",
+      "identity": "Three p4 run pairs, Rcht-A, DD-A, DD-NA. Each pair is assessed on both crossings.",
+      "source_location": "Published Tables 4–5 pp. 1173–1174",
+      "inference": "See hill_crossings.json. Separation and reattachment errors move oppositely. Sampling changes for unaligned runs. Averaging times differ even at matched height."
+    },
+    {
+      "pair_id": "P07-outer-refinement",
+      "study_id": "P07",
+      "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/fld.4395",
+      "identity": "Outer-grid change, same local QDNS grids. Stretching and time step also change.",
+      "source_location": "Sandham et al. channel at 4200, Figs. 6–7",
+      "inference": "Centreline mean improves; outer rms worsens above about 25 wall units. Grid refinement is a system intervention."
+    },
+    {
+      "pair_id": "N446-exchange",
+      "study_id": "N446",
+      "source_url": "https://doi.org/10.1017/jfm.2022.1024",
+      "identity": "Suppressed versus active source terms, embedded blocks present in both runs.",
+      "source_location": "Chen and He, Fig. 25, outlet at y+=100",
+      "inference": "Exchange improves the mean at this station. A resolved reversal across two observables has not been established."
+    },
+    {
+      "pair_id": "N364-eight-scheme-SGS",
+      "study_id": "N364",
+      "source_url": "https://arxiv.org/abs/1810.05213v2",
+      "identity": "Switch between no wall treatment and Spalding at fixed grid within every one of eight combinations.",
+      "source_location": "arXiv:1810.05213v2 Tables 1–2 and Eq. (10)",
+      "inference": "See channel_scheme_table.json. Both error magnitudes fall with LUST; linear differencing gives opposite directions. Eight pairs share a single channel DNS and solver."
+    }
+  ]
+}

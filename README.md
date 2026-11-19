@@ -14,6 +14,8 @@ Research materials for **When can a wall-model test support a new prediction?** 
 - [Figure design and data](docs/figure-design.md)
 - [Data dictionary](docs/data-dictionary.md)
 
+The [source dispositions](data/revision/source_dispositions.json) locate comparison designs in all 115 retrieved works. The [paired readings](data/revision/paired_readings.json) reconnect 79 earlier questions to runs and observables. The [periodic-hill tables](data/revision/hill_table_population.json) identify the five studies eligible for a common crossing comparison, including the run in which the bubble disappears. The [paired numerical results](results/revision/paired_error_changes.json) and [design memberships](results/revision/eligible_units.json) are regenerated with the figures.
+
 The original [17:29 circulation PDF](manuscript/circulation_snapshot_2026-11-18.pdf), historical 82-treatment coding and intermediate sensitivity calculations remain as **superseded research records**. They are not the current paper and must not be used to restore the withdrawn conclusions. Reproducing a stored calculation does not validate its source interpretation or denominator.
 
 ## Reproduce
@@ -23,6 +25,8 @@ Use Python 3.10 with the packages in `requirements.txt` and install the [journal
     python3 -I code/reproduce.py
     (cd manuscript && latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex)
     python3 -I code/check_current.py
+
+For the public natural-convection deposit, run `python3 code/verify_he_profiles.py NaturalConvection.zip`, or add `--closure sst` for the second pair. Omit the zip argument to fetch the checksum-verified dataset from STFC.
 
 The last command checks the numerical inputs, source records, captions, compiled bibliography and PDF using the LaTeX build files and the Poppler tools `pdftotext`, `pdftohtml` and `pdfinfo`.
 

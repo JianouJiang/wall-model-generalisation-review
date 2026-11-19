@@ -110,7 +110,7 @@ def flat_plate(ax, first, second):
         y = 27.3 + 4.25*i
         label(ax, 2.0, y, entry['model'])
         for x, sign in zip(cols, entry['signs']):
-            label(ax, x, y, '−' if sign < 0 else '+', ha='center')
+            label(ax, x, y, {None: '∼0', -1: '−', 1: '+'}[sign], ha='center')
 
     study(ax, 41.5, 'Wall-stress error at zero pressure gradient', second)
     label(ax, 2.0, 53.0, 'Outer closure')
@@ -133,7 +133,7 @@ def speed_bump(ax, first, second):
     for row, top in ((first, 13.4), (second, 43.0)):
         example = row['figure_example']
         prescribed = 'wall_condition' in example
-        condition = (f"Prescribed mean stress, {example['grid'].lower()} mesh" if prescribed
+        condition = (f"First-cell mean velocity" if prescribed
                      else f"Predicted mean skin friction, {example['grid'].lower()} mesh")
         study(ax, top, condition, row)
         for i, entry in enumerate(example['measurements']):

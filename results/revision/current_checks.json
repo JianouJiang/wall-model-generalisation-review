@@ -1,19 +1,19 @@
 {
   "status": "PASS",
-  "edition": "critical review; aggregate claims withdrawn",
-  "pdf_pages": 13,
-  "pdf_sha256": "9ac1f7a60a360b5875354dc45fe1da08fd250992c47f12df6949a387d5e6eb4a",
-  "citations_with_support_record": 45,
+  "edition": "Review with finite-sample source reassessment and edition-specific comparisons",
+  "pdf_pages": 15,
+  "pdf_sha256": "a96c557000146c3ee352af03dfe691c336bd2bc347a0c55edf0c7c5e28455f83",
+  "citations_with_support_record": 52,
   "caption_word_counts": [
     121,
     70,
-    130,
-    121,
+    131,
+    133,
     106,
-    28,
+    39,
     31
   ],
-  "abstract_words": 137,
+  "abstract_words": 141,
   "figures": 4,
   "tables": 3,
   "eligibility_records_checked": 33,
@@ -48,5 +48,8 @@
     "fig4_checklist": true
   },
   "circulation_text_scan": "PASS",
-  "scientific_limit": "Pass checks consistency and specified support. It does not certify an exhaustive corpus or predictive checklist validity."
+  "scientific_limit": "Pass checks consistency and specified support. It does not certify an exhaustive corpus or predictive checklist validity.",
+  "archived_source_dispositions": 115,
+  "historical_pairs_reassessed": 79,
+  "source_located_design_series": 228
 }

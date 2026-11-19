@@ -1,0 +1,559 @@
+{
+  "convention": "Alternative error minus baseline error within output. Errors retain the output’s own units. Signs are nominal unless joint uncertainty is available.",
+  "fixed_flow_channel": [
+    {
+      "scheme": "linear",
+      "SGS": "no explicit SGS",
+      "no_wall_model": [
+        -53.36,
+        2.38
+      ],
+      "spalding": [
+        -6.15,
+        6.03
+      ],
+      "delta_absolute_error_percentage_points": [
+        -47.21,
+        3.65
+      ],
+      "direction": "opposite"
+    },
+    {
+      "scheme": "LUST",
+      "SGS": "no explicit SGS",
+      "no_wall_model": [
+        -56.73,
+        5.16
+      ],
+      "spalding": [
+        0.2,
+        0.7
+      ],
+      "delta_absolute_error_percentage_points": [
+        -56.53,
+        -4.46
+      ],
+      "direction": "both closer"
+    },
+    {
+      "scheme": "linear",
+      "SGS": "WALE",
+      "no_wall_model": [
+        -5.56,
+        2.98
+      ],
+      "spalding": [
+        -4.28,
+        3.08
+      ],
+      "delta_absolute_error_percentage_points": [
+        -1.28,
+        0.1
+      ],
+      "direction": "opposite"
+    },
+    {
+      "scheme": "LUST",
+      "SGS": "WALE",
+      "no_wall_model": [
+        -11.75,
+        1.19
+      ],
+      "spalding": [
+        0.38,
+        0.58
+      ],
+      "delta_absolute_error_percentage_points": [
+        -11.37,
+        -0.61
+      ],
+      "direction": "both closer"
+    },
+    {
+      "scheme": "linear",
+      "SGS": "Smagorinsky",
+      "no_wall_model": [
+        -5.13,
+        0.83
+      ],
+      "spalding": [
+        -1.8,
+        1.16
+      ],
+      "delta_absolute_error_percentage_points": [
+        -3.33,
+        0.33
+      ],
+      "direction": "opposite"
+    },
+    {
+      "scheme": "LUST",
+      "SGS": "Smagorinsky",
+      "no_wall_model": [
+        -6.06,
+        0.95
+      ],
+      "spalding": [
+        0,
+        0.7
+      ],
+      "delta_absolute_error_percentage_points": [
+        -6.06,
+        -0.25
+      ],
+      "direction": "both closer"
+    },
+    {
+      "scheme": "linear",
+      "SGS": "dynamic subgrid kinetic energy",
+      "no_wall_model": [
+        -6.77,
+        0.58
+      ],
+      "spalding": [
+        -1.6,
+        1.01
+      ],
+      "delta_absolute_error_percentage_points": [
+        -5.17,
+        0.43
+      ],
+      "direction": "opposite"
+    },
+    {
+      "scheme": "LUST",
+      "SGS": "dynamic subgrid kinetic energy",
+      "no_wall_model": [
+        -12.62,
+        1.56
+      ],
+      "spalding": [
+        0.43,
+        0.76
+      ],
+      "delta_absolute_error_percentage_points": [
+        -12.19,
+        -0.8
+      ],
+      "direction": "both closer"
+    }
+  ],
+  "natural_convection": {
+    "hotWall": {
+      "tau_w_Pa": {
+        "full": {
+          "rmse": -0.0032113560429615426,
+          "mae": -0.0030029131981928183
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": -0.003450763629461417,
+          "mae": -0.003132504600348562
+        }
+      },
+      "q_w_W_per_m2": {
+        "full": {
+          "rmse": -676.381507512423,
+          "mae": -492.04375100833477
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": -457.15964235811083,
+          "mae": -391.4312365901209
+        }
+      }
+    },
+    "coldWall": {
+      "tau_w_Pa": {
+        "full": {
+          "rmse": -0.0015370871579191495,
+          "mae": -0.0015286831079679305
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": -0.001590107040820302,
+          "mae": -0.00158956523927491
+        }
+      },
+      "q_w_W_per_m2": {
+        "full": {
+          "rmse": -248.09065244547298,
+          "mae": -250.86086246301804
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": -243.61225307207317,
+          "mae": -248.8105542655488
+        }
+      }
+    },
+    "baffleLeft": {
+      "tau_w_Pa": {
+        "full": {
+          "rmse": -0.0011046801237638286,
+          "mae": -0.0014569655552035031
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": -0.0013675714961139131,
+          "mae": -0.0014683484961042163
+        }
+      },
+      "q_w_W_per_m2": {
+        "full": {
+          "rmse": -13.288252732168985,
+          "mae": -5.169167513348384
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": -8.327013454262826,
+          "mae": 1.0296789330639626
+        }
+      }
+    },
+    "baffleRight": {
+      "tau_w_Pa": {
+        "full": {
+          "rmse": -0.0015875999128966635,
+          "mae": -0.0015673801354643372
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": -0.0017295854732166998,
+          "mae": -0.0017310851081168393
+        }
+      },
+      "q_w_W_per_m2": {
+        "full": {
+          "rmse": 37.13295922907818,
+          "mae": 35.45901586412532
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": 26.909556023200807,
+          "mae": 33.18552603656559
+        }
+      }
+    }
+  },
+  "natural_convection_SST": {
+    "hotWall": {
+      "tau_w_Pa": {
+        "full": {
+          "rmse": 0.00010306750992254438,
+          "mae": 6.054588600998582e-05
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": 0.00011169017160509234,
+          "mae": 6.379790273867113e-05
+        }
+      },
+      "q_w_W_per_m2": {
+        "full": {
+          "rmse": 5.159322585974792,
+          "mae": 1.9508666013707625
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": 7.0912941575683135,
+          "mae": 2.713094616368352
+        }
+      }
+    },
+    "coldWall": {
+      "tau_w_Pa": {
+        "full": {
+          "rmse": 0.00014283789590457193,
+          "mae": 0.00018354986682938982
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": 0.00016951012886350482,
+          "mae": 0.0001997361941667331
+        }
+      },
+      "q_w_W_per_m2": {
+        "full": {
+          "rmse": -6.385506933141414,
+          "mae": -6.351580333529498
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": -7.118562181024771,
+          "mae": -6.87697581065575
+        }
+      }
+    },
+    "baffleLeft": {
+      "tau_w_Pa": {
+        "full": {
+          "rmse": -3.883498990486182e-06,
+          "mae": -6.002123797180367e-06
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": -3.870645477313962e-06,
+          "mae": -6.257285102873782e-06
+        }
+      },
+      "q_w_W_per_m2": {
+        "full": {
+          "rmse": 1.4287953151574015,
+          "mae": 1.4947989300782467
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": 1.4785644989758566,
+          "mae": 1.5536579795302146
+        }
+      }
+    },
+    "baffleRight": {
+      "tau_w_Pa": {
+        "full": {
+          "rmse": -2.628666971732016e-05,
+          "mae": -4.682343392944065e-06
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": -2.676467861659551e-05,
+          "mae": -1.8944175231973368e-06
+        }
+      },
+      "q_w_W_per_m2": {
+        "full": {
+          "rmse": 1.3696743079139253,
+          "mae": 1.3078617570202482
+        },
+        "trimmed_5pct_each_end": {
+          "rmse": 1.5898329072614672,
+          "mae": 1.4906443964810592
+        }
+      }
+    }
+  },
+  "step_integral_change": {
+    "law_to_four": [
+      -0.7390000000000001,
+      -0.37800000000000006
+    ],
+    "four_to_five": [
+      -0.0010000000000000009,
+      0.059
+    ]
+  },
+  "fine_DSM_bump": {
+    "common_velocity": {
+      "n": 120,
+      "baseline_mae": 0.00969028083333333,
+      "alternative_mae": 0.016252778333333332,
+      "change": 0.006562497500000002
+    },
+    "outer_velocity": {
+      "n": 82,
+      "baseline_mae": 0.010523381707317071,
+      "alternative_mae": 0.006517524390243899,
+      "change": -0.004005857317073172
+    },
+    "recovery_pressure": {
+      "n": 10,
+      "baseline_mae": 0.2031,
+      "alternative_mae": 0.23688,
+      "change": 0.033780000000000004
+    },
+    "pressure_stations_worsening": 10,
+    "crest_friction_error_change_1000Cf": -2.12927757
+  },
+  "building_block_bump_all_measured_stations": {
+    "1000Cf": {
+      "n": 17,
+      "baseline_mae": 0.786276117647059,
+      "alternative_mae": 0.4613159411764706,
+      "change": -0.32496017647058834
+    },
+    "minus_Cp": {
+      "n": 33,
+      "baseline_mae": 0.09114651515151516,
+      "alternative_mae": 0.03847320606060606,
+      "change": -0.0526733090909091
+    }
+  },
+  "periodic_hill_tables": {
+    "rule": "Among all retrieved works, find original tabulations of both time-mean bottom-wall separation and reattachment at ReH=10595 for the standard periodic hill (unit shape parameter). Require two internally compared runs on the same nominal mesh at fixed outer SGS, with a change to the wall treatment or near-wall package and a complete two-crossing reference identified in that table. Retain a reported missing bubble as an event without inventing a crossing. Disaggregate SGS or mesh settings within an eligible work. This is a retrospective, deliberately tabulated subset, not a frequency across flows or all wall tests.",
+    "units": "x/H. Negative change means smaller absolute error using the same reference within each observable.",
+    "works": [
+      "N025",
+      "N497",
+      "N611",
+      "P25",
+      "P31"
+    ],
+    "known_link_groups": [
+      [
+        "N025",
+        "N497",
+        "N611",
+        "P31"
+      ],
+      [
+        "P25"
+      ]
+    ],
+    "design_settings": 9,
+    "outcomes": {
+      "both closer": 5,
+      "opposite": 3,
+      "crossing absent in baseline": 1
+    },
+    "rows": [
+      {
+        "study_id": "N025",
+        "condition": "32×16×16 cells, p4 and the same stretch2",
+        "baseline": "ph10595_stretch2_NWM",
+        "alternative": "ph10595_stretch2",
+        "ranks_by_reference": {
+          "KKW_DNS": {
+            "delta_error_over_H": [
+              -0.06,
+              -0.25
+            ],
+            "nominal_rank": "both closer"
+          }
+        },
+        "category": "both closer"
+      },
+      {
+        "study_id": "N611",
+        "condition": "96×48×48; same forcing and baseline grid",
+        "baseline": "PhFNWM",
+        "alternative": "PhF",
+        "ranks_by_reference": {
+          "Froehlich_resolved_LES_lower": {
+            "delta_error_over_H": [
+              0.05,
+              -0.61
+            ],
+            "nominal_rank": "opposite"
+          },
+          "Froehlich_resolved_LES_upper": {
+            "delta_error_over_H": [
+              0.05,
+              -0.81
+            ],
+            "nominal_rank": "opposite"
+          }
+        },
+        "category": "opposite"
+      },
+      {
+        "study_id": "P25",
+        "condition": "Slope parameter 1.0, same flow, mesh and first-cell specification 0.01",
+        "baseline": "Werner–Wengle",
+        "alternative": "FEL wall stress and first-cell eddy viscosity",
+        "ranks_by_reference": {
+          "own_WRLES": {
+            "delta_error_over_H": [
+              -0.02,
+              0.08
+            ],
+            "nominal_rank": "opposite"
+          }
+        },
+        "category": "opposite"
+      },
+      {
+        "study_id": "P25",
+        "condition": "Slope parameter 1.0, same flow, mesh and first-cell specification 0.03",
+        "baseline": "Werner–Wengle",
+        "alternative": "FEL wall stress and first-cell eddy viscosity",
+        "ranks_by_reference": {
+          "own_WRLES": {
+            "delta_error_over_H": [
+              -0.57,
+              -1.96
+            ],
+            "nominal_rank": "both closer"
+          }
+        },
+        "category": "both closer"
+      },
+      {
+        "study_id": "P25",
+        "condition": "Slope parameter 1.0, same flow, mesh and first-cell specification 0.06",
+        "baseline": "Werner–Wengle",
+        "alternative": "FEL wall stress and first-cell eddy viscosity",
+        "ranks_by_reference": {
+          "own_WRLES": {
+            "delta_error_over_H": [
+              -0.91,
+              -1.65
+            ],
+            "nominal_rank": "both closer"
+          }
+        },
+        "category": "both closer"
+      },
+      {
+        "study_id": "P25",
+        "condition": "Slope parameter 1.0, same flow, mesh and first-cell specification 0.09",
+        "baseline": "Werner–Wengle",
+        "alternative": "FEL wall stress and first-cell eddy viscosity",
+        "ranks_by_reference": {
+          "own_WRLES": {
+            "nominal_rank": "crossing absent in baseline"
+          }
+        },
+        "category": "crossing absent in baseline"
+      },
+      {
+        "study_id": "P31",
+        "condition": "128×64×64 baseline grid; fixed DSM",
+        "baseline": "EQWM-DSM",
+        "alternative": "RLWM-DSM",
+        "ranks_by_reference": {
+          "KKW_DNS_as_printed": {
+            "delta_error_over_H": [
+              -0.28,
+              -1.4
+            ],
+            "nominal_rank": "both closer"
+          },
+          "WRLES_as_printed": {
+            "delta_error_over_H": [
+              -0.28,
+              -1.0
+            ],
+            "nominal_rank": "both closer"
+          }
+        },
+        "category": "both closer"
+      },
+      {
+        "study_id": "P31",
+        "condition": "128×64×64 baseline grid; fixed VRE",
+        "baseline": "EQWM-VRE",
+        "alternative": "RLWM-VRE",
+        "ranks_by_reference": {
+          "KKW_DNS_as_printed": {
+            "delta_error_over_H": [
+              -0.19,
+              -0.68
+            ],
+            "nominal_rank": "both closer"
+          },
+          "WRLES_as_printed": {
+            "delta_error_over_H": [
+              -0.19,
+              -0.68
+            ],
+            "nominal_rank": "both closer"
+          }
+        },
+        "category": "both closer"
+      },
+      {
+        "study_id": "N497",
+        "condition": "p4, hwm/h=.1, identical DOF and nominal mesh",
+        "baseline": "Rcht-A-512-p4",
+        "alternative": "DD-A-512-p4",
+        "ranks_by_reference": {
+          "Expe_Table5": {
+            "delta_error_over_H": [
+              0.035,
+              -0.283
+            ],
+            "nominal_rank": "opposite"
+          }
+        },
+        "category": "opposite"
+      }
+    ],
+    "precision": "These are ranks of printed point estimates. Different significant figures, benchmark choices and unequal averaging windows affect their interpretation; a source reporting 0.2 does not warrant treating this as an exact separation coordinate."
+  }
+}

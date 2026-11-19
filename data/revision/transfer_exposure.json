@@ -1,0 +1,90 @@
+{
+  "estimand": "Sensitivity to requiring independence of fitting and method selection in the listed extrapolations. Each positive entry applies only to the fixed, pre-specified mapping and target stated. The possible additions are an identified sensitivity set. Other inherited or unreported calibration histories remain uncertified, so the upper number is not an archive-wide bound.",
+  "records": [
+    {
+      "design_id": "P22-D02",
+      "status": "qualified",
+      "basis": "Fixed pre-specified estimators: training and model-size selection use Re 5600/10595; test Re 19000. Choosing the preferred output head on 19000 is target-exposed."
+    },
+    {
+      "design_id": "N623-D03",
+      "status": "qualified",
+      "basis": "Supplied frozen BK22 weights; analytic log-law target at Reτ=10^10 beyond the original test range. This does not assess a resolved high-Re flow."
+    },
+    {
+      "design_id": "N626-channel-2000",
+      "status": "qualified",
+      "basis": "Table 3 labels 2000 as coupled test only. Network depth selection in Appendix A used other named cases."
+    },
+    {
+      "design_id": "N011-D02",
+      "status": "partly exposed",
+      "basis": "Experimental Re≈1000 appears in a three-architecture comparison. Weights saw DNS only. Architecture-selection exposure at experimental Re≈600/2000 is unknown."
+    },
+    {
+      "design_id": "P31-hill-transfer",
+      "status": "selection unresolved",
+      "basis": "Hill Re changed from training at 10595 to 19000/37000. A target-independent choice between policy/SGS packages is unverified."
+    },
+    {
+      "design_id": "P31-bump",
+      "status": "selection unresolved",
+      "basis": "Bump withheld from hill training. Fig. 10 includes external runs under different conditions; no independent geometry-selection protocol documented."
+    },
+    {
+      "design_id": "P31-channel",
+      "status": "selection unresolved",
+      "basis": "Policy trained on hills, active channel tests. Internal baseline pairings also change SGS."
+    },
+    {
+      "design_id": "P24-extrapolation",
+      "status": "selection unresolved",
+      "basis": "Assess the frozen wall network at higher Re. Independent selection of network and test reporting is undocumented."
+    },
+    {
+      "design_id": "P26-ZPG",
+      "status": "selection unresolved",
+      "basis": "Only channel training reported for LLWM. Boundary-layer growth is supplied at the upper boundary; the model-selection role of the new geometry is unreported."
+    },
+    {
+      "design_id": "P25-D02",
+      "status": "selection unresolved",
+      "basis": "Different wavy and bump geometries from hill fitting. The held-out status of the final method choice is uncertain."
+    },
+    {
+      "design_id": "N497-D04",
+      "status": "selection unresolved",
+      "basis": "Table 1 lists 2000 as coupled channel test, but the model/mixture family and target-selection history are not fully separated."
+    },
+    {
+      "design_id": "P21-D05",
+      "status": "partly exposed",
+      "basis": "Full was not fitted or validated on the LS89 target. Comparison of Full and ACSC uses that target."
+    },
+    {
+      "design_id": "P19-CRM",
+      "status": "selection unresolved",
+      "basis": "Transport of building-block wall model to an aircraft. Component training and target use in final selection are distinct."
+    },
+    {
+      "design_id": "P23-CRM",
+      "status": "selection unresolved",
+      "basis": "Combined learned wall and SGS package in high lift. Common data or architectural decisions across the building-block lineage may enter."
+    },
+    {
+      "design_id": "N582-D03",
+      "status": "selection unresolved",
+      "basis": "Four coefficients fitted on channel data; experimental pipe and plate evaluate a frozen analytic form. Outcome-independent choice of form is unreported."
+    },
+    {
+      "design_id": "P06-D02",
+      "status": "selection unresolved",
+      "basis": "HRFD coefficient chosen on channel; same coefficient used for plate. Complete selection history for the overall reconstruction is unreported."
+    },
+    {
+      "design_id": "N626-apriori",
+      "status": "partly exposed",
+      "basis": "BFS, APG and cascade were withheld from weight fitting but Appendix A uses them to justify the hyperparameter N."
+    }
+  ]
+}

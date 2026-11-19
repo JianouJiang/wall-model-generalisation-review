@@ -221,6 +221,18 @@
           ]
         }
       ]
+    },
+    "reading_precision": {
+      "location": "Re_x=10^6, Fig. 9d DSM/EQWM",
+      "source_stroke_only_percent": [
+        18.79,
+        19.78
+      ],
+      "including_half_marker_spacing_percent": [
+        18.43,
+        20.88
+      ],
+      "interpretation": "Graphical reading variation. Reference, discretisation and sampling uncertainty are separate."
     }
   }
 }

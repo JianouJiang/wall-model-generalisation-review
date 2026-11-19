@@ -1,0 +1,106 @@
+{
+  "study_id": "N497",
+  "doi": "10.1007/s10494-025-00641-y",
+  "edition": "Version of record, Flow, Turbulence and Combustion 115, 1157–1180 (2025). The PDF header labels this a Review, but §3.2.2 and Tables 4–5 contain original matched simulations.",
+  "source_url": "https://link.springer.com/content/pdf/10.1007/s10494-025-00641-y.pdf",
+  "sha256": "b1f71edd8daa04f8cffa4fb05f844116896654b9b5b7bfcaf00ab42760587221",
+  "source_location": "§3.2.2, Table 4 p. 1173 (actual run membership), Table 5 p. 1174 (outcomes), and Fig. 6 p. 1174 (distinct reference); archived author copy Tables 4–5 pp. 17–18 checked against final values.",
+  "reference": "Table 5 labels Expe., with (xsep/h,xreatt/h)=(0.19,4.21). Figure 6 instead labels black reference wrLES generated in Argo-DG and used in training. Use the table-labelled experiment for the numerical analysis.",
+  "physical_condition": "Periodic hills at Re_b=10595, M=.1, pressure gradient maintains bulk Re, common restart from a coarse wall-resolved LES and same nondimensional time step .005. All three comparison runs at p4, 28,788,750 degrees of freedom. The paper trained on this very flow; these are coupled training-condition comparisons, not a held-out geometry or Reynolds number.",
+  "criterion": "For each crossing use absolute |x_model/h−x_Expe/h|. Change is second run minus first run. A negative number means a closer nominal location. Report the separation and reattachment outputs separately.",
+  "observable_order": [
+    "separation",
+    "reattachment"
+  ],
+  "experimental_locations_over_h": [
+    0.19,
+    4.21
+  ],
+  "runs": {
+    "Rcht-A-512-p4": {
+      "model": "Analytical wall-stress model using Reichardt profile",
+      "alignment": true,
+      "hwm_over_h": 0.1,
+      "accumulation_flow_throughs": 15,
+      "reported_locations_over_h": [
+        0.538,
+        3.652
+      ],
+      "absolute_errors_over_h": [
+        0.348,
+        0.558
+      ]
+    },
+    "DD-A-512-p4": {
+      "model": "CNN-skip-GMH. Sample the two stress components, compute magnitude, then impose alignment with the sampled velocity",
+      "alignment": true,
+      "hwm_over_h": 0.1,
+      "accumulation_flow_throughs": 19,
+      "reported_locations_over_h": [
+        0.573,
+        3.935
+      ],
+      "absolute_errors_over_h": [
+        0.383,
+        0.275
+      ]
+    },
+    "DD-NA-512-p4": {
+      "model": "CNN-skip-GMH, samples component distributions",
+      "alignment": false,
+      "hwm_over_h": 0.08,
+      "accumulation_flow_throughs": 25,
+      "reported_locations_over_h": [
+        0.216,
+        3.589
+      ],
+      "absolute_errors_over_h": [
+        0.026,
+        0.621
+      ]
+    }
+  },
+  "comparisons": [
+    {
+      "baseline": "Rcht-A-512-p4",
+      "comparison": "DD-A-512-p4",
+      "delta_absolute_errors_over_h": [
+        0.035,
+        -0.283
+      ],
+      "directions": [
+        "worsens",
+        "improves"
+      ],
+      "controls": "Both align, hwm/h=.1 and p4 with same nominal DOF. WSS model changes analytical→learned stochastic magnitude. Accumulation increases ~15→~19 flow-throughs."
+    },
+    {
+      "baseline": "DD-A-512-p4",
+      "comparison": "DD-NA-512-p4",
+      "delta_absolute_errors_over_h": [
+        -0.357,
+        0.346
+      ],
+      "directions": [
+        "improves",
+        "worsens"
+      ],
+      "controls": "Same trained component model, p4 and nominal DOF. Remove alignment, move hwm/h from .1 to .08, adjust first cell size with the new height, and extend accumulation from ~19 to ~25 flow-throughs."
+    },
+    {
+      "baseline": "Rcht-A-512-p4",
+      "comparison": "DD-NA-512-p4",
+      "delta_absolute_errors_over_h": [
+        -0.322,
+        0.063
+      ],
+      "directions": [
+        "improves",
+        "worsens"
+      ],
+      "controls": "Model, alignment, sampling height/first-cell size, and accumulation (~15→~25 flow-throughs) all change; p4 and nominal DOF shared."
+    }
+  ],
+  "excluded_row": "DD-NA-512-p3 is p3, hwm/h=.1 with 25,473,600 DOF and ~36 flow-throughs; different mesh/degree from p4 although both learned runs use a CNN. Table 5 (.217,3.690) is not used to claim a clean p4 effect.",
+  "uncertainty": "Table 5 prints simulated crossings to .001h and the experimental values to .01h. Sampling periods are unequal and only approximate, and joint experimental/simulation uncertainty is not given. Ranks are point-estimate comparisons."
+}

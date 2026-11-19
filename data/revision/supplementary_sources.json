@@ -1,0 +1,49 @@
+{
+  "records": [
+    {
+      "claim_id": "S20",
+      "manuscript_location": "Introduction",
+      "reference_key": "Vadrot2023",
+      "source_version": "arXiv:2211.03614v2, linked to Phys. Rev. Fluids 8, 064603",
+      "source_url": "https://doi.org/10.1103/physrevfluids.8.064603",
+      "source_location": "§II.A LESGO half-channel solver, Figs. 5–7 and §V; common solver and pressure gradient for all models.",
+      "claim": "Published survey by Vadrot, Yang and Abkar in PRF. HYK19 recovers log law, ZYZY22 gives a smaller von Kármán constant and BK22 gives opposite-signed log-layer shifts over the Reynolds-number range. Distinct from the four-author Physics of Fluids follow-up studying log-law recovery.",
+      "edition_url": "https://arxiv.org/abs/2211.03614v2",
+      "archive_membership": "N623"
+    },
+    {
+      "claim_id": "S34",
+      "manuscript_location": "Calibration, validation and transfer",
+      "reference_key": "Cato2026",
+      "source_version": "Author-uploaded typeset journal edition, IJHFF 117, 110157",
+      "source_url": "https://doi.org/10.1016/j.ijheatfluidflow.2025.110157",
+      "source_location": "§5.1 Eqs. for J1/J2 and 12 positions, §5.3 averaging, §6.1 model selection, §6.3 Figs. 4–6 and separation table, Figs. 7,9–10 and text pp. 12–13.",
+      "claim": "GEP1 selected on hill friction and GEP2 on twelve velocity profiles, including Fig. 5 stations x/h 2,3,6. Training averages cover 10 vs 20 flow-throughs. Curved step at Re=13,700 is a further case. GEP1 approximates stress inside the bubble and overpredicts outside on either side. The resulting expressions differ, including elimination of pressure gradient in GEP2.",
+      "edition_url": "https://www.researchgate.net/publication/398211326",
+      "archive_membership": "Supplementary literature outside the 115-work frame"
+    },
+    {
+      "claim_id": "S35",
+      "manuscript_location": "Calibration, validation and transfer",
+      "reference_key": "Zhang2026",
+      "source_version": "Full author-posted manuscript accompanying the journal article",
+      "source_url": "https://doi.org/10.1016/j.jcp.2026.114835",
+      "source_location": "§4 hill training, Table 5 and §4.5.1 Fig. 14 (bump, Gray experiment), §4.5.3 Figs. 16–17 (ramp, Uzun–Malik DNS).",
+      "claim": "Hill-trained ODE_NN3 is run on different geometry with unchanged weights. Bump uses experimental profiles. Smooth-ramp simulation uses benchmark DNS in its inflow and as velocity reference. Separated profiles discriminate the three models.",
+      "edition_url": "https://www.researchgate.net/publication/401770965",
+      "archive_membership": "Supplementary literature outside the 115-work frame"
+    },
+    {
+      "claim_id": "S36",
+      "manuscript_location": "Sampling, feedback and the outer flow",
+      "reference_key": "Garmann2024",
+      "source_version": "KAUST accepted manuscript of AIAA Paper 2024-3697; published abstract also describes the comparison",
+      "source_url": "https://doi.org/10.2514/6.2024-3697",
+      "edition_url": "https://hdl.handle.net/10754/700363",
+      "source_location": "Accepted manuscript, §IV.A pp. 7–9, Figs. 4–5; §III and Table 1 give group solvers, grids and different wall conditions.",
+      "claim": "Four groups; three near DNS for finest grid, two apparently converging, non-monotonic sequences. Lower equivalent grid number is finer. Fig. 5 uses x/L=-0.62 for common upstream target.",
+      "archive_membership": "Supplementary literature outside the 115-work frame"
+    }
+  ],
+  "scope": "Same-solver implementation, reference-informed inlet, calibrated measurement locations and shared grid benchmark are separate evidence designs."
+}

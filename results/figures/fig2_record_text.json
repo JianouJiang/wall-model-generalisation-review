@@ -64,7 +64,7 @@
    "math": false
   },
   {
-   "text": "Mukha & Schlatter (2024)*",
+   "text": "Mukha et al. (2025)",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -204,7 +204,7 @@
    "math": false
   },
   {
-   "text": "+",
+   "text": "∼0",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -384,7 +384,7 @@
    "math": false
   },
   {
-   "text": "Prescribed mean stress, baseline mesh",
+   "text": "First-cell mean velocity",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -394,7 +394,7 @@
    "math": false
   },
   {
-   "text": "Zhou & Bae (2024)*",
+   "text": "Zhou & Bae (2024)",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,

@@ -1,0 +1,454 @@
+{
+  "rule": "Among all retrieved works, find original tabulations of both time-mean bottom-wall separation and reattachment at ReH=10595 for the standard periodic hill (unit shape parameter). Require two internally compared runs on the same nominal mesh at fixed outer SGS, with a change to the wall treatment or near-wall package and a complete two-crossing reference identified in that table. Retain a reported missing bubble as an event without inventing a crossing. Disaggregate SGS or mesh settings within an eligible work. This is a retrospective, deliberately tabulated subset, not a frequency across flows or all wall tests.",
+  "search": "Search the primary full texts for periodic hill, periodically arranged hills or flows over hills; check geometry and table headings in the identified papers and the design inventory. Preprints and published editions are distinguished. A table-only decision excludes otherwise valid digitized skin-friction studies. A second text search using hill and Reynolds-number variants found 29 candidates; their dispositions and additional full-text readings are recorded here.",
+  "screened_ids": [
+    "N008",
+    "N011",
+    "N019",
+    "N025",
+    "N037",
+    "N054",
+    "N076",
+    "N080",
+    "N085",
+    "N144",
+    "N147",
+    "N164",
+    "N166",
+    "N174",
+    "N181",
+    "N188",
+    "N189",
+    "N195",
+    "N218",
+    "N239",
+    "N240",
+    "N251",
+    "N253",
+    "N262",
+    "N273",
+    "N280",
+    "N291",
+    "N297",
+    "N300",
+    "N318",
+    "N327",
+    "N332",
+    "N339",
+    "N357",
+    "N358",
+    "N364",
+    "N372",
+    "N391",
+    "N392",
+    "N395",
+    "N400",
+    "N418",
+    "N419",
+    "N434",
+    "N437",
+    "N444",
+    "N445",
+    "N446",
+    "N456",
+    "N457",
+    "N459",
+    "N464",
+    "N476",
+    "N497",
+    "N498",
+    "N500",
+    "N502",
+    "N530",
+    "N540",
+    "N551",
+    "N556",
+    "N582",
+    "N592",
+    "N596",
+    "N611",
+    "N623",
+    "N626",
+    "N632",
+    "N635",
+    "N647",
+    "N653",
+    "N655",
+    "N657",
+    "N672",
+    "N674",
+    "N680",
+    "N707",
+    "N709",
+    "N719",
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09",
+    "P10",
+    "P11",
+    "P12",
+    "P13",
+    "P14",
+    "P15",
+    "P16",
+    "P17",
+    "P18",
+    "P19",
+    "P20",
+    "P21",
+    "P22",
+    "P23",
+    "P24",
+    "P25",
+    "P26",
+    "P27",
+    "P28",
+    "P29",
+    "P30",
+    "P31",
+    "P32",
+    "P33",
+    "P34",
+    "P35",
+    "P36"
+  ],
+  "geometric_candidates": [
+    "N025",
+    "N037",
+    "N239",
+    "N332",
+    "N358",
+    "N445",
+    "N457",
+    "N497",
+    "N502",
+    "N540",
+    "N611",
+    "N623",
+    "N626",
+    "N674",
+    "P11",
+    "P14",
+    "P16",
+    "P19",
+    "P20",
+    "P22",
+    "P23",
+    "P25",
+    "P31",
+    "P36"
+  ],
+  "other_geometric_candidates": {
+    "N457": "Table II lists reattachment only. RANS series, same family as N025/N611.",
+    "N502": "Table 2 gives both crossings on coarse/fine enriched meshes. At 10595 no internal wall switch on either grid. Grid refinement moves (.25,4.51) to (.16,4.40) vs (.19,4.51).",
+    "N540": "Tables 1–3 and A.4 specify grids/models; Figs. 13–18 give quantities graphically. No two tabulated crossing positions for each pair.",
+    "P14": "Tables I and II are mesh/filter tables. Mean filtered boundary velocity is not a pair of tabulated crossing positions.",
+    "P11": "Filtered-velocity wall condition; §periodic hill plots velocity, with no two-location tabulation for both runs.",
+    "P16": "Tables document grid and setup; slip treatments compared through hill profiles and skin-friction plots.",
+    "P22": "Tables I–III document DNS/training; primary hill predictor operates on prescribed input.",
+    "N037": "Compares generated turbulence models on channel-type and forced flows; periodic-hill context does not provide a two-crossing test.",
+    "N239": "FEL-IBM implementation on Suboff and body of revolution. Periodic hills appear in previous development.",
+    "N358": "The measured separated applications are diffuser/jet; hill among cited prior examples.",
+    "N626": "Channel, backward-facing step and blade in coupled tests. No two-crossing periodic-hill table.",
+    "P36": "Airfoil LES and citations of periodic-hill computations.",
+    "N332": "Estimation of wall-shear and pressure from DNS, without coupling on a periodic hill.",
+    "N445": "Unsteady diffuser following a rectangular duct.",
+    "N623": "Actual common-solver comparison is a half channel.",
+    "N674": "Hybrid RANS/LES diffuser, hump, flat plate and channel; periodic-hill references give context.",
+    "P19": "Building-block test suite has channels, developing layers, pipes, transient, CRM and Juncture. No eligible hill crossing table.",
+    "P20": "Actual LESGO study targets channel log-layer recovery.",
+    "P23": "Reported external flows include Gaussian bump and two aircraft, with canonical pipe/channel. No eligible periodic-hill crossing pair."
+  },
+  "noncanonical_and_graphical_sensitivity": "Allowing changed mesh admits N502 (linked to the DG family), and N025 has a separate grid-stretching comparison. Requiring identical averaging windows can remove N497; retaining only single-variable active-wall changes would remove the joint FEL and RL implementations. See each row for the decision.",
+  "matched": [
+    {
+      "study_id": "N025",
+      "edition": "Typeset International Journal for Numerical Methods in Fluids 90 (2019), pp. 81–113, retrieved from the TUM author repository.",
+      "archive_edition": "arXiv:1705.08813v2",
+      "doi": "10.1002/fld.4712",
+      "source_location": "Table 2",
+      "baseline": "ph10595_stretch2_NWM",
+      "alternative": "ph10595_stretch2",
+      "baseline_x_over_H": [
+        0.29,
+        3.99
+      ],
+      "alternative_x_over_H": [
+        0.23,
+        4.24
+      ],
+      "reference_x_over_H": {
+        "KKW_DNS": [
+          0.19,
+          4.51
+        ]
+      },
+      "condition": "32×16×16 cells, p4 and the same stretch2",
+      "exposure": "Inherited DG treatment; same group as the numerical benchmark.",
+      "design": "fixed grid",
+      "interpretation_limit": "Adding enrichment changes approximation space. Published KKW reattachment 4.51 ±0.06, giving a paired gain of 0.25H throughout the stated band; the archive table omits the uncertainty. Other stretching cases change the grid."
+    },
+    {
+      "study_id": "N611",
+      "edition": "Krank & Wall, arXiv:1505.05786v1 (2015), pp. 12–22. Journal of Computational Physics 316 (2016), DOI 10.1016/j.jcp.2016.04.001.",
+      "archive_edition": "arXiv:1505.05786v1",
+      "doi": "10.1016/j.jcp.2016.04.001",
+      "source_location": "Table 2",
+      "baseline": "PhFNWM",
+      "alternative": "PhF",
+      "baseline_x_over_H": [
+        0.2,
+        3.68
+      ],
+      "alternative_x_over_H": [
+        0.25,
+        4.91
+      ],
+      "reference_x_over_H": {
+        "Froehlich_resolved_LES_lower": [
+          0.2,
+          4.6
+        ],
+        "Froehlich_resolved_LES_upper": [
+          0.2,
+          4.7
+        ]
+      },
+      "condition": "96×48×48; same forcing and baseline grid",
+      "exposure": "Method development case; earlier DG enrichment lineage.",
+      "design": "fixed grid",
+      "interpretation_limit": "Table prints the reference and baseline separation as 0.2. The experimental reattachment-only reference 4.21 makes the reattachment error grow from 0.53 to 0.70. Its separation is unreported in this table."
+    },
+    {
+      "study_id": "P25",
+      "edition": "Cambridge version of record, JFM 1002 A3 (2025); archive figures retain their own coordinates.",
+      "archive_edition": "arXiv:2409.00984v1",
+      "doi": "10.1017/jfm.2024.1127",
+      "source_location": "Tables 1–2, H1.0-WM-0.01",
+      "baseline": "Werner–Wengle",
+      "alternative": "FEL wall stress and first-cell eddy viscosity",
+      "baseline_x_over_H": [
+        0.31,
+        4.26
+      ],
+      "alternative_x_over_H": [
+        0.29,
+        4.18
+      ],
+      "reference_x_over_H": {
+        "own_WRLES": [
+          0.22,
+          4.35
+        ]
+      },
+      "condition": "Slope parameter 1.0, same flow, mesh and first-cell specification 0.01",
+      "exposure": "Other slope cases used in development at this Reynolds number.",
+      "design": "fixed grid",
+      "interpretation_limit": "The joint treatment changes near-wall eddy viscosity as well as wall stress. A dash on the coarse WW run means the bubble is missed; numeric crossing discrepancy is undefined."
+    },
+    {
+      "study_id": "P25",
+      "edition": "Cambridge version of record, JFM 1002 A3 (2025); archive figures retain their own coordinates.",
+      "archive_edition": "arXiv:2409.00984v1",
+      "doi": "10.1017/jfm.2024.1127",
+      "source_location": "Tables 1–2, H1.0-WM-0.03",
+      "baseline": "Werner–Wengle",
+      "alternative": "FEL wall stress and first-cell eddy viscosity",
+      "baseline_x_over_H": [
+        0.86,
+        2.35
+      ],
+      "alternative_x_over_H": [
+        0.29,
+        4.31
+      ],
+      "reference_x_over_H": {
+        "own_WRLES": [
+          0.22,
+          4.35
+        ]
+      },
+      "condition": "Slope parameter 1.0, same flow, mesh and first-cell specification 0.03",
+      "exposure": "Other slope cases used in development at this Reynolds number.",
+      "design": "fixed grid",
+      "interpretation_limit": "The joint treatment changes near-wall eddy viscosity as well as wall stress. A dash on the coarse WW run means the bubble is missed; numeric crossing discrepancy is undefined."
+    },
+    {
+      "study_id": "P25",
+      "edition": "Cambridge version of record, JFM 1002 A3 (2025); archive figures retain their own coordinates.",
+      "archive_edition": "arXiv:2409.00984v1",
+      "doi": "10.1017/jfm.2024.1127",
+      "source_location": "Tables 1–2, H1.0-WM-0.06",
+      "baseline": "Werner–Wengle",
+      "alternative": "FEL wall stress and first-cell eddy viscosity",
+      "baseline_x_over_H": [
+        1.27,
+        1.98
+      ],
+      "alternative_x_over_H": [
+        0.36,
+        5.07
+      ],
+      "reference_x_over_H": {
+        "own_WRLES": [
+          0.22,
+          4.35
+        ]
+      },
+      "condition": "Slope parameter 1.0, same flow, mesh and first-cell specification 0.06",
+      "exposure": "Other slope cases used in development at this Reynolds number.",
+      "design": "fixed grid",
+      "interpretation_limit": "The joint treatment changes near-wall eddy viscosity as well as wall stress. A dash on the coarse WW run means the bubble is missed; numeric crossing discrepancy is undefined."
+    },
+    {
+      "study_id": "P25",
+      "edition": "Cambridge version of record, JFM 1002 A3 (2025); archive figures retain their own coordinates.",
+      "archive_edition": "arXiv:2409.00984v1",
+      "doi": "10.1017/jfm.2024.1127",
+      "source_location": "Tables 1–2, H1.0-WM-0.09",
+      "baseline": "Werner–Wengle",
+      "alternative": "FEL wall stress and first-cell eddy viscosity",
+      "baseline_x_over_H": null,
+      "alternative_x_over_H": [
+        0.54,
+        4.15
+      ],
+      "reference_x_over_H": {
+        "own_WRLES": [
+          0.22,
+          4.35
+        ]
+      },
+      "condition": "Slope parameter 1.0, same flow, mesh and first-cell specification 0.09",
+      "exposure": "Other slope cases used in development at this Reynolds number.",
+      "design": "fixed grid",
+      "interpretation_limit": "The joint treatment changes near-wall eddy viscosity as well as wall stress. A dash on the coarse WW run means the bubble is missed; numeric crossing discrepancy is undefined."
+    },
+    {
+      "study_id": "P31",
+      "edition": "Zhou & Bae author preprint arXiv:2305.02540v3 (26 July 2024); linked AIAA Journal article DOI 10.2514/1.J063691.",
+      "archive_edition": "arXiv:2305.02540v3",
+      "doi": "10.2514/1.j063691",
+      "source_location": "arXiv v3 Table 1",
+      "baseline": "EQWM-DSM",
+      "alternative": "RLWM-DSM",
+      "baseline_x_over_H": [
+        0.57,
+        3.05
+      ],
+      "alternative_x_over_H": [
+        0.29,
+        4.57
+      ],
+      "reference_x_over_H": {
+        "KKW_DNS_as_printed": [
+          0.2,
+          4.51
+        ],
+        "WRLES_as_printed": [
+          -0.11,
+          4.31
+        ]
+      },
+      "condition": "128×64×64 baseline grid; fixed DSM",
+      "exposure": "Training hill and training mesh.",
+      "design": "fixed grid",
+      "interpretation_limit": "Stress versus eddy-viscosity implementation and first-cell upper face versus second-centre sample. The two references use different grids."
+    },
+    {
+      "study_id": "P31",
+      "edition": "Zhou & Bae author preprint arXiv:2305.02540v3 (26 July 2024); linked AIAA Journal article DOI 10.2514/1.J063691.",
+      "archive_edition": "arXiv:2305.02540v3",
+      "doi": "10.2514/1.j063691",
+      "source_location": "arXiv v3 Table 1",
+      "baseline": "EQWM-VRE",
+      "alternative": "RLWM-VRE",
+      "baseline_x_over_H": [
+        0.58,
+        3.28
+      ],
+      "alternative_x_over_H": [
+        0.39,
+        3.96
+      ],
+      "reference_x_over_H": {
+        "KKW_DNS_as_printed": [
+          0.2,
+          4.51
+        ],
+        "WRLES_as_printed": [
+          -0.11,
+          4.31
+        ]
+      },
+      "condition": "128×64×64 baseline grid; fixed VRE",
+      "exposure": "Training hill and training mesh.",
+      "design": "fixed grid",
+      "interpretation_limit": "Stress versus eddy-viscosity implementation and first-cell upper face versus second-centre sample. The two references use different grids."
+    },
+    {
+      "study_id": "N497",
+      "edition": "Version of record, Flow, Turbulence and Combustion 115, 1157–1180 (2025). The PDF header labels this a Review, but §3.2.2 and Tables 4–5 contain original matched simulations.",
+      "archive_edition": "Journal layout and article identity verified in the retrieved full text, Flow Turbulence and Combustion (2025).",
+      "doi": "10.1007/s10494-025-00641-y",
+      "source_location": "Published Tables 4 and 5 pp. 1173–74",
+      "baseline": "Rcht-A-512-p4",
+      "alternative": "DD-A-512-p4",
+      "baseline_x_over_H": [
+        0.538,
+        3.652
+      ],
+      "alternative_x_over_H": [
+        0.573,
+        3.935
+      ],
+      "reference_x_over_H": {
+        "Expe_Table5": [
+          0.19,
+          4.21
+        ]
+      },
+      "condition": "p4, hwm/h=.1, identical DOF and nominal mesh",
+      "exposure": "Hill data used to construct the model.",
+      "design": "fixed grid",
+      "interpretation_limit": "Reference labelled experimental; 15 vs 19 flow-through times for statistics. Fig. 6 uses a different numerical reference. Two DD-NA comparisons change hwm and the first-cell size."
+    }
+  ],
+  "independent_broader_screen": {
+    "P11": "A formally exact boundary. Published paper §4 p. 8 tests the hill at Re_H=10595. Its table reports boundary-law constants, and its hill results plot velocities rather than a comparison table with both crossings.",
+    "P14": "Primary periodic-hill WMLES with distinct volume-filtered wall conditions and grids. Published Table II p. 15 lists grid/filter properties; results are profiles/curves. No tabular pair of measured crossings for the conditions. A wall-function error can be substantial while unavailable to this estimand.",
+    "P16": "Raje & Duraisamy, JFM 1017 A35. Two grid resolutions around Re_b≈10600 and 37000; standard hill. Hill section with Figs. 11–16 and text p. 24 of the archive mentions reference x/h≈.2 and ≈4.6; Table 1 is the channel simulation setup. No tabulated within-mesh wall-treatment pair with both crossings.",
+    "P19": "Reviewed context: incidental hill mention/other-case output, or Reynolds-number-only match. No located qualifying treatment table.",
+    "P20": "Reviewed context: incidental hill mention/other-case output, or Reynolds-number-only match. No located qualifying treatment table.",
+    "P21": "Reviewed context: incidental hill mention/other-case output, or Reynolds-number-only match. No located qualifying treatment table.",
+    "P22": "Zhideng Zhou, He & Yang. Archival Table I p. 7 gives WRLES cases; Table II p. 13 compares network feature and measurement-height choices. Hill tests include 10595 and reported shear profiles; no table supplies both crossings for a same-grid wall-package swap.",
+    "P23": "Reviewed context: incidental hill mention/other-case output, or Reynolds-number-only match. No located qualifying treatment table.",
+    "P25": "table with both crossings; see study record",
+    "P31": "table with both crossings; see study record",
+    "P36": "Hill at Re=10595 occurs as a literature analogy in discussion of reversed flow (p. 22). Actual simulations and tables are airfoil cases.",
+    "N025": "table with both crossings; see study record",
+    "N037": "Reviewed context: incidental hill mention/other-case output, or Reynolds-number-only match. No located qualifying treatment table.",
+    "N195": "Table 4 p. 27 gives mean reattachment using two definitions for backward-facing-step flow. Periodic hills occur in context/references.",
+    "N239": "Periodic-hill supervised training is mentioned; the comparison tables show profile errors on held-out other geometries, not the pair of hill crossings.",
+    "N332": "Reviewed context: incidental hill mention/other-case output, or Reynolds-number-only match. No located qualifying treatment table.",
+    "N358": "Reviewed context: incidental hill mention/other-case output, or Reynolds-number-only match. No located qualifying treatment table.",
+    "N364": "Reviewed context: incidental hill mention/other-case output, or Reynolds-number-only match. No located qualifying treatment table.",
+    "N395": "Reviewed context: incidental hill mention/other-case output, or Reynolds-number-only match. No located qualifying treatment table.",
+    "N445": "Reviewed context: incidental hill mention/other-case output, or Reynolds-number-only match. No located qualifying treatment table.",
+    "N456": "Reviewed context: incidental hill mention/other-case output, or Reynolds-number-only match. No located qualifying treatment table.",
+    "N457": "Primary standard-hill RANS; archived Table II p. 13 prints reattachment only (ph10595 coarse 7.32, fine 7.59, wall-integrated SA 7.7 and LES 4.6–4.7). No separation column, and the reference grids differ.",
+    "N497": "table with both crossings; see study record",
+    "N502": "table with both crossings; see study record",
+    "N540": "Primary hill WMLES, Re_H=10595. Tables 1–3 identify numerical/mesh setups and four wall treatments. Figs. 13–18 report velocity, energy, skin-friction profiles and profile-error summaries. There is no table of both crossings for individual runs. This is a consequential omission of quantitative availability, not an adverse classification.",
+    "N611": "table with both crossings; see study record",
+    "N623": "Survey primary tests carried out on channel data; the 10595 periodic-hill treatment occurs in its discussion of prior work. Not an additional hill pair.",
+    "N626": "Reviewed context: incidental hill mention/other-case output, or Reynolds-number-only match. No located qualifying treatment table.",
+    "N674": "Prior periodic-hill simulations motivate the method. Its own applications are other separated configurations, with no qualifying tabulated hill pair."
+  }
+}
