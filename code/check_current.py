@@ -16,6 +16,7 @@ M=ROOT/'manuscript'
 main=(M/'main.tex').read_text()
 parts=[main]+[(M/f).read_text() for f in ('evidence_table.tex','checklist_table.tex','methods_box.tex','decisions_table.tex')]
 alltext='\n'.join(parts)
+PROTOCOL=re.sub(r'\s+',' ',(ROOT/'docs/protocol.md').read_text())
 
 def arguments(text,command):
     """Extract balanced mandatory arguments, including nested LaTeX commands."""
@@ -85,8 +86,9 @@ def check_panel_style(comparisons):
         'fig2_record': [panel['title'] for panel in comparisons['figure_panels']],
         'fig3_contrast': ['Backward-facing step with a graph wall model',
                           'Wall stress in a zero-pressure-gradient boundary layer'],
-        'fig4_outcomes': [f"Order of two wall treatments in {outcomes['pairs']['n']} matched pairs",
-                          f"Where the order changes in {outcomes['contrasts']} contrasts", 'Pilot: matching choices in 13 cases'],
+        'fig4_outcomes': [f"Which treatment is closer, by what differs ({outcomes['pairs']['n']} pairs)",
+                          f"The {outcomes['contrasts']} controlled comparisons", 'Same first choice in two applications'],
+        'box1_flow': ['Search, screening and eligibility', 'Quoted counts and agreement of a second extraction'],
     }
     reference_offset = None
     for name, headings in titles.items():
@@ -241,14 +243,14 @@ def check_directions_and_agreement(main, box, paired):
         taps = [{k: float(v) for k, v in r.items()} for r in csv.DictReader(stream) if float(r['x_over_L']) > .2]
     gaps = [abs(r['Cp_RLWM']-r['Cp_experiment'])-abs(r['Cp_EQWM']-r['Cp_experiment']) for r in taps]
     assert len(gaps) == 10 and [round(min(gaps), 2), round(max(gaps), 2)] == [0.02, 0.05]
-    assert 'on average by 0.20 and 0.24 in C_p' in plain and 'farther at each, by 0.02 to 0.05' in plain
+    assert 'miss the ten measured values of C_p, on average by 0.20 and 0.24, and the learned wall is farther at each' in plain
     # Pairings read twice: the second reading received the quantities and locations recorded by the first.
     pairs = json.loads((ROOT/'data/revision/reader_agreement.json').read_text())['pairs']['summary']
     assert pairs['pairs_read_twice'] == 34 and pairs['coarse_agreement_run_pair_or_not']['all'] == [31, 34]
     assert pairs['category_agreement']['other_pairs'] == [12, 24] and pairs['category_agreement']['seeded_different_tests'] == [10, 10]
     # The earlier pairings and their second reading stay in the data. The paper no longer quotes them.
-    assert f"An earlier set of {len(paired)} pairings, selected for heterogeneous results, is not used" in box
-    assert not re.search(r'same-run judgements|finer categories', box)
+    assert f"An earlier set of {len(paired)} pairings, selected for heterogeneous results, is not used" in PROTOCOL
+    assert not re.search(r'same-run judgements|finer categories|pairings', box + plain)
     vocabulary = ['different_tests', 'no_shared_baseline', 'shared_runs_no_treatment_baseline', 'matched_no_common_reference',
                   'matched_no_opposing_rank', 'matched_support_dependent', 'opposing_point_estimates_on_restricted_support',
                   'matched_opposing_same_support']
@@ -284,9 +286,10 @@ def check_table_types(comparisons):
                                       and c['derived']['tier'] == 'none',
         'within one outer closure': lambda c: c['variant_type'] == 'different model' and fixed(c, 'grid', 'outer_closure'),
     }
-    needs = {'Prescribed input': {'prescribed input'}, 'Coupled, wall model changed': {'wall model changed'},
-             'Coupled, grid changed': {'grid changed'}, 'Coupled, outer closure changed': set(),
-             'Complete systems, then coupled, wall condition changed': {'complete systems', 'wall condition changed'}}
+    # Printed labels use the community's terms: a priori for a response to prescribed inputs, a posteriori for a coupled calculation.
+    needs = {'A priori': {'prescribed input'}, 'A posteriori, wall model changed': {'wall model changed'},
+             'A posteriori, grid changed': {'grid changed'}, 'A posteriori, outer closure changed': set(),
+             'Complete systems, then a posteriori, wall condition changed': {'complete systems', 'wall condition changed'}}
     for row in comparisons['rows']:
         label = row['type_of_test']
         assert printed[row['reference_key']] == label, (row['reference_key'], printed[row['reference_key']])
@@ -296,7 +299,7 @@ def check_table_types(comparisons):
             assert contrast['work_counted'] and fits[link['role']](contrast), link
             roles.add(link['role'])
         assert needs[label] <= roles, (row['reference_key'], roles)
-        if label == 'Coupled, outer closure changed':
+        if label == 'A posteriori, outer closure changed':
             assert 'Outer closure' in row['changes'] and row['recorded_contrasts_note']
         if any(contrasts[l['contrast_id']]['derived']['tier'] == 'upper' for l in row['recorded_contrasts']):
             assert row['recorded_contrasts_note']
@@ -431,48 +434,90 @@ def check_memberships(plain, box):
     assert 'at or below 0.3' in regime['rule']['text'], 'the Mach threshold printed in Box 1 is the threshold of the rule'
     main_phrases = (
         f"Of {eligible} eligible reports, {broad['works']} contain two coupled calculations that differ only in the wall treatment or its implementation",
-        f"for a hydrodynamic quantity ({broad['works_without_scope_boundary']} of {narrow} without boundary cases; "
+        f"for a hydrodynamic quantity ({broad['works_without_scope_boundary']} of {narrow} excluding borderline reports; "
         f"{broad['works_in_primary_scope']} of {scope['eligible_works_inside']} within our primary scope)",
-        f"{spell(more, True)} more, {spell(more_restricted.pop())} on either restricted basis, leave one of those controls unreported",
+        f"{spell(more, True)} more leave one of those controls unreported",
         f"{spell(constitutive['works'], True)} reports test an assumption shared by a class of wall laws on reference data alone "
-        f"({constitutive['works_without_scope_boundary']} without boundary cases, {constitutive['works_in_primary_scope']} within the primary scope)",
+        f"({constitutive['works_without_scope_boundary']} excluding borderline reports, {constitutive['works_in_primary_scope']} within the primary scope)",
         f"{whole['total_works']} reports test a fitted treatment at {whole['total_tests']} conditions outside the data reported as used to fit it",
         f"{spell(whole['tests'][q], True)} tests in {spell(whole['works'][q])} reports state that the target was withheld from training and model "
         "selection or apply unchanged coefficients published earlier by other authors",
         f"{spell(most, True)} of the {spell(whole['tests'][q])} come from one study",
         f"and {spell(len(qualified_outside))}, a rough-wall channel, lies outside our primary scope",
         f"{spell(whole['tests'][pe], True)} compare variants of the treatment at the target or select with it, and {whole['tests'][un]} remain unresolved",
-        f"Without boundary cases the counts are {without['total_tests']} conditions in {without['total_works']} reports "
+        f"Excluding borderline reports the counts are {without['total_tests']} conditions in {without['total_works']} reports "
         f"({without['tests'][q]}, {without['tests'][pe]} and {without['tests'][un]}); within the primary scope, "
-        f"{within['total_tests']} in {within['total_works']} ({within['tests'][q]}, {within['tests'][pe]} and {within['tests'][un]})")
+        f"{within['total_tests']} in {within['total_works']} ({within['tests'][q]}, {within['tests'][pe]} and {within['tests'][un]})",
+        # Methods
+        'The primary scope is turbulent flow of a single-phase Newtonian fluid with constant properties and no buoyancy over smooth walls at '
+        'Mach numbers up to 0.3',
+        f"{spell(len(boundary_ids), True)} eligible reports are borderline: {spell(kinds[order[0]])} use near-wall methods on grids that reach the viscous "
+        f"sublayer, {spell(kinds[order[1]])} test stress estimators never presented as wall models and {spell(kinds[order[2]])} had disputed eligibility",
+        'Counts are given for the collection, excluding borderline reports and comparisons on grids that reach the sublayer, and within the primary scope',
+        'A second extraction, made from the rules and the sources alone, covered a random '
+        f"{len(sample['fresh_random_sample'])} of the {len(sample['fresh_sample_frame'])} reports not used to write the rules and every candidate for the two rarer groups",
+        'A third, with both in view, reconciled each disagreement against the source')
     for phrase in main_phrases:
         assert phrase in plain, phrase
     assert 'outside those that determined it' not in plain, 'the transfer sentence must use the fitting-set definition of the rule'
-    box_phrases = (
-        'All readings were automated', 'covered a random 30 of the 79 reports not used to write the rules',
-        'A third, which saw both, settled each disagreement against the source',
-        f"After settlement {eligible} reports are eligible, {spell(status['contested'])} contested and {spell(status['excluded'])} excluded",
-        f"The first two readings agreed on eligibility for {agree_sample} of the {len(sample['fresh_random_sample'])} sampled reports and "
-        f"{agree_all} of the {len(sample['all_works_read_twice'])} read twice",
-        r"Cohen's $\kappa=0.87$ (lower 95\,\% bound 0.67)", 'Clarifications written after that test, before the third reading',
-        f"{spell(len(boundary_ids), True)} eligible reports are boundary cases: {spell(kinds[order[0]])} use those methods, {spell(kinds[order[1]])} test "
-        f"stress estimators never presented as wall models and {spell(kinds[order[2]])} had disputed eligibility",
-        'A fourth reading, done once, completed the record of first-cell spacing for every coupled design and recorded the flow regime of every counted test',
-        f"It added the {ordinal[kinds[order[1]]]} estimator; {spell(first_cell['not stated'])} reports state no first-cell distance in wall units and "
-        f"{spell(len(wholly_outside))} test only flows outside the primary scope",
-        'Counts are given for the collection, without boundary cases or contrasts on grids that reach the sublayer, and within the primary scope',
-        f"Of the {scope['recorded_tests']} recorded tests, {scope['recorded_tests_with_compressibility_not_stated']} state neither a Mach number nor "
-        "compressibility and count as inside it",
-        r'$\kappa$ was 0.67 and 0.86 (lower bounds 0.44 and 0.61)',
-        f"The readings found {pool['members_first']} and {pool['members_second']} constitutive members; both found the "
-        f"{constitutive['works_without_scope_boundary']} that are not boundary cases",
-        r'did not reproduce ($\kappa=0.15$)', 'We quote neither',
-        'Our primary scope is turbulent flow of a single-phase Newtonian fluid with constant properties and no buoyancy over smooth walls at '
-        'Mach numbers up to 0.3')
+    # Box 1: the flow of records and reports reconciles stage by stage, and each row of its table is the derived value.
+    flow = json.loads((ROOT/'results/revision/flow_counts.json').read_text())
+    shown = json.loads((ROOT/'results/figures/box1_values.json').read_text())
+    ident, scr, ret, eli = flow['identification'], flow['screening'], flow['retrieval'], flow['eligibility']
+    assert ident['records_identified'] - ident['duplicates_removed'] - ident['removed_before_screening_total'] == scr['records_screened']
+    assert scr['records_screened'] - scr['records_excluded'] == scr['reports_sought'] == sum(scr['sought_by_screening_decision'].values())
+    assert scr['reports_sought'] - ret['reports_not_retrieved'] == ret['full_texts_obtained'] and sum(ret['not_retrieved_by_reason'].values()) == ret['reports_not_retrieved']
+    assert ret['full_texts_obtained'] - eli['not_in_english_set_aside'] == eli['reports_assessed'] == population['works']
+    assert eli['reports_assessed'] - eli['excluded'] - eli['contested'] == eligible
+    assert (eli['excluded'], eli['contested']) == (status['excluded'], status['contested'])
+    assert {x['stage']: x['count'] for x in shown['flow']['stages']} == {
+        'Records identified': ident['records_identified'], 'Records screened': scr['records_screened'], 'Reports sought': scr['reports_sought'],
+        'Full texts obtained': ret['full_texts_obtained'], 'Reports assessed': eli['reports_assessed'], 'Eligible reports': eligible}
+    why = ret['not_retrieved_by_reason']
+    assert shown['flow']['leaving'] == [
+        f"{ident['duplicates_removed']} duplicates, {ident['removed_before_screening_total']:,} not journal articles in English",
+        f"{scr['records_excluded']:,} excluded on title and abstract",
+        f"{ret['reports_not_retrieved']} not retrieved: {why['no candidate route']} no open copy, {why['access refused']} refused, {why['unusable retrieval']} unusable",
+        f"{eli['not_in_english_set_aside']} not in English, not assessed", f"{eli['excluded']} excluded, {eli['contested']} contested"]
+    lower = lambda x: f"{x['kappa']:.2f} ({x['kappa_bootstrap_95'][0]:.2f})"
+    n_sample = len(sample['fresh_random_sample'])
+    rows_shown = {x['item']: (x['count'], x['second_extraction'], x['agreement']) for x in shown['table']}
+    assert rows_shown['Report eligible'] == (f"{eligible} of {population['works']} reports", f"random {n_sample} of {len(sample['fresh_sample_frame'])} reports",
+                                             f"{agree_sample} of {n_sample} agree")
+    assert rows_shown['Controlled comparison'] == (f"{broad['works']} of {eligible} reports", f"the same {n_sample} reports", lower(fresh['broad']))
+    assert rows_shown['Assumption tested on reference data'] == (f"{constitutive['works']} reports", f"{pool['n']} candidate reports", lower(pool))
+    assert rows_shown['Test outside the fitting data'] == (f"{whole['total_works']} reports, {whole['total_tests']} tests",
+                                                                    f"{has_row['n']} candidate reports", lower(has_row))
+    box_phrases = ('Stages are named as in the PRISMA 2020 flow diagram',
+                   "is Cohen's kappa between two extractions, with the lower bound of its $95\\,\\%$ bootstrap interval",
+                   'Criteria and rules are in Methods and the protocol')
     for phrase in box_phrases:
         assert phrase in box, phrase
+    # Words of the whole display: title, every label and number of the diagram and table, and the note under them.
+    note = re.sub(r'\\textbf\{([^}]*)\}', r'\1', re.sub(r'~?\\cite\{[^}]*\}', ' [1]', box)).replace('\\,', ' ').replace('$', '')
+    title = 'Box 1 Search, selection and data extraction'
+    assert 'Box 1 \\textbar{} Search, selection and data extraction' in main
+    display_words = (len(title.split()) + len(note.split())
+                     + sum(len(x['text'].split()) for x in json.loads((ROOT/'results/figures/box1_flow_text.json').read_text())['rows']))
+    assert display_words <= 200, ('Box 1 is limited to 200 words including its diagram and table', display_words)
+    # The protocol carries what the display leaves out. Its lines are formatted from the same derived values.
+    protocol_phrases = (
+        f"Eligibility: {agree_sample} of the {n_sample} sampled reports and {agree_all} of the {len(sample['all_works_read_twice'])} extracted twice",
+        f"{more} more reports, {more_restricted.pop()} on either restricted basis, leave one of those controls unreported",
+        'Clarifications written after that test, before the reconciliation, keep such methods in scope and mark them as borderline',
+        f"the two extractions found {pool['members_first']} and {pool['members_second']} reports and both found the "
+        f"{constitutive['works_without_scope_boundary']} that are not borderline",
+        'Two counts failed and are not quoted', f"did not reproduce (κ = {fresh['system_benchmark']['kappa']:.2f})",
+        f"Of the {scope['recorded_tests']} recorded tests, {scope['recorded_tests_outside']} lie outside it and "
+        f"{scope['recorded_tests_with_compressibility_not_stated']} state neither a Mach number nor compressibility and count as inside it",
+        f"{len(wholly_outside)} eligible reports test only flows outside the primary scope",
+        f"It added the {ordinal[kinds[order[1]]]} estimator to the borderline reports. {first_cell['not stated']} eligible reports state no first-cell distance in wall units",
+        f"The eligible reports number {eligible}, {narrow} and {scope['eligible_works_inside']} on the three bases",
+        f"{ret['full_texts_obtained'] + why['access refused'] + why['unusable retrieval']} of the {scr['reports_sought']} reports had a candidate open-access route")
+    for phrase in protocol_phrases:
+        assert phrase in PROTOCOL, phrase
     # Counts that failed the criteria, and the figures they replaced, stay out of the paper.
-    text = plain + box
+    text = plain + box + PROTOCOL
     assert not re.search(r'\b50 of 108\b|\b47 of 97\b|\b45 of 104\b|\b50 contain\b|0\.89--0\.94|reading of 36 reports|for which we quote no counts', text)
     assert not re.search(r'\b(?:three|3) (?:qualified|independent) (?:transfer|test)', text, re.I)
     return dict(eligible_reports=eligible, boundary_cases=kinds,
@@ -484,7 +529,7 @@ def check_memberships(plain, box):
                 transfer_tests=dict(collection=whole['tests'], without_boundary_cases=without['tests'], within_primary_scope=within['tests']),
                 eligibility_agreement=dict(sample=[agree_sample, 30], read_twice=[agree_all, 74]),
                 eligible_reports_wholly_outside_primary_scope=wholly_outside, first_cell_class=first_cell,
-                printed_sentences_checked=len(main_phrases) + len(box_phrases),
+                printed_sentences_checked=len(main_phrases) + len(box_phrases) + len(protocol_phrases), box_1_words=display_words,
                 quotable={k: v['quotable'] for k, v in decisions.items()})
 
 
@@ -515,58 +560,120 @@ def check_level3(main, box, table, plotted):
     vw = e2['class_pairs']['mean_velocity / wall_stress']
     param, learned, sep, stress = themes['parameter'], themes['learned'], by_class['separation'], by_class['wall_stress']
     assert factor['numerical scheme']['contrasts'] == factor['outer closure']['contrasts']
+    # Regroupings made after the categories were known (outcome_structure.py). They must reproduce the derived totals.
+    st = json.loads((ROOT/'results/revision/outcome_structure.json').read_text())
+    ex, beyond = st['exclusive_outcome'], st['beyond_one_profile']
+    bins = {b['resolved_comparisons']: b for b in st['by_resolved_comparisons']}
+    assert sum(ex.values()) == pop['contrasts'] and ex['along one profile only'] + beyond == e1['order changes']
+    assert beyond == ex['between conditions'] + ex['between quantities only'] + ex['between two quantities of one class only']
+    assert ex['along one profile only'] == c['order_changes_only_within_a_profile'] and ex['between conditions'] == where['between conditions']
+    assert (ex['one order'], ex['nothing resolved']) == (e1['one order'], e1['nothing resolved'])
+    assert sum(b['contrasts'] for b in bins.values()) + e1['nothing resolved'] == pop['contrasts']
+    assert all(b['along_one_profile_only'] + b['beyond_one_profile'] == b['order_changes'] and b['order_changes'] + b['one_order'] == b['contrasts'] for b in bins.values())
+    low, top, few = bins['1-2'], bins['more than 10'], st['one_order_with_five_or_fewer_resolved_comparisons']
+    assert few[1] == e1['one order'] and few[0] == bins['1-2']['one_order'] + bins['3-5']['one_order']
+    kinds_of_flow = st['by_kind_of_flow']
+    developed = kinds_of_flow['developed channel, pipe or flat-plate boundary layer']
+    complex_flow = kinds_of_flow['flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation']
+    assert sum(v['contrasts'] for v in kinds_of_flow.values()) == pop['contrasts'] and sum(v['beyond_one_profile'] for v in kinds_of_flow.values()) == beyond
+    by_flow = st['separating_factor_by_kind_of_flow']['developed channel, pipe or flat-plate boundary layer']
+    assert by_flow['grid'] == by_flow['Reynolds number'] and sorted(factor, key=lambda k: -factor[k]['contrasts'])[:2] == ['grid', 'Reynolds number']
+    per_pair, split, crossing = st['resolved_comparisons_per_pair_by_theme'], st['pairs_by_theme_exclusive'], st['crossing_points_and_wall_stress']
+    assert split['learned']['along one profile only'] + split['learned']['beyond one profile'] == learned['by_category']['order changes']
+    retrieval = json.loads((ROOT/'results/revision/flow_counts.json').read_text())
+    once = pop['contrasts'] - stats['contrasts']
+    changed = settlement['contrast_category']['changed_from_first_among_all_settled']
+    editions = pop['works_by_edition_read']
     main_phrases = (
-        f"For each of the {pop['contrasts']} matched contrasts in the {pop['works']} reports",
+        f"For each of the {pop['contrasts']} controlled comparisons in the {pop['works']} reports",
         f"{pop['rows']} rows in all with {pop['heat_rows']} thermal rows kept apart",
         f"a test that {pairs['share_of_cells_unresolved_percent']} \\% of {pairs['cells']:,} individual comparisons fail",
-        f"In {e1['one order']} contrasts one treatment is closer wherever a direction is resolved, and only {spell(c['e1_bounds']['one_order'][0])} of these resolve every row",
+        f"In {e1['one order']} comparisons one treatment is closer wherever a direction is resolved, and only {spell(c['e1_bounds']['one_order'][0])} of these resolve every row",
         f"In {e1['nothing resolved']} nothing is resolved",
         f"In {e1['order changes']} the order changes (Fig.~\\ref{{fig:outcomes}}b), a number that unresolved rows could raise to at most {c['e1_bounds']['order_changes'][1]}",
-        f"In {c['order_changes_only_within_a_profile']} of the {e1['order changes']} the only change lies along a single profile",
+        f"In {ex['along one profile only']} of the {e1['order changes']} the only change lies along a single profile",
+        f"In the other {beyond} it changes beyond one profile",
         f"In {where['between conditions']} the order changes between conditions",
-        f"for the grid in {spell(factor['grid']['contrasts'])} contrasts, the Reynolds number in {spell(factor['Reynolds number']['contrasts'])}, "
-        f"and the convection scheme and the outer closure in {spell(factor['outer closure']['contrasts'])} each",
-        f"In {e2['order_differs_between_quantities']} of the {e2['contrasts_with_two_classes_under_a_shared_condition']} contrasts that resolve two classes of quantity "
+        f"for the grid in {spell(factor['grid']['contrasts'])} comparisons, the Reynolds number in {spell(factor['Reynolds number']['contrasts'])}, "
+        f"and the convection scheme and the outer closure in {spell(factor['outer closure']['contrasts'])} each (factors coded once)",
+        f"In {e2['order_differs_between_quantities']} of the {e2['contrasts_with_two_classes_under_a_shared_condition']} comparisons that resolve two classes of quantity "
         f"under one condition the order differs between them, for mean velocity and wall stress in {vw['differ']} of {vw['compared']}",
         f"A change of order appears in {c['works']['order changes']} of the {c['works']['units']} reports, and in {c['families']['order changes']} of "
         f"{c['families']['units']} groups",
+        # how much a source reports, and the kind of flow
+        f"Of the {low['contrasts']} comparisons that resolve one or two individual comparisons, the order changes in {low['order_changes']}, "
+        f"in {spell(low['beyond_one_profile'])} of them beyond a single profile",
+        f"Of the {top['contrasts']} that resolve more than ten it changes in {top['order_changes']}, in {top['beyond_one_profile']} beyond a profile, "
+        f"and {spell(top['one_order'])} keep one order",
+        f"Of the {few[1]} comparisons with one order, {few[0]} resolve five or fewer",
+        f"{spell(developed['beyond_one_profile'], True)} of the {beyond} occur in developed channels, pipes or flat-plate boundary layers ({developed['contrasts']} comparisons) "
+        f"and {complex_flow['beyond_one_profile']} in flows with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation ({complex_flow['contrasts']})",
+        'by a keyword rule applied once to the recorded case',
+        f"In the developed flows the separating factor is the grid or the Reynolds number in {spell(by_flow['grid'])} comparisons each and the convection scheme in "
+        f"{spell(by_flow['numerical scheme'])}",
+        # by what distinguishes the two treatments
         f"a changed coefficient most often leaves one order, in {param['by_category']['one order']} of {param['pairs']} pairs",
-        f"the alternative is then closer in {param['oriented']['alternative closer']} and the baseline in {param['oriented']['baseline closer']}",
-        f"A trained law changes the order in {learned['by_category']['order changes']} of {learned['pairs']} pairs from {learned['works']} reports",
+        f"Such a pair resolves {per_pair['parameter']['mean_per_pair']:.1f} individual comparisons on average, against {per_pair['learned']['mean_per_pair']:.1f} "
+        "for a pair with a machine-learned model",
+        f"A machine-learned model changes the order in {learned['by_category']['order changes']} of {learned['pairs']} pairs from {learned['works']} reports, "
+        f"in {split['learned']['along one profile only']} of them only along one profile",
         f"the alternative is closer in {sep['alternative closer']} of {sum(sep.values())} pairs and the baseline in none",
         f"For wall stress the split is {stress['alternative closer']} to {stress['baseline closer']}, with {stress['changes']} changing and {stress['unresolved']} unresolved",
+        f"Of the {crossing['of_which_wall_stress_compared']} pairs in which one treatment has the closer crossing and wall stress is also compared, "
+        f"the wall-stress order changes along the wall in {crossing['wall_stress_order_changes']}",
         f"In {pairs['oriented']['alternative_is_the_proposal_of_the_source']} of the {pairs['oriented']['n']} pairs with a designated baseline the alternative is the authors' own proposal",
-        f"In {pop['contrasts']} published comparisons that change only the wall treatment, one treatment lies closer to the reference wherever a direction is resolved in {e1['one order']}",
-        f"In {e1['order changes']} the order changes along a profile, between conditions or between quantities",
-        f"In {e1['order changes']} of the {pop['contrasts']} matched comparisons collected here",
-        f"Without boundary cases the first bar is {nb['e1']['order changes']}, {nb['e1']['one order']} and {nb['e1']['nothing resolved']} of {nb['contrasts']}",
+        # abstract
+        f"In {pop['contrasts']} controlled comparisons from {pop['works']} reports, only the wall treatment changes",
+        f"One treatment lies closer to the reference wherever a direction is resolved in {e1['one order']}",
+        f"In {beyond} the closer treatment changes between conditions, most often with the grid or the Reynolds number, or between quantities",
+        f"In {ex['along one profile only']} more it changes only along one profile",
+        # implications and limits
+        f"changes between conditions or quantities in {beyond} of {pop['contrasts']} controlled comparisons and only along a single profile in {ex['along one profile only']} more",
+        f"one order survives in {spell(top['one_order'])} of the {top['contrasts']} comparisons that resolve most",
+        f"Of the {retrieval['screening']['reports_sought']} reports sought, {retrieval['retrieval']['reports_not_retrieved']} had no accessible copy",
+        f"Of the {pop['contrasts']} comparisons, {once} were extracted once",
+        'Directions are resolved to digitisation or printing precision, without sampling or reference uncertainty',
+        # Figure 4 caption
+        f"Excluding borderline reports the first bar is {nb['e1']['order changes']}, {nb['e1']['one order']} and {nb['e1']['nothing resolved']} of {nb['contrasts']}",
         f"Within the primary scope it is {ps['e1']['order changes']}, {ps['e1']['one order']} and {ps['e1']['nothing resolved']} of {ps['contrasts']}",
-        f"The last bar is counted over the {e2['contrasts_with_two_classes_under_a_shared_condition']} contrasts")
+        f"The black bar is counted over the {e2['contrasts_with_two_classes_under_a_shared_condition']} comparisons",
+        # Methods: the rule for a printed value and for a plotted curve, and the second extraction
+        'A printed value decides a direction only if it holds for every value that rounds to the printed digits and against every reference given',
+        'On a plotted curve one treatment is closer if the two differ by more than the stroke width over more than half of the range and no resolved stretch favours the other',
+        'The order changes along the profile if each treatment is closer over at least one resolved stretch, whatever its length',
+        'Directions are thus resolved to printing or digitisation precision, not to sampling or reference uncertainty',
+        f"Rule, sample and agreement thresholds were fixed before extraction, which used the archived public copy of each report, an arXiv version for "
+        f"{editions['arXiv version']} of the {pop['works']}",
+        f"A second extraction covered a random {len(twice['sample']['works'])} of the {pop['works']} reports",
+        f"A third reconciled the {spell(settlement['settled'])} comparisons on which the two differed and changed the category of {spell(changed)}")
     for phrase in main_phrases:
         assert phrase in plain, phrase
     assert 'baseline closer' not in sep and param['by_category']['one order'] == max(param['by_category'].values())
+    rule_text = re.sub(r'\s+', ' ', data['rule']['text'])
+    assert 'is resolved closer over more than half of the displayed support and the other arm is resolved closer nowhere over a stretch the reader can name' in rule_text
+    assert '`region` if each arm is resolved closer over a nameable stretch' in rule_text
     # A category derived by script is never typed by hand: the per-contrast list reproduces the totals.
     per = out['per_contrast']
     assert Counter(d['category'] for d in per) == Counter({k: v for k, v in e1.items() if v})
     assert all(i in {d['contrast_id'] for d in per if 'between conditions' in d['where']} for i in extra['condition_factors']['contrasts'])
-    changed = settlement['contrast_category']['changed_from_first_among_all_settled']
     rule_gaps = sum(d['cause'] == 'rule does not decide' for d in settlement['records'])
     assert rule_gaps > 0 and settlement['settled'] == settlement['listed'] == len(stats['differing_contrasts']) and not settlement['problems']
-    editions = pop['works_by_edition_read']
     s6 = stats['S6_differing']
+    shown = {x['item']: (x['count'], x['second_extraction'], x['agreement']) for x in json.loads((ROOT/'results/figures/box1_values.json').read_text())['table']}
+    lower = lambda x: f"{x['kappa']:.2f} ({x['kappa_bootstrap_95'][0]:.2f})"
+    assert shown['Closer treatment, per comparison'] == (f"{pop['contrasts']} comparisons", f"{s1['n']} comparisons", lower(s1))
+    assert shown['Closer treatment, per quantity class'] == ('', f"{s2['n']} within those {s1['n']}", lower(s2))
     box_phrases = (
-        f"One automated reading covered all {pop['contrasts']} contrasts in the archived public copy of each report, an arXiv version for "
-        f"{editions['arXiv version']} of the {pop['works']}",
-        f"covered a random {len(twice['sample']['works'])} of the {pop['works']} reports",
-        f"The two gave the same category for {s1['agree']} of {s1['n']} contrasts ($\\kappa={s1['kappa']:.2f}$, lower bound {s1['kappa_bootstrap_95'][0]:.2f})",
-        f"the same direction in {s2['agree']} of {s2['n']} comparisons by pair and class of quantity ($\\kappa={s2['kappa']:.2f}$, lower bound {s2['kappa_bootstrap_95'][0]:.2f})",
-        f"A third reading settled the {spell(settlement['settled'])} contrasts on which they differed and changed the category of {spell(changed)}",
+        f"Outcome of a comparison: same category for {s1['agree']} of {s1['n']}, κ = {s1['kappa']:.2f} (lower bound {s1['kappa_bootstrap_95'][0]:.2f})",
+        f"same direction in {s2['agree']} of {s2['n']}, κ = {s2['kappa']:.2f} (lower bound {s2['kappa_bootstrap_95'][0]:.2f})",
+        f"A third extraction reconciled the {settlement['settled']} comparisons on which the two differed and changed the category of {changed}",
         'The rule does not say whether a drawn zero line marks a separation point, or which stroke counts when the reference is drawn thicker',
-        'The factor separating two conditions was coded once', 'Rule, sample and thresholds were fixed before any source was read',
-        f"A separate reading of the {stats['S6_primary_scope']['n']} contrasts read twice agreed with it on primary scope for all {stats['S6_primary_scope']['agree']} "
-        f"and on first-cell class for {stats['S6_first_cell_class']['agree']}")
+        'Coded once: the factor that separates two conditions with opposite orders',
+        f"a separate extraction agreed on primary scope for all {stats['S6_primary_scope']['agree']} and on first-cell class for {stats['S6_first_cell_class']['agree']}",
+        f"{once} of the {pop['contrasts']} comparisons were extracted once",
+        f"({ex['along one profile only']} only along one profile, {beyond} beyond one profile)")
     for phrase in box_phrases:
-        assert phrase in box, phrase
+        assert phrase in PROTOCOL, phrase
     assert stats['S6_primary_scope']['agree'] == stats['S6_primary_scope']['n'] and not s6['primary_scope']
     # The nine documented withheld-target tests, by relation of the target to the stated fitting set.
     relation = Counter(v['relation'] for v in extra['qualified_transfer_tests']['tests'].values())
@@ -585,18 +692,52 @@ def check_level3(main, box, table, plotted):
     step, lin, lust, bump = w['step'], w['channel']['linear'], w['channel']['LUST'], w['bump']
     fe, fl = bump['friction_equilibrium'], bump['friction_learned']
     pc = lambda x: f"{x:.2f}"
+    gs = bump['grid_series']
+    mesh = gs['meshes']
+    names = ('coarse', 'medium', 'fine')
+    signed = lambda x: f"{'+' if x > 0 else '-'}{round(abs(x))}"
+    pooled = lambda m: f"{mesh[m]['velocity_pooled']['equilibrium']:.3f} and {mesh[m]['velocity_pooled']['learned']:.3f} ({m})"
+    below_eq = [f"{mesh[m]['velocity_below']['equilibrium']:.3f}" for m in names]
+    below_le = [mesh[m]['velocity_below']['learned'] for m in names]
     table_phrases = (
         f"Discrepancies ${step['baseline']['signed_discrepancy']}$ and ${step['model']['signed_discrepancy']}h_s$".replace('$', ''),
         f"The outer error falls in {lust['outer_closer']} of 4 with LUST, to {pc(lust['outer_error_range_with_wall_law'][0])}--{pc(lust['outer_error_range_with_wall_law'][1])} \\%",
         f"rises in {lin['outer_farther']} of 4 with linear differencing, to {pc(lin['outer_error_range_with_wall_law'][0])}--{pc(lin['outer_error_range_with_wall_law'][1])} \\%",
         f"the friction error falls in {lin['friction_closer'] + lust['friction_closer']} of 8 pairs",
         f"+{round(fe['percent'])} and -{round(abs(fl['percent']))} \\%",
-        f"at -{round(abs(fl['percent_interval_at_reading_precision'][0]))} to -{round(abs(fl['percent_interval_at_reading_precision'][1]))} \\% within reading precision",
-        f"Velocity discrepancy {bump['velocity_equilibrium']['mean_absolute_discrepancy']:.3f} and {bump['velocity_learned']['mean_absolute_discrepancy']:.3f}U_\\infty",
-        f"Velocity ranks the equilibrium wall closer by {bump['velocity_margin_full_support']:.3f}U_\\infty",
-        f"Above y/L=0.02 the velocity order reverses, {bump['velocity_equilibrium']['above_0p02']:.3f} against {bump['velocity_learned']['above_0p02']:.3f}",
+        f"Velocity discrepancy {bump['velocity_equilibrium']['mean_absolute_discrepancy']:.3f} and {bump['velocity_learned']['mean_absolute_discrepancy']:.3f}U_\\infty "
+        "for the equilibrium and learned walls",
+        # the grid series of the source at the same station (three meshes, same closure)
+        f"Coarse and medium meshes: friction {signed(mesh['coarse']['friction_equilibrium']['percent'])} and {signed(mesh['coarse']['friction_learned']['percent'])} \\%, "
+        f"{signed(mesh['medium']['friction_equilibrium']['percent'])} and {signed(mesh['medium']['friction_learned']['percent'])} \\%",
+        f"Velocity on the {gs['common_heights']} heights common to the three meshes: {pooled('coarse')}, {pooled('medium')}, {pooled('fine')}",
+        'The equilibrium wall samples the second off-wall cell, which moves with the mesh',
+        f"Below y/L={gs['band_boundary_y_over_L']} its discrepancy falls with refinement from {below_eq[0]} to {below_eq[1]} and {below_eq[2]}",
+        f"The learned wall's stays between {min(below_le):.3f} and {max(below_le):.3f}",
+        # verdict against the tolerance, for each quantity
+        'Equilibrium friction misses the tolerance on every mesh',
+        'Learned friction meets it on the coarse and medium meshes and is open on the fine mesh, '
+        f"at -{round(abs(fl['percent_interval_at_reading_precision'][0]))} to -{round(abs(fl['percent_interval_at_reading_precision'][1]))} \\% within digitisation precision",
+        'The equilibrium velocity discrepancy lies on the tolerance and is undecided. The learned one exceeds it',
+        'The velocity order over all heights is resolved only on the fine mesh',
+        f"on every mesh the equilibrium wall is closer below y/L={gs['band_boundary_y_over_L']} and the learned wall above it, "
+        f"{bump['velocity_equilibrium']['above_0p02']:.3f} against {bump['velocity_learned']['above_0p02']:.3f} on the fine mesh",
+        'Refine at a fixed physical sampling height',
         f"Friction bias within {bump['friction_bias_percent']:.0f} \\% and freestream speed {100 * bump['freestream_uncertainty_in_freestream_units']:.1f} \\%",
         f"The outer error exceeds it in {lin['outer_farther'] - lin.get('outer_inside_tolerance', 0)} of 4 with linear differencing")
+    assert float(below_eq[0]) > float(below_eq[1]) > float(below_eq[2]) and min(below_le) > float(below_eq[0])
+    assert [mesh[m]['friction_equilibrium']['against_tolerance'] for m in names] == ['outside'] * 3
+    assert [mesh[m]['friction_learned']['against_tolerance'] for m in names] == ['inside', 'inside', 'open']
+    assert gs['pooled_order_by_mesh'] == dict(coarse='unresolved', medium='unresolved', fine='equilibrium')
+    assert set(gs['order_below_by_mesh'].values()) == {'equilibrium'} and set(gs['order_above_by_mesh'].values()) == {'learned'}
+    assert set(gs['friction_order_by_mesh'].values()) == {'learned'}
+    tolerance_u = 0.01
+    assert round(bump['velocity_equilibrium']['mean_absolute_discrepancy'], 3) == tolerance_u < round(bump['velocity_learned']['mean_absolute_discrepancy'], 3)
+    assert 'mean velocity within 0.01U_\\infty' in table_plain
+    # The fine-mesh values of the series are the values already printed for the station.
+    assert mesh['fine']['friction_equilibrium']['percent'] == fe['percent'] and mesh['fine']['friction_learned']['percent'] == fl['percent']
+    assert round(mesh['fine']['velocity_above']['equilibrium'], 3) == round(bump['velocity_equilibrium']['above_0p02'], 3)
+    assert round(mesh['fine']['velocity_above']['learned'], 3) == round(bump['velocity_learned']['above_0p02'], 3)
     for phrase in table_phrases:
         assert phrase in table_plain, phrase
     assert step['model']['against_tolerance'] == 'outside' and fe['against_tolerance'] == 'outside' and fl['against_tolerance'] == 'open'
@@ -606,6 +747,11 @@ def check_level3(main, box, table, plotted):
     assert design['status'] == 'design only; no observation' and round(design['decisions_per_arm'], -1) == 60
     for phrase in ('the gain of about 0.5h_s', 'only if the benchmark lay 0.3h_s farther upstream', 'from 2.98 to 3.08 \\%',
                    'the stated friction bias, within 2 \\%', f"The velocity margin of {bump['velocity_margin_full_support']:.3f}U_\\infty is less than twice the 0.4 \\%",
+                   f"Above y/L=0.02 the learned wall is closer by {gs['margin_above_on_fine_mesh']:.3f}U_\\infty, which equals that 0.4 \\%",
+                   'the velocity order of the two walls over all heights is resolved only on the finest of three meshes',
+                   'The one withheld test inside the stated training ranges of its model, a channel with a sudden spanwise pressure gradient',
+                   'is a candidate for adequate evidence',
+                   'The step, the bump station and a channel pair with linear differencing in Table~\\ref{tab:decisions} are uses with inadequate evidence',
                    'from 30 to 10 \\% with 80 \\% power needs about 60 independent decisions in each arm',
                    'A practitioner versed in wall modelling may choose this test unaided',
                    'agreed on cause in 8 cases, quantity class in 10, factor to vary in 7 and all three in 3',
@@ -615,22 +761,37 @@ def check_level3(main, box, table, plotted):
         assert phrase in plain, phrase
     assert step['gain_in_absolute_error'] == 0.5 and step['shortfall_beyond_tolerance'] == 0.3
     assert bump['velocity_margin_full_support'] < 2 * bump['freestream_uncertainty_in_freestream_units']
+    assert round(gs['margin_above_on_fine_mesh'], 3) == round(bump['freestream_uncertainty_in_freestream_units'], 3)
+    # The candidate for adequate evidence is the one withheld test inside the stated ranges of its fitting set.
+    inside = [k for k, v in extra['qualified_transfer_tests']['tests'].items() if v['relation'] == 'within stated ranges']
+    assert inside == ['P19-T06'] and relation['within stated ranges'] == 1
+    assert next(r for r in exposure if r['transfer_id'] == 'P19-T06')['study_id'] == 'P19'
     assert abs(fl['percent']) + bump['friction_bias_percent'] < abs(fe['percent']) - bump['friction_bias_percent'], 'the stated bias cannot reverse the friction ranking'
     # Figure 4 values are those of the summary.
     bars = {r['row']: r for r in plotted['pairs_by_theme']}
-    assert bars['All pairs'] == dict(row='All pairs', order_changes=pairs['by_category']['order changes'], one_order=pairs['by_category']['one order'],
-                                     nothing_resolved=pairs['n'] - pairs['by_category']['order changes'] - pairs['by_category']['one order'])
-    assert len(bars) == 1 + len(themes) and sum(r['order_changes'] + r['one_order'] + r['nothing_resolved'] for k, r in bars.items() if k != 'All pairs') == pairs['n']
-    assert plotted['contrasts']['all_contrasts'] == dict(order_changes=e1['order changes'], one_order=e1['one order'], nothing_resolved=e1['nothing resolved'])
-    assert {x['place']: x['contrasts'] for x in plotted['contrasts']['places']} == {
-        'Within a profile': where['within a profile'], 'Between conditions': where['between conditions'], 'Between quantities': where['between quantities']}
+    every = split['all pairs']
+    assert bars['All pairs'] == dict(row='All pairs', order_changes=pairs['by_category']['order changes'], along_one_profile_only=every['along one profile only'],
+                                     beyond_one_profile=every['beyond one profile'], one_order=pairs['by_category']['one order'], nothing_resolved=every['nothing resolved'])
+    assert every['along one profile only'] + every['beyond one profile'] == pairs['by_category']['order changes'] and every['pairs'] == pairs['n']
+    assert len(bars) == 1 + len(themes)
+    assert sum(r['along_one_profile_only'] + r['beyond_one_profile'] + r['one_order'] + r['nothing_resolved'] for k, r in bars.items() if k != 'All pairs') == pairs['n']
+    assert all(r['along_one_profile_only'] + r['beyond_one_profile'] == r['order_changes'] for r in bars.values())
+    # Panel b: the four exclusive outcomes add up to every comparison; the between-quantities bar has its own denominator.
+    drawn = plotted['contrasts']
+    assert drawn['all_contrasts'] == dict(along_one_profile_only=ex['along one profile only'], beyond_one_profile=beyond, order_changes=e1['order changes'],
+                                          one_order=e1['one order'], nothing_resolved=e1['nothing resolved'])
+    assert sum(drawn['all_contrasts'][k] for k in ('along_one_profile_only', 'beyond_one_profile', 'one_order', 'nothing_resolved')) == pop['contrasts']
+    assert drawn['by_resolved_comparisons'] == st['by_resolved_comparisons']
+    assert drawn['between_quantities'] == dict(differ=e2['order_differs_between_quantities'], compared=e2['contrasts_with_two_classes_under_a_shared_condition'])
     # No frequency claim, no observed benefit, and nothing from the withdrawn pairings.
     assert 'not a frequency for the literature' in plain and 'remains open' in plain
     assert not re.search(r'prevalen|per cent of the literature|most published|in the literature,? (?:most|half)', plain, re.I)
     return dict(contrasts=pop['contrasts'], order=e1, order_changes_bounds=c['e1_bounds']['order_changes'], where=where,
                 between_quantities=[e2['order_differs_between_quantities'], e2['contrasts_with_two_classes_under_a_shared_condition']],
                 agreement=dict(category=[s1['agree'], s1['n'], s1['kappa']], direction=[s2['agree'], s2['n'], s2['kappa']]),
-                decisions=decisions, settled=settlement['settled'], rule_gaps_found=rule_gaps, editions_read=editions,
+                decisions=decisions, reconciled=settlement['settled'], rule_gaps_found=rule_gaps, editions_used=editions,
+                exclusive_outcome=ex, beyond_one_profile=beyond, by_resolved_comparisons=st['by_resolved_comparisons'],
+                bump_grid_series=dict(pooled_order=gs['pooled_order_by_mesh'], friction_order=gs['friction_order_by_mesh']),
                 printed_sentences_checked=len(main_phrases) + len(box_phrases) + len(table_phrases))
 
 def main_check():
@@ -646,7 +807,7 @@ def main_check():
     assert len(caps)==8 and max(caps)<150,caps
     abstract=arguments(main,'abstract')[0]
     assert words(abstract)<=150 and not arguments(abstract,'cite')
-    assert main.count('\\includegraphics')==4
+    assert main.count('\\includegraphics')==5 and main.count('../figures/box1_flow.pdf')==1
     assert alltext.count('\\begin{table*}')==4
     assert '\\input{numbers}' not in main
     assert not re.search(r'\\n(?:Claims|Obs|Mixed|Exposed|Held|Adv)\b',alltext)
@@ -675,7 +836,7 @@ def main_check():
     step_sentence=next(s for s in re.split(r'(?<=\.)\s+',abstract) if 'step heights' in s)
     assert [float(x) for x in re.findall(r'\b\d+\.\d+\b',step_sentence)]==ordered
     shortfalls=[round(ordered[-1]-v,1) for v in ordered[:2]]
-    assert f'shortfall from about {shortfalls[0]} to {shortfalls[1]} step heights' in main.replace('$','')
+    assert f'the shortfall falls from about {shortfalls[0]} to {shortfalls[1]} step heights' in main.replace('$','')
     for row in comparisons['rows']:
         assert row['reference_key'] in cited
         assert row['source_location'] and row['selected_comparison']
@@ -749,20 +910,23 @@ def main_check():
                'First-cell mean velocity', 'Recirculation on the inclined diffuser wall')), 'outdated Figure 2 in PDF'
     assert all(s in compact for s in ('Backward-facing step with a graph wall model', 'Streamwise component',
                'Internal error', 'Total error', 'Two comparisons of coupled wall-stress predictions')), 'outdated Figure 3 in PDF'
-    assert all(t in compact for t in ('Order of two wall treatments in', 'Where the order changes in', 'Pilot: matching choices in 13 cases',
-                                      'share a source paper', 'informed step 5')), 'outdated Figure 4 in PDF'
+    # Figure 4 labels set by the owner's operator on 19 Nov 2026 (community terms); keep them.
+    assert all(t in compact for t in ('Which treatment is closer, by what differs', 'controlled comparisons',
+                                      'Same first choice in two applications', 'Machine-learned model', 'Wall model vs no-slip',
+                                      'Stress imposition', 'Sampling height', 'same source paper', 'same first choice', 'used for step 5')), 'outdated Figure 4 in PDF'
+    assert not any(t in compact for t in ('Trained law', 'With or without law', 'informed step 5', 'Pilot')), 'old Figure 4 wording in PDF'
     assert 'Agreement by choice' not in compact and 'CAPTION-PLACEHOLDER' not in compact
     selection = check_evidence_selection(comparisons, cases)
     table_types = check_table_types(comparisons)
     heading_count=check_panel_style(comparisons)
     figure_layouts={name:json.loads((ROOT/f'results/figures/{name}_layout.json').read_text())['passed']
-                    for name in ('fig1_loop','fig2_record','fig3_contrast','fig4_outcomes')}
+                    for name in ('fig1_loop','fig2_record','fig3_contrast','fig4_outcomes','box1_flow')}
     assert all(figure_layouts.values())
     report={'status':'PASS','edition':'critical review; aggregate claims withdrawn',
             'pdf_pages':pages,'pdf_sha256':hashlib.sha256(pdf.read_bytes()).hexdigest(),
             'citations_with_support_record':len(cited),'caption_word_counts':caps,
             'abstract_words':words(arguments(main,'abstract')[0]),
-            'figures':4,'tables':4,'eligibility_records_checked':33,
+            'figures':4,'box_displays':1,'tables':4,'eligibility_records_checked':33,
             'dupuy_N4_normalised_errors':[.067/.806,.308/.686],
             'retrospective_agreement':agreement,
             'checklist_cases_by_number_of_matching_choices':dict(enumerate(counts_by_degree)),

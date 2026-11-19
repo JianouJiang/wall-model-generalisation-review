@@ -134,7 +134,7 @@
    "math": false
   },
   {
-   "text": "Coupled",
+   "text": "A posteriori",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -144,7 +144,7 @@
    "math": false
   },
   {
-   "text": "Offline, mean velocity",
+   "text": "A priori, mean velocity",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,

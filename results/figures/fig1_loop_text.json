@@ -244,7 +244,7 @@
    "math": true
   },
   {
-   "text": "Exact-input test",
+   "text": "A priori test",
    "size_pt": 8.0,
    "weight": "bold",
    "rotation": 0.0,
@@ -294,7 +294,7 @@
    "math": false
   },
   {
-   "text": "Coupled test",
+   "text": "A posteriori test",
    "size_pt": 8.0,
    "weight": "bold",
    "rotation": 0.0,

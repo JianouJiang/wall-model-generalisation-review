@@ -95,9 +95,9 @@ def channel(ax, first, second):
         line(ax, [x, x], [62.3, 63.2], color=MUTE)
         label(ax, x, 65.5, tick, ha='center', color=MUTE)
     ax.plot(2.4, 69, 'o', ms=4.5, mfc='white', mec=INK, mew=1)
-    label(ax, 5.1, 69, 'Coupled')
-    ax.plot(24.8, 69, 'D', ms=3.8, color=BLUE)
-    label(ax, 27.7, 69, 'Offline, mean velocity')
+    label(ax, 5.1, 69, 'A posteriori')
+    ax.plot(27.6, 69, 'D', ms=3.8, color=BLUE)
+    label(ax, 30.5, 69, 'A priori, mean velocity')
 
 
 def flat_plate(ax, first, second):

@@ -2,20 +2,21 @@
   "status": "PASS",
   "edition": "Review with finite-sample source reassessment and edition-specific comparisons",
   "pdf_pages": 15,
-  "pdf_sha256": "14e012cf7d7534d68ae468d20b57a00655f263bc29c8d26064dd5e921385bdf9",
-  "citations_with_support_record": 47,
+  "pdf_sha256": "7543d03462544d4aa3a8a548f51755030bf13200e562a05176d13878502973fa",
+  "citations_with_support_record": 58,
   "caption_word_counts": [
+    126,
+    61,
     121,
-    70,
-    132,
-    133,
-    143,
+    102,
+    145,
     39,
     31,
     34
   ],
-  "abstract_words": 150,
+  "abstract_words": 144,
   "figures": 4,
+  "box_displays": 1,
   "tables": 4,
   "eligibility_records_checked": 33,
   "dupuy_N4_normalised_errors": [
@@ -75,16 +76,71 @@
       "by_class_quotable": true,
       "primary_scope_basis_read_once": false
     },
-    "settled": 6,
+    "reconciled": 6,
     "rule_gaps_found": 6,
-    "editions_read": {
+    "editions_used": {
       "arXiv version": 37,
       "public copy served for the DOI": 18,
       "publisher PDF": 3
     },
-    "printed_sentences_checked": 43
+    "exclusive_outcome": {
+      "along one profile only": 55,
+      "between conditions": 25,
+      "between quantities only": 1,
+      "between two quantities of one class only": 1,
+      "one order": 29,
+      "nothing resolved": 25
+    },
+    "beyond_one_profile": 27,
+    "by_resolved_comparisons": [
+      {
+        "resolved_comparisons": "1-2",
+        "contrasts": 25,
+        "order_changes": 13,
+        "beyond_one_profile": 1,
+        "along_one_profile_only": 12,
+        "one_order": 12
+      },
+      {
+        "resolved_comparisons": "3-5",
+        "contrasts": 30,
+        "order_changes": 20,
+        "beyond_one_profile": 3,
+        "along_one_profile_only": 17,
+        "one_order": 10
+      },
+      {
+        "resolved_comparisons": "6-10",
+        "contrasts": 22,
+        "order_changes": 19,
+        "beyond_one_profile": 5,
+        "along_one_profile_only": 14,
+        "one_order": 3
+      },
+      {
+        "resolved_comparisons": "more than 10",
+        "contrasts": 34,
+        "order_changes": 30,
+        "beyond_one_profile": 18,
+        "along_one_profile_only": 12,
+        "one_order": 4
+      }
+    ],
+    "bump_grid_series": {
+      "pooled_order": {
+        "coarse": "unresolved",
+        "medium": "unresolved",
+        "fine": "equilibrium"
+      },
+      "friction_order": {
+        "coarse": "learned",
+        "medium": "learned",
+        "fine": "learned"
+      }
+    },
+    "printed_sentences_checked": 71
   },
-  "panel_headings_matching_figure_1": 12,
+  "panel_headings_matching_figure_1": 14,
   "comparison_map_sources": 8,
   "study_selection": {
     "screened_records": 2543,
@@ -93,17 +149,18 @@
     "pilot_groups_sharing_papers": 9
   },
   "table_2_types_of_test": {
-    "Coupled, wall model changed": 3,
-    "Coupled, grid changed": 1,
-    "Coupled, outer closure changed": 2,
-    "Prescribed input": 1,
-    "Complete systems, then coupled, wall condition changed": 1
+    "A posteriori, wall model changed": 3,
+    "A posteriori, grid changed": 1,
+    "A posteriori, outer closure changed": 2,
+    "A priori": 1,
+    "Complete systems, then a posteriori, wall condition changed": 1
   },
   "figure_layouts": {
     "fig1_loop": true,
     "fig2_record": true,
     "fig3_contrast": true,
-    "fig4_outcomes": true
+    "fig4_outcomes": true,
+    "box1_flow": true
   },
   "circulation_text_scan": "PASS",
   "scientific_limit": "Pass checks consistency and specified support. It does not certify an exhaustive corpus or predictive checklist validity.",
@@ -215,7 +272,8 @@
         "no design carries a treatment in a running solver": 9,
         "every design reaches the sublayer": 5
       },
-      "printed_sentences_checked": 27,
+      "printed_sentences_checked": 29,
+      "box_1_words": 198,
       "quotable": {
         "strict": false,
         "broad": true,

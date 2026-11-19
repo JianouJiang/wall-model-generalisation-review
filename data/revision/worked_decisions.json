@@ -22,7 +22,10 @@
    "source": "Rezaeiravesh, Mukha and Liefvendahl, arXiv:1810.05213v2, Tables 1 and 2; data/revision/channel_scheme_table.json",
    "quantity": "friction velocity and outer mean velocity (maximum discrepancy over 0.2 <= y/delta <= 1, their Eq. 10) at fixed bulk flow",
    "reference_kind": "channel DNS (numerical benchmark)",
-   "illustrative_tolerance": {"friction_velocity_percent": 2.0, "outer_velocity_percent": 1.0},
+   "illustrative_tolerance": {
+    "friction_velocity_percent": 2.0,
+    "outer_velocity_percent": 1.0
+   },
    "uncertainty_reported": "errors printed to 0.01 %; no sampling interval and no discretisation estimate for the printed errors",
    "controls": "same grid (28 cells per half-height), bulk flow, convection scheme and subgrid closure within each pair; Spalding's law sampled at h/delta = 0.125 against no wall model",
    "attribution": "each change belongs to adding the wall law under that scheme and closure; the two schemes give opposite signs for the outer velocity"
@@ -34,20 +37,65 @@
    "source": "Zhou and Bae, arXiv:2305.02540v3, Figs 10(c) and 12(c); data/revision/measurements/P31_Fig12c_DSM.csv and results/revision/direction_resolution.json (bump_station_velocity)",
    "quantity": "skin friction and mean streamwise velocity profile at x/L = -0.4, fine mesh, dynamic Smagorinsky closure",
    "reference_kind": "experiment (oil-film interferometry for friction, particle-image velocimetry for velocity)",
-   "friction_times_1000": {"equilibrium": 3.09, "learned": 2.18, "experiment_interpolated": 2.35, "reading_precision": 0.1,
-                           "location": "Fig. 10(c); experimental value interpolated linearly between the measured stations at x/L of about -0.420 and -0.349 (data/revision/additional_comparisons.json, pair P31-bump)"},
-   "illustrative_tolerance": {"friction_percent": 10.0, "velocity_mean_absolute_in_freestream_units": 0.01},
+   "friction_times_1000": {
+    "equilibrium": 3.09,
+    "learned": 2.18,
+    "experiment_interpolated": 2.35,
+    "reading_precision": 0.1,
+    "location": "Fig. 10(c); experimental value interpolated linearly between the measured stations at x/L of about -0.420 and -0.349 (data/revision/additional_comparisons.json, pair P31-bump)"
+   },
+   "illustrative_tolerance": {
+    "friction_percent": 10.0,
+    "velocity_mean_absolute_in_freestream_units": 0.01
+   },
    "velocity_reading_precision": 0.002,
    "uncertainty_reported": {
-     "friction_bias_percent": 2.0,
-     "friction_passage": "the overall bias error in mean skin friction values is taken to be within 2%",
-     "friction_location": "Gray (2023), doctoral thesis, Appendix G.3, printed p. 250 (PDF p. 278); also Sec. 2.4.4",
-     "freestream_velocity_percent_95": 0.4,
-     "velocity_note": "the particle-image uncertainty covers random error only (Sec. 2.4.5, Appendix G.4)",
-     "simulation": "statistics over 1.5 flow-through times; no sampling interval and no discretisation estimate"
+    "friction_bias_percent": 2.0,
+    "friction_passage": "the overall bias error in mean skin friction values is taken to be within 2%",
+    "friction_location": "Gray (2023), doctoral thesis, Appendix G.3, printed p. 250 (PDF p. 278); also Sec. 2.4.4",
+    "freestream_velocity_percent_95": 0.4,
+    "velocity_note": "the particle-image uncertainty covers random error only (Sec. 2.4.5, Appendix G.4)",
+    "simulation": "statistics over 1.5 flow-through times; no sampling interval and no discretisation estimate"
    },
    "controls": "same fine mesh, solver, subgrid closure and inlet; the two wall treatments differ in law, inputs, sampling location and imposition",
-   "attribution": "the differences belong to the change of the complete wall treatment; the velocity difference arises below y/L of about 0.016"
+   "attribution": "the differences belong to the change of the complete wall treatment; the velocity difference arises below y/L of about 0.016",
+   "grid_series": {
+    "source": "Zhou and Bae, arXiv:2305.02540v3: Table 2 (p. 22), Fig. 10(a,b,c) (p. 24) and Fig. 12(a,b,c) (p. 26); readings in data/revision/measurements/P31_Fig10_friction_grid_series.json and P31_Fig12{a,b,c}_DSM.csv, produced by code/read_bump_grid_series.py",
+    "meshes": {
+     "coarse": {
+      "control_volumes": "6 x 10^6",
+      "min_wall_normal_spacing_over_L": "2.6e-3",
+      "cells_across_upstream_boundary_layer": 3
+     },
+     "medium": {
+      "control_volumes": "37 x 10^6",
+      "min_wall_normal_spacing_over_L": "1.3e-3",
+      "cells_across_upstream_boundary_layer": 6
+     },
+     "fine": {
+      "control_volumes": "100 x 10^6",
+      "min_wall_normal_spacing_over_L": "9e-4",
+      "cells_across_upstream_boundary_layer": 9
+     }
+    },
+    "held_fixed": "wall treatment, subgrid closure (dynamic Smagorinsky), solver, inlet and Reynolds number; the three meshes refine every direction",
+    "not_held_fixed": "the physical height at which each wall treatment samples the flow",
+    "matching_location_equilibrium": {
+     "passage": "the center of the second off-wall cell is selected as the matching location",
+     "location": "p. 21 (bump); the same statement for the hill on p. 10"
+    },
+    "sampling_location_learned": {
+     "passage": "RL agents are positioned at the upper surface of the wall-adjacent mesh cells",
+     "location": "p. 21"
+    },
+    "boundary_layer_resolution": {
+     "passage": "the TBL is approximately resolved by 3 cells in the coarse mesh, 6 cells in the medium mesh, and 9 cells in the fine mesh",
+     "location": "p. 21, referring to the measured thickness at x/L = -0.683"
+    },
+    "velocity_support": "the particle-image heights present in all three model traces",
+    "band_boundary_y_over_L": 0.02,
+    "velocity_reading_precision": 0.002
+   }
   }
  ]
 }

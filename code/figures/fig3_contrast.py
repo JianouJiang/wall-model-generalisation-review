@@ -12,7 +12,8 @@ from matplotlib.ticker import NullLocator
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from style import BAND, BLUE, DATA, FS, G1, G2, INK, MM, MUTE, RES, W, panel_heading, plt, save
 
-H = 110.0
+H = 93.6
+SHIFT = 6.8      # panel b sits this much higher than in the 110 mm layout
 
 
 def label(fig, x, y, value, **kwargs):
@@ -41,15 +42,15 @@ def step_comparison(fig, data):
     rows = np.arange(len(steps))
     magnitude = np.array(data['magnitude'])/data['baseline_magnitude']
     streamwise = np.array(data['streamwise_component'])/data['baseline_streamwise_component']
-    top, height = 14.7, 22.4
+    top, height = 14.2, 16.5
     dy = height/len(rows)
-    label(fig, 2, 11.0, 'Depth')
+    label(fig, 2, 10.6, 'Depth')
     for i, step in enumerate(steps):
         label(fig, 6, top+(i+.5)*dy, str(step), ha='center')
     panels = [(18, 'Wall-stress magnitude', magnitude), (91, 'Streamwise component', streamwise)]
     for left, title, fractions in panels:
         width = 52
-        label(fig, left, 11.0, title)
+        label(fig, left, 10.6, title)
         ax = axes(fig, left, top, width, height)
         ax.set(xlim=(0, 1.015), ylim=(len(rows)-.5, -.5), yticks=[], xticks=[0, .5, 1])
         ax.set_xticklabels(['0', '0.5', '1'])
@@ -65,19 +66,19 @@ def step_comparison(fig, data):
             focus = steps[i] == 4
             label(fig, left+width+9.5, top+(i+.5)*dy, f'{value:.3f}', ha='right',
                   color=INK if focus else MUTE)
-    label(fig, W/2, 44.8, 'Integrated squared wall-stress error / law-of-the-wall baseline', ha='center')
+    label(fig, W/2, 38.0, 'Integrated squared wall-stress error / law-of-the-wall baseline', ha='center')
     return magnitude, streamwise
 
 
 def boundary_layer(fig, outer):
-    heading(fig, 47.3, 'b', 'Wall stress in a zero-pressure-gradient boundary layer', 'Lozano-Durán & Bae (2023), Fig. 9')
+    heading(fig, 47.3-SHIFT, 'b', 'Wall stress in a zero-pressure-gradient boundary layer', 'Lozano-Durán & Bae (2023), Fig. 9')
     readings = outer['station_readings']
     station = np.asarray(readings['re_x'])/1e5
     low, high = outer['total_error']['reported_range_percent']
     methods = [('EQWM', 'Equilibrium wall law', 'o', INK, 'white', '--'),
                ('BFWM', 'Building-block wall law', 'D', BLUE, BLUE, '-')]
     for (key, title, marker, color, face, ls), x in zip(methods, (3, 53)):
-        y = 58.2
+        y = 58.2-SHIFT
         mark = Line2D([(x+3.4)/W], [1-y/H], transform=fig.transFigure, marker=marker,
                       ms=3.8, markeredgewidth=.9, markerfacecolor=face, markeredgecolor=color,
                       linestyle='none', zorder=4)
@@ -85,18 +86,18 @@ def boundary_layer(fig, outer):
                               color=color, lw=.85, ls=ls))
         fig.add_artist(mark)
         label(fig, x+8.2, y, title)
-    fig.add_artist(Rectangle((106.8/W, 1-59.4/H), 5.7/W, 2.5/H, transform=fig.transFigure,
+    fig.add_artist(Rectangle((106.8/W, 1-(59.4-SHIFT)/H), 5.7/W, 2.5/H, transform=fig.transFigure,
                              facecolor=BAND, edgecolor=G1, linewidth=.4))
-    label(fig, 114.0, 58.2, f'Authors’ {low:g}–{high:g}% summary')
-    label(fig, 33.3, 63.5, 'Internal error', ha='center')
-    label(fig, 108, 63.5, 'Total error', ha='center')
-    hline(fig, 15.5, 53, 65.8)
-    hline(fig, 65, 153, 65.8)
+    label(fig, 114.0, 58.2-SHIFT, f'Authors’ {low:g}–{high:g}% summary')
+    label(fig, 33.3, 63.5-SHIFT, 'Internal error', ha='center')
+    label(fig, 108, 63.5-SHIFT, 'Total error', ha='center')
+    hline(fig, 15.5, 53, 65.8-SHIFT)
+    hline(fig, 65, 153, 65.8-SHIFT)
 
     experiments = [('Exact for the mean', 17), ('Dynamic Smagorinsky', 66.5), ('Vreman', 116)]
-    plot_width, top, height = 36, 71.2, 29.1
+    plot_width, top, height = 36, 71.2-SHIFT, 19.6
     for j, (closure, left) in enumerate(experiments):
-        label(fig, left+plot_width/2, 68.5, closure, ha='center')
+        label(fig, left+plot_width/2, 68.5-SHIFT, closure, ha='center')
         ax = axes(fig, left, top, plot_width, height)
         ax.set_yscale('log')
         ax.set(xlim=(5.65, 12.35), ylim=(.16, 32), xticks=station,
@@ -121,7 +122,7 @@ def boundary_layer(fig, outer):
             ax.plot(station, values, linestyle=line_style, marker=marker, ms=3.9,
                     linewidth=.85, color=color, mec=color, mfc=face, mew=.85, zorder=3)
     label(fig, 2.8, top+height/2, 'Error (%, log scale)', rotation=90, ha='center')
-    label(fig, W/2, 107.7, r'Streamwise Reynolds number, $Re_x/10^5$', ha='center')
+    label(fig, W/2, top+height+7.3, r'Streamwise Reynolds number, $Re_x/10^5$', ha='center')
 
 
 def main():

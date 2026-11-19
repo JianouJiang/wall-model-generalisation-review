@@ -1,13 +1,13 @@
 \begin{table*}[t]
 \caption{Five questions for deciding whether a published test supports an intended prediction. An unreported condition leaves the corresponding judgement open. A further comparison can address the uncertainty identified in any row.}\label{tab:checklist}
 \footnotesize
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.11\textwidth}p{0.31\textwidth}p{0.51\textwidth}@{}}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{0.11\textwidth}p{0.27\textwidth}p{0.55\textwidth}@{}}
 \toprule
 Step & Question & Evidence to record and consequence \\
 \midrule
 1. Quantity & What must the calculation predict? & Specify the quantity, location, averaging interval, error measure and tolerance. Use the conservation balance to determine whether the forcing fixes the quantity. An unconstrained output is needed to test the constitutive response. \\
 2. Model & Which assumptions could affect that quantity? & Record the admissible stresses, retained momentum terms, inputs, calibration and coupling to the outer flow. Identify a flow condition under which a suspected limitation could be observed. \\
-3. Test design & Where did the model inputs come from? & Distinguish prescribed reference inputs from inputs supplied by a running solver. Identify which flows informed tuning, which were held out, and where the test falls relative to calibration. Record gaps in the calibration history. \\
+3. Test design & Where did the model inputs come from? & Distinguish prescribed reference inputs from inputs supplied by a running solver. Identify which flows informed tuning, which were held out, and where the test falls relative to calibration. \\
 4. Comparison & How much did the model improve, and how close was it to the reference? & State whether the reference was measured or simulated. Compare paired errors on matched conditions, carrying their shared uncertainty through the gain. For accuracy, compare the signed discrepancy interval with the tolerance and give its coverage or bounding assumptions. \\
 5. Planned use & What changes between the test and the application? & Identify differences in model version, flow, forcing, grid, closure, matching height and quantity. Support an extension with a physical argument and sensitivity evidence at the required accuracy. Otherwise identify the comparison still needed. \\
 \midrule

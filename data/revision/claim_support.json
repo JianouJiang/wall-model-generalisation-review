@@ -451,7 +451,7 @@
  },
  {
   "claim_id": "S38",
-  "manuscript_location": "Improvement over a baseline and accuracy against a reference",
+  "manuscript_location": "Calibration, validation and transfer",
   "reference_key": "KamaciKaya2021",
   "source_version": "Published article, special issue 28, pp. 469–475 (2021)",
   "source_url": "https://dergipark.org.tr/en/download/article-file/2014051",
@@ -656,5 +656,70 @@
   "source_location": "Discussion of the exchange location and of grid refinement at a fixed physical exchange height.",
   "claim": "When the wall model takes its input from the first off-wall cells, refining the grid moves the exchange location. Refinement at a fixed physical exchange height separates the two effects.",
   "application_in_review": "The step example applies this to the graph model of Dupuy et al., whose input nodes also move with the grid. That application is ours."
+ },
+ {
+  "claim_id": "Hu2023-stress-direction",
+  "reference_key": "Hu2023",
+  "manuscript_location": "Stress direction and momentum balance",
+  "source_version": "arXiv:2204.00537v1 (1 April 2022), headed 'Under consideration for publication in J. Fluid Mech.'. Not compared with the journal version.",
+  "source_url": "https://arxiv.org/abs/2204.00537v1",
+  "source_location": "Abstract, p. 1; discussion of Fig. 10(a), p. 14; discussion of Fig. 11, p. 16.",
+  "claim": "In wall-modelled LES of the three-dimensional boundary layer in a bent square duct, the wall-stress direction of the non-equilibrium model that solves partial differential equations is closer to experiment than that of the equilibrium model, the two differing by roughly 5 degrees within the bend. Wall-stress magnitudes are comparable and the mean velocity profiles of the wall models are almost identical; the authors state that the outer LES is not affected by the difference in wall-stress direction.",
+  "comparison_controls": "Same solver, subgrid closure, mesh, matching height, inflow and boundary conditions. The wall models differ in their equations, internal closure, mesh and input filtering. The experimental wall-stress direction is inferred indirectly. The curves are plotted; the only printed number is the largest difference between the two models.",
+  "verification": "Passages located in the archived text of the stated edition; each quoted passage checked as an exact substring.",
+  "worked_eligibility_record": "N551"
+ },
+ {
+  "claim_id": "Hansen2023-sudden-adverse-gradient",
+  "reference_key": "Hansen2023",
+  "manuscript_location": "Stress direction and momentum balance",
+  "source_version": "arXiv:2301.06803v2 (17 October 2023). Not compared with the journal version.",
+  "source_url": "https://arxiv.org/abs/2301.06803v2",
+  "source_location": "Table 3 and the text below it, p. 15; discussion of Fig. 11(c), p. 14.",
+  "claim": "In half-channel wall-modelled LES after a sudden adverse pressure gradient (case R1000A100), at one instant the equilibrium model gives a wall stress of 0.67 and the model augmented by a second mode 0.40 of the initial wall stress, against 0.31 in DNS: errors of 116% and 29%. At the gradient ten times weaker (R1000A10) the authors find the augmented model slightly less accurate than the equilibrium model.",
+  "comparison_controls": "Same grid, code, subgrid closure, input filter, initial state and forcing; both models read the LES velocity at the second and fourth off-wall points. Only the velocity ansatz differs. One grid and one Reynolds number; the printed errors refer to a single instant.",
+  "verification": "Values and passages located in the archived text of the stated edition; each quoted passage checked as an exact substring.",
+  "worked_eligibility_record": "N240"
+ },
+ {
+  "claim_id": "Kiris2023-workshop-summary",
+  "reference_key": "Kiris2023",
+  "manuscript_location": "Sampling, feedback and the outer flow",
+  "source_version": "Author manuscript of the J. Aircr. article, NASA Technical Reports Server record 20220007135. The journal abstract in the Crossref record matches the abstract of this manuscript. The typeset version was not accessible.",
+  "source_url": "https://ntrs.nasa.gov/citations/20220007135",
+  "source_location": "Section on integrated loads (three observations from Figure 4) and the summary of key findings, item 1(a).",
+  "claim": "Nine participants submitted wall-modelled LES or lattice-Boltzmann results for the high-lift Common Research Model in the fourth AIAA High-Lift Prediction Workshop, compared with wind-tunnel measurements. With the exception of two submissions, the participants obtain values of the maximum lift coefficient that the summary calls fairly accurate, between 2.48 and 2.57 for most. Scatter in pitching moment is larger at 21.4 and 7 degrees. At least 250 million grid cells were needed to capture the outboard slat and main-element loading.",
+  "comparison_controls": "Submissions differ in solver, grid, subgrid closure and wall treatment, so the comparison is between complete calculations. The summary prints no error against the measured maximum lift.",
+  "verification": "Passages located in the text of the stated edition; each quoted passage checked as an exact substring."
+ },
+ {
+  "claim_id": "Page2021-flow-diagram",
+  "reference_key": "Page2021",
+  "manuscript_location": "Box 1 and Methods",
+  "source_version": "Version of record, open access",
+  "source_url": "https://doi.org/10.1136/bmj.n71",
+  "source_location": "Checklist item 16a and Fig. 1 (flow diagram template).",
+  "claim": "The PRISMA 2020 statement asks for the results of the search and selection process, from the number of records identified to the number of studies included, ideally as a flow diagram. Its template names records identified, records removed before screening, records screened, records excluded, reports sought for retrieval, reports not retrieved and reports assessed for eligibility. Box 1 uses these stage names.",
+  "verification": "Item and template labels located in the open-access full text and publisher PDF."
+ },
+ {
+  "claim_id": "Campbell2020-synthesis",
+  "reference_key": "Campbell2020",
+  "manuscript_location": "Methods",
+  "source_version": "Version of record, open access",
+  "source_url": "https://doi.org/10.1136/bmj.l6890",
+  "source_location": "Summary points and the section on synthesis methods.",
+  "claim": "The Synthesis Without Meta-analysis guideline covers reviews in which meta-analysis of effect estimates is not possible or not appropriate, and names vote counting based on direction of effect among the alternative synthesis methods. The guideline was written for reviews of intervention effects; this Review borrows the method of counting directions and pools no effect sizes.",
+  "verification": "Passages located in the open-access full text."
+ },
+ {
+  "claim_id": "Priem2022-index",
+  "reference_key": "Priem2022",
+  "manuscript_location": "Methods",
+  "source_version": "arXiv:2205.01833v2",
+  "source_url": "https://arxiv.org/abs/2205.01833",
+  "source_location": "Title and abstract.",
+  "claim": "OpenAlex is an open index of scholarly works, authors, venues, institutions and concepts, available through a public interface. The four searches of this Review were run on it.",
+  "verification": "Title and abstract read from the arXiv record."
  }
 ]

@@ -1,0 +1,86 @@
+{
+ "source": "Zhou and Bae, arXiv:2305.02540v3, Fig. 10(a,b,c), p. 24; dynamic Smagorinsky closure",
+ "pdf_sha256": "cb427efb38bf00e0b2d3ca5568fa576bd4f13e02ca0b8a0978d47fbf7c80c6c5",
+ "station_x_over_L": -0.4,
+ "units": "10^3 C_f",
+ "method": "Native embedded panels extracted with pdfimages. Model traces: median ink row of each colour in the pixel columns within 35 px of the station. Experiment: linear interpolation between the two neighbouring square markers.",
+ "reading_precision": 0.1,
+ "panel_identity": "Object numbers 552, 554 and 556 are drawn left, centre and right in the top row of p. 24; the caption gives (a,d) coarse, (b,e) medium and (c,f) fine, top row dynamic Smagorinsky.",
+ "meshes": {
+  "coarse": {
+   "pdf_object": 552,
+   "panel": "Fig. 10(a)",
+   "experiment_interpolated": 2.347,
+   "learned": 2.23,
+   "equilibrium": 3.626,
+   "neighbouring_measured_stations": [
+    [
+     -0.471,
+     2.785
+    ],
+    [
+     -0.4196,
+     2.405
+    ],
+    [
+     -0.3493,
+     2.196
+    ],
+    [
+     -0.2978,
+     2.424
+    ]
+   ]
+  },
+  "medium": {
+   "pdf_object": 554,
+   "panel": "Fig. 10(b)",
+   "experiment_interpolated": 2.347,
+   "learned": 2.387,
+   "equilibrium": 3.328,
+   "neighbouring_measured_stations": [
+    [
+     -0.471,
+     2.785
+    ],
+    [
+     -0.4196,
+     2.405
+    ],
+    [
+     -0.3493,
+     2.196
+    ],
+    [
+     -0.2978,
+     2.424
+    ]
+   ]
+  },
+  "fine": {
+   "pdf_object": 556,
+   "panel": "Fig. 10(c)",
+   "experiment_interpolated": 2.347,
+   "learned": 2.175,
+   "equilibrium": 3.091,
+   "neighbouring_measured_stations": [
+    [
+     -0.471,
+     2.785
+    ],
+    [
+     -0.4196,
+     2.405
+    ],
+    [
+     -0.3493,
+     2.196
+    ],
+    [
+     -0.2978,
+     2.424
+    ]
+   ]
+  }
+ }
+}

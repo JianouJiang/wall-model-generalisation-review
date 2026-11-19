@@ -1,0 +1,75 @@
+{
+  "flow": {
+    "stages": [
+      {
+        "stage": "Records identified",
+        "count": 5323
+      },
+      {
+        "stage": "Records screened",
+        "count": 2543
+      },
+      {
+        "stage": "Reports sought",
+        "count": 735
+      },
+      {
+        "stage": "Full texts obtained",
+        "count": 120
+      },
+      {
+        "stage": "Reports assessed",
+        "count": 115
+      },
+      {
+        "stage": "Eligible reports",
+        "count": 108
+      }
+    ],
+    "leaving": [
+      "386 duplicates, 2,394 not journal articles in English",
+      "1,808 excluded on title and abstract",
+      "615 not retrieved: 564 no open copy, 28 refused, 23 unusable",
+      "5 not in English, not assessed",
+      "5 excluded, 2 contested"
+    ]
+  },
+  "table": [
+    {
+      "item": "Report eligible",
+      "count": "108 of 115 reports",
+      "second_extraction": "random 30 of 79 reports",
+      "agreement": "27 of 30 agree"
+    },
+    {
+      "item": "Controlled comparison",
+      "count": "58 of 108 reports",
+      "second_extraction": "the same 30 reports",
+      "agreement": "0.87 (0.67)"
+    },
+    {
+      "item": "Assumption tested on reference data",
+      "count": "17 reports",
+      "second_extraction": "44 candidate reports",
+      "agreement": "0.67 (0.44)"
+    },
+    {
+      "item": "Test outside the fitting data",
+      "count": "33 reports, 110 tests",
+      "second_extraction": "43 candidate reports",
+      "agreement": "0.86 (0.61)"
+    },
+    {
+      "item": "Closer treatment, per comparison",
+      "count": "136 comparisons",
+      "second_extraction": "34 comparisons",
+      "agreement": "0.94 (0.76)"
+    },
+    {
+      "item": "Closer treatment, per quantity class",
+      "count": "",
+      "second_extraction": "122 within those 34",
+      "agreement": "0.84 (0.75)"
+    }
+  ]
+}

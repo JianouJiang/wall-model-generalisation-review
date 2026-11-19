@@ -1,0 +1,67 @@
+{
+ "identification": {
+  "records_identified": 5323,
+  "searches": 4,
+  "duplicates_removed": 386,
+  "removed_before_screening": {
+   "not a journal article (OpenAlex type)": 2238,
+   "primary source not a journal": 100,
+   "publication year outside the window": 0,
+   "language not English": 56
+  },
+  "removed_before_screening_total": 2394
+ },
+ "screening": {
+  "records_screened": 2543,
+  "records_excluded": 1808,
+  "reports_sought": 735,
+  "sought_by_screening_decision": {
+   "unclear": 388,
+   "include": 299,
+   "forward (dual disagreement)": 48
+  }
+ },
+ "retrieval": {
+  "reports_not_retrieved": 615,
+  "not_retrieved_by_reason": {
+   "access refused": 28,
+   "no candidate route": 564,
+   "unusable retrieval": 23
+  },
+  "full_texts_obtained": 120
+ },
+ "eligibility": {
+  "not_in_english_set_aside": 5,
+  "reports_assessed": 115,
+  "assessed_despite_language_flag": [
+   "P27",
+   "P32",
+   "P35"
+  ],
+  "excluded": 5,
+  "contested": 2
+ },
+ "included": {
+  "eligible_reports": 108,
+  "borderline_reports": 12,
+  "within_primary_scope": 104
+ },
+ "evidence_groups": {
+  "controlled_comparison": {
+   "reports": 58,
+   "comparisons": 136
+  },
+  "assumption_on_reference_data": {
+   "reports": 17
+  },
+  "test_outside_fitting_data": {
+   "reports": 33,
+   "tests": 110
+  }
+ },
+ "second_extraction": {
+  "random_sample": 30,
+  "sample_frame": 79,
+  "reports_extracted_twice": 74
+ }
+}

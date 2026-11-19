@@ -1,0 +1,22 @@
+{
+ "purpose": "Counts of the identification stage of the literature search, before title-and-abstract screening. The later stages are counted by code/flow_counts.py from search_records.csv, revision/retrieval_frame.csv and revision/source_dispositions.json.",
+ "source": "OpenAlex works endpoint, title_and_abstract.search, four queries (data/search_protocol.json), fetched 17 November 2026 (data/search_log.csv)",
+ "date_window": ["2000-01-01", "2026-11-16"],
+ "records_identified": 5323,
+ "duplicates_removed": 386,
+ "removed_before_screening": {
+  "not a journal article (OpenAlex type)": 2238,
+  "primary source not a journal": 100,
+  "publication year outside the window": 0,
+  "language not English": 56
+ },
+ "records_screened": 2543,
+ "records_screened_without_an_abstract": 819,
+ "full_text_language_check": {
+  "rule": "A retrieved text fails if more than 20 % of its letters are kana, CJK ideographs or Hangul, or if fewer than 15 % of its Latin-script words are common English function words.",
+  "flagged": 8,
+  "set_aside_without_assessment": 5,
+  "assessed_despite_the_flag": 3,
+  "note": "The three assessed reports (P27, P32, P35) had been entered in the study archive before the check was applied to every retrieved text; their comparisons were extracted from equations, figures, tables and English abstracts. The five set aside were never entered."
+ }
+}

@@ -1,0 +1,1134 @@
+{
+ "meaning": "Post hoc description of the categories in contrast_outcomes_summary.json. No category, count or rule is changed. The kind of flow follows a keyword rule on the recorded case description and was assigned once.",
+ "contrasts": 136,
+ "exclusive_outcome": {
+  "along one profile only": 55,
+  "between conditions": 25,
+  "between quantities only": 1,
+  "between two quantities of one class only": 1,
+  "one order": 29,
+  "nothing resolved": 25
+ },
+ "order_changes": 82,
+ "beyond_one_profile": 27,
+ "beyond_one_profile_not_between_conditions": [
+  "N297-K08",
+  "N497-K01"
+ ],
+ "by_resolved_comparisons": [
+  {
+   "resolved_comparisons": "1-2",
+   "contrasts": 25,
+   "order_changes": 13,
+   "beyond_one_profile": 1,
+   "along_one_profile_only": 12,
+   "one_order": 12
+  },
+  {
+   "resolved_comparisons": "3-5",
+   "contrasts": 30,
+   "order_changes": 20,
+   "beyond_one_profile": 3,
+   "along_one_profile_only": 17,
+   "one_order": 10
+  },
+  {
+   "resolved_comparisons": "6-10",
+   "contrasts": 22,
+   "order_changes": 19,
+   "beyond_one_profile": 5,
+   "along_one_profile_only": 14,
+   "one_order": 3
+  },
+  {
+   "resolved_comparisons": "more than 10",
+   "contrasts": 34,
+   "order_changes": 30,
+   "beyond_one_profile": 18,
+   "along_one_profile_only": 12,
+   "one_order": 4
+  }
+ ],
+ "one_order_with_five_or_fewer_resolved_comparisons": [
+  22,
+  29
+ ],
+ "resolved_comparisons_per_pair_by_theme": {
+  "balance": {
+   "pairs": 31,
+   "resolved_comparisons": 187,
+   "mean_per_pair": 6.03
+  },
+  "imposition": {
+   "pairs": 17,
+   "resolved_comparisons": 98,
+   "mean_per_pair": 5.76
+  },
+  "inputs": {
+   "pairs": 12,
+   "resolved_comparisons": 16,
+   "mean_per_pair": 1.33
+  },
+  "law": {
+   "pairs": 38,
+   "resolved_comparisons": 170,
+   "mean_per_pair": 4.47
+  },
+  "learned": {
+   "pairs": 60,
+   "resolved_comparisons": 332,
+   "mean_per_pair": 5.53
+  },
+  "location": {
+   "pairs": 13,
+   "resolved_comparisons": 159,
+   "mean_per_pair": 12.23
+  },
+  "on_off": {
+   "pairs": 16,
+   "resolved_comparisons": 100,
+   "mean_per_pair": 6.25
+  },
+  "other": {
+   "pairs": 10,
+   "resolved_comparisons": 13,
+   "mean_per_pair": 1.3
+  },
+  "parameter": {
+   "pairs": 43,
+   "resolved_comparisons": 66,
+   "mean_per_pair": 1.53
+  },
+  "resolution": {
+   "pairs": 5,
+   "resolved_comparisons": 27,
+   "mean_per_pair": 5.4
+  }
+ },
+ "pairs_by_theme_exclusive": {
+  "all pairs": {
+   "pairs": 245,
+   "along one profile only": 81,
+   "beyond one profile": 34,
+   "one order": 67,
+   "nothing resolved": 63
+  },
+  "balance": {
+   "pairs": 31,
+   "along one profile only": 12,
+   "beyond one profile": 4,
+   "one order": 7,
+   "nothing resolved": 8
+  },
+  "imposition": {
+   "pairs": 17,
+   "along one profile only": 6,
+   "beyond one profile": 4,
+   "one order": 5,
+   "nothing resolved": 2
+  },
+  "inputs": {
+   "pairs": 12,
+   "along one profile only": 1,
+   "beyond one profile": 2,
+   "one order": 2,
+   "nothing resolved": 7
+  },
+  "law": {
+   "pairs": 38,
+   "along one profile only": 10,
+   "beyond one profile": 7,
+   "one order": 11,
+   "nothing resolved": 10
+  },
+  "learned": {
+   "pairs": 60,
+   "along one profile only": 37,
+   "beyond one profile": 7,
+   "one order": 12,
+   "nothing resolved": 4
+  },
+  "location": {
+   "pairs": 13,
+   "along one profile only": 0,
+   "beyond one profile": 6,
+   "one order": 1,
+   "nothing resolved": 6
+  },
+  "on_off": {
+   "pairs": 16,
+   "along one profile only": 7,
+   "beyond one profile": 2,
+   "one order": 4,
+   "nothing resolved": 3
+  },
+  "other": {
+   "pairs": 10,
+   "along one profile only": 2,
+   "beyond one profile": 1,
+   "one order": 2,
+   "nothing resolved": 5
+  },
+  "parameter": {
+   "pairs": 43,
+   "along one profile only": 5,
+   "beyond one profile": 1,
+   "one order": 21,
+   "nothing resolved": 16
+  },
+  "resolution": {
+   "pairs": 5,
+   "along one profile only": 1,
+   "beyond one profile": 0,
+   "one order": 2,
+   "nothing resolved": 2
+  }
+ },
+ "crossing_points_and_wall_stress": {
+  "pairs_with_one_treatment_closer_on_crossing_points": 21,
+  "of_which_wall_stress_compared": 18,
+  "wall_stress_order_changes": 16,
+  "wall_stress_one_order": 1,
+  "wall_stress_unresolved": 1
+ },
+ "separating_factor_by_kind_of_flow": {
+  "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation": {
+   "Reynolds number": 1,
+   "another flow parameter": 2,
+   "another part of the method": 1,
+   "grid": 4,
+   "numerical scheme": 1,
+   "outer closure": 3
+  },
+  "developed channel, pipe or flat-plate boundary layer": {
+   "Reynolds number": 5,
+   "another flow parameter": 1,
+   "another part of the method": 2,
+   "grid": 5,
+   "numerical scheme": 3,
+   "outer closure": 1,
+   "sampling height": 1,
+   "several together": 2
+  },
+  "developed flow with unsteady or transverse forcing": {
+   "another flow parameter": 1
+  }
+ },
+ "beyond_one_profile_by_theme": {
+  "balance": 4,
+  "imposition": 3,
+  "inputs": 2,
+  "law": 7,
+  "learned": 7,
+  "location": 4,
+  "on_off": 2,
+  "other": 2,
+  "parameter": 2,
+  "resolution": 2
+ },
+ "flow_rule": [
+  {
+   "kind": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation",
+   "pattern": "hill|step|bump|diffuser|hump|NACA|blade|vane|cascade|separation bubble|Juncture|CRM|cyclist|wavy wall|impinging jet|rod bundle|heat exchanger|RVACS|drip-irrigation|bent square duct|Poiseuille-Couette|strips|roughness|rough-wall|rotation"
+  },
+  {
+   "kind": "developed flow with unsteady or transverse forcing",
+   "pattern": "sudden|pulsating|accelerating|imposed constant adverse pressure gradient|spanwise pressure gradient"
+  },
+  {
+   "kind": "developed channel, pipe or flat-plate boundary layer",
+   "pattern": "channel|pipe|parallel plates|flat[- ]plate|ZPG|zero-pressure-gradient"
+  }
+ ],
+ "by_kind_of_flow": {
+  "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation": {
+   "contrasts": 64,
+   "along one profile only": 29,
+   "between conditions": 10,
+   "between quantities only": 0,
+   "between two quantities of one class only": 1,
+   "one order": 10,
+   "nothing resolved": 14,
+   "order_changes": 40,
+   "beyond_one_profile": 11,
+   "with_more_than_ten_resolved_comparisons": 19
+  },
+  "developed flow with unsteady or transverse forcing": {
+   "contrasts": 8,
+   "along one profile only": 4,
+   "between conditions": 1,
+   "between quantities only": 0,
+   "between two quantities of one class only": 0,
+   "one order": 3,
+   "nothing resolved": 0,
+   "order_changes": 5,
+   "beyond_one_profile": 1,
+   "with_more_than_ten_resolved_comparisons": 3
+  },
+  "developed channel, pipe or flat-plate boundary layer": {
+   "contrasts": 64,
+   "along one profile only": 22,
+   "between conditions": 14,
+   "between quantities only": 1,
+   "between two quantities of one class only": 0,
+   "one order": 16,
+   "nothing resolved": 11,
+   "order_changes": 37,
+   "beyond_one_profile": 15,
+   "with_more_than_ten_resolved_comparisons": 12
+  }
+ },
+ "beyond_one_profile_by_kind_of_flow": {
+  "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation": [
+   "N037-K02",
+   "N195-K03",
+   "N358-K03",
+   "N497-K01",
+   "N540-K04",
+   "N707-K01",
+   "N707-K02",
+   "P19-K04",
+   "P19-K07",
+   "P25-K02",
+   "P25-K03"
+  ],
+  "developed flow with unsteady or transverse forcing": [
+   "N357-K01"
+  ],
+  "developed channel, pipe or flat-plate boundary layer": [
+   "N174-K01",
+   "N181-K02",
+   "N195-K01",
+   "N195-K02",
+   "N262-K01",
+   "N297-K04",
+   "N297-K08",
+   "N318-K01",
+   "N364-K01",
+   "N364-K02",
+   "N364-K03",
+   "N500-K01",
+   "N623-K01",
+   "P06-K02",
+   "P20-K01"
+  ]
+ },
+ "per_contrast": [
+  {
+   "contrast_id": "N025-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 9,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N037-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 11,
+   "kind_of_flow": "developed flow with unsteady or transverse forcing"
+  },
+  {
+   "contrast_id": "N037-K02",
+   "outcome": "between conditions",
+   "resolved_comparisons": 12,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N037-K03",
+   "outcome": "one order",
+   "resolved_comparisons": 12,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N054-K04",
+   "outcome": "one order",
+   "resolved_comparisons": 1,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N054-K05",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N076-K01",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N076-K02",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N076-K03",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N174-K01",
+   "outcome": "between conditions",
+   "resolved_comparisons": 47,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N181-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 9,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N181-K02",
+   "outcome": "between conditions",
+   "resolved_comparisons": 39,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N195-K01",
+   "outcome": "between conditions",
+   "resolved_comparisons": 42,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N195-K02",
+   "outcome": "between conditions",
+   "resolved_comparisons": 6,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N195-K03",
+   "outcome": "between conditions",
+   "resolved_comparisons": 14,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N195-K04",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 3,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N218-K01",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N218-K02",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N240-K03",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 3,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N240-K04",
+   "outcome": "one order",
+   "resolved_comparisons": 5,
+   "kind_of_flow": "developed flow with unsteady or transverse forcing"
+  },
+  {
+   "contrast_id": "N240-K05",
+   "outcome": "one order",
+   "resolved_comparisons": 5,
+   "kind_of_flow": "developed flow with unsteady or transverse forcing"
+  },
+  {
+   "contrast_id": "N262-K01",
+   "outcome": "between conditions",
+   "resolved_comparisons": 30,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N262-K03",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N262-K04",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N262-K05",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N297-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 5,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N297-K04",
+   "outcome": "between conditions",
+   "resolved_comparisons": 71,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N297-K08",
+   "outcome": "between quantities only",
+   "resolved_comparisons": 10,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N300-K04",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N318-K01",
+   "outcome": "between conditions",
+   "resolved_comparisons": 4,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N318-K02",
+   "outcome": "one order",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N318-K04",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N327-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 4,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N327-K03",
+   "outcome": "one order",
+   "resolved_comparisons": 5,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N327-K07",
+   "outcome": "one order",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N327-K10",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N339-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 4,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N357-K01",
+   "outcome": "between conditions",
+   "resolved_comparisons": 41,
+   "kind_of_flow": "developed flow with unsteady or transverse forcing"
+  },
+  {
+   "contrast_id": "N357-K02",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 19,
+   "kind_of_flow": "developed flow with unsteady or transverse forcing"
+  },
+  {
+   "contrast_id": "N357-K03",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "developed flow with unsteady or transverse forcing"
+  },
+  {
+   "contrast_id": "N358-K01",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N358-K03",
+   "outcome": "between conditions",
+   "resolved_comparisons": 18,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N358-K05",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 6,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N364-K01",
+   "outcome": "between conditions",
+   "resolved_comparisons": 31,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N364-K02",
+   "outcome": "between conditions",
+   "resolved_comparisons": 32,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N364-K03",
+   "outcome": "between conditions",
+   "resolved_comparisons": 6,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N364-K04",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N364-K05",
+   "outcome": "one order",
+   "resolved_comparisons": 3,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N395-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 11,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N395-K02",
+   "outcome": "one order",
+   "resolved_comparisons": 1,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N418-K02",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N418-K03",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N419-K02",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N437-K01",
+   "outcome": "one order",
+   "resolved_comparisons": 1,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N437-K02",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N437-K03",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N437-K04",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N444-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 13,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N446-K01",
+   "outcome": "one order",
+   "resolved_comparisons": 3,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N456-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 5,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N459-K01",
+   "outcome": "one order",
+   "resolved_comparisons": 1,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N497-K01",
+   "outcome": "between two quantities of one class only",
+   "resolved_comparisons": 4,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N500-K01",
+   "outcome": "between conditions",
+   "resolved_comparisons": 12,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N540-K03",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 21,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N540-K04",
+   "outcome": "between conditions",
+   "resolved_comparisons": 60,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N551-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 8,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N556-K02",
+   "outcome": "one order",
+   "resolved_comparisons": 3,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N582-K02",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 5,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N611-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 5,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N611-K02",
+   "outcome": "one order",
+   "resolved_comparisons": 1,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N611-K03",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 6,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N623-K01",
+   "outcome": "between conditions",
+   "resolved_comparisons": 35,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N623-K03",
+   "outcome": "one order",
+   "resolved_comparisons": 5,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N626-K06",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 7,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N626-K07",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 4,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N626-K08",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 27,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N626-K09",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N655-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 3,
+   "kind_of_flow": "developed flow with unsteady or transverse forcing"
+  },
+  {
+   "contrast_id": "N672-K01",
+   "outcome": "one order",
+   "resolved_comparisons": 1,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N672-K02",
+   "outcome": "one order",
+   "resolved_comparisons": 3,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N674-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 9,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N674-K02",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N674-K03",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 16,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N674-K05",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 5,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N674-K06",
+   "outcome": "one order",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N674-K07",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N680-K05",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "N707-K01",
+   "outcome": "between conditions",
+   "resolved_comparisons": 27,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "N707-K02",
+   "outcome": "between conditions",
+   "resolved_comparisons": 24,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P01-K01",
+   "outcome": "one order",
+   "resolved_comparisons": 10,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P01-K03",
+   "outcome": "one order",
+   "resolved_comparisons": 3,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P01-K04",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 1,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P02-K01",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P02-K02",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P04-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 4,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P06-K01",
+   "outcome": "one order",
+   "resolved_comparisons": 11,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P06-K02",
+   "outcome": "between conditions",
+   "resolved_comparisons": 9,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P06-K03",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 8,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P07-K02",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 6,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P11-K02",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P12-K01",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P16-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 1,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P16-K02",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P16-K05",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 5,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P17-K01",
+   "outcome": "one order",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P17-K02",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 10,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P19-K01",
+   "outcome": "one order",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P19-K02",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P19-K03",
+   "outcome": "one order",
+   "resolved_comparisons": 7,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P19-K04",
+   "outcome": "between conditions",
+   "resolved_comparisons": 6,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P19-K05",
+   "outcome": "one order",
+   "resolved_comparisons": 11,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P19-K06",
+   "outcome": "one order",
+   "resolved_comparisons": 4,
+   "kind_of_flow": "developed flow with unsteady or transverse forcing"
+  },
+  {
+   "contrast_id": "P19-K07",
+   "outcome": "between conditions",
+   "resolved_comparisons": 3,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P19-K08",
+   "outcome": "one order",
+   "resolved_comparisons": 1,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P20-K01",
+   "outcome": "between conditions",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P20-K02",
+   "outcome": "one order",
+   "resolved_comparisons": 22,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P21-K09",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 9,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P21-K10",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 9,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P21-K11",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 3,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P21-K12",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 4,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P25-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 19,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P25-K02",
+   "outcome": "between conditions",
+   "resolved_comparisons": 15,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P25-K03",
+   "outcome": "between conditions",
+   "resolved_comparisons": 32,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P25-K04",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 15,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P25-K05",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 6,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P25-K06",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 5,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P25-K07",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P25-K08",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P25-K09",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 2,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P26-K01",
+   "outcome": "one order",
+   "resolved_comparisons": 6,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P30-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 6,
+   "kind_of_flow": "developed channel, pipe or flat-plate boundary layer"
+  },
+  {
+   "contrast_id": "P31-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 17,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P31-K03",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 20,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P31-K05",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 12,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P33-K01",
+   "outcome": "along one profile only",
+   "resolved_comparisons": 3,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  },
+  {
+   "contrast_id": "P34-K01",
+   "outcome": "nothing resolved",
+   "resolved_comparisons": 0,
+   "kind_of_flow": "flow with separation, streamwise pressure gradient, three-dimensionality, roughness or rotation"
+  }
+ ]
+}

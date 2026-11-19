@@ -1,0 +1,487 @@
+{
+ "figure": "box1_flow",
+ "width_mm": 160,
+ "texts": 48,
+ "rows": [
+  {
+   "text": "Records\nidentified",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "5,323",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Records\nscreened",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "2,543",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Reports\nsought",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "735",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Full texts\nobtained",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "120",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Reports\nassessed",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "115",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Eligible\nreports",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "108",
+   "size_pt": 8.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "386 duplicates,\n2,394 not journal\narticles in English",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "1,808 excluded\non title and\nabstract",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "615 not retrieved:\n564 no open copy,\n28 refused,\n23 unusable",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "5 not in English,\nnot assessed",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "5 excluded,\n2 contested",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Item extracted",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "In the collection",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Second extraction",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "$\\kappa$ (lower bound)",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": true
+  },
+  {
+   "text": "Report eligible",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "108 of 115 reports",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "random 30 of 79 reports",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "27 of 30 agree",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Controlled comparison",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "58 of 108 reports",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "the same 30 reports",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.87 (0.67)",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Assumption tested on reference data",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "17 reports",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "44 candidate reports",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.67 (0.44)",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Test outside the fitting data",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "33 reports, 110 tests",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "43 candidate reports",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.86 (0.61)",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Closer treatment, per comparison",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "136 comparisons",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "34 comparisons",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.94 (0.76)",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Closer treatment, per quantity class",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "122 within those 34",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "0.84 (0.75)",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "a",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Search, screening and eligibility",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "b",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Quoted counts and agreement of a second extraction",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  }
+ ]
+}

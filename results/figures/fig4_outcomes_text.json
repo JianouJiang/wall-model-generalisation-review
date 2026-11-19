@@ -1,7 +1,7 @@
 {
  "figure": "fig4_outcomes",
  "width_mm": 160,
- "texts": 47,
+ "texts": 55,
  "rows": [
   {
    "text": "Order changes",
@@ -14,7 +14,27 @@
    "math": false
   },
   {
-   "text": "One order",
+   "text": "along one profile",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "beyond one profile",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "One always closer",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -54,7 +74,7 @@
    "math": false
   },
   {
-   "text": "Trained law",
+   "text": "Machine-learned model",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -74,7 +94,7 @@
    "math": false
   },
   {
-   "text": "Coefficient",
+   "text": "Model coefficient",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -94,7 +114,7 @@
    "math": false
   },
   {
-   "text": "Form of the law",
+   "text": "Form of wall law",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -134,7 +154,7 @@
    "math": false
   },
   {
-   "text": "Imposition",
+   "text": "Stress imposition",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -154,7 +174,7 @@
    "math": false
   },
   {
-   "text": "With or without law",
+   "text": "Wall model vs no-slip",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -174,7 +194,7 @@
    "math": false
   },
   {
-   "text": "Sampling location",
+   "text": "Sampling height",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -194,7 +214,7 @@
    "math": false
   },
   {
-   "text": "Inputs or history",
+   "text": "Wall-model inputs",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -254,7 +274,7 @@
    "math": false
   },
   {
-   "text": "All contrasts",
+   "text": "All comparisons",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -274,7 +294,7 @@
    "math": false
   },
   {
-   "text": "Within a profile",
+   "text": "1 or 2 resolved",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -284,7 +304,7 @@
    "math": false
   },
   {
-   "text": "75",
+   "text": "13 of 25",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -294,7 +314,7 @@
    "math": false
   },
   {
-   "text": "Between conditions",
+   "text": "3 to 5 resolved",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -304,7 +324,47 @@
    "math": false
   },
   {
-   "text": "25",
+   "text": "20 of 30",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "6 to 10 resolved",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "19 of 22",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Over 10 resolved",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "30 of 34",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -328,7 +388,7 @@
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
-   "colour": "#52514e",
+   "colour": "#0b0b0b",
    "where": "axes 0",
    "role": "text",
    "math": false
@@ -394,7 +454,7 @@
    "math": false
   },
   {
-   "text": "share a source paper",
+   "text": "same first choice",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -404,7 +464,27 @@
    "math": false
   },
   {
-   "text": "informed step 5",
+   "text": "different",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "same source paper",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "used for step 5",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -424,7 +504,7 @@
    "math": false
   },
   {
-   "text": "Order of two wall treatments in 245 matched pairs",
+   "text": "Which treatment is closer, by what differs (245 pairs)",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -444,7 +524,7 @@
    "math": false
   },
   {
-   "text": "Where the order changes in 136 contrasts",
+   "text": "The 136 controlled comparisons",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -464,7 +544,7 @@
    "math": false
   },
   {
-   "text": "Pilot: matching choices in 13 cases",
+   "text": "Same first choice in two applications",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,

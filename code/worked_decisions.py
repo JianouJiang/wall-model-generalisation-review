@@ -2,11 +2,14 @@
 
 Inputs: data/revision/worked_decisions.json (cases, illustrative tolerances, reported uncertainty),
 displayed_comparisons.json (step crossings), channel_scheme_table.json (printed strings of the channel tables),
-results/revision/direction_resolution.json (bump station profile). Output: results/revision/worked_decisions.json.
+results/revision/direction_resolution.json (bump station profile), and for the three-mesh series at the bump station
+data/revision/measurements/P31_Fig10_friction_grid_series.json and P31_Fig12{a,b,c}_DSM.csv.
+Output: results/revision/worked_decisions.json.
 A tolerance decision follows the manuscript rule: an interval for the signed discrepancy inside [-T, T] supports
 agreement, a disjoint interval supports a miss, partial overlap leaves the decision open. The only intervals available
 here are reading or printing precision; they are not physical uncertainty. Standard library only.
 """
+import csv
 import json
 import sys
 from pathlib import Path
@@ -101,6 +104,54 @@ def bump(case):
     out["velocity_margin_above_0p02"] = round(station["margin_above_0p02"], 6)
     out["freestream_uncertainty_in_freestream_units"] = case["uncertainty_reported"]["freestream_velocity_percent_95"] / 100
     out["friction_bias_percent"] = case["uncertainty_reported"]["friction_bias_percent"]
+    out["grid_series"] = grid_series(case)
+    return out
+
+
+def grid_series(case):
+    """The source's coarse, medium and fine meshes at the same station: friction, and velocity on the measurement heights
+    common to the three model traces, pooled and in two bands. An order is resolved if the two mean absolute discrepancies
+    differ by more than the reading precision."""
+    spec, tol, f0 = case["grid_series"], case["illustrative_tolerance"], case["friction_times_1000"]
+    measured = DATA / "measurements"
+    friction = json.loads((measured / "P31_Fig10_friction_grid_series.json").read_text())["meshes"]
+    tables = {}
+    for mesh, letter in (("coarse", "a"), ("medium", "b"), ("fine", "c")):
+        with (measured / f"P31_Fig12{letter}_DSM.csv").open(newline="") as stream:
+            tables[mesh] = [{k: float(v) for k, v in r.items()} for r in csv.DictReader(stream)]
+    common = set.intersection(*[{r["y_pixel"] for r in t} for t in tables.values()])
+    p, edge = spec["velocity_reading_precision"], spec["band_boundary_y_over_L"]
+    mean = lambda xs: sum(xs) / len(xs)
+    out = dict(common_heights=len(common), lowest_common_height_over_L=round(min(r["y_over_L"] for r in tables["fine"] if r["y_pixel"] in common), 5),
+               band_boundary_y_over_L=edge, meshes={})
+    for mesh, table in tables.items():
+        rows = [r for r in table if r["y_pixel"] in common]
+        bands = dict(pooled=rows, below=[r for r in rows if r["y_over_L"] <= edge], above=[r for r in rows if r["y_over_L"] > edge])
+        entry = dict(spacing=spec["meshes"][mesh])
+        for name, band in bands.items():
+            learned = mean([abs(r["RLWM_DSM_U_over_Uinf"] - r["PIV_U_over_Uinf"]) for r in band])
+            equilibrium = mean([abs(r["EQWM_DSM_U_over_Uinf"] - r["PIV_U_over_Uinf"]) for r in band])
+            entry[f"velocity_{name}"] = dict(heights=len(band), learned=round(learned, 6), equilibrium=round(equilibrium, 6),
+                                             closer="unresolved" if abs(learned - equilibrium) <= p else "learned" if learned < equilibrium else "equilibrium")
+        fr = friction[mesh]
+        assert abs(fr["experiment_interpolated"] - f0["experiment_interpolated"]) < 0.005
+        for name in ("equilibrium", "learned"):
+            value = round(fr[name] + 1e-9, 2)                      # quoted to two decimals, as for the fine mesh
+            d = value - f0["experiment_interpolated"]
+            pct = lambda v: 100 * v / f0["experiment_interpolated"]
+            low, high = pct(d - f0["reading_precision"]), pct(d + f0["reading_precision"])
+            entry[f"friction_{name}"] = dict(times_1000=value, percent=round(pct(d), 2), percent_interval_at_reading_precision=[round(low, 2), round(high, 2)],
+                                             against_tolerance=verdict(low, high, tol["friction_percent"]))
+        entry["closer_on_friction"] = "learned" if abs(entry["friction_learned"]["percent"]) < abs(entry["friction_equilibrium"]["percent"]) else "equilibrium"
+        out["meshes"][mesh] = entry
+    fine = out["meshes"]["fine"]
+    # The values read for the fine mesh by the two scripts are the same readings.
+    assert abs(fine["friction_equilibrium"]["times_1000"] - f0["equilibrium"]) < 0.006 and abs(fine["friction_learned"]["times_1000"] - f0["learned"]) < 0.006
+    out["pooled_order_by_mesh"] = {m: e["velocity_pooled"]["closer"] for m, e in out["meshes"].items()}
+    out["order_below_by_mesh"] = {m: e["velocity_below"]["closer"] for m, e in out["meshes"].items()}
+    out["order_above_by_mesh"] = {m: e["velocity_above"]["closer"] for m, e in out["meshes"].items()}
+    out["friction_order_by_mesh"] = {m: e["closer_on_friction"] for m, e in out["meshes"].items()}
+    out["margin_above_on_fine_mesh"] = round(fine["velocity_above"]["equilibrium"] - fine["velocity_above"]["learned"], 6)
     return out
 
 
@@ -128,6 +179,11 @@ def main():
     print("channel linear", c["linear"]); print("channel LUST", c["LUST"])
     print("design", result["prospective_design"]["decisions_per_arm"])
     print("bump", {k: v for k, v in b.items() if k.startswith(("friction_", "velocity_", "closer"))})
+    g = b["grid_series"]
+    for mesh, e in g["meshes"].items():
+        print("bump", mesh, "friction %", e["friction_equilibrium"]["percent"], e["friction_learned"]["percent"],
+              "velocity pooled/below/above (learned, equilibrium)",
+              [(e[k]["learned"], e[k]["equilibrium"], e[k]["closer"]) for k in ("velocity_pooled", "velocity_below", "velocity_above")])
 
 
 if __name__ == "__main__":

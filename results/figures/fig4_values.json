@@ -3,90 +3,138 @@
     {
       "row": "All pairs",
       "order_changes": 115,
+      "along_one_profile_only": 81,
+      "beyond_one_profile": 34,
       "one_order": 67,
       "nothing_resolved": 63
     },
     {
-      "row": "Trained law",
+      "row": "Machine-learned model",
       "order_changes": 44,
+      "along_one_profile_only": 37,
+      "beyond_one_profile": 7,
       "one_order": 12,
       "nothing_resolved": 4
     },
     {
-      "row": "Coefficient",
+      "row": "Model coefficient",
       "order_changes": 6,
+      "along_one_profile_only": 5,
+      "beyond_one_profile": 1,
       "one_order": 21,
       "nothing_resolved": 16
     },
     {
-      "row": "Form of the law",
+      "row": "Form of wall law",
       "order_changes": 17,
+      "along_one_profile_only": 10,
+      "beyond_one_profile": 7,
       "one_order": 11,
       "nothing_resolved": 10
     },
     {
       "row": "Non-equilibrium terms",
       "order_changes": 16,
+      "along_one_profile_only": 12,
+      "beyond_one_profile": 4,
       "one_order": 7,
       "nothing_resolved": 8
     },
     {
-      "row": "Imposition",
+      "row": "Stress imposition",
       "order_changes": 10,
+      "along_one_profile_only": 6,
+      "beyond_one_profile": 4,
       "one_order": 5,
       "nothing_resolved": 2
     },
     {
-      "row": "With or without law",
+      "row": "Wall model vs no-slip",
       "order_changes": 9,
+      "along_one_profile_only": 7,
+      "beyond_one_profile": 2,
       "one_order": 4,
       "nothing_resolved": 3
     },
     {
-      "row": "Sampling location",
+      "row": "Sampling height",
       "order_changes": 6,
+      "along_one_profile_only": 0,
+      "beyond_one_profile": 6,
       "one_order": 1,
       "nothing_resolved": 6
     },
     {
-      "row": "Inputs or history",
+      "row": "Wall-model inputs",
       "order_changes": 3,
+      "along_one_profile_only": 1,
+      "beyond_one_profile": 2,
       "one_order": 2,
       "nothing_resolved": 7
     },
     {
       "row": "Near-wall resolution",
       "order_changes": 1,
+      "along_one_profile_only": 1,
+      "beyond_one_profile": 0,
       "one_order": 2,
       "nothing_resolved": 2
     },
     {
       "row": "Other",
       "order_changes": 3,
+      "along_one_profile_only": 2,
+      "beyond_one_profile": 1,
       "one_order": 2,
       "nothing_resolved": 5
     }
   ],
   "contrasts": {
     "all_contrasts": {
+      "along_one_profile_only": 55,
+      "beyond_one_profile": 27,
       "order_changes": 82,
       "one_order": 29,
       "nothing_resolved": 25
     },
-    "places": [
+    "by_resolved_comparisons": [
       {
-        "place": "Within a profile",
-        "contrasts": 75
+        "resolved_comparisons": "1-2",
+        "contrasts": 25,
+        "order_changes": 13,
+        "along_one_profile_only": 12,
+        "beyond_one_profile": 1,
+        "one_order": 12
       },
       {
-        "place": "Between conditions",
-        "contrasts": 25
+        "resolved_comparisons": "3-5",
+        "contrasts": 30,
+        "order_changes": 20,
+        "along_one_profile_only": 17,
+        "beyond_one_profile": 3,
+        "one_order": 10
       },
       {
-        "place": "Between quantities",
-        "contrasts": 11
+        "resolved_comparisons": "6-10",
+        "contrasts": 22,
+        "order_changes": 19,
+        "along_one_profile_only": 14,
+        "beyond_one_profile": 5,
+        "one_order": 3
+      },
+      {
+        "resolved_comparisons": "more than 10",
+        "contrasts": 34,
+        "order_changes": 30,
+        "along_one_profile_only": 12,
+        "beyond_one_profile": 18,
+        "one_order": 4
       }
-    ]
+    ],
+    "between_quantities": {
+      "differ": 11,
+      "compared": 65
+    }
   },
   "pilot": {
     "order": [
