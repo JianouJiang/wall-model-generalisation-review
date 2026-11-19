@@ -2,20 +2,21 @@
   "status": "PASS",
   "edition": "Review with finite-sample source reassessment and edition-specific comparisons",
   "pdf_pages": 15,
-  "pdf_sha256": "70a989807ee0e01d47dbcf7d45ff466085f98b1a651e92ead383b30c58d5439d",
-  "citations_with_support_record": 52,
+  "pdf_sha256": "14e012cf7d7534d68ae468d20b57a00655f263bc29c8d26064dd5e921385bdf9",
+  "citations_with_support_record": 47,
   "caption_word_counts": [
     121,
     70,
     132,
     133,
-    106,
+    143,
     39,
-    31
+    31,
+    34
   ],
-  "abstract_words": 141,
+  "abstract_words": 150,
   "figures": 4,
-  "tables": 3,
+  "tables": 4,
   "eligibility_records_checked": 33,
   "dupuy_N4_normalised_errors": [
     0.08312655086848635,
@@ -33,7 +34,57 @@
     "2": 6,
     "3": 3
   },
-  "panel_headings_matching_figure_1": 11,
+  "outcomes_and_worked_decisions": {
+    "contrasts": 136,
+    "order": {
+      "one order": 29,
+      "order changes": 82,
+      "nothing resolved": 25
+    },
+    "order_changes_bounds": [
+      82,
+      130
+    ],
+    "where": {
+      "between quantities": 11,
+      "between conditions": 25,
+      "within a profile": 75,
+      "within a class": 7
+    },
+    "between_quantities": [
+      11,
+      65
+    ],
+    "agreement": {
+      "category": [
+        33,
+        34,
+        0.9377
+      ],
+      "direction": [
+        108,
+        122,
+        0.8422
+      ]
+    },
+    "decisions": {
+      "E1_quotable": true,
+      "E2_quotable": true,
+      "themes_quotable": true,
+      "oriented_quotable": true,
+      "by_class_quotable": true,
+      "primary_scope_basis_read_once": false
+    },
+    "settled": 6,
+    "rule_gaps_found": 6,
+    "editions_read": {
+      "arXiv version": 37,
+      "public copy served for the DOI": 18,
+      "publisher PDF": 3
+    },
+    "printed_sentences_checked": 43
+  },
+  "panel_headings_matching_figure_1": 12,
   "comparison_map_sources": 8,
   "study_selection": {
     "screened_records": 2543,
@@ -52,7 +103,7 @@
     "fig1_loop": true,
     "fig2_record": true,
     "fig3_contrast": true,
-    "fig4_checklist": true
+    "fig4_outcomes": true
   },
   "circulation_text_scan": "PASS",
   "scientific_limit": "Pass checks consistency and specified support. It does not certify an exhaustive corpus or predictive checklist validity.",
@@ -164,7 +215,7 @@
         "no design carries a treatment in a running solver": 9,
         "every design reaches the sublayer": 5
       },
-      "printed_sentences_checked": 26,
+      "printed_sentences_checked": 27,
       "quotable": {
         "strict": false,
         "broad": true,

@@ -1,79 +1,136 @@
 {
-  "study_id": "N364",
-  "edition": "arXiv:1810.05213v2",
-  "url": "https://arxiv.org/abs/1810.05213v2",
-  "doi": "10.1016/j.compfluid.2019.03.025",
-  "sha256": "955d2b7873423395048b97bb6bed98acb6e693bd9b58d49a47f60bc7eb8cc437",
-  "source_location": "§3 Eqs. (9–10), §§5.1.1–5.1.2, Tables 1–2",
-  "fixed_conditions": "Nominal Reτ=5200; bulk flow fixed, 28 cells per channel half-height, fourth cell at h/δ=0.125 for Spalding. Pair within one closure and scheme. Both runs share Lee–Moser DNS.",
-  "measures": "Friction-velocity error uses the signed percentage before taking magnitude. For the outer mean velocity Eq. (10) takes the maximum discrepancy from 0.2δ to δ divided by the maximum reference over the half-channel.",
-  "precision": "Percent to two decimal places. No common coverage interval for DNS, simulation sampling and discretisation.",
-  "columns": [
-    "linear_signed_friction_velocity_error_percent",
-    "LUST_signed_friction_velocity_error_percent",
-    "linear_outer_velocity_error_percent",
-    "LUST_outer_velocity_error_percent"
-  ],
-  "tables": [
-    {
-      "closure": "no explicit SGS",
-      "no_wall_model": [
-        -53.36,
-        -56.73,
-        2.38,
-        5.16
-      ],
-      "spalding": [
-        -6.15,
-        0.2,
-        6.03,
-        0.7
-      ]
-    },
-    {
-      "closure": "WALE",
-      "no_wall_model": [
-        -5.56,
-        -11.75,
-        2.98,
-        1.19
-      ],
-      "spalding": [
-        -4.28,
-        0.38,
-        3.08,
-        0.58
-      ]
-    },
-    {
-      "closure": "Smagorinsky",
-      "no_wall_model": [
-        -5.13,
-        -6.06,
-        0.83,
-        0.95
-      ],
-      "spalding": [
-        -1.8,
-        0,
-        1.16,
-        0.7
-      ]
-    },
-    {
-      "closure": "dynamic subgrid kinetic energy",
-      "no_wall_model": [
-        -6.77,
-        -12.62,
-        0.58,
-        1.56
-      ],
-      "spalding": [
-        -1.6,
-        0.43,
-        1.01,
-        0.76
-      ]
-    }
-  ]
+ "study_id": "N364",
+ "edition": "arXiv:1810.05213v2",
+ "url": "https://arxiv.org/abs/1810.05213v2",
+ "doi": "10.1016/j.compfluid.2019.03.025",
+ "sha256": "955d2b7873423395048b97bb6bed98acb6e693bd9b58d49a47f60bc7eb8cc437",
+ "source_location": "§3 Eqs. (9–10), §§5.1.1–5.1.2, Tables 1–2",
+ "fixed_conditions": "Nominal Reτ=5200; bulk flow fixed, 28 cells per channel half-height, fourth cell at h/δ=0.125 for Spalding. Pair within one closure and scheme. Both runs share Lee–Moser DNS.",
+ "measures": "Friction-velocity error uses the signed percentage before taking magnitude. For the outer mean velocity Eq. (10) takes the maximum discrepancy from 0.2δ to δ divided by the maximum reference over the half-channel.",
+ "precision": "Percent to two decimal places. No common coverage interval for DNS, simulation sampling and discretisation.",
+ "columns": [
+  "linear_signed_friction_velocity_error_percent",
+  "LUST_signed_friction_velocity_error_percent",
+  "linear_outer_velocity_error_percent",
+  "LUST_outer_velocity_error_percent"
+ ],
+ "tables": [
+  {
+   "closure": "no explicit SGS",
+   "no_wall_model": [
+    -53.36,
+    -56.73,
+    2.38,
+    5.16
+   ],
+   "spalding": [
+    -6.15,
+    0.2,
+    6.03,
+    0.7
+   ],
+   "printed": {
+    "no_wall_model": [
+     "-53.36",
+     "-56.73",
+     "2.38",
+     "5.16"
+    ],
+    "spalding": [
+     "-6.15",
+     "0.20",
+     "6.03",
+     "0.70"
+    ]
+   }
+  },
+  {
+   "closure": "WALE",
+   "no_wall_model": [
+    -5.56,
+    -11.75,
+    2.98,
+    1.19
+   ],
+   "spalding": [
+    -4.28,
+    0.38,
+    3.08,
+    0.58
+   ],
+   "printed": {
+    "no_wall_model": [
+     "-5.56",
+     "-11.75",
+     "2.98",
+     "1.19"
+    ],
+    "spalding": [
+     "-4.28",
+     "0.38",
+     "3.08",
+     "0.58"
+    ]
+   }
+  },
+  {
+   "closure": "Smagorinsky",
+   "no_wall_model": [
+    -5.13,
+    -6.06,
+    0.83,
+    0.95
+   ],
+   "spalding": [
+    -1.8,
+    0,
+    1.16,
+    0.7
+   ],
+   "printed": {
+    "no_wall_model": [
+     "-5.13",
+     "-6.06",
+     "0.83",
+     "0.95"
+    ],
+    "spalding": [
+     "-1.80",
+     "-0.00",
+     "1.16",
+     "0.70"
+    ]
+   }
+  },
+  {
+   "closure": "dynamic subgrid kinetic energy",
+   "no_wall_model": [
+    -6.77,
+    -12.62,
+    0.58,
+    1.56
+   ],
+   "spalding": [
+    -1.6,
+    0.43,
+    1.01,
+    0.76
+   ],
+   "printed": {
+    "no_wall_model": [
+     "-6.77",
+     "-12.62",
+     "0.58",
+     "1.56"
+    ],
+    "spalding": [
+     "-1.60",
+     "0.43",
+     "1.01",
+     "0.76"
+    ]
+   }
+  }
+ ],
+ "printed_note": "`printed` holds the strings of Tables 1 and 2 as printed (PDF pp. 11 and 13), including trailing zeros and the sign of -0.00. The numeric lists are the same values as numbers."
 }

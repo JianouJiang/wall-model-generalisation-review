@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\caption{Three published comparisons worked through to a next test. Tolerances are illustrative. Intervals reflect plot-reading or printing precision alone. None of the three sources gives a joint interval for sampling, discretisation and reference uncertainty.}\label{tab:decisions}
+\footnotesize
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{0.10\textwidth}>{\raggedright\arraybackslash}p{0.265\textwidth}>{\raggedright\arraybackslash}p{0.275\textwidth}>{\raggedright\arraybackslash}p{0.275\textwidth}@{}}
+\toprule
+ & Step reattachment~\cite{Dupuy2023graph} & Fixed-flow channel~\cite{Rezaeiravesh2019} & Bump station $x/L=-0.4$~\cite{DiZhou2024} \\
+\midrule
+Prediction, tolerance and reference & Mean reattachment within $0.5h_s$ of the wall-resolved LES of the same study & Friction velocity within $2\,\%$ and outer mean velocity within $1\,\%$ of channel DNS & Skin friction within $10\,\%$ and mean velocity within $0.01U_\infty$ of oil-film and particle-image measurements \\
+Published comparison & Log law $4.7$, graph model $5.2$, reference $6.0$, read to $0.1$. Discrepancies $-1.3$ and $-0.8h_s$ & With Spalding's law the friction error falls in 8 of 8 pairs. The outer error falls in 4 of 4 with LUST, to $0.58$--$0.76\,\%$, and rises in 4 of 4 with linear differencing, to $1.01$--$6.03\,\%$ & $10^3C_f$ of $3.09$ and $2.18$ against $2.35$, read to $0.1$: $+31$ and $-7\,\%$. Velocity discrepancy $0.010$ and $0.016U_\infty$ for the equilibrium and learned walls \\
+Uncertainty reported & None for a crossing & Printing to $0.01\,\%$ only & Friction bias within $2\,\%$ and freestream speed $0.4\,\%$~\cite{Gray2023}. Random error only for the velocity field. Statistics span 1.5 flow-through times \\
+Attribution & A shift of $0.5h_s$ follows the change of wall treatment in the coupled calculation. The remaining $0.8h_s$ is unattributed & Each change follows the wall law under one scheme and closure. The scheme sets the sign for the outer velocity & The changes follow the complete wall treatment. The velocity difference arises below $y/L\approx0.016$ \\
+Ordinary validation & The point estimate misses the tolerance. Without a grid-convergence estimate no validation conclusion follows & Both errors lie within tolerance with LUST on the printed values. The outer error exceeds it in 4 of 4 with linear differencing & Friction ranks the learned wall closer, at $-11$ to $-3\,\%$ within reading precision. Velocity ranks the equilibrium wall closer by $0.007U_\infty$ \\
+Next test & Refine with the sampling height and graph nodes fixed in physical space. Vary the height on one mesh & Repeat the pair with the intended scheme. Under a prescribed pressure gradient, assess bulk velocity and profile & Name the quantity and height range. Above $y/L=0.02$ the velocity order reverses, $0.011$ against $0.007$ \\
+\botrule
+\end{tabular*}
+\end{table*}

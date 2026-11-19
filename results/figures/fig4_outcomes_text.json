@@ -1,10 +1,10 @@
 {
- "figure": "fig4_checklist",
+ "figure": "fig4_outcomes",
  "width_mm": 160,
- "texts": 43,
+ "texts": 47,
  "rows": [
   {
-   "text": "Cases (of 13)",
+   "text": "Order changes",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -14,7 +14,57 @@
    "math": false
   },
   {
-   "text": "0",
+   "text": "One order",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Nothing resolved",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "All pairs",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "115 of 245",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Trained law",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "44 of 60",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -24,7 +74,17 @@
    "math": false
   },
   {
-   "text": "5",
+   "text": "Coefficient",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "6 of 43",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -34,7 +94,17 @@
    "math": false
   },
   {
-   "text": "10",
+   "text": "Form of the law",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "17 of 38",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -44,7 +114,217 @@
    "math": false
   },
   {
-   "text": "13",
+   "text": "Non-equilibrium terms",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "16 of 31",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Imposition",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "10 of 17",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "With or without law",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "9 of 16",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Sampling location",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "6 of 13",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Inputs or history",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "3 of 12",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Near-wall resolution",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "1 of 5",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Other",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "3 of 10",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "All contrasts",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "82 of 136",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Within a profile",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "75",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Between conditions",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "25",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#52514e",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Between quantities",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "axes 0",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "11 of 65",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -74,7 +354,7 @@
    "math": false
   },
   {
-   "text": "Quantity class",
+   "text": "Quantity",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -94,7 +374,7 @@
    "math": false
   },
   {
-   "text": "Factor to vary",
+   "text": "Factor",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -114,7 +394,7 @@
    "math": false
   },
   {
-   "text": "Matched",
+   "text": "share a source paper",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -124,267 +404,7 @@
    "math": false
   },
   {
-   "text": "Differed",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "All three",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Two choices",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "One choice",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "None",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "Case IDs",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "3",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "K04",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "K07",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "K11",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "3",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "K05",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "K06",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "K10",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "3",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "K02",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "K08",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "K13",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "2",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "K01",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "K03",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "K12",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "1",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#0b0b0b",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "K09",
-   "size_pt": 8.0,
-   "weight": "normal",
-   "rotation": 0.0,
-   "colour": "#52514e",
-   "where": "axes 0",
-   "role": "text",
-   "math": false
-  },
-  {
-   "text": "0",
+   "text": "informed step 5",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -404,7 +424,7 @@
    "math": false
   },
   {
-   "text": "Agreement by choice",
+   "text": "Order of two wall treatments in 245 matched pairs",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,
@@ -424,7 +444,27 @@
    "math": false
   },
   {
-   "text": "Cases by combination of matches",
+   "text": "Where the order changes in 136 contrasts",
+   "size_pt": 8.0,
+   "weight": "normal",
+   "rotation": 0.0,
+   "colour": "#0b0b0b",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "c",
+   "size_pt": 10.0,
+   "weight": "bold",
+   "rotation": 0.0,
+   "colour": "#000000",
+   "where": "figure",
+   "role": "text",
+   "math": false
+  },
+  {
+   "text": "Pilot: matching choices in 13 cases",
    "size_pt": 8.0,
    "weight": "normal",
    "rotation": 0.0,

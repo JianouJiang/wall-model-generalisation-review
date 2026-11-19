@@ -1,0 +1,269 @@
+{
+ "meaning": "Tolerances are illustrative. Intervals are reading or printing precision only; no case has a published interval for sampling, discretisation and reference uncertainty together.",
+ "step": {
+  "crossings": {
+   "baseline": 4.7,
+   "model": 5.2,
+   "reference": 6.0
+  },
+  "tolerance": 0.5,
+  "baseline": {
+   "signed_discrepancy": -1.3,
+   "interval_at_reading_precision": [
+    -1.4,
+    -1.2
+   ],
+   "against_tolerance": "outside"
+  },
+  "model": {
+   "signed_discrepancy": -0.8,
+   "interval_at_reading_precision": [
+    -0.9,
+    -0.7
+   ],
+   "against_tolerance": "outside"
+  },
+  "gain_in_absolute_error": 0.5,
+  "shortfall_beyond_tolerance": 0.3,
+  "reference_shift_that_would_bring_the_model_within_tolerance": -0.3
+ },
+ "channel": {
+  "tolerance": {
+   "friction_velocity_percent": 2.0,
+   "outer_velocity_percent": 1.0
+  },
+  "pairs": [
+   {
+    "closure": "no explicit SGS",
+    "scheme": "linear",
+    "friction_error_percent": {
+     "without": "-53.36",
+     "with_wall_law": "-6.15",
+     "direction": "closer",
+     "against_tolerance": "outside"
+    },
+    "outer_error_percent": {
+     "without": "2.38",
+     "with_wall_law": "6.03",
+     "direction": "farther",
+     "change": 3.65,
+     "against_tolerance": "outside"
+    }
+   },
+   {
+    "closure": "no explicit SGS",
+    "scheme": "LUST",
+    "friction_error_percent": {
+     "without": "-56.73",
+     "with_wall_law": "0.20",
+     "direction": "closer",
+     "against_tolerance": "inside"
+    },
+    "outer_error_percent": {
+     "without": "5.16",
+     "with_wall_law": "0.70",
+     "direction": "closer",
+     "change": -4.46,
+     "against_tolerance": "inside"
+    }
+   },
+   {
+    "closure": "WALE",
+    "scheme": "linear",
+    "friction_error_percent": {
+     "without": "-5.56",
+     "with_wall_law": "-4.28",
+     "direction": "closer",
+     "against_tolerance": "outside"
+    },
+    "outer_error_percent": {
+     "without": "2.98",
+     "with_wall_law": "3.08",
+     "direction": "farther",
+     "change": 0.1,
+     "against_tolerance": "outside"
+    }
+   },
+   {
+    "closure": "WALE",
+    "scheme": "LUST",
+    "friction_error_percent": {
+     "without": "-11.75",
+     "with_wall_law": "0.38",
+     "direction": "closer",
+     "against_tolerance": "inside"
+    },
+    "outer_error_percent": {
+     "without": "1.19",
+     "with_wall_law": "0.58",
+     "direction": "closer",
+     "change": -0.61,
+     "against_tolerance": "inside"
+    }
+   },
+   {
+    "closure": "Smagorinsky",
+    "scheme": "linear",
+    "friction_error_percent": {
+     "without": "-5.13",
+     "with_wall_law": "-1.80",
+     "direction": "closer",
+     "against_tolerance": "inside"
+    },
+    "outer_error_percent": {
+     "without": "0.83",
+     "with_wall_law": "1.16",
+     "direction": "farther",
+     "change": 0.33,
+     "against_tolerance": "outside"
+    }
+   },
+   {
+    "closure": "Smagorinsky",
+    "scheme": "LUST",
+    "friction_error_percent": {
+     "without": "-6.06",
+     "with_wall_law": "-0.00",
+     "direction": "closer",
+     "against_tolerance": "inside"
+    },
+    "outer_error_percent": {
+     "without": "0.95",
+     "with_wall_law": "0.70",
+     "direction": "closer",
+     "change": -0.25,
+     "against_tolerance": "inside"
+    }
+   },
+   {
+    "closure": "dynamic subgrid kinetic energy",
+    "scheme": "linear",
+    "friction_error_percent": {
+     "without": "-6.77",
+     "with_wall_law": "-1.60",
+     "direction": "closer",
+     "against_tolerance": "inside"
+    },
+    "outer_error_percent": {
+     "without": "0.58",
+     "with_wall_law": "1.01",
+     "direction": "farther",
+     "change": 0.43,
+     "against_tolerance": "outside"
+    }
+   },
+   {
+    "closure": "dynamic subgrid kinetic energy",
+    "scheme": "LUST",
+    "friction_error_percent": {
+     "without": "-12.62",
+     "with_wall_law": "0.43",
+     "direction": "closer",
+     "against_tolerance": "inside"
+    },
+    "outer_error_percent": {
+     "without": "1.56",
+     "with_wall_law": "0.76",
+     "direction": "closer",
+     "change": -0.8,
+     "against_tolerance": "inside"
+    }
+   }
+  ],
+  "linear": {
+   "friction_closer": 4,
+   "outer_closer": 0,
+   "outer_farther": 4,
+   "friction_error_range_with_wall_law": [
+    1.6,
+    6.15
+   ],
+   "outer_error_range_with_wall_law": [
+    1.01,
+    6.03
+   ],
+   "outer_change_range": [
+    0.1,
+    3.65
+   ],
+   "friction_inside_tolerance": 2,
+   "outer_inside_tolerance": 0,
+   "outer_outside_tolerance": 4
+  },
+  "LUST": {
+   "friction_closer": 4,
+   "outer_closer": 4,
+   "outer_farther": 0,
+   "friction_error_range_with_wall_law": [
+    0.0,
+    0.43
+   ],
+   "outer_error_range_with_wall_law": [
+    0.58,
+    0.76
+   ],
+   "outer_change_range": [
+    -4.46,
+    -0.25
+   ],
+   "friction_inside_tolerance": 4,
+   "outer_inside_tolerance": 4,
+   "outer_outside_tolerance": 0
+  },
+  "smallest_outer_change": [
+   0.1,
+   "WALE",
+   "linear"
+  ]
+ },
+ "bump": {
+  "tolerance": {
+   "friction_percent": 10.0,
+   "velocity_mean_absolute_in_freestream_units": 0.01
+  },
+  "friction_equilibrium": {
+   "signed_discrepancy_times_1000": 0.74,
+   "percent": 31.49,
+   "percent_interval_at_reading_precision": [
+    27.23,
+    35.74
+   ],
+   "against_tolerance": "outside"
+  },
+  "friction_learned": {
+   "signed_discrepancy_times_1000": -0.17,
+   "percent": -7.23,
+   "percent_interval_at_reading_precision": [
+    -11.49,
+    -2.98
+   ],
+   "against_tolerance": "open"
+  },
+  "velocity_equilibrium": {
+   "mean_absolute_discrepancy": 0.00969,
+   "above_0p02": 0.010523,
+   "against_tolerance": "open"
+  },
+  "velocity_learned": {
+   "mean_absolute_discrepancy": 0.016253,
+   "above_0p02": 0.006518,
+   "against_tolerance": "outside"
+  },
+  "closer_on_friction": "learned",
+  "closer_on_velocity_full_support": "equilibrium",
+  "closer_on_velocity_above_0p02": "learned",
+  "velocity_margin_full_support": 0.006562,
+  "velocity_margin_above_0p02": 0.004006,
+  "freestream_uncertainty_in_freestream_units": 0.004,
+  "friction_bias_percent": 2.0
+ },
+ "prospective_design": {
+  "false_acceptance_ordinary": 0.3,
+  "false_acceptance_with_questions": 0.1,
+  "two_sided_alpha": 0.05,
+  "power": 0.8,
+  "decisions_per_arm": 61.6,
+  "assumption": "independent decisions; clustering by shared model or benchmark raises the number",
+  "status": "design only; no observation"
+ }
+}

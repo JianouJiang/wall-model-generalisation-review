@@ -1,10 +1,10 @@
 {
- "texts": 43,
+ "texts": 47,
  "tolerance_pt": 1.0,
  "clipped": [],
  "crossings": [],
  "text_overlaps": [],
- "figure": "fig4_checklist",
+ "figure": "fig4_outcomes",
  "declared_exceptions": [],
  "exceptions_matching_nothing": [],
  "violations": 0,

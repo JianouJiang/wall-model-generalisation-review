@@ -1,0 +1,380 @@
+{
+ "purpose": "Facts added or corrected after the Level-2 record was fixed. The Level-2 files are unchanged; scripts that use these facts read them from here.",
+ "regime_corrections": [
+  {
+   "contrast_id": "N437-K01",
+   "design_id": "N437-D01",
+   "recorded": {
+    "surface": "both",
+    "primary_scope": "inside"
+   },
+   "corrected": {
+    "surface": "rough",
+    "primary_scope": "outside",
+    "axes_outside": [
+     "surface"
+    ]
+   },
+   "reason": "The regime rule gives `both` to an item whose repetitions include smooth-wall and rough-wall flows. This case is one flow over a wall of alternating rough and smooth strips (sand-grain roughness of 130 wall units on the rough strip in every run), so no repetition is a smooth-wall flow. A heterogeneous rough wall is `rough` under the rule.",
+   "quote": {
+    "text": "heterogeneous roughness configuration consists of alternating rough and smooth strips oriented perpendicular to the mean flow direction.",
+    "page": 6
+   },
+   "effect": "The contrast leaves the primary-scope basis of the outcome counts (117 to 116 member contrasts). No work-level count of Level 2 changes: N437-K02, a smooth-wall channel, is a strict member within the primary scope.",
+   "raised_by": "panel review of the Level-2 record"
+  }
+ ],
+ "qualified_transfer_tests": {
+  "question": "Does the target of each qualified transfer test lie inside the ranges that the source states for the fitting set, in a flow of the fitting set?",
+  "values": {
+   "within stated ranges": "a flow of the fitting set at parameter values inside every stated range",
+   "beyond a stated range": "at least one stated parameter range of the fitting set is exceeded",
+   "another flow": "a flow or geometry that is not in the fitting set, at parameter values that exceed no stated range",
+   "fitting set not described": "the source does not describe the fitting set"
+  },
+  "tests": {
+   "P19-T06": {
+    "relation": "within stated ranges",
+    "basis": "Channel at Re_tau = 700 with sudden spanwise pressure gradient, Pi = 80; stated training ranges Re_tau = 100-1000 and Pi = 5-100 (transfer_exposure.json, target)"
+   },
+   "P19-T01": {
+    "relation": "another flow",
+    "basis": "Laminar flat-plate boundary layer; the laminar building block is Poiseuille flow"
+   },
+   "P19-T02": {
+    "relation": "another flow",
+    "basis": "Zero-pressure-gradient turbulent boundary layer; the building block is the turbulent channel; Reynolds number and resolution lie among the training values"
+   },
+   "P19-T03": {
+    "relation": "beyond a stated range",
+    "basis": "Turbulent pipe at Re_tau of about 40,000; training channels reach Re_tau = 10,000"
+   },
+   "P19-T04": {
+    "relation": "beyond a stated range",
+    "basis": "Poiseuille-Couette flow; three values of Re_P lie beyond the stated training range"
+   },
+   "P19-T05": {
+    "relation": "beyond a stated range",
+    "basis": "Poiseuille-Couette flow; four values of Re_P lie beyond the stated training range"
+   },
+   "N497-T02": {
+    "relation": "beyond a stated range",
+    "basis": "Channel at Re_tau = 2000; the channel training data are at Re_tau = 1000"
+   },
+   "P01-T01": {
+    "relation": "another flow",
+    "basis": "Backward-facing step; the coefficients were fitted by other authors to pipe, plane-duct and Couette profiles"
+   },
+   "N037-T01": {
+    "relation": "fitting set not described",
+    "basis": "The source gives the roughness correlation and its reference only"
+   }
+  }
+ },
+ "condition_factors": {
+  "question": "For each contrast whose order changes between conditions: which single factor separates two conditions that give opposite orders for one class of quantity?",
+  "coding": "Coded once by the author of the scripts from the condition descriptions recorded in contrast_outcomes.json. Not read twice. Each entry names two conditions that differ in the named factor alone and that code/derive_outcomes.py finds to give opposite orders. A contrast with no such pair is 'several together'.",
+  "values": {
+   "grid": "grid spacing or first-cell height, at the same Reynolds number and numerics",
+   "numerical scheme": "convection scheme, on the same grid with the same closure",
+   "outer closure": "subgrid-scale or Reynolds-averaged turbulence closure, on the same grid and scheme",
+   "Reynolds number": "Reynolds number on the same grid",
+   "another flow parameter": "rotation number, Mach number, forcing frequency or angle of attack",
+   "sampling height": "height at which the wall law samples the flow, where the contrast changes something else",
+   "another part of the method": "a component of the near-wall method other than the one the contrast changes",
+   "several together": "every pair of conditions with opposite orders differs in more than one factor"
+  },
+  "contrasts": {
+   "N037-K02": [
+    {
+     "factor": "another flow parameter",
+     "conditions": [
+      "c5",
+      "c8"
+     ],
+     "note": "rotation number 10 against 44 at Re_tau = 360"
+    }
+   ],
+   "N174-K01": [
+    {
+     "factor": "grid",
+     "conditions": [
+      "c1",
+      "c2"
+     ]
+    }
+   ],
+   "N181-K02": [
+    {
+     "factor": "another part of the method",
+     "conditions": [
+      "d1",
+      "d3"
+     ],
+     "note": "formulation of the wall-modelled boundary condition"
+    },
+    {
+     "factor": "grid",
+     "conditions": [
+      "d3",
+      "d4"
+     ]
+    },
+    {
+     "factor": "Reynolds number",
+     "conditions": [
+      "d3",
+      "d5"
+     ]
+    }
+   ],
+   "N195-K01": [
+    {
+     "factor": "grid",
+     "conditions": [
+      "c1",
+      "c2"
+     ]
+    },
+    {
+     "factor": "numerical scheme",
+     "conditions": [
+      "c2",
+      "c6"
+     ]
+    }
+   ],
+   "N195-K02": [
+    {
+     "factor": "sampling height",
+     "conditions": [
+      "c3",
+      "c4"
+     ]
+    }
+   ],
+   "N195-K03": [
+    {
+     "factor": "numerical scheme",
+     "conditions": [
+      "c1",
+      "c2"
+     ]
+    },
+    {
+     "factor": "grid",
+     "conditions": [
+      "c2",
+      "c4"
+     ]
+    }
+   ],
+   "N262-K01": [
+    {
+     "factor": "Reynolds number",
+     "conditions": [
+      "c3",
+      "c4"
+     ]
+    },
+    {
+     "factor": "another flow parameter",
+     "conditions": [
+      "c4",
+      "c7"
+     ],
+     "note": "bulk Mach number 0.8 against 1.5 at Re_b = 17,000"
+    }
+   ],
+   "N297-K04": [
+    {
+     "factor": "another part of the method",
+     "conditions": [
+      "c1",
+      "c5"
+     ],
+     "note": "the wall law with which the sampling arrangements are compared"
+    }
+   ],
+   "N318-K01": [
+    {
+     "factor": "several together",
+     "conditions": [
+      "c2",
+      "c3"
+     ],
+     "note": "Reynolds number and length-scale formulation"
+    }
+   ],
+   "N357-K01": [
+    {
+     "factor": "another flow parameter",
+     "conditions": [
+      "c3",
+      "c4"
+     ],
+     "note": "forcing frequency"
+    }
+   ],
+   "N358-K03": [
+    {
+     "factor": "another part of the method",
+     "conditions": [
+      "c1",
+      "c2"
+     ],
+     "note": "interface condition on turbulent kinetic energy"
+    }
+   ],
+   "N364-K01": [
+    {
+     "factor": "numerical scheme",
+     "conditions": [
+      "c1",
+      "c5"
+     ]
+    }
+   ],
+   "N364-K02": [
+    {
+     "factor": "grid",
+     "conditions": [
+      "d1",
+      "d2"
+     ]
+    },
+    {
+     "factor": "numerical scheme",
+     "conditions": [
+      "d1",
+      "d5"
+     ]
+    },
+    {
+     "factor": "outer closure",
+     "conditions": [
+      "d5",
+      "d7"
+     ]
+    }
+   ],
+   "N364-K03": [
+    {
+     "factor": "several together",
+     "conditions": [
+      "e2",
+      "e3"
+     ],
+     "note": "scheme and subgrid closure"
+    }
+   ],
+   "N500-K01": [
+    {
+     "factor": "Reynolds number",
+     "conditions": [
+      "c2",
+      "c3"
+     ]
+    }
+   ],
+   "N540-K04": [
+    {
+     "factor": "grid",
+     "conditions": [
+      "c1",
+      "c2"
+     ]
+    }
+   ],
+   "N623-K01": [
+    {
+     "factor": "Reynolds number",
+     "conditions": [
+      "c1",
+      "c2"
+     ]
+    }
+   ],
+   "N707-K01": [
+    {
+     "factor": "outer closure",
+     "conditions": [
+      "t1",
+      "t2"
+     ]
+    }
+   ],
+   "N707-K02": [
+    {
+     "factor": "outer closure",
+     "conditions": [
+      "t1",
+      "t2"
+     ]
+    }
+   ],
+   "P06-K02": [
+    {
+     "factor": "grid",
+     "conditions": [
+      "c2",
+      "c4"
+     ]
+    }
+   ],
+   "P19-K04": [
+    {
+     "factor": "outer closure",
+     "conditions": [
+      "dsm_m760",
+      "vre_m760"
+     ]
+    }
+   ],
+   "P19-K07": [
+    {
+     "factor": "another flow parameter",
+     "conditions": [
+      "aoa19",
+      "aoa7"
+     ],
+     "note": "angle of attack"
+    }
+   ],
+   "P20-K01": [
+    {
+     "factor": "Reynolds number",
+     "conditions": [
+      "c1",
+      "c2"
+     ]
+    }
+   ],
+   "P25-K02": [
+    {
+     "factor": "grid",
+     "conditions": [
+      "c1",
+      "c2"
+     ]
+    }
+   ],
+   "P25-K03": [
+    {
+     "factor": "grid",
+     "conditions": [
+      "c1",
+      "c2"
+     ]
+    },
+    {
+     "factor": "Reynolds number",
+     "conditions": [
+      "c1",
+      "c5"
+     ]
+    }
+   ]
+  }
+ }
+}

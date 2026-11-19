@@ -13,9 +13,11 @@ def main():
     parser.add_argument('--historical',action='store_true')
     args=parser.parse_args()
     # derive_memberships.py recomputes every fact-derived membership; check_agreement.py recomputes the agreement statistics and decisions.
+    # derive_outcomes.py derives the order of the arms in every matched contrast from the recorded rows; worked_decisions.py
+    # recomputes the three worked comparisons. Figure 4 is drawn from their output.
     scripts = (['analyse_scope.py', 'analyse_revision.py'] if args.historical else []) + ['derive_memberships.py', 'check_agreement.py',
-        'summarise_comparisons.py', 'resolve_directions.py'] + [f'figures/{name}.py' for name in
-        ('fig1_loop', 'fig2_record', 'fig3_contrast', 'fig4_checklist')]
+        'summarise_comparisons.py', 'resolve_directions.py', 'derive_outcomes.py', 'worked_decisions.py'] + [f'figures/{name}.py' for name in
+        ('fig1_loop', 'fig2_record', 'fig3_contrast', 'fig4_outcomes')]
     for script in scripts:
         subprocess.run([sys.executable, '-I', str(ROOT / 'code' / script)], cwd=ROOT, check=True)
 
